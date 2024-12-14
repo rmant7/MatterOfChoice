@@ -17,17 +17,17 @@ genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))  # Replace with your actual
 prompts = {
     "roles": [
         "friends and classmates, teachers and educators",
-        # "parents, brothers and sisters, grandmothers, grandfathers",
-        # "animals and insects",
-        # "grandmothers, grandfathers, elderly people",
-        # "strangers, unfamiliar people, passersby, strangers",
-        # "firefighter, police officer, doctor, salesperson",
-        # "relatives, neighbors, acquaintances"
+        "parents, brothers and sisters, grandmothers, grandfathers",
+        "animals and insects",
+        "grandmothers, grandfathers, elderly people",
+        "strangers, unfamiliar people, passersby, strangers",
+        "firefighter, police officer, doctor, salesperson",
+        "relatives, neighbors, acquaintances"
     ],
     "cases": (
         "Reset your memory of the previous request. You are developing scenarios for an educational game for preschool children aged 5-6. "
         "This game teaches the child how to react appropriately to various life situations and make appropriate behavioral decisions. "
-        "Your task is to compile a list of 2 different life situations that can occur on the street, at school, at home, on the playground, in the store, in class, and so on. For each situation, provide a few different behavioral options, evaluate each option based on health, money, and friendship (on a 5-point scale), and indicate the optimal option. "  # Key change: explicitly request options and evaluations
+        "Your task is to compile a list of 250 different life situations that can occur on the street, at school, at home, on the playground, in the store, in class, and so on. For each situation, provide a few different behavioral options, evaluate each option based on health, money, and friendship (on a 5-point scale), and indicate the optimal option. "  # Key change: explicitly request options and evaluations
         "Format the answer as a Python list of dictionaries, where each dictionary represents a case and has the following keys: 'case' for the situation description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option. Each option dictionary should have the keys 'number', 'option', 'health', 'money', and 'friends'. "  # Specify the expected format clearly
         "Do not repeat situations. Here's an example: "
         "[{'case': 'You find a lost toy on the playground. What do you do?', 'options': [{'number': 1, 'option': 'Keep the toy for yourself.', 'health': 0, 'money': 0, 'friends': -2}, {'number': 2, 'option': 'Give the toy to a teacher.', 'health': 2, 'money': 0, 'friends': 4}], 'optimal': '2'}]"  # Provide a clear example in the expected format
