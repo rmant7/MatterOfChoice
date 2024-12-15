@@ -10,7 +10,7 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginStart="105dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="106dp"
         android:src="@drawable/intro"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,12 +22,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/adlam_display"
         android:text="Let's personalize your experience"
         android:textColor="@color/black"
-        android:textSize="34sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -39,7 +39,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Enter your age"
@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/subjectET" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -80,7 +80,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/button_back"
         android:text="Next"
         android:textColor="@color/white"
@@ -88,4 +88,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+
+    <EditText
+        android:id="@+id/subjectET"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Enter the subject"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

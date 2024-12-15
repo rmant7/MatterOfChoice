@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -40,49 +39,38 @@ class HomeFragment : Fragment() {
         myAdapter = CustomAdapter()
         viewModel = ViewModelProvider(this)[ChatViewModel::class.java]
 
-        myAdapter.onClick = {
-            val mine = it.message
-            binding.apply {
-                linearLayout.visibility = View.VISIBLE
-                editPromptTV.text = mine
-                prompt.setText(mine)
-                val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                prompt.requestFocus()
-                imm.showSoftInput(prompt, InputMethodManager.SHOW_IMPLICIT)
-            }
-
-        }
+//        myAdapter.onClick = {
+//            val mine = it.message
+//            binding.apply {
+//                linearLayout.visibility = View.VISIBLE
+//                editPromptTV.text = mine
+//                prompt.setText(mine)
+//                val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+//                prompt.requestFocus()
+//                imm.showSoftInput(prompt, InputMethodManager.SHOW_IMPLICIT)
+//            }
+//
+//        }
 
         val sharedPreferences = requireContext().getSharedPreferences("UserPreferences", Context.MODE_PRIVATE)
 
         val gender = sharedPreferences.getString("userGender", "Not Selected")
         val language = sharedPreferences.getString("userLanguage", "Not Selected")
         val age = sharedPreferences.getString("userAge", "Not Selected")
+        val subject = sharedPreferences.getString("userSubject", "Not Selected")
 
 
         lifecycleScope.launchWhenStarted {
-            viewModel.getUserInfo(gender!!,language!!,age!!)
+            viewModel.sendMessage()
+            viewModel.getUserInfo(gender!!,language!!,age!!,subject!!)
             viewModel.messageList.collect { messages ->
                 if (messages.isNotEmpty()) binding.chatIntro.visibility = View.GONE
                 myAdapter.submitList(messages.drop(0).reversed())
                 binding.recycler.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,true)
                 binding.recycler.adapter = myAdapter
-                // Scroll to the latest message
             }
         }
 
-
-
-        binding.sendBtn.setOnClickListener {
-            val prompt = binding.prompt.text.toString().trim()
-            if (prompt.isNotEmpty()) {
-                binding.linearLayout.visibility = View.GONE
-                viewModel.sendMessage(prompt)
-                binding.prompt.text.clear()
-                myAdapter.notifyDataSetChanged()
-            }
-
-        }
     }
 
 
