@@ -8,51 +8,15 @@ import os
 import ast
 import google.generativeai as genai  # Import Gemini module
 from dotenv import load_dotenv  # Import dotenv for loading .env file
+
 load_dotenv()
 
 # Initialize Gemini API
 genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))  # Replace with your actual API key
 
-# Prompts data (previously in the .json file)
-prompts = {
-    "roles": [
-        "friends and classmates, teachers and educators",
-        "parents, brothers and sisters, grandmothers, grandfathers",
-        "animals and insects",
-        "grandmothers, grandfathers, elderly people",
-        "strangers, unfamiliar people, passersby, strangers",
-        "firefighter, police officer, doctor, salesperson",
-        "relatives, neighbors, acquaintances"
-    ],
-    "cases": (
-        "Reset your memory of the previous request. You are developing scenarios for an educational game for preschool children aged 5-6. "
-        "This game teaches the child how to react appropriately to various life situations and make appropriate behavioral decisions. "
-        "Your task is to compile a list of 250 different life situations that can occur on the street, at school, at home, on the playground, in the store, in class, and so on. For each situation, provide a few different behavioral options, evaluate each option based on health, money, and friendship (on a 5-point scale), and indicate the optimal option. "  # Key change: explicitly request options and evaluations
-        "Format the answer as a Python list of dictionaries, where each dictionary represents a case and has the following keys: 'case' for the situation description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option. Each option dictionary should have the keys 'number', 'option', 'health', 'money', and 'friends'. "  # Specify the expected format clearly
-        "Do not repeat situations. Here's an example: "
-        "[{'case': 'You find a lost toy on the playground. What do you do?', 'options': [{'number': 1, 'option': 'Keep the toy for yourself.', 'health': 0, 'money': 0, 'friends': -2}, {'number': 2, 'option': 'Give the toy to a teacher.', 'health': 2, 'money': 0, 'friends': 4}], 'optimal': '2'}]"  # Provide a clear example in the expected format
-        "Use double quotes (\") for all string literals in the Python code.  " # Explicit instruction
-
-    ),
-    "cases_2": (
-        "Create a list of 10 unique life situations that a child might encounter in various places. "
-        "Each situation should present a challenge that the child might face and should not contain any possible solutions. "
-        "The goal is diversity and stimulating the child's thinking about appropriate behavioral solutions. Format the answer as a Python list. "
-        "Here is an example answer with different scenarios: [\"You are walking down the street with your friend and see someone throwing trash on the sidewalk. What will you do?\", "
-        "\"You went to the toy store and saw that the very toy you have wanted for a long time is for sale. But you don't have enough money to buy it. What will you do?\", "
-        "\"You are playing in the sandbox with your friends and making a sandcastle. But then another child comes and starts breaking your castle. What will you do?\"]"
-    ),
-    "options": (
-        "You are developing scenarios for an educational game for children aged 5-6. This game teaches the child to cope with challenges in various life situations and make optimal behavioral decisions. "
-        "Your task: 1) compile a list of different behavior options for the child for the situation: '''{case}'''. 2) evaluate each of the options on a 5-point scale according to three criteria: health, money, friendship. "
-        "Ratings can be negative. 3) indicate the optimal behavior option in this situation. Format the answer as a Python dictionary. "
-        "Here is an example answer: {{\"case\":{case}, \"options\":[{{\"number\":1,\"option\":option_text_1, \"health\": 1, \"money\": 0, \"friends\": 4}}, "
-        "{{\"number\":2, \"option\":option_text_2, \"health\":-2, \"money\":-3, \"friends\":3}}, {{\"number\":3, \"option\":option_text_3, \"health\":0, \"money\":5, \"friends\":-5}}, "
-        "{{\"number\":4, \"option\":option_text_4, \"health\":2, \"money\":1, \"friends\":4}}, {{\"number\":5, \"option\":option_text_5, \"health\":0, \"money\":2, \"friends\":0}}], \"optimal\":\"3\"}}"
-    ),
-    "image": "create a realistic picture for the following situation: '{case}'",
-    "image_en": "Create an image showing the following situation: '{case}'"
-}
+# Load prompts from JSON file
+with open('prompts.json', 'r', encoding='utf-8') as f:
+    prompts = json.load(f)
 
 timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
 logger = lambda msg: print(f"{datetime.now()} - {msg}")  # Simple logger
