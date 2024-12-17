@@ -68,39 +68,34 @@ def extract_list(code: str) -> str:
         return None
 
 # Generate cases for different scenarios
-def gen_cases():
+def gen_cases(language: str, sex: str, age:int):
     logger("Starting to generate cases...")
-
     for i, option in enumerate(prompts['roles'], start=1):
-        prompt = prompts['cases']  # No need to format this string
+        prompt = f"""{prompts['cases']}  Respond in {language}. The content should be appropriate for a {sex} child aged {age}."""
         try:
             response = get_response_gemini(prompt)
             if not response:
-                continue  # Skip if response is empty
-
-            logger(f"Raw response for option {i}: {response}")  # Log the raw response for debugging
-
+                continue
+            logger(f"Raw response for option {i}: {response}")
             cleaned_response = clean_response(response)
             logger(f"Cleaned response for option {i}: {cleaned_response[:50]}...")
-
             list_content = extract_list(cleaned_response)
             logger(f"Extracted list for option {i}: {list_content[:50]}...")
-
             try:
                 parsed = json.loads(list_content)
                 logger(f"Successfully parsed response for option {i}...")
             except json.JSONDecodeError as e:
                 logger(f"Error parsing JSON response for option {i}: {e}")
                 continue
-
             cases = {'option': option, 'cases': parsed}
             case_file = output_path / f"option_{i}.json"
-            with open(case_file, 'w', encoding='utf-8') as f:  # Use UTF-8 encoding
+            with open(case_file, 'w', encoding='utf-8') as f:
                 json.dump(cases, f, indent=4, ensure_ascii=False)
             logger(f"Saved case {i} to {case_file}")
         except Exception as err:
             logger(f"Error processing case {i}: {err}")
             continue
+
 
 # Generate images for cases
 def gen_image_cases():
@@ -124,5 +119,5 @@ def gen_image_cases():
 
 # Entry point for the script
 if __name__ == "__main__":
-    gen_cases()
+    gen_cases(language="english", sex="male", age=8) #Example usage.  Change as needed.
     # gen_image_cases()
