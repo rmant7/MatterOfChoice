@@ -44,6 +44,7 @@ dependencies {
 
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.firebase.crashlytics.buildtools)
     val lifecycle_version = "2.8.7"
 
 
@@ -59,6 +60,9 @@ dependencies {
     implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
 
     implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    implementation("com.google.code.gson:gson:2.11.0")
+
 
 
 

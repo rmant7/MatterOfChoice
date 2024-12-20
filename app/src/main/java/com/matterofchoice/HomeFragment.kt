@@ -3,14 +3,17 @@ package com.matterofchoice
 import CustomAdapter
 import android.content.Context
 import android.os.Bundle
+import android.os.Environment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.matterofchoices.databinding.HomeFragmentBinding
+import org.json.JSONObject
+import java.io.File
 
 class HomeFragment : Fragment() {
     private lateinit var binding: HomeFragmentBinding
@@ -36,7 +39,7 @@ class HomeFragment : Fragment() {
 
 
 
-        myAdapter = CustomAdapter()
+//        myAdapter = CustomAdapter()
         viewModel = ViewModelProvider(this)[ChatViewModel::class.java]
 
 //        myAdapter.onClick = {
@@ -58,18 +61,6 @@ class HomeFragment : Fragment() {
         val language = sharedPreferences.getString("userLanguage", "Not Selected")
         val age = sharedPreferences.getString("userAge", "Not Selected")
         val subject = sharedPreferences.getString("userSubject", "Not Selected")
-
-
-        lifecycleScope.launchWhenStarted {
-            viewModel.sendMessage()
-            viewModel.getUserInfo(gender!!,language!!,age!!,subject!!)
-            viewModel.messageList.collect { messages ->
-                if (messages.isNotEmpty()) binding.chatIntro.visibility = View.GONE
-                myAdapter.submitList(messages.drop(0).reversed())
-                binding.recycler.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,true)
-                binding.recycler.adapter = myAdapter
-            }
-        }
 
     }
 
