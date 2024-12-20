@@ -3,12 +3,16 @@ package com.matterofchoice
 
 import android.app.Application
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.ImageDecoder.ImageInfo
+import android.provider.ContactsContract.CommonDataKinds.Website.URL
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.ai.client.generativeai.GenerativeModel
+import com.google.gson.internal.bind.TypeAdapters.URL
 import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONObject
@@ -17,9 +21,6 @@ import java.io.FileWriter
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
-import java.nio.file.Files
-import java.nio.file.Paths
-
 
 
 class ChatViewModel(application: Application) : AndroidViewModel(application){
@@ -155,32 +156,27 @@ class ChatViewModel(application: Application) : AndroidViewModel(application){
     }
 
 
-    fun genImageCases(prompts: Map<String, Any>, logger: (String) -> Unit, getResponseGemini: (String) -> String) {
-        val imageOutputPath = Paths.get("./output/images")
-        Files.createDirectories(imageOutputPath)
-        logger("Generating images for cases...")
+    val imageLiveData = MutableLiveData<Bitmap?>()
 
-        val roles = prompts["roles"] as? List<String> ?: return
-        val imageTemplate = prompts["image"] as? String ?: return
-
-        roles.forEachIndexed { index, role ->
-            val prompt = imageTemplate.replace("{case}", role)
+    fun generateAndDisplayImage(prompt: String) {
+        viewModelScope.launch {
             try {
-                logger("Generating image for option ${index + 1}...")
-                val response = getResponseGemini(prompt)
+                val model = GenerativeModel(
+                    modelName = "gemini-pro",
+                    apiKey = Constants.apiKey,
+                )
+                val response = model.generateContent(prompt)
 
-                val url = URL(response)
+                // Assuming response is the URL of the image
+                val url = URL(response.toString())
                 val connection = url.openConnection() as HttpURLConnection
-                connection.inputStream.use { input ->
-                    val image = ImageIo.read(input)
-                    val imagePath = imageOutputPath.resolve("option_${index + 1}.png").toFile()
-                    ImageIO.write(image, "png", imagePath)
-                    logger("Image for option ${index + 1} saved at ${imagePath.absolutePath}")
+                connection.inputStream.use { inputStream ->
+                    val bitmap = BitmapFactory.decodeStream(inputStream)
+                    imageLiveData.postValue(bitmap)  // Update LiveData with the new image
                 }
-            } catch (e: IOException) {
-                logger("Error generating image for option ${index + 1}: ${e.message}")
             } catch (e: Exception) {
-                logger("Error generating image for option ${index + 1}: ${e.message}")
+                Log.e("IMAGE_LOADING", "Error loading image: ${e.message}")
+                imageLiveData.postValue(null)  // Handle error by setting null to LiveData
             }
         }
     }

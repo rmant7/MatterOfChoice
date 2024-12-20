@@ -18,6 +18,7 @@ import com.matterofchoices.databinding.ActivityGameBinding
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
