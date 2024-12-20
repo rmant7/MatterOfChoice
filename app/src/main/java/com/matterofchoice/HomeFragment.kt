@@ -1,6 +1,5 @@
 package com.matterofchoice
 
-import CustomAdapter
 import android.content.Context
 import android.os.Bundle
 import android.os.Environment
@@ -18,7 +17,6 @@ import java.io.File
 class HomeFragment : Fragment() {
     private lateinit var binding: HomeFragmentBinding
     private lateinit var viewModel: ChatViewModel
-    private lateinit var myAdapter: CustomAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
