@@ -1,14 +1,12 @@
 package com.matterofchoice
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.findNavController
-import com.matterofchoices.R
-import com.matterofchoices.databinding.ActivityWelcomeBinding
+import com.matterofchoice.databinding.ActivityWelcomeBinding
 
 class WelcomeActivity : AppCompatActivity() {
     private val binding by lazy {

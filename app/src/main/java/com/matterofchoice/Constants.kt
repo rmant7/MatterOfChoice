@@ -1,5 +1,5 @@
 package com.matterofchoice
 
 object Constants {
-      val apiKey = "Your_Api_Key"
+      val apiKey = "AIzaSyBbpQNYsB4bDDctAB14D8FQIIOqn7JOccc"
 }

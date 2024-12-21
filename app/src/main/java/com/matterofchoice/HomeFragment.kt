@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.matterofchoices.databinding.HomeFragmentBinding
+import com.matterofchoice.databinding.HomeFragmentBinding
 import org.json.JSONObject
 import java.io.File
 

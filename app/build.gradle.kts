@@ -1,14 +1,16 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+
+    id("kotlin-parcelize")
 }
 
 android {
-    namespace = "com.matterofchoices"
+    namespace = "com.matterofchoice"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.matterofchoices"
+        applicationId = "com.matterofchoice"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
@@ -34,7 +36,7 @@ android {
         jvmTarget = "11"
     }
 
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
         dataBinding = true
     }
@@ -45,7 +47,6 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.firebase.crashlytics.buildtools)
-    val lifecycle_version = "2.8.7"
 
 
     implementation(libs.androidx.core.ktx)
@@ -63,7 +64,7 @@ dependencies {
 
     implementation("com.google.code.gson:gson:2.11.0")
 
-
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
 
 }

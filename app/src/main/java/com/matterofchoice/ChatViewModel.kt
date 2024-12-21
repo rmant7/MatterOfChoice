@@ -1,37 +1,43 @@
 package com.matterofchoice
 
-
 import android.app.Application
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.ImageDecoder.ImageInfo
-import android.provider.ContactsContract.CommonDataKinds.Website.URL
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.ai.client.generativeai.GenerativeModel
-import com.google.gson.internal.bind.TypeAdapters.URL
 import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
 import java.io.FileWriter
-import java.io.IOException
-import java.net.HttpURLConnection
-import java.net.URL
 
 
-class ChatViewModel(application: Application) : AndroidViewModel(application){
+class ChatViewModel(application: Application) : AndroidViewModel(application) {
 
     private var i = 0
-     val listContent = MutableLiveData<JSONArray?>()
+    val listContent = MutableLiveData<JSONArray?>()
+
+    private lateinit var userGender:String
+    private lateinit var userLanguage: String
+    private lateinit var userAge:String
+    private lateinit var userSubject: String
+
+
+    fun getUserInfo(gender:String,language:String, age:String, subject:String){
+        userGender = gender
+        userLanguage = language
+        userAge = age
+        userSubject = subject
+
+    }
 
 
     fun loadPrompts(fileName: String): JSONObject? {
         return try {
-            val jsonContent = getApplication<Application>().assets.open(fileName).bufferedReader().use { it.readText() }
+            val jsonContent = getApplication<Application>().assets.open(fileName).bufferedReader()
+                .use { it.readText() }
             JSONObject(jsonContent)
         } catch (e: Exception) {
             Log.v("TAGY", "Error loading prompts: ${e.message}")
@@ -95,6 +101,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application){
         language: String,
         sex: String,
         age: Int,
+        subject: String,
         prompts: JSONObject,
         context: Context
     ) {
@@ -107,7 +114,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application){
 
         val role = roles.optString(i)
         val prompt =
-            "$casesPrompt Respond in $language. The content should be appropriate for a $sex child aged $age"
+            "$casesPrompt Respond in $language. The content should be appropriate for a $sex child aged $age and the subject is $subject"
 
         viewModelScope.launch {
             val response = getResponseGemini(prompt)
@@ -156,44 +163,25 @@ class ChatViewModel(application: Application) : AndroidViewModel(application){
     }
 
 
-    val imageLiveData = MutableLiveData<Bitmap?>()
 
 
-    fun generateAndDisplayImage(prompt: String) {
-        viewModelScope.launch {
-            try {
-                val model = GenerativeModel(
-                    modelName = "gemini-pro",
-                    apiKey = Constants.apiKey,
-                )
-                val promptSend = "create a realistic picture for the following situation: "+prompt
-                val response = model.generateContent(promptSend)
-
-
-                val url = URL(response.toString())
-                val connection = url.openConnection() as HttpURLConnection
-                connection.inputStream.use { inputStream ->
-                    val bitmap = BitmapFactory.decodeStream(inputStream)
-                    imageLiveData.postValue(bitmap)  // Update LiveData with the new image
-                }
-            } catch (e: Exception) {
-                Log.e("IMAGE_LOADING", "Error loading image: ${e.message}")
-                imageLiveData.postValue(null)  // Handle error by setting null to LiveData
-            }
-        }
-    }
 
 
 
     fun main() {
         val prompts = loadPrompts("prompts.json") ?: return
-        generateCases(
-            language = "English",
-            sex = "male",
-            age = 8,
-            prompts = prompts,
-            getApplication()
-        )
+        listContent.value = null
+        if (userLanguage != null){
+            generateCases(
+                language = userLanguage,
+                sex = userGender,
+                age = userAge.toInt(),
+                subject = userSubject,
+                prompts = prompts,
+                getApplication()
+            )
+        }
+
     }
 
 

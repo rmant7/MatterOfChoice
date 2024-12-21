@@ -1,5 +1,10 @@
 package com.matterofchoice.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+
+@Parcelize
 data class Option(
     val number: Int,                  // The option number
     val option: String,               // The description of the option
@@ -13,4 +18,4 @@ data class Option(
     val environmentalImpact: Int,    // Environmental impact of this option
     val personalGrowth: Int,         // Personal growth impact of this option
     val socialResponsibility: Int    // Social responsibility impact of this option
-)
+):Parcelable

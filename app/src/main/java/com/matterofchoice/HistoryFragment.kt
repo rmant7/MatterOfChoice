@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.matterofchoices.databinding.HistoryFragmentBinding
+import com.matterofchoice.databinding.HistoryFragmentBinding
 
 class HistoryFragment: Fragment() {
     private lateinit var binding: HistoryFragmentBinding
