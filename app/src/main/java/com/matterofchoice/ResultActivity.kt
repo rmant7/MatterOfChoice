@@ -25,6 +25,9 @@ class ResultActivity : AppCompatActivity() {
 
         val option = intent.getParcelableExtra<Option>("selected")
         val optimal = intent.getStringExtra("optimal")
+
+        val optimalAnswer = intent.getParcelableExtra<Option>("optimalAnswer")
+
         binding.continueBtn.setOnClickListener {
             val i = Intent(this,GameActivity::class.java)
             startActivity(i)
@@ -33,7 +36,9 @@ class ResultActivity : AppCompatActivity() {
 
         try {
             binding.apply {
-                optimalTV.text = "optimal: "+optimal
+                optimalTV.text = optimal
+
+                optimalAnswerTV.text = "\"${optimalAnswer!!.option}\""
 
                 textView12.text = "Health: "+option?.health
                 textView13.text = "Wealth: "+option?.wealth
