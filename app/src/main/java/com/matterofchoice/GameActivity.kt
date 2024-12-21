@@ -36,6 +36,12 @@ class GameActivity : AppCompatActivity() {
 
         lifecycleScope.launchWhenStarted {
             myViewModel.main()
+
+        }
+
+        myViewModel.imageLiveData.observe(this){ image ->
+            binding.situationIV.setImageBitmap(image)
+
         }
 
 
@@ -61,6 +67,7 @@ class GameActivity : AppCompatActivity() {
                             option3TV.text = cases[0].options[2].option
                             option4TV.text = cases[0].options[3].option
                         }
+                        myViewModel.generateAndDisplayImage(cases[0].case)
 
                     }
                 } catch (e: Exception) {

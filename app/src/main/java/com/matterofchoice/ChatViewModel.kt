@@ -158,6 +158,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application){
 
     val imageLiveData = MutableLiveData<Bitmap?>()
 
+
     fun generateAndDisplayImage(prompt: String) {
         viewModelScope.launch {
             try {
@@ -165,9 +166,10 @@ class ChatViewModel(application: Application) : AndroidViewModel(application){
                     modelName = "gemini-pro",
                     apiKey = Constants.apiKey,
                 )
-                val response = model.generateContent(prompt)
+                val promptSend = "create a realistic picture for the following situation: "+prompt
+                val response = model.generateContent(promptSend)
 
-                // Assuming response is the URL of the image
+
                 val url = URL(response.toString())
                 val connection = url.openConnection() as HttpURLConnection
                 connection.inputStream.use { inputStream ->
