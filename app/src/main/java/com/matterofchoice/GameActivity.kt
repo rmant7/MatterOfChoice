@@ -78,7 +78,6 @@ class GameActivity : AppCompatActivity() {
 
 
                             button3.setOnClickListener {
-                                val optimal = cases[0].optimal.toIntOrNull()
                                 if (selectedOption != null) {
                                     val i = Intent(this@GameActivity, ResultActivity::class.java)
                                     i.putExtra("selected", cases[0].options.find {
