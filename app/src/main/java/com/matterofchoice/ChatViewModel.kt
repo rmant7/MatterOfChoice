@@ -18,6 +18,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
 
     private var i = 0
     val listContent = MutableLiveData<JSONArray?>()
+    val errorLiveData = MutableLiveData<String>()
 
     private lateinit var userGender: String
     private lateinit var userLanguage: String
@@ -64,7 +65,8 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
                 ""
             }
         } catch (err: Exception) {
-            Log.v("CONTENT", "Error generating response: ${err.message}")
+            Log.v("AHMEDCONTENT", "Error generating response: ${err.message}")
+            errorLiveData.postValue(err.message)
             ""
         }
     }

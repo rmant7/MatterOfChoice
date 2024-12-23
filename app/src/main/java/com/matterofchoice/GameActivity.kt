@@ -46,18 +46,22 @@ class GameActivity : AppCompatActivity() {
         val userSubject = sharedPreferences.getString("userSubject", "Not specified")
 
 
-        lifecycleScope.launchWhenStarted {
-            try {
-                myViewModel.getUserInfo(userGender!!, userLanguage!!, userAge!!, userSubject!!)
-                myViewModel.main()
-            } catch (e: Exception) {
-                Toast.makeText(applicationContext, e.message.toString(), Toast.LENGTH_LONG).show()
-            }
+        initiateMethod(myViewModel, userGender!!,userLanguage!!,userAge!!,userSubject!!)
 
-        }
         binding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
             val selectedRadioButton = findViewById<RadioButton>(checkedId)
             selectedOption = selectedRadioButton.text.toString()
+        }
+        myViewModel.errorLiveData.observe(this){ error ->
+            if (!error.isNullOrEmpty()){
+                binding.apply {
+                    animationView.visibility = View.GONE
+                    errorTV.visibility = View.VISIBLE
+                    errorTV.text = error
+                }
+
+            }
+
         }
 
 
@@ -71,7 +75,8 @@ class GameActivity : AppCompatActivity() {
                             gson.fromJson(listContent.toString(), listType)
                         Log.v("CASESLIST", cases.toString())
                         binding.apply {
-                            myProgressBar.visibility = View.GONE
+                            binding.constraintLoad.visibility = View.GONE
+
                             button3.visibility = View.VISIBLE
                             situationIV.visibility = View.VISIBLE
 
@@ -85,7 +90,9 @@ class GameActivity : AppCompatActivity() {
                             button3.setOnClickListener {
                                 if (selectedOption != null) {
                                     val i = Intent(this@GameActivity, ResultActivity::class.java)
-                                    i.putExtra("selected", cases[0].options.find { it.option == selectedOption })
+                                    i.putExtra(
+                                        "selected",
+                                        cases[0].options.find { it.option == selectedOption })
 
                                     i.putExtra("optimal", cases[0].optimal)
 
@@ -105,6 +112,14 @@ class GameActivity : AppCompatActivity() {
             } else {
                 Log.v("GAMEACTIVITY", "It's empty")
             }
+        }
+    }
+
+    private fun initiateMethod(myViewModel:ChatViewModel,userGender:String, userLanguage:String,userAge:String, userSubject: String){
+        lifecycleScope.launchWhenStarted {
+            myViewModel.getUserInfo(userGender, userLanguage, userAge, userSubject)
+            myViewModel.main()
+
         }
     }
 
