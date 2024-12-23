@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -46,10 +47,14 @@ class GameActivity : AppCompatActivity() {
 
 
         lifecycleScope.launchWhenStarted {
-            myViewModel.getUserInfo(userGender!!, userLanguage!!, userAge!!, userSubject!!)
-            myViewModel.main()
-        }
+            try {
+                myViewModel.getUserInfo(userGender!!, userLanguage!!, userAge!!, userSubject!!)
+                myViewModel.main()
+            } catch (e: Exception) {
+                Toast.makeText(applicationContext, e.message.toString(), Toast.LENGTH_LONG).show()
+            }
 
+        }
         binding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
             val selectedRadioButton = findViewById<RadioButton>(checkedId)
             selectedOption = selectedRadioButton.text.toString()
@@ -80,11 +85,13 @@ class GameActivity : AppCompatActivity() {
                             button3.setOnClickListener {
                                 if (selectedOption != null) {
                                     val i = Intent(this@GameActivity, ResultActivity::class.java)
-                                    i.putExtra("selected", cases[0].options.find {
-                                        it.option == selectedOption
-                                    })
+                                    i.putExtra("selected", cases[0].options.find { it.option == selectedOption })
+
                                     i.putExtra("optimal", cases[0].optimal)
-                                    val optimalOption = cases[0].options.find { it.number == cases[0].optimal.toInt() }
+
+                                    val optimalOption =
+                                        cases[0].options.find { it.number == cases[0].optimal.toInt() }
+
                                     i.putExtra("optimalAnswer", optimalOption)
                                     startActivity(i)
 

@@ -19,13 +19,13 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
     private var i = 0
     val listContent = MutableLiveData<JSONArray?>()
 
-    private lateinit var userGender:String
+    private lateinit var userGender: String
     private lateinit var userLanguage: String
-    private lateinit var userAge:String
+    private lateinit var userAge: String
     private lateinit var userSubject: String
 
 
-    fun getUserInfo(gender:String,language:String, age:String, subject:String){
+    fun getUserInfo(gender: String, language: String, age: String, subject: String) {
         userGender = gender
         userLanguage = language
         userAge = age
@@ -114,7 +114,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
 
         val role = roles.optString(i)
         val prompt =
-            "$casesPrompt Respond in $language. The content should be appropriate for a $sex child aged $age and the subject is $subject"
+            "$casesPrompt Respond in $language. The content should be in $subject and appropriate for a $sex child aged $age."
 
         viewModelScope.launch {
             val response = getResponseGemini(prompt)
@@ -163,24 +163,19 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-
-
-
-
-
     fun main() {
         val prompts = loadPrompts("prompts.json") ?: return
         listContent.value = null
-        if (userLanguage != null){
-            generateCases(
-                language = userLanguage,
-                sex = userGender,
-                age = userAge.toInt(),
-                subject = userSubject,
-                prompts = prompts,
-                getApplication()
-            )
-        }
+
+        generateCases(
+            language = userLanguage,
+            sex = userGender,
+            age = userAge.toInt(),
+            subject = userSubject,
+            prompts = prompts,
+            getApplication()
+        )
+
 
     }
 
