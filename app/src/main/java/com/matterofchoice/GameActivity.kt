@@ -101,7 +101,6 @@ class GameActivity : AppCompatActivity() {
 
                                     i.putExtra("optimalAnswer", optimalOption)
                                     startActivity(i)
-
                                 }
                             }
                         }
