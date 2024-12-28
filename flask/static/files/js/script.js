@@ -212,6 +212,8 @@ function startNewGame() {
     form.querySelector('#language').disabled = false;
     form.querySelector('#sex').disabled = false;
     form.querySelector('#age').disabled = false;
+    form.querySelector('#subject').disabled = false;
+
     form.querySelector('button[type="submit"]').disabled = false;
 
     // Reset the visibility
@@ -250,6 +252,7 @@ function displayError(errorData) {
         form.querySelector('#language').disabled = false;
         form.querySelector('#sex').disabled = false;
         form.querySelector('#age').disabled = false;
+        form.querySelector('#subject').disabled = false;
         form.querySelector('button[type="submit"]').disabled = false;
         responseContainer.classList.add('hidden');
         form.submit();

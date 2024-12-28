@@ -22,6 +22,7 @@ def generate_cases():
         language = data.get('language')
         sex = data.get('sex')
         age = data.get('age')
+        subject = data.get('subject')
 
         if not all([language, sex, age]):
             return jsonify({"error": "language, sex, and age are required fields."}), 400
@@ -35,7 +36,7 @@ def generate_cases():
         output_dir.mkdir(parents=True, exist_ok=True) #Create the directory if it doesn't exist.
 
         try:
-            generated_data = gen_cases(language, sex, age, output_dir) # Pass the output directory
+            generated_data = gen_cases(language, sex, age, output_dir, subject) # Pass the output directory
 
             if generated_data:
                 return jsonify({'data': generated_data}), 200

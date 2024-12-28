@@ -137,50 +137,50 @@ def extract_list(code: str) -> str:
         logger(f"Error parsing or evaluating Python code: {e}")
         logger(f"Problematic code snippet: {code}")
         return None
-
-def gen_cases(language: str, sex: str, age: int, output_dir: Path):
+def gen_cases(language: str, sex: str, age: int, output_dir: Path, subject: str):
     logger("Starting to generate cases...")
     all_cases = []
-    for i, option in enumerate(prompts['roles'], start=1):
-        prompt = f"""{prompts['cases']} Respond in {language}. The content should be appropriate for a {sex} child aged {age}."""
-        try:
-            response = get_response_gemini(prompt)
-            if not response:
-                continue
-            logger(f"Raw response for option {i}: {response}")
-            cleaned_response = clean_response(response)
-            logger(f"Cleaned response for option {i}: {cleaned_response[:50]}...")
-            list_content = extract_list(cleaned_response)
-            logger(f"Extracted list for option {i}: {list_content[:50]}...")
-            parsed = json.loads(list_content)
-            logger(f"Successfully parsed response for option {i}...")
 
-            option_data = {'option_id': str(uuid.uuid4()), 'option': option, 'cases': []} # Generate option ID
-
-            for j, case_data_dict in enumerate(parsed):
-                case_id = str(uuid.uuid4()) # Generate case ID
-                case_data = {'case_id': case_id, 'case': case_data_dict['case'], 'optimal': case_data_dict['optimal'], 'options': []}
-
-                for k, option_data_dict in enumerate(case_data_dict['options']):
-                    option_id = str(uuid.uuid4()) #Generate option ID
-                    option_item = {'option_id': option_id, 'number': option_data_dict['number'], 'option': option_data_dict['option'],
-                                    'health': option_data_dict['health'], 'wealth': option_data_dict['wealth'], 'relationships': option_data_dict['relationships'],
-                                    'happiness': option_data_dict['happiness'], 'knowledge': option_data_dict['knowledge'], 'karma': option_data_dict['karma'],
-                                    'time_management': option_data_dict['time_management'], 'environmental_impact': option_data_dict['environmental_impact'],
-                                    'personal_growth': option_data_dict['personal_growth'], 'social_responsibility': option_data_dict['social_responsibility']}
-                    case_data['options'].append(option_item)
-
-                option_data['cases'].append(case_data)
-
-            all_cases.append(option_data)
-            case_file = output_dir / f"option_{i}.json"
-            with open(case_file, 'w', encoding='utf-8') as f:
-                json.dump(option_data, f, indent=4)
-            logger(f"Saved case {i} to {case_file}")
-
-        except Exception as e:
-            logger(f"Error processing case {i}: {e}")
+    prompt = f"""{prompts['cases']} Respond in {language}. The content should be appropriate for a {sex} child aged {age} and the subject/theme used should be {subject}."""
+    try:
+        response = get_response_gemini(prompt)
+        if not response:
             return None
+        logger(f"Raw response: {response}")
+        cleaned_response = clean_response(response)
+        logger(f"Cleaned response: {cleaned_response[:50]}...")
+        list_content = extract_list(cleaned_response)
+        logger(f"Extracted list: {list_content[:50]}...")
+        parsed = json.loads(list_content)
+        logger(f"Successfully parsed response...")
+
+        option_data = {'option_id': str(uuid.uuid4()), 'option': subject, 'cases': []} # Use subject here
+
+        for j, case_data_dict in enumerate(parsed):  # Keep enumerate here for case processing
+            case_id = str(uuid.uuid4())
+            case_data = {'case_id': case_id, 'case': case_data_dict['case'], 'optimal': case_data_dict['optimal'], 'options': []}
+
+            for k, option_data_dict in enumerate(case_data_dict['options']): # Keep enumerate here
+                option_id = str(uuid.uuid4())
+                option_item = {'option_id': option_id, 'number': option_data_dict['number'], 'option': option_data_dict['option'],
+                                'health': option_data_dict['health'], 'wealth': option_data_dict['wealth'], 'relationships': option_data_dict['relationships'],
+                                'happiness': option_data_dict['happiness'], 'knowledge': option_data_dict['knowledge'], 'karma': option_data_dict['karma'],
+                                'time_management': option_data_dict['time_management'], 'environmental_impact': option_data_dict['environmental_impact'],
+                                'personal_growth': option_data_dict['personal_growth'], 'social_responsibility': option_data_dict['social_responsibility']}
+                case_data['options'].append(option_item)
+
+            option_data['cases'].append(case_data)
+
+        all_cases.append(option_data)  # Still append to all_cases
+
+        case_file = output_dir / f"cases.json"  # Output to a single file
+        with open(case_file, 'w', encoding='utf-8') as f:
+            json.dump(all_cases, f, indent=4)  # Dump all cases
+        logger(f"Saved cases to {case_file}")
+
+    except Exception as e:
+        logger(f"Error processing cases: {e}")
+        return None
     return all_cases
 
 
