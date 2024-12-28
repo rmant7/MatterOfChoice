@@ -15,37 +15,48 @@ def serve_index():
 
 
 
-@app.route('/generate_cases', methods=['POST'])
+@app.route('/generate_cases', methods=['POST', 'GET'])
 def generate_cases():
+    if request.method == 'GET':
+        session.pop('conversation_history', None)
+        return jsonify({"message": "Session cleared."}), 200
+
     try:
         data = request.get_json()
         language = data.get('language')
         sex = data.get('sex')
         age = data.get('age')
         subject = data.get('subject')
+        user_response = data.get('user_response')
 
-        if not all([language, sex, age]):
-            return jsonify({"error": "language, sex, and age are required fields."}), 400
+        if not all([language, sex, age, subject]):
+            return jsonify({"error": "language, sex, age, and subject are required fields."}), 400
 
         try:
             age = int(age)
         except (TypeError, ValueError):
             return jsonify({"error": "age must be a valid integer."}), 400
 
-        output_dir = BASE_DIR / 'output' / 'game'  # Output directory using BASE_DIR
-        output_dir.mkdir(parents=True, exist_ok=True) #Create the directory if it doesn't exist.
+        conversation_history = session.get('conversation_history', [])
+
+        output_dir = BASE_DIR / 'output' / 'game'
+        output_dir.mkdir(parents=True, exist_ok=True)
 
         try:
-            generated_data = gen_cases(language, sex, age, output_dir, subject) # Pass the output directory
+            case_data, conversation_history = gen_cases(language, sex, age, output_dir, subject, conversation_history=conversation_history + ([user_response] if user_response is not None else []))
+            session['conversation_history'] = conversation_history
 
-            if generated_data:
-                return jsonify({'data': generated_data}), 200
+            if case_data:
+                return jsonify({'data': case_data}), 200
             else:
-                return jsonify({'error': 'Failed to generate cases'}), 500
+                return jsonify({'message': 'Conversation ended'}), 200
         except Exception as e:
             return jsonify({'error': str(e)}), 500
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred: {str(e)}"}), 500
+
+
+
 
 
 @app.route('/submit_answers', methods=['POST'])

@@ -137,52 +137,55 @@ def extract_list(code: str) -> str:
         logger(f"Error parsing or evaluating Python code: {e}")
         logger(f"Problematic code snippet: {code}")
         return None
-def gen_cases(language: str, sex: str, age: int, output_dir: Path, subject: str):
-    logger("Starting to generate cases...")
-    all_cases = []
 
-    prompt = f"""{prompts['cases']} Respond in {language}. The content should be appropriate for a {sex} child aged {age} and the subject/theme used should be {subject}."""
-    try:
-        response = get_response_gemini(prompt)
-        if not response:
-            return None
-        logger(f"Raw response: {response}")
-        cleaned_response = clean_response(response)
-        logger(f"Cleaned response: {cleaned_response[:50]}...")
-        list_content = extract_list(cleaned_response)
-        logger(f"Extracted list: {list_content[:50]}...")
-        parsed = json.loads(list_content)
-        logger(f"Successfully parsed response...")
 
-        option_data = {'option_id': str(uuid.uuid4()), 'option': subject, 'cases': []} # Use subject here
 
-        for j, case_data_dict in enumerate(parsed):  # Keep enumerate here for case processing
-            case_id = str(uuid.uuid4())
-            case_data = {'case_id': case_id, 'case': case_data_dict['case'], 'optimal': case_data_dict['optimal'], 'options': []}
+def gen_cases(language: str, sex: str, age: int, output_dir: Path, subject: str, conversation_history=None):
+    if conversation_history is None:
+        conversation_history = []
 
-            for k, option_data_dict in enumerate(case_data_dict['options']): # Keep enumerate here
-                option_id = str(uuid.uuid4())
-                option_item = {'option_id': option_id, 'number': option_data_dict['number'], 'option': option_data_dict['option'],
-                                'health': option_data_dict['health'], 'wealth': option_data_dict['wealth'], 'relationships': option_data_dict['relationships'],
-                                'happiness': option_data_dict['happiness'], 'knowledge': option_data_dict['knowledge'], 'karma': option_data_dict['karma'],
-                                'time_management': option_data_dict['time_management'], 'environmental_impact': option_data_dict['environmental_impact'],
-                                'personal_growth': option_data_dict['personal_growth'], 'social_responsibility': option_data_dict['social_responsibility']}
-                case_data['options'].append(option_item)
+    if len(conversation_history) == 0:  # First question
+        prompt = f"""{prompts['cases']} Respond in {language}.  The content should be appropriate for a {sex} child aged {age} and the subject/theme used should be {subject}. Provide only ONE situation and its options.  Format as a single dictionary: {{'case': '...', 'options': [{'number':1, 'option':'...', 'health':..., ...}, ...], 'optimal': n}}."""
+        try:
+            response = get_response_gemini(prompt)
+            if not response:
+                return None, conversation_history
+            cleaned_response = clean_response(response)
+            try:
+                first_case = json.loads(cleaned_response)
+                return first_case, conversation_history
+            except json.JSONDecodeError as e:
+                logger(f"JSON decoding error in initial response: {e}")
+                return None, conversation_history
+        except Exception as e:
+            logger(f"Error generating initial case: {e}")
+            return None, conversation_history
 
-            option_data['cases'].append(case_data)
+    else:  # Subsequent questions
+        last_response = conversation_history[-1]
+        prompt = f"""{prompts['cases_2']} Previous response: The child chose option {last_response}.  Considering the child's response, ask a follow-up question in {language} appropriate for a {sex} child aged {age} and the subject/theme used should be {subject}. Provide only ONE situation and its options. Format as a single dictionary: {{'case': '...', 'options': [{'number':1, 'option':'...', 'health':..., ...}, ...], 'optimal': n}}."""
 
-        all_cases.append(option_data)  # Still append to all_cases
+        try:
+            response = get_response_gemini(prompt)
+            if not response:
+                return None, conversation_history
+            cleaned_response = clean_response(response)
+            try:
+                next_case = json.loads(cleaned_response)
+                return next_case, conversation_history
+            except json.JSONDecodeError as e:
+                logger(f"JSON decoding error in follow-up response: {e}")
+                return None, conversation_history
+        except Exception as e:
+            logger(f"Error generating follow-up case: {e}")
+            return None, conversation_history
 
-        case_file = output_dir / f"cases.json"  # Output to a single file
-        with open(case_file, 'w', encoding='utf-8') as f:
-            json.dump(all_cases, f, indent=4)  # Dump all cases
-        logger(f"Saved cases to {case_file}")
 
-    except Exception as e:
-        logger(f"Error processing cases: {e}")
-        return None
-    return all_cases
+    if len(conversation_history) >= 6:
+        return None, conversation_history
 
+
+# ... (rest of your utils.py remains the same)
 
 # Generate images for cases
 def gen_image_cases():
