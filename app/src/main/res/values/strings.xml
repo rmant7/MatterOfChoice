@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Matter of Choice</string>
-    <string name="intro">People make hundreds of decisions each and every day.Are we educated in making the best choices?</string>
+    <string name="intro">People make countless decisions daily. Are we equipped to make the best choices?</string>
     <string name="welcomeButton">Continue</string>
-    <string name="greeting">Welcome To Matter of Choice App</string>
+    <string name="greeting">Matter of Choice</string>
+    <string name="greeting2">Matter of Choice2</string>
+    <string name="greeting3">Matter of Choice3</string>
     <string name="edit_text_hint">type anything..</string>
     <string name="sendBtn">sendBtn\n</string>
     <string name="whatCan">What can I help you with?</string>
