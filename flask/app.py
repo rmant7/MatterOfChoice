@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, send_from_directory, request, jsonify
+from flask import Flask, render_template, url_for, send_from_directory, request, jsonify, session
 from utils import gen_cases, create_db # added the import for create_db function
 import sqlalchemy
 from pathlib import Path
