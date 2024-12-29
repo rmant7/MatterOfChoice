@@ -1,6 +1,6 @@
 # your_flask_app/utils.py
 import sqlalchemy
-
+import logging
 import json
 from pathlib import Path
 from datetime import datetime
@@ -102,12 +102,12 @@ output_path.mkdir(parents=True, exist_ok=True)
 def get_response_gemini(prompt: str) -> str:
     try:
         logger(f"Generating response for prompt: {prompt[:50]}...")
-        model = genai.GenerativeModel('gemini-pro-2')  # Update the model name
+        model = genai.GenerativeModel('gemini-2.0-flash-exp')  # Update the model name
         response = model.generate_content(prompt)
 
         if response and response._result.candidates:
             content = response._result.candidates[0].content.parts[0].text.strip()
-            logger(f"Received response: {content[:50]}...")
+            logger(f"Received response: {content[:5000]}...")
             return content
         else:
             logger("Empty or invalid response from Gemini.")
@@ -139,51 +139,58 @@ def extract_list(code: str) -> str:
         return None
 
 
-
 def gen_cases(language: str, sex: str, age: int, output_dir: Path, subject: str, conversation_history=None):
+    logger = logging.getLogger('my_app')
+
     if conversation_history is None:
         conversation_history = []
 
-    if len(conversation_history) == 0:  # First question
-        prompt = f"""{prompts['cases']} Respond in {language}.  The content should be appropriate for a {sex} child aged {age} and the subject/theme used should be {subject}. Provide only ONE situation and its options.  Format as a single dictionary: {{'case': '...', 'options': [{'number':1, 'option':'...', 'health':..., ...}, ...], 'optimal': n}}."""
-        try:
-            response = get_response_gemini(prompt)
-            if not response:
-                return None, conversation_history
-            cleaned_response = clean_response(response)
-            try:
-                first_case = json.loads(cleaned_response)
-                return first_case, conversation_history
-            except json.JSONDecodeError as e:
-                logger(f"JSON decoding error in initial response: {e}")
-                return None, conversation_history
-        except Exception as e:
-            logger(f"Error generating initial case: {e}")
-            return None, conversation_history
-
-    else:  # Subsequent questions
+    if len(conversation_history) == 0:
+        prompt = f"""{prompts['cases']} Respond in {language}. The content should be appropriate for a {sex} child aged {age} and the subject/theme used should be {subject}."""  # Initial prompt
+    else:
         last_response = conversation_history[-1]
-        prompt = f"""{prompts['cases_2']} Previous response: The child chose option {last_response}.  Considering the child's response, ask a follow-up question in {language} appropriate for a {sex} child aged {age} and the subject/theme used should be {subject}. Provide only ONE situation and its options. Format as a single dictionary: {{'case': '...', 'options': [{'number':1, 'option':'...', 'health':..., ...}, ...], 'optimal': n}}."""
+        escaped_subject = subject.replace("{", "{{").replace("}", "}}")
+        prompt = f"""{prompts['cases_2']} Previous response: The child chose option {last_response}. Considering the child's response, ask a follow-up question in {language} appropriate for a {sex} child aged {age} and the subject/theme used should be {escaped_subject}. Provide only ONE situation and its options. Format as a single dictionary: {{'case': '...', 'options': [{'number':1, 'option':'...', 'health':..., ...}, ...], 'optimal': n}}."""
 
-        try:
-            response = get_response_gemini(prompt)
-            if not response:
-                return None, conversation_history
-            cleaned_response = clean_response(response)
+    try:
+        response = get_response_gemini(prompt)
+        if not response:
+            return None, conversation_history  # Handle empty response
+
+        cleaned_response = clean_response(response)
+        list_content = extract_list(cleaned_response)
+
+        if list_content:
             try:
-                next_case = json.loads(cleaned_response)
-                return next_case, conversation_history
+                parsed = json.loads(list_content)
             except json.JSONDecodeError as e:
-                logger(f"JSON decoding error in follow-up response: {e}")
+                logger.exception(f"JSON decoding error: {e}")
                 return None, conversation_history
-        except Exception as e:
-            logger(f"Error generating follow-up case: {e}")
+
+            case_data_dict = parsed if isinstance(parsed, dict) else parsed[0] if isinstance(parsed, list) and parsed else {}
+            case_id = str(uuid.uuid4())
+
+            case_data = {'case_id': case_id, 'case': case_data_dict.get('case', ''), 'optimal': case_data_dict.get('optimal', 0), 'options': []}
+
+            for option_data_dict in case_data_dict.get('options', []):
+                option_id = str(uuid.uuid4())
+                option_item = {'option_id': option_id, 'number': option_data_dict['number'], 'option': option_data_dict['option'],
+                               'health': option_data_dict.get('health',0), 'wealth': option_data_dict.get('wealth',0), 'relationships': option_data_dict.get('relationships',0),
+                               'happiness': option_data_dict.get('happiness',0), 'knowledge': option_data_dict.get('knowledge',0), 'karma': option_data_dict.get('karma',0),
+                               'time_management': option_data_dict.get('time_management',0), 'environmental_impact': option_data_dict.get('environmental_impact',0),
+                               'personal_growth': option_data_dict.get('personal_growth',0), 'social_responsibility': option_data_dict.get('social_responsibility',0)}
+                case_data['options'].append(option_item)
+
+            return case_data, conversation_history
+
+
+        else:
+            logger.warning("extract_list returned None or empty")  # Log this issue
             return None, conversation_history
 
-
-    if len(conversation_history) >= 6:
+    except Exception as e:
+        logger.exception(f"Error in gen_cases: {e}")
         return None, conversation_history
-
 
 # ... (rest of your utils.py remains the same)
 
