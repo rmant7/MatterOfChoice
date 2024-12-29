@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">Matter of Choice</string>
     <string name="intro">People make countless decisions daily. Are we equipped to make the best choices?</string>
+    <string name="intro_2">What if children, while playing, would gain tools for real life decision making?</string>
+    <string name="intro_3">Usually, we learn from negative consequences. Wouldn’t it be better to learn from virtual failures?</string>
     <string name="welcomeButton">Continue</string>
     <string name="greeting">Matter of Choice</string>
-    <string name="greeting2">Matter of Choice2</string>
-    <string name="greeting3">Matter of Choice3</string>
+    <string name="greeting2">Have fun</string>
+    <string name="greeting3">Virtual Failures</string>
     <string name="edit_text_hint">type anything..</string>
     <string name="sendBtn">sendBtn\n</string>
     <string name="whatCan">What can I help you with?</string>

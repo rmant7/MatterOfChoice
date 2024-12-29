@@ -11,8 +11,8 @@
         android:label="IntroFragment"
         tools:layout="@layout/intro_fragment">
         <action
-            android:id="@+id/action_introFragment_to_personFragment"
-            app:destination="@id/personFragment"
+            android:id="@+id/action_introFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
             app:enterAnim="@anim/from_right" />
     </fragment>
     <fragment
@@ -20,4 +20,14 @@
         android:name="com.matterofchoice.PersonFragment"
         android:label="PersonFragment"
         tools:layout="@layout/person_fragment"/>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.matterofchoice.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/welcome_fragment">
+        <action
+            android:id="@+id/action_welcomeFragment_to_personFragment"
+            app:destination="@id/personFragment"
+            app:enterAnim="@anim/from_right" />
+    </fragment>
 </navigation>

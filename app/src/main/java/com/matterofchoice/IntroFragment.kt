@@ -38,8 +38,7 @@ class IntroFragment : Fragment() {
 
         val myList = listOf(
             IntroSlide(requireContext().getString(R.string.greeting),requireContext().getString(R.string.intro),R.drawable.d2),
-            IntroSlide(requireContext().getString(R.string.greeting2),"this is a test and I think it will work2",R.drawable.d1),
-            IntroSlide(requireContext().getString(R.string.greeting3),"this is a test and I think it will work3",R.drawable.welcome_image)
+            IntroSlide(requireContext().getString(R.string.greeting2),requireContext().getString(R.string.intro_2),R.drawable.d1)
         )
 
 
@@ -57,18 +56,18 @@ class IntroFragment : Fragment() {
         val viewPager = binding.myViewPager
 
         binding.nextBtn.setOnClickListener {
-            if (viewPager.currentItem + 1 < myAdapter.itemCount){
+            if (viewPager.currentItem + 1 < 2){
                 viewPager.currentItem += 1
             }else{
-                findNavController().navigate(R.id.action_introFragment_to_personFragment)
+                findNavController().navigate(R.id.action_introFragment_to_welcomeFragment)
             }
         }
         binding.skipBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_introFragment_to_personFragment)
+            findNavController().navigate(R.id.action_introFragment_to_welcomeFragment)
         }
     }
     private fun setDots(context: Context){
-        val dots = arrayOfNulls<ImageView>(myAdapter.itemCount)
+        val dots = arrayOfNulls<ImageView>(3)
         val layoutParams: LinearLayout.LayoutParams =
             LinearLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
         layoutParams.setMargins(8,0,8,0)
