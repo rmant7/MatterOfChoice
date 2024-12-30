@@ -5,6 +5,7 @@ from pathlib import Path
 import json
 import os
 import logging
+
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True  #For development reload the template
 app.secret_key = os.urandom(24) # Don't forget this for sessions
@@ -46,7 +47,7 @@ def serve_index():
 @app.route('/generate_cases', methods=['POST', 'GET'])
 def generate_cases():
     if request.method == 'GET':
-        session.pop('conversation_history', None)
+        session.pop('turn', None)
         return jsonify({"message": "Session cleared."}), 200
 
     logger.debug("generate_cases route entered")
@@ -55,32 +56,54 @@ def generate_cases():
     sex = data.get('sex')
     age = data.get('age')
     subject = data.get('subject')
-    user_response = data.get('user_response') # Retrieve user response
+    user_answer = data.get('answers')
 
-    if not all([language, sex, age, subject]):  # Make subject required
-        return jsonify({"error": "language, sex, age and subject are required fields."}), 400
-
+    if not all([language, sex, age, subject]):
+        return jsonify({"error": "language, sex, age, and subject are required."}), 400
     try:
         age = int(age)
-    except (TypeError, ValueError):
-        return jsonify({"error": "age must be a valid integer."}), 400
+    except ValueError:
+        return jsonify({"error": "Invalid age (must be an integer)."}), 400
 
-    output_dir = BASE_DIR / 'output' / 'game'
+    output_filepath = BASE_DIR / 'output' / 'game' / 'conversation.json'
+    output_dir = output_filepath.parent
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    conversation_history = session.get('conversation_history', [])
+    turn = session.get('turn', 1)
 
     try:
-        case_data, conversation_history = gen_cases(language, sex, age, output_dir, subject, conversation_history=conversation_history + ([user_response] if user_response is not None else []))
-        session['conversation_history'] = conversation_history
-
-        if case_data:
-            return jsonify({'data': case_data}), 200
+        if turn == 1:
+            case_data, conversation_data = gen_cases(language, sex, age, output_dir, subject)
+            if case_data is None:
+                return jsonify({"error": "Failed to generate initial case."}), 500
+            session['turn'] = 2
         else:
-            return jsonify({'message': 'Conversation ended'}), 200  # Indicate no more cases
+            if user_answer is None:
+                return jsonify({"error": "User answer is required."}), 400
+            try:
+                user_answer = int(user_answer)
+                with open(output_filepath, 'r') as f:
+                    conversation_data = json.load(f)
+
+                # Validate user answer
+                if 'data' not in conversation_data or 'options' not in conversation_data['data']:
+                    return jsonify({"error": "Invalid conversation data."}), 500
+                options_length = len(conversation_data['data']['options'])
+                if not 1 <= user_answer <= options_length:
+                    return jsonify({"error": "Invalid user answer."}), 400
+
+                conversation_data['data']['user_answer'] = user_answer
+                case_data, conversation_data = gen_cases(language, sex, age, output_dir, subject, conversation_data)
+                if case_data is None:
+                    return jsonify({"error": "Failed to generate case."}), 500
+                session['turn'] = min(turn + 1, 7)
+            except (FileNotFoundError, json.JSONDecodeError, ValueError, KeyError) as e:
+                return jsonify({"error": f"Error processing user response: {e}"}), 500
+
+        return jsonify({'data': case_data}), 200
     except Exception as e:
         logger.exception(f"An unexpected error occurred: {e}")
-        return jsonify({"error": "An unexpected error occurred"}), 500
+        return jsonify({"error": "An unexpected error occurred."}), 500
 
 
 

@@ -23,3 +23,346 @@ NameError: name 'logging' is not defined. Did you forget to import 'logging'
 2024-12-29 21:08:18,590 - my_app - DEBUG - generate_cases route entered
 2024-12-29 21:09:52,561 - my_app - DEBUG - Logger configured. Starting app...
 2024-12-29 21:10:05,013 - my_app - DEBUG - generate_cases route entered
+2024-12-29 21:11:30,955 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-29 21:11:44,607 - my_app - DEBUG - generate_cases route entered
+2024-12-30 11:00:32,860 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:00:38,047 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:03:25,026 - my_app - DEBUG - generate_cases route entered
+2024-12-30 11:10:25,301 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:10:34,436 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:11:02,815 - my_app - DEBUG - generate_cases route entered
+2024-12-30 11:13:13,405 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:13:20,682 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:13:33,305 - my_app - DEBUG - generate_cases route entered
+2024-12-30 11:40:31,506 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:40:59,916 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:43:15,990 - my_app - DEBUG - generate_cases route entered
+2024-12-30 11:43:21,394 - my_app - ERROR - Error parsing Gemini's response: Missing required keys in Gemini's response.
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\assignment\flask\utils.py", line 168, in gen_cases
+    raise ValueError("Missing required keys in Gemini's response.")
+ValueError: Missing required keys in Gemini's response.
+2024-12-30 11:47:44,821 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:47:55,393 - my_app - DEBUG - generate_cases route entered
+2024-12-30 11:48:00,821 - my_app - ERROR - Error parsing Gemini's response: Missing required keys in Gemini's response.
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\assignment\flask\utils.py", line 183, in gen_cases
+    raise ValueError("Missing required keys in Gemini's response.")
+ValueError: Missing required keys in Gemini's response.
+2024-12-30 11:48:21,666 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:50:54,283 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:51:00,785 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:51:07,831 - my_app - DEBUG - generate_cases route entered
+2024-12-30 11:55:28,097 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:55:55,222 - my_app - DEBUG - generate_cases route entered
+2024-12-30 11:58:34,448 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:58:58,057 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:59:05,085 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 11:59:14,509 - my_app - DEBUG - generate_cases route entered
+2024-12-30 11:59:14,520 - my_app - INFO - Generating cases: language=English, sex=Male, age=16, subject=friends and classmates, teachers and educators, conversation_data=None
+2024-12-30 11:59:14,565 - my_app - ERROR - Unexpected error in gen_cases: Invalid format specifier '1, 'option':'...', 'health':..., ...' for object of type 'str'
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\assignment\flask\utils.py", line 150, in gen_cases
+    prompt = f"""{prompts['cases']} Respond in {language}.  The content should be appropriate for a {sex} child aged {age} and the subject/theme used should be {subject}. Provide only ONE situation and its options. Format as a single dictionary: {{'case': '...', 'options': [{'number':1, 'option':'...', 'health':..., ...}, ...], 'optimal': n}}."""
+                                                                                                                                                                                                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid format specifier '1, 'option':'...', 'health':..., ...' for object of type 'str'
+2024-12-30 11:59:36,360 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 19:38:40,678 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 19:38:46,140 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 19:48:24,314 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 19:58:36,873 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 19:59:11,292 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:00:04,677 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:00:35,668 - my_app - DEBUG - generate_cases route entered
+2024-12-30 20:01:27,597 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:01:37,809 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:01:46,094 - my_app - DEBUG - generate_cases route entered
+2024-12-30 20:02:24,914 - my_app - DEBUG - generate_cases route entered
+2024-12-30 20:10:29,878 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:15:57,187 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:17:33,787 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:17:50,113 - my_app - DEBUG - generate_cases route entered
+2024-12-30 20:17:50,121 - my_app - DEBUG - gen_cases function called with parameters: language=English, sex=Male, age=16, subject=friends and classmates, teachers and educators, conversation_data=None
+2024-12-30 20:17:50,125 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request. You are developing scenarios for an educational game for preschool children aged 5-6. This game teaches the child how to react appropriately to various life situations and make appropriate behavioral decisions. Your task is to compile a list of 1 life situation that can occur on the street, at school, at home, on the playground, in the store, in class, and so on. For each situation, provide a few different behavioral options, evaluate each option based on Health (physical and mental well-being), Wealth (financial decisions), Relationships (personal connections), Happiness (overall joy), Knowledge (learning and education), Karma (altruistic actions), Time Management (effective use of time), Environmental Impact (eco-friendly choices), Personal Growth (self-improvement), and Social Responsibility (positive contributions to society) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a case and has the following keys: 'case' for the situation description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option. Each option dictionary should have the keys 'number', 'option', 'health', 'wealth', 'relationships', 'happiness', 'knowledge', 'karma', 'time_management', 'environmental_impact', 'personal_growth', and 'social_responsibility'. Do not repeat situations. Here's an example: [{'case': 'You find a lost toy on the playground. What do you do?', 'options': [{'number': 1, 'option': 'Keep the toy for yourself.', 'health': 0, 'money': 0, 'friends': -2, 'wealth': 0, 'relationships': -2, 'happiness': -1, 'knowledge': 0, 'karma': -3, 'time_management': 0, 'environmental_impact': 0, 'personal_growth': -1, 'social_responsibility': -2}, {'number': 2, 'option': 'Give the toy to a teacher.', 'health': 2, 'money': 0, 'friends': 4, 'wealth': 0, 'relationships': 2, 'happiness': 3, 'knowledge': 1, 'karma': 4, 'time_management': 1, 'environmental_impact': 0, 'personal_growth': 2, 'social_responsibility': 3}], 'optimal': '2'}] Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a Male child aged 16 and the subject/theme used should be friends and classmates, teachers and educators.
+2024-12-30 20:17:56,873 - my_app - DEBUG - Gemini response: ```python
+[
+  {
+    "case": "Your friend, Alex, is being picked on by a group of older classmates in the hallway. What do you do?",
+    "options": [
+      {
+        "number": 1,
+        "option": "Pre...
+2024-12-30 20:17:56,877 - my_app - DEBUG - Extracted list content: [{"case": "Your friend, Alex, is being picked on by a group of older classmates in the hallway. What do you do?", "options": [{"number": 1, "option": "Pretend you don't see anything and walk away quickly.", "health": 3, "wealth": 0, "relationships": -3, "happiness": -2, "knowledge": 0, "karma": -4, "time_management": 4, "environmental_impact": 0, "personal_growth": -2, "social_responsibility": -4}, {"number": 2, "option": "Join in with the older classmates to not be the next target.", "health": -2, "wealth": 0, "relationships": -4, "happiness": -5, "knowledge": 0, "karma": -5, "time_management": 4, "environmental_impact": 0, "personal_growth": -4, "social_responsibility": -5}, {"number": 3, "option": "Try to de-escalate the situation by talking to the older classmates and calmly telling them to stop.", "health": 2, "wealth": 0, "relationships": 3, "happiness": 2, "knowledge": 2, "karma": 3, "time_management": 3, "environmental_impact": 0, "personal_growth": 3, "social_responsibility": 3}, {"number": 4, "option": "Go get a teacher or another adult for help.", "health": 4, "wealth": 0, "relationships": 4, "happiness": 4, "knowledge": 1, "karma": 4, "time_management": 2, "environmental_impact": 0, "personal_growth": 2, "social_responsibility": 5}], "optimal": 4}]
+2024-12-30 20:17:56,889 - my_app - DEBUG - Conversation data saved to C:\Users\HP\Desktop\stuff\CODING\MOCAPI\assignment\flask\output\game\conversation.json
+2024-12-30 20:21:00,146 - my_app - DEBUG - generate_cases route entered
+2024-12-30 20:21:00,151 - my_app - DEBUG - gen_cases function called with parameters: language=English, sex=Male, age=16, subject=friends and classmates, teachers and educators, conversation_data={'data': {'case': 'Your friend, Alex, is being picked on by a group of older classmates in the hallway. What do you do?', 'optimal': 4, 'options': [{'number': 1, 'option': "Pretend you don't see anything and walk away quickly.", 'health': 3, 'wealth': 0, 'relationships': -3, 'happiness': -2, 'knowledge': 0, 'karma': -4, 'time_management': 4, 'environmental_impact': 0, 'personal_growth': -2, 'social_responsibility': -4, 'option_id': 'cfef6ec4-6e9a-4888-8abb-0b6a574f7491'}, {'number': 2, 'option': 'Join in with the older classmates to not be the next target.', 'health': -2, 'wealth': 0, 'relationships': -4, 'happiness': -5, 'knowledge': 0, 'karma': -5, 'time_management': 4, 'environmental_impact': 0, 'personal_growth': -4, 'social_responsibility': -5, 'option_id': '7ee03d07-bca4-4db2-95b7-71c7f5326731'}, {'number': 3, 'option': 'Try to de-escalate the situation by talking to the older classmates and calmly telling them to stop.', 'health': 2, 'wealth': 0, 'relationships': 3, 'happiness': 2, 'knowledge': 2, 'karma': 3, 'time_management': 3, 'environmental_impact': 0, 'personal_growth': 3, 'social_responsibility': 3, 'option_id': '12fe2462-e5da-49ff-964b-3742c88f68b1'}, {'number': 4, 'option': 'Go get a teacher or another adult for help.', 'health': 4, 'wealth': 0, 'relationships': 4, 'happiness': 4, 'knowledge': 1, 'karma': 4, 'time_management': 2, 'environmental_impact': 0, 'personal_growth': 2, 'social_responsibility': 5, 'option_id': '46a1e235-911f-4950-991d-7ce4a773933b'}], 'case_id': '0b4da563-b7c5-4e1f-bb30-064e796b83e3', 'user_answer': 3}}
+2024-12-30 20:21:00,151 - my_app - ERROR - An unexpected error occurred in gen_cases: Invalid format specifier '1, 'option':'...', 'health':..., ...' for object of type 'str'
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\assignment\flask\utils.py", line 165, in gen_cases
+    prompt = f"""{prompts['cases_2']} The child's previous response was choice number {user_choice} for case '{previous_response.get('case', 'unknown case')}'. In the role of a psychologist designing a child's game, ask a follow-up question in {language} appropriate for a {sex} child aged {age} with the theme '{subject}'. Provide only ONE situation and its options. Format as a single dictionary: {{'case': '...', 'options': [{'number':1, 'option':'...', 'health':..., ...}, ...], 'optimal': n}}."""
+                                                                                                                                                                                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid format specifier '1, 'option':'...', 'health':..., ...' for object of type 'str'
+2024-12-30 20:27:00,066 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:28:13,187 - my_app - DEBUG - generate_cases route entered
+2024-12-30 20:28:13,193 - my_app - DEBUG - gen_cases function called with parameters: language=English, sex=Male, age=16, subject=friends and classmates, teachers and educators, conversation_data=None
+2024-12-30 20:28:13,193 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request. You are developing scenarios for an educational game for preschool children aged 5-6. This game teaches the child how to react appropriately to various life situations and make appropriate behavioral decisions. Your task is to compile a list of 1 life situation that can occur on the street, at school, at home, on the playground, in the store, in class, and so on. For each situation, provide a few different behavioral options, evaluate each option based on Health (physical and mental well-being), Wealth (financial decisions), Relationships (personal connections), Happiness (overall joy), Knowledge (learning and education), Karma (altruistic actions), Time Management (effective use of time), Environmental Impact (eco-friendly choices), Personal Growth (self-improvement), and Social Responsibility (positive contributions to society) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a case and has the following keys: 'case' for the situation description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option. Each option dictionary should have the keys 'number', 'option', 'health', 'wealth', 'relationships', 'happiness', 'knowledge', 'karma', 'time_management', 'environmental_impact', 'personal_growth', and 'social_responsibility'. Do not repeat situations. Here's an example: [{'case': 'You find a lost toy on the playground. What do you do?', 'options': [{'number': 1, 'option': 'Keep the toy for yourself.', 'health': 0, 'money': 0, 'friends': -2, 'wealth': 0, 'relationships': -2, 'happiness': -1, 'knowledge': 0, 'karma': -3, 'time_management': 0, 'environmental_impact': 0, 'personal_growth': -1, 'social_responsibility': -2}, {'number': 2, 'option': 'Give the toy to a teacher.', 'health': 2, 'money': 0, 'friends': 4, 'wealth': 0, 'relationships': 2, 'happiness': 3, 'knowledge': 1, 'karma': 4, 'time_management': 1, 'environmental_impact': 0, 'personal_growth': 2, 'social_responsibility': 3}], 'optimal': '2'}] Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a Male child aged 16 and the subject/theme used should be friends and classmates, teachers and educators.
+2024-12-30 20:28:19,347 - my_app - DEBUG - Gemini response: ```python
+[
+  {
+    "case": "Your friend asks to copy your homework during class. What do you do?",
+    "options": [
+      {
+        "number": 1,
+        "option": "Let your friend copy your homework....
+2024-12-30 20:28:19,348 - my_app - DEBUG - Extracted list content: [{"case": "Your friend asks to copy your homework during class. What do you do?", "options": [{"number": 1, "option": "Let your friend copy your homework.", "health": 3, "wealth": 0, "relationships": 3, "happiness": 3, "knowledge": 1, "karma": 1, "time_management": 3, "environmental_impact": 0, "personal_growth": 1, "social_responsibility": 1}, {"number": 2, "option": "Politely refuse and suggest working together on the next assignment to understand the material better.", "health": 4, "wealth": 0, "relationships": 4, "happiness": 4, "knowledge": 4, "karma": 4, "time_management": 4, "environmental_impact": 0, "personal_growth": 4, "social_responsibility": 4}, {"number": 3, "option": "Agree, but tell them they have to do something for you later (e.g. buying lunch).", "health": 3, "wealth": 2, "relationships": 2, "happiness": 3, "knowledge": 1, "karma": -1, "time_management": 3, "environmental_impact": 0, "personal_growth": 1, "social_responsibility": -1}], "optimal": 2}]
+2024-12-30 20:28:19,363 - my_app - DEBUG - Conversation data saved to C:\Users\HP\Desktop\stuff\CODING\MOCAPI\assignment\flask\output\game\conversation.json
+2024-12-30 20:28:35,884 - my_app - DEBUG - generate_cases route entered
+2024-12-30 20:28:35,886 - my_app - DEBUG - gen_cases function called with parameters: language=English, sex=Male, age=16, subject=friends and classmates, teachers and educators, conversation_data={'data': {'case': 'Your friend asks to copy your homework during class. What do you do?', 'optimal': 2, 'options': [{'number': 1, 'option': 'Let your friend copy your homework.', 'health': 3, 'wealth': 0, 'relationships': 3, 'happiness': 3, 'knowledge': 1, 'karma': 1, 'time_management': 3, 'environmental_impact': 0, 'personal_growth': 1, 'social_responsibility': 1, 'option_id': '2a374663-4660-416a-9c2b-f6bfdc73a3d9'}, {'number': 2, 'option': 'Politely refuse and suggest working together on the next assignment to understand the material better.', 'health': 4, 'wealth': 0, 'relationships': 4, 'happiness': 4, 'knowledge': 4, 'karma': 4, 'time_management': 4, 'environmental_impact': 0, 'personal_growth': 4, 'social_responsibility': 4, 'option_id': '828b170a-c75a-46d1-9033-42d5ae674bd2'}, {'number': 3, 'option': 'Agree, but tell them they have to do something for you later (e.g. buying lunch).', 'health': 3, 'wealth': 2, 'relationships': 2, 'happiness': 3, 'knowledge': 1, 'karma': -1, 'time_management': 3, 'environmental_impact': 0, 'personal_growth': 1, 'social_responsibility': -1, 'option_id': '4742ebe4-3924-46de-b131-77ce211fa913'}], 'case_id': '6f47e920-3ec8-4245-9976-68da2cf1f8cb', 'user_answer': 3}}
+2024-12-30 20:28:35,886 - my_app - ERROR - An unexpected error occurred in gen_cases: Invalid format specifier '1, 'option':'...', 'health':..., ...' for object of type 'str'
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\assignment\flask\utils.py", line 165, in gen_cases
+    prompt = f"""{prompts['cases_2']} The child's previous response was choice number {user_choice} for case '{previous_response.get('case', 'unknown case')}'. In the role of a psychologist designing a child's game, ask a follow-up question in {language} appropriate for a {sex} child aged {age} with the theme '{subject}'. Provide only ONE situation and its options. Format as a single dictionary: {{'case': '...', 'options': [{'number':1, 'option':'...', 'health':..., ...}, ...], 'optimal': n}}."""
+                                                                                                                                                                                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid format specifier '1, 'option':'...', 'health':..., ...' for object of type 'str'
+2024-12-30 20:35:44,132 - my_app - DEBUG - generate_cases route entered
+2024-12-30 20:35:44,140 - my_app - DEBUG - gen_cases function called with parameters: language=English, sex=Male, age=16, subject=friends and classmates, teachers and educators, conversation_data={'data': {'case': 'Your friend asks to copy your homework during class. What do you do?', 'optimal': 2, 'options': [{'number': 1, 'option': 'Let your friend copy your homework.', 'health': 3, 'wealth': 0, 'relationships': 3, 'happiness': 3, 'knowledge': 1, 'karma': 1, 'time_management': 3, 'environmental_impact': 0, 'personal_growth': 1, 'social_responsibility': 1, 'option_id': '2a374663-4660-416a-9c2b-f6bfdc73a3d9'}, {'number': 2, 'option': 'Politely refuse and suggest working together on the next assignment to understand the material better.', 'health': 4, 'wealth': 0, 'relationships': 4, 'happiness': 4, 'knowledge': 4, 'karma': 4, 'time_management': 4, 'environmental_impact': 0, 'personal_growth': 4, 'social_responsibility': 4, 'option_id': '828b170a-c75a-46d1-9033-42d5ae674bd2'}, {'number': 3, 'option': 'Agree, but tell them they have to do something for you later (e.g. buying lunch).', 'health': 3, 'wealth': 2, 'relationships': 2, 'happiness': 3, 'knowledge': 1, 'karma': -1, 'time_management': 3, 'environmental_impact': 0, 'personal_growth': 1, 'social_responsibility': -1, 'option_id': '4742ebe4-3924-46de-b131-77ce211fa913'}], 'case_id': '6f47e920-3ec8-4245-9976-68da2cf1f8cb', 'user_answer': 3}}
+2024-12-30 20:35:44,141 - my_app - ERROR - An unexpected error occurred in gen_cases: Invalid format specifier '1, 'option':'...', 'health':..., ...' for object of type 'str'
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\assignment\flask\utils.py", line 165, in gen_cases
+    prompt = f"""{prompts['cases_2']} The child's previous response was choice number {user_choice} for case '{previous_response.get('case', 'unknown case')}'. In the role of a psychologist designing a child's game, ask a follow-up question in {language} appropriate for a {sex} child aged {age} with the theme '{subject}'. Provide only ONE situation and its options. Format as a single dictionary: {{'case': '...', 'options': [{'number':1, 'option':'...', 'health':..., ...}, ...], 'optimal': n}}."""
+                                                                                                                                                                                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid format specifier '1, 'option':'...', 'health':..., ...' for object of type 'str'
+2024-12-30 20:41:26,046 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:41:37,737 - my_app - DEBUG - generate_cases route entered
+2024-12-30 20:41:37,737 - my_app - DEBUG - gen_cases function called with parameters: language=English, sex=Male, age=16, subject=friends and classmates, teachers and educators, conversation_data=None
+2024-12-30 20:41:37,741 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request. You are developing scenarios for an educational game for preschool children aged 5-6. This game teaches the child how to react appropriately to various life situations and make appropriate behavioral decisions. Your task is to compile a list of 1 life situation that can occur on the street, at school, at home, on the playground, in the store, in class, and so on. For each situation, provide a few different behavioral options, evaluate each option based on Health (physical and mental well-being), Wealth (financial decisions), Relationships (personal connections), Happiness (overall joy), Knowledge (learning and education), Karma (altruistic actions), Time Management (effective use of time), Environmental Impact (eco-friendly choices), Personal Growth (self-improvement), and Social Responsibility (positive contributions to society) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a case and has the following keys: 'case' for the situation description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option. Each option dictionary should have the keys 'number', 'option', 'health', 'wealth', 'relationships', 'happiness', 'knowledge', 'karma', 'time_management', 'environmental_impact', 'personal_growth', and 'social_responsibility'. Do not repeat situations. Here's an example: [{'case': 'You find a lost toy on the playground. What do you do?', 'options': [{'number': 1, 'option': 'Keep the toy for yourself.', 'health': 0, 'money': 0, 'friends': -2, 'wealth': 0, 'relationships': -2, 'happiness': -1, 'knowledge': 0, 'karma': -3, 'time_management': 0, 'environmental_impact': 0, 'personal_growth': -1, 'social_responsibility': -2}, {'number': 2, 'option': 'Give the toy to a teacher.', 'health': 2, 'money': 0, 'friends': 4, 'wealth': 0, 'relationships': 2, 'happiness': 3, 'knowledge': 1, 'karma': 4, 'time_management': 1, 'environmental_impact': 0, 'personal_growth': 2, 'social_responsibility': 3}], 'optimal': '2'}] Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a Male child aged 16 and the subject/theme used should be friends and classmates, teachers and educators.
+2024-12-30 20:41:43,806 - my_app - DEBUG - Gemini response: ```python
+[
+    {
+        "case": "During a group project in class, your friend isn't doing their share of the work. What do you do?",
+        "options": [
+            {
+                "number": 1,
+ ...
+2024-12-30 20:41:43,811 - my_app - DEBUG - Extracted list content: [{"case": "During a group project in class, your friend isn't doing their share of the work. What do you do?", "options": [{"number": 1, "option": "Do all the work yourself so you can get a good grade.", "health": 3, "wealth": 0, "relationships": -1, "happiness": 2, "knowledge": 4, "karma": 1, "time_management": 1, "environmental_impact": 0, "personal_growth": 1, "social_responsibility": 0}, {"number": 2, "option": "Complain to the teacher about your friend.", "health": 2, "wealth": 0, "relationships": -2, "happiness": 1, "knowledge": 0, "karma": -1, "time_management": 0, "environmental_impact": 0, "personal_growth": -1, "social_responsibility": -1}, {"number": 3, "option": "Talk to your friend about how they can help, and offer to work together to finish the project.", "health": 4, "wealth": 0, "relationships": 4, "happiness": 4, "knowledge": 4, "karma": 4, "time_management": 3, "environmental_impact": 0, "personal_growth": 4, "social_responsibility": 4}], "optimal": 3}]
+2024-12-30 20:41:43,824 - my_app - DEBUG - Conversation data saved to C:\Users\HP\Desktop\stuff\CODING\MOCAPI\assignment\flask\output\game\conversation.json
+2024-12-30 20:42:06,187 - my_app - DEBUG - generate_cases route entered
+2024-12-30 20:42:06,190 - my_app - DEBUG - gen_cases function called with parameters: language=English, sex=Male, age=16, subject=friends and classmates, teachers and educators, conversation_data={'data': {'case': "During a group project in class, your friend isn't doing their share of the work. What do you do?", 'optimal': 3, 'options': [{'number': 1, 'option': 'Do all the work yourself so you can get a good grade.', 'health': 3, 'wealth': 0, 'relationships': -1, 'happiness': 2, 'knowledge': 4, 'karma': 1, 'time_management': 1, 'environmental_impact': 0, 'personal_growth': 1, 'social_responsibility': 0, 'option_id': '694936b2-6454-43b6-a29a-a17f18393d7d'}, {'number': 2, 'option': 'Complain to the teacher about your friend.', 'health': 2, 'wealth': 0, 'relationships': -2, 'happiness': 1, 'knowledge': 0, 'karma': -1, 'time_management': 0, 'environmental_impact': 0, 'personal_growth': -1, 'social_responsibility': -1, 'option_id': '0c8547a9-44ef-4ed7-97f3-03e4e46c6732'}, {'number': 3, 'option': 'Talk to your friend about how they can help, and offer to work together to finish the project.', 'health': 4, 'wealth': 0, 'relationships': 4, 'happiness': 4, 'knowledge': 4, 'karma': 4, 'time_management': 3, 'environmental_impact': 0, 'personal_growth': 4, 'social_responsibility': 4, 'option_id': 'ff3fa029-f446-414e-bf5d-10bb4331714f'}], 'case_id': 'dc747b68-f366-432b-9a99-67f56a1c1980', 'user_answer': 3}}
+2024-12-30 20:42:06,190 - my_app - DEBUG - Follow-up prompt generated: Create a list of 1 unique life situation that a child might encounter in various places. Each situation should present a challenge that the child might face and should not contain any possible solutions. The goal is diversity and stimulating the child's thinking about appropriate behavioral solutions. Format the answer as a Python list. Here is an example answer with different scenarios: ["You are walking down the street with your friend and see someone throwing trash on the sidewalk. What will you do?", "You went to the toy store and saw that the very toy you have wanted for a long time is for sale. But you don't have enough money to buy it. What will you do?", "You are playing in the sandbox with your friends and making a sandcastle. But then another child comes and starts breaking your castle. What will you do?"] The child's previous response was choice number 3 for case 'During a group project in class, your friend isn't doing their share of the work. What do you do?'. In the role of a psychologist designing a child's game, ask a follow-up question in English appropriate for a Male child aged 16 with the theme 'friends and classmates, teachers and educators'. Provide only ONE situation and its options. Format as a single dictionary: {{'case': '...', 'options': [{'number':1, 'option':'...', 'health':..., ...}, ...], 'optimal': n}}
+2024-12-30 20:42:09,737 - my_app - DEBUG - Gemini response: ```python
+[
+    "You are at a family gathering, and an adult relative starts telling a story that makes you feel uncomfortable. What will you do?",
+    "You are at a school assembly, and the speaker m...
+2024-12-30 20:42:09,786 - my_app - DEBUG - Extracted list content: None
+2024-12-30 20:42:09,787 - my_app - ERROR - extract_list returned None or empty string.
+2024-12-30 20:45:16,575 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:45:27,120 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:45:40,729 - my_app - DEBUG - generate_cases route entered
+2024-12-30 20:45:40,737 - my_app - DEBUG - gen_cases function called with parameters: language=English, sex=Male, age=16, subject=friends and classmates, teachers and educators, conversation_data=None
+2024-12-30 20:45:40,738 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request. You are developing scenarios for an educational game for preschool children aged 5-6. This game teaches the child how to react appropriately to various life situations and make appropriate behavioral decisions. Your task is to compile a list of 1 life situation that can occur on the street, at school, at home, on the playground, in the store, in class, and so on. For each situation, provide a few different behavioral options, evaluate each option based on Health (physical and mental well-being), Wealth (financial decisions), Relationships (personal connections), Happiness (overall joy), Knowledge (learning and education), Karma (altruistic actions), Time Management (effective use of time), Environmental Impact (eco-friendly choices), Personal Growth (self-improvement), and Social Responsibility (positive contributions to society) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a case and has the following keys: 'case' for the situation description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option. Each option dictionary should have the keys 'number', 'option', 'health', 'wealth', 'relationships', 'happiness', 'knowledge', 'karma', 'time_management', 'environmental_impact', 'personal_growth', and 'social_responsibility'. Do not repeat situations. Here's an example: [{'case': 'You find a lost toy on the playground. What do you do?', 'options': [{'number': 1, 'option': 'Keep the toy for yourself.', 'health': 0, 'money': 0, 'friends': -2, 'wealth': 0, 'relationships': -2, 'happiness': -1, 'knowledge': 0, 'karma': -3, 'time_management': 0, 'environmental_impact': 0, 'personal_growth': -1, 'social_responsibility': -2}, {'number': 2, 'option': 'Give the toy to a teacher.', 'health': 2, 'money': 0, 'friends': 4, 'wealth': 0, 'relationships': 2, 'happiness': 3, 'knowledge': 1, 'karma': 4, 'time_management': 1, 'environmental_impact': 0, 'personal_growth': 2, 'social_responsibility': 3}], 'optimal': '2'}] Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a Male child aged 16 and the subject/theme used should be friends and classmates, teachers and educators.
+2024-12-30 20:45:46,507 - my_app - DEBUG - Gemini response: ```python
+[
+    {
+        "case": "During class, you notice your friend, Liam, is struggling with a math problem and looks frustrated. What do you do?",
+        "options": [
+            {
+            ...
+2024-12-30 20:45:46,509 - my_app - ERROR - Error decoding JSON response: Expecting value: line 1 column 1 (char 0), Raw Response: ```python
+[
+    {
+        "case": "During class, you notice your friend, Liam, is struggling with a math problem and looks frustrated. What do you do?",
+        "options": [
+            {
+                "number": 1,
+                "option": "Ignore Liam and focus on your own work, thinking it's his problem.",
+                "health": 3,
+                "wealth": 0,
+                "relationships": -2,
+                "happiness": 2,
+                "knowledge": 3,
+                "karma": -2,
+                "time_management": 3,
+                 "environmental_impact": 0,
+                "personal_growth": -1,
+                "social_responsibility": -1
+            },
+            {
+                "number": 2,
+                "option": "Quietly offer to help Liam with the problem, explaining it in a way he might understand.",
+                "health": 4,
+                "wealth": 0,
+                "relationships": 4,
+                 "happiness": 4,
+                "knowledge": 4,
+                "karma": 4,
+                "time_management": 2,
+                 "environmental_impact": 0,
+                "personal_growth": 3,
+                "social_responsibility": 4
+            },
+             {
+                "number": 3,
+                "option": "Make fun of Liam for not understanding the math problem, even though you secretly know how to solve it.",
+                "health": 0,
+                "wealth": 0,
+                "relationships": -4,
+                 "happiness": -2,
+                "knowledge": 0,
+                "karma": -4,
+                "time_management": 3,
+                 "environmental_impact": 0,
+                "personal_growth": -4,
+                "social_responsibility": -4
+            }
+        ],
+        "optimal": 2
+    }
+]
+```
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\assignment\flask\utils.py", line 176, in gen_cases
+    parsed = json.loads(response) #Attempt direct JSON load
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2024-12-30 20:46:40,276 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:52:52,817 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:53:50,781 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:54:57,706 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:56:14,497 - my_app - DEBUG - generate_cases route entered
+2024-12-30 20:56:14,498 - my_app - DEBUG - gen_cases function called with parameters: language=English, sex=Male, age=16, subject=friends and classmates, teachers and educators, conversation_data=None
+2024-12-30 20:56:14,498 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request. You are developing scenarios for an educational game for preschool children aged 5-6. This game teaches the child how to react appropriately to various life situations and make appropriate behavioral decisions. Your task is to compile a list of 1 life situation that can occur on the street, at school, at home, on the playground, in the store, in class, and so on. For each situation, provide a few different behavioral options, evaluate each option based on Health (physical and mental well-being), Wealth (financial decisions), Relationships (personal connections), Happiness (overall joy), Knowledge (learning and education), Karma (altruistic actions), Time Management (effective use of time), Environmental Impact (eco-friendly choices), Personal Growth (self-improvement), and Social Responsibility (positive contributions to society) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a case and has the following keys: 'case' for the situation description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option. Each option dictionary should have the keys 'number', 'option', 'health', 'wealth', 'relationships', 'happiness', 'knowledge', 'karma', 'time_management', 'environmental_impact', 'personal_growth', and 'social_responsibility'. Do not repeat situations. Here's an example: [{'case': 'You find a lost toy on the playground. What do you do?', 'options': [{'number': 1, 'option': 'Keep the toy for yourself.', 'health': 0, 'money': 0, 'friends': -2, 'wealth': 0, 'relationships': -2, 'happiness': -1, 'knowledge': 0, 'karma': -3, 'time_management': 0, 'environmental_impact': 0, 'personal_growth': -1, 'social_responsibility': -2}, {'number': 2, 'option': 'Give the toy to a teacher.', 'health': 2, 'money': 0, 'friends': 4, 'wealth': 0, 'relationships': 2, 'happiness': 3, 'knowledge': 1, 'karma': 4, 'time_management': 1, 'environmental_impact': 0, 'personal_growth': 2, 'social_responsibility': 3}], 'optimal': '2'}] Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a Male child aged 16 and the subject/theme used should be friends and classmates, teachers and educators.  Return your response as a JSON string representing a list of dictionaries, where each dictionary represents a case and has the keys: 'case', 'options' (a list of dictionaries), and 'optimal'.  The 'options' key will contain a list of dictionaries each with the keys: 'number', 'option', 'health', 'wealth', 'relationships', 'happiness', 'knowledge', 'karma', 'time_management', 'environmental_impact', 'personal_growth', and 'social_responsibility'.  Ensure the response strictly adheres to this structure and contains only one case in the list.
+2024-12-30 20:56:23,048 - my_app - DEBUG - Gemini response: ```json
+[
+  {
+    "case": "During a group project in class, your classmates are disagreeing about the best way to approach the task. What do you do?",
+    "options": [
+      {
+        "number": 1,
+   ...
+2024-12-30 20:56:23,051 - my_app - ERROR - Error decoding JSON response: Expecting value: line 1 column 1 (char 0), Raw Response: ```json
+[
+  {
+    "case": "During a group project in class, your classmates are disagreeing about the best way to approach the task. What do you do?",
+    "options": [
+      {
+        "number": 1,
+        "option": "Stay quiet and let them argue, hoping they'll figure it out themselves.",
+        "health": 3,
+        "wealth": 0,
+        "relationships": 1,
+        "happiness": 2,
+        "knowledge": 2,
+        "karma": 2,
+         "time_management": 2,
+        "environmental_impact": 0,
+        "personal_growth": 1,
+        "social_responsibility": 1
+      },
+      {
+        "number": 2,
+        "option": "Try to mediate the argument by listening to each person's idea and suggesting a compromise.",
+        "health": 4,
+        "wealth": 0,
+        "relationships": 4,
+        "happiness": 4,
+        "knowledge": 4,
+         "karma": 4,
+        "time_management": 3,
+        "environmental_impact": 0,
+        "personal_growth": 4,
+        "social_responsibility": 4
+      },
+        {
+        "number": 3,
+        "option": "Join the argument and loudly express your own opinion, even if it means interrupting others.",
+         "health": 2,
+        "wealth": 0,
+        "relationships": -2,
+        "happiness": 1,
+        "knowledge": 2,
+        "karma": -1,
+        "time_management": 1,
+         "environmental_impact": 0,
+        "personal_growth": -1,
+        "social_responsibility": -2
+      },
+         {
+        "number": 4,
+        "option": "Tell the teacher that the group is arguing and ask them to resolve the problem.",
+         "health": 3,
+        "wealth": 0,
+        "relationships": 2,
+        "happiness": 3,
+        "knowledge": 3,
+        "karma": 3,
+         "time_management": 3,
+         "environmental_impact": 0,
+        "personal_growth": 2,
+        "social_responsibility": 3
+      }
+    ],
+    "optimal": 2
+  }
+]
+```
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\assignment\flask\utils.py", line 174, in gen_cases
+    parsed = json.loads(response)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2024-12-30 20:56:49,611 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:57:31,456 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:58:25,845 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:58:38,864 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:59:03,780 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:59:34,963 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 20:59:48,588 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 21:00:18,492 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 21:12:42,532 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 21:12:45,390 - my_app - DEBUG - Logger configured. Starting app...
+2024-12-30 21:12:53,740 - my_app - DEBUG - generate_cases route entered
+2024-12-30 21:12:53,744 - my_app - DEBUG - gen_cases function called with parameters: language=English, sex=Male, age=16, subject=friends and classmates, teachers and educators, conversation_data=None
+2024-12-30 21:12:53,745 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request. You are developing scenarios for an educational game for preschool children aged 5-6. This game teaches the child how to react appropriately to various life situations and make appropriate behavioral decisions. Your task is to compile a list of 1 life situation that can occur on the street, at school, at home, on the playground, in the store, in class, and so on. For each situation, provide a few different behavioral options, evaluate each option based on Health (physical and mental well-being), Wealth (financial decisions), Relationships (personal connections), Happiness (overall joy), Knowledge (learning and education), Karma (altruistic actions), Time Management (effective use of time), Environmental Impact (eco-friendly choices), Personal Growth (self-improvement), and Social Responsibility (positive contributions to society) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a case and has the following keys: 'case' for the situation description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option. Each option dictionary should have the keys 'number', 'option', 'health', 'wealth', 'relationships', 'happiness', 'knowledge', 'karma', 'time_management', 'environmental_impact', 'personal_growth', and 'social_responsibility'. Do not repeat situations. Here's an example: [{'case': 'You find a lost toy on the playground. What do you do?', 'options': [{'number': 1, 'option': 'Keep the toy for yourself.', 'health': 0, 'money': 0, 'friends': -2, 'wealth': 0, 'relationships': -2, 'happiness': -1, 'knowledge': 0, 'karma': -3, 'time_management': 0, 'environmental_impact': 0, 'personal_growth': -1, 'social_responsibility': -2}, {'number': 2, 'option': 'Give the toy to a teacher.', 'health': 2, 'money': 0, 'friends': 4, 'wealth': 0, 'relationships': 2, 'happiness': 3, 'knowledge': 1, 'karma': 4, 'time_management': 1, 'environmental_impact': 0, 'personal_growth': 2, 'social_responsibility': 3}], 'optimal': '2'}] Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a Male child aged 16 and the subject/theme used should be friends and classmates, teachers and educators.
+2024-12-30 21:13:00,331 - my_app - DEBUG - Gemini response: ```python
+[
+    {
+        "case": "During a group project, your classmate, Liam, is not contributing and is distracting others with jokes. What do you do?",
+        "options": [
+            {
+        ...
+2024-12-30 21:13:00,333 - my_app - DEBUG - Extracted list content: [{"case": "During a group project, your classmate, Liam, is not contributing and is distracting others with jokes. What do you do?", "options": [{"number": 1, "option": "Join in with Liam's jokes and ignore the project.", "health": 0, "wealth": 0, "relationships": 1, "happiness": 2, "knowledge": 0, "karma": -1, "time_management": -2, "environmental_impact": 0, "personal_growth": -1, "social_responsibility": -1}, {"number": 2, "option": "Tell Liam to be quiet and focus on the project.", "health": 1, "wealth": 0, "relationships": 0, "happiness": 1, "knowledge": 2, "karma": 0, "time_management": 1, "environmental_impact": 0, "personal_growth": 1, "social_responsibility": 1}, {"number": 3, "option": "Speak to the teacher about Liam\u2019s behavior and request assistance with the project.", "health": 1, "wealth": 0, "relationships": 2, "happiness": 3, "knowledge": 3, "karma": 2, "time_management": 2, "environmental_impact": 0, "personal_growth": 2, "social_responsibility": 3}, {"number": 4, "option": "Do all of the work yourself to make sure the project is completed.", "health": -1, "wealth": 0, "relationships": -1, "happiness": 0, "knowledge": 2, "karma": 1, "time_management": -1, "environmental_impact": 0, "personal_growth": 1, "social_responsibility": 0}], "optimal": 3}]
+2024-12-30 21:13:00,335 - my_app - DEBUG - Conversation data saved to C:\Users\HP\Desktop\stuff\CODING\MOCAPI\assignment\flask\output\game\conversation.json
+2024-12-30 21:13:16,913 - my_app - DEBUG - generate_cases route entered
+2024-12-30 21:13:16,915 - my_app - DEBUG - gen_cases function called with parameters: language=English, sex=Male, age=16, subject=friends and classmates, teachers and educators, conversation_data={'data': {'case': 'During a group project, your classmate, Liam, is not contributing and is distracting others with jokes. What do you do?', 'optimal': 3, 'options': [{'number': 1, 'option': "Join in with Liam's jokes and ignore the project.", 'health': 0, 'wealth': 0, 'relationships': 1, 'happiness': 2, 'knowledge': 0, 'karma': -1, 'time_management': -2, 'environmental_impact': 0, 'personal_growth': -1, 'social_responsibility': -1, 'option_id': 'aa8bcebf-6fd7-43ff-8d0a-9d5d280eb4f6'}, {'number': 2, 'option': 'Tell Liam to be quiet and focus on the project.', 'health': 1, 'wealth': 0, 'relationships': 0, 'happiness': 1, 'knowledge': 2, 'karma': 0, 'time_management': 1, 'environmental_impact': 0, 'personal_growth': 1, 'social_responsibility': 1, 'option_id': '6cb8d6b1-9e8a-44b9-a2d7-d3d69b4249a4'}, {'number': 3, 'option': 'Speak to the teacher about Liam’s behavior and request assistance with the project.', 'health': 1, 'wealth': 0, 'relationships': 2, 'happiness': 3, 'knowledge': 3, 'karma': 2, 'time_management': 2, 'environmental_impact': 0, 'personal_growth': 2, 'social_responsibility': 3, 'option_id': '821a5079-ca80-4fdf-9df3-3f93b3e2b30f'}, {'number': 4, 'option': 'Do all of the work yourself to make sure the project is completed.', 'health': -1, 'wealth': 0, 'relationships': -1, 'happiness': 0, 'knowledge': 2, 'karma': 1, 'time_management': -1, 'environmental_impact': 0, 'personal_growth': 1, 'social_responsibility': 0, 'option_id': '50bef3df-4a8e-40e1-8433-31dbcfdb8f45'}], 'case_id': '2dcdb745-f857-4156-96bd-b96ae9653506', 'user_answer': 1}}
+2024-12-30 21:13:16,916 - my_app - DEBUG - Follow-up prompt generated: Reset your memory of the previous request. You are developing scenarios for an educational game for preschool children aged 5-6. This game teaches the child how to react appropriately to various life situations and make appropriate behavioral decisions. Your task is to compile a list of 1 life situation that can occur on the street, at school, at home, on the playground, in the store, in class, and so on. For each situation, provide a few different behavioral options, evaluate each option based on Health (physical and mental well-being), Wealth (financial decisions), Relationships (personal connections), Happiness (overall joy), Knowledge (learning and education), Karma (altruistic actions), Time Management (effective use of time), Environmental Impact (eco-friendly choices), Personal Growth (self-improvement), and Social Responsibility (positive contributions to society) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a case and has the following keys: 'case' for the situation description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option. Each option dictionary should have the keys 'number', 'option', 'health', 'wealth', 'relationships', 'happiness', 'knowledge', 'karma', 'time_management', 'environmental_impact', 'personal_growth', and 'social_responsibility'. Do not repeat situations. Here's an example: [{'case': 'You find a lost toy on the playground. What do you do?', 'options': [{'number': 1, 'option': 'Keep the toy for yourself.', 'health': 0, 'money': 0, 'friends': -2, 'wealth': 0, 'relationships': -2, 'happiness': -1, 'knowledge': 0, 'karma': -3, 'time_management': 0, 'environmental_impact': 0, 'personal_growth': -1, 'social_responsibility': -2}, {'number': 2, 'option': 'Give the toy to a teacher.', 'health': 2, 'money': 0, 'friends': 4, 'wealth': 0, 'relationships': 2, 'happiness': 3, 'knowledge': 1, 'karma': 4, 'time_management': 1, 'environmental_impact': 0, 'personal_growth': 2, 'social_responsibility': 3}], 'optimal': '2'}] Use double quotes (") for all string literals in the Python code. The child's previous response was Previous Case: During a group project, your classmate, Liam, is not contributing and is distracting others with jokes. What do you do?
+The child was presented with the following options:
+- Option 1: Join in with Liam's jokes and ignore the project.
+- Option 2: Tell Liam to be quiet and focus on the project.
+- Option 3: Speak to the teacher about Liam’s behavior and request assistance with the project.
+- Option 4: Do all of the work yourself to make sure the project is completed.
+
+The child selected option 1. for case. In the role of a psychologist for this child, ask another question SAME STRUCTURE based on their previous response  in English appropriate for a Male child aged 16 with the theme 'friends and classmates, teachers and educators'.
+2024-12-30 21:13:21,701 - my_app - DEBUG - Gemini response: ```python
+[
+    {
+        "case": "During lunch break, you notice that your friend, Alex, is being teased by a group of older kids and is looking upset. What do you do?",
+        "options": [
+        ...
+2024-12-30 21:13:21,705 - my_app - DEBUG - Extracted list content: [{"case": "During lunch break, you notice that your friend, Alex, is being teased by a group of older kids and is looking upset. What do you do?", "options": [{"number": 1, "option": "Pretend you didn't see anything and walk away to avoid getting involved.", "health": 3, "wealth": 5, "relationships": 1, "happiness": 2, "knowledge": 0, "karma": 1, "time_management": 5, "environmental_impact": 0, "personal_growth": 1, "social_responsibility": 1}, {"number": 2, "option": "Join in with the older kids and tease Alex as well.", "health": 0, "wealth": 5, "relationships": -3, "happiness": -1, "knowledge": 0, "karma": -4, "time_management": 5, "environmental_impact": 0, "personal_growth": -2, "social_responsibility": -3}, {"number": 3, "option": "Tell the older kids to stop teasing Alex and ask Alex if they are okay.", "health": 4, "wealth": 5, "relationships": 4, "happiness": 4, "knowledge": 1, "karma": 4, "time_management": 4, "environmental_impact": 0, "personal_growth": 3, "social_responsibility": 4}, {"number": 4, "option": "Go get a teacher or another adult to help with the situation.", "health": 5, "wealth": 5, "relationships": 3, "happiness": 3, "knowledge": 1, "karma": 3, "time_management": 3, "environmental_impact": 0, "personal_growth": 3, "social_responsibility": 3}], "optimal": 3}]
+2024-12-30 21:13:21,711 - my_app - DEBUG - Conversation data saved to C:\Users\HP\Desktop\stuff\CODING\MOCAPI\assignment\flask\output\game\conversation.json

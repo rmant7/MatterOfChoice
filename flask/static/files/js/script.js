@@ -143,62 +143,78 @@ function displayResults(data) {
     responseContainer.appendChild(newGameButton);
 }
 
-
 function displayCases(data) {
     caseForm.innerHTML = ''; // Clear previous cases
-    if (data && data.data && data.data.length > 0) {
-        data.data.forEach(optionData => {
-            if (optionData && optionData.cases && optionData.cases.length > 0) {
-                optionData.cases.forEach((caseItem, index) => {
-                    const caseElement = document.createElement('div');
-                    caseElement.classList.add('case-container');
 
-                    const caseTitle = document.createElement('div');
-                    caseTitle.classList.add('case-title');
-                    caseTitle.innerText = caseItem.case;
-                    caseElement.appendChild(caseTitle);
-
-                    const hiddenInput = document.createElement('input');
-                    hiddenInput.type = 'hidden';
-                    hiddenInput.name = 'case_id';
-                    hiddenInput.value = caseItem.case_id;
-                    caseElement.appendChild(hiddenInput);
-
-                    caseItem.options.forEach(option => {
-                        const optionElement = document.createElement('div');
-                        optionElement.classList.add('option');
-
-                        const radioInput = document.createElement('input');
-                        radioInput.type = 'radio';
-                        radioInput.name = caseItem.case_id;
-                        radioInput.value = option.option_id;
-                        radioInput.id = `option_${option.option_id}`;
-
-                        const label = document.createElement('label');
-                        label.htmlFor = `option_${option.option_id}`;
-                        label.innerText = `${option.number}. ${option.option}`;
-
-                        optionElement.appendChild(radioInput);
-                        optionElement.appendChild(label);
-                        caseElement.appendChild(optionElement);
-                    });
-
-                    caseForm.appendChild(caseElement);
-                });
-            } else {
-                console.error("Error: Invalid or empty case data received from server.");
-            }
-        });
-
-        const submitButton = document.createElement('button');
-        submitButton.type = 'submit';
-        submitButton.classList.add('submit-button');
-        submitButton.innerText = 'Submit Answers';
-        caseForm.appendChild(submitButton);
-    } else {
+    if (!data || !data.data) {
         displayError({ error: "Invalid or empty response from server" });
+        return;
     }
+
+    // Handle single case scenario
+    if (!Array.isArray(data.data)) {
+        const caseData = data.data;
+        const caseElement = createCaseElement(caseData);
+        caseForm.appendChild(caseElement);
+    }
+    // Handle multiple cases scenario (assuming array of case objects)
+
+    else if (Array.isArray(data.data)) {
+        data.data.forEach(caseData => {
+            const caseElement = createCaseElement(caseData);
+            caseForm.appendChild(caseElement);
+        });
+    } else {
+        displayError({ error: "Invalid data format from server." });
+    }
+
+
+    const submitButton = document.createElement('button');
+    submitButton.type = 'submit';
+    submitButton.classList.add('submit-button');
+    submitButton.innerText = 'Submit Answers';
+    caseForm.appendChild(submitButton);
 }
+
+
+function createCaseElement(caseData) {
+    const caseElement = document.createElement('div');
+    caseElement.classList.add('case-container');
+
+    const caseTitle = document.createElement('div');
+    caseTitle.classList.add('case-title');
+    caseTitle.innerText = caseData.case;
+    caseElement.appendChild(caseTitle);
+
+    const hiddenInput = document.createElement('input');
+    hiddenInput.type = 'hidden';
+    hiddenInput.name = 'case_id';
+    hiddenInput.value = caseData.case_id;
+    caseElement.appendChild(hiddenInput);
+
+    caseData.options.forEach(option => {
+        const optionElement = document.createElement('div');
+        optionElement.classList.add('option');
+
+        const radioInput = document.createElement('input');
+        radioInput.type = 'radio';
+        radioInput.name = caseData.case_id;
+        radioInput.value = option.option_id;
+        radioInput.id = `option_${option.option_id}`;
+
+        const label = document.createElement('label');
+        label.htmlFor = `option_${option.option_id}`;
+        label.innerText = `${option.number}. ${option.option}`;
+
+        optionElement.appendChild(radioInput);
+        optionElement.appendChild(label);
+        caseElement.appendChild(optionElement);
+    });
+
+    return caseElement;
+}
+
+
 
 function startNewGame() {
     // Clear previous game data
@@ -223,20 +239,34 @@ function startNewGame() {
     location.reload();
 }
 
+
 async function handleGenerateCasesResponse(response) {
     if (!response.ok) {
         const errorData = await response.json();
         displayError(errorData);
+        return; // Important: Stop execution if there's an error
+    }
+
+    const jsonData = await response.json();
+
+    // Robust check for data structure
+    if (!jsonData.data) {
+        displayError({ error: "Server response missing 'data' field." });
+        return;
+    }
+
+    //Check if data.data is an array of objects or a single object.
+    const data = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data]; // wrap in array if needed
+
+
+    if (data && data.length > 0) {
+        displayCases( {data: data}); // Pass the corrected data to displayCases
+        responseContainer.classList.add('success');
     } else {
-        const jsonData = await response.json();
-        if (jsonData && jsonData.data && jsonData.data.length > 0) {
-            displayCases(jsonData);
-            responseContainer.classList.add('success');
-        } else {
-            displayError({ error: "Invalid or empty response from server" });
-        }
+        displayError({ error: "No cases received from the server." });
     }
 }
+
 
 function displayError(errorData) {
     responseContainer.classList.add('error');

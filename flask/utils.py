@@ -139,60 +139,94 @@ def extract_list(code: str) -> str:
         return None
 
 
-def gen_cases(language: str, sex: str, age: int, output_dir: Path, subject: str, conversation_history=None):
+
+def gen_cases(language: str, sex: str, age: int, output_dir: Path, subject: str, conversation_data=None):
     logger = logging.getLogger('my_app')
-
-    if conversation_history is None:
-        conversation_history = []
-
-    if len(conversation_history) == 0:
-        prompt = f"""{prompts['cases']} Respond in {language}. The content should be appropriate for a {sex} child aged {age} and the subject/theme used should be {subject}."""  # Initial prompt
-    else:
-        last_response = conversation_history[-1]
-        escaped_subject = subject.replace("{", "{{").replace("}", "}}")
-        prompt = f"""{prompts['cases_2']} Previous response: The child chose option {last_response}. Considering the child's response, ask a follow-up question in {language} appropriate for a {sex} child aged {age} and the subject/theme used should be {escaped_subject}. Provide only ONE situation and its options. Format as a single dictionary: {{'case': '...', 'options': [{'number':1, 'option':'...', 'health':..., ...}, ...], 'optimal': n}}."""
+    logger.debug(f"gen_cases function called with parameters: language={language}, sex={sex}, age={age}, subject={subject}, conversation_data={conversation_data}")
 
     try:
+        if conversation_data is None:
+            prompt = f"""{prompts['cases']} Respond in {language}. The content should be appropriate for a {sex} child aged {age} and the subject/theme used should be {subject}."""
+            logger.debug(f"Initial prompt generated: {prompt}")
+        else:
+            previous_response = conversation_data.get('data', {})
+            previous_turn = conversation_data.get('data', {})
+            user_choice = previous_turn.get('user_answer')
+            previous_case = previous_turn.get('case', "Unknown Case")
+            previous_options = previous_turn.get('options', [])
+            if user_choice is None:
+                logger.warning("User choice is missing from conversation data. Returning None.")
+                return None, conversation_data
+
+            try:
+                user_choice = int(user_choice)
+            except ValueError as e:
+                logger.error(f"Invalid user_choice type: {e}")
+                return None, conversation_data
+
+            # Construct a clear textual representation of the previous turn
+            previous_turn_summary = f"Previous Case: {previous_case}\nThe child was presented with the following options:\n"
+            for option in previous_options:
+                previous_turn_summary += f"- Option {option['number']}: {option['option']}\n"
+            previous_turn_summary += f"\nThe child selected option {user_choice}."
+
+
+
+
+            prompt = f"""{prompts['cases']} The child's previous response was {previous_turn_summary} for case. In the role of a psychologist for this child, ask another question SAME STRUCTURE based on their previous response  in {language} appropriate for a {sex} child aged {age} with the theme '{subject}'."""
+            logger.debug(f"Follow-up prompt generated: {prompt}")
+
+
         response = get_response_gemini(prompt)
+        logger.debug(f"Gemini response: {response[:200]}...")
+
         if not response:
-            return None, conversation_history  # Handle empty response
+            logger.error("Gemini API returned an empty response.")
+            return None, conversation_data
 
         cleaned_response = clean_response(response)
         list_content = extract_list(cleaned_response)
+        logger.debug(f"Extracted list content: {list_content}")
 
         if list_content:
             try:
                 parsed = json.loads(list_content)
+                if isinstance(parsed, list):
+                    parsed = parsed[0]
+                required_keys = ['case', 'options', 'optimal']
+                if not all(key in parsed for key in required_keys):
+                    logger.error(f"Missing required keys in parsed response: {required_keys}")
+                    return None, conversation_data
+
+                case_data = {'case': parsed['case'], 'optimal': parsed['optimal'], 'options': []}
+                for option_data in parsed['options']:
+                    option_id = str(uuid.uuid4())
+                    option_item = {**option_data, 'option_id': option_id}
+                    case_data['options'].append(option_item)
+                case_data['case_id'] = str(uuid.uuid4())
+
+                # Save conversation data to JSON file
+                conversation_filepath = output_dir / "conversation.json"
+                conversation_data = {'data': case_data}
+                with open(conversation_filepath, 'w') as f:
+                    json.dump(conversation_data, f, indent=4)
+                logger.debug(f"Conversation data saved to {conversation_filepath}")
+                return case_data, conversation_data
+
             except json.JSONDecodeError as e:
-                logger.exception(f"JSON decoding error: {e}")
-                return None, conversation_history
-
-            case_data_dict = parsed if isinstance(parsed, dict) else parsed[0] if isinstance(parsed, list) and parsed else {}
-            case_id = str(uuid.uuid4())
-
-            case_data = {'case_id': case_id, 'case': case_data_dict.get('case', ''), 'optimal': case_data_dict.get('optimal', 0), 'options': []}
-
-            for option_data_dict in case_data_dict.get('options', []):
-                option_id = str(uuid.uuid4())
-                option_item = {'option_id': option_id, 'number': option_data_dict['number'], 'option': option_data_dict['option'],
-                               'health': option_data_dict.get('health',0), 'wealth': option_data_dict.get('wealth',0), 'relationships': option_data_dict.get('relationships',0),
-                               'happiness': option_data_dict.get('happiness',0), 'knowledge': option_data_dict.get('knowledge',0), 'karma': option_data_dict.get('karma',0),
-                               'time_management': option_data_dict.get('time_management',0), 'environmental_impact': option_data_dict.get('environmental_impact',0),
-                               'personal_growth': option_data_dict.get('personal_growth',0), 'social_responsibility': option_data_dict.get('social_responsibility',0)}
-                case_data['options'].append(option_item)
-
-            return case_data, conversation_history
-
+                logger.exception(f"Error decoding JSON response: {e}, Raw Response: {response}")
+                return None, conversation_data
+            except Exception as e:
+                logger.exception(f"An unexpected error occurred while processing response: {e}")
+                return None, conversation_data
 
         else:
-            logger.warning("extract_list returned None or empty")  # Log this issue
-            return None, conversation_history
-
+            logger.error("extract_list returned None or empty string.")
+            return None, conversation_data
     except Exception as e:
-        logger.exception(f"Error in gen_cases: {e}")
-        return None, conversation_history
+        logger.exception(f"An unexpected error occurred in gen_cases: {e}")
+        return None, conversation_data
 
-# ... (rest of your utils.py remains the same)
 
 # Generate images for cases
 def gen_image_cases():
