@@ -30,31 +30,52 @@ form.addEventListener('submit', async (event) => {
     }
 });
 
-caseForm.addEventListener('submit', (event) => {
+caseForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const answers = [];
+
+    loadingSpinner.classList.remove('hidden');
+    responseContainer.classList.add('hidden');
+    responseContainer.classList.remove('success');
+    responseContainer.classList.remove('error');
+
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => data[key] = value);
+
     const caseElements = caseForm.querySelectorAll('.case-container');
+    const selectedOption = caseElements[0].querySelector('input[type="radio"]:checked');
 
-    caseElements.forEach(caseElement => {
-        const caseId = caseElement.querySelector('input[name="case_id"]').value;
-        const selectedOption = caseElement.querySelector('input[type="radio"]:checked');
+    if (!selectedOption) {
+        alert('Please select an option.');
+        loadingSpinner.classList.add('hidden');
+        return; // Prevent submission
+    }
 
-        if (selectedOption) {
-            answers.push({
-                "case_id": caseId,
-                "option_id": selectedOption.value
-            });
-        } else {
-            alert('Please select an option for each case.');
-            event.preventDefault();
-            return; // Prevent submission
-        }
-    });
+    // Get the selected option's index (1-based)
+    const selectedOptionIndex = Array.from(caseElements[0].querySelectorAll('input[type="radio"]')).findIndex(radio => radio.checked) + 1;
+    data.answers = selectedOptionIndex; // Send the selected option index as the answer
 
-    if (confirm('Are you sure you want to submit these answers?')) {
-        submitAnswers(answers);
+    try {
+        const response = await fetch('/generate_cases', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        handleGenerateCasesResponse(response);
+    } catch (error) {
+        displayError({ error: error.message });
+    } finally {
+        loadingSpinner.classList.add('hidden');
+        responseContainer.classList.remove('hidden');
     }
 });
+
+// ... (rest of the code remains unchanged) ...
+
+
+
+
+
 
 async function submitAnswers(answers) {
     loadingSpinner.classList.remove('hidden');

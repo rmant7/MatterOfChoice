@@ -11,3 +11,4 @@ python-dotenv
 google
 google-ai-generativelanguage
 google.generativeai
+pollinations
