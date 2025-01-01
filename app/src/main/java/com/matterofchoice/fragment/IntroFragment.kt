@@ -1,4 +1,4 @@
-package com.matterofchoice
+package com.matterofchoice.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -11,9 +11,10 @@ import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.matterofchoice.R
+import com.matterofchoice.adapter.MyPagerAdapter
 import com.matterofchoice.databinding.IntroFragmentBinding
 import com.matterofchoice.model.IntroSlide
 
@@ -37,8 +38,15 @@ class IntroFragment : Fragment() {
 //        findNavController().navigate(R.id.action_introFragment_to_personFragment)
 
         val myList = listOf(
-            IntroSlide(requireContext().getString(R.string.greeting),requireContext().getString(R.string.intro),R.drawable.d2),
-            IntroSlide(requireContext().getString(R.string.greeting2),requireContext().getString(R.string.intro_2),R.drawable.d1)
+            IntroSlide(requireContext().getString(R.string.greeting),requireContext().getString(R.string.intro),
+                R.drawable.d2
+            ),
+            IntroSlide(requireContext().getString(R.string.greeting2),requireContext().getString(R.string.intro_2),
+                R.drawable.d1
+            ),
+            IntroSlide(requireContext().getString(R.string.greeting3),requireContext().getString(R.string.intro_3),
+                R.drawable.welcome_image
+            ),
         )
 
 
@@ -52,35 +60,32 @@ class IntroFragment : Fragment() {
                 setCurrentDot(position)
             }
         })
-
         val viewPager = binding.myViewPager
-
         binding.nextBtn.setOnClickListener {
-            if (viewPager.currentItem + 1 < 2){
+            if (viewPager.currentItem + 1 < myAdapter.itemCount){
                 viewPager.currentItem += 1
             }else{
-                findNavController().navigate(R.id.action_introFragment_to_welcomeFragment)
+                findNavController().navigate(R.id.action_introFragment_to_personFragment)
             }
         }
         binding.skipBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_introFragment_to_welcomeFragment)
+            findNavController().navigate(R.id.action_introFragment_to_personFragment)
         }
     }
     private fun setDots(context: Context){
-        val dots = arrayOfNulls<ImageView>(3)
+        val dots = arrayOfNulls<ImageView>(myAdapter.itemCount)
         val layoutParams: LinearLayout.LayoutParams =
             LinearLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
         layoutParams.setMargins(8,0,8,0)
         for (i in dots.indices){
             dots[i] = ImageView(context)
             dots[i].apply {
-                this?.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.dot_active))
+                this?.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.dot_active))
                 this?.layoutParams = layoutParams
             }
             binding.dotsContainer.addView(dots[i])
         }
     }
-
     private fun setCurrentDot(index:Int){
         val childCount = binding.dotsContainer.childCount
         for (i in 0 until childCount){

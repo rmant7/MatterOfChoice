@@ -1,4 +1,4 @@
-package com.matterofchoice
+package com.matterofchoice.activity
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.RadioButton
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,8 +14,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.matterofchoice.R
 import com.matterofchoice.databinding.ActivityGameBinding
 import com.matterofchoice.model.Case
+import com.matterofchoice.viewmodel.ChatViewModel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class GameActivity : AppCompatActivity() {
@@ -39,6 +42,15 @@ class GameActivity : AppCompatActivity() {
         val myViewModel = ViewModelProvider(this)[ChatViewModel::class.java]
         val sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE)
 
+        lifecycleScope.launch {
+            binding.errorTV.text = "Generating situations based on your subject..."
+            delay(5000)
+            binding.errorTV.text = "Analyzing..."
+            delay(3000)
+            binding.errorTV.text = "Almost done..."
+            delay(3000)
+            binding.errorTV.text = "Done"
+        }
         // Retrieve saved values
         val userGender = sharedPreferences.getString("userGender", "Not specified")
         val userLanguage = sharedPreferences.getString("userLanguage", "Not specified")
@@ -46,24 +58,21 @@ class GameActivity : AppCompatActivity() {
         val userSubject = sharedPreferences.getString("userSubject", "Not specified")
 
 
-        initiateMethod(myViewModel, userGender!!,userLanguage!!,userAge!!,userSubject!!)
+        initiateMethod(myViewModel, userGender!!, userLanguage!!, userAge!!, userSubject!!)
 
         binding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
             val selectedRadioButton = findViewById<RadioButton>(checkedId)
             selectedOption = selectedRadioButton.text.toString()
         }
-        myViewModel.errorLiveData.observe(this){ error ->
-            if (!error.isNullOrEmpty()){
+        myViewModel.errorLiveData.observe(this) { error ->
+            if (!error.isNullOrEmpty()) {
                 binding.apply {
                     animationView.visibility = View.GONE
                     errorTV.visibility = View.VISIBLE
                     errorTV.text = error
                 }
-
             }
-
         }
-
 
         myViewModel.listContent.observe(this) { listContent ->
             if (listContent != null) {
@@ -86,7 +95,6 @@ class GameActivity : AppCompatActivity() {
                             option3TV.text = cases[0].options[2].option
                             option4TV.text = cases[0].options[3].option
 
-
                             button3.setOnClickListener {
                                 if (selectedOption != null) {
                                     val i = Intent(this@GameActivity, ResultActivity::class.java)
@@ -101,6 +109,7 @@ class GameActivity : AppCompatActivity() {
 
                                     i.putExtra("optimalAnswer", optimalOption)
                                     startActivity(i)
+                                    finish()
                                 }
                             }
                         }
@@ -114,7 +123,13 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
-    private fun initiateMethod(myViewModel:ChatViewModel,userGender:String, userLanguage:String,userAge:String, userSubject: String){
+    private fun initiateMethod(
+        myViewModel: ChatViewModel,
+        userGender: String,
+        userLanguage: String,
+        userAge: String,
+        userSubject: String
+    ) {
         lifecycleScope.launchWhenStarted {
             myViewModel.getUserInfo(userGender, userLanguage, userAge, userSubject)
             myViewModel.main()

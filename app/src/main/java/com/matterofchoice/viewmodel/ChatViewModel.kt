@@ -1,4 +1,4 @@
-package com.matterofchoice
+package com.matterofchoice.viewmodel
 
 import android.app.Application
 import android.content.Context
@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.ai.client.generativeai.GenerativeModel
+import com.matterofchoice.Constants
 import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONObject

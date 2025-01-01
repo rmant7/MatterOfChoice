@@ -1,4 +1,4 @@
-package com.matterofchoice
+package com.matterofchoice.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.matterofchoice.R
 import com.matterofchoice.databinding.ActivityResultBinding
 import com.matterofchoice.model.Option
 
@@ -29,8 +30,9 @@ class ResultActivity : AppCompatActivity() {
         val optimalAnswer = intent.getParcelableExtra<Option>("optimalAnswer")
 
         binding.continueBtn.setOnClickListener {
-            val i = Intent(this,GameActivity::class.java)
+            val i = Intent(this, GameActivity::class.java)
             startActivity(i)
+            finish()
         }
 
 

@@ -14,4 +14,30 @@
     <string name="choice_2">Choice 2:</string>
     <string name="choice_3">Choice 3:</string>
     <string name="choice_4">Choice 4:</string>
+
+    <string-array name="languages">
+        <item>English</item>
+        <item>Arabic</item>
+        <item>Amharic</item>
+        <item>Bengali</item>
+        <item>Chinese Simplified</item>
+        <item>Dutch</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Hebrew</item>
+        <item>Hindi</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Korean</item>
+        <item>Portuguese</item>
+        <item>Russian</item>
+        <item>Spanish</item>
+        <item>Turkish</item>
+        <item>Vietnamese</item>
+    </string-array>
+
+    <string-array name="genders">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 </resources>

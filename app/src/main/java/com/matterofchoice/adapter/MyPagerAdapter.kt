@@ -1,4 +1,4 @@
-package com.matterofchoice
+package com.matterofchoice.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

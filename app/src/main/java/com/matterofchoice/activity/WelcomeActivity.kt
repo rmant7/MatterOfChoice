@@ -1,4 +1,4 @@
-package com.matterofchoice
+package com.matterofchoice.activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.findNavController
+import com.matterofchoice.R
 import com.matterofchoice.databinding.ActivityWelcomeBinding
 
 class WelcomeActivity : AppCompatActivity() {

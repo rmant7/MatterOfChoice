@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="com.matterofchoice.GameActivity">
+    tools:context="com.matterofchoice.activity.GameActivity">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button3"
@@ -117,14 +117,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@color/white">
+
         <TextView
             android:id="@+id/errorTV"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Generating situations ..."
-            android:textSize="28sp"
-            android:textColor="@color/black"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="150dp"
+            android:layout_marginEnd="32dp"
+            android:text="Generating situations..."
+            android:textColor="@color/black"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -149,13 +152,14 @@
             android:id="@+id/animationView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:lottie_rawRes="@raw/my_anim"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:lottie_rawRes="@raw/my_anim" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
