@@ -7,11 +7,14 @@ import android.util.Log
 import android.view.View
 import android.widget.RadioButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.allViews
+import androidx.core.view.iterator
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.google.gson.Gson
@@ -30,7 +33,8 @@ import kotlinx.coroutines.withContext
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
     private var selectedOption: String? = null
-    private var isError :Boolean = false
+    private var isError: Boolean = false
+    private var isFirstPress = true
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -102,7 +106,10 @@ class GameActivity : AppCompatActivity() {
                                 // Sequentially add and animate RadioButtons
                                 for (option in cases[0].options) {
                                     val radioBtn = RadioButton(applicationContext)
-                                    radioBtn.typeface = ResourcesCompat.getFont(applicationContext,R.font.merriweather_sans)
+                                    radioBtn.typeface = ResourcesCompat.getFont(
+                                        applicationContext,
+                                        R.font.merriweather_sans
+                                    )
                                     radioBtn.setPadding(4, 4, 4, 8)
                                     radioGroup.addView(radioBtn)
                                     // Wait for the animation to complete before moving to the next
@@ -120,12 +127,31 @@ class GameActivity : AppCompatActivity() {
                                 selectedOption = selectedRadioButton?.text?.toString() ?: ""
                                 updateButtonState()
                             }
-
-
-
-                            button3.setOnClickListener {
+                        }
+                        binding.button3.setOnClickListener {
+                            if (isFirstPress) {
+                                val correctAnswer =
+                                    cases[0].options.firstOrNull { it.number.toString() == cases[0].optimal}
+                                correctAnswer?.number
+                                for (i in 0 until binding.radioGroup.childCount) {
+                                    val view = binding.radioGroup.getChildAt(i)
+                                    if (view is RadioButton) {
+                                        try {
+                                            if (view.text == correctAnswer?.option) {
+                                                view.setTextColor(resources.getColor(R.color.correctColor, theme))
+                                            } else {
+                                                view.setTextColor(resources.getColor(R.color.wrongColor, theme))
+                                            }
+                                        } catch (e: Exception) {
+                                            Toast.makeText(applicationContext, e.message.toString(), Toast.LENGTH_SHORT).show()
+                                        }
+                                    }
+                                }
+                                isFirstPress = false
+                            } else {
                                 if (!selectedOption.isNullOrEmpty()) {
-                                    val i = Intent(this@GameActivity, ResultActivity::class.java)
+                                    val i =
+                                        Intent(this@GameActivity, ResultActivity::class.java)
                                     i.putExtra(
                                         "selected",
                                         cases[0].options.find { it.option == selectedOption })
