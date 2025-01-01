@@ -124,48 +124,40 @@
                     <option value="Turkish">Turkish</option>
                 </select>
 
-                <label for="sex">Sex:</label>
-                <select id="sex" name="sex" required>
-                    <option value="">Select Sex</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
+
 
                 <label for="age">Age:</label>
                 <select id="age" name="age" required>
-                    <option value="">Select Age</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
+                  <option value="">Select Age</option>
                 </select>
+                <script>
+                  const ageSelect = document.getElementById('age');
+                  for (let i = 1; i <= 100; i++) {
+                    const option = document.createElement('option');
+                    option.value = i;
+                    option.text = i;
+                    ageSelect.add(option);
+                  }
+                </script>
+                
 
 
                 <label for="subject">Subject:</label>
-<select id="subject" name="subject" required>
-    <option value="">Select Subject</option>
-    <option value="friends and classmates, teachers and educators">Friends and classmates, teachers and educators</option>
-    <option value="parents, brothers and sisters, grandmothers, grandfathers">Parents, brothers and sisters, grandmothers, grandfathers</option>
-    <option value="animals and insects">Animals and insects</option>
-    <option value="grandmothers, grandfathers, elderly people">Grandmothers, grandfathers, elderly people</option>
-    <option value="strangers, unfamiliar people, passersby, strangers">Strangers, unfamiliar people, passersby, strangers</option>
-    <option value="firefighter, police officer, doctor, salesperson">Firefighter, police officer, doctor, salesperson</option>
-    <option value="relatives, neighbors, acquaintances">Relatives, neighbors, acquaintances</option>
-</select>
+                <input type="text" id="subject" name="subject" required>
 
+
+                
+                <label for="difficulty">Difficulty Level:</label>
+                <select id="difficulty" name="difficulty" required>
+                    <option value="">Select difficulty</option>
+                    <option value="easy">easy</option>
+                    <option value="normal">normal</option>
+                    <option value="hard">hard</option>
+
+                 
+                </select>
+
+        
 
                 <button type="submit">Generate Cases</button>
             </form>

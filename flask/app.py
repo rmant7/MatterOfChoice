@@ -53,13 +53,14 @@ def generate_cases():
     logger.debug("generate_cases route entered")
     data = request.get_json()
     language = data.get('language')
-    sex = data.get('sex')
     age = data.get('age')
     subject = data.get('subject')
+    difficulty = data.get('difficulty')
+
     user_answer = data.get('answers')
 
-    if not all([language, sex, age, subject]):
-        return jsonify({"error": "language, sex, age, and subject are required."}), 400
+    if not all([language, age, subject, difficulty]):
+        return jsonify({"error": "language, age, difficulty and subject are required."}), 400
     try:
         age = int(age)
     except ValueError:
@@ -73,7 +74,7 @@ def generate_cases():
 
     try:
         if turn == 1:
-            case_data, conversation_data = gen_cases(language, sex, age, output_dir, subject)
+            case_data, conversation_data = gen_cases(language,difficulty,  age, output_dir, subject)
             if case_data is None:
                 return jsonify({"error": "Failed to generate initial case."}), 500
             session['turn'] = 2
@@ -93,7 +94,7 @@ def generate_cases():
                     return jsonify({"error": "Invalid user answer."}), 400
 
                 conversation_data['data']['user_answer'] = user_answer
-                case_data, conversation_data = gen_cases(language, sex, age, output_dir, subject, conversation_data)
+                case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, conversation_data)
                 if case_data is None:
                     return jsonify({"error": "Failed to generate case."}), 500
                 session['turn'] = min(turn + 1, 7)

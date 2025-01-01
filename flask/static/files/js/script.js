@@ -247,8 +247,8 @@ function startNewGame() {
     // Reset the form and enable input
     form.reset();
     form.querySelector('#language').disabled = false;
-    form.querySelector('#sex').disabled = false;
     form.querySelector('#age').disabled = false;
+    form.querySelector('#difficulty').disabled = false;
     form.querySelector('#subject').disabled = false;
 
     form.querySelector('button[type="submit"]').disabled = false;
@@ -301,9 +301,10 @@ function displayError(errorData) {
         responseContainer.innerHTML = '';
         responseContainer.classList.remove('error');
         form.querySelector('#language').disabled = false;
-        form.querySelector('#sex').disabled = false;
         form.querySelector('#age').disabled = false;
         form.querySelector('#subject').disabled = false;
+        form.querySelector('#difficulty').disabled = false;
+
         form.querySelector('button[type="submit"]').disabled = false;
         responseContainer.classList.add('hidden');
         form.submit();
