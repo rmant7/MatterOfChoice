@@ -8,7 +8,7 @@
     android:background="@color/white"
     tools:context="com.matterofchoice.activity.GameActivity">
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,6 +17,7 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_back"
         android:text="Next"
+        android:enabled="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:visibility="gone"
@@ -33,48 +34,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:fontFamily="@font/merriweather_sans"
         android:background="@drawable/prompt_edit_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/situationIV">
 
-
-        <RadioButton
-            android:id="@+id/option1TV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:pointerIcon="zoom_in"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <RadioButton
-            android:id="@+id/option2TV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/option1TV" />
-
-        <RadioButton
-            android:id="@+id/option3TV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/option2TV" />
-
-
-        <RadioButton
-            android:id="@+id/option4TV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/option3TV" />
 
 
     </RadioGroup>
@@ -87,7 +53,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="16dp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/merriweather_sans"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,9 +91,11 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="150dp"
             android:layout_marginEnd="32dp"
-            android:text="Generating situations..."
+            android:gravity="center"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20sp"
+            android:fontFamily="@font/merriweather_sans"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -143,6 +111,7 @@
             app:layout_constraintTop_toBottomOf="@id/errorTV"
             android:layout_marginTop="80dp"
             android:visibility="gone"
+            android:enabled="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:layout_editor_absoluteX="155dp"

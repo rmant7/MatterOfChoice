@@ -5,5 +5,9 @@
         <item name="colorPrimary">@color/myColor</item>
     </style>
 
+    <style name="MyTextStyle" parent="TextAppearance.AppCompat.Body1">
+        <item name="fontFamily">@font/merriweather_sans</item>
+    </style>
+
     <style name="Theme.MatterOfChoices" parent="Base.Theme.MatterOfChoices" />
 </resources>

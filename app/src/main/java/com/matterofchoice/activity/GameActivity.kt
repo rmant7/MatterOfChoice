@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.RadioButton
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
@@ -18,13 +20,17 @@ import com.matterofchoice.R
 import com.matterofchoice.databinding.ActivityGameBinding
 import com.matterofchoice.model.Case
 import com.matterofchoice.viewmodel.ChatViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
     private var selectedOption: String? = null
+    private var isError :Boolean = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,15 +48,6 @@ class GameActivity : AppCompatActivity() {
         val myViewModel = ViewModelProvider(this)[ChatViewModel::class.java]
         val sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE)
 
-        lifecycleScope.launch {
-            binding.errorTV.text = "Generating situations based on your subject..."
-            delay(5000)
-            binding.errorTV.text = "Analyzing..."
-            delay(3000)
-            binding.errorTV.text = "Almost done..."
-            delay(3000)
-            binding.errorTV.text = "Done"
-        }
         // Retrieve saved values
         val userGender = sharedPreferences.getString("userGender", "Not specified")
         val userLanguage = sharedPreferences.getString("userLanguage", "Not specified")
@@ -60,17 +57,27 @@ class GameActivity : AppCompatActivity() {
 
         initiateMethod(myViewModel, userGender!!, userLanguage!!, userAge!!, userSubject!!)
 
-        binding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
-            val selectedRadioButton = findViewById<RadioButton>(checkedId)
-            selectedOption = selectedRadioButton.text.toString()
-        }
+
         myViewModel.errorLiveData.observe(this) { error ->
             if (!error.isNullOrEmpty()) {
                 binding.apply {
+                    isError = true
                     animationView.visibility = View.GONE
                     errorTV.visibility = View.VISIBLE
                     errorTV.text = error
                 }
+            }
+        }
+
+        lifecycleScope.launch {
+            if (!isError) {
+                binding.errorTV.text = "Generating situations based on your subject..."
+                delay(5000)
+                binding.errorTV.text = "Analyzing..."
+                delay(3000)
+                binding.errorTV.text = "Almost done..."
+                delay(3000)
+                binding.errorTV.text = "Done"
             }
         }
 
@@ -86,17 +93,38 @@ class GameActivity : AppCompatActivity() {
                         binding.apply {
                             binding.constraintLoad.visibility = View.GONE
 
-                            button3.visibility = View.VISIBLE
+
                             situationIV.visibility = View.VISIBLE
 
-                            optionTxt.text = cases[0].case
-                            option1TV.text = cases[0].options[0].option
-                            option2TV.text = cases[0].options[1].option
-                            option3TV.text = cases[0].options[2].option
-                            option4TV.text = cases[0].options[3].option
+                            CoroutineScope(Dispatchers.Main).launch {
+                                anim(cases[0].case, optionTxt)
+
+                                // Sequentially add and animate RadioButtons
+                                for (option in cases[0].options) {
+                                    val radioBtn = RadioButton(applicationContext)
+                                    radioBtn.typeface = ResourcesCompat.getFont(applicationContext,R.font.merriweather_sans)
+                                    radioBtn.setPadding(4, 4, 4, 8)
+                                    radioGroup.addView(radioBtn)
+                                    // Wait for the animation to complete before moving to the next
+                                    anim(option.option, radioBtn)
+                                }
+                                button3.visibility = View.VISIBLE
+                            }
+
+                            fun updateButtonState() {
+                                button3.isEnabled = !selectedOption.isNullOrEmpty()
+                            }
+
+                            radioGroup.setOnCheckedChangeListener { _, checkedId ->
+                                val selectedRadioButton = findViewById<RadioButton>(checkedId)
+                                selectedOption = selectedRadioButton?.text?.toString() ?: ""
+                                updateButtonState()
+                            }
+
+
 
                             button3.setOnClickListener {
-                                if (selectedOption != null) {
+                                if (!selectedOption.isNullOrEmpty()) {
                                     val i = Intent(this@GameActivity, ResultActivity::class.java)
                                     i.putExtra(
                                         "selected",
@@ -134,6 +162,19 @@ class GameActivity : AppCompatActivity() {
             myViewModel.getUserInfo(userGender, userLanguage, userAge, userSubject)
             myViewModel.main()
 
+        }
+    }
+
+    private suspend fun anim(textAnim: String, tV: TextView) {
+        val stringBuilder = StringBuilder()
+        withContext(Dispatchers.IO) {
+            for (letter in textAnim) {
+                stringBuilder.append(letter)
+                delay(80)
+                withContext(Dispatchers.Main) {
+                    tV.text = stringBuilder.toString()
+                }
+            }
         }
     }
 
