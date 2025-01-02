@@ -117,7 +117,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
 
         val role = roles.optString(i)
         val prompt =
-            "$casesPrompt Respond in $language. The content should be in $subject and appropriate for a $sex child aged $age."
+            "$casesPrompt Respond in $language. The situations should created based on $subject and appropriate for a $sex child aged $age."
 
         viewModelScope.launch {
             val response = getResponseGemini(prompt)

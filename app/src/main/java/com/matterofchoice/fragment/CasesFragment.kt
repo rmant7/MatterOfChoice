@@ -31,6 +31,8 @@ class CasesFragment : Fragment() {
         val editor = sharedPreferences.edit()
 
 
+
+
         binding.apply {
             // Function to check if fields are filled and update button state
             fun updateButtonState() {
@@ -55,5 +57,17 @@ class CasesFragment : Fragment() {
                 startActivity(i)
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val sharedPreferences = requireContext().getSharedPreferences("UserPreferences", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        editor.putInt("userScore", 0)
+        editor.apply()
+        editor.putInt("totalScore", 0)
+        editor.apply()
+
     }
 }

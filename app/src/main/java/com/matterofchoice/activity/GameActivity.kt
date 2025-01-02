@@ -13,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.allViews
-import androidx.core.view.iterator
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.google.gson.Gson
@@ -52,6 +50,9 @@ class GameActivity : AppCompatActivity() {
         val myViewModel = ViewModelProvider(this)[ChatViewModel::class.java]
         val sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE)
 
+        val editor = sharedPreferences.edit()
+
+
         // Retrieve saved values
         val userGender = sharedPreferences.getString("userGender", "Not specified")
         val userLanguage = sharedPreferences.getString("userLanguage", "Not specified")
@@ -74,14 +75,21 @@ class GameActivity : AppCompatActivity() {
         }
 
         lifecycleScope.launch {
-            if (!isError) {
+            while (!isError) {
                 binding.errorTV.text = "Generating situations based on your subject..."
                 delay(5000)
+                if (isError) break
+
                 binding.errorTV.text = "Analyzing..."
                 delay(3000)
+                if (isError) break
+
                 binding.errorTV.text = "Almost done..."
                 delay(3000)
+                if (isError) break
+
                 binding.errorTV.text = "Done"
+                break
             }
         }
 
@@ -96,7 +104,6 @@ class GameActivity : AppCompatActivity() {
                         Log.v("CASESLIST", cases.toString())
                         binding.apply {
                             binding.constraintLoad.visibility = View.GONE
-
 
                             situationIV.visibility = View.VISIBLE
 
@@ -131,40 +138,78 @@ class GameActivity : AppCompatActivity() {
                         binding.button3.setOnClickListener {
                             if (isFirstPress) {
                                 val correctAnswer =
-                                    cases[0].options.firstOrNull { it.number.toString() == cases[0].optimal}
+                                    cases[0].options.firstOrNull { it.number.toString() == cases[0].optimal }
                                 correctAnswer?.number
                                 for (i in 0 until binding.radioGroup.childCount) {
                                     val view = binding.radioGroup.getChildAt(i)
                                     if (view is RadioButton) {
                                         try {
                                             if (view.text == correctAnswer?.option) {
-                                                view.setTextColor(resources.getColor(R.color.correctColor, theme))
+                                                view.setTextColor(
+                                                    resources.getColor(
+                                                        R.color.correctColor,
+                                                        theme
+                                                    )
+                                                )
                                             } else {
-                                                view.setTextColor(resources.getColor(R.color.wrongColor, theme))
+                                                view.setTextColor(
+                                                    resources.getColor(
+                                                        R.color.wrongColor,
+                                                        theme
+                                                    )
+                                                )
                                             }
                                         } catch (e: Exception) {
-                                            Toast.makeText(applicationContext, e.message.toString(), Toast.LENGTH_SHORT).show()
+                                            Toast.makeText(
+                                                applicationContext,
+                                                e.message.toString(),
+                                                Toast.LENGTH_SHORT
+                                            ).show()
                                         }
                                     }
                                 }
+                                binding.seeResultBtn.visibility = View.VISIBLE
                                 isFirstPress = false
                             } else {
-                                if (!selectedOption.isNullOrEmpty()) {
-                                    val i =
-                                        Intent(this@GameActivity, ResultActivity::class.java)
-                                    i.putExtra(
-                                        "selected",
-                                        cases[0].options.find { it.option == selectedOption })
+                                val i =
+                                    Intent(this@GameActivity, GameActivity::class.java)
+                                startActivity(i)
+                                finish()
+                            }
+                        }
 
-                                    i.putExtra("optimal", cases[0].optimal)
+                        binding.seeResultBtn.setOnClickListener {
+                            if (!selectedOption.isNullOrEmpty()) {
+                                val i =
+                                    Intent(this@GameActivity, ResultActivity::class.java)
 
-                                    val optimalOption =
-                                        cases[0].options.find { it.number == cases[0].optimal.toInt() }
 
-                                    i.putExtra("optimalAnswer", optimalOption)
-                                    startActivity(i)
-                                    finish()
+                                val userChoice =
+                                    cases[0].options.find { it.option == selectedOption }
+                                var userScore = 0
+
+                                userChoice!!.apply {
+                                    userScore += health + wealth + relationships + happiness + knowledge + karma + timeManagement +
+                                            environmentalImpact + personalGrowth + socialResponsibility
                                 }
+                                editor.putInt("userScore", userScore)
+                                editor.apply()
+
+                                var totalScore = 0
+
+                                val optimalOption =
+                                    cases[0].options.find { it.number == cases[0].optimal.toInt() }
+
+                                optimalOption!!.apply {
+                                    totalScore += health + wealth + relationships + happiness + knowledge + karma + timeManagement +
+                                            environmentalImpact + personalGrowth + socialResponsibility
+                                }
+                                editor.putInt("totalScore", totalScore)
+                                editor.apply()
+
+
+                                startActivity(i)
+                                finish()
                             }
                         }
                     }
@@ -196,7 +241,7 @@ class GameActivity : AppCompatActivity() {
         withContext(Dispatchers.IO) {
             for (letter in textAnim) {
                 stringBuilder.append(letter)
-                delay(80)
+                delay(50)
                 withContext(Dispatchers.Main) {
                     tV.text = stringBuilder.toString()
                 }

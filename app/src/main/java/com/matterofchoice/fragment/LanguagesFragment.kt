@@ -24,16 +24,20 @@ class LanguagesFragment: Fragment() {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        val genders = resources.getStringArray(R.array.genders)
+        val arrayAdapter = ArrayAdapter(requireContext(),R.layout.dropdown_item,genders)
+        binding.genderTxt.setAdapter(arrayAdapter)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val sharedPreferences = requireContext().getSharedPreferences("UserPreferences", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
 
-        val genders = resources.getStringArray(R.array.genders)
-
-        val arrayAdapter = ArrayAdapter(requireContext(),R.layout.dropdown_item,genders)
-        binding.genderTxt.setAdapter(arrayAdapter)
 
         binding.apply {
             button2.setOnClickListener {

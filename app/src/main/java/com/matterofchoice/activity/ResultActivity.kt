@@ -1,15 +1,20 @@
 package com.matterofchoice.activity
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import com.matterofchoice.R
 import com.matterofchoice.databinding.ActivityResultBinding
-import com.matterofchoice.model.Option
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
@@ -24,41 +29,46 @@ class ResultActivity : AppCompatActivity() {
             insets
         }
 
-        val option = intent.getParcelableExtra<Option>("selected")
-        val optimal = intent.getStringExtra("optimal")
+        val sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE)
 
-        val optimalAnswer = intent.getParcelableExtra<Option>("optimalAnswer")
+
+        val userScore = sharedPreferences.getInt("userScore",0)
+        val totalScore = sharedPreferences.getInt("totalScore",0)
+
+        val calculatedRating = (userScore.toFloat() / totalScore.toFloat()) * 5
+
+        binding.ratingBar.animate()
+            .setDuration(500)
+            .rotationY(360f)
+            .withEndAction {
+                binding.ratingBar.rating = calculatedRating
+            }
+            .start()
+        lifecycleScope.launch {
+            anim(userScore.toString(),binding.userScoreTV)
+        }
+
+
+
 
         binding.continueBtn.setOnClickListener {
-            val i = Intent(this, GameActivity::class.java)
+            val i = Intent(this, WelcomeActivity::class.java)
             startActivity(i)
             finish()
         }
 
+    }
 
-        try {
-            binding.apply {
-                optimalTV.text = optimal
-
-                optimalAnswerTV.text = "\"${optimalAnswer!!.option}\""
-
-                textView12.text = "Health: "+option?.health
-                textView13.text = "Wealth: "+option?.wealth
-                textView14.text = "Relationships: "+option?.relationships
-                textView15.text = "Happiness: "+option?.happiness
-
-                textView16.text = "Knowledge: "+option?.knowledge
-                textView17.text = "Karma: "+option?.karma
-                textView18.text = "TimeManagement: "+option?.timeManagement
-                textView19.text = "EnvironmentalImpact: "+option?.environmentalImpact
-
-                textView20.text = "PersonalGrowth: "+option?.personalGrowth
-                textView21.text = "SocialResponsibility "+option?.socialResponsibility
-
+    private suspend fun anim(textAnim: String, tV: TextView) {
+        val stringBuilder = StringBuilder()
+        withContext(Dispatchers.IO) {
+            for (letter in textAnim) {
+                stringBuilder.append(letter)
+                delay(50)
+                withContext(Dispatchers.Main) {
+                    tV.text = stringBuilder.toString()
+                }
             }
-        }catch (e:Exception){
-            Log.v("MOSAAAAAA",e.message.toString())
         }
-
     }
 }
