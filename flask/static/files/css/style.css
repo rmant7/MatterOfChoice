@@ -297,4 +297,14 @@ border-radius: 5px;
   background-color: #3e8e41;
 }
 
+/* ... existing styles ... */
 
+#game-info {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+}

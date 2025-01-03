@@ -270,24 +270,39 @@ async function handleGenerateCasesResponse(response) {
 
     const jsonData = await response.json();
 
+    // Check if the game is finished
+    if (jsonData.message && jsonData.message === "CONGRATULATIONS YOU FINISHED THE GAME") {
+        displayCongratulations(jsonData.message);
+        return;
+    }
+
     // Robust check for data structure
     if (!jsonData.data) {
         displayError({ error: "Server response missing 'data' field." });
         return;
     }
 
-    //Check if data.data is an array of objects or a single object.
+    // Check if data.data is an array of objects or a single object.
     const data = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data]; // wrap in array if needed
 
-
     if (data && data.length > 0) {
-        displayCases( {data: data}); // Pass the corrected data to displayCases
+        displayCases({ data: data }); // Pass the corrected data to displayCases
         responseContainer.classList.add('success');
     } else {
         displayError({ error: "No cases received from the server." });
     }
 }
 
+function displayCongratulations(message) {
+    responseContainer.classList.add('success');
+    responseContainer.innerHTML = `
+        <h2>${message}</h2>
+        <button id="newGameButton">Start New Game</button>
+    `;
+
+    const newGameButton = document.getElementById('newGameButton');
+    newGameButton.addEventListener('click', startNewGame);
+}
 
 function displayError(errorData) {
     responseContainer.classList.add('error');

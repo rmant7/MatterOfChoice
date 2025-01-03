@@ -72,9 +72,12 @@ def generate_cases():
 
     turn = session.get('turn', 1)
 
+    if turn == 6:
+        return jsonify({"message": "CONGRATULATIONS YOU FINISHED THE GAME"}), 200
+
     try:
         if turn == 1:
-            case_data, conversation_data = gen_cases(language,difficulty,  age, output_dir, subject)
+            case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject)
             if case_data is None:
                 return jsonify({"error": "Failed to generate initial case."}), 500
             session['turn'] = 2
@@ -116,4 +119,3 @@ def submit_answers():
 
 if __name__ == '__main__':
     app.run(debug=True)
-

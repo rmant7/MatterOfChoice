@@ -146,7 +146,7 @@ def gen_cases(language: str,  difficulty: str,age: int, output_dir: Path, subjec
 
     try:
         if conversation_data is None:
-            prompt = f"""{prompts['cases']} Respond in {language}. The content should be appropriate for a  child aged {age} and the subject/theme used should be {subject}. Set The difficulty of the content to {difficulty}"""
+            prompt = f"""{prompts['cases']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set The difficulty of the content to {difficulty}"""
             logger.debug(f"Initial prompt generated: {prompt}")
         else:
             previous_response = conversation_data.get('data', {})
@@ -165,15 +165,15 @@ def gen_cases(language: str,  difficulty: str,age: int, output_dir: Path, subjec
                 return None, conversation_data
 
             # Construct a clear textual representation of the previous turn
-            previous_turn_summary = f"Previous Case: {previous_case}\nThe child was presented with the following options:\n"
+            previous_turn_summary = f"Previous Case: {previous_case}\nThe person was presented with the following options:\n"
             for option in previous_options:
                 previous_turn_summary += f"- Option {option['number']}: {option['option']}\n"
-            previous_turn_summary += f"\nThe child selected option {user_choice}."
+            previous_turn_summary += f"\nThe person selected option {user_choice}."
 
 
 
 
-            prompt = f"""{prompts['cases']} The child's previous response was {previous_turn_summary} for case. In the role of a psychologist for this child, ask another question SAME STRUCTURE based on their previous response  in {language} appropriate for a  child aged {age} with the theme '{subject}'.Set The difficulty of the content to {difficulty}"""
+            prompt = f"""{prompts['cases']} The person's previous response was {previous_turn_summary} for case. In the role of a psychologist for this person, ask another question SAME STRUCTURE based on their previous response  in {language} appropriate for a  child aged {age} with the theme '{subject}'.Set The difficulty of the content to {difficulty}"""
             logger.debug(f"Follow-up prompt generated: {prompt}")
 
 
