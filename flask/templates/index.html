@@ -92,6 +92,7 @@
         .submit-button {
             margin-top: 20px;
         }
+
     </style>
 </head>
 <body>
@@ -152,6 +153,9 @@
                     <option value="hard">hard</option>
                 </select>
 
+                <label for="role">Role (Will be used for analysis part):</label>  <!-- No longer hidden -->
+                <input type="text" id="role" name="role" required>
+
                 <button type="submit">Generate Cases</button>
             </form>
         </div>
@@ -159,6 +163,8 @@
             <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
         </div>
         <div id="response-container" class="hidden">
+]
+            
             <form id="caseForm">
                 <!-- Cases will be injected here -->
             </form>

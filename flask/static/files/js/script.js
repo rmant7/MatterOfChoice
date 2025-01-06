@@ -298,10 +298,65 @@ function displayCongratulations(message) {
     responseContainer.innerHTML = `
         <h2>${message}</h2>
         <button id="newGameButton">Start New Game</button>
+        <button id="analyzeButton">Analyze Results</button>
     `;
 
     const newGameButton = document.getElementById('newGameButton');
     newGameButton.addEventListener('click', startNewGame);
+
+    const analyzeButton = document.getElementById('analyzeButton');
+    analyzeButton.addEventListener('click', () => {
+        document.getElementById('analysis-section').classList.remove('hidden');
+        analyzeResults();
+    });
+}
+
+
+
+async function analyzeResults() {
+    loadingSpinner.classList.remove('hidden');
+    responseContainer.classList.add('hidden');
+    responseContainer.classList.remove('success');
+    responseContainer.classList.remove('error');
+
+    const role = document.getElementById('role').value;
+
+    try {
+        const response = await fetch('/analysis', {
+            method: 'POST',
+            body: new URLSearchParams({ role: role }),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            displayError(errorData);
+            return;
+        }
+
+        const analysisData = await response.json();
+        displayAnalysis(analysisData.analysis);
+        responseContainer.classList.add('success');
+
+    } catch (error) {
+        displayError({ error: error.message });
+    } finally {
+        loadingSpinner.classList.add('hidden');
+        responseContainer.classList.remove('hidden');
+    }
+}
+
+
+function displayAnalysis(analysis) {
+    responseContainer.innerHTML = `
+        <h2>Analysis Results</h2>
+        <div class="analysis-content">
+            <pre>${analysis}</pre>
+        </div>
+        <button id="backButton">Go back</button>
+    `;
+
+    const backButton = document.getElementById('backButton');
+    backButton.addEventListener('click', startNewGame);
 }
 
 function displayError(errorData) {
