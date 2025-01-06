@@ -1,13 +1,5 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.MatterOfChoices" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/myColor</item>
-    </style>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
 
-    <style name="MyTextStyle" parent="TextAppearance.AppCompat.Body1">
-        <item name="fontFamily">@font/merriweather_sans</item>
-    </style>
-
-    <style name="Theme.MatterOfChoices" parent="Base.Theme.MatterOfChoices" />
+    <style name="Theme.Matterofchoice" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>
