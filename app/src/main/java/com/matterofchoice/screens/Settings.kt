@@ -22,7 +22,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.matterofchoice.Screens
@@ -31,8 +30,7 @@ import com.matterofchoice.ui.theme.MyColor
 import com.matterofchoice.viewmodel.AIViewModel
 
 @Composable
-fun Settings(viewModel: AIViewModel = viewModel()) {
-    val navController = rememberNavController()
+fun Settings(viewModel: AIViewModel = viewModel(),navController:NavController) {
     val listContent by viewModel.listContent.collectAsState()
     val errorState by viewModel.errorState.collectAsState()
 

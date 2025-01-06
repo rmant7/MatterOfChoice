@@ -33,12 +33,11 @@ private  var caseList:List<Case> = emptyList()
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
-    val selected = remember { mutableIntStateOf(R.drawable.game1) }
 
 
     Scaffold(
         bottomBar = {
-            BottomNav(navController, selected)
+            BottomNav(navController)
         }
     ) { innerPadding ->
         NavHost(
@@ -49,7 +48,7 @@ fun MainScreen() {
             composable(Screens.GameScreen.screen) { Game(navController) }
             composable(Screens.ResultScreen.screen) { Result() }
             composable(Screens.AnalysisScreen.screen) { Analysis() }
-            composable(Screens.SettingsScreen.screen) { Settings() }
+            composable(Screens.SettingsScreen.screen) { Settings(navController = navController) }
         }
     }
 }
@@ -92,7 +91,7 @@ fun Game(navController: NavHostController) {
                 shape = RoundedCornerShape(5.dp),
                 colors = buttonColors(MyColor)
             ) {
-                Text("fjfjfj", fontSize = 18.sp, color = Color.White)
+                Text("This is a test", fontSize = 18.sp, color = Color.White)
             }
         }
 
