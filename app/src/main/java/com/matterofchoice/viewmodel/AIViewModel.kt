@@ -118,7 +118,7 @@ class AIViewModel(application: Application): AndroidViewModel(application) {
 
             val model = GenerativeModel(
                 modelName = "gemini-pro",
-                apiKey = "AIzaSyBbpQNYsB4bDDctAB14D8FQIIOqn7JOccc",
+                apiKey = "Your_API_KEY",
             )
             val response = model.generateContent(prompt)
 
