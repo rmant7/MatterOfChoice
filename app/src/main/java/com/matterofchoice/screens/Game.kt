@@ -15,19 +15,17 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.ahmed.matterofchoice.BottomNav
-import com.ahmed.matterofchoice.R
-import com.ahmed.matterofchoice.Screens
-import com.ahmed.matterofchoice.model.Case
-import com.ahmed.matterofchoice.ui.theme.MatterOfChoiceTheme
-import com.ahmed.matterofchoice.ui.theme.MyColor
+import com.matterofchoice.BottomNav
+import com.matterofchoice.R
+import com.matterofchoice.Screens
+import com.matterofchoice.model.Case
+import com.matterofchoice.ui.theme.MyColor
 
 
 private  var caseList:List<Case> = emptyList()
@@ -101,11 +99,3 @@ fun Game(navController: NavHostController) {
     }
 }
 
-
-@Preview
-@Composable
-fun MyPreview(){
-    MatterOfChoiceTheme {
-    }
-
-}

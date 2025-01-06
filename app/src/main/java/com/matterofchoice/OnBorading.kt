@@ -42,6 +42,8 @@ import androidx.navigation.NavHostController
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
+import com.matterofchoice.ui.theme.MyColor
+import com.matterofchoice.ui.theme.myFont
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalPagerApi::class)

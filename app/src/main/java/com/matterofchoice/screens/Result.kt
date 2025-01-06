@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import com.ahmed.matterofchoice.ui.theme.MatterOfChoiceTheme
+import com.matterofchoice.ui.theme.MatterofchoiceTheme
 
 @Composable
 fun Result(){
@@ -27,7 +27,7 @@ fun Result(){
 @Preview
 @Composable
 fun MyPreView(){
-    MatterOfChoiceTheme {
+    MatterofchoiceTheme {
         Result()
     }
 }
