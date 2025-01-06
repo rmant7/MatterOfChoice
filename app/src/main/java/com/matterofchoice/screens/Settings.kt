@@ -23,12 +23,12 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.ahmed.matterofchoice.Screens
-import com.ahmed.matterofchoice.model.Case
-import com.ahmed.matterofchoice.ui.theme.MyColor
-import com.ahmed.matterofchoice.viewmodel.AIViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.matterofchoice.Screens
+import com.matterofchoice.model.Case
+import com.matterofchoice.ui.theme.MyColor
+import com.matterofchoice.viewmodel.AIViewModel
 
 @Composable
 fun Settings(viewModel: AIViewModel = viewModel()) {
@@ -66,7 +66,10 @@ fun Settings(viewModel: AIViewModel = viewModel()) {
 }
 
 @Composable
-fun UserInput(viewModel: AIViewModel = viewModel (), navController: NavController) {
+fun UserInput(
+    viewModel: AIViewModel = viewModel(),
+    navController: NavController,
+) {
     val context = LocalContext.current.applicationContext
     var userSubject by remember { mutableStateOf("") }
     var userAge by remember { mutableStateOf("") }
@@ -114,25 +117,26 @@ fun UserInput(viewModel: AIViewModel = viewModel (), navController: NavControlle
             Button(
                 onClick = {
                     if (userSubject.isBlank() || userAge.isBlank() || userGender.isBlank() || userLanguage.isBlank()) {
-                        Toast.makeText(context, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Please fill in all fields", Toast.LENGTH_SHORT)
+                            .show()
                     } else {
-                        val result = viewModel.loadPrompts("prompts.json")
-                        if (result != null) {
-                            viewModel.generateCases(
-                                subject = userSubject,
-                                age = userAge,
-                                gender = userGender,
-                                language = userLanguage,
-                                prompts = result,
-                                context = context
-                            )
-                            navController.navigate(Screens.GameScreen.screen){
+//                        val result = viewModel.loadPrompts("prompts.json")
+//                        if (result != null) {
+//                            viewModel.generateCases(
+//                                subject = userSubject,
+//                                age = userAge,
+//                                gender = userGender,
+//                                language = userLanguage,
+//                                prompts = result,
+//                                context = context
+//                            )
+                            navController.navigate(Screens.GameScreen.screen) {
                                 popUpTo(0)
                             }
 
-                        } else {
-                            viewModel.setError("Failed to load prompts.")
-                        }
+//                        else {
+//                            viewModel.setError("Failed to load prompts.")
+//                        }
                     }
                 }
             ) {
