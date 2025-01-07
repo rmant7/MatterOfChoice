@@ -74,6 +74,9 @@ def generate_cases():
     turn = session.get('turn', 1)
 
     if turn > 6:
+
+        turn = 1
+        session['turn'] = 1
         return jsonify({"message": "CONGRATULATIONS YOU FINISHED THE GAME"}), 200
 
     try:
@@ -142,10 +145,11 @@ def analysis():
 
     with open(analysis_filepath, 'r') as f:
         analysis_data = json.load(f)
+    data = request.get_json()
 
     # Get the role data from the form (assuming it's a single string value)
-    role = request.form.get('role')  # Get the 'role' from form data
-
+    role = data.get('role')  # Get the 'role' from form data
+    print(role)
     if role is None:  # Handle missing role data
         return jsonify({"error": "Role data is missing in the request."}), 400
 
@@ -160,7 +164,7 @@ def analysis():
     analysis_data_str = json.dumps(analysis_data)
 
      # Create the prompt for Gemini, including the role
-    prompt = f"Analyze the following data, considering you play the role  of a  '{role}' to the player, to determine the player's character traits and behavior patterns based on their choices as you can see we have cases and options and each case has an answer the answer refers to the players choice for the case among the options provided. Provide a detailed analysis in a structured format that can be easily parsed:\n\n{analysis_data_str}"
+    prompt = f"Analyze the following data, considering you play the role  of a  '{role}' to the player, to determine the player's character traits and behavior patterns based on their choices as you can see we have cases and options and each case has an answer the answer refers to the players choice for the case among the options provided. Provide a detailed analysis in a structured format that can be easily parsed:\n\n{analysis_data_str} return your analysis in the same language the data uses"
 
     try:
         response = get_response_gemini(prompt)

@@ -293,6 +293,10 @@ async function handleGenerateCasesResponse(response) {
     }
 }
 
+
+// ... (Other functions remain largely unchanged, but consider refactoring for clarity) ...
+
+
 function displayCongratulations(message) {
     responseContainer.classList.add('success');
     responseContainer.innerHTML = `
@@ -304,14 +308,18 @@ function displayCongratulations(message) {
     const newGameButton = document.getElementById('newGameButton');
     newGameButton.addEventListener('click', startNewGame);
 
-    const analyzeButton = document.getElementById('analyzeButton');
-    analyzeButton.addEventListener('click', () => {
-        document.getElementById('analysis-section').classList.remove('hidden');
-        analyzeResults();
-    });
+    // Attach analyzeButton event listener AFTER it's created
+    attachAnalyzeButtonListener();
 }
 
-
+function attachAnalyzeButtonListener() {
+    const analyzeButton = document.getElementById('analyzeButton');
+    if (analyzeButton) { // Check if the button exists before adding the listener
+        analyzeButton.addEventListener('click', analyzeResults);
+    } else {
+        console.error("Analyze button not found!");
+    }
+}
 
 async function analyzeResults() {
     loadingSpinner.classList.remove('hidden');
@@ -324,26 +332,36 @@ async function analyzeResults() {
     try {
         const response = await fetch('/analysis', {
             method: 'POST',
-            body: new URLSearchParams({ role: role }),
+            body: JSON.stringify({ role: role }), //Use JSON for better handling on the backend
+            headers: { 'Content-Type': 'application/json' } //Specify header for JSON data
         });
 
         if (!response.ok) {
-            const errorData = await response.json();
+            const errorData = await response.json(); // Handle non-ok responses more thoroughly
             displayError(errorData);
             return;
         }
 
         const analysisData = await response.json();
-        displayAnalysis(analysisData.analysis);
+        if (analysisData && analysisData.analysis) { //Check that analysis data is present.
+            displayAnalysis(analysisData.analysis);
+        } else {
+            displayError({ error: "Invalid analysis data received from server." });
+        }
         responseContainer.classList.add('success');
 
     } catch (error) {
-        displayError({ error: error.message });
+        //Handle network errors or other exceptions
+        displayError({ error: `Analysis failed: ${error}` });
     } finally {
         loadingSpinner.classList.add('hidden');
         responseContainer.classList.remove('hidden');
     }
 }
+
+// ... (rest of your functions) ...
+
+
 
 
 function displayAnalysis(analysis) {
