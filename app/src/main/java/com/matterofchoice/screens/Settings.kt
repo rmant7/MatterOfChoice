@@ -1,5 +1,6 @@
 package com.matterofchoice.screens
 
+import android.content.Context
 import android.widget.Toast
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,7 +12,6 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -20,55 +20,28 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.matterofchoice.Screens
-import com.matterofchoice.model.Case
 import com.matterofchoice.ui.theme.MyColor
-import com.matterofchoice.viewmodel.AIViewModel
 
 @Composable
-fun Settings(viewModel: AIViewModel = viewModel(),navController:NavController) {
-    val listContent by viewModel.listContent.collectAsState()
-    val errorState by viewModel.errorState.collectAsState()
-
-    UserInput(viewModel, navController = navController)
-
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)
-    ) {
-
-        errorState?.let { error ->
-            Text(
-                text = error,
-                color = MaterialTheme.colorScheme.error,
-                style = MaterialTheme.typography.bodyLarge,
-                modifier = Modifier.padding(bottom = 8.dp)
-            )
-        }
-
-
-        listContent?.let { content ->
-            val gson = Gson()
-            val listType = object : TypeToken<List<Case>>() {}.type
-            val cases: List<Case> =
-                gson.fromJson(content.toString(), listType)
-        }
-
+fun Settings(navController: NavController) {
+    Column {
+        Text("Gsdddddd")
+        UserInput(navController = navController)
     }
+
+
 }
 
 @Composable
 fun UserInput(
-    viewModel: AIViewModel = viewModel(),
     navController: NavController,
 ) {
     val context = LocalContext.current.applicationContext
+    val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+
+
     var userSubject by remember { mutableStateOf("") }
     var userAge by remember { mutableStateOf("") }
     var userGender by remember { mutableStateOf("") }
@@ -118,23 +91,16 @@ fun UserInput(
                         Toast.makeText(context, "Please fill in all fields", Toast.LENGTH_SHORT)
                             .show()
                     } else {
-//                        val result = viewModel.loadPrompts("prompts.json")
-//                        if (result != null) {
-//                            viewModel.generateCases(
-//                                subject = userSubject,
-//                                age = userAge,
-//                                gender = userGender,
-//                                language = userLanguage,
-//                                prompts = result,
-//                                context = context
-//                            )
-                            navController.navigate(Screens.GameScreen.screen) {
-                                popUpTo(0)
-                            }
-
-//                        else {
-//                            viewModel.setError("Failed to load prompts.")
-//                        }
+                        val editor = sharedPreferences.edit()
+                        editor.putBoolean("isFirst",false)
+                        editor.putString("userSubject", userSubject).apply()
+                        editor.putString("userAge", userAge).apply()
+                        editor.putString("userGender", userGender).apply()
+                        editor.putString("userLanguage", userLanguage).apply()
+                        editor.apply()
+                        navController.navigate(Screens.GameScreen.screen) {
+                            popUpTo(0)
+                        }
                     }
                 }
             ) {

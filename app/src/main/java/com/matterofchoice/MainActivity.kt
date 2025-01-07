@@ -1,11 +1,13 @@
 package com.matterofchoice
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -22,6 +24,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             MatterofchoiceTheme {
                 Surface {
+                    val context = LocalContext.current.applicationContext
+                    val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putBoolean("isFirst", true)
+                    editor.apply()
                     val navController = rememberNavController()
                     AppNavHost(navController)
                 }

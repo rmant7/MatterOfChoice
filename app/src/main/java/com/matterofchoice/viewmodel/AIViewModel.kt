@@ -14,7 +14,23 @@ import org.json.JSONObject
 import java.io.File
 import java.io.FileWriter
 
-class AIViewModel(application: Application): AndroidViewModel(application) {
+class AIViewModel(application: Application,): AndroidViewModel(application) {
+    private val sharedPreferences = application.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+
+    private val _userSubject = MutableStateFlow(sharedPreferences.getString("username", "defaultName") ?: "")
+    private val userSubject: StateFlow<String> get() = _userSubject
+
+    private val _userAge = MutableStateFlow(sharedPreferences.getString("username", "defaultName") ?: "")
+    val userAge: StateFlow<String> get() = _userAge
+
+    private val _userGender = MutableStateFlow(sharedPreferences.getString("username", "defaultName") ?: "")
+    val userGender: StateFlow<String> get() = _userGender
+
+    private val _userLanguage = MutableStateFlow(sharedPreferences.getString("username", "defaultName") ?: "")
+    val userLanguage: StateFlow<String> get() = _userLanguage
+
+
+
     private val _listContent = MutableStateFlow<JSONArray?>(null)
     var listContent: StateFlow<JSONArray?> = _listContent
 
@@ -59,6 +75,15 @@ class AIViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
+    fun initializeCases(context: Context) {
+        val result = loadPrompts("prompts.json")
+        if (result != null) {
+            generateCases(result, context)
+        } else {
+            _errorState.value = "Failed to load prompts."
+        }
+    }
+
     private fun saveGeneratedCase(i: Int, list: JSONArray, role: String, context: Context) {
         try {
             val caseData = JSONObject().apply {
@@ -85,7 +110,7 @@ class AIViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-    private suspend fun generateCasePrompt(i: Int, prompts: JSONObject, context: Context, userSubject: String, userAge: String, userGender: String, userLanguage: String) {
+    private suspend fun generateCasePrompt(i: Int, prompts: JSONObject, context: Context) {
         val roles = prompts.optJSONArray("roles") ?: JSONArray()
         val role = roles.optString(i)
         val casesPrompt = prompts.optString("cases")
@@ -100,16 +125,17 @@ class AIViewModel(application: Application): AndroidViewModel(application) {
         saveGeneratedCase(i, extractedList, role, context)
     }
 
-    fun generateCases(prompts: JSONObject, context: Context,gender: String, language: String, age: String, subject: String) {
+    fun generateCases(prompts: JSONObject, context: Context) {
         viewModelScope.launch {
             try {
-                generateCasePrompt(caseIndex, prompts, context,subject,age,gender,language)
+                generateCasePrompt(caseIndex, prompts, context)
                 caseIndex++
             } catch (e: Exception) {
                 Log.v("CASES", "Error processing case $caseIndex: ${e.message}")
                 _errorState.value = "Error processing case: ${e.message}"
             }
         }
+
     }
 
     suspend fun getResponseGemini(prompt: String): String {
@@ -118,7 +144,7 @@ class AIViewModel(application: Application): AndroidViewModel(application) {
 
             val model = GenerativeModel(
                 modelName = "gemini-pro",
-                apiKey = "Your_API_KEY",
+                apiKey = "AIzaSyBbpQNYsB4bDDctAB14D8FQIIOqn7JOccc",
             )
             val response = model.generateContent(prompt)
 
