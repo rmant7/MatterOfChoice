@@ -308,3 +308,38 @@ border-radius: 5px;
   color: #333;
   text-align: center;
 }
+
+
+
+
+
+.analysis-content {
+  width: 80%; /* Adjust as needed */
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.analysis-section {
+  margin-bottom: 20px;
+}
+
+.analysis-heading {
+  color: #333; /* Adjust heading color */
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.analysis-list {
+  list-style-type: disc; /* Or square, circle, etc. */
+  padding-left: 20px;
+}
+
+.analysis-item {
+  margin-bottom: 5px;
+}
+
+.analysis-text { /* Style for plain text analysis */
+white-space: pre-wrap; /* Allows text to wrap */
+}

@@ -367,8 +367,29 @@ async function analyzeResults() {
 function displayAnalysis(analysis) {
     responseContainer.innerHTML = `
         <h2>Analysis Results</h2>
-        <div class="analysis-content">
-            <pre>${analysis}</pre>
+        <div class="analysis-content">`;
+
+    if (typeof analysis === 'object') {
+        for (const key in analysis) {
+            responseContainer.innerHTML += `
+                <div class="analysis-section">
+                    <h3 class="analysis-heading">${key}</h3>
+                    <ul class="analysis-list">`;
+            if (Array.isArray(analysis[key])) {
+                analysis[key].forEach(item => {
+                    responseContainer.innerHTML += `<li class="analysis-item">${item}</li>`;
+                });
+            } else {
+                responseContainer.innerHTML += `<li class="analysis-item">${analysis[key]}</li>`;
+            }
+            responseContainer.innerHTML += `</ul>
+                </div>`;
+        }
+    } else {
+        responseContainer.innerHTML += `<p class="analysis-text">${analysis}</p>`;
+    }
+
+    responseContainer.innerHTML += `
         </div>
         <button id="backButton">Go back</button>
     `;
@@ -376,6 +397,7 @@ function displayAnalysis(analysis) {
     const backButton = document.getElementById('backButton');
     backButton.addEventListener('click', startNewGame);
 }
+
 
 function displayError(errorData) {
     responseContainer.classList.add('error');
