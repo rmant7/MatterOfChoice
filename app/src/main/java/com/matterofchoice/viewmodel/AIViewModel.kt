@@ -3,6 +3,8 @@ package com.matterofchoice.viewmodel
 import android.app.Application
 import android.content.Context
 import android.util.Log
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.ai.client.generativeai.GenerativeModel
@@ -14,20 +16,23 @@ import org.json.JSONObject
 import java.io.File
 import java.io.FileWriter
 
-class AIViewModel(application: Application,): AndroidViewModel(application) {
+class AIViewModel(application: Application): AndroidViewModel(application) {
     private val sharedPreferences = application.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
-    private val _userSubject = MutableStateFlow(sharedPreferences.getString("username", "defaultName") ?: "")
+    private val _userSubject = MutableStateFlow(sharedPreferences.getString("username", "") ?: "")
     private val userSubject: StateFlow<String> get() = _userSubject
 
-    private val _userAge = MutableStateFlow(sharedPreferences.getString("username", "defaultName") ?: "")
-    val userAge: StateFlow<String> get() = _userAge
+    private val _userAge = MutableStateFlow(sharedPreferences.getString("username", "") ?: "")
+    private val userAge: StateFlow<String> get() = _userAge
 
-    private val _userGender = MutableStateFlow(sharedPreferences.getString("username", "defaultName") ?: "")
-    val userGender: StateFlow<String> get() = _userGender
+    private val _userGender = MutableStateFlow(sharedPreferences.getString("username", "") ?: "")
+    private val userGender: StateFlow<String> get() = _userGender
 
-    private val _userLanguage = MutableStateFlow(sharedPreferences.getString("username", "defaultName") ?: "")
-    val userLanguage: StateFlow<String> get() = _userLanguage
+    private val _userLanguage = MutableStateFlow(sharedPreferences.getString("username", "") ?: "")
+    private val userLanguage: StateFlow<String> get() = _userLanguage
+
+    private val _isInitialized = mutableStateOf(false)
+    val isInitialized: State<Boolean> = _isInitialized
 
 
 
@@ -41,13 +46,9 @@ class AIViewModel(application: Application,): AndroidViewModel(application) {
     private var caseIndex = 0
 
 
-    fun setError(error: String) {
-        _errorState.value = error
-    }
-
-    fun loadPrompts(fileName: String): JSONObject? {
+    private fun loadPrompts(): JSONObject? {
         return try {
-            val jsonContent = getApplication<Application>().assets.open(fileName).bufferedReader().use { it.readText() }
+            val jsonContent = getApplication<Application>().assets.open("prompts.json").bufferedReader().use { it.readText() }
             JSONObject(jsonContent)
         } catch (e: Exception) {
             Log.v("TAGY", "Error loading prompts: ${e.message}")
@@ -76,11 +77,15 @@ class AIViewModel(application: Application,): AndroidViewModel(application) {
     }
 
     fun initializeCases(context: Context) {
-        val result = loadPrompts("prompts.json")
-        if (result != null) {
-            generateCases(result, context)
-        } else {
-            _errorState.value = "Failed to load prompts."
+        if (!_isInitialized.value) {
+            _isInitialized.value = true
+            val result = loadPrompts()
+            if (result != null) {
+                generateCases(result, context)
+            } else {
+                _errorState.value = "Failed to load prompts."
+            }
+
         }
     }
 
@@ -125,7 +130,7 @@ class AIViewModel(application: Application,): AndroidViewModel(application) {
         saveGeneratedCase(i, extractedList, role, context)
     }
 
-    fun generateCases(prompts: JSONObject, context: Context) {
+    private fun generateCases(prompts: JSONObject, context: Context) {
         viewModelScope.launch {
             try {
                 generateCasePrompt(caseIndex, prompts, context)
@@ -138,7 +143,7 @@ class AIViewModel(application: Application,): AndroidViewModel(application) {
 
     }
 
-    suspend fun getResponseGemini(prompt: String): String {
+    private suspend fun getResponseGemini(prompt: String): String {
         return try {
             Log.v("TOOLRES", "Generating response for prompt: $prompt...")
 
@@ -148,7 +153,7 @@ class AIViewModel(application: Application,): AndroidViewModel(application) {
             )
             val response = model.generateContent(prompt)
 
-            if (response != null && response.candidates.isNotEmpty()) {
+            if (response.candidates.isNotEmpty()) {
                 val content = response.text ?: ""
                 Log.v("MOSAA", "Received response: $content")
                 content

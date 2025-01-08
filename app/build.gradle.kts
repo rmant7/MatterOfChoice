@@ -69,4 +69,10 @@ dependencies {
     implementation (libs.gson)
 
     implementation (libs.accompanist.pager)
+
+    implementation ("com.airbnb.android:lottie-compose:6.6.2")
+
+
+
+
 }
