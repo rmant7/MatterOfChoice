@@ -250,6 +250,7 @@ function startNewGame() {
     form.querySelector('#age').disabled = false;
     form.querySelector('#difficulty').disabled = false;
     form.querySelector('#subject').disabled = false;
+    form.querySelector('#question_type').disabled = false;
 
     form.querySelector('button[type="submit"]').disabled = false;
 
@@ -328,11 +329,13 @@ async function analyzeResults() {
     responseContainer.classList.remove('error');
 
     const role = document.getElementById('role').value;
+    const question_type = document.getElementById('question_type').value;
+
 
     try {
         const response = await fetch('/analysis', {
             method: 'POST',
-            body: JSON.stringify({ role: role }), //Use JSON for better handling on the backend
+            body: JSON.stringify({ role: role, question_type: question_type }), //Use JSON for better handling on the backend
             headers: { 'Content-Type': 'application/json' } //Specify header for JSON data
         });
 
@@ -414,7 +417,7 @@ function displayError(errorData) {
         form.querySelector('#age').disabled = false;
         form.querySelector('#subject').disabled = false;
         form.querySelector('#difficulty').disabled = false;
-
+        form.querySelector('#question_type').disabled = false;
         form.querySelector('button[type="submit"]').disabled = false;
         responseContainer.classList.add('hidden');
         form.submit();

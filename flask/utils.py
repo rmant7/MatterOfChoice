@@ -140,13 +140,16 @@ def extract_list(code: str) -> str:
 
 
 
-def gen_cases(language: str,  difficulty: str,age: int, output_dir: Path, subject: str, conversation_data=None):
+def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subject: str, question_type: str, conversation_data=None):
     logger = logging.getLogger('my_app')
-    logger.debug(f"gen_cases function called with parameters: language={language}, age={age}, subject={subject}, difficulty={difficulty}, conversation_data={conversation_data}")
+    logger.debug(f"gen_cases function called with parameters: language={language}, age={age}, subject={subject}, difficulty={difficulty}, question_type={question_type}, conversation_data={conversation_data}")
 
     try:
         if conversation_data is None:
-            prompt = f"""{prompts['cases']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set The difficulty of the content to {difficulty}"""
+            if question_type == 'behavioral':
+                prompt = f"""{prompts['cases']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set The difficulty of the content to {difficulty}"""
+            elif question_type == 'study':
+                prompt = f"""{prompts['study']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set The difficulty of the content to {difficulty}"""
             logger.debug(f"Initial prompt generated: {prompt}")
         else:
             previous_response = conversation_data.get('data', {})
@@ -170,12 +173,11 @@ def gen_cases(language: str,  difficulty: str,age: int, output_dir: Path, subjec
                 previous_turn_summary += f"- Option {option['number']}: {option['option']}\n"
             previous_turn_summary += f"\nThe person selected option {user_choice}."
 
-
-
-
-            prompt = f"""{prompts['cases']} The person's previous response was {previous_turn_summary} for case. In the role of a psychologist for this person, ask another question SAME STRUCTURE based on their previous response  in {language} appropriate for a  child aged {age} with the theme '{subject}'.Set The difficulty of the content to {difficulty}"""
+            if question_type == 'behavioral':
+                prompt = f"""{prompts['cases']} The person's previous response was {previous_turn_summary} for case, ask another question SAME STRUCTURE based on their previous response in {language} appropriate for the age {age} with the theme '{subject}'. Set The difficulty of the content to {difficulty}"""
+            elif question_type == 'study':
+                prompt = f"""{prompts['study']} The person's previous response was {previous_turn_summary} for case, ask another question SAME STRUCTURE based on their previous response in {language} appropriate for the age {age} with the theme '{subject}'. Set The difficulty of the content to {difficulty}"""
             logger.debug(f"Follow-up prompt generated: {prompt}")
-
 
         response = get_response_gemini(prompt)
         logger.debug(f"Gemini response: {response[:200]}...")

@@ -56,11 +56,12 @@ def generate_cases():
     age = data.get('age')
     subject = data.get('subject')
     difficulty = data.get('difficulty')
+    question_type = data.get('question_type')  # New parameter for question type
 
     user_answer = data.get('answers')
 
-    if not all([language, age, subject, difficulty]):
-        return jsonify({"error": "language, age, difficulty and subject are required."}), 400
+    if not all([language, age, subject, difficulty, question_type]):
+        return jsonify({"error": "language, age, difficulty, subject, and question_type are required."}), 400
     try:
         age = int(age)
     except ValueError:
@@ -74,14 +75,13 @@ def generate_cases():
     turn = session.get('turn', 1)
 
     if turn > 6:
-
         turn = 1
         session['turn'] = 1
         return jsonify({"message": "CONGRATULATIONS YOU FINISHED THE GAME"}), 200
 
     try:
         if turn == 1:
-            case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject)
+            case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type)
             if case_data is None:
                 return jsonify({"error": "Failed to generate initial case."}), 500
             session['turn'] = 2
@@ -112,7 +112,7 @@ def generate_cases():
                     json.dump(analysis_data, f, indent=4)
 
                 conversation_data['data']['user_answer'] = user_answer
-                case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, conversation_data)
+                case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, conversation_data)
                 if case_data is None:
                     return jsonify({"error": "Failed to generate case."}), 500
                 session['turn'] = min(turn + 1, 7)
@@ -147,24 +147,28 @@ def analysis():
         analysis_data = json.load(f)
     data = request.get_json()
 
-    # Get the role data from the form (assuming it's a single string value)
+    # Get the role and question_type data from the form
     role = data.get('role')  # Get the 'role' from form data
-    print(role)
+    question_type = data.get('question_type')  # Get the 'question_type' from form data
+
     if role is None:  # Handle missing role data
         return jsonify({"error": "Role data is missing in the request."}), 400
 
+    if question_type is None:  # Handle missing question_type data
+        return jsonify({"error": "Question type data is missing in the request."}), 400
 
-
-    # Incorporate role into analysis_data (adjust as needed)
+    # Incorporate role and question_type into analysis_data (adjust as needed)
     analysis_data['role'] = role  # Add the role to the analysis data
-
-
+    analysis_data['question_type'] = question_type  # Add the question_type to the analysis data
 
     # Convert the analysis data to a string to send to Gemini
     analysis_data_str = json.dumps(analysis_data)
 
-     # Create the prompt for Gemini, including the role
-    prompt = f"Analyze the following data, considering you play the role  of a  '{role}' to the player, to determine the player's character traits and behavior patterns based on their choices as you can see we have cases and options and each case has an answer the answer refers to the players choice for the case among the options provided. Provide a detailed analysis in a structured format that can be easily parsed:\n\n{analysis_data_str} return your analysis in the same language the data uses"
+    # Create the prompt for Gemini, including the role and question_type
+    if question_type == 'behavioral':
+        prompt = f"Analyze the following data, considering you play the role of a '{role}' to the player, to determine the player's character traits and behavior patterns based on their choices. As you can see, we have cases and options, and each case has an answer. The answer refers to the player's choice for the case among the options provided. Provide a detailed analysis in a structured format that can be easily parsed:\n\n{analysis_data_str} Return your analysis in the same language the data uses."
+    elif question_type == 'study':
+        prompt = f"Analyze the following data, considering you play the role of a '{role}' to the player, to determine the player's knowledge acquisition and learning patterns based on their choices. As you can see, we have study-based questions and options, and each question has an answer. The answer refers to the player's choice for the question among the options provided. Provide a detailed analysis in a structured format that can be easily parsed:\n\n{analysis_data_str} Return your analysis in the same language the data uses."
 
     try:
         response = get_response_gemini(prompt)
