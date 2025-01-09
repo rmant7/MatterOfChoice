@@ -100,20 +100,24 @@ fun Loader() {
 
 @Composable
 fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostController) {
+    val context = LocalContext.current.applicationContext
+
+
+    val isInitialized by viewmodel.isInitialized.collectAsState()
     val listContent by viewmodel.listContent.collectAsState()
     val errorState by viewmodel.errorState.collectAsState()
+    val isLoading by viewmodel.isLoading.collectAsState()
     var showLoader by remember { mutableStateOf(true) }
-    val context = LocalContext.current.applicationContext
+
     val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
     val isFirst = sharedPreferences.getBoolean("isFirst", true)
 
 
-
     if (!isFirst) {
-        if (!viewmodel.isInitialized.value) {
-            viewmodel.initializeCases(context)
+        if (!isInitialized) {
+            viewmodel.main()
         }
-        if (showLoader) {
+        if (isLoading){
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 Text(
                     text = "Generating cases...", fontSize = 18.sp, modifier = Modifier
@@ -125,77 +129,82 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                 Loader()
             }
         }
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp)
-        ) {
+        else if (listContent != null) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp)
+            ) {
 
-            errorState?.let { error ->
-                Text(
-                    text = error,
-                    color = MaterialTheme.colorScheme.error,
-                    style = MaterialTheme.typography.bodyLarge,
-                    modifier = Modifier.padding(bottom = 8.dp)
-                )
-            }
-            listContent?.let { content ->
-                val gson = Gson()
-                val listType = object : TypeToken<List<Case>>() {}.type
-                val cases: List<Case> = gson.fromJson(content.toString(), listType)
-                if (cases.isNotEmpty()) {
-                    var selectedItem by remember { mutableStateOf(cases[0].options[0]) }
-                    Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(16.dp)
-                            .align(Alignment.CenterHorizontally)
-                    ) {
-                        Text(text = cases[0].case, color = Color.Red)
-                        showLoader = false
+                if (errorState.isNotEmpty()) {
+                    Text(
+                        text = errorState, fontSize = 18.sp, modifier = Modifier
+                            .align(
+                                Alignment.CenterHorizontally
+                            )
+                            .padding(top = 35.dp)
+                    )
+                }
+                if (listContent != null) {
+                    val gson = Gson()
+                    val listType = object : TypeToken<List<Case>>() {}.type
+                    val cases: List<Case> = gson.fromJson(listContent.toString(), listType)
+                    if (cases.isNotEmpty()) {
+                        var selectedItem by remember { mutableStateOf(cases[0].options[0]) }
+                        Column(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .padding(16.dp)
+                                .align(Alignment.CenterHorizontally)
+                        ) {
+                            Text(text = cases[0].case, color = Color.Red)
+                            showLoader = false
 
-                        cases[0].options.forEach {
-                            Row(
-                                verticalAlignment = Alignment.CenterVertically,
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .height(60.dp)
-                                    .selectable(
+                            cases[0].options.forEach {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .height(60.dp)
+                                        .selectable(
+                                            selected = (selectedItem == it),
+                                            onClick = { selectedItem = it },
+                                            role = Role.RadioButton
+                                        )
+                                        .shadow(2.dp, shape = RoundedCornerShape(10.dp))
+                                ) {
+                                    RadioButton(
                                         selected = (selectedItem == it),
                                         onClick = { selectedItem = it },
-                                        role = Role.RadioButton
+                                        modifier = Modifier.padding(end = 16.dp),
                                     )
-                                    .shadow(2.dp, shape = RoundedCornerShape(10.dp))
+                                    Text(it.option)
+                                }
+                            }
+
+                            Button(
+                                onClick = {
+                                    viewmodel.main()
+                                },
+                                shape = RoundedCornerShape(8.dp),
+                                modifier = Modifier.padding(top = 20.dp),
+                                colors = ButtonDefaults.buttonColors(MyColor)
                             ) {
-                                RadioButton(
-                                    selected = (selectedItem == it),
-                                    onClick = { selectedItem = it },
-                                    modifier = Modifier.padding(end = 16.dp),
+                                Text(
+                                    "Next",
+                                    modifier = Modifier.padding(
+                                        start = 20.dp,
+                                        end = 20.dp,
+                                        top = 5.dp,
+                                        bottom = 5.dp
+                                    ),
+                                    fontSize = 22.sp
                                 )
-                                Text(it.option)
                             }
                         }
 
-                        Button(
-                            onClick = {},
-                            shape = RoundedCornerShape(8.dp),
-                            modifier = Modifier.padding(top = 20.dp),
-                            colors = ButtonDefaults.buttonColors(MyColor)
-                        ) {
-                            Text(
-                                "Next",
-                                modifier = Modifier.padding(
-                                    start = 20.dp,
-                                    end = 20.dp,
-                                    top = 5.dp,
-                                    bottom = 5.dp
-                                ),
-                                fontSize = 22.sp
-                            )
-                        }
                     }
                 }
-
             }
         }
 
