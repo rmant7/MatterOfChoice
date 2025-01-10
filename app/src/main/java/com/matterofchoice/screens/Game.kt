@@ -2,6 +2,8 @@ package com.matterofchoice.screens
 
 
 import android.content.Context
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -49,6 +51,7 @@ import com.matterofchoice.BottomNav
 import com.matterofchoice.R
 import com.matterofchoice.Screens
 import com.matterofchoice.model.Case
+import com.matterofchoice.model.Option
 import com.matterofchoice.ui.theme.MatterofchoiceTheme
 import com.matterofchoice.ui.theme.MyColor
 import com.matterofchoice.viewmodel.AIViewModel
@@ -150,38 +153,45 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                     val listType = object : TypeToken<List<Case>>() {}.type
                     val cases: List<Case> = gson.fromJson(listContent.toString(), listType)
                     if (cases.isNotEmpty()) {
-                        var selectedItem by remember { mutableStateOf(cases[0].options[0]) }
+                        var selectedItem by remember { mutableStateOf<Option?>(null) }
                         Column(
                             modifier = Modifier
                                 .fillMaxSize()
-                                .padding(16.dp)
+                                .padding(8.dp)
                                 .align(Alignment.CenterHorizontally)
                         ) {
                             Text(text = cases[0].case, color = Color.Red)
                             showLoader = false
 
-                            cases[0].options.forEach {
+                            cases[0].options.forEach { option ->
                                 Row(
                                     verticalAlignment = Alignment.CenterVertically,
                                     modifier = Modifier
                                         .fillMaxWidth()
                                         .height(60.dp)
                                         .selectable(
-                                            selected = (selectedItem == it),
-                                            onClick = { selectedItem = it },
+                                            selected = (selectedItem == option),
+                                            onClick = { selectedItem = option },
                                             role = Role.RadioButton
                                         )
-                                        .shadow(2.dp, shape = RoundedCornerShape(10.dp))
+                                        .padding(8.dp)
+                                        .border(
+                                            BorderStroke(
+                                                width = 2.dp,
+                                                color = if (selectedItem == option) Color.Green else Color.LightGray
+                                            ),
+                                            shape = RoundedCornerShape(10.dp)
+                                        )
+                                        .padding(horizontal = 8.dp) // Optional: Add padding inside the border
                                 ) {
                                     RadioButton(
-                                        selected = (selectedItem == it),
-                                        onClick = { selectedItem = it },
+                                        selected = (selectedItem == option),
+                                        onClick = { selectedItem = option },
                                         modifier = Modifier.padding(end = 16.dp),
                                     )
-                                    Text(it.option)
+                                    Text(option.option, modifier = Modifier.padding(8.dp))
                                 }
                             }
-
                             Button(
                                 onClick = {
                                     viewmodel.main()
@@ -202,7 +212,6 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                                 )
                             }
                         }
-
                     }
                 }
             }

@@ -14,7 +14,7 @@ import org.json.JSONObject
 import java.io.File
 import java.io.FileWriter
 
-class AIViewModel(application: Application) : AndroidViewModel(application) {
+class AIViewModel(application: Application, context: Context) : AndroidViewModel(application) {
     private var i = 0
     private val _listContent = MutableStateFlow<JSONArray?>(null)
     val listContent: StateFlow<JSONArray?> get() = _listContent
@@ -28,10 +28,10 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     private val _isLoading = MutableStateFlow(false)
     val isLoading: StateFlow<Boolean> get() = _isLoading
 
-    private var userGender: String = "Male"
-    private var userLanguage: String = "English"
-    private var userAge: String = "11"
-    private var userSubject: String = "Study English"
+    private val userGender: String = context.getString()
+    private var userLanguage: String = context.getString()
+    private var userAge = context.getint()
+    private var userSubject: String = context.getString()
 
 
     fun getUserInfo(gender: String, language: String, age: String, subject: String) {
