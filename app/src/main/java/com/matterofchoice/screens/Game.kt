@@ -21,6 +21,7 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -160,7 +161,8 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                                 .padding(8.dp)
                                 .align(Alignment.CenterHorizontally)
                         ) {
-                            Text(text = cases[0].case, color = Color.Red)
+                            Text(text = cases[0].case, color = Color.Red,
+                                modifier = Modifier.padding(top = 30.dp, bottom = 30.dp))
                             showLoader = false
 
                             cases[0].options.forEach { option ->
@@ -178,23 +180,30 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                                         .border(
                                             BorderStroke(
                                                 width = 2.dp,
-                                                color = if (selectedItem == option) Color.Green else Color.LightGray
+                                                color = if (selectedItem == option) Color.DarkGray else Color.LightGray
                                             ),
                                             shape = RoundedCornerShape(10.dp)
                                         )
-                                        .padding(horizontal = 8.dp) // Optional: Add padding inside the border
+
                                 ) {
                                     RadioButton(
                                         selected = (selectedItem == option),
                                         onClick = { selectedItem = option },
                                         modifier = Modifier.padding(end = 16.dp),
                                     )
-                                    Text(option.option, modifier = Modifier.padding(8.dp))
+                                    Text(option.option, modifier = Modifier.padding(8.dp).padding(end = 8.dp))
                                 }
                             }
                             Button(
                                 onClick = {
                                     viewmodel.main()
+                                    if (selectedItem != null){
+                                        // the first click shows the correct choice
+                                        calculateScore(cases,selectedItem!!.option,context)
+                                    }else{
+                                        // show the correct choice
+
+                                    }
                                 },
                                 shape = RoundedCornerShape(8.dp),
                                 modifier = Modifier.padding(top = 20.dp),
@@ -228,6 +237,35 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
             }
         }
     }
+}
+
+fun calculateScore(cases:List<Case>, selectedOption:String,context: Context){
+    val sharedPreferences = context.getSharedPreferences("UserPreferences", Context.MODE_PRIVATE)
+    val editor = sharedPreferences.edit()
+
+    val userChoice =
+        cases[0].options.find { it.option == selectedOption }
+    var userScore = 0
+
+    userChoice!!.apply {
+        userScore += health + wealth + relationships + happiness + knowledge + karma + timeManagement +
+                environmentalImpact + personalGrowth + socialResponsibility
+    }
+    editor.putInt("userScore", userScore)
+    editor.apply()
+
+    var totalScore = 0
+
+    val optimalOption =
+        cases[0].options.find { it.number == cases[0].optimal.toInt() }
+
+    optimalOption!!.apply {
+        totalScore += health + wealth + relationships + happiness + knowledge + karma + timeManagement +
+                environmentalImpact + personalGrowth + socialResponsibility
+    }
+    editor.putInt("totalScore", totalScore)
+    editor.apply()
+
 }
 
 @Preview

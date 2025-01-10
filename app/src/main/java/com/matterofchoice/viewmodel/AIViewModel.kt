@@ -14,7 +14,7 @@ import org.json.JSONObject
 import java.io.File
 import java.io.FileWriter
 
-class AIViewModel(application: Application, context: Context) : AndroidViewModel(application) {
+class AIViewModel(application: Application) : AndroidViewModel(application) {
 
     private val sharedPreferences = application.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
@@ -31,23 +31,14 @@ class AIViewModel(application: Application, context: Context) : AndroidViewModel
     private val _isLoading = MutableStateFlow(false)
     val isLoading: StateFlow<Boolean> get() = _isLoading
 
-    private val userGender = sharedPreferences.getString("","")
-    private var userLanguage: String = context.getString()
-    private var userAge = context.getint()
-    private var userSubject: String = context.getString()
+    private var userSubject = sharedPreferences.getString("userSubject","")
+    private var userAge = sharedPreferences.getString("userAge","")
+    private val userGender = sharedPreferences.getString("userGender","")
+    private var userLanguage  = sharedPreferences.getString("userLanguage","")
 
-
-    fun getUserInfo(gender: String, language: String, age: String, subject: String) {
-        userGender = gender
-        userLanguage = language
-        userAge = age
-        userSubject = subject
-
-    }
-
-    private fun loadPrompts(fileName: String): JSONObject? {
+    private fun loadPrompts(): JSONObject? {
         return try {
-            val jsonContent = getApplication<Application>().assets.open(fileName).bufferedReader()
+            val jsonContent = getApplication<Application>().assets.open("prompts.json").bufferedReader()
                 .use { it.readText() }
             JSONObject(jsonContent)
         } catch (e: Exception) {
@@ -115,7 +106,7 @@ class AIViewModel(application: Application, context: Context) : AndroidViewModel
     fun generateCases(
         language: String,
         sex: String,
-        age: Int,
+        age: String,
         subject: String,
         prompts: JSONObject,
         context: Context,
@@ -179,16 +170,16 @@ class AIViewModel(application: Application, context: Context) : AndroidViewModel
 
 
     fun main() {
-        val prompts = loadPrompts("prompts.json") ?: return
+        val prompts = loadPrompts() ?: return
         _listContent.value = null
         _isInitialized.value = true
 
         viewModelScope.launch {
             generateCases(
-                language = userLanguage,
-                sex = userGender,
-                age = userAge.toInt(),
-                subject = userSubject,
+                language = userLanguage!!,
+                sex = userGender!!,
+                age = userAge!!,
+                subject = userSubject!!,
                 prompts = prompts,
                 getApplication()
             )
