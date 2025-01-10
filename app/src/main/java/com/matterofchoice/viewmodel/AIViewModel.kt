@@ -15,6 +15,9 @@ import java.io.File
 import java.io.FileWriter
 
 class AIViewModel(application: Application, context: Context) : AndroidViewModel(application) {
+
+    private val sharedPreferences = application.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+
     private var i = 0
     private val _listContent = MutableStateFlow<JSONArray?>(null)
     val listContent: StateFlow<JSONArray?> get() = _listContent
@@ -28,7 +31,7 @@ class AIViewModel(application: Application, context: Context) : AndroidViewModel
     private val _isLoading = MutableStateFlow(false)
     val isLoading: StateFlow<Boolean> get() = _isLoading
 
-    private val userGender: String = context.getString()
+    private val userGender = sharedPreferences.getString("","")
     private var userLanguage: String = context.getString()
     private var userAge = context.getint()
     private var userSubject: String = context.getString()
