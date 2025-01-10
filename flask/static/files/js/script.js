@@ -2,6 +2,7 @@ const form = document.getElementById('generateForm');
 const responseContainer = document.getElementById('response-container');
 const loadingSpinner = document.getElementById('loading-spinner');
 const caseForm = document.getElementById('caseForm');
+const resetButton = document.getElementById('resetButton'); // Get the reset button
 
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -70,12 +71,36 @@ caseForm.addEventListener('submit', async (event) => {
     }
 });
 
+// Add event listener for the reset button
+resetButton.addEventListener('click', async () => {
+    loadingSpinner.classList.remove('hidden');
+    responseContainer.classList.add('hidden');
+    responseContainer.classList.remove('success');
+    responseContainer.classList.remove('error');
+
+    try {
+        const response = await fetch('/reset', {
+            method: 'POST'
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            displayError(errorData);
+            return;
+        }
+
+        const jsonData = await response.json();
+        alert(jsonData.message); // Display reset confirmation message
+        startNewGame(); // Reset the game state
+    } catch (error) {
+        displayError({ error: error.message });
+    } finally {
+        loadingSpinner.classList.add('hidden');
+        responseContainer.classList.remove('hidden');
+    }
+});
+
 // ... (rest of the code remains unchanged) ...
-
-
-
-
-
 
 async function submitAnswers(answers) {
     loadingSpinner.classList.remove('hidden');
@@ -129,10 +154,6 @@ function calculateMaxScoreForAnswer(answer) {
      // Replace with your actual max score calculation for a single answer
     return 10; // Example: 10 max points per answer
 }
-
-
-
-
 
 function displayResults(data) {
     responseContainer.innerHTML = `
@@ -189,14 +210,12 @@ function displayCases(data) {
         displayError({ error: "Invalid data format from server." });
     }
 
-
     const submitButton = document.createElement('button');
     submitButton.type = 'submit';
     submitButton.classList.add('submit-button');
     submitButton.innerText = 'Submit Answers';
     caseForm.appendChild(submitButton);
 }
-
 
 function createCaseElement(caseData) {
     const caseElement = document.createElement('div');
@@ -235,8 +254,6 @@ function createCaseElement(caseData) {
     return caseElement;
 }
 
-
-
 function startNewGame() {
     // Clear previous game data
     caseForm.innerHTML = '';  // Clear the form
@@ -260,7 +277,6 @@ function startNewGame() {
 
     location.reload();
 }
-
 
 async function handleGenerateCasesResponse(response) {
     if (!response.ok) {
@@ -294,9 +310,7 @@ async function handleGenerateCasesResponse(response) {
     }
 }
 
-
 // ... (Other functions remain largely unchanged, but consider refactoring for clarity) ...
-
 
 function displayCongratulations(message) {
     responseContainer.classList.add('success');
@@ -331,7 +345,6 @@ async function analyzeResults() {
     const role = document.getElementById('role').value;
     const question_type = document.getElementById('question_type').value;
 
-
     try {
         const response = await fetch('/analysis', {
             method: 'POST',
@@ -363,9 +376,6 @@ async function analyzeResults() {
 }
 
 // ... (rest of your functions) ...
-
-
-
 
 function displayAnalysis(analysis) {
     responseContainer.innerHTML = `
@@ -400,7 +410,6 @@ function displayAnalysis(analysis) {
     const backButton = document.getElementById('backButton');
     backButton.addEventListener('click', startNewGame);
 }
-
 
 function displayError(errorData) {
     responseContainer.classList.add('error');

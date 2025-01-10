@@ -98,9 +98,10 @@
 <body>
     <div class="container">
         <h1>MOC API DEMO</h1>
+        <button id="resetButton">Reset Game</button> <!-- Add reset button here -->
         <h6 style="color: red;">*Please click on try again in case of any errors.</h6>
         <div id="game-info">
-            <p>The game consists of 6 questions. After answering all 6 questions, the game will end and you can generate a deatiled analysis on your responses. Good luck!</p>
+            <p>The game consists of 6 questions. After answering all 6 questions, the game will end and you can generate a detailed analysis on your responses. Good luck!</p>
         </div>
         <div id="form-container">
             <form id="generateForm">
@@ -128,7 +129,10 @@
                 </select>
 
                 <label for="age">Age:</label>
+
                 <select id="age" name="age" required>
+                    <option value="20">Default</option>
+
                 </select>
                 <script>
                   const ageSelect = document.getElementById('age');
@@ -153,12 +157,12 @@
 
                 <label for="difficulty">Question Type:</label>
                 <select id="question_type" name="question_type" required>
-                    <option value="behavioral">behavioral</option>
+                    <option value="behavioral">Default</option>
                     <option value="study">study</option>
                 </select>
 
                 <label for="role">Role (Will be used for analysis part):</label>  <!-- No longer hidden -->
-                <input type="text" id="role" name="role" required>
+                <input type="text" id="role" name="role" value="Default" required>
 
                 <button type="submit">Generate Cases</button>
             </form>
@@ -167,7 +171,6 @@
             <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
         </div>
         <div id="response-container" class="hidden">
-]
             
             <form id="caseForm">
                 <!-- Cases will be injected here -->

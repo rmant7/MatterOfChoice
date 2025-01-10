@@ -53,19 +53,22 @@ def generate_cases():
     logger.debug("generate_cases route entered")
     data = request.get_json()
     language = data.get('language')
-    age = data.get('age')
+    age = data.get('age', None)  # Optional age parameter
     subject = data.get('subject')
     difficulty = data.get('difficulty')
     question_type = data.get('question_type')  # New parameter for question type
+    role = data.get('role', 'default_role')  # Optional role parameter with a default value
+    sex = data.get('sex', 'unspecified')  # Optional sex parameter with a default value
 
     user_answer = data.get('answers')
 
-    if not all([language, age, subject, difficulty, question_type]):
-        return jsonify({"error": "language, age, difficulty, subject, and question_type are required."}), 400
-    try:
-        age = int(age)
-    except ValueError:
-        return jsonify({"error": "Invalid age (must be an integer)."}), 400
+    if not all([language, subject, difficulty, question_type]):
+        return jsonify({"error": "language, subject, difficulty, and question_type are required."}), 400
+    if age is not None:
+        try:
+            age = int(age)
+        except ValueError:
+            return jsonify({"error": "Invalid age (must be an integer)."}), 400
 
     output_filepath = BASE_DIR / 'output' / 'game' / 'conversation.json'
     analysis_filepath = BASE_DIR / 'output' / 'game' / 'analysis.json'
@@ -81,7 +84,7 @@ def generate_cases():
 
     try:
         if turn == 1:
-            case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type)
+            case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, sex=sex)
             if case_data is None:
                 return jsonify({"error": "Failed to generate initial case."}), 500
             session['turn'] = 2
@@ -90,7 +93,7 @@ def generate_cases():
                 json.dump({'cases': [case_data]}, f, indent=4)
         else:
             if user_answer is None:
-                return jsonify({"error": "User answer is required."}), 400
+                return jsonify({"error": "Please Pick one Of the Options Above."}), 400
             try:
                 user_answer = int(user_answer)
                 with open(output_filepath, 'r') as f:
@@ -112,7 +115,7 @@ def generate_cases():
                     json.dump(analysis_data, f, indent=4)
 
                 conversation_data['data']['user_answer'] = user_answer
-                case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, conversation_data)
+                case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, conversation_data, sex=sex)
                 if case_data is None:
                     return jsonify({"error": "Failed to generate case."}), 500
                 session['turn'] = min(turn + 1, 7)
@@ -148,11 +151,8 @@ def analysis():
     data = request.get_json()
 
     # Get the role and question_type data from the form
-    role = data.get('role')  # Get the 'role' from form data
+    role = data.get('role', 'default_role')  # Optional role parameter with a default value
     question_type = data.get('question_type')  # Get the 'question_type' from form data
-
-    if role is None:  # Handle missing role data
-        return jsonify({"error": "Role data is missing in the request."}), 400
 
     if question_type is None:  # Handle missing question_type data
         return jsonify({"error": "Question type data is missing in the request."}), 400
@@ -178,6 +178,23 @@ def analysis():
     except Exception as e:
         logger.exception(f"An error occurred while getting the analysis from Gemini: {e}")
         return jsonify({"error": "An error occurred while getting the analysis from Gemini."}), 500
+
+
+@app.route('/reset', methods=['POST'])
+def reset():
+    session['turn'] = 1
+
+    # Define the file paths
+    conversation_filepath = BASE_DIR / 'output' / 'game' / 'conversation.json'
+    analysis_filepath = BASE_DIR / 'output' / 'game' / 'analysis.json'
+
+    # Delete the files if they exist
+    if conversation_filepath.exists():
+        conversation_filepath.unlink()
+    if analysis_filepath.exists():
+        analysis_filepath.unlink()
+
+    return jsonify({"message": "Session reset and files deleted."}), 200
 
 
 if __name__ == '__main__':
