@@ -41,7 +41,7 @@ logger.debug("Logger configured. Starting app...")
 
 @app.route('/')  #Serve the index.html file when you go to the root path.
 def serve_index():
-    return render_template('index.html')
+    return render_template('index2.html')
 
 
 @app.route('/generate_cases', methods=['POST', 'GET'])

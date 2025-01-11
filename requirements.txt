@@ -12,3 +12,4 @@ google
 google-ai-generativelanguage
 google.generativeai
 pollinations
+Werkzeug
