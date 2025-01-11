@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOC API DEMO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+        h6 {
+            font-size: 1em;
+            margin: 0.5em 0;
+        }
+        #form-container {
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            margin: 10px 0 5px;
+        }
+        select {
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        #loading-spinner {
+            margin: 20px 0;
+        }
+        .lds-ring {
+            display: inline-block;
+            position: relative;
+            width: 64px;
+            height: 64px;
+        }
+        .lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 51px;
+            height: 51px;
+            margin: 6px;
+            border: 6px solid #000;
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: #000 transparent transparent transparent;
+        }
+        .lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+        .lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+        .lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+        @keyframes lds-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .hidden {
+            display: none;
+        }
+        .submit-button {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MOC API DEMO</h1>
+        <button id="resetButton">Reset Game</button> <!-- Add reset button here -->
+        <h6 style="color: red;">*Please click on try again in case of any errors.</h6>
+        <div id="game-info">
+            <p>The game consists of 6 questions. After answering all 6 questions, the game will end and you can generate a detailed analysis on your responses. Good luck!</p>
+        </div>
+        <div id="form-container">
+            <form id="generateForm">
+                <label for="language">Language:</label>
+                <select id="language" name="language" required>
+                    <option value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="French">French</option>
+                    <option value="Mandarin Chinese">Mandarin Chinese</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Arabic">Arabic</option>
+                    <option value="Bengali">Bengali</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Urdu">Urdu</option>
+                    <option value="German">German</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Swahili">Swahili</option>
+                    <option value="Marathi">Marathi</option>
+                    <option value="Telugu">Telugu</option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Vietnamese">Vietnamese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Turkish">Turkish</option>
+                </select>
+
+                <label for="age">Age:</label>
+
+                <select id="age" name="age" required>
+                    <option value="20">Default</option>
+
+                </select>
+                <script>
+                  const ageSelect = document.getElementById('age');
+                  for (let i = 1; i <= 100; i++) {
+                    const option = document.createElement('option');
+                    option.value = i;
+                    option.text = i;
+                    ageSelect.add(option);
+                  }
+                </script>
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="difficulty">Difficulty Level:</label>
+                <select id="difficulty" name="difficulty" required>
+                    <option value="normal">normal</option>
+
+                    <option value="easy">easy</option>
+                    <option value="hard">hard</option>
+                </select>
+
+                <label for="difficulty">Question Type:</label>
+                <select id="question_type" name="question_type" required>
+                    <option value="behavioral">Default</option>
+                    <option value="study">study</option>
+                </select>
+
+                <label for="role">Role (Will be used for analysis part):</label>  <!-- No longer hidden -->
+                <input type="text" id="role" name="role" value="Default" required>
+
+                <button type="submit">Generate Cases</button>
+            </form>
+        </div>
+        <div id="loading-spinner" class="hidden">
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div id="response-container" class="hidden">
+            
+            <form id="caseForm">
+                <!-- Cases will be injected here -->
+            </form>
+
+        </div>
+
+    </div>
+    <div id="analysis-section" class="hidden">
+        <!-- Content for analysis will go here -->
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

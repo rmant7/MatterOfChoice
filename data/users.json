@@ -1,0 +1,10 @@
+[
+    {
+        "username": "philip",
+        "gender": "Male",
+        "age": 12,
+        "score": 15,
+        "wisdom_level": 4,
+        "current_scenario": 3
+    }
+]
