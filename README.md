@@ -3,9 +3,8 @@
 
 # Matter of Choice API
 
-This API offers two primary interaction methods:  
+This API offers a primary interaction method:  
 1. Via a Flask development server.  
-2. By directly executing the `game.py` script.  
 
 ## Project Setup
 
@@ -65,21 +64,6 @@ This method provides a web interface for interacting with the API.
    Open your web browser and navigate to:  
    [http://127.0.0.1:5000/](http://127.0.0.1:5000/)  
    (or the address specified in the console output).
-
----
-
-### **Method 2: Running `game.py`**  
-This method allows direct execution of the core game logic.
-
-1. **Stay in the project root directory.**
-
-2. **Run the script:**  
-   ```bash
-   python game.py
-   ```  
-   This will execute the game logic as defined in `game.py`.
-
----
 
 ## Live Demo  
 
