@@ -32,11 +32,11 @@ Install all required packages by running:
 pip install -r requirements.txt
 ```
 
-### 4. **Set Up the Gemini API Key**  
+### 4. **Set Up the GOOGLE API KEY**  
 - Create a `.env` file in the root of the project.  
-- Add your Gemini API key to the file as follows:  
+- Add your GOOGLE API key to the file as follows:  
   ```
-  GEMINI_API_KEY=<YOUR_GEMINI_API_KEY>
+  GOOGLE_API_KEY=<YOUR_GOOGLE_API_KEY>
   ```
 
 > **Note:** The `.env` file is included in `.gitignore` and will not be committed to version control.
@@ -45,7 +45,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-You can interact with the API using one of the following methods:
+You can interact with the API using the following method:
 
 ### **Method 1: Flask Development Server**  
 This method provides a web interface for interacting with the API.
