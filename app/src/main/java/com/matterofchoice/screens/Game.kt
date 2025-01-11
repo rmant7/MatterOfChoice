@@ -55,6 +55,7 @@ import com.matterofchoice.model.Case
 import com.matterofchoice.model.Option
 import com.matterofchoice.ui.theme.MatterofchoiceTheme
 import com.matterofchoice.ui.theme.MyColor
+import com.matterofchoice.ui.theme.myFont
 import com.matterofchoice.viewmodel.AIViewModel
 
 
@@ -161,7 +162,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                                 .padding(8.dp)
                                 .align(Alignment.CenterHorizontally)
                         ) {
-                            Text(text = cases[0].case, color = Color.Red,
+                            Text(text = cases[0].case, fontFamily = myFont,
                                 modifier = Modifier.padding(top = 30.dp, bottom = 30.dp))
                             showLoader = false
 
@@ -170,7 +171,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                                     verticalAlignment = Alignment.CenterVertically,
                                     modifier = Modifier
                                         .fillMaxWidth()
-                                        .height(60.dp)
+                                        .height(66.dp)
                                         .selectable(
                                             selected = (selectedItem == option),
                                             onClick = { selectedItem = option },
@@ -189,9 +190,8 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                                     RadioButton(
                                         selected = (selectedItem == option),
                                         onClick = { selectedItem = option },
-                                        modifier = Modifier.padding(end = 16.dp),
                                     )
-                                    Text(option.option, modifier = Modifier.padding(8.dp).padding(end = 8.dp))
+                                    Text(option.option, modifier = Modifier.padding(2.dp).padding(bottom = 4.dp))
                                 }
                             }
                             Button(
@@ -200,13 +200,14 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                                     if (selectedItem != null){
                                         // the first click shows the correct choice
                                         calculateScore(cases,selectedItem!!.option,context)
+                                        viewmodel.saveUserChoice(context,listContent!!,selectedItem!!.option)
                                     }else{
                                         // show the correct choice
 
                                     }
                                 },
                                 shape = RoundedCornerShape(8.dp),
-                                modifier = Modifier.padding(top = 20.dp),
+                                modifier = Modifier.padding(top = 20.dp).align(Alignment.CenterHorizontally),
                                 colors = ButtonDefaults.buttonColors(MyColor)
                             ) {
                                 Text(
@@ -240,7 +241,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
 }
 
 fun calculateScore(cases:List<Case>, selectedOption:String,context: Context){
-    val sharedPreferences = context.getSharedPreferences("UserPreferences", Context.MODE_PRIVATE)
+    val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
     val editor = sharedPreferences.edit()
 
     val userChoice =

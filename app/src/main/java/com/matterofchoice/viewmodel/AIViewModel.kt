@@ -13,10 +13,16 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
 import java.io.FileWriter
+import java.io.IOException
 
 class AIViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val sharedPreferences = application.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+
+    private var _analysisChoices = MutableStateFlow<String>("")
+    var analysisChoices: StateFlow<String> = _analysisChoices
+
+    private val sharedPreferences =
+        application.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
     private var i = 0
     private val _listContent = MutableStateFlow<JSONArray?>(null)
@@ -28,18 +34,25 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     private val _errorState = MutableStateFlow<String>("")
     val errorState: StateFlow<String> get() = _errorState
 
+    private val _errorAnalysis = MutableStateFlow<String>("")
+    val errorAnalysis: StateFlow<String> get() = _errorState
+
     private val _isLoading = MutableStateFlow(false)
     val isLoading: StateFlow<Boolean> get() = _isLoading
 
-    private var userSubject = sharedPreferences.getString("userSubject","")
-    private var userAge = sharedPreferences.getString("userAge","")
-    private val userGender = sharedPreferences.getString("userGender","")
-    private var userLanguage  = sharedPreferences.getString("userLanguage","")
+    private val _isLoadingAnalysis = MutableStateFlow(false)
+    val isLoadingAnalysis: StateFlow<Boolean> get() = _isLoadingAnalysis
+
+    private var userSubject = sharedPreferences.getString("userSubject", "")
+    private var userAge = sharedPreferences.getString("userAge", "")
+    private val userGender = sharedPreferences.getString("userGender", "")
+    private var userLanguage = sharedPreferences.getString("userLanguage", "")
 
     private fun loadPrompts(): JSONObject? {
         return try {
-            val jsonContent = getApplication<Application>().assets.open("prompts.json").bufferedReader()
-                .use { it.readText() }
+            val jsonContent =
+                getApplication<Application>().assets.open("prompts.json").bufferedReader()
+                    .use { it.readText() }
             JSONObject(jsonContent)
         } catch (e: Exception) {
             Log.v("TAGY", "Error loading prompts: ${e.message}")
@@ -109,16 +122,13 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         age: String,
         subject: String,
         prompts: JSONObject,
-        context: Context,
     ) {
         Log.v("CASES", "Starting to generate cases...")
 
 
-        val roles = prompts.optJSONArray("roles") ?: JSONArray()
         val casesPrompt = prompts.optString("cases")
 
 
-        val role = roles.optString(i)
         val prompt =
             "$casesPrompt Respond in $language. The situations should created based on $subject and appropriate for a $sex child aged $age."
 
@@ -129,42 +139,42 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                 Log.v("RAWRESPONSE", "Raw response for option $i: ${response}...")
                 val cleanedResponse = cleanResponse(response)
                 Log.v("cleanedResponse", "Cleaned response for option $i: ${cleanedResponse}...")
-                //////////////////////////
+
                 _listContent.value = extractList(cleanedResponse)
                 _isLoading.value = false
-
                 Log.v("SAVEDCASE", "Extracted list for option $i: ${listContent}...")
 
-                val caseData = JSONObject()
-                caseData.put("option", role)
-                caseData.put("cases", JSONArray(listContent))
-
-                val outputPath = context.getExternalFilesDir("tool")?.absolutePath ?: ""
-                val caseFile = File(outputPath, "option_$i.json")
-
-                if (outputPath.isEmpty()) {
-                    Log.e("OUTPUT_PATH", "Failed to get app-specific external storage directory.")
-                } else {
-                    val outputDirectory = caseFile.parentFile
-                    if (outputDirectory != null && !outputDirectory.exists()) {
-                        if (outputDirectory.mkdirs()) {
-                            Log.v("DIRECTORY", "Created directory: ${outputDirectory.absolutePath}")
-                        } else {
-                            Log.e(
-                                "DIRECTORY",
-                                "Failed to create directory: ${outputDirectory.absolutePath}"
-                            )
-                        }
-                    }
-
-                    FileWriter(caseFile).use { it.write(caseData.toString(4)) }
-                    Log.v("PATHADDRESS", "Saved case $i to ${caseFile.absolutePath}")
-                }
-                i++
 
             } catch (e: Exception) {
                 Log.v("SAVEDCASE", "Error processing case $i: ${e.message}")
             }
+        }
+    }
+
+    fun saveUserChoice(context: Context, caseDate: JSONArray, userChoice: String) {
+//        val caseData = JSONObject()
+//        caseData.put("option", role)
+//        caseData.put("cases", JSONArray(listContent))
+
+        val outputPath = context.getExternalFilesDir("tool")?.absolutePath ?: ""
+        val caseFile = File(outputPath, "option_$i.json")
+
+        if (outputPath.isEmpty()) {
+            Log.e("OUTPUT_PATH", "Failed to get app-specific external storage directory.")
+        } else {
+            val outputDirectory = caseFile.parentFile
+            if (outputDirectory != null && !outputDirectory.exists()) {
+                if (outputDirectory.mkdirs()) {
+                    Log.v("DIRECTORY", "Created directory: ${outputDirectory.absolutePath}")
+                } else {
+                    Log.e(
+                        "DIRECTORY",
+                        "Failed to create directory: ${outputDirectory.absolutePath}"
+                    )
+                }
+            }
+            FileWriter(caseFile).use { it.write(caseDate.toString(4) + "user choice $userChoice") }
+            Log.v("PATHADDRESS", "Saved case $i to ${caseFile.absolutePath}")
         }
     }
 
@@ -181,9 +191,66 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                 age = userAge!!,
                 subject = userSubject!!,
                 prompts = prompts,
-                getApplication()
             )
         }
+    }
+
+    fun loadAnalysis(context: Context): String {
+        val outputPath = context.getExternalFilesDir("tool")?.absolutePath ?: ""
+        var userChoices = ""
+
+        _isLoadingAnalysis.value = true
+        if (outputPath.isEmpty()) {
+            Log.e("OUTPUT_PATH", "Failed to get app-specific external storage directory.")
+            _errorAnalysis.value = "No data to analysis"
+            _isLoadingAnalysis.value = false
+        } else {
+            val outputDirectory = File(outputPath)
+
+            if (outputDirectory.exists() && outputDirectory.isDirectory) {
+                val files = outputDirectory.listFiles() // Get all files in the directory
+                if (files != null && files.isNotEmpty()) {
+                    for (file in files) {
+                        if (file.isFile) { // Check if it's a file
+                            try {
+                                val fileContents = file.readText()
+                                userChoices += fileContents
+                                Log.v("FILE_CONTENTS", "Contents of ${file.name}: $fileContents")
+                            } catch (e: IOException) {
+                                Log.e("FILE_READ", "Failed to read file ${file.name}: ${e.message}")
+
+                                _errorAnalysis.value = "No data to analysis"
+                                _isLoadingAnalysis.value = false
+                            }
+                        }
+                    }
+                } else {
+                    Log.v("DIRECTORY", "No files found in the directory.")
+                    _errorAnalysis.value = "No data to analysis"
+                    _isLoadingAnalysis.value = false
+                }
+            } else {
+                Log.e("DIRECTORY", "Output directory does not exist or is not a directory.")
+                _errorAnalysis.value = "No data to analysis"
+                _isLoadingAnalysis.value = false
+            }
+        }
+
+        val model = GenerativeModel(
+            modelName = "gemini-pro",
+            apiKey = "AIzaSyBbpQNYsB4bDDctAB14D8FQIIOqn7JOccc",
+        )
+        viewModelScope.launch {
+            try {
+                val analysis =
+                    model.generateContent("This is each scenario with the user choice. analysis the user" + userChoices)
+                _analysisChoices.value = analysis.text!!
+            } catch (e: Exception) {
+                _errorAnalysis.value = e.message.toString()
+                _isLoadingAnalysis.value = false
+            }
+        }
+        return userChoices
     }
 
 }

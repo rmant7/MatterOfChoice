@@ -93,10 +93,8 @@ fun UserInput(
 
         Column(
             modifier = Modifier
-                .fillMaxSize()
-                .align(Alignment.Center)
-                .padding(24.dp)
-                .padding(bottom = 60.dp),
+                .align(Alignment.BottomCenter)
+                .padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Bottom
         ) {

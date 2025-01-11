@@ -104,7 +104,7 @@ private fun OnBoardingPager(
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(top = 80.dp)
+
         ) {
             HorizontalPager(
                 state = pagerState
@@ -123,7 +123,6 @@ private fun OnBoardingPager(
                             .width(380.dp)
                     )
 
-                    PagerIndicator(item.size, pagerState.currentPage)
 
                     Text(
                         text = item[page].title,
@@ -148,9 +147,10 @@ private fun OnBoardingPager(
                     )
                 }
             }
+            PagerIndicator(item.size, pagerState.currentPage)
         }
         Column(
-            modifier = Modifier.padding(start = 40.dp, end = 40.dp),
+            modifier = Modifier.padding(start = 40.dp, end = 40.dp, top = 7.dp),
         ) {
             BottomSection(
                 pagerState.currentPage,
