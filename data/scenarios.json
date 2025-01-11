@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "description": "A kid pushed you in the hallway.",
+        "choices": [
+            {"text": "Push back angrily.", "outcome": "A fight starts.", "wisdom_change": -1, "score_change": -5},
+            {"text": "Ask why they pushed you.", "outcome": "The situation de-escalates.", "wisdom_change": 1, "score_change": 5},
+            {"text": "Ignore it and move on.", "outcome": "You remain calm.", "wisdom_change": 2, "score_change": 10},
+            {"text": "Apologize for blocking the way.", "outcome": "The other kid feels awkward.", "wisdom_change": 3, "score_change": 15}
+        ]
+    },
+    {
+        "id": 2,
+        "description": "Your friend forgot to return your book.",
+        "choices": [
+            {"text": "Get angry at them.", "outcome": "Your friendship is strained.", "wisdom_change": -2, "score_change": -5},
+            {"text": "Ask politely about the book.", "outcome": "They promise to return it.", "wisdom_change": 1, "score_change": 5},
+            {"text": "Let it go and buy a new one.", "outcome": "You move on but spend money.", "wisdom_change": 0, "score_change": -5},
+            {"text": "Discuss it calmly.", "outcome": "You resolve the issue maturely.", "wisdom_change": 2, "score_change": 10}
+        ]
+    },
+    {
+        "id": 3,
+        "description": "You see a classmate being bullied.",
+        "choices": [
+            {"text": "Join in to avoid trouble.", "outcome": "You hurt someone to protect yourself.", "wisdom_change": -2, "score_change": -10},
+            {"text": "Report the bullying to a teacher.", "outcome": "The teacher intervenes.", "wisdom_change": 2, "score_change": 10},
+            {"text": "Ignore the situation.", "outcome": "The bullying continues.", "wisdom_change": -1, "score_change": 0},
+            {"text": "Stand up for the classmate.", "outcome": "The bullying stops.", "wisdom_change": 3, "score_change": 15}
+        ]
+    },
+    {
+        "id": 4,
+        "description": "Your friend asks you to skip class with them.",
+        "choices": [
+            {"text": "Agree and go along.", "outcome": "You miss an important lesson.", "wisdom_change": -2, "score_change": -10},
+            {"text": "Convince them not to skip.", "outcome": "You both stay and learn.", "wisdom_change": 3, "score_change": 15},
+            {"text": "Ignore their request.", "outcome": "You attend class, but your friend skips.", "wisdom_change": 1, "score_change": 5},
+            {"text": "Skip class and feel guilty.", "outcome": "You regret your decision.", "wisdom_change": -1, "score_change": -5}
+        ]
+    },
+    {
+        "id": 5,
+        "description": "Your sibling broke your favorite toy.",
+        "choices": [
+            {"text": "Yell at them.", "outcome": "They feel upset and cry.", "wisdom_change": -1, "score_change": -5},
+            {"text": "Ask them to apologize.", "outcome": "They apologize and feel sorry.", "wisdom_change": 1, "score_change": 5},
+            {"text": "Forgive them and move on.", "outcome": "You strengthen your bond.", "wisdom_change": 3, "score_change": 15},
+            {"text": "Refuse to speak to them.", "outcome": "You feel angry for a long time.", "wisdom_change": -2, "score_change": -10}
+        ]
+    },
+    {
+        "id": 6,
+        "description": "You find a wallet with money on the street.",
+        "choices": [
+            {"text": "Keep the money.", "outcome": "You feel guilty.", "wisdom_change": -2, "score_change": -10},
+            {"text": "Try to find the owner.", "outcome": "The owner is grateful.", "wisdom_change": 3, "score_change": 15},
+            {"text": "Hand it to the police.", "outcome": "The wallet is returned.", "wisdom_change": 2, "score_change": 10},
+            {"text": "Ignore the wallet.", "outcome": "Someone else takes it.", "wisdom_change": -1, "score_change": 0}
+        ]
+    },
+    {
+        "id": 7,
+        "description": "Your team loses a game because of your mistake.",
+        "choices": [
+            {"text": "Blame someone else.", "outcome": "Your teammates lose trust in you.", "wisdom_change": -2, "score_change": -10},
+            {"text": "Apologize to the team.", "outcome": "They appreciate your honesty.", "wisdom_change": 3, "score_change": 15},
+            {"text": "Promise to practice more.", "outcome": "You improve over time.", "wisdom_change": 2, "score_change": 10},
+            {"text": "Ignore the situation.", "outcome": "Tensions remain in the team.", "wisdom_change": -1, "score_change": 0}
+        ]
+    },
+    {
+        "id": 8,
+        "description": "You accidentally broke a friend's phone.",
+        "choices": [
+            {"text": "Deny responsibility.", "outcome": "Your friend finds out and feels betrayed.", "wisdom_change": -2, "score_change": -10},
+            {"text": "Offer to pay for repairs.", "outcome": "Your friend forgives you.", "wisdom_change": 3, "score_change": 15},
+            {"text": "Apologize and explain.", "outcome": "Your friend understands.", "wisdom_change": 2, "score_change": 10},
+            {"text": "Avoid your friend.", "outcome": "Your friendship suffers.", "wisdom_change": -1, "score_change": -5}
+        ]
+    },
+    {
+        "id": 9,
+        "description": "You overhear a classmate talking about cheating on a test.",
+        "choices": [
+            {"text": "Report them to the teacher.", "outcome": "The cheating is stopped.", "wisdom_change": 3, "score_change": 15},
+            {"text": "Talk to them about it.", "outcome": "They reconsider their actions.", "wisdom_change": 2, "score_change": 10},
+            {"text": "Ignore the situation.", "outcome": "The classmate cheats successfully.", "wisdom_change": -1, "score_change": 0},
+            {"text": "Help them cheat.", "outcome": "You both get caught.", "wisdom_change": -3, "score_change": -15}
+        ]
+    },
+    {
+        "id": 10,
+        "description": "You forgot to study for a big test.",
+        "choices": [
+            {"text": "Cheat during the test.", "outcome": "You feel guilty and risk punishment.", "wisdom_change": -3, "score_change": -15},
+            {"text": "Do your best with what you know.", "outcome": "You learn from the experience.", "wisdom_change": 3, "score_change": 10},
+            {"text": "Ask for an extension.", "outcome": "The teacher gives you a chance.", "wisdom_change": 2, "score_change": 5},
+            {"text": "Skip the test.", "outcome": "You fail automatically.", "wisdom_change": -2, "score_change": -10}
+        ]
+    }
+]
