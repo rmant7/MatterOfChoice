@@ -17,9 +17,14 @@ val provider = GoogleFont.Provider(
 
 
 val fontName = GoogleFont("ADLaM Display")
+val fontName2 = GoogleFont("PT Sans")
 
 val myFont = FontFamily(
     Font(googleFont = fontName, fontProvider = provider)
+)
+
+val titleFont = FontFamily(
+    Font(googleFont = fontName2, fontProvider = provider)
 )
 
 // Set of Material typography styles to start with

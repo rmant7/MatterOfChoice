@@ -99,13 +99,12 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
             .trim()
     }
 
-    // Function to extract the list from the cleaned response
     fun extractList(code: String): JSONArray {
         try {
-            // Parse the code assuming it's JSON-like or a list representation
+
             val jsonArray = JSONArray(code)
 
-            // Convert the JSONArray to a JSON string
+
             return jsonArray
         } catch (e: Exception) {
             // Log the error and problematic code
@@ -243,7 +242,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             try {
                 val analysis =
-                    model.generateContent("This is each scenario with the user choice. analysis the user" + userChoices)
+                    model.generateContent("This is each scenario with the user choice. provide me with analysis and recommendations of the user: $userChoices")
                 _analysisChoices.value = analysis.text!!
             } catch (e: Exception) {
                 _errorAnalysis.value = e.message.toString()
