@@ -3,31 +3,42 @@ package com.matterofchoice.screens
 
 import android.content.Context
 import android.util.Log
-import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -52,7 +63,6 @@ import com.matterofchoice.model.Case
 import com.matterofchoice.model.Option
 import com.matterofchoice.ui.theme.MatterofchoiceTheme
 import com.matterofchoice.ui.theme.MyColor
-import com.matterofchoice.ui.theme.myFont
 import com.matterofchoice.ui.theme.titleFont
 import com.matterofchoice.viewmodel.AIViewModel
 
@@ -133,74 +143,127 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
             }
         }
         if (listContent != null) {
+            val scrollState = rememberScrollState()
 
-            Log.v("CASESNOT","LIST CONTENT IS $listContent")
+            Log.v("CASESNOT", "LIST CONTENT IS $listContent")
             Column(
                 modifier = Modifier
+                    .background(Color.White)
                     .fillMaxSize()
-                    .padding(16.dp)
+                    .padding()
+                    .verticalScroll(scrollState)
             ) {
                 val gson = Gson()
                 val listType = object : TypeToken<List<Case>>() {}.type
                 val cases: List<Case> = gson.fromJson(listContent.toString(), listType)
-                Log.v("CASESLIST",cases.toString())
+                Log.v("CASESLIST", cases.toString())
 
                 if (cases.isNotEmpty()) {
-                    Log.v("CASESNOT","Cases is not empty")
+                    Log.v("CASESNOT", "Cases is not empty")
 
 
                     var selectedItem by remember { mutableStateOf<Option?>(null) }
-                    var round by remember { mutableStateOf(1) }
+                    var round by remember { mutableIntStateOf(1) }
 
                     Column(
-                        verticalArrangement = Arrangement.Top,
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        modifier = Modifier.padding(top = 20.dp).fillMaxWidth()
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .shadow(elevation = 4.dp)
+                            .background(MyColor)
+
                     ) {
-                        Text("Round $round", fontSize = 22.sp, fontWeight = FontWeight.ExtraBold,
-                            fontFamily = titleFont)
+                        Text(
+                            text = "Score: 10/20",
+                            fontFamily = titleFont,
+                            textAlign = TextAlign.Justify,
+                            fontSize = 20.sp,
+                            modifier = Modifier
+                                .align(Alignment.CenterHorizontally)
+                                .padding(4.dp)
+
+                        )
+
                     }
+
+
+
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(8.dp)
+                            .padding(start = 16.dp, end = 16.dp)
                             .align(Alignment.CenterHorizontally)
                     ) {
+
                         Text(
-                            text = cases[round-1].case, fontFamily = myFont,
-                            modifier = Modifier.padding(top = 40.dp, bottom = 30.dp)
+                            text = "Scenario",
+                            fontFamily = titleFont,
+                            textAlign = TextAlign.Justify,
+                            fontSize = 28.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+
+                        Text(
+                            text = cases[round - 1].case, fontFamily = titleFont,
+                            textAlign = TextAlign.Justify,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(bottom = 30.dp)
                         )
                         showLoader = false
 
+                        Image(
+                            painter = painterResource(R.drawable.test), contentDescription = null,
+                            modifier = Modifier
+                                .padding(bottom = 25.dp)
+                                .width(350.dp)
+                                .height(350.dp)
+                                .align(Alignment.CenterHorizontally)
+                                .shadow(elevation = 1.dp, shape = RoundedCornerShape(16.dp)),
+                            contentScale = ContentScale.Crop
+                        )
+
                         cases[round - 1].options.forEach { option ->
                             OutlinedButton(
-                                modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .align(Alignment.Start)
+                                    .padding(bottom = 12.dp),
                                 onClick = {
                                     selectedItem = option
                                 },
                                 border = BorderStroke(
                                     width = 2.dp,
-                                    color = if (selectedItem == option) MyColor else Color.LightGray
+                                    color = if (selectedItem == option) Color.Green else Color.LightGray
                                 ),
-                                shape = RoundedCornerShape(5.dp)
+                                shape = RoundedCornerShape(8.dp),
                             ) {
-                                Text(text = option.option, color = Color.Black, fontFamily = myFont,
-                                    textAlign = TextAlign.Center)
+                                if (selectedItem == option){
+                                    Icon(imageVector = Icons.Default.Check, contentDescription = null,
+                                        modifier = Modifier
+                                            .padding(5.dp), tint = Color.Green)
+                                }
+                                Text(
+                                    text = option.option,
+                                    color = Color.Black,
+                                    fontFamily = titleFont,
+                                    textAlign = TextAlign.Center,
+                                    fontWeight = FontWeight.Bold,
+                                    modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)
+                                )
 
                             }
                         }
                         Button(
                             onClick = {
                                 if (round < 3 && selectedItem != null) {
-                                    Log.v("USERERROR","User choice: ${selectedItem!!.option}")
-                                    calculateScore(cases[round-1], selectedItem!!.option, context)
+                                    Log.v("USERERROR", "User choice: ${selectedItem!!.option}")
+                                    calculateScore(cases[round - 1], selectedItem!!.option, context)
                                     viewmodel.saveUserChoice(
                                         context,
                                         listContent!!,
                                         selectedItem!!.option
                                     )
                                     round++
-                                } else if (round >= 3){
+                                } else if (round >= 3) {
                                     viewmodel.main()
 
                                 }
@@ -213,13 +276,14 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                         ) {
                             Text(
                                 "Next",
+                                fontFamily = titleFont,
                                 modifier = Modifier.padding(
                                     start = 20.dp,
                                     end = 20.dp,
                                     top = 5.dp,
                                     bottom = 5.dp
                                 ),
-                                fontSize = 22.sp
+                                fontSize = 18.sp
                             )
                         }
                     }
@@ -229,7 +293,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
 
         }
         if (errorState.isNotEmpty()) {
-            Log.v("CASESNOT","Errors is not empty")
+            Log.v("CASESNOT", "Errors is not empty")
             Column(Modifier.fillMaxSize()) {
                 Text(
                     text = errorState, fontSize = 18.sp, modifier = Modifier
@@ -261,7 +325,7 @@ fun calculateScore(cases: Case, selectedOption: String, context: Context) {
 
     val userChoice =
         cases.options.find { it.option == selectedOption }
-    Log.v("USERCALCULATE","User choice: $userChoice")
+    Log.v("USERCALCULATE", "User choice: $userChoice")
     var userScore = 0
 
     try {
@@ -272,8 +336,8 @@ fun calculateScore(cases: Case, selectedOption: String, context: Context) {
         editor.putInt("userScore", userScore)
         editor.apply()
 
-    }catch (e:Exception){
-        Log.v("USERCALCULATE",e.message.toString())
+    } catch (e: Exception) {
+        Log.v("USERCALCULATE", e.message.toString())
     }
 
 
