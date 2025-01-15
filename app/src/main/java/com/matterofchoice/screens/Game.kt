@@ -259,7 +259,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                         }
                         Button(
                             onClick = {
-                                // implement history
+                                // need to implement history
                                 if (round < 6 && selectedItem != null) {
                                     Log.v("USERERROR", "User choice: ${selectedItem!!.option}")
                                     calculateScore(cases[round - 1], selectedItem!!.option, context)
