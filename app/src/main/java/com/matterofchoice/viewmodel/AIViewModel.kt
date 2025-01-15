@@ -66,7 +66,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
             Log.v("TOOLRES", "Generating response for prompt: $prompt...")
 
             val model = GenerativeModel(
-                modelName = "gemini-pro",
+                modelName = "gemini-2.0-flash-exp",
                 apiKey = "AIzaSyBbpQNYsB4bDDctAB14D8FQIIOqn7JOccc",
             )
             val response = model.generateContent(prompt)

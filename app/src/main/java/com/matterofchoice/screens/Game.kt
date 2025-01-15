@@ -239,7 +239,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                                 if (selectedItem == option){
                                     Icon(imageVector = Icons.Default.Check, contentDescription = null,
                                         modifier = Modifier
-                                            .padding(5.dp), tint = Color.Green)
+                                            .padding(end = 5.dp), tint = Color.Green)
                                 }
                                 Text(
                                     text = option.option,
