@@ -25,8 +25,8 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         application.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
     private var i = 0
-    private val _listContent = MutableStateFlow<JSONArray?>(null)
-    val listContent: StateFlow<JSONArray?> get() = _listContent
+    private val _listContent = MutableStateFlow<List<JSONArray?>>(emptyList())
+    val listContent: StateFlow<List<JSONArray?>> get() = _listContent
 
     private val _isInitialized = MutableStateFlow(false)
     val isInitialized: StateFlow<Boolean> get() = _isInitialized
@@ -139,7 +139,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                 val cleanedResponse = cleanResponse(response)
                 Log.v("cleanedResponse", "Cleaned response for option $i: ${cleanedResponse}...")
 
-                _listContent.value = extractList(cleanedResponse)
+                _listContent.value += extractList(cleanedResponse)
                 _isLoading.value = false
                 Log.v("SAVEDCASE", "Extracted list for option $i: ${listContent}...")
 
@@ -180,17 +180,20 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
     fun main() {
         val prompts = loadPrompts() ?: return
-        _listContent.value = null
+        _listContent.value = emptyList()
         _isInitialized.value = true
 
         viewModelScope.launch {
-            generateCases(
-                language = userLanguage!!,
-                sex = userGender!!,
-                age = userAge!!,
-                subject = userSubject!!,
-                prompts = prompts,
-            )
+            for (i in 0 until 2){
+                generateCases(
+                    language = userLanguage!!,
+                    sex = userGender!!,
+                    age = userAge!!,
+                    subject = userSubject!!,
+                    prompts = prompts,
+                )
+            }
+
         }
     }
 

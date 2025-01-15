@@ -142,7 +142,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                 Loader()
             }
         }
-        if (listContent != null) {
+        if (listContent.isNotEmpty()) {
             val scrollState = rememberScrollState()
 
             Log.v("CASESNOT", "LIST CONTENT IS $listContent")
@@ -153,9 +153,14 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                     .padding()
                     .verticalScroll(scrollState)
             ) {
+                val cases = mutableListOf<Case>()
                 val gson = Gson()
                 val listType = object : TypeToken<List<Case>>() {}.type
-                val cases: List<Case> = gson.fromJson(listContent.toString(), listType)
+
+                for (jsonArray in listContent) {
+                    val caseList: List<Case> = gson.fromJson(jsonArray.toString(), listType)
+                    cases.addAll(caseList)
+                }
                 Log.v("CASESLIST", cases.toString())
 
                 if (cases.isNotEmpty()) {
@@ -254,14 +259,15 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                         }
                         Button(
                             onClick = {
-                                if (round < 3 && selectedItem != null) {
+                                // implement history
+                                if (round < 6 && selectedItem != null) {
                                     Log.v("USERERROR", "User choice: ${selectedItem!!.option}")
                                     calculateScore(cases[round - 1], selectedItem!!.option, context)
-                                    viewmodel.saveUserChoice(
-                                        context,
-                                        listContent!!,
-                                        selectedItem!!.option
-                                    )
+//                                    viewmodel.saveUserChoice(
+//                                        context,
+//                                        listContent!!,
+//                                        selectedItem!!.option
+//                                    )
                                     round++
                                 } else if (round >= 3) {
                                     viewmodel.main()
