@@ -41,7 +41,6 @@ fun BottomNav(navController: NavHostController) {
             }
         )
 
-        // Result Icon
         BottomNavItem(
             modifier = Modifier.weight(1f),
             isSelected = currentRoute == Screens.ResultScreen.screen,
@@ -56,7 +55,6 @@ fun BottomNav(navController: NavHostController) {
             }
         )
 
-        // Settings Icon
         BottomNavItem(
             modifier = Modifier.weight(1f),
             isSelected = currentRoute == Screens.SettingsScreen.screen,
@@ -74,8 +72,8 @@ fun BottomNav(navController: NavHostController) {
         BottomNavItem(
             modifier = Modifier.weight(1f),
             isSelected = currentRoute == Screens.AnalysisScreen.screen,
-            selectedIcon = R.drawable.analysis,
-            unselectedIcon = R.drawable.analysis2,
+            selectedIcon = R.drawable.analysis2,
+            unselectedIcon = R.drawable.analysis ,
             onClick = {
                 navController.navigate(Screens.AnalysisScreen.screen) {
                     popUpTo(navController.graph.startDestinationId) { saveState = true }
@@ -101,7 +99,8 @@ fun BottomNavItem(
     ) {
         Icon(
             painter = painterResource(if (isSelected) selectedIcon else unselectedIcon),
-            contentDescription = null
+            contentDescription = null,
+            tint = Color.Unspecified
         )
     }
 }

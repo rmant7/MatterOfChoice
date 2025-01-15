@@ -6,8 +6,10 @@ import android.util.Log
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -78,7 +80,7 @@ fun MainScreen() {
     ) { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = Screens.GameScreen.screen,
+            startDestination = Screens.SettingsScreen.screen,
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(Screens.GameScreen.screen) { Game(navController) }
@@ -170,26 +172,6 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                     var selectedItem by remember { mutableStateOf<Option?>(null) }
                     var round by remember { mutableIntStateOf(1) }
 
-                    Column(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .shadow(elevation = 4.dp)
-                            .background(MyColor)
-
-                    ) {
-                        Text(
-                            text = "Score: 10/20",
-                            fontFamily = titleFont,
-                            textAlign = TextAlign.Justify,
-                            fontSize = 20.sp,
-                            modifier = Modifier
-                                .align(Alignment.CenterHorizontally)
-                                .padding(4.dp)
-
-                        )
-
-                    }
-
 
 
                     Column(
@@ -198,14 +180,31 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                             .padding(start = 16.dp, end = 16.dp)
                             .align(Alignment.CenterHorizontally)
                     ) {
+                        Row(modifier = Modifier.fillMaxWidth(),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.SpaceBetween) {
+                            Text(
+                                text = "Scenario",
+                                fontFamily = titleFont,
+                                textAlign = TextAlign.Justify,
+                                fontSize = 28.sp,
+                                modifier = Modifier.weight(1f),
+                                fontWeight = FontWeight.Bold
+                            )
+                            Image(painter = painterResource(R.drawable.fire),
+                                modifier = Modifier.size(38.dp),
+                                contentDescription = null)
+                            Text(
+                                text = "10/20",
+                                fontFamily = titleFont,
+                                textAlign = TextAlign.Justify,
+                                fontSize = 28.sp,
+                                fontWeight = FontWeight.Bold
 
-                        Text(
-                            text = "Scenario",
-                            fontFamily = titleFont,
-                            textAlign = TextAlign.Justify,
-                            fontSize = 28.sp,
-                            fontWeight = FontWeight.Bold
-                        )
+                            )
+
+                        }
+
 
                         Text(
                             text = cases[round - 1].case, fontFamily = titleFont,
@@ -364,9 +363,10 @@ fun calculateScore(cases: Case, selectedOption: String, context: Context) {
 @Preview
 @Composable
 fun MyPreview() {
+    val navController = rememberNavController()
     val context = LocalContext.current.applicationContext
     MatterofchoiceTheme {
-        SetUpCase(navController = NavHostController(context))
+        SetUpCase(navController = navController)
     }
 }
 

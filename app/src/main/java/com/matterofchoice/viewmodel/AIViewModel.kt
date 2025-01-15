@@ -6,6 +6,8 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.ai.client.generativeai.GenerativeModel
+import com.google.ai.client.generativeai.type.content
+import com.matterofchoice.model.MessageModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -16,6 +18,10 @@ import java.io.FileWriter
 import java.io.IOException
 
 class AIViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val AiHistory by lazy {
+        mutableListOf<MessageModel>()
+    }
 
 
     private var _analysisChoices = MutableStateFlow<String>("")
@@ -49,6 +55,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     private var userLanguage = sharedPreferences.getString("userLanguage", "")
 
     private fun loadPrompts(): JSONObject? {
+
         return try {
             val jsonContent =
                 getApplication<Application>().assets.open("prompts.json").bufferedReader()
@@ -69,7 +76,17 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                 modelName = "gemini-2.0-flash-exp",
                 apiKey = "AIzaSyBbpQNYsB4bDDctAB14D8FQIIOqn7JOccc",
             )
-            val response = model.generateContent(prompt)
+            val gemini = model.startChat(
+                history = AiHistory.map {
+                    content(it.role){
+                        text(it.message)
+                    }
+                }.toList()
+            )
+            val response = gemini.sendMessage(prompt)
+            AiHistory.add(MessageModel(prompt,"user"))
+            AiHistory.add(MessageModel(response.text.toString(),"model"))
+
 
             if (response.candidates.isNotEmpty()) {
                 val content = response.text!!
