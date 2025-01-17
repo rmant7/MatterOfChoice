@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.ai.client.generativeai.GenerativeModel
 import com.google.ai.client.generativeai.type.content
+import com.matterofchoice.model.Case
 import com.matterofchoice.model.MessageModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -54,7 +55,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     private val _isLoadingAnalysis = MutableStateFlow(false)
     val isLoadingAnalysis: StateFlow<Boolean> get() = _isLoadingAnalysis
 
-    private var userSubject = sharedPreferences.getString("userSubject", "")
+    private var userSubject = sharedPreferences.getString("userSubject", "random subject")
     private var userAge = sharedPreferences.getString("userAge", "")
     private val userGender = sharedPreferences.getString("userGender", "")
     private var userLanguage = sharedPreferences.getString("userLanguage", "")
@@ -166,7 +167,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun saveUserChoice(context: Context, caseDate: JSONArray, userChoice: String) {
+    fun saveUserChoice(context: Context, caseDate: Case, userChoice: String) {
         val outputPath = context.getExternalFilesDir("tool")?.absolutePath ?: ""
         val caseFile = File(outputPath, "option_$i.json")
 
@@ -185,7 +186,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                     )
                 }
             }
-            FileWriter(caseFile).use { it.write(caseDate.toString(4) + "user choice $userChoice") }
+            FileWriter(caseFile).use { it.write(caseDate.toString() + "user choice $userChoice") }
             Log.v("PATHADDRESS", "Saved case $i to ${caseFile.absolutePath}")
         }
     }
@@ -256,6 +257,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                 val analysis =
                     model.generateContent("This is each scenario with the user choice. provide me with analysis and recommendations of the user: $userChoices")
                 _analysisChoices.value = analysis.text!!
+                _isLoadingAnalysis.value = false
             } catch (e: Exception) {
                 _errorAnalysis.value = e.message.toString()
                 _isLoadingAnalysis.value = false

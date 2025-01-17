@@ -26,19 +26,20 @@ class MainActivity : ComponentActivity() {
                 Surface {
                     val context = LocalContext.current.applicationContext
                     val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+                    val isOpen = sharedPreferences.getBoolean("firstOpen",true)
                     val editor = sharedPreferences.edit()
                     editor.putBoolean("isFirst", true)
                     editor.apply()
                     val navController = rememberNavController()
-                    AppNavHost(navController)
+                    AppNavHost(navController, isOpen)
                 }
             }
         }
     }
 }
 @Composable
-fun AppNavHost(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = Screens.OnboardingScreen.screen) {
+fun AppNavHost(navController: NavHostController, isFirstOpen:Boolean) {
+    NavHost(navController = navController, startDestination = if(isFirstOpen) Screens.OnboardingScreen.screen else Screens.GameScreen.screen) {
         composable(Screens.OnboardingScreen.screen) {
             WelcomeFunction(navController)
         }

@@ -59,6 +59,8 @@ fun UserInput(
 ) {
     val context = LocalContext.current.applicationContext
     val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+    val editor = sharedPreferences.edit()
+    editor.putBoolean("firstOpen",false).apply()
 
     var userSubject by remember { mutableStateOf("") }
     var userAge by remember { mutableStateOf("") }
@@ -81,9 +83,11 @@ fun UserInput(
 
         Column(
             modifier = Modifier
+                .background(Color.White)
                 .padding(24.dp)
                 .padding(top = 24.dp)
-                .fillMaxSize(),
+                .fillMaxSize()
+                ,
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top
         ) {
@@ -146,7 +150,6 @@ fun UserInput(
                         Toast.makeText(context, "Please fill in all fields", Toast.LENGTH_SHORT)
                             .show()
                     } else {
-                        val editor = sharedPreferences.edit()
                         editor.putBoolean("isFirst", false)
                         editor.putString("userSubject", userSubject).apply()
                         editor.putString("userAge", userAge).apply()

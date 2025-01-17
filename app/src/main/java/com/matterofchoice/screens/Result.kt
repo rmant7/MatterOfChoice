@@ -35,17 +35,19 @@ fun Result() {
     val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
 
-
     val userScore = sharedPreferences.getInt("userScore", 0)
     val totalScore = sharedPreferences.getInt("totalScore", 0)
-    val rounds = sharedPreferences.getInt("rounds", 0)
+    val rounds = sharedPreferences.getInt("rounds", 1)
 
     Log.v("USERSCORE", userScore.toString())
     Log.v("TOTALSCORE", totalScore.toString())
 
 
     Column(
-        modifier = Modifier.fillMaxSize().padding(45.dp),
+        modifier = Modifier
+            .background(Color.White)
+            .fillMaxSize()
+            .padding(top = 45.dp, bottom = 30.dp),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
 
@@ -56,6 +58,12 @@ fun Result() {
             modifier = Modifier.fillMaxWidth()
         ) {
 
+
+            Text(
+                modifier = Modifier.padding(bottom = 20.dp),
+                text = rounds.toString(),
+                fontSize = 32.sp
+            )
             Image(
                 painterResource(R.drawable.score),
                 contentDescription = null,
@@ -65,14 +73,9 @@ fun Result() {
 
             )
             Text(
-                modifier = Modifier.padding(top = 20.dp),
-                text = rounds.toString(),
-                fontSize = 32.sp
-            )
-
-            Text(
                 text = "Rounds",
                 fontSize = 32.sp,
+                modifier = Modifier.padding(top = 10.dp)
             )
 
             Text(
@@ -82,28 +85,27 @@ fun Result() {
                 fontFamily = myFont,
             )
             Spacer(
-                modifier = Modifier.height(1.dp).width(130.dp)
+                modifier = Modifier
+                    .height(1.dp)
+                    .width(130.dp)
                     .background(Color.Black)
             )
 
         }
+
         Column(
-            verticalArrangement = Arrangement.Bottom
+            verticalArrangement = Arrangement.Bottom,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
                 text = "Score calculate based on health, wealth, relationships, happiness, knowledge, karma, time management, environmental impact, personal growth, and social responsibility",
                 textAlign = TextAlign.Justify,
-                fontFamily = myFont,
-                modifier = Modifier.align(Alignment.CenterHorizontally)
+                modifier = Modifier.align(Alignment.CenterHorizontally).padding(16.dp)
             )
         }
     }
+
 }
-
-
-
-
-
 
 
 @Preview(showBackground = true)

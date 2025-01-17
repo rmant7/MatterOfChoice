@@ -50,6 +50,7 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun WelcomeFunction(navController: NavHostController) {
+
     val items = ArrayList<OnBoardData>()
 
     items.add(

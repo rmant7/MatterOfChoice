@@ -124,7 +124,8 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
 
     val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
     val editor = sharedPreferences.edit()
-    var round = sharedPreferences.getInt("round",0)
+
+
     val isFirst = sharedPreferences.getBoolean("isFirst", true)
 
 
@@ -176,6 +177,8 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                     val userScore = sharedPreferences.getInt("userScore", 0)
                     val totalScore = sharedPreferences.getInt("totalScore", 0)
 
+                    val round = remember { mutableIntStateOf(sharedPreferences.getInt("rounds", 1)) }
+
                     Column(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -185,7 +188,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
-                            "Round $round",
+                            "Round ${round.intValue}",
                             fontFamily = titleFont,
                             textAlign = TextAlign.Justify,
                             fontSize = 22.sp,
@@ -204,7 +207,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(bottom = 20.dp, start = 16.dp, end = 16.dp),
+                                .padding(bottom = 10.dp, start = 16.dp, end = 16.dp),
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
@@ -265,13 +268,16 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                                             selectedItem!!.option,
                                             context
                                         )
-//                                        viewmodel.saveUserChoice(
-//                                            context,
-//                                            listContent[round-1]!!,
-//                                            selectedItem!!.option
-//                                        )
+                                        viewmodel.saveUserChoice(
+                                            context,
+                                            cases[caseNum-1],
+                                            selectedItem!!.option
+                                        )
                                         caseNum++
-                                        editor.putInt("rounds",round++).apply()
+
+
+
+                                        editor.putInt("rounds",round.intValue++).apply()
                                     } else {
                                         viewmodel.main()
                                     }
