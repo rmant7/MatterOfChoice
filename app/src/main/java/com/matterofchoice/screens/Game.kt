@@ -15,14 +15,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
@@ -64,7 +62,6 @@ import com.matterofchoice.Screens
 import com.matterofchoice.model.Case
 import com.matterofchoice.model.Option
 import com.matterofchoice.ui.theme.MatterofchoiceTheme
-import com.matterofchoice.ui.theme.MyColor
 import com.matterofchoice.ui.theme.titleFont
 import com.matterofchoice.viewmodel.AIViewModel
 
@@ -118,6 +115,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
     val context = LocalContext.current.applicationContext
 
 
+
     val isInitialized by viewmodel.isInitialized.collectAsState()
     val listContent by viewmodel.listContent.collectAsState()
     val errorState by viewmodel.errorState.collectAsState()
@@ -125,6 +123,8 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
     var showLoader by remember { mutableStateOf(true) }
 
     val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+    val editor = sharedPreferences.edit()
+    var round = sharedPreferences.getInt("round",0)
     val isFirst = sharedPreferences.getBoolean("isFirst", true)
 
 
@@ -153,7 +153,6 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                     .background(Color.White)
                     .fillMaxSize()
                     .padding()
-                    .verticalScroll(scrollState)
             ) {
                 val cases = mutableListOf<Case>()
                 val gson = Gson()
@@ -170,19 +169,45 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
 
 
                     var selectedItem by remember { mutableStateOf<Option?>(null) }
-                    var round by remember { mutableIntStateOf(1) }
+                    var caseNum by remember { mutableIntStateOf(1) }
 
 
+
+                    val userScore = sharedPreferences.getInt("userScore", 0)
+                    val totalScore = sharedPreferences.getInt("totalScore", 0)
+
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .shadow(elevation = 8.dp)
+                            .background(Color.White),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(
+                            "Round $round",
+                            fontFamily = titleFont,
+                            textAlign = TextAlign.Justify,
+                            fontSize = 22.sp,
+                            modifier = Modifier.padding(3.dp)
+                        )
+
+                    }
 
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(start = 16.dp, end = 16.dp)
+                            .padding(top = 16.dp)
                             .align(Alignment.CenterHorizontally)
+                            .verticalScroll(scrollState)
                     ) {
-                        Row(modifier = Modifier.fillMaxWidth(),
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(bottom = 20.dp, start = 16.dp, end = 16.dp),
                             verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.SpaceBetween) {
+                            horizontalArrangement = Arrangement.SpaceBetween
+                        ) {
                             Text(
                                 text = "Scenario",
                                 fontFamily = titleFont,
@@ -191,26 +216,27 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                                 modifier = Modifier.weight(1f),
                                 fontWeight = FontWeight.Bold
                             )
-                            Image(painter = painterResource(R.drawable.fire),
-                                modifier = Modifier.size(38.dp),
-                                contentDescription = null)
+                            Image(
+                                painter = painterResource(R.drawable.fire),
+                                modifier = Modifier.size(28.dp),
+                                contentDescription = null
+                            )
                             Text(
-                                text = "10/20",
+                                text = "$userScore/$totalScore",
                                 fontFamily = titleFont,
                                 textAlign = TextAlign.Justify,
-                                fontSize = 28.sp,
-                                fontWeight = FontWeight.Bold
+                                fontSize = 18.sp,
 
-                            )
+                                )
 
                         }
 
 
                         Text(
-                            text = cases[round - 1].case, fontFamily = titleFont,
+                            text = cases[caseNum - 1].case, fontFamily = titleFont,
                             textAlign = TextAlign.Justify,
                             fontWeight = FontWeight.Bold,
-                            modifier = Modifier.padding(bottom = 30.dp)
+                            modifier = Modifier.padding(bottom = 20.dp, start = 16.dp, end = 16.dp)
                         )
                         showLoader = false
 
@@ -218,32 +244,52 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                             painter = painterResource(R.drawable.test), contentDescription = null,
                             modifier = Modifier
                                 .padding(bottom = 25.dp)
-                                .width(350.dp)
+                                .fillMaxWidth()
                                 .height(350.dp)
                                 .align(Alignment.CenterHorizontally)
                                 .shadow(elevation = 1.dp, shape = RoundedCornerShape(16.dp)),
                             contentScale = ContentScale.Crop
                         )
 
-                        cases[round - 1].options.forEach { option ->
+                        cases[caseNum - 1].options.forEach { option ->
                             OutlinedButton(
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .align(Alignment.Start)
-                                    .padding(bottom = 12.dp),
+                                    .padding(bottom = 12.dp, start = 16.dp, end = 16.dp),
                                 onClick = {
                                     selectedItem = option
+                                    if (caseNum < 6 && selectedItem!!.option.isNotEmpty()) {
+                                        calculateScore(
+                                            cases[caseNum - 1],
+                                            selectedItem!!.option,
+                                            context
+                                        )
+//                                        viewmodel.saveUserChoice(
+//                                            context,
+//                                            listContent[round-1]!!,
+//                                            selectedItem!!.option
+//                                        )
+                                        caseNum++
+                                        editor.putInt("rounds",round++).apply()
+                                    } else {
+                                        viewmodel.main()
+                                    }
                                 },
                                 border = BorderStroke(
                                     width = 2.dp,
                                     color = if (selectedItem == option) Color.Green else Color.LightGray
                                 ),
-                                shape = RoundedCornerShape(8.dp),
+                                shape = RoundedCornerShape(16.dp),
                             ) {
-                                if (selectedItem == option){
-                                    Icon(imageVector = Icons.Default.Check, contentDescription = null,
+                                if (selectedItem == option) {
+                                    Icon(
+                                        imageVector = Icons.Default.Check,
+                                        contentDescription = null,
                                         modifier = Modifier
-                                            .padding(end = 5.dp), tint = Color.Green)
+                                            .padding(end = 5.dp),
+                                        tint = Color.Green
+                                    )
                                 }
                                 Text(
                                     text = option.option,
@@ -256,41 +302,41 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
 
                             }
                         }
-                        Button(
-                            onClick = {
-                                // need to implement history
-                                if (round < 6 && selectedItem != null) {
-                                    Log.v("USERERROR", "User choice: ${selectedItem!!.option}")
-                                    calculateScore(cases[round - 1], selectedItem!!.option, context)
-//                                    viewmodel.saveUserChoice(
-//                                        context,
-//                                        listContent!!,
-//                                        selectedItem!!.option
-//                                    )
-                                    round++
-                                } else if (round >= 3) {
-                                    viewmodel.main()
-
-                                }
-                            },
-                            shape = RoundedCornerShape(8.dp),
-                            modifier = Modifier
-                                .padding(top = 20.dp)
-                                .align(Alignment.CenterHorizontally),
-                            colors = ButtonDefaults.buttonColors(MyColor)
-                        ) {
-                            Text(
-                                "Next",
-                                fontFamily = titleFont,
-                                modifier = Modifier.padding(
-                                    start = 20.dp,
-                                    end = 20.dp,
-                                    top = 5.dp,
-                                    bottom = 5.dp
-                                ),
-                                fontSize = 18.sp
-                            )
-                        }
+//                        Button(
+//                            onClick = {
+//                                // need to implement history
+//                                if (round < 6 && selectedItem != null) {
+//                                    Log.v("USERERROR", "User choice: ${selectedItem!!.option}")
+//                                    calculateScore(cases[round - 1], selectedItem!!.option, context)
+////                                    viewmodel.saveUserChoice(
+////                                        context,
+////                                        listContent!!,
+////                                        selectedItem!!.option
+////                                    )
+//                                    round++
+//                                } else {
+//                                    viewmodel.main()
+//
+//                                }
+//                            },
+//                            shape = RoundedCornerShape(8.dp),
+//                            modifier = Modifier
+//                                .padding(top = 20.dp)
+//                                .align(Alignment.CenterHorizontally),
+//                            colors = ButtonDefaults.buttonColors(MyColor)
+//                        ) {
+//                            Text(
+//                                "Next",
+//                                fontFamily = titleFont,
+//                                modifier = Modifier.padding(
+//                                    start = 20.dp,
+//                                    end = 20.dp,
+//                                    top = 5.dp,
+//                                    bottom = 5.dp
+//                                ),
+//                                fontSize = 18.sp
+//                            )
+//                        }
                     }
 
                 }
@@ -307,7 +353,6 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                         )
                         .padding(top = 35.dp)
                 )
-
             }
         }
 
@@ -364,7 +409,6 @@ fun calculateScore(cases: Case, selectedOption: String, context: Context) {
 @Composable
 fun MyPreview() {
     val navController = rememberNavController()
-    val context = LocalContext.current.applicationContext
     MatterofchoiceTheme {
         SetUpCase(navController = navController)
     }

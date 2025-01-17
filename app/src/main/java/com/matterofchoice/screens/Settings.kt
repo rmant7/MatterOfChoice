@@ -5,11 +5,11 @@ import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
@@ -19,8 +19,8 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -30,7 +30,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -42,8 +42,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.matterofchoice.R
 import com.matterofchoice.Screens
-import com.matterofchoice.ui.theme.MyBackColor
-import com.matterofchoice.ui.theme.MyColor
 import com.matterofchoice.ui.theme.myFont
 
 @Composable
@@ -77,67 +75,61 @@ fun UserInput(
     val isExposedLanguage = remember { mutableStateOf(false) }
 
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MyBackColor)
-    ) {
-        Image(
-            painterResource(
-                R.drawable.settings_back
-            ), contentDescription = null,
-            modifier = Modifier
-                .fillMaxWidth()
-                .align(Alignment.TopStart)
-        )
+
+    //val gradientColors2 = listOf(Color(0xFFBE93C5), Color(0xFF7BC6CC))
+
 
         Column(
             modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .padding(24.dp),
+                .padding(24.dp)
+                .padding(top = 24.dp)
+                .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Bottom
+            verticalArrangement = Arrangement.Top
         ) {
-            Text(text = "Matter of choice", fontSize = 26.sp,
+            Image(
+                painter = painterResource(R.drawable.result),
+                contentDescription = "",
+                modifier = Modifier.size(100.dp)
+            )
+            Text(text = "Matter of choice", fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = myFont,
                 modifier = Modifier
-                .align(Alignment.Start)
-                .padding(bottom = 15.dp))
+                .align(Alignment.CenterHorizontally)
+                .padding(bottom = 15.dp, top = 28.dp))
 
             Text(text = "The scenarios will be based on your selections",
                 fontSize = 14.sp,
+                color = Color.Gray,
                 modifier = Modifier
-                    .align(Alignment.Start)
+                    .align(Alignment.CenterHorizontally)
                     .padding(bottom = 20.dp))
 
-            TextField(
+            OutlinedTextField(
                 value = userSubject,
                 onValueChange = { userSubject = it },
                 colors = TextFieldDefaults.colors(
                     unfocusedContainerColor = Color.White
                 ),
+                shape = RoundedCornerShape(16.dp),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(bottom = 16.dp)
-                    .shadow(elevation = 2.dp, RoundedCornerShape(10.dp)),
+                    .padding(bottom = 16.dp),
                 label = { Text(text = "Enter the subject") }
 
             )
 
-            TextField(
+            OutlinedTextField(
                 value = userAge,
                 onValueChange = { userAge = it },
-                colors = TextFieldDefaults.colors(
-                    unfocusedContainerColor = Color.White
-                ),
                 keyboardOptions = KeyboardOptions.Default.copy(
                     keyboardType = KeyboardType.Number
                 ),
+                shape = RoundedCornerShape(16.dp),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(bottom = 16.dp)
-                    .shadow(elevation = 2.dp, RoundedCornerShape(10.dp)),
+                    .padding(bottom = 16.dp),
                 label = { Text(text = "Enter your Age") }
 
             )
@@ -145,6 +137,8 @@ fun UserInput(
 
             DropDownMenu(genders, isExposedGender, userGender)
             DropDownMenu(languages, isExposedLanguage, userLanguage)
+
+            val gradientColors = listOf(Color(0xFFFF00CC), Color(0xFF333399))
 
             Button(
                 onClick = {
@@ -164,9 +158,12 @@ fun UserInput(
                         }
                     }
                 },
-                shape = RoundedCornerShape(8.dp),
-                modifier = Modifier.padding(top = 20.dp),
-                colors = ButtonDefaults.buttonColors(MyColor)
+                shape = RoundedCornerShape(16.dp),
+                modifier = Modifier.padding(top = 20.dp).background(
+                    brush = Brush.horizontalGradient(gradientColors),
+                    shape = RoundedCornerShape(16.dp)
+                ),
+                colors = ButtonDefaults.buttonColors(Color.Transparent)
             ) {
                 Text(
                     "Generate Cases",
@@ -181,7 +178,7 @@ fun UserInput(
             }
 
         }
-    }
+
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -198,28 +195,23 @@ fun DropDownMenu(
         expanded = isExposed.value,
         onExpandedChange = { isExposed.value = !isExposed.value }
     ) {
-        TextField(
+        OutlinedTextField(
             modifier = Modifier
                 .menuAnchor()
-                .fillMaxWidth()
-                .shadow(elevation = 2.dp, RoundedCornerShape(10.dp)),
+                .fillMaxWidth(),
+            shape = RoundedCornerShape(16.dp),
             value = selectedItem.value,
             onValueChange = {},
             readOnly = true,
             trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = isExposed.value) },
-            colors = TextFieldDefaults.textFieldColors(
-                containerColor = Color.White, // Change TextField background
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent
-            )
+
         )
         ExposedDropdownMenu(
-            modifier = Modifier.background(Color.White),
             expanded = isExposed.value,
             onDismissRequest = { isExposed.value = false }) {
             itemsList.forEachIndexed { index, text ->
                 DropdownMenuItem(
-                    text = { Text(text = text, modifier = Modifier.background(Color.White)) },
+                    text = { Text(text = text) },
                     onClick = {
                         selectedItem.value = itemsList[index]
                         isExposed.value = false

@@ -19,12 +19,17 @@ import java.io.IOException
 
 class AIViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val AiHistory by lazy {
+    private val model = GenerativeModel(
+        modelName = "gemini-2.0-flash-exp",
+        apiKey = "AIzaSyBbpQNYsB4bDDctAB14D8FQIIOqn7JOccc",
+    )
+
+    private val aiHistory by lazy {
         mutableListOf<MessageModel>()
     }
 
 
-    private var _analysisChoices = MutableStateFlow<String>("")
+    private var _analysisChoices = MutableStateFlow("")
     var analysisChoices: StateFlow<String> = _analysisChoices
 
     private val sharedPreferences =
@@ -37,10 +42,10 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     private val _isInitialized = MutableStateFlow(false)
     val isInitialized: StateFlow<Boolean> get() = _isInitialized
 
-    private val _errorState = MutableStateFlow<String>("")
+    private val _errorState = MutableStateFlow("")
     val errorState: StateFlow<String> get() = _errorState
 
-    private val _errorAnalysis = MutableStateFlow<String>("")
+    private val _errorAnalysis = MutableStateFlow("")
     val errorAnalysis: StateFlow<String> get() = _errorState
 
     private val _isLoading = MutableStateFlow(false)
@@ -72,20 +77,16 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
             _isLoading.value = true
             Log.v("TOOLRES", "Generating response for prompt: $prompt...")
 
-            val model = GenerativeModel(
-                modelName = "gemini-2.0-flash-exp",
-                apiKey = "AIzaSyBbpQNYsB4bDDctAB14D8FQIIOqn7JOccc",
-            )
             val gemini = model.startChat(
-                history = AiHistory.map {
+                history = aiHistory.map {
                     content(it.role){
                         text(it.message)
                     }
                 }.toList()
             )
             val response = gemini.sendMessage(prompt)
-            AiHistory.add(MessageModel(prompt,"user"))
-            AiHistory.add(MessageModel(response.text.toString(),"model"))
+            aiHistory.add(MessageModel(prompt,"user"))
+            aiHistory.add(MessageModel(response.text.toString(),"model"))
 
 
             if (response.candidates.isNotEmpty()) {
@@ -106,7 +107,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-    fun cleanResponse(response: String): String {
+    private fun cleanResponse(response: String): String {
         val scenariosRegex = Regex("""^\s*cases\s*=\s*""")
         val codeBlockRegex = Regex("""^```[a-zA-Z]*\n|```$""")
 
@@ -116,7 +117,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
             .trim()
     }
 
-    fun extractList(code: String): JSONArray {
+    private fun extractList(code: String): JSONArray {
         try {
 
             val jsonArray = JSONArray(code)
@@ -124,15 +125,13 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
             return jsonArray
         } catch (e: Exception) {
-            // Log the error and problematic code
             Log.v("JSONCONVERT", "ExtractList Error parsing or evaluating code: ${e.message}")
             Log.v("JSONCONVERT", "Problematic code snippet: $code")
             return JSONArray("")
         }
     }
 
-    // Function to generate cases for different scenarios
-    fun generateCases(
+    private fun generateCases(
         language: String,
         sex: String,
         age: String,
@@ -168,12 +167,9 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun saveUserChoice(context: Context, caseDate: JSONArray, userChoice: String) {
-//        val caseData = JSONObject()
-//        caseData.put("option", role)
-//        caseData.put("cases", JSONArray(listContent))
-
         val outputPath = context.getExternalFilesDir("tool")?.absolutePath ?: ""
         val caseFile = File(outputPath, "option_$i.json")
+
 
         if (outputPath.isEmpty()) {
             Log.e("OUTPUT_PATH", "Failed to get app-specific external storage directory.")
@@ -201,7 +197,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         _isInitialized.value = true
 
         viewModelScope.launch {
-            for (i in 0 until 2){
+            for (i in 0 until 3){
                 generateCases(
                     language = userLanguage!!,
                     sex = userGender!!,
@@ -255,10 +251,6 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
 
-        val model = GenerativeModel(
-            modelName = "gemini-pro",
-            apiKey = "AIzaSyBbpQNYsB4bDDctAB14D8FQIIOqn7JOccc",
-        )
         viewModelScope.launch {
             try {
                 val analysis =
