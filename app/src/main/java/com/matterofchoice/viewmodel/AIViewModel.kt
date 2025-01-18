@@ -210,8 +210,13 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
         }
     }
+    fun resetAnalysisState() {
+        _analysisChoices.value = ""
+        _errorAnalysis.value = ""
+        _isLoadingAnalysis.value = false
+    }
 
-    fun loadAnalysis(context: Context): String {
+    fun loadAnalysis(context: Context, role:String): String {
         val outputPath = context.getExternalFilesDir("tool")?.absolutePath ?: ""
         var userChoices = ""
 
@@ -255,7 +260,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             try {
                 val analysis =
-                    model.generateContent("This is each scenario with the user choice. provide me with analysis and recommendations of the user: $userChoices")
+                    model.generateContent("This is each scenario with the user choice and the role is $role. provide me with concise and general analysis and recommendations of the user: $userChoices")
                 _analysisChoices.value = analysis.text!!
                 _isLoadingAnalysis.value = false
             } catch (e: Exception) {

@@ -37,7 +37,7 @@ fun Result() {
 
     val userScore = sharedPreferences.getInt("userScore", 0)
     val totalScore = sharedPreferences.getInt("totalScore", 0)
-    val rounds = sharedPreferences.getInt("rounds", 1)
+    val rounds = sharedPreferences.getInt("rounds", 1) + 1
 
     Log.v("USERSCORE", userScore.toString())
     Log.v("TOTALSCORE", totalScore.toString())
@@ -100,7 +100,9 @@ fun Result() {
             Text(
                 text = "Score calculate based on health, wealth, relationships, happiness, knowledge, karma, time management, environmental impact, personal growth, and social responsibility",
                 textAlign = TextAlign.Justify,
-                modifier = Modifier.align(Alignment.CenterHorizontally).padding(16.dp)
+                fontSize = 14.sp,
+                color = Color.Gray,
+                modifier = Modifier.align(Alignment.CenterHorizontally).padding(16.dp).padding(bottom = 4.dp)
             )
         }
     }

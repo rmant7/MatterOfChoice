@@ -28,6 +28,11 @@ class MainActivity : ComponentActivity() {
                     val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
                     val isOpen = sharedPreferences.getBoolean("firstOpen",true)
                     val editor = sharedPreferences.edit()
+                    editor.apply {
+                        putInt("rounds",1)
+                        putInt("userScore",0)
+                        putInt("totalScore",0)
+                    }.apply()
                     editor.putBoolean("isFirst", true)
                     editor.apply()
                     val navController = rememberNavController()

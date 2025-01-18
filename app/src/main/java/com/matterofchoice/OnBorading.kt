@@ -178,6 +178,7 @@ fun PagerIndicator(
 ) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
+        modifier = Modifier.padding(bottom = 12.dp)
 
         ) {
         repeat(size) {
