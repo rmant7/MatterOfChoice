@@ -155,10 +155,16 @@
                     <option value="hard">hard</option>
                 </select>
 
-                <label for="difficulty">Question Type:</label>
+                <label for="question_type">Question Type:</label>
                 <select id="question_type" name="question_type" required>
-                    <option value="behavioral">Default</option>
-                    <option value="study">study</option>
+                    <option value="behavioral">Behavioral</option>
+                    <option value="study">Study</option>
+                    <option value="hiring">Hiring</option>
+                </select>
+
+                <label for="sub_type">Sub Type:</label>
+                <select id="sub_type" name="sub_type" required>
+                    <!-- Subtypes will be populated dynamically based on question type -->
                 </select>
 
                 <label for="role">Role (Will be used for analysis part):</label>  <!-- No longer hidden -->

@@ -66,7 +66,7 @@ logger.addHandler(console_handler)
 logger.debug("Logger configured. Starting app...")
 
 
-@app.route('/index')  #Serve the index.html file when you go to the root path.
+@app.route('/cases')  #Serve the index.html file when you go to the root path.
 def serve_index():
     return render_template('index2.html')
 
@@ -153,8 +153,6 @@ def dashboard():
     return render_template('dashboard.html', user=user, scenario=scenario)
 
 
-
-
 @app.route('/generate_cases', methods=['POST', 'GET'])
 def generate_cases():
     if request.method == 'GET':
@@ -168,13 +166,14 @@ def generate_cases():
     subject = data.get('subject')
     difficulty = data.get('difficulty')
     question_type = data.get('question_type')  # New parameter for question type
+    sub_type = data.get('sub_type')  # New parameter for sub type
     role = data.get('role', 'default_role')  # Optional role parameter with a default value
     sex = data.get('sex', 'unspecified')  # Optional sex parameter with a default value
 
     user_answer = data.get('answers')
 
-    if not all([language, subject, difficulty, question_type]):
-        return jsonify({"error": "language, subject, difficulty, and question_type are required."}), 400
+    if not all([language, subject, difficulty, question_type, sub_type]):
+        return jsonify({"error": "language, subject, difficulty, question_type, and sub_type are required."}), 400
     if age is not None:
         try:
             age = int(age)
@@ -195,7 +194,7 @@ def generate_cases():
 
     try:
         if turn == 1:
-            case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, sex=sex)
+            case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex)
             if case_data is None:
                 return jsonify({"error": "Failed to generate initial case."}), 500
             session['turn'] = 2
@@ -204,7 +203,7 @@ def generate_cases():
                 json.dump({'cases': [case_data]}, f, indent=4)
         else:
             if user_answer is None:
-                return jsonify({"error": "Please Pick one Of the Options Above."}), 400
+                return jsonify({"error": "User answer is required."}), 400
             try:
                 user_answer = int(user_answer)
                 with open(output_filepath, 'r') as f:
@@ -226,7 +225,7 @@ def generate_cases():
                     json.dump(analysis_data, f, indent=4)
 
                 conversation_data['data']['user_answer'] = user_answer
-                case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, conversation_data, sex=sex)
+                case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, conversation_data, sex=sex)
                 if case_data is None:
                     return jsonify({"error": "Failed to generate case."}), 500
                 session['turn'] = min(turn + 1, 7)
@@ -244,8 +243,6 @@ def generate_cases():
         return jsonify({"error": "An unexpected error occurred."}), 500
 
 
-
-
 @app.route('/submit_answers', methods=['POST'])
 def submit_answers():
     return jsonify({"message": "Response recorded"}), 200
@@ -261,25 +258,27 @@ def analysis():
         analysis_data = json.load(f)
     data = request.get_json()
 
-    # Get the role and question_type data from the form
+    # Get the role, question_type, and sub_type data from the form
     role = data.get('role', 'default_role')  # Optional role parameter with a default value
     question_type = data.get('question_type')  # Get the 'question_type' from form data
 
     if question_type is None:  # Handle missing question_type data
         return jsonify({"error": "Question type data is missing in the request."}), 400
 
-    # Incorporate role and question_type into analysis_data (adjust as needed)
+    # Incorporate role, question_type, and sub_type into analysis_data (adjust as needed)
     analysis_data['role'] = role  # Add the role to the analysis data
     analysis_data['question_type'] = question_type  # Add the question_type to the analysis data
 
     # Convert the analysis data to a string to send to Gemini
     analysis_data_str = json.dumps(analysis_data)
 
-    # Create the prompt for Gemini, including the role and question_type
+    # Create the prompt for Gemini, including the role, question_type, and sub_type
     if question_type == 'behavioral':
         prompt = f"Analyze the following data, considering you play the role of a '{role}' to the player, to determine the player's character traits and behavior patterns based on their choices. As you can see, we have cases and options, and each case has an answer. The answer refers to the player's choice for the case among the options provided. Provide a detailed analysis in a structured format that can be easily parsed:\n\n{analysis_data_str} Return your analysis in the same language the data uses."
     elif question_type == 'study':
         prompt = f"Analyze the following data, considering you play the role of a '{role}' to the player, to determine the player's knowledge acquisition and learning patterns based on their choices. As you can see, we have study-based questions and options, and each question has an answer. The answer refers to the player's choice for the question among the options provided. Provide a detailed analysis in a structured format that can be easily parsed:\n\n{analysis_data_str} Return your analysis in the same language the data uses."
+    elif question_type == 'hiring':
+        prompt = f"Analyze the following data, considering you play the role of a '{role}' to the player, to determine the player's suitability for a job based on their choices. As you can see, we have hiring-based questions and options, and each question has an answer. The answer refers to the player's choice for the question among the options provided. Provide a detailed analysis in a structured format that can be easily parsed:\n\n{analysis_data_str} Return your analysis in the same language the data uses."
 
     try:
         response = get_response_gemini(prompt)
@@ -289,7 +288,6 @@ def analysis():
     except Exception as e:
         logger.exception(f"An error occurred while getting the analysis from Gemini: {e}")
         return jsonify({"error": "An error occurred while getting the analysis from Gemini."}), 500
-
 
 @app.route('/reset', methods=['POST'])
 def reset():
