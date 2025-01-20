@@ -22,7 +22,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
     private val model = GenerativeModel(
         modelName = "gemini-2.0-flash-exp",
-        apiKey = "AIzaSyBbpQNYsB4bDDctAB14D8FQIIOqn7JOccc",
+        apiKey = "Your_API_key",
     )
 
     private val aiHistory by lazy {
