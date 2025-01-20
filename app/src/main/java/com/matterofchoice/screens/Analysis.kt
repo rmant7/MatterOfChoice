@@ -95,7 +95,7 @@ fun Analysis(viewModel: AIViewModel = viewModel()) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp),
-                label = { Text(text = "Enter the role, e.g., Student", color = Color.Gray) }
+                label = { Text(text = "Optional: Enter the role, e.g., Student", color = Color.Gray) }
 
             )
 

@@ -37,7 +37,7 @@ fun Result() {
 
     val userScore = sharedPreferences.getInt("userScore", 0)
     val totalScore = sharedPreferences.getInt("totalScore", 0)
-    val rounds = sharedPreferences.getInt("rounds", 1) + 1
+    val rounds = sharedPreferences.getInt("rounds", 0)
 
     Log.v("USERSCORE", userScore.toString())
     Log.v("TOTALSCORE", totalScore.toString())
@@ -47,7 +47,7 @@ fun Result() {
         modifier = Modifier
             .background(Color.White)
             .fillMaxSize()
-            .padding(top = 45.dp, bottom = 30.dp),
+            .padding(top = 45.dp),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
 

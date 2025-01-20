@@ -85,11 +85,9 @@ fun UserInput(
             modifier = Modifier
                 .background(Color.White)
                 .padding(24.dp)
-                .padding(top = 24.dp)
-                .fillMaxSize()
-                ,
+                .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Top
+            verticalArrangement = Arrangement.Center
         ) {
             Image(
                 painter = painterResource(R.drawable.result),
@@ -104,7 +102,7 @@ fun UserInput(
                 .padding(bottom = 15.dp, top = 28.dp))
 
             Text(text = "The scenarios will be based on your selections",
-                fontSize = 14.sp,
+                fontSize = 12.sp,
                 color = Color.Gray,
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
@@ -120,7 +118,7 @@ fun UserInput(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp),
-                label = { Text(text = "Enter the subject") }
+                label = { Text(text = "Optional: Enter the subject") }
 
             )
 
@@ -134,7 +132,7 @@ fun UserInput(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp),
-                label = { Text(text = "Enter your Age") }
+                label = { Text(text = "Optional: Enter your Age") }
 
             )
 
@@ -146,10 +144,7 @@ fun UserInput(
 
             Button(
                 onClick = {
-                    if (userSubject.isBlank() || userAge.isBlank() || userGender.value.isBlank() || userLanguage.value.isBlank()) {
-                        Toast.makeText(context, "Please fill in all fields", Toast.LENGTH_SHORT)
-                            .show()
-                    } else {
+
                         editor.putBoolean("isFirst", false)
                         editor.putString("userSubject", userSubject).apply()
                         editor.putString("userAge", userAge).apply()
@@ -159,7 +154,6 @@ fun UserInput(
                         navController.navigate(Screens.GameScreen.screen) {
                             popUpTo(0)
                         }
-                    }
                 },
                 shape = RoundedCornerShape(16.dp),
                 modifier = Modifier.padding(top = 20.dp).background(

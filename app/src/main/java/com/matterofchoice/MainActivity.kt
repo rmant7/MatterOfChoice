@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
                     val isOpen = sharedPreferences.getBoolean("firstOpen",true)
                     val editor = sharedPreferences.edit()
                     editor.apply {
-                        putInt("rounds",1)
+                        putInt("rounds",0)
                         putInt("userScore",0)
                         putInt("totalScore",0)
                     }.apply()

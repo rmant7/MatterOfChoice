@@ -133,6 +133,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
 
     if (!isFirst) {
         if (!isInitialized) {
+            // could replace with dispose effect
             viewmodel.main()
         }
         if (isLoading) {
@@ -147,6 +148,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
         }
         if (listContent.isNotEmpty()) {
             val scrollState = rememberScrollState()
+
 
             Log.v("CASESNOT", "LIST CONTENT IS $listContent")
             Column(
@@ -177,7 +179,8 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                     val totalScore = sharedPreferences.getInt("totalScore", 0)
 
                     val round =
-                        remember { mutableIntStateOf(sharedPreferences.getInt("rounds", 1)) }
+                        remember { mutableIntStateOf(sharedPreferences.getInt("rounds", 1)+1) }
+
 
                     Column(
                         modifier = Modifier
@@ -246,7 +249,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                         Image(
                             painter = painterResource(R.drawable.test), contentDescription = null,
                             modifier = Modifier
-                                .padding(bottom = 25.dp)
+                                .padding(bottom = 25.dp, start = 16.dp, end = 16.dp)
                                 .fillMaxWidth()
                                 .height(350.dp)
                                 .align(Alignment.CenterHorizontally)
@@ -261,26 +264,25 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                                     .align(Alignment.Start)
                                     .padding(bottom = 12.dp, start = 16.dp, end = 16.dp),
                                 onClick = {
+//                                    editor.putInt("rounds", round.intValue++).apply()
                                     selectedItem = option
-                                    if (caseNum < 6 && selectedItem!!.option.isNotEmpty()) {
-                                        calculateScore(
-                                            cases[caseNum - 1],
-                                            selectedItem!!.option,
-                                            context
-                                        )
-                                        viewmodel.saveUserChoice(
-                                            context,
-                                            cases[caseNum - 1],
-                                            selectedItem!!.option
-                                        )
-                                        caseNum++
-
-
-
-                                        editor.putInt("rounds", round.intValue++).apply()
-                                    } else {
-                                        viewmodel.main()
-                                    }
+//                                    if (caseNum < 8 && selectedItem!!.option.isNotEmpty()) {
+//                                        calculateScore(
+//                                            cases[caseNum - 1],
+//                                            selectedItem!!.option,
+//                                            context
+//                                        )
+//                                        viewmodel.saveUserChoice(
+//                                            context,
+//                                            cases[caseNum - 1],
+//                                            selectedItem!!.option
+//                                        )
+//                                        caseNum++
+//
+//
+//                                    } else {
+//                                        viewmodel.main()
+//                                    }
                                 },
                                 border = BorderStroke(
                                     width = 2.dp,
@@ -308,41 +310,45 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
 
                             }
                         }
-//                        Button(
-//                            onClick = {
-//                                // need to implement history
-//                                if (round < 6 && selectedItem != null) {
-//                                    Log.v("USERERROR", "User choice: ${selectedItem!!.option}")
-//                                    calculateScore(cases[round - 1], selectedItem!!.option, context)
-////                                    viewmodel.saveUserChoice(
-////                                        context,
-////                                        listContent!!,
-////                                        selectedItem!!.option
-////                                    )
-//                                    round++
-//                                } else {
-//                                    viewmodel.main()
-//
-//                                }
-//                            },
-//                            shape = RoundedCornerShape(8.dp),
-//                            modifier = Modifier
-//                                .padding(top = 20.dp)
-//                                .align(Alignment.CenterHorizontally),
-//                            colors = ButtonDefaults.buttonColors(MyColor)
-//                        ) {
-//                            Text(
-//                                "Next",
-//                                fontFamily = titleFont,
-//                                modifier = Modifier.padding(
-//                                    start = 20.dp,
-//                                    end = 20.dp,
-//                                    top = 5.dp,
-//                                    bottom = 5.dp
-//                                ),
-//                                fontSize = 18.sp
-//                            )
-//                        }
+                        Button(
+                            onClick = {
+                                if (caseNum < 8 && selectedItem!!.option.isNotEmpty()) {
+                                    editor.putInt("rounds", round.intValue++).apply()
+                                    calculateScore(
+                                        cases[caseNum - 1],
+                                        selectedItem!!.option,
+                                        context
+                                    )
+                                    viewmodel.saveUserChoice(
+                                        context,
+                                        cases[caseNum - 1],
+                                        selectedItem!!.option
+                                    )
+                                    caseNum++
+                                } else {
+                                    viewmodel.main()
+
+                                }
+                            },
+                            shape = RoundedCornerShape(16.dp),
+                            modifier = Modifier.padding(top = 20.dp).background(
+                                brush = Brush.horizontalGradient(gradientColors),
+                                shape = RoundedCornerShape(16.dp)
+                            ),
+                            colors = ButtonDefaults.buttonColors(Color.Transparent))
+                        {
+                            Text(
+                                "Next",
+                                fontFamily = titleFont,
+                                modifier = Modifier.padding(
+                                    start = 20.dp,
+                                    end = 20.dp,
+                                    top = 5.dp,
+                                    bottom = 5.dp
+                                ),
+                                fontSize = 18.sp
+                            )
+                        }
                     }
 
                 }
@@ -350,7 +356,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
 
         }
         if (errorState.isNotEmpty()) {
-            Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center) {
+            Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(
                     text = "Something went wrong", fontSize = 18.sp, modifier = Modifier
                         .align(

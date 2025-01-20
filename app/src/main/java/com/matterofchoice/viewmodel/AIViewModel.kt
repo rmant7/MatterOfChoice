@@ -56,9 +56,9 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     val isLoadingAnalysis: StateFlow<Boolean> get() = _isLoadingAnalysis
 
     private var userSubject = sharedPreferences.getString("userSubject", "random subject")
-    private var userAge = sharedPreferences.getString("userAge", "")
-    private val userGender = sharedPreferences.getString("userGender", "")
-    private var userLanguage = sharedPreferences.getString("userLanguage", "")
+    private var userAge = sharedPreferences.getString("userAge", "any")
+    private val userGender = sharedPreferences.getString("userGender", "any")
+    private var userLanguage = sharedPreferences.getString("userLanguage", "English")
 
     private fun loadPrompts(): JSONObject? {
 
@@ -198,7 +198,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         _isInitialized.value = true
 
         viewModelScope.launch {
-            for (i in 0 until 3){
+            for (i in 0 until 4){
                 generateCases(
                     language = userLanguage!!,
                     sex = userGender!!,
