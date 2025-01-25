@@ -10,7 +10,7 @@ from PIL import Image
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
 
-client = InferenceClient("black-forest-labs/FLUX.1-dev", token="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")
+client = InferenceClient("black-forest-labs/FLUX.1-dev", token="your_huggingface_token")
 
 # Enable `str` function in Jinja2 templates
 app.jinja_env.globals.update(str=str, time=time)
