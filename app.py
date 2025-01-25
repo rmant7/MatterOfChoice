@@ -16,7 +16,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True  #For development reload the template
 app.secret_key = os.urandom(24) # Don't forget this for sessions
 app.config['SECRET_KEY'] = 'your_secret_key'
 
-client = InferenceClient("black-forest-labs/FLUX.1-dev", token=your_huggingface_token)
+client = InferenceClient("black-forest-labs/FLUX.1-dev", token="your_huggingface_token")
 
 # Enable `str` function in Jinja2 templates
 app.jinja_env.globals.update(str=str, time=time)
