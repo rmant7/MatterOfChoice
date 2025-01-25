@@ -1,7 +1,8 @@
 [
     {
         "id": 1,
-        "description": "A kid pushed you in the hallway.",
+        "description": "A person pushed you in the hallway.",
+        "imageDescription":"Generate a Comic image, A person pushed another person in the hallway, make the image aggressive.",
         "choices": [
             {"text": "Push back angrily.", "outcome": "A fight starts.", "wisdom_change": -1, "score_change": -5},
             {"text": "Ask why they pushed you.", "outcome": "The situation de-escalates.", "wisdom_change": 1, "score_change": 5},
@@ -12,6 +13,7 @@
     {
         "id": 2,
         "description": "Your friend forgot to return your book.",
+        "imageDescription":"Generate a Comic image, A person forgot to return a book to another person, make the image stressful.",
         "choices": [
             {"text": "Get angry at them.", "outcome": "Your friendship is strained.", "wisdom_change": -2, "score_change": -5},
             {"text": "Ask politely about the book.", "outcome": "They promise to return it.", "wisdom_change": 1, "score_change": 5},
@@ -22,6 +24,7 @@
     {
         "id": 3,
         "description": "You see a classmate being bullied.",
+        "imageDescription":"Generate a Comic image, A person sees a classmate being bullied, make the image aggressive.",
         "choices": [
             {"text": "Join in to avoid trouble.", "outcome": "You hurt someone to protect yourself.", "wisdom_change": -2, "score_change": -10},
             {"text": "Report the bullying to a teacher.", "outcome": "The teacher intervenes.", "wisdom_change": 2, "score_change": 10},
@@ -32,6 +35,7 @@
     {
         "id": 4,
         "description": "Your friend asks you to skip class with them.",
+        "imageDescription":"Generate a Comic image, A person asks a classmate to skip class with them, make the image stressful.",
         "choices": [
             {"text": "Agree and go along.", "outcome": "You miss an important lesson.", "wisdom_change": -2, "score_change": -10},
             {"text": "Convince them not to skip.", "outcome": "You both stay and learn.", "wisdom_change": 3, "score_change": 15},
@@ -42,6 +46,7 @@
     {
         "id": 5,
         "description": "Your sibling broke your favorite toy.",
+        "imageDescription":"Generate a Comic image, A person broke another person's favorite toy, make the image stressful.",
         "choices": [
             {"text": "Yell at them.", "outcome": "They feel upset and cry.", "wisdom_change": -1, "score_change": -5},
             {"text": "Ask them to apologize.", "outcome": "They apologize and feel sorry.", "wisdom_change": 1, "score_change": 5},
@@ -52,6 +57,7 @@
     {
         "id": 6,
         "description": "You find a wallet with money on the street.",
+        "imageDescription":"Generate a Comic image, A person finds a wallet with money on the street, make the image stressful.",
         "choices": [
             {"text": "Keep the money.", "outcome": "You feel guilty.", "wisdom_change": -2, "score_change": -10},
             {"text": "Try to find the owner.", "outcome": "The owner is grateful.", "wisdom_change": 3, "score_change": 15},
@@ -62,6 +68,7 @@
     {
         "id": 7,
         "description": "Your team loses a game because of your mistake.",
+        "imageDescription":"Generate a Comic image, A team loses a game because of someone's mistake, make the image aggressive.",
         "choices": [
             {"text": "Blame someone else.", "outcome": "Your teammates lose trust in you.", "wisdom_change": -2, "score_change": -10},
             {"text": "Apologize to the team.", "outcome": "They appreciate your honesty.", "wisdom_change": 3, "score_change": 15},
@@ -72,6 +79,7 @@
     {
         "id": 8,
         "description": "You accidentally broke a friend's phone.",
+        "imageDescription":"Generate a Comic image, A person accidentally breaks a friend's phone, make the image stressful.",
         "choices": [
             {"text": "Deny responsibility.", "outcome": "Your friend finds out and feels betrayed.", "wisdom_change": -2, "score_change": -10},
             {"text": "Offer to pay for repairs.", "outcome": "Your friend forgives you.", "wisdom_change": 3, "score_change": 15},
@@ -82,6 +90,7 @@
     {
         "id": 9,
         "description": "You overhear a classmate talking about cheating on a test.",
+        "imageDescription":"Generate a Comic image, A person overhears a classmate talking about cheating on a test, make the image stressful.",
         "choices": [
             {"text": "Report them to the teacher.", "outcome": "The cheating is stopped.", "wisdom_change": 3, "score_change": 15},
             {"text": "Talk to them about it.", "outcome": "They reconsider their actions.", "wisdom_change": 2, "score_change": 10},
@@ -92,6 +101,7 @@
     {
         "id": 10,
         "description": "You forgot to study for a big test.",
+        "imageDescription":"Generate a Comic image, A person forgot to study for a big test, make the image stressful.",
         "choices": [
             {"text": "Cheat during the test.", "outcome": "You feel guilty and risk punishment.", "wisdom_change": -3, "score_change": -15},
             {"text": "Do your best with what you know.", "outcome": "You learn from the experience.", "wisdom_change": 3, "score_change": 10},
@@ -100,3 +110,4 @@
         ]
     }
 ]
+
