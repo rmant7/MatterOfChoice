@@ -1,0 +1,10 @@
+Flask
+Flask-SQLAlchemy
+Werkzeug
+os
+json
+time
+huggingface_hub
+io
+base64
+PIL
