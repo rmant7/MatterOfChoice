@@ -16,14 +16,15 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True  #For development reload the template
 app.secret_key = os.urandom(24) # Don't forget this for sessions
 app.config['SECRET_KEY'] = 'your_secret_key'
 
-client = InferenceClient("black-forest-labs/FLUX.1-dev", token="your_huggingface_token")
+client = InferenceClient("black-forest-labs/FLUX.1-dev", token=os.getenv("HUGGINGFACE_API_KEY"))
 
 # Enable `str` function in Jinja2 templates
 app.jinja_env.globals.update(str=str, time=time)
+BASE_DIR = Path(__file__).resolve().parent
 
 # File paths
-USER_DATA_FILE = os.path.join('data', 'users.json')
-SCENARIOS_FILE = os.path.join('data', 'scenarios.json')
+USER_DATA_FILE = BASE_DIR / "data/users.json"
+SCENARIOS_FILE = BASE_DIR / "data/scenarios.json"
 # Ensure the images folder exists
 
 
@@ -71,6 +72,7 @@ def generate_image_for_user(prompt, user, scenario_id):
             image_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
 
             print(f"Image generated successfully for user ID '{user_id}', username '{username}', and scenario '{scenario_id}'.")
+            print(image_base64)
             return f"data:image/png;base64,{image_base64}"
         except Exception as e:
             print(f"Attempt {attempt + 1} failed for user ID '{user_id}', username '{username}', and scenario '{scenario_id}': {e}")
@@ -108,8 +110,8 @@ logger.addHandler(console_handler)
 logger.debug("Logger configured. Starting app...")
 
 
-@app.route('/index')  #Serve the index.html file when you go to the root path.
-def serve_index():
+@app.route('/cases')  #Serve the index.html file when you go to the root path.
+def cases():
     return render_template('index2.html')
 
 
