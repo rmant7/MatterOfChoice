@@ -2390,3 +2390,112 @@ The person selected option 5. for case, ask another question SAME STRUCTURE base
 2025-02-01 21:43:02,515 - my_app - DEBUG - Logger configured. Starting app...
 2025-02-01 21:43:06,056 - my_app - DEBUG - Logger configured. Starting app...
 2025-02-01 21:44:43,401 - my_app - DEBUG - Logger configured. Starting app...
+2025-02-03 12:45:57,818 - my_app - DEBUG - Logger configured. Starting app...
+2025-02-03 12:46:01,983 - my_app - DEBUG - Logger configured. Starting app...
+2025-02-03 12:48:03,900 - my_app - ERROR - An error occurred while conversing with Gemini: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\flask\app.py", line 370, in converse
+    input_text = request.json.get('text', '')
+                 ^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 560, in json
+    return self.get_json()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 604, in get_json
+    return self.on_json_loading_failed(None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\flask\wrappers.py", line 214, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 647, in on_json_loading_failed
+    raise UnsupportedMediaType(
+werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+2025-02-03 12:48:56,180 - my_app - ERROR - An error occurred while conversing with Gemini: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\flask\app.py", line 370, in converse
+    input_text = request.json.get('text', '')
+                 ^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 560, in json
+    return self.get_json()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 604, in get_json
+    return self.on_json_loading_failed(None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\flask\wrappers.py", line 214, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 647, in on_json_loading_failed
+    raise UnsupportedMediaType(
+werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+2025-02-03 12:49:51,556 - my_app - DEBUG - Logger configured. Starting app...
+2025-02-03 12:51:48,615 - my_app - ERROR - An error occurred while conversing with Gemini: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\flask\json\provider.py", line 187, in loads
+    return json.loads(s, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\flask\app.py", line 373, in converse
+    input_text = request.json.get('text', '')
+                 ^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 560, in json
+    return self.get_json()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\flask\wrappers.py", line 214, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2025-02-03 12:52:58,342 - my_app - DEBUG - Logger configured. Starting app...
+2025-02-03 12:53:11,116 - my_app - ERROR - An error occurred while conversing with Gemini: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\flask\app.py", line 371, in converse
+    input_text = request.json.get('text', '')
+                 ^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 560, in json
+    return self.get_json()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 604, in get_json
+    return self.on_json_loading_failed(None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\flask\wrappers.py", line 214, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\venv\Lib\site-packages\werkzeug\wrappers\request.py", line 647, in on_json_loading_failed
+    raise UnsupportedMediaType(
+werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+2025-02-03 12:53:34,164 - my_app - DEBUG - Logger configured. Starting app...
+2025-02-03 12:53:38,360 - my_app - ERROR - An error occurred while conversing with Gemini: 'Request' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\flask\app.py", line 371, in converse
+    input_text = request.get('text', '')
+                 ^^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'get'
+2025-02-03 12:54:31,996 - my_app - DEBUG - Logger configured. Starting app...
+2025-02-03 12:54:32,251 - my_app - ERROR - An error occurred while conversing with Gemini: 'bytes' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\stuff\CODING\MOCAPI\dev\flask\app.py", line 371, in converse
+    input_text = request.data.get('text', '')
+                 ^^^^^^^^^^^^^^^^
+AttributeError: 'bytes' object has no attribute 'get'
+2025-02-03 12:55:15,416 - my_app - DEBUG - Logger configured. Starting app...
+2025-02-03 12:55:41,984 - my_app - DEBUG - Logger configured. Starting app...
+2025-02-03 12:57:46,205 - my_app - DEBUG - Logger configured. Starting app...
+2025-02-03 12:57:49,712 - my_app - DEBUG - Logger configured. Starting app...
