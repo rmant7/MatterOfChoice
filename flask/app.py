@@ -361,6 +361,27 @@ def reset():
     return jsonify({"message": "Session reset and files deleted."}), 200
 
 
+
+
+@app.route('/converse', methods=['POST'])
+def converse():
+    data = request.get_json()
+
+
+    try:
+        # Get the input text from the request
+        input_text = data.get('text')
+
+        print(f"Input text: {input_text}")
+        # Send the input text to Gemini and get the response
+        response = get_response_gemini(input_text)
+
+        # Return the response as JSON
+        return jsonify({'response': response}), 200
+    except Exception as e:
+        logger.exception(f"An error occurred while conversing with Gemini: {e}")
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == '__main__':
     os.makedirs('data', exist_ok=True)
     read_json(USER_DATA_FILE)
