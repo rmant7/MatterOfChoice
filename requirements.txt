@@ -8,3 +8,4 @@ huggingface_hub
 io
 base64
 PIL
+pillow
