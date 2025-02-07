@@ -140,16 +140,18 @@ def extract_list(code: str) -> str:
 
 
 
-def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subject: str, question_type: str, conversation_data=None, sex: str = 'unspecified'):
+def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subject: str, question_type: str, subtype: str, conversation_data=None, sex: str = 'unspecified'):
     logger = logging.getLogger('my_app')
-    logger.debug(f"gen_cases function called with parameters: language={language}, age={age}, subject={subject}, difficulty={difficulty}, question_type={question_type}, sex={sex}, conversation_data={conversation_data}")
+    logger.debug(f"gen_cases function called with parameters: language={language}, age={age}, subject={subject}, difficulty={difficulty}, question_type={question_type}, subtype={subtype}, sex={sex}, conversation_data={conversation_data}")
 
     try:
         if conversation_data is None:
             if question_type == 'behavioral':
-                prompt = f"""{prompts['cases']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set the difficulty of the content to {difficulty}. The person is {sex}."""
+                prompt = f"""{prompts['cases']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
             elif question_type == 'study':
-                prompt = f"""{prompts['study']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set the difficulty of the content to {difficulty}. The person is {sex}."""
+                prompt = f"""{prompts['study']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
+            elif question_type == 'hiring':
+                prompt = f"""{prompts['hiring']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
             logger.debug(f"Initial prompt generated: {prompt}")
         else:
             previous_response = conversation_data.get('data', {})
@@ -174,9 +176,11 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
             previous_turn_summary += f"\nThe person selected option {user_choice}."
 
             if question_type == 'behavioral':
-                prompt = f"""{prompts['cases']} The person's previous response was {previous_turn_summary} for case, ask another question SAME STRUCTURE based on their previous response in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}."""
+                prompt = f"""{prompts['cases']} The person's previous response was {previous_turn_summary} for case, ask another question SAME STRUCTURE based on their previous response in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
             elif question_type == 'study':
-                prompt = f"""{prompts['study']} The person's previous response was {previous_turn_summary} for case, ask another question SAME STRUCTURE based on their previous response in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}."""
+                prompt = f"""{prompts['study']} The person's previous response was {previous_turn_summary} for case, ask another question SAME STRUCTURE based on their previous response in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
+            elif question_type == 'hiring':
+                prompt = f"""{prompts['hiring']} The person's previous response was {previous_turn_summary} for case, ask another question SAME STRUCTURE based on their previous response in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
             logger.debug(f"Follow-up prompt generated: {prompt}")
 
         response = get_response_gemini(prompt)
@@ -205,7 +209,6 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                     option_id = str(uuid.uuid4())
                     option_item = {**option_data, 'option_id': option_id}
                     case_data['options'].append(option_item)
-                case_data['case_id'] = str(uuid.uuid4())
 
                 # Save conversation data to JSON file
                 conversation_filepath = output_dir / "conversation.json"
@@ -228,6 +231,7 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
     except Exception as e:
         logger.exception(f"An unexpected error occurred in gen_cases: {e}")
         return None, conversation_data
+
 
 
 # Generate images for cases

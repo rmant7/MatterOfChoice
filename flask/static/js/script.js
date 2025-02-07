@@ -4,6 +4,52 @@ const loadingSpinner = document.getElementById('loading-spinner');
 const caseForm = document.getElementById('caseForm');
 const resetButton = document.getElementById('resetButton'); // Get the reset button
 
+// Define subtypes for each question type
+const subtypes = {
+    behavioral: [
+        { value: 'interpersonal_skills', text: 'Interpersonal Skills' },
+        { value: 'ethical_dilemmas', text: 'Ethical Dilemmas' },
+        { value: 'stress_management', text: 'Stress Management' }
+    ],
+    study: [
+        { value: 'subject_mastery', text: 'Subject Mastery' },
+        { value: 'critical_thinking', text: 'Critical Thinking' },
+        { value: 'practical_application', text: 'Practical Application' }
+    ],
+    hiring: [
+        { value: 'technical_skills', text: 'Technical Skills' },
+        { value: 'behavioral_interview', text: 'Behavioral Interview' },
+        { value: 'situational_judgment', text: 'Situational Judgment' }
+    ]
+};
+
+// Add event listener to update the subtype dropdown based on the selected question type
+const questionTypeSelect = document.getElementById('question_type');
+const subTypeSelect = document.getElementById('sub_type');
+
+questionTypeSelect.addEventListener('change', (event) => {
+    const selectedType = event.target.value;
+    updateSubTypeOptions(selectedType);
+});
+
+function updateSubTypeOptions(selectedType) {
+    // Clear existing options
+    subTypeSelect.innerHTML = '';
+
+    // Populate new options based on the selected question type
+    if (subtypes[selectedType]) {
+        subtypes[selectedType].forEach(subtype => {
+            const option = document.createElement('option');
+            option.value = subtype.value;
+            option.text = subtype.text;
+            subTypeSelect.appendChild(option);
+        });
+    }
+}
+
+// Initialize the subtype options based on the default selected question type
+updateSubTypeOptions(questionTypeSelect.value);
+
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
@@ -126,7 +172,7 @@ async function submitAnswers(answers) {
 
     } catch (error) {
         // This would handle errors in your score calculation logic, if any.
-        displayError({ error: error.message }); 
+        displayError({ error: error.message });
     } finally {
         loadingSpinner.classList.add('hidden');
         responseContainer.classList.remove('hidden');
