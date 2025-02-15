@@ -1,3 +1,21 @@
+from flask import Flask, render_template, request, jsonify, session, redirect, url_for
+import os
+import json
+import logging
+import time
+import requests
+from huggingface_hub import InferenceClient
+from pathlib import Path
+from io import BytesIO
+import base64
+from PIL import Image
+from utils import gen_cases, create_db, get_response_gemini  # keep these for other endpoints
+from image import get_info_from_image  # for image analysis
+
+from dotenv import load_dotenv
+load_dotenv()
+
+
 from flask import Flask, render_template, url_for, send_from_directory, request, jsonify, session, redirect, url_for, session
 from utils import gen_cases, create_db, get_response_gemini  # added the import for get_response_gemini function
 import sqlalchemy
@@ -12,27 +30,25 @@ import base64
 from PIL import Image
 from image import get_info_from_image  # Import the function from image.py
 
-
 app = Flask(__name__)
-app.config['TEMPLATES_AUTO_RELOAD'] = True  #For development reload the template
-app.secret_key = os.urandom(24) # Don't forget this for sessions
-app.config['SECRET_KEY'] = 'your_secret_key'
-
-client = InferenceClient("black-forest-labs/FLUX.1-dev", token=os.getenv("HUGGINGFACE_API_KEY"))
-
-# Enable `str` function in Jinja2 templates
+app.config['TEMPLATES_AUTO_RELOAD'] = True  # For development: auto-reload templates
+# Use a fixed secret key (or load from environment) for sessions
+app.secret_key = os.getenv("SECRET_KEY", "your_secret_key")
 app.jinja_env.globals.update(str=str, time=time)
+
 BASE_DIR = Path(__file__).resolve().parent
 
 # File paths
 USER_DATA_FILE = BASE_DIR / "data/users.json"
-SCENARIOS_FILE = BASE_DIR / "data/scenarios.json"
-# Ensure the images folder exists
+# NOTE: Removed SCENARIOS_FILE since scenarios will now be generated dynamically.
 
+# Initialize the image generation client using Stable Diffusion.
+# (Uses HUGGINGFACE_TOKEN to match code 1's environment variable naming.)
+client = InferenceClient("stabilityai/stable-diffusion-3.5-large-turbo", token=os.getenv("HUGGINGFACE_API_KEY"))
 
-
-
-# Helper functions to interact with JSON files
+# ----------------------------
+# Helper functions for JSON I/O
+# ----------------------------
 def read_json(file_path):
     if not os.path.exists(file_path):
         with open(file_path, 'w') as file:
@@ -45,80 +61,137 @@ def write_json(file_path, data):
         json.dump(data, file, indent=4)
     print(f"Updated JSON file: {file_path}")
 
-
-def generate_image_for_user(prompt, user, scenario_id):
+# ----------------------------
+# New dynamic scenario generator (adapted from code 1)
+# ----------------------------
+def generate_scenario(user):
     """
-    Generate a unique image dynamically as a base64 string for a user (with user details) and scenario.
+    Generates a unique AI-powered scenario using the Gemini API.
     """
-    user_id = user['id']
-    username = user['username']
-    gender = user['gender']
-    age = user['age']
-
-    print(f"Generating image for user ID '{user_id}', username '{username}' (gender: {gender}, age: {age}), and scenario '{scenario_id}' dynamically...")
+    gemini_api_key = os.getenv('GOOGLE_API_KEY')
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_api_key}"
     
-    # Include user details in the unique prompt
-    unique_prompt = f"user-{user_id}-{username}-{gender}-{age}-scenario-{scenario_id}: {prompt}"
+    prompt = f"""
+    Create a short, moral, positive consciousness dilemma for a {user['age']}-year-old, {user['gender']} named {user['username']}.
+    Provide 4 choices with different outcomes affecting "wisdom_change" and "score_change".
+    Format:
+    {{
+        "id": <scenario_id>,
+        "description": "Scenario text",
+        "imageDescription": "Short prompt for image",
+        "choices": [
+             {{"text": "Choice 1", "outcome": "Result 1", "wisdom_change": 3, "score_change": 15}},
+             {{"text": "Choice 2", "outcome": "Result 2", "wisdom_change": 2, "score_change": 10}},
+             {{"text": "Choice 3", "outcome": "Result 3", "wisdom_change": 1, "score_change": 5}},
+             {{"text": "Choice 4", "outcome": "Result 4", "wisdom_change": -1, "score_change": -5}}
+        ]
+    }}
+    """
+    
+    payload = {
+        "contents": [{
+            "parts": [{"text": prompt}]
+        }]
+    }
+    
+    headers = {"Content-Type": "application/json"}
+    
+    try:
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        response_data = response.json()
+        print("Full Gemini API response:")
+        print(json.dumps(response_data, indent=2))
+        
+        candidates = response_data.get("candidates", [])
+        if not candidates:
+            print("No candidates found in response.")
+            return {"error": "No generated content."}
+        
+        candidate = candidates[0]
+        parts = candidate.get("content", {}).get("parts", [])
+        if not parts:
+            print("No parts found in candidate:", candidate)
+            return {"error": "No generated content."}
+        
+        raw_text = parts[0].get("text", "")
+        # Remove markdown formatting if present
+        if raw_text.startswith("```json"):
+            raw_text = raw_text[len("```json"):].strip()
+        if raw_text.endswith("```"):
+            raw_text = raw_text[:-3].strip()
+        
+        print("Cleaned generated text:")
+        print(raw_text)
+        
+        scenario = json.loads(raw_text)
+        return scenario
 
-    max_retries = 20
+    except Exception as e:
+        print(f"Error generating scenario via Gemini: {e}")
+        return {"error": "Failed to generate scenario."}
+
+# ----------------------------
+# New dynamic image generator (adapted from code 1)
+# ----------------------------
+def generate_image_for_scenario(image_description, user):
+    """
+    Generates an AI-powered image dynamically based on the scenario.
+    """
+    print(f"Generating image for user '{user['username']}' using scenario description...")
+    unique_prompt = f"{image_description}, highly detailed, for a {user['age']}-year-old {user['gender']}."
+    
+    max_retries = 5
     retry_delay = 5
-
+    
     for attempt in range(max_retries):
         try:
-            # Generate image using a unique prompt
-            image = client.text_to_image(unique_prompt)
-            
-            # Encode the image as a base64 string
+            image_bytes = client.text_to_image(prompt=unique_prompt)
+            if isinstance(image_bytes, Image.Image):
+                image = image_bytes
+            else:
+                image = Image.open(BytesIO(image_bytes))
             buffered = BytesIO()
             image.save(buffered, format="PNG")
             image_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
-
-            print(f"Image generated successfully for user ID '{user_id}', username '{username}', and scenario '{scenario_id}'.")
-            print(image_base64)
+            print(f"✅ Image generated successfully for user '{user['username']}'.")
             return f"data:image/png;base64,{image_base64}"
         except Exception as e:
-            print(f"Attempt {attempt + 1} failed for user ID '{user_id}', username '{username}', and scenario '{scenario_id}': {e}")
+            print(f"❌ Attempt {attempt + 1} failed: {e}")
             if attempt + 1 == max_retries:
-                raise RuntimeError("Image generation failed after multiple attempts.")
+                raise RuntimeError("❌ Image generation failed after multiple attempts.")
             time.sleep(retry_delay)
+            retry_delay *= 1.5
 
-
-BASE_DIR = Path(__file__).resolve().parent
-
-
+# ----------------------------
 # Configure logging
-# Create a logger instance
-logger = logging.getLogger('my_app') #name your logger for your app
-logger.setLevel(logging.DEBUG)  # Set the logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+# ----------------------------
+logger = logging.getLogger('my_app')
+logger.setLevel(logging.DEBUG)
 
-# Create a file handler to write logs to a file
-file_handler = logging.FileHandler('flask_app.log')  # Specify the log file name
+file_handler = logging.FileHandler('flask_app.log')
 file_handler.setLevel(logging.DEBUG)
 
-# Create a console handler to output logs to the console
-console_handler = logging.StreamHandler()  # streamhandler directs to sys.stderr by default
+console_handler = logging.StreamHandler()
 console_handler.setLevel(logging.DEBUG)
 
-# Create a formatter for log messages and set level
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 file_handler.setFormatter(formatter)
 console_handler.setFormatter(formatter)
 
-# Add the handlers to the logger
 logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
-
 logger.debug("Logger configured. Starting app...")
 
+# ----------------------------
+# Routes
+# ----------------------------
 
-@app.route('/cases')  #Serve the index.html file when you go to the root path.
+@app.route('/cases')
 def cases():
     return render_template('index2.html')
 
-
-
-# Routes
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -138,78 +211,101 @@ def register():
         if any(user['username'] == username for user in users):
             return render_template('register.html', error="Username already exists!")
 
-        # Generate a unique auto-incremented ID
-        if users:
-            new_id = max(user['id'] for user in users) + 1
-        else:
-            new_id = 1  # Start with ID 1 for the first user
-
-        # Create a new user
+        new_id = max([user['id'] for user in users], default=0) + 1
         new_user = {
-            'id': new_id,  # Assign the auto-incremented ID
+            'id': new_id,
             'username': username,
             'gender': gender,
             'age': int(age),
             'score': 0,
-            'wisdom_level': 1,
-            'current_scenario': 1
+            'wisdom_level': 0,
+            'current_scenario': 1  # Start at scenario 1
         }
         users.append(new_user)
         write_json(USER_DATA_FILE, users)
-
-        # Store the username in the session and redirect to dashboard
         session['id'] = new_id
         session['username'] = username
         return redirect(url_for('dashboard'))
     
     return render_template('register.html')
 
-
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
     users = read_json(USER_DATA_FILE)
-    scenarios = read_json(SCENARIOS_FILE)
-    id = session.get('id')
-    #username = session.get('username')
-
-    if not id:
+    user_id = session.get('id')
+    if not user_id:
         return redirect(url_for('register'))
-
-    user = next((user for user in users if user['id'] == id), None)
+    
+    user = next((u for u in users if u['id'] == user_id), None)
     if not user:
         return redirect(url_for('register'))
-
-    # Handle scenario choices
+    
+    # End the game after 10 scenarios
+    if user.get('current_scenario', 1) > 10:
+        return render_template('game_over.html', user=user)
+    
     if request.method == 'POST' and 'choice_index' in request.form:
-        choice_index = int(request.form['choice_index'])
-        current_scenario_id = user['current_scenario']
-        scenario = next((s for s in scenarios if s['id'] == current_scenario_id), None)
-        if scenario:
-            choice = scenario['choices'][choice_index]
-            user['score'] += choice['score_change']
-            user['wisdom_level'] += choice['wisdom_change']
+        scenario_json = request.form.get('scenario_json')
+        print("Received scenario_json:", scenario_json)
+        try:
+            scenario = json.loads(scenario_json)
+        except Exception as e:
+            print("Error parsing scenario JSON from form:", e)
+            scenario = None
 
-        next_scenario_id = user['current_scenario'] + 1
-        if next_scenario_id > len(scenarios):
-            write_json(USER_DATA_FILE, users)
-            return render_template('game_over.html', user=user)
-        user['current_scenario'] = next_scenario_id
+        choice_index = request.form.get('choice_index')
+        if scenario and choice_index is not None:
+            try:
+                choice_index = int(choice_index)
+                print("Before update: Score:", user['score'], "Wisdom Level:", user['wisdom_level'])
+                choice = scenario['choices'][choice_index]
+                user['score'] += int(choice['score_change'])
+                user['wisdom_level'] += int(choice['wisdom_change'])
+                print("After update: Score:", user['score'], "Wisdom Level:", user['wisdom_level'])
+            except Exception as e:
+                print("Error processing choice:", e)
+
+        # Increment scenario counter
+        user['current_scenario'] = user.get('current_scenario', 1) + 1
         write_json(USER_DATA_FILE, users)
-
-    # Generate a dynamic image for the current scenario
-    current_scenario_id = user['current_scenario']
-    scenario = next((s for s in scenarios if s['id'] == current_scenario_id), None)
-
+        
+        # Check for game over
+        if user['current_scenario'] > 10:
+            return render_template('game_over.html', user=user)
+        
+        # Generate a new scenario for the next round
+        print("Generating new scenario dynamically...")
+        scenario = generate_scenario(user)
+        if not scenario or 'error' in scenario:
+            return render_template('dashboard.html', user=user, error="Failed to generate a scenario.", scenario=None)
+        
+        generated_image_data = None
+        if 'imageDescription' in scenario:
+            try:
+                generated_image_data = generate_image_for_scenario(scenario['imageDescription'], user)
+            except RuntimeError as e:
+                print(f"Image generation failed: {e}")
+        
+        return render_template('dashboard.html', user=user, scenario=scenario, generated_image_data=generated_image_data)
+    
+    # GET request: generate a new scenario
+    print("Generating new scenario dynamically...")
+    scenario = generate_scenario(user)
+    if not scenario or 'error' in scenario:
+        return render_template('dashboard.html', user=user, error="Failed to generate a scenario.", scenario=None)
+    
     generated_image_data = None
-    if scenario:
-        prompt = scenario['imageDescription']
-        generated_image_data = generate_image_for_user(prompt, user, current_scenario_id)
-
+    if 'imageDescription' in scenario:
+        try:
+            generated_image_data = generate_image_for_scenario(scenario['imageDescription'], user)
+        except RuntimeError as e:
+            print(f"Image generation failed: {e}")
+    
     return render_template('dashboard.html', user=user, scenario=scenario, generated_image_data=generated_image_data)
 
-
-
-
+# The remaining routes (generate_cases, submit_answers, analysis, reset, converse, analyze-image)
+# are left unchanged as they pertain to additional functionality.
+# -------------------------------------------
 @app.route('/generate_cases', methods=['POST', 'GET'])
 def generate_cases():
     if request.method == 'GET':
@@ -219,13 +315,13 @@ def generate_cases():
     logger.debug("generate_cases route entered")
     data = request.get_json()
     language = data.get('language')
-    age = data.get('age', None)  # Optional age parameter
+    age = data.get('age', None)
     subject = data.get('subject')
     difficulty = data.get('difficulty')
-    question_type = data.get('question_type')  # New parameter for question type
-    sub_type = data.get('sub_type')  # New parameter for sub type
-    role = data.get('role', 'default_role')  # Optional role parameter with a default value
-    sex = data.get('sex', 'unspecified')  # Optional sex parameter with a default value
+    question_type = data.get('question_type')
+    sub_type = data.get('sub_type')
+    role = data.get('role', 'default_role')
+    sex = data.get('sex', 'unspecified')
 
     user_answer = data.get('answers')
 
@@ -255,7 +351,6 @@ def generate_cases():
             if case_data is None:
                 return jsonify({"error": "Failed to generate initial case."}), 500
             session['turn'] = 2
-            # Initialize analysis.json with the first case
             with open(analysis_filepath, 'w') as f:
                 json.dump({'cases': [case_data]}, f, indent=4)
         else:
@@ -266,14 +361,12 @@ def generate_cases():
                 with open(output_filepath, 'r') as f:
                     conversation_data = json.load(f)
 
-                # Validate user answer
                 if 'data' not in conversation_data or 'options' not in conversation_data['data']:
                     return jsonify({"error": "Invalid conversation data."}), 500
                 options_length = len(conversation_data['data']['options'])
                 if not 1 <= user_answer <= options_length:
                     return jsonify({"error": "Invalid user answer."}), 400
 
-                # Add user's answer to the current case in analysis.json
                 with open(analysis_filepath, 'r') as f:
                     analysis_data = json.load(f)
                 current_case = analysis_data['cases'][-1]
@@ -287,7 +380,6 @@ def generate_cases():
                     return jsonify({"error": "Failed to generate case."}), 500
                 session['turn'] = min(turn + 1, 7)
 
-                # Append the new case to analysis.json
                 analysis_data['cases'].append(case_data)
                 with open(analysis_filepath, 'w') as f:
                     json.dump(analysis_data, f, indent=4)
@@ -299,13 +391,9 @@ def generate_cases():
         logger.exception(f"An unexpected error occurred: {e}")
         return jsonify({"error": "An unexpected error occurred."}), 500
 
-
-
 @app.route('/submit_answers', methods=['POST'])
 def submit_answers():
     return jsonify({"message": "Response recorded"}), 200
-
-
 
 @app.route('/analysis', methods=['POST'])
 def analysis():
@@ -317,21 +405,16 @@ def analysis():
         analysis_data = json.load(f)
     data = request.get_json()
 
-    # Get the role, question_type, and sub_type data from the form
-    role = data.get('role', 'default_role')  # Optional role parameter with a default value
-    question_type = data.get('question_type')  # Get the 'question_type' from form data
-
-    if question_type is None:  # Handle missing question_type data
+    role = data.get('role', 'default_role')
+    question_type = data.get('question_type')
+    if question_type is None:
         return jsonify({"error": "Question type data is missing in the request."}), 400
 
-    # Incorporate role, question_type, and sub_type into analysis_data (adjust as needed)
-    analysis_data['role'] = role  # Add the role to the analysis data
-    analysis_data['question_type'] = question_type  # Add the question_type to the analysis data
+    analysis_data['role'] = role
+    analysis_data['question_type'] = question_type
 
-    # Convert the analysis data to a string to send to Gemini
     analysis_data_str = json.dumps(analysis_data)
 
-    # Create the prompt for Gemini, including the role, question_type, and sub_type
     if question_type == 'behavioral':
         prompt = f"Analyze the following data, considering you play the role of a '{role}' to the player, to determine the player's character traits and behavior patterns based on their choices. As you can see, we have cases and options, and each case has an answer. The answer refers to the player's choice for the case among the options provided. Provide a detailed analysis in a structured format that can be easily parsed:\n\n{analysis_data_str} Return your analysis in the same language the data uses."
     elif question_type == 'study':
@@ -351,69 +434,39 @@ def analysis():
 @app.route('/reset', methods=['POST'])
 def reset():
     session['turn'] = 1
-
-    # Define the file paths
     conversation_filepath = BASE_DIR / 'output' / 'game' / 'conversation.json'
     analysis_filepath = BASE_DIR / 'output' / 'game' / 'analysis.json'
-
-    # Delete the files if they exist
     if conversation_filepath.exists():
         conversation_filepath.unlink()
     if analysis_filepath.exists():
         analysis_filepath.unlink()
-
     return jsonify({"message": "Session reset and files deleted."}), 200
-
-
-
 
 @app.route('/converse', methods=['POST'])
 def converse():
     data = request.get_json()
-
-
     try:
-        # Get the input text from the request
         input_text = data.get('text')
-
         print(f"Input text: {input_text}")
-        # Send the input text to Gemini and get the response
         response = get_response_gemini(input_text)
-
-        # Return the response as JSON
         return jsonify({'response': response}), 200
     except Exception as e:
         logger.exception(f"An error occurred while conversing with Gemini: {e}")
         return jsonify({'error': str(e)}), 500
-    
-
-
-
 
 @app.route('/analyze-image', methods=['POST'])
 def analyze_image():
     try:
-        # Debug: Log received request data
         print("Request form data:", request.form)
         print("Request files:", request.files)
-
-        # Check for the image file
         if 'image' not in request.files:
             return jsonify({'error': 'No image file in request.files'}), 400
-
         image_file = request.files['image']
-        
-        # Check if a file was actually selected (not empty)
         if image_file.filename == '':
             return jsonify({'error': 'No selected file'}), 400
-
-        # Get prompt from form-data
-        input_text = request.form.get('prompt', '')  # Default to empty string if missing
-
-        # Process the image
+        input_text = request.form.get('prompt', '')
         response = get_info_from_image(image_file, input_text)
         return jsonify({'response': response}), 200
-
     except Exception as e:
         logger.exception(f"Error: {e}")
         return jsonify({'error': str(e)}), 500
@@ -421,14 +474,4 @@ def analyze_image():
 if __name__ == '__main__':
     os.makedirs('data', exist_ok=True)
     read_json(USER_DATA_FILE)
-    read_json(SCENARIOS_FILE)
     app.run(debug=True)
-
-
-
-
-
-
-
-
-
