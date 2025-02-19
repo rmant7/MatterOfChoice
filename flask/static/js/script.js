@@ -138,6 +138,9 @@ resetButton.addEventListener('click', async () => {
         const jsonData = await response.json();
         alert(jsonData.message); // Display reset confirmation message
         startNewGame(); // Reset the game state
+
+        // Reload the page after reset
+        window.location.reload();
     } catch (error) {
         displayError({ error: error.message });
     } finally {
@@ -145,6 +148,9 @@ resetButton.addEventListener('click', async () => {
         responseContainer.classList.remove('hidden');
     }
 });
+
+function startNewGame() {
+}
 
 // ... (rest of the code remains unchanged) ...
 
@@ -231,106 +237,59 @@ function displayResults(data) {
     responseContainer.appendChild(newGameButton);
 }
 
-function displayCases(data) {
-    caseForm.innerHTML = ''; // Clear previous cases
 
-    if (!data || !data.data) {
-        displayError({ error: "Invalid or empty response from server" });
-        return;
-    }
 
-    // Handle single case scenario
-    if (!Array.isArray(data.data)) {
-        const caseData = data.data;
-        const caseElement = createCaseElement(caseData);
-        caseForm.appendChild(caseElement);
-    }
-    // Handle multiple cases scenario (assuming array of case objects)
 
-    else if (Array.isArray(data.data)) {
-        data.data.forEach(caseData => {
-            const caseElement = createCaseElement(caseData);
-            caseForm.appendChild(caseElement);
-        });
-    } else {
-        displayError({ error: "Invalid data format from server." });
-    }
 
-    const submitButton = document.createElement('button');
-    submitButton.type = 'submit';
-    submitButton.classList.add('submit-button');
-    submitButton.innerText = 'Submit Answers';
-    caseForm.appendChild(submitButton);
-}
 
-function createCaseElement(caseData) {
-    const caseElement = document.createElement('div');
-    caseElement.classList.add('case-container');
 
-    const caseTitle = document.createElement('div');
-    caseTitle.classList.add('case-title');
-    caseTitle.innerText = caseData.case;
-    caseElement.appendChild(caseTitle);
 
-    const hiddenInput = document.createElement('input');
-    hiddenInput.type = 'hidden';
-    hiddenInput.name = 'case_id';
-    hiddenInput.value = caseData.case_id;
-    caseElement.appendChild(hiddenInput);
 
-    caseData.options.forEach(option => {
-        const optionElement = document.createElement('div');
-        optionElement.classList.add('option');
 
-        const radioInput = document.createElement('input');
-        radioInput.type = 'radio';
-        radioInput.name = caseData.case_id;
-        radioInput.value = option.option_id;
-        radioInput.id = `option_${option.option_id}`;
 
-        const label = document.createElement('label');
-        label.htmlFor = `option_${option.option_id}`;
-        label.innerText = `${option.number}. ${option.option}`;
 
-        optionElement.appendChild(radioInput);
-        optionElement.appendChild(label);
-        caseElement.appendChild(optionElement);
-    });
 
-    return caseElement;
-}
 
-function startNewGame() {
-    // Clear previous game data
-    caseForm.innerHTML = '';  // Clear the form
-    responseContainer.innerHTML = ''; // Clear the results
-    responseContainer.classList.remove('success');
-    responseContainer.classList.remove('error');
 
-    // Reset the form and enable input
-    form.reset();
-    form.querySelector('#language').disabled = false;
-    form.querySelector('#age').disabled = false;
-    form.querySelector('#difficulty').disabled = false;
-    form.querySelector('#subject').disabled = false;
-    form.querySelector('#question_type').disabled = false;
 
-    form.querySelector('button[type="submit"]').disabled = false;
 
-    // Reset the visibility
-    loadingSpinner.classList.add('hidden');
-    responseContainer.classList.add('hidden');
 
-    location.reload();
-}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Global variables for managing the current batch of cases
+let currentCaseIndex = 0;       // Index of the case currently being shown
+let casesBatch = [];            // Array to store the current 3 cases
+let answersBatch = [];          // Array to store the user's answers for the current batch
+let batchCounter = 0;           // Counter for the number of batches received
+
+// Called when a new set of cases is received from the backend
 async function handleGenerateCasesResponse(response) {
     if (!response.ok) {
         const errorData = await response.json();
         displayError(errorData);
-        return; // Important: Stop execution if there's an error
+        return; // Stop if there's an error
     }
-
+    
     const jsonData = await response.json();
 
     // Check if the game is finished
@@ -345,16 +304,218 @@ async function handleGenerateCasesResponse(response) {
         return;
     }
 
-    // Check if data.data is an array of objects or a single object.
-    const data = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data]; // wrap in array if needed
+    // Increment batch counter for each new batch received
+    batchCounter++;
 
-    if (data && data.length > 0) {
-        displayCases({ data: data }); // Pass the corrected data to displayCases
-        responseContainer.classList.add('success');
+    // The API now returns an array of cases.
+    casesBatch = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data];
+    
+    // Save the batch to localStorage (optional)
+    localStorage.setItem('casesBatch', JSON.stringify(casesBatch));
+    
+    // Reset index and the answers array
+    currentCaseIndex = 0;
+    answersBatch = new Array(casesBatch.length); // Pre-size the array
+
+    // Display the first case of the new batch
+    displayCurrentCase();
+}
+
+// Displays only the current case from the batch
+function displayCurrentCase() {
+    caseForm.innerHTML = ''; // Clear previous content
+
+    if (casesBatch.length === 0 || currentCaseIndex >= casesBatch.length) {
+        displayError({ error: "No case available." });
+        return;
+    }
+
+    const caseData = casesBatch[currentCaseIndex];
+    const caseElement = createCaseElement(caseData);
+    caseForm.appendChild(caseElement);
+    
+    // If this is not the first batch, add the Analyze Results button above the submit button
+    if (batchCounter > 1 && currentCaseIndex % 3 === 0) {
+        const analyzeButton = document.createElement('button');
+        analyzeButton.type = 'button';
+        analyzeButton.id = 'analyzeButton';
+        analyzeButton.classList.add('analyze-button');
+        analyzeButton.innerText = 'Analyze Results';
+        caseForm.appendChild(analyzeButton);
+        attachAnalyzeButtonListener();
+    }
+
+    // Create a submit button for this single case
+    const submitButton = document.createElement('button');
+    submitButton.type = 'button';
+    submitButton.classList.add('submit-button');
+    submitButton.innerText = 'Submit Answer';
+    submitButton.addEventListener('click', submitCurrentAnswer);
+    caseForm.appendChild(submitButton);
+}
+
+function submitCurrentAnswer() {
+    // Ensure currentCaseIndex is within bounds
+    if (currentCaseIndex >= casesBatch.length) {
+        displayError({ error: "No more cases to answer." });
+        return;
+    }
+
+    const caseData = casesBatch[currentCaseIndex];
+    if (!caseData) {
+        displayError({ error: "Case data is undefined." });
+        return;
+    }
+    
+    // Assuming radio inputs have a name matching the case's unique id (caseData.case_id)
+    const selected = document.querySelector(`input[name="${caseData.case_id}"]:checked`);
+    if (!selected) {
+        displayError({ error: "Please select an answer." });
+        return;
+    }
+    
+    // Save the answer for this case
+    answersBatch[currentCaseIndex] = parseInt(selected.value, 10);
+
+    // Move on to the next case
+    currentCaseIndex++;
+
+    // If there are still unanswered cases in the batch, display the next case
+    if (currentCaseIndex < casesBatch.length) {
+        displayCurrentCase();
     } else {
-        displayError({ error: "No cases received from the server." });
+        // All cases have been answered.
+        // Disable the submit button to prevent further clicks.
+        const submitBtn = document.querySelector('.submit-button');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+        }
+        // Now send the answers to the backend.
+        sendAnswersToBackend(answersBatch);
     }
 }
+
+// Sends the current batch of answers to the backend to retrieve a new set of cases
+async function sendAnswersToBackend(answersArr) {
+    // Show loading spinner (assumes an element with ID "loadingSpinner")
+    const loadingSpinner = document.getElementById('loading-spinner');
+    if (loadingSpinner) {
+        loadingSpinner.classList.remove('hidden');
+    }
+    const responseContainer = document.getElementById('response-container');
+    if (responseContainer) {
+        responseContainer.classList.add('hidden');
+        responseContainer.classList.remove('success');
+        responseContainer.classList.remove('error');
+    }
+
+
+    // For non-sub-type elements, use fallback values (from localStorage) if they're missing in the DOM.
+    const languageEl = document.getElementById('language') || { value: localStorage.getItem('language') || "" };
+    const ageEl = document.getElementById('age') || { value: localStorage.getItem('age') || "" };
+    const subjectEl = document.getElementById('subject') || { value: localStorage.getItem('subject') || "" };
+    const difficultyEl = document.getElementById('difficulty') || { value: localStorage.getItem('difficulty') || "" };
+    const questionTypeEl = document.getElementById('question_type') || { value: localStorage.getItem('question_type') || "" };
+    // DO NOT MODIFY sub-type logic: no fallback for sub-type.
+    const subTypeEl = document.getElementById('sub_type');
+    const sexEl = document.getElementById('sex') || { value: localStorage.getItem('sex') || "" };
+
+    // Only check for sub-type element since the others have fallbacks.
+    if (!subTypeEl) {
+        displayError({ error: "Sub-type form element is missing." });
+        if (loadingSpinner) loadingSpinner.classList.add('hidden');
+        return;
+    }
+
+    const payload = {
+        language: languageEl.value,
+        age: ageEl.value,
+        subject: subjectEl.value,
+        difficulty: difficultyEl.value,
+        question_type: questionTypeEl.value,
+        sub_type: subTypeEl.value,
+        role: 'default_role',
+        sex: sexEl.value,
+        answers: answersArr
+    };
+
+    try {
+        const response = await fetch('/generate_cases', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+        // Clear the stored batch and handle the new response.
+        localStorage.removeItem('casesBatch');
+        await handleGenerateCasesResponse(response);
+    } catch (error) {
+        displayError({ error: error.message });
+    } finally {
+        // Hide loading spinner after API call completes
+        if (loadingSpinner) {
+            loadingSpinner.classList.add('hidden');
+        }
+        if (responseContainer) {
+            responseContainer.classList.remove('hidden');
+        }
+    }
+}
+
+// Original function to create a case element remains largely unchanged
+function createCaseElement(caseData) {
+    const caseElement = document.createElement('div');
+    caseElement.classList.add('case-container');
+
+    const caseTitle = document.createElement('div');
+    caseTitle.classList.add('case-title');
+    caseTitle.innerText = caseData.case;
+    caseElement.appendChild(caseTitle);
+
+    // Save the case id in a hidden input if needed (if your backend uses it)
+    const hiddenInput = document.createElement('input');
+    hiddenInput.type = 'hidden';
+    hiddenInput.name = 'case_id';
+    hiddenInput.value = caseData.case_id || '';
+    caseElement.appendChild(hiddenInput);
+
+    caseData.options.forEach(option => {
+        const optionElement = document.createElement('div');
+        optionElement.classList.add('option');
+
+        const radioInput = document.createElement('input');
+        radioInput.type = 'radio';
+        // Use a unique name per case so that only one option can be selected
+        radioInput.name = caseData.case_id;
+        radioInput.value = option.number; // Use option.number if that's what the API expects
+        radioInput.id = `option_${option.option_id}`;
+
+        const label = document.createElement('label');
+        label.htmlFor = `option_${option.option_id}`;
+        label.innerText = `${option.number}. ${option.option}`;
+
+        optionElement.appendChild(radioInput);
+        optionElement.appendChild(label);
+        caseElement.appendChild(optionElement);
+    });
+
+    return caseElement;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ... (Other functions remain largely unchanged, but consider refactoring for clarity) ...
 
@@ -454,7 +615,12 @@ function displayAnalysis(analysis) {
     `;
 
     const backButton = document.getElementById('backButton');
-    backButton.addEventListener('click', startNewGame);
+    backButton.addEventListener('click', () => {
+        startNewGame();
+        window.location.reload();
+    });
+
+
 }
 
 function displayError(errorData) {

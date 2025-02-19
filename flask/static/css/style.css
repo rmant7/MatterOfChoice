@@ -343,3 +343,48 @@ border-radius: 5px;
 .analysis-text { /* Style for plain text analysis */
 white-space: pre-wrap; /* Allows text to wrap */
 }
+
+.option {
+    display:inline-table;
+    align-items: flex-start;
+    margin-bottom: 3px;
+    
+}
+
+
+
+
+.analyze-button {
+  margin-top: 10px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.analyze-button:hover {
+  background-color: #45a049;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#continueButton, #backButton {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#continueButton:hover, #backButton:hover {
+  background-color: #45a049;
+}
