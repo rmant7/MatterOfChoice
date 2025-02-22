@@ -134,37 +134,49 @@ def generate_scenario(user):
 # ----------------------------
 # New dynamic image generator (adapted from code 1)
 # ----------------------------
-def generate_image_for_scenario(image_description, user):
-    """
-    Generates an AI-powered image dynamically based on the scenario.
-    """
-    print(f"Generating image for user '{user['username']}' using scenario description...")
-    unique_prompt = f"{image_description}, highly detailed, for a {user['age']}-year-old {user['gender']}."
-    
-    max_retries = 5
-    retry_delay = 5
-    
+# Helper function to generate an image using the generated question text.
+import time
+import base64
+from io import BytesIO
+from PIL import Image
+
+def generate_image_for_question(question_text):
+    unique_prompt = question_text  # Use the generated question text as prompt
+    max_retries = 10
+    retry_delay = 5  # Initial delay in seconds
+
     for attempt in range(max_retries):
         try:
+            print(f"Attempt {attempt + 1}: Generating image with prompt: {unique_prompt}")
             image_bytes = client.text_to_image(prompt=unique_prompt)
+
+            # Handle different formats of returned images
             if isinstance(image_bytes, Image.Image):
                 image = image_bytes
             else:
                 image = Image.open(BytesIO(image_bytes))
+
+            # Convert image to base64
             buffered = BytesIO()
             image.save(buffered, format="PNG")
             image_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
-            print(f"✅ Image generated successfully for user '{user['username']}'.")
             return f"data:image/png;base64,{image_base64}"
+        
         except Exception as e:
-            print(f"❌ Attempt {attempt + 1} failed: {e}")
-            if attempt + 1 == max_retries:
-                raise RuntimeError("❌ Image generation failed after multiple attempts.")
+            # Handle rate limit separately
+            if hasattr(e, 'response') and e.response is not None and e.response.status_code == 429:
+                print("Rate limit reached. Waiting for 60 seconds before retrying.")
+                time.sleep(60)
+                continue  # Retry without returning anything
+            
+            # Handle other exceptions with increasing delay
+            print(f"Attempt {attempt + 1} failed: {e}")
             time.sleep(retry_delay)
             retry_delay *= 1.5
 
-# ----------------------------
-# Configure logging
+    print("Image generation failed after multiple attempts.")
+    return None  # Ensures function only returns None if all retries fail
+
 # ----------------------------
 logger = logging.getLogger('my_app')
 logger.setLevel(logging.DEBUG)
@@ -317,18 +329,18 @@ def generate_cases():
     difficulty = data.get('difficulty')
     question_type = data.get('question_type')  # Parameter for question type
     sub_type = data.get('sub_type')            # Parameter for sub type
-    role = data.get('role', 'default_role')     # Optional role parameter with a default value
+    role = data.get('role', None)     # Optional role parameter with a default value
     sex = data.get('sex', 'unspecified')         # Optional sex parameter with a default value
 
     user_answer = data.get('answers')
 
     if not all([language, subject, difficulty, question_type, sub_type]):
         return jsonify({"error": "language, subject, difficulty, question_type, and sub_type are required."}), 400
-    if age is not None:
-        try:
-            age = int(age)
-        except ValueError:
-            return jsonify({"error": "Invalid age (must be an integer)."}), 400
+    # if age is not None:
+    #     try:
+    #         age = int(age)
+    #     except ValueError:
+    #         return jsonify({"error": "Invalid age (must be an integer)."}), 400
 
     output_filepath = BASE_DIR / 'output' / 'game' / 'conversation.json'
     analysis_filepath = BASE_DIR / 'output' / 'game' / 'analysis.json'
@@ -345,8 +357,16 @@ def generate_cases():
     try:
         if turn == 1:
             case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex)
+            max = 5
+            attempts = 1
+
+            while attempts < max and case_data is None:
+                attempts += 1
+                case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex)
+                
             if case_data is None:
-                return jsonify({"error": "Failed to generate initial case."}), 500
+                    return jsonify({"error": "Failed to generate initial case."}), 500
+
             session['turn'] = 2
             # Initialize analysis.json with the first set of cases (each case has no answer yet)
             with open(analysis_filepath, 'w') as f:
@@ -401,20 +421,43 @@ def generate_cases():
             except (FileNotFoundError, json.JSONDecodeError, ValueError, KeyError) as e:
                 return jsonify({"error": f"Error processing user response: {e}"}), 500
 
+        # Within your /generate_cases route, after generating case_data:
+        for case in case_data:
+            question_prompt = case.get("case")
+            if question_prompt:
+                   try:
+                      # generate_image_for_question returns a data URL (e.g., "data:image/png;base64,...")
+                      generated_image_data = generate_image_for_question(question_prompt)
+                      # Attach the data URL directly to the case data
+                      case['generated_image_data'] = generated_image_data
+                   except Exception as e:
+                           logger.exception(f"Image generation from question failed: {e}")
+                           case['generated_image_data'] = None
+        
+            else:
+                   case['generated_image_data'] = None
+
+
         return jsonify({'data': case_data}), 200
     except Exception as e:
         logger.exception(f"An unexpected error occurred: {e}")
         return jsonify({"error": "An unexpected error occurred."}), 500
 
+
+
 @app.route('/submit_answers', methods=['POST'])
 def submit_answers():
     return jsonify({"message": "Response recorded"}), 200
 
+
+
+
+
 @app.route('/analysis', methods=['POST'])
 def analysis():
     conversation_filepath = BASE_DIR / 'output' / 'game' / 'conversation.json'
-
     analysis_filepath = BASE_DIR / 'output' / 'game' / 'analysis.json'
+    
     if not analysis_filepath.exists():
         return jsonify({"error": "Analysis file not found."}), 400
 
@@ -422,14 +465,16 @@ def analysis():
         analysis_data = json.load(f)
     data = request.get_json()
 
+    # Filter out cases that have an 'answer'
     answered_cases = [case for case in analysis_data['cases'] if 'answer' in case]
     if not answered_cases:
         return jsonify({"error": "No answered cases found for analysis."}), 400
 
+    # Only include answered cases in the analysis data
     analysis_data['cases'] = answered_cases
-    role = data.get('role', 'default_role')
-    question_type = data.get('question_type')
 
+    role = data.get('role', None)
+    question_type = data.get('question_type')
     if question_type is None:
         return jsonify({"error": "Question type data is missing in the request."}), 400
 
@@ -453,7 +498,6 @@ def analysis():
 
 Data: {analysis_data_str}"""
 
-    judgement_aspect = ""
     if question_type == 'behavioral':
         judgement_aspect = "behavioral tendencies"
     elif question_type == 'study':
@@ -463,22 +507,33 @@ Data: {analysis_data_str}"""
     else:
         return jsonify({"error": "Invalid question_type"}), 400
 
-    prompt = prompt_template.format(role=role, judgement_aspect=judgement_aspect, analysis_data_str=analysis_data_str)
+    prompt = prompt_template.format(
+        role=role, 
+        judgement_aspect=judgement_aspect, 
+        analysis_data_str=analysis_data_str
+    )
 
     try:
         response = get_response_gemini(prompt)
-        # Delete the files if they exist
-        session['turn'] = 1
 
+        # Reset session turn and delete the files if they exist.
+        session['turn'] = 1
         if conversation_filepath.exists():
             conversation_filepath.unlink()
         if analysis_filepath.exists():
             analysis_filepath.unlink()
 
-        return jsonify({"analysis": response}), 200
+        # Send Gemini's analysis along with the answered cases as performance data.
+        return jsonify({
+            "analysis": response,
+            "performance": answered_cases
+        }), 200
+
     except Exception as e:
         logger.exception(f"An error occurred while getting the analysis from Gemini: {e}")
         return jsonify({"error": "An error occurred while getting the analysis from Gemini."}), 500
+
+
 
 
 
@@ -521,6 +576,153 @@ def analyze_image():
     except Exception as e:
         logger.exception(f"Error: {e}")
         return jsonify({'error': str(e)}), 500
+
+
+
+
+
+@app.route('/submit_responses', methods=['POST'])
+def submit_responses():
+    """
+    This endpoint accepts a set of answers and immediately triggers analysis.
+    The client can submit one or more answers (as a list) that will be applied
+    to the current unanswered cases in the JSON files. If more answers are sent
+    than available cases, an error is returned.
+    """
+    data = request.get_json()
+    user_answers = data.get('answers')
+    role = data.get('role')
+    question_type = data.get('question_type')
+    sub_type = data.get('sub_type')
+
+    # Validate the basic payload.
+    if not user_answers or not isinstance(user_answers, list):
+        return jsonify({"error": "User answers must be provided as a non-empty list."}), 400
+    if not role or not question_type or not sub_type:
+        return jsonify({"error": "role, question_type, and sub_type are required."}), 400
+
+    # Define file paths.
+    conversation_filepath = BASE_DIR / 'output' / 'game' / 'conversation.json'
+    analysis_filepath = BASE_DIR / 'output' / 'game' / 'analysis.json'
+    
+    if not conversation_filepath.exists() or not analysis_filepath.exists():
+        return jsonify({"error": "Required data files not found."}), 400
+
+    # Load the existing conversation data.
+    try:
+        with open(conversation_filepath, 'r') as f:
+            conversation_data = json.load(f)
+    except Exception as e:
+        return jsonify({"error": f"Error reading conversation data: {str(e)}"}), 500
+
+    # Load the analysis data.
+    try:
+        with open(analysis_filepath, 'r') as f:
+            analysis_data = json.load(f)
+    except Exception as e:
+        return jsonify({"error": f"Error reading analysis data: {str(e)}"}), 500
+
+    # Retrieve all cases from the conversation JSON.
+    all_cases = conversation_data.get('data', {}).get('cases', [])
+    # Determine unanswered cases (those without a 'user_answer' key).
+    unanswered_cases = [case for case in all_cases if 'user_answer' not in case]
+
+    # If the user has provided more answers than available unanswered cases, error out.
+    if len(user_answers) > len(unanswered_cases):
+        return jsonify({"error": "The number of answers provided exceeds the number of unanswered cases."}), 400
+
+    # Update the first N unanswered cases with the provided answers.
+    answers_to_apply = iter(user_answers)
+    for idx in range(len(all_cases)):
+        if 'user_answer' not in all_cases[idx]:
+            try:
+                all_cases[idx]['user_answer'] = next(answers_to_apply)
+            except StopIteration:
+                break
+    conversation_data['data']['cases'] = all_cases
+
+    # Similarly update the analysis JSON.
+    analysis_cases = analysis_data.get('cases', [])
+    answers_to_apply = iter(user_answers)
+    for idx in range(len(analysis_cases)):
+        if 'answer' not in analysis_cases[idx]:
+            try:
+                analysis_cases[idx]['answer'] = next(answers_to_apply)
+            except StopIteration:
+                break
+    analysis_data['cases'] = analysis_cases
+
+    # Save the updated JSON files.
+    try:
+        with open(conversation_filepath, 'w') as f:
+            json.dump(conversation_data, f, indent=4)
+        with open(analysis_filepath, 'w') as f:
+            json.dump(analysis_data, f, indent=4)
+    except Exception as e:
+        return jsonify({"error": f"Error updating files: {str(e)}"}), 500
+
+    # Prepare for analysis: filter to only include answered cases.
+    answered_cases = [case for case in analysis_data.get('cases', []) if 'answer' in case]
+    if not answered_cases:
+        return jsonify({"error": "No answered cases found for analysis."}), 400
+    analysis_data['cases'] = answered_cases
+
+    # Build the analysis prompt.
+    prompt_template = """Analyze the following data. You are a '{role}'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'answer' key). The 'optimal' key indicates the correct option.  Determine the language used in the data and STRICTLY PROVIDE YOUR ANALYSIS IN THE LANGUAGE USED.  Format your response as JSON:
+
+{{
+  "overall_judgement": "A concise summary of the player's overall {judgement_aspect}.",
+  "cases": [
+    {{
+      "case_description": "The case description.",
+      "player_choice": "The player's selected option in words.",
+      "optimal_choice": "The optimal option in words.",
+      "analysis": "A detailed analysis of the player's choice, including reasoning and implications."
+    }}
+  ]
+}}
+
+Data: {analysis_data_str}"""
+
+    if question_type == 'behavioral':
+        judgement_aspect = "behavioral tendencies"
+    elif question_type == 'study':
+        judgement_aspect = "knowledge and learning style"
+    elif question_type == 'hiring':
+        judgement_aspect = "suitability for the job"
+    else:
+        return jsonify({"error": "Invalid question_type"}), 400
+
+    analysis_data_str = json.dumps(analysis_data, indent=4)
+    prompt = prompt_template.format(
+        role=role,
+        judgement_aspect=judgement_aspect,
+        analysis_data_str=analysis_data_str
+    )
+
+    # Trigger the analysis.
+    try:
+        response_analysis = get_response_gemini(prompt)
+
+        # Reset or clean up the stored files (optional).
+        session['turn'] = 1
+
+        if conversation_filepath.exists():
+            conversation_filepath.unlink()
+        if analysis_filepath.exists():
+            analysis_filepath.unlink()
+
+        return jsonify({
+            "analysis": response_analysis,
+            "performance": answered_cases
+        }), 200
+    except Exception as e:
+        logger.exception(f"Error during analysis: {e}")
+        return jsonify({"error": "An error occurred while processing analysis."}), 500
+
+
+
+
 
 if __name__ == '__main__':
     os.makedirs('data', exist_ok=True)
