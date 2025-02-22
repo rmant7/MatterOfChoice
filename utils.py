@@ -139,44 +139,43 @@ def extract_list(code: str) -> str:
         return None
 
 
-
-def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subject: str, question_type: str, conversation_data=None, sex: str = 'unspecified'):
+def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subject: str, question_type: str, subtype: str, conversation_data=None, sex: str = 'unspecified'):
     logger = logging.getLogger('my_app')
-    logger.debug(f"gen_cases function called with parameters: language={language}, age={age}, subject={subject}, difficulty={difficulty}, question_type={question_type}, sex={sex}, conversation_data={conversation_data}")
+    logger.debug(f"gen_cases function called with parameters: language={language}, age={age}, subject={subject}, difficulty={difficulty}, question_type={question_type}, subtype={subtype}, sex={sex}, conversation_data={conversation_data}")
 
     try:
         if conversation_data is None:
             if question_type == 'behavioral':
-                prompt = f"""{prompts['cases']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set the difficulty of the content to {difficulty}. The person is {sex}."""
+                prompt = f"""{prompts['cases']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
             elif question_type == 'study':
-                prompt = f"""{prompts['study']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set the difficulty of the content to {difficulty}. The person is {sex}."""
+                prompt = f"""{prompts['study']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
+            elif question_type == 'hiring':
+                prompt = f"""{prompts['hiring']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
             logger.debug(f"Initial prompt generated: {prompt}")
         else:
-            previous_response = conversation_data.get('data', {})
-            previous_turn = conversation_data.get('data', {})
-            user_choice = previous_turn.get('user_answer')
-            previous_case = previous_turn.get('case', "Unknown Case")
-            previous_options = previous_turn.get('options', [])
-            if user_choice is None:
-                logger.warning("User choice is missing from conversation data. Returning None.")
+            # conversation_data now has the structure: { "data": { "cases": [ ... ] } }
+            previous_cases = conversation_data.get('data', {}).get('cases', [])
+            if not isinstance(previous_cases, list) or not previous_cases:
+                logger.warning("No previous cases found in conversation data. Returning None.")
                 return None, conversation_data
 
-            try:
-                user_choice = int(user_choice)
-            except ValueError as e:
-                logger.error(f"Invalid user_choice type: {e}")
-                return None, conversation_data
-
-            # Construct a clear textual representation of the previous turn
-            previous_turn_summary = f"Previous Case: {previous_case}\nThe person was presented with the following options:\n"
-            for option in previous_options:
-                previous_turn_summary += f"- Option {option['number']}: {option['option']}\n"
-            previous_turn_summary += f"\nThe person selected option {user_choice}."
+            # Construct a clear textual representation of all previous cases
+            previous_turn_summary = ""
+            for case in previous_cases:
+                user_choice = case.get('user_answer')
+                previous_case = case.get('case', "Unknown Case")
+                previous_options = case.get('options', [])
+                previous_turn_summary += f"Previous Case: {previous_case}\nThe person was presented with the following options:\n"
+                for option in previous_options:
+                    previous_turn_summary += f"- Option {option['number']}: {option['option']}\n"
+                previous_turn_summary += f"\nThe person selected option {user_choice}.\n\n"
 
             if question_type == 'behavioral':
-                prompt = f"""{prompts['cases']} The person's previous response was {previous_turn_summary} for case, ask another question SAME STRUCTURE based on their previous response in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}."""
+                prompt = f"""{prompts['cases']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number"""
             elif question_type == 'study':
-                prompt = f"""{prompts['study']} The person's previous response was {previous_turn_summary} for case, ask another question SAME STRUCTURE based on their previous response in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}."""
+                prompt = f"""{prompts['study']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number"""
+            elif question_type == 'hiring':
+                prompt = f"""{prompts['hiring']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number"""
             logger.debug(f"Follow-up prompt generated: {prompt}")
 
         response = get_response_gemini(prompt)
@@ -193,27 +192,57 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
         if list_content:
             try:
                 parsed = json.loads(list_content)
-                if isinstance(parsed, list):
-                    parsed = parsed[0]
+                # Do not force a single case—keep all cases returned.
+                if not isinstance(parsed, list):
+                    parsed = [parsed]
                 required_keys = ['case', 'options', 'optimal']
-                if not all(key in parsed for key in required_keys):
-                    logger.error(f"Missing required keys in parsed response: {required_keys}")
-                    return None, conversation_data
+                new_cases = []
+                for case in parsed:
+                    if not all(key in case for key in required_keys):
+                        logger.error(f"Missing required keys in parsed response: {required_keys}")
+                        return None, conversation_data
+                    case_data = {'case': case['case'], 'optimal': case['optimal'], 'options': []}
+                    for option_data in case['options']:
+                        option_id = str(uuid.uuid4())
+                        option_item = {**option_data, 'option_id': option_id}
+                        case_data['options'].append(option_item)
+                    new_cases.append(case_data)
 
-                case_data = {'case': parsed['case'], 'optimal': parsed['optimal'], 'options': []}
-                for option_data in parsed['options']:
-                    option_id = str(uuid.uuid4())
-                    option_item = {**option_data, 'option_id': option_id}
-                    case_data['options'].append(option_item)
-                case_data['case_id'] = str(uuid.uuid4())
+                print(f"new cases lenth: ", len(new_cases))
+                max = 3
+                attempts = 1
 
-                # Save conversation data to JSON file
+                while attempts < 3 and len(new_cases) < max:
+                    response = get_response_gemini(prompt)
+                    cleaned_response = clean_response(response)
+                    list_content = extract_list(cleaned_response)
+                    logger.debug(f"Extracted list content: {list_content}")
+                    attempts += 1
+                    if list_content:
+                            parsed = json.loads(list_content)
+                            # Do not force a single case—keep all cases returned.
+                            if not isinstance(parsed, list):
+                                parsed = [parsed]
+                            required_keys = ['case', 'options', 'optimal']
+                            for case in parsed:
+                                if not all(key in case for key in required_keys):
+                                    logger.error(f"Missing required keys in parsed response: {required_keys}")
+                                    return None, conversation_data
+                                case_data = {'case': case['case'], 'optimal': case['optimal'], 'options': []}
+                                for option_data in case['options']:
+                                    option_id = str(uuid.uuid4())
+                                    option_item = {**option_data, 'option_id': option_id}
+                                    case_data['options'].append(option_item)
+                                new_cases.append(case_data)
+
+
+                # Save conversation data to JSON file with the structure: { "data": { "cases": [ ... ] } }
                 conversation_filepath = output_dir / "conversation.json"
-                conversation_data = {'data': case_data}
+                conversation_data = {'data': {'cases': new_cases}}
                 with open(conversation_filepath, 'w') as f:
                     json.dump(conversation_data, f, indent=4)
                 logger.debug(f"Conversation data saved to {conversation_filepath}")
-                return case_data, conversation_data
+                return new_cases, conversation_data
 
             except json.JSONDecodeError as e:
                 logger.exception(f"Error decoding JSON response: {e}, Raw Response: {response}")
