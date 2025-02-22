@@ -171,11 +171,11 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                 previous_turn_summary += f"\nThe person selected option {user_choice}.\n\n"
 
             if question_type == 'behavioral':
-                prompt = f"""{prompts['cases']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
+                prompt = f"""{prompts['cases']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number"""
             elif question_type == 'study':
-                prompt = f"""{prompts['study']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
+                prompt = f"""{prompts['study']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number"""
             elif question_type == 'hiring':
-                prompt = f"""{prompts['hiring']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
+                prompt = f"""{prompts['hiring']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number"""
             logger.debug(f"Follow-up prompt generated: {prompt}")
 
         response = get_response_gemini(prompt)
@@ -207,6 +207,34 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                         option_item = {**option_data, 'option_id': option_id}
                         case_data['options'].append(option_item)
                     new_cases.append(case_data)
+
+                print(f"new cases lenth: ", len(new_cases))
+                max = 3
+                attempts = 1
+
+                while attempts < 3 and len(new_cases) < max:
+                    response = get_response_gemini(prompt)
+                    cleaned_response = clean_response(response)
+                    list_content = extract_list(cleaned_response)
+                    logger.debug(f"Extracted list content: {list_content}")
+                    attempts += 1
+                    if list_content:
+                            parsed = json.loads(list_content)
+                            # Do not force a single case—keep all cases returned.
+                            if not isinstance(parsed, list):
+                                parsed = [parsed]
+                            required_keys = ['case', 'options', 'optimal']
+                            for case in parsed:
+                                if not all(key in case for key in required_keys):
+                                    logger.error(f"Missing required keys in parsed response: {required_keys}")
+                                    return None, conversation_data
+                                case_data = {'case': case['case'], 'optimal': case['optimal'], 'options': []}
+                                for option_data in case['options']:
+                                    option_id = str(uuid.uuid4())
+                                    option_item = {**option_data, 'option_id': option_id}
+                                    case_data['options'].append(option_item)
+                                new_cases.append(case_data)
+
 
                 # Save conversation data to JSON file with the structure: { "data": { "cases": [ ... ] } }
                 conversation_filepath = output_dir / "conversation.json"
