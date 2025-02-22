@@ -130,6 +130,7 @@ resetButton.addEventListener('click', async () => {
 
     const jsonData = await response.json();
     alert(jsonData.message);
+    window.location.reload();
   } catch (error) {
     displayError({ error: error.message });
   } finally {
