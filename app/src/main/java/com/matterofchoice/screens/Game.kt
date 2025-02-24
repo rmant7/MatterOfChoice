@@ -43,7 +43,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -56,14 +55,12 @@ import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.matterofchoice.BottomNav
+import com.matterofchoice.GameState
 import com.matterofchoice.R
 import com.matterofchoice.Screens
 import com.matterofchoice.model.Case
 import com.matterofchoice.model.Option
-import com.matterofchoice.ui.theme.MatterofchoiceTheme
 import com.matterofchoice.ui.theme.titleFont
 import com.matterofchoice.viewmodel.AIViewModel
 
@@ -93,7 +90,8 @@ fun MainScreen() {
 
 @Composable
 fun Game(navController: NavHostController) {
-    SetUpCase(navController = navController)
+    val viewmodel: AIViewModel = viewModel()
+    SetUpCase(navController = navController, state = viewmodel.state.value, viewmodel = viewmodel)
 }
 
 @Composable
@@ -113,15 +111,12 @@ fun Loader() {
 }
 
 @Composable
-fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostController) {
+fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: GameState) {
     val context = LocalContext.current.applicationContext
 
 
     val isInitialized by viewmodel.isInitialized.collectAsState()
-    val listContent by viewmodel.listContent.collectAsState()
-    val errorState by viewmodel.errorState.collectAsState()
-    val isLoading by viewmodel.isLoading.collectAsState()
-    var showLoader by remember { mutableStateOf(true) }
+
     val gradientColors = listOf(Color(0xFFFF00CC), Color(0xFF333399))
 
     val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
@@ -136,7 +131,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
             // could replace with dispose effect
             viewmodel.main()
         }
-        if (isLoading) {
+        if (state.isLoading) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
@@ -146,26 +141,18 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                 Loader()
             }
         }
-        if (listContent.isNotEmpty()) {
+        if (state.casesList != null) {
             val scrollState = rememberScrollState()
 
+            val cases = state.casesList
 
-            Log.v("CASESNOT", "LIST CONTENT IS $listContent")
+            Log.v("CASESNOT", "LIST CONTENT IS $cases")
             Column(
                 modifier = Modifier
                     .background(Color.White)
                     .fillMaxSize()
                     .padding()
             ) {
-                val cases = mutableListOf<Case>()
-                val gson = Gson()
-                val listType = object : TypeToken<List<Case>>() {}.type
-
-                for (jsonArray in listContent) {
-                    val caseList: List<Case> = gson.fromJson(jsonArray.toString(), listType)
-                    cases.addAll(caseList)
-                }
-                Log.v("CASESLIST", cases.toString())
 
                 if (cases.isNotEmpty()) {
                     Log.v("CASESNOT", "Cases is not empty")
@@ -179,7 +166,7 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                     val totalScore = sharedPreferences.getInt("totalScore", 0)
 
                     val round =
-                        remember { mutableIntStateOf(sharedPreferences.getInt("rounds", 1)+1) }
+                        remember { mutableIntStateOf(sharedPreferences.getInt("rounds", 1) + 1) }
 
 
                     Column(
@@ -244,7 +231,6 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(bottom = 20.dp, start = 16.dp, end = 16.dp)
                         )
-                        showLoader = false
 
                         Image(
                             painter = painterResource(R.drawable.test), contentDescription = null,
@@ -331,11 +317,14 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
                                 }
                             },
                             shape = RoundedCornerShape(16.dp),
-                            modifier = Modifier.padding(top = 20.dp).background(
-                                brush = Brush.horizontalGradient(gradientColors),
-                                shape = RoundedCornerShape(16.dp)
-                            ),
-                            colors = ButtonDefaults.buttonColors(Color.Transparent))
+                            modifier = Modifier
+                                .padding(top = 20.dp)
+                                .background(
+                                    brush = Brush.horizontalGradient(gradientColors),
+                                    shape = RoundedCornerShape(16.dp)
+                                ),
+                            colors = ButtonDefaults.buttonColors(Color.Transparent)
+                        )
                         {
                             Text(
                                 "Next",
@@ -355,8 +344,12 @@ fun SetUpCase(viewmodel: AIViewModel = viewModel(), navController: NavHostContro
             }
 
         }
-        if (errorState.isNotEmpty()) {
-            Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+        state.error?.let {
+            Column(
+                Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
                 Text(
                     text = "Something went wrong", fontSize = 18.sp, modifier = Modifier
                         .align(
@@ -439,15 +432,5 @@ fun calculateScore(cases: Case, selectedOption: String, context: Context) {
     editor.putInt("totalScore", totalScore)
     editor.apply()
 
-}
-
-
-@Preview
-@Composable
-fun MyPreview() {
-    val navController = rememberNavController()
-    MatterofchoiceTheme {
-        SetUpCase(navController = navController)
-    }
 }
 

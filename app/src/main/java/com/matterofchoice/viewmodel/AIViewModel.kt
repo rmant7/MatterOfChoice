@@ -3,10 +3,15 @@ package com.matterofchoice.viewmodel
 import android.app.Application
 import android.content.Context
 import android.util.Log
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.ai.client.generativeai.GenerativeModel
 import com.google.ai.client.generativeai.type.content
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.matterofchoice.GameState
 import com.matterofchoice.model.Case
 import com.matterofchoice.model.MessageModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -22,7 +27,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
     private val model = GenerativeModel(
         modelName = "gemini-2.0-flash-exp",
-        apiKey = "Your_API_key",
+        apiKey = "AIzaSyBbpQNYsB4bDDctAB14D8FQIIOqn7JOccc",
     )
 
     private val aiHistory by lazy {
@@ -37,28 +42,25 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         application.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
     private var i = 0
-    private val _listContent = MutableStateFlow<List<JSONArray?>>(emptyList())
-    val listContent: StateFlow<List<JSONArray?>> get() = _listContent
 
     private val _isInitialized = MutableStateFlow(false)
     val isInitialized: StateFlow<Boolean> get() = _isInitialized
 
-    private val _errorState = MutableStateFlow("")
-    val errorState: StateFlow<String> get() = _errorState
-
     private val _errorAnalysis = MutableStateFlow("")
-    val errorAnalysis: StateFlow<String> get() = _errorState
+    val errorAnalysis: StateFlow<String> get() = _errorAnalysis
 
-    private val _isLoading = MutableStateFlow(false)
-    val isLoading: StateFlow<Boolean> get() = _isLoading
 
     private val _isLoadingAnalysis = MutableStateFlow(false)
     val isLoadingAnalysis: StateFlow<Boolean> get() = _isLoadingAnalysis
+
+    private var _state = mutableStateOf(GameState())
+    var state: State<GameState> = _state
 
     private var userSubject = sharedPreferences.getString("userSubject", "random subject")
     private var userAge = sharedPreferences.getString("userAge", "any")
     private val userGender = sharedPreferences.getString("userGender", "any")
     private var userLanguage = sharedPreferences.getString("userLanguage", "English")
+    val cases = mutableListOf<Case>()
 
     private fun loadPrompts(): JSONObject? {
 
@@ -75,19 +77,19 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
     private suspend fun getResponseGemini(prompt: String): String {
         return try {
-            _isLoading.value = true
+            _state.value = _state.value.copy(isLoading = true)
             Log.v("TOOLRES", "Generating response for prompt: $prompt...")
 
             val gemini = model.startChat(
                 history = aiHistory.map {
-                    content(it.role){
+                    content(it.role) {
                         text(it.message)
                     }
                 }.toList()
             )
             val response = gemini.sendMessage(prompt)
-            aiHistory.add(MessageModel(prompt,"user"))
-            aiHistory.add(MessageModel(response.text.toString(),"model"))
+            aiHistory.add(MessageModel(prompt, "user"))
+            aiHistory.add(MessageModel(response.text.toString(), "model"))
 
 
             if (response.candidates.isNotEmpty()) {
@@ -100,10 +102,10 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
             }
         } catch (err: Exception) {
             Log.v("AHMEDCONTENT", "Error generating response: ${err.message}")
-            _errorState.value = err.message!!
+            _state.value = _state.value.copy(error = err.message)
             ""
         } finally {
-            _isLoading.value = false
+            _state.value = _state.value.copy(isLoading = false)
         }
     }
 
@@ -156,10 +158,19 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                 val cleanedResponse = cleanResponse(response)
                 Log.v("cleanedResponse", "Cleaned response for option $i: ${cleanedResponse}...")
 
-                _listContent.value += extractList(cleanedResponse)
-                _isLoading.value = false
-                Log.v("SAVEDCASE", "Extracted list for option $i: ${listContent}...")
+                val gson = Gson()
+                val listType = object : TypeToken<Case>() {}.type
+                val lists: JSONArray = extractList(cleanedResponse)
 
+
+                for (i in 0 until lists.length()) {
+                    val jsonObject = lists.getJSONObject(i) // Get each JSONObject in the JSONArray
+                    val caseList: Case = gson.fromJson(jsonObject.toString(), listType) // Deserialize into List<Case>
+                    cases.add(caseList) // Add all cases to the mutable list
+                }
+
+                _state.value = _state.value.copy(casesList = cases)
+                _state.value = _state.value.copy(isLoading = false)
 
             } catch (e: Exception) {
                 Log.v("SAVEDCASE", "Error processing case $i: ${e.message}")
@@ -194,11 +205,10 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
     fun main() {
         val prompts = loadPrompts() ?: return
-        _listContent.value = emptyList()
         _isInitialized.value = true
 
         viewModelScope.launch {
-            for (i in 0 until 4){
+            for (i in 0 until 4) {
                 generateCases(
                     language = userLanguage!!,
                     sex = userGender!!,
@@ -210,13 +220,14 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
         }
     }
+
     fun resetAnalysisState() {
         _analysisChoices.value = ""
         _errorAnalysis.value = ""
         _isLoadingAnalysis.value = false
     }
 
-    fun loadAnalysis(context: Context, role:String): String {
+    fun loadAnalysis(context: Context, role: String): String {
         val outputPath = context.getExternalFilesDir("tool")?.absolutePath ?: ""
         var userChoices = ""
 
