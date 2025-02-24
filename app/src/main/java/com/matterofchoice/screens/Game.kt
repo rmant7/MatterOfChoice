@@ -140,118 +140,118 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
             ) {
                 Loader()
             }
-        }
-        if (state.casesList != null) {
-            val scrollState = rememberScrollState()
+        }else{
+            if (state.casesList != null) {
+                val scrollState = rememberScrollState()
 
-            val cases = state.casesList
+                val cases = state.casesList
 
-            Log.v("CASESNOT", "LIST CONTENT IS $cases")
-            Column(
-                modifier = Modifier
-                    .background(Color.White)
-                    .fillMaxSize()
-                    .padding()
-            ) {
+                Log.v("CASESNOT", "LIST CONTENT IS $cases")
+                Column(
+                    modifier = Modifier
+                        .background(Color.White)
+                        .fillMaxSize()
+                        .padding()
+                ) {
 
-                if (cases.isNotEmpty()) {
-                    Log.v("CASESNOT", "Cases is not empty")
-
-
-                    var selectedItem by remember { mutableStateOf<Option?>(null) }
-                    var caseNum by remember { mutableIntStateOf(1) }
+                    if (cases.isNotEmpty()) {
+                        Log.v("CASESNOT", "Cases is not empty")
 
 
-                    val userScore = sharedPreferences.getInt("userScore", 0)
-                    val totalScore = sharedPreferences.getInt("totalScore", 0)
-
-                    val round =
-                        remember { mutableIntStateOf(sharedPreferences.getInt("rounds", 1) + 1) }
+                        var selectedItem by remember { mutableStateOf<Option?>(null) }
+                        var caseNum by remember { mutableIntStateOf(1) }
 
 
-                    Column(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .shadow(elevation = 8.dp)
-                            .background(Color.White),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Text(
-                            "Round ${round.intValue}",
-                            fontFamily = titleFont,
-                            textAlign = TextAlign.Justify,
-                            fontSize = 22.sp,
-                            modifier = Modifier.padding(3.dp)
-                        )
+                        val userScore = sharedPreferences.getInt("userScore", 0)
+                        val totalScore = sharedPreferences.getInt("totalScore", 0)
 
-                    }
+                        val round =
+                            remember { mutableIntStateOf(sharedPreferences.getInt("rounds", 1) + 1) }
 
-                    Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(top = 16.dp)
-                            .align(Alignment.CenterHorizontally)
-                            .verticalScroll(scrollState)
-                    ) {
-                        Row(
+
+                        Column(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(bottom = 10.dp, start = 16.dp, end = 16.dp),
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.SpaceBetween
+                                .shadow(elevation = 8.dp)
+                                .background(Color.White),
+                            verticalArrangement = Arrangement.Center,
+                            horizontalAlignment = Alignment.CenterHorizontally
                         ) {
                             Text(
-                                text = "Scenario",
+                                "Round ${round.intValue}",
                                 fontFamily = titleFont,
                                 textAlign = TextAlign.Justify,
-                                fontSize = 28.sp,
-                                modifier = Modifier.weight(1f),
-                                fontWeight = FontWeight.Bold
+                                fontSize = 22.sp,
+                                modifier = Modifier.padding(3.dp)
                             )
-                            Image(
-                                painter = painterResource(R.drawable.fire),
-                                modifier = Modifier.size(28.dp),
-                                contentDescription = null
-                            )
-                            Text(
-                                text = "$userScore/$totalScore",
-                                fontFamily = titleFont,
-                                textAlign = TextAlign.Justify,
-                                fontSize = 18.sp,
-
-                                )
 
                         }
 
-
-                        Text(
-                            text = cases[caseNum - 1].case, fontFamily = titleFont,
-                            textAlign = TextAlign.Justify,
-                            fontWeight = FontWeight.Bold,
-                            modifier = Modifier.padding(bottom = 20.dp, start = 16.dp, end = 16.dp)
-                        )
-
-                        Image(
-                            painter = painterResource(R.drawable.test), contentDescription = null,
+                        Column(
                             modifier = Modifier
-                                .padding(bottom = 25.dp, start = 16.dp, end = 16.dp)
-                                .fillMaxWidth()
-                                .height(350.dp)
+                                .fillMaxSize()
+                                .padding(top = 16.dp)
                                 .align(Alignment.CenterHorizontally)
-                                .shadow(elevation = 1.dp, shape = RoundedCornerShape(16.dp)),
-                            contentScale = ContentScale.Crop
-                        )
-
-                        cases[caseNum - 1].options.forEach { option ->
-                            OutlinedButton(
+                                .verticalScroll(scrollState)
+                        ) {
+                            Row(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .align(Alignment.Start)
-                                    .padding(bottom = 12.dp, start = 16.dp, end = 16.dp),
-                                onClick = {
+                                    .padding(bottom = 10.dp, start = 16.dp, end = 16.dp),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Text(
+                                    text = "Scenario",
+                                    fontFamily = titleFont,
+                                    textAlign = TextAlign.Justify,
+                                    fontSize = 28.sp,
+                                    modifier = Modifier.weight(1f),
+                                    fontWeight = FontWeight.Bold
+                                )
+                                Image(
+                                    painter = painterResource(R.drawable.fire),
+                                    modifier = Modifier.size(28.dp),
+                                    contentDescription = null
+                                )
+                                Text(
+                                    text = "$userScore/$totalScore",
+                                    fontFamily = titleFont,
+                                    textAlign = TextAlign.Justify,
+                                    fontSize = 18.sp,
+
+                                    )
+
+                            }
+
+
+                            Text(
+                                text = cases[caseNum - 1].case, fontFamily = titleFont,
+                                textAlign = TextAlign.Justify,
+                                fontWeight = FontWeight.Bold,
+                                modifier = Modifier.padding(bottom = 20.dp, start = 16.dp, end = 16.dp)
+                            )
+
+                            Image(
+                                painter = painterResource(R.drawable.test), contentDescription = null,
+                                modifier = Modifier
+                                    .padding(bottom = 25.dp, start = 16.dp, end = 16.dp)
+                                    .fillMaxWidth()
+                                    .height(350.dp)
+                                    .align(Alignment.CenterHorizontally)
+                                    .shadow(elevation = 1.dp, shape = RoundedCornerShape(16.dp)),
+                                contentScale = ContentScale.Crop
+                            )
+
+                            cases[caseNum - 1].options.forEach { option ->
+                                OutlinedButton(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .align(Alignment.Start)
+                                        .padding(bottom = 12.dp, start = 16.dp, end = 16.dp),
+                                    onClick = {
 //                                    editor.putInt("rounds", round.intValue++).apply()
-                                    selectedItem = option
+                                        selectedItem = option
 //                                    if (caseNum < 8 && selectedItem!!.option.isNotEmpty()) {
 //                                        calculateScore(
 //                                            cases[caseNum - 1],
@@ -269,113 +269,118 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
 //                                    } else {
 //                                        viewmodel.main()
 //                                    }
-                                },
-                                border = BorderStroke(
-                                    width = 2.dp,
-                                    color = if (selectedItem == option) Color.Green else Color.LightGray
-                                ),
-                                shape = RoundedCornerShape(16.dp),
-                            ) {
-                                if (selectedItem == option) {
-                                    Icon(
-                                        imageVector = Icons.Default.Check,
-                                        contentDescription = null,
-                                        modifier = Modifier
-                                            .padding(end = 5.dp),
-                                        tint = Color.Green
+                                    },
+                                    border = BorderStroke(
+                                        width = 2.dp,
+                                        color = if (selectedItem == option) Color.Green else Color.LightGray
+                                    ),
+                                    shape = RoundedCornerShape(16.dp),
+                                ) {
+                                    if (selectedItem == option) {
+                                        Icon(
+                                            imageVector = Icons.Default.Check,
+                                            contentDescription = null,
+                                            modifier = Modifier
+                                                .padding(end = 5.dp),
+                                            tint = Color.Green
+                                        )
+                                    }
+                                    Text(
+                                        text = option.option,
+                                        color = Color.Black,
+                                        fontFamily = titleFont,
+                                        textAlign = TextAlign.Center,
+                                        fontWeight = FontWeight.Bold,
+                                        modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)
                                     )
-                                }
-                                Text(
-                                    text = option.option,
-                                    color = Color.Black,
-                                    fontFamily = titleFont,
-                                    textAlign = TextAlign.Center,
-                                    fontWeight = FontWeight.Bold,
-                                    modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)
-                                )
 
+                                }
+                            }
+                            Button(
+                                onClick = {
+                                    if (caseNum < cases.size && selectedItem != null) {
+                                        editor.putInt("rounds", round.intValue++).apply()
+                                        calculateScore(
+                                            cases[caseNum - 1],
+                                            selectedItem!!.option,
+                                            context
+                                        )
+                                        viewmodel.saveUserChoice(
+                                            context,
+                                            cases[caseNum - 1],
+                                            selectedItem!!.option
+                                        )
+                                        caseNum++
+                                        selectedItem = null
+                                    } else {
+                                        viewmodel._state.value = viewmodel._state.value.copy(isLoading = true)
+                                        viewmodel.main()
+
+                                    }
+                                },
+                                shape = RoundedCornerShape(16.dp),
+                                modifier = Modifier
+                                    .padding(top = 20.dp)
+                                    .background(
+                                        brush = Brush.horizontalGradient(gradientColors),
+                                        shape = RoundedCornerShape(16.dp)
+                                    ),
+                                colors = ButtonDefaults.buttonColors(Color.Transparent)
+                            )
+                            {
+                                Text(
+                                    "Next",
+                                    fontFamily = titleFont,
+                                    modifier = Modifier.padding(
+                                        start = 20.dp,
+                                        end = 20.dp,
+                                        top = 5.dp,
+                                        bottom = 5.dp
+                                    ),
+                                    fontSize = 18.sp
+                                )
                             }
                         }
-                        Button(
-                            onClick = {
-                                if (caseNum < 8 && selectedItem!!.option.isNotEmpty()) {
-                                    editor.putInt("rounds", round.intValue++).apply()
-                                    calculateScore(
-                                        cases[caseNum - 1],
-                                        selectedItem!!.option,
-                                        context
-                                    )
-                                    viewmodel.saveUserChoice(
-                                        context,
-                                        cases[caseNum - 1],
-                                        selectedItem!!.option
-                                    )
-                                    caseNum++
-                                } else {
-                                    viewmodel.main()
 
-                                }
-                            },
-                            shape = RoundedCornerShape(16.dp),
-                            modifier = Modifier
-                                .padding(top = 20.dp)
-                                .background(
-                                    brush = Brush.horizontalGradient(gradientColors),
-                                    shape = RoundedCornerShape(16.dp)
-                                ),
-                            colors = ButtonDefaults.buttonColors(Color.Transparent)
-                        )
-                        {
-                            Text(
-                                "Next",
-                                fontFamily = titleFont,
-                                modifier = Modifier.padding(
-                                    start = 20.dp,
-                                    end = 20.dp,
-                                    top = 5.dp,
-                                    bottom = 5.dp
-                                ),
-                                fontSize = 18.sp
+                    }
+                }
+
+            }
+            state.error?.let {
+                Column(
+                    Modifier.fillMaxSize(),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Log.v("ErrorGEMINI", state.error.toString())
+                    Text(
+                        text = "Something went wrong", fontSize = 18.sp, modifier = Modifier
+                            .align(
+                                Alignment.CenterHorizontally
                             )
-                        }
+                            .padding(bottom = 20.dp)
+                    )
+
+                    Button(
+                        onClick = {
+                            navController.navigate(Screens.SettingsScreen.screen)
+                        },
+                        shape = RoundedCornerShape(16.dp),
+                        modifier = Modifier
+                            .padding(top = 20.dp)
+                            .background(
+                                brush = Brush.horizontalGradient(gradientColors),
+                                shape = RoundedCornerShape(16.dp)
+                            ),
+                        colors = ButtonDefaults.buttonColors(Color.Transparent)
+                    ) {
+                        Text("New Game")
                     }
 
                 }
             }
-
         }
-        state.error?.let {
-            Column(
-                Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = "Something went wrong", fontSize = 18.sp, modifier = Modifier
-                        .align(
-                            Alignment.CenterHorizontally
-                        )
-                        .padding(bottom = 20.dp)
-                )
 
-                Button(
-                    onClick = {
-                        navController.navigate(Screens.SettingsScreen.screen)
-                    },
-                    shape = RoundedCornerShape(16.dp),
-                    modifier = Modifier
-                        .padding(top = 20.dp)
-                        .background(
-                            brush = Brush.horizontalGradient(gradientColors),
-                            shape = RoundedCornerShape(16.dp)
-                        ),
-                    colors = ButtonDefaults.buttonColors(Color.Transparent)
-                ) {
-                    Text("New Game")
-                }
-
-            }
-        }
 
     } else {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {

@@ -14,6 +14,7 @@ import com.google.gson.reflect.TypeToken
 import com.matterofchoice.GameState
 import com.matterofchoice.model.Case
 import com.matterofchoice.model.MessageModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -53,7 +54,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     private val _isLoadingAnalysis = MutableStateFlow(false)
     val isLoadingAnalysis: StateFlow<Boolean> get() = _isLoadingAnalysis
 
-    private var _state = mutableStateOf(GameState())
+    var _state = mutableStateOf(GameState())
     var state: State<GameState> = _state
 
     private var userSubject = sharedPreferences.getString("userSubject", "random subject")
@@ -204,6 +205,9 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
 
     fun main() {
+        Log.v("ErrorGEMINI", "view model main function called")
+
+        val delayTime = 4000L
         val prompts = loadPrompts() ?: return
         _isInitialized.value = true
 
@@ -216,6 +220,8 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                     subject = userSubject!!,
                     prompts = prompts,
                 )
+                delay(delayTime)
+                delayTime * 2
             }
 
         }
