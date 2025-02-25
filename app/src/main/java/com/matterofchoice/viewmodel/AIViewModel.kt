@@ -2,6 +2,7 @@ package com.matterofchoice.viewmodel
 
 import android.app.Application
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -215,7 +216,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-    fun generateImage() {
+    fun generateImage(prompt: String) {
         val client = OkHttpClient()
 
         // API Key (Keep this secure, don't hardcode it in production)
@@ -223,7 +224,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
         // JSON request body
         val json = JSONObject()
-        json.put("inputs", "dog riding a car")
+        json.put("inputs", "")
         json.put("parameters", JSONObject().put("num_inference_steps", 5))
 
         val requestBody = RequestBody.create("application/json".toMediaTypeOrNull(), json.toString())
@@ -247,8 +248,16 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                         println("Request failed with code: ${response.code}")
                         return
                     }
+                    val responseBody = response.body
 
-                    val responseBody = response.body?.string()
+                    val fetchImage = responseBody?.bytes()
+
+                    fetchImage?.let {
+                        val imageCreated = BitmapFactory.decodeByteArray(fetchImage, 0, fetchImage.size)
+                        _state.value = _state.value.copy(image = imageCreated)
+                    }
+
+
 
                 }
             }
