@@ -27,6 +27,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -38,6 +39,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -158,12 +160,19 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                         Log.v("CASESNOT", "Cases is not empty")
 
 
+
                         var selectedItem by remember { mutableStateOf<Option?>(null) }
                         var caseNum by remember { mutableIntStateOf(1) }
 
 
                         val userScore = sharedPreferences.getInt("userScore", 0)
                         val totalScore = sharedPreferences.getInt("totalScore", 0)
+
+                        LaunchedEffect(caseNum){
+                            viewmodel.generateImage(cases[caseNum - 1].case)
+                        }
+
+
 
                         val round =
                             remember {
@@ -245,7 +254,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
 
                             state.image?.let {
                                 Image(
-                                    state.image,
+                                    bitmap = state.image.asImageBitmap(),
                                     contentDescription = null,
                                     modifier = Modifier
                                         .padding(bottom = 25.dp, start = 16.dp, end = 16.dp)

@@ -24,7 +24,6 @@ import okhttp3.Callback
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import okhttp3.Request.*
 import okhttp3.RequestBody
 import okhttp3.Response
 import org.json.JSONArray
@@ -229,7 +228,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
         val requestBody = RequestBody.create("application/json".toMediaTypeOrNull(), json.toString())
 
-        val request = Builder()
+        val request = Request.Builder()
             .url("https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large-turbo")
             .addHeader("Authorization", "Bearer $apiKey")
             .addHeader("Content-Type", "application/json")
