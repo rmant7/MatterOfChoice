@@ -10,9 +10,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
@@ -20,7 +17,6 @@ import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
@@ -29,18 +25,18 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.matterofchoice.R
 import com.matterofchoice.Screens
+import com.matterofchoice.common.GameButton
+import com.matterofchoice.common.GameTextField
 import com.matterofchoice.ui.theme.myFont
 
 @Composable
@@ -59,7 +55,7 @@ fun UserInput(
     val context = LocalContext.current.applicationContext
     val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
     val editor = sharedPreferences.edit()
-    editor.putBoolean("firstOpen",false).apply()
+    editor.putBoolean("firstOpen", false).apply()
 
     var userSubject by remember { mutableStateOf("") }
     var userAge by remember { mutableStateOf("") }
@@ -76,104 +72,72 @@ fun UserInput(
     val isExposedLanguage = remember { mutableStateOf(false) }
 
 
-
     //val gradientColors2 = listOf(Color(0xFFBE93C5), Color(0xFF7BC6CC))
 
 
-        Column(
+    Column(
+        modifier = Modifier
+            .background(Color.White)
+            .padding(24.dp)
+            .fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Image(
+            painter = painterResource(R.drawable.result),
+            contentDescription = "",
+            modifier = Modifier.size(100.dp)
+        )
+        Text(
+            text = "Matter of choice", fontSize = 28.sp,
+            fontWeight = FontWeight.Bold,
+            fontFamily = myFont,
             modifier = Modifier
-                .background(Color.White)
-                .padding(24.dp)
-                .fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
-        ) {
-            Image(
-                painter = painterResource(R.drawable.result),
-                contentDescription = "",
-                modifier = Modifier.size(100.dp)
-            )
-            Text(text = "Matter of choice", fontSize = 28.sp,
-                fontWeight = FontWeight.Bold,
-                fontFamily = myFont,
-                modifier = Modifier
                 .align(Alignment.CenterHorizontally)
-                .padding(bottom = 15.dp, top = 28.dp))
+                .padding(bottom = 15.dp, top = 28.dp)
+        )
 
-            Text(text = "The scenarios will be based on your selections",
-                fontSize = 12.sp,
-                color = Color.Gray,
-                modifier = Modifier
-                    .align(Alignment.CenterHorizontally)
-                    .padding(bottom = 20.dp))
+        Text(
+            text = "The scenarios will be based on your selections",
+            fontSize = 12.sp,
+            color = Color.Gray,
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .padding(bottom = 20.dp)
+        )
 
-            OutlinedTextField(
-                value = userSubject,
-                onValueChange = { userSubject = it },
-                colors = TextFieldDefaults.colors(
-                    unfocusedContainerColor = Color.White
-                ),
-                shape = RoundedCornerShape(16.dp),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp),
-                label = { Text(text = "Optional: Enter the subject") }
+        GameTextField(
+            text = userSubject,
+            onValueChange = { userSubject = it },
+            labelTxt = "Enter the subject"
+        )
 
-            )
+        GameTextField(
+            text = userAge,
+            onValueChange = { userAge = it },
+            labelTxt = "Optional: Enter your Age"
+        )
 
-            OutlinedTextField(
-                value = userAge,
-                onValueChange = { userAge = it },
-                keyboardOptions = KeyboardOptions.Default.copy(
-                    keyboardType = KeyboardType.Number
-                ),
-                shape = RoundedCornerShape(16.dp),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp),
-                label = { Text(text = "Optional: Enter your Age") }
+        DropDownMenu(genders, isExposedGender, userGender)
+        DropDownMenu(languages, isExposedLanguage, userLanguage)
 
-            )
+        GameButton(
+            onClick = {
+                editor.putBoolean("isFirst", false)
+                editor.putString("userSubject", userSubject).apply()
+                editor.putString("userAge", userAge).apply()
+                editor.putString("userGender", userGender.value).apply()
+                editor.putString("userLanguage", userLanguage.value).apply()
+                editor.apply()
+                navController.navigate(Screens.GameScreen.screen) {
+                    popUpTo(0)
+                }
+            },
+            text = "Generate Cases"
+        )
 
 
-            DropDownMenu(genders, isExposedGender, userGender)
-            DropDownMenu(languages, isExposedLanguage, userLanguage)
-
-            val gradientColors = listOf(Color(0xFFFF00CC), Color(0xFF333399))
-
-            Button(
-                onClick = {
-
-                        editor.putBoolean("isFirst", false)
-                        editor.putString("userSubject", userSubject).apply()
-                        editor.putString("userAge", userAge).apply()
-                        editor.putString("userGender", userGender.value).apply()
-                        editor.putString("userLanguage", userLanguage.value).apply()
-                        editor.apply()
-                        navController.navigate(Screens.GameScreen.screen) {
-                            popUpTo(0)
-                        }
-                },
-                shape = RoundedCornerShape(16.dp),
-                modifier = Modifier.padding(top = 20.dp).background(
-                    brush = Brush.horizontalGradient(gradientColors),
-                    shape = RoundedCornerShape(16.dp)
-                ),
-                colors = ButtonDefaults.buttonColors(Color.Transparent)
-            ) {
-                Text(
-                    "Generate Cases",
-                    modifier = Modifier.padding(
-                        start = 20.dp,
-                        end = 20.dp,
-                        top = 5.dp,
-                        bottom = 5.dp
-                    ),
-                    fontSize = 22.sp
-                )
-            }
-
-        }
+    }
 
 }
 
@@ -202,7 +166,7 @@ fun DropDownMenu(
             readOnly = true,
             trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = isExposed.value) },
 
-        )
+            )
         ExposedDropdownMenu(
             expanded = isExposed.value,
             onDismissRequest = { isExposed.value = false }) {
@@ -221,7 +185,6 @@ fun DropDownMenu(
 
     }
 }
-
 
 
 @Preview(showBackground = true)

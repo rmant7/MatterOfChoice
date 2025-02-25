@@ -15,13 +15,14 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun GameTextField(
-    text: MutableState<String>,
+    text: String,
+    onValueChange: (String) -> Unit,
     keyboardOptions: KeyboardOptions? = null,
     labelTxt: String
 ){
     OutlinedTextField(
-        value = text.value,
-        onValueChange = { text.value = it },
+        value = text,
+        onValueChange = onValueChange ,
         shape = RoundedCornerShape(16.dp),
         modifier = Modifier
             .fillMaxWidth()
