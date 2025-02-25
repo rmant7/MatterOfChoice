@@ -6,30 +6,31 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-
 
 @Composable
 fun GameTextField(
     text: MutableState<String>,
-    placeHolder: String
+    keyboardOptions: KeyboardOptions? = null,
+    labelTxt: String
 ){
-
     OutlinedTextField(
-        value = text,
-        onValueChange = { text = it },
-        keyboardOptions = KeyboardOptions.Default.copy(
-            keyboardType = KeyboardType.Number
-        ),
+        value = text.value,
+        onValueChange = { text.value = it },
         shape = RoundedCornerShape(16.dp),
         modifier = Modifier
             .fillMaxWidth()
             .padding(bottom = 16.dp),
-        label = { Text(text = "Optional: Enter your Age") }
-
+        keyboardOptions = keyboardOptions ?: KeyboardOptions.Default,
+        label = { Text(text = labelTxt) },
+        colors = TextFieldDefaults.colors(
+            unfocusedContainerColor = Color.White,
+            focusedContainerColor = Color.Transparent
+        )
     )
 }
