@@ -59,6 +59,7 @@ import com.matterofchoice.BottomNav
 import com.matterofchoice.GameState
 import com.matterofchoice.R
 import com.matterofchoice.Screens
+import com.matterofchoice.common.GameButton
 import com.matterofchoice.model.Case
 import com.matterofchoice.model.Option
 import com.matterofchoice.ui.theme.titleFont
@@ -128,7 +129,6 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
 
     if (!isFirst) {
         if (!isInitialized) {
-            // could replace with dispose effect
             viewmodel.main()
         }
         if (state.isLoading) {
@@ -140,7 +140,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
             ) {
                 Loader()
             }
-        }else{
+        } else {
             if (state.casesList != null) {
                 val scrollState = rememberScrollState()
 
@@ -166,7 +166,14 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                         val totalScore = sharedPreferences.getInt("totalScore", 0)
 
                         val round =
-                            remember { mutableIntStateOf(sharedPreferences.getInt("rounds", 1) + 1) }
+                            remember {
+                                mutableIntStateOf(
+                                    sharedPreferences.getInt(
+                                        "rounds",
+                                        1
+                                    ) + 1
+                                )
+                            }
 
 
                         Column(
@@ -229,11 +236,16 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                                 text = cases[caseNum - 1].case, fontFamily = titleFont,
                                 textAlign = TextAlign.Justify,
                                 fontWeight = FontWeight.Bold,
-                                modifier = Modifier.padding(bottom = 20.dp, start = 16.dp, end = 16.dp)
+                                modifier = Modifier.padding(
+                                    bottom = 20.dp,
+                                    start = 16.dp,
+                                    end = 16.dp
+                                )
                             )
 
                             Image(
-                                painter = painterResource(R.drawable.test), contentDescription = null,
+                                painter = painterResource(R.drawable.test),
+                                contentDescription = null,
                                 modifier = Modifier
                                     .padding(bottom = 25.dp, start = 16.dp, end = 16.dp)
                                     .fillMaxWidth()
@@ -250,25 +262,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                                         .align(Alignment.Start)
                                         .padding(bottom = 12.dp, start = 16.dp, end = 16.dp),
                                     onClick = {
-//                                    editor.putInt("rounds", round.intValue++).apply()
                                         selectedItem = option
-//                                    if (caseNum < 8 && selectedItem!!.option.isNotEmpty()) {
-//                                        calculateScore(
-//                                            cases[caseNum - 1],
-//                                            selectedItem!!.option,
-//                                            context
-//                                        )
-//                                        viewmodel.saveUserChoice(
-//                                            context,
-//                                            cases[caseNum - 1],
-//                                            selectedItem!!.option
-//                                        )
-//                                        caseNum++
-//
-//
-//                                    } else {
-//                                        viewmodel.main()
-//                                    }
                                     },
                                     border = BorderStroke(
                                         width = 2.dp,
@@ -296,50 +290,40 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
 
                                 }
                             }
-                            Button(
-                                onClick = {
-                                    if (caseNum < cases.size && selectedItem != null) {
-                                        editor.putInt("rounds", round.intValue++).apply()
-                                        calculateScore(
-                                            cases[caseNum - 1],
-                                            selectedItem!!.option,
-                                            context
-                                        )
-                                        viewmodel.saveUserChoice(
-                                            context,
-                                            cases[caseNum - 1],
-                                            selectedItem!!.option
-                                        )
-                                        caseNum++
-                                        selectedItem = null
-                                    } else {
-                                        viewmodel._state.value = viewmodel._state.value.copy(isLoading = true)
-                                        viewmodel.main()
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.Center
+                            ) {
+                                GameButton(
+                                    onClick = {
+                                        if (selectedItem != null) {
+                                            if (caseNum < cases.size) {
+                                                editor.putInt("rounds", round.intValue++).apply()
+                                                calculateScore(
+                                                    cases[caseNum - 1],
+                                                    selectedItem!!.option,
+                                                    context
+                                                )
+                                                viewmodel.saveUserChoice(
+                                                    context,
+                                                    cases[caseNum - 1],
+                                                    selectedItem!!.option
+                                                )
+                                                caseNum++
+                                                selectedItem = null
+                                            } else {
+                                                viewmodel._state.value =
+                                                    viewmodel._state.value.copy(isLoading = true)
+                                                viewmodel.main()
 
-                                    }
-                                },
-                                shape = RoundedCornerShape(16.dp),
-                                modifier = Modifier
-                                    .padding(top = 20.dp)
-                                    .background(
-                                        brush = Brush.horizontalGradient(gradientColors),
-                                        shape = RoundedCornerShape(16.dp)
-                                    ),
-                                colors = ButtonDefaults.buttonColors(Color.Transparent)
-                            )
-                            {
-                                Text(
-                                    "Next",
-                                    fontFamily = titleFont,
-                                    modifier = Modifier.padding(
-                                        start = 20.dp,
-                                        end = 20.dp,
-                                        top = 5.dp,
-                                        bottom = 5.dp
-                                    ),
-                                    fontSize = 18.sp
+                                            }
+                                        }
+                                    },
+                                    text = "Next"
                                 )
                             }
+
+
                         }
 
                     }

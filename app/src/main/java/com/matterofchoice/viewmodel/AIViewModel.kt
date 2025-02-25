@@ -61,7 +61,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     private var userAge = sharedPreferences.getString("userAge", "any")
     private val userGender = sharedPreferences.getString("userGender", "any")
     private var userLanguage = sharedPreferences.getString("userLanguage", "English")
-    val cases = mutableListOf<Case>()
+    private val cases = mutableListOf<Case>()
 
     private fun loadPrompts(): JSONObject? {
 
@@ -166,7 +166,10 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
                 for (i in 0 until lists.length()) {
                     val jsonObject = lists.getJSONObject(i) // Get each JSONObject in the JSONArray
-                    val caseList: Case = gson.fromJson(jsonObject.toString(), listType) // Deserialize into List<Case>
+                    val caseList: Case = gson.fromJson(
+                        jsonObject.toString(),
+                        listType
+                    ) // Deserialize into List<Case>
                     cases.add(caseList) // Add all cases to the mutable list
                 }
 
