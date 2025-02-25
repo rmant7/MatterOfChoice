@@ -72,6 +72,7 @@ dependencies {
 
     implementation ("com.airbnb.android:lottie-compose:6.6.2")
 
+    implementation(libs.okhttp)
 
 
 
