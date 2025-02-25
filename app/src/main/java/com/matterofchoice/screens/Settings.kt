@@ -1,24 +1,16 @@
 package com.matterofchoice.screens
 
 import android.content.Context
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExposedDropdownMenuBox
-import androidx.compose.material3.ExposedDropdownMenuDefaults
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -27,7 +19,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -35,6 +26,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.matterofchoice.R
 import com.matterofchoice.Screens
+import com.matterofchoice.common.DropDownMenu
 import com.matterofchoice.common.GameButton
 import com.matterofchoice.common.GameTextField
 import com.matterofchoice.ui.theme.myFont
@@ -60,6 +52,15 @@ fun UserInput(
     var userSubject by remember { mutableStateOf("") }
     var userAge by remember { mutableStateOf("") }
 
+    val questionTypes = listOf("Study","Behavioral", "Hiring")
+    val isExposedType = remember { mutableStateOf(false) }
+
+
+    val subTypes = listOf("Interpersonal Skills", "Ethical Dilemmas", "Ethical Dilemmas")
+    val isExposedSub = remember { mutableStateOf(false) }
+    val subtype = remember { mutableStateOf(subTypes[0]) }
+
+    val userQuestionType = remember { mutableStateOf(questionTypes[0]) }
     val genders = listOf("Male", "Female")
     val languages = context.resources.getStringArray(R.array.languages).toList()
 
@@ -79,15 +80,12 @@ fun UserInput(
         modifier = Modifier
             .background(Color.White)
             .padding(24.dp)
+            .verticalScroll(rememberScrollState())
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Image(
-            painter = painterResource(R.drawable.result),
-            contentDescription = "",
-            modifier = Modifier.size(100.dp)
-        )
+
         Text(
             text = "Matter of choice", fontSize = 28.sp,
             fontWeight = FontWeight.Bold,
@@ -112,14 +110,18 @@ fun UserInput(
             labelTxt = "Enter the subject"
         )
 
+        DropDownMenu(questionTypes, isExposedType, userQuestionType, "Select question type")
+        DropDownMenu(subTypes, isExposedSub, subtype, "Select the subtype")
+        DropDownMenu(genders, isExposedGender, userGender, "Optional: Select your gender")
+
+
         GameTextField(
             text = userAge,
             onValueChange = { userAge = it },
             labelTxt = "Optional: Enter your Age"
         )
 
-        DropDownMenu(genders, isExposedGender, userGender)
-        DropDownMenu(languages, isExposedLanguage, userLanguage)
+        DropDownMenu(languages, isExposedLanguage, userLanguage, "Select your language")
 
         GameButton(
             onClick = {
@@ -141,50 +143,6 @@ fun UserInput(
 
 }
 
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun DropDownMenu(
-    itemsList: List<String>,
-    isExposed: MutableState<Boolean>,
-    selectedItem: MutableState<String>,
-) {
-    ExposedDropdownMenuBox(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(bottom = 16.dp),
-        expanded = isExposed.value,
-        onExpandedChange = { isExposed.value = !isExposed.value }
-    ) {
-        OutlinedTextField(
-            modifier = Modifier
-                .menuAnchor()
-                .fillMaxWidth(),
-            shape = RoundedCornerShape(16.dp),
-            value = selectedItem.value,
-            onValueChange = {},
-            readOnly = true,
-            trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = isExposed.value) },
-
-            )
-        ExposedDropdownMenu(
-            expanded = isExposed.value,
-            onDismissRequest = { isExposed.value = false }) {
-            itemsList.forEachIndexed { index, text ->
-                DropdownMenuItem(
-                    text = { Text(text = text) },
-                    onClick = {
-                        selectedItem.value = itemsList[index]
-                        isExposed.value = false
-                    },
-                    contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
-                )
-            }
-
-        }
-
-    }
-}
 
 
 @Preview(showBackground = true)
