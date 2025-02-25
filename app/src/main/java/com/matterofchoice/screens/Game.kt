@@ -20,8 +20,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
@@ -33,11 +31,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
@@ -66,6 +64,7 @@ import com.matterofchoice.model.Case
 import com.matterofchoice.model.Option
 import com.matterofchoice.ui.theme.titleFont
 import com.matterofchoice.viewmodel.AIViewModel
+import kotlinx.coroutines.launch
 
 
 @Composable
@@ -119,8 +118,8 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
 
 
     val isInitialized by viewmodel.isInitialized.collectAsState()
+    val coroutineScope = rememberCoroutineScope()
 
-    val gradientColors = listOf(Color(0xFFFF00CC), Color(0xFF333399))
 
     val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
     val editor = sharedPreferences.edit()
@@ -160,7 +159,6 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                         Log.v("CASESNOT", "Cases is not empty")
 
 
-
                         var selectedItem by remember { mutableStateOf<Option?>(null) }
                         var caseNum by remember { mutableIntStateOf(1) }
 
@@ -168,10 +166,9 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                         val userScore = sharedPreferences.getInt("userScore", 0)
                         val totalScore = sharedPreferences.getInt("totalScore", 0)
 
-                        LaunchedEffect(caseNum){
+                        LaunchedEffect(caseNum) {
                             viewmodel.generateImage(cases[caseNum - 1].case)
                         }
-
 
 
                         val round =
@@ -261,7 +258,10 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                                         .fillMaxWidth()
                                         .height(350.dp)
                                         .align(Alignment.CenterHorizontally)
-                                        .shadow(elevation = 1.dp, shape = RoundedCornerShape(16.dp)),
+                                        .shadow(
+                                            elevation = 1.dp,
+                                            shape = RoundedCornerShape(16.dp)
+                                        ),
                                     contentScale = ContentScale.Crop
                                 )
                             }
@@ -275,6 +275,9 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                                         .padding(bottom = 12.dp, start = 16.dp, end = 16.dp),
                                     onClick = {
                                         selectedItem = option
+                                        coroutineScope.launch {
+                                            scrollState.animateScrollTo(scrollState.maxValue)
+                                        }
                                     },
                                     border = BorderStroke(
                                         width = 2.dp,
@@ -323,6 +326,9 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                                                 )
                                                 caseNum++
                                                 selectedItem = null
+                                                coroutineScope.launch {
+                                                    scrollState.animateScrollTo(0)
+                                                }
                                             } else {
                                                 viewmodel._state.value =
                                                     viewmodel._state.value.copy(isLoading = true)
@@ -357,21 +363,10 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                             .padding(bottom = 20.dp)
                     )
 
-                    Button(
-                        onClick = {
-                            navController.navigate(Screens.SettingsScreen.screen)
-                        },
-                        shape = RoundedCornerShape(16.dp),
-                        modifier = Modifier
-                            .padding(top = 20.dp)
-                            .background(
-                                brush = Brush.horizontalGradient(gradientColors),
-                                shape = RoundedCornerShape(16.dp)
-                            ),
-                        colors = ButtonDefaults.buttonColors(Color.Transparent)
-                    ) {
-                        Text("New Game")
-                    }
+                    GameButton(
+                        onClick = { navController.navigate(Screens.SettingsScreen.screen) },
+                        text = "New Game"
+                    )
 
                 }
             }
@@ -380,21 +375,12 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
 
     } else {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            Button(
-                onClick = {
-                    navController.navigate(Screens.SettingsScreen.screen)
-                },
-                shape = RoundedCornerShape(16.dp),
-                modifier = Modifier
-                    .padding(top = 20.dp)
-                    .background(
-                        brush = Brush.horizontalGradient(gradientColors),
-                        shape = RoundedCornerShape(16.dp)
-                    ),
-                colors = ButtonDefaults.buttonColors(Color.Transparent)
-            ) {
-                Text("New Game")
-            }
+
+            GameButton(
+                onClick = { navController.navigate(Screens.SettingsScreen.screen) },
+                text = "New Game"
+            )
+
         }
     }
 }
