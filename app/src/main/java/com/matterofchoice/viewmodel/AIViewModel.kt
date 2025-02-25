@@ -224,7 +224,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
         // JSON request body
         val json = JSONObject()
-        json.put("inputs", "")
+        json.put("inputs", prompt)
         json.put("parameters", JSONObject().put("num_inference_steps", 5))
 
         val requestBody = RequestBody.create("application/json".toMediaTypeOrNull(), json.toString())

@@ -243,17 +243,20 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                                 )
                             )
 
-                            Image(
-                                painter = painterResource(R.drawable.test),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .padding(bottom = 25.dp, start = 16.dp, end = 16.dp)
-                                    .fillMaxWidth()
-                                    .height(350.dp)
-                                    .align(Alignment.CenterHorizontally)
-                                    .shadow(elevation = 1.dp, shape = RoundedCornerShape(16.dp)),
-                                contentScale = ContentScale.Crop
-                            )
+                            state.image?.let {
+                                Image(
+                                    state.image,
+                                    contentDescription = null,
+                                    modifier = Modifier
+                                        .padding(bottom = 25.dp, start = 16.dp, end = 16.dp)
+                                        .fillMaxWidth()
+                                        .height(350.dp)
+                                        .align(Alignment.CenterHorizontally)
+                                        .shadow(elevation = 1.dp, shape = RoundedCornerShape(16.dp)),
+                                    contentScale = ContentScale.Crop
+                                )
+                            }
+
 
                             cases[caseNum - 1].options.forEach { option ->
                                 OutlinedButton(
