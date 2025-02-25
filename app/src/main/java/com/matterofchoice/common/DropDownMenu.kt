@@ -35,7 +35,7 @@ fun DropDownMenu(
                 .menuAnchor()
                 .fillMaxWidth(),
             shape = RoundedCornerShape(16.dp),
-            label = { Text(text = hint) },
+            label = { if (selectedItem.value.isNotEmpty())Text(text = hint) },
             value = selectedItem.value.ifEmpty { hint },
             onValueChange = {},
             readOnly = true,
@@ -43,7 +43,8 @@ fun DropDownMenu(
                 if (selectedItem.value.isEmpty()) Text(text = hint)
             },
             colors = ExposedDropdownMenuDefaults.outlinedTextFieldColors(
-                unfocusedTextColor = if (selectedItem.value.isEmpty()) Color.Gray else Color.Black
+                unfocusedTextColor = Color.Black,
+                unfocusedPlaceholderColor = Color.Black
             ),
             trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = isExposed.value) }
         )
@@ -53,14 +54,17 @@ fun DropDownMenu(
             onDismissRequest = { isExposed.value = false }
         ) {
             itemsList.forEachIndexed { index, text ->
-                DropdownMenuItem(
-                    text = { Text(text = text) },
-                    onClick = {
-                        selectedItem.value = itemsList[index]
-                        isExposed.value = false
-                    },
-                    contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
-                )
+                if(text.isNotEmpty()){
+                    DropdownMenuItem(
+                        text = { Text(text = text) },
+                        onClick = {
+                            selectedItem.value = itemsList[index]
+                            isExposed.value = false
+                        },
+                        contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
+                    )
+                }
+
             }
         }
     }

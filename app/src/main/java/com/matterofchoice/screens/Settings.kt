@@ -71,7 +71,7 @@ fun UserInput(
     }
 
     val deviceLanguage = Locale.getDefault().displayLanguage
-    val genders = listOf("Male", "Female")
+    val genders = listOf("","Male", "Female")
     val languages = context.resources.getStringArray(R.array.languages).toList()
 
     val sortedLanguages = listOf(deviceLanguage) + languages.filter { it != deviceLanguage }
