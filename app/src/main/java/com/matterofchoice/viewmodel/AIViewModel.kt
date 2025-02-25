@@ -18,6 +18,14 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.Request.*
+import okhttp3.RequestBody
+import okhttp3.Response
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
@@ -206,6 +214,46 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+
+    fun generateImage() {
+        val client = OkHttpClient()
+
+        // API Key (Keep this secure, don't hardcode it in production)
+        val apiKey = "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"
+
+        // JSON request body
+        val json = JSONObject()
+        json.put("inputs", "dog riding a car")
+        json.put("parameters", JSONObject().put("num_inference_steps", 5))
+
+        val requestBody = RequestBody.create("application/json".toMediaTypeOrNull(), json.toString())
+
+        val request = Builder()
+            .url("https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large-turbo")
+            .addHeader("Authorization", "Bearer $apiKey")
+            .addHeader("Content-Type", "application/json")
+            .post(requestBody)
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                e.printStackTrace()
+                println("Request failed: ${e.message}")
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                response.use {
+                    if (!response.isSuccessful) {
+                        println("Request failed with code: ${response.code}")
+                        return
+                    }
+
+                    val responseBody = response.body?.string()
+
+                }
+            }
+        })
+    }
 
     fun main() {
         Log.v("ErrorGEMINI", "view model main function called")
