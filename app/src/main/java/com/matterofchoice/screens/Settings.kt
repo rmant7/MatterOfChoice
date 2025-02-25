@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -21,7 +20,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -31,6 +29,7 @@ import com.matterofchoice.common.DropDownMenu
 import com.matterofchoice.common.GameButton
 import com.matterofchoice.common.GameTextField
 import com.matterofchoice.ui.theme.myFont
+import java.util.Locale
 
 @Composable
 fun Settings(navController: NavController) {
@@ -71,10 +70,13 @@ fun UserInput(
         }
     }
 
+    val deviceLanguage = Locale.getDefault().displayLanguage
     val genders = listOf("Male", "Female")
     val languages = context.resources.getStringArray(R.array.languages).toList()
 
-    val userLanguage = remember { mutableStateOf(languages[0]) }
+    val sortedLanguages = listOf(deviceLanguage) + languages.filter { it != deviceLanguage }
+
+    val userLanguage = remember { mutableStateOf(sortedLanguages[0]) }
 
     val userGender = remember { mutableStateOf(genders[0]) }
 
@@ -85,10 +87,10 @@ fun UserInput(
 
     Column(
         modifier = Modifier
+            .background(Color.White)
             .padding(24.dp)
             .verticalScroll(rememberScrollState())
-            .fillMaxSize()
-            .background(Color.White),
+            .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -128,7 +130,7 @@ fun UserInput(
             labelTxt = "Optional: Enter your Age"
         )
 
-        DropDownMenu(languages, isExposedLanguage, userLanguage, "Select your language")
+        DropDownMenu(sortedLanguages, isExposedLanguage, userLanguage, "Select your language")
 
         GameButton(
             onClick = {
@@ -148,16 +150,6 @@ fun UserInput(
 
     }
 
-}
-
-
-@Preview(showBackground = true)
-@Composable
-fun Preview() {
-    val context = LocalContext.current.applicationContext
-    MaterialTheme {
-        UserInput(navController = NavController(context = context))
-    }
 }
 
 
