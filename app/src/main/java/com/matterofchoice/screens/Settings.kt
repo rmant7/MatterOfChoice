@@ -11,6 +11,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -52,15 +53,24 @@ fun UserInput(
     var userSubject by remember { mutableStateOf("") }
     var userAge by remember { mutableStateOf("") }
 
-    val questionTypes = listOf("Study","Behavioral", "Hiring")
+    val questionTypes = listOf("Study", "Behavioral", "Hiring")
     val isExposedType = remember { mutableStateOf(false) }
 
 
-    val subTypes = listOf("Interpersonal Skills", "Ethical Dilemmas", "Ethical Dilemmas")
+    val subTypes = listOf("Subject Mastery", "Interpersonal Skills", "Technical Skills")
     val isExposedSub = remember { mutableStateOf(false) }
-    val subtype = remember { mutableStateOf(subTypes[0]) }
+
 
     val userQuestionType = remember { mutableStateOf(questionTypes[0]) }
+    val subtype = remember { mutableStateOf(subTypes[0]) }
+
+    LaunchedEffect(userQuestionType.value) {
+        val index = questionTypes.indexOf(userQuestionType.value)
+        if (index in subTypes.indices) {
+            subtype.value = subTypes[index]
+        }
+    }
+
     val genders = listOf("Male", "Female")
     val languages = context.resources.getStringArray(R.array.languages).toList()
 
@@ -73,15 +83,12 @@ fun UserInput(
     val isExposedLanguage = remember { mutableStateOf(false) }
 
 
-    //val gradientColors2 = listOf(Color(0xFFBE93C5), Color(0xFF7BC6CC))
-
-
     Column(
         modifier = Modifier
-            .background(Color.White)
             .padding(24.dp)
             .verticalScroll(rememberScrollState())
-            .fillMaxSize(),
+            .fillMaxSize()
+            .background(Color.White),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -142,7 +149,6 @@ fun UserInput(
     }
 
 }
-
 
 
 @Preview(showBackground = true)
