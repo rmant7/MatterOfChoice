@@ -167,7 +167,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                         val totalScore = sharedPreferences.getInt("totalScore", 0)
 
                         LaunchedEffect(caseNum) {
-                            viewmodel.generateImage(cases[caseNum - 1].case)
+                            viewmodel.generateImage(context = context, prompt = cases[caseNum - 1].case)
                         }
 
 

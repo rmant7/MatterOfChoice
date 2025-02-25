@@ -13,6 +13,7 @@ import com.google.ai.client.generativeai.type.content
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.matterofchoice.GameState
+import com.matterofchoice.R
 import com.matterofchoice.model.Case
 import com.matterofchoice.model.MessageModel
 import kotlinx.coroutines.delay
@@ -215,7 +216,9 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-    fun generateImage(prompt: String) {
+    fun generateImage(prompt: String,context: Context) {
+        val bitmap = BitmapFactory.decodeResource(context.resources,R.drawable.place_holder)
+        _state.value = _state.value.copy(image = bitmap)
         val client = OkHttpClient()
 
         // API Key (Keep this secure, don't hardcode it in production)
