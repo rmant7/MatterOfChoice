@@ -36,7 +36,7 @@ import java.io.IOException
 class AIViewModel(application: Application) : AndroidViewModel(application) {
 
     private val model = GenerativeModel(
-        modelName = "gemini-2.0-flash-exp",
+        modelName = "gemini-2.0-flash",
         apiKey = "AIzaSyBbpQNYsB4bDDctAB14D8FQIIOqn7JOccc",
     )
 
@@ -66,10 +66,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     var _state = mutableStateOf(GameState())
     var state: State<GameState> = _state
 
-    private var userSubject = sharedPreferences.getString("userSubject", "random subject")
-    private var userAge = sharedPreferences.getString("userAge", "any")
-    private val userGender = sharedPreferences.getString("userGender", "any")
-    private var userLanguage = sharedPreferences.getString("userLanguage", "English")
+
     private val cases = mutableListOf<Case>()
 
     private fun loadPrompts(): JSONObject? {
@@ -268,6 +265,13 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
     fun main() {
         Log.v("ErrorGEMINI", "view model main function called")
+
+         val userSubject = sharedPreferences.getString("userSubject", "random subject")
+         val userAge = sharedPreferences.getString("userAge", "any")
+         val userGender = sharedPreferences.getString("userGender", "any")
+         val userLanguage = sharedPreferences.getString("userLanguage", "English")
+
+
 
         val delayTime = 4000L
         val prompts = loadPrompts() ?: return

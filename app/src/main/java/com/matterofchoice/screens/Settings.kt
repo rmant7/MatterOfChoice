@@ -127,7 +127,7 @@ fun UserInput(
         GameTextField(
             text = userAge,
             onValueChange = { userAge = it },
-            labelTxt = "Optional: Enter your Age"
+            labelTxt = "Optional: Enter your Age",
         )
 
         DropDownMenu(sortedLanguages, isExposedLanguage, userLanguage, "Select your language")

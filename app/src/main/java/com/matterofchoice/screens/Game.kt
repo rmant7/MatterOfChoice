@@ -32,6 +32,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -115,6 +116,7 @@ fun Loader() {
 @Composable
 fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: GameState) {
     val context = LocalContext.current.applicationContext
+    var caseNum by rememberSaveable { mutableIntStateOf(1) }
 
 
     val isInitialized by viewmodel.isInitialized.collectAsState()
@@ -160,7 +162,6 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
 
 
                         var selectedItem by remember { mutableStateOf<Option?>(null) }
-                        var caseNum by remember { mutableIntStateOf(1) }
 
 
                         val userScore = sharedPreferences.getInt("userScore", 0)
@@ -227,8 +228,9 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                                     modifier = Modifier.size(28.dp),
                                     contentDescription = null
                                 )
+                                val score = totalScore - userScore
                                 Text(
-                                    text = "$userScore/$totalScore",
+                                    text = score.toString(),
                                     fontFamily = titleFont,
                                     textAlign = TextAlign.Justify,
                                     fontSize = 18.sp,
