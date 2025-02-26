@@ -132,7 +132,10 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
 
     if (!isFirst) {
         if (!isInitialized) {
-            viewmodel.main()
+            LaunchedEffect(false) {
+                viewmodel.main()
+            }
+
         }
         if (state.isLoading) {
             Box(
