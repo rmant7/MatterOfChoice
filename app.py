@@ -141,17 +141,13 @@ from io import BytesIO
 from PIL import Image
 
 def generate_image_for_question(question_text):
-
     instructions = [
-            "The image must not contain words",
-            "The image should be a comic style image"
+    "The image must not contain words",
+    "The image should be a comic style image"
     ]
 
+    unique_prompt = f"{question_text}, *{', *'.join(instructions)}"
 
-
-    unique_prompt = f"{question_text}, *{', *'.join(instructions)}"    
-    
-    
     max_retries = 10
     retry_delay = 5  # Initial delay in seconds
 
