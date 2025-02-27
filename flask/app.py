@@ -430,7 +430,7 @@ def generate_cases():
         # Within your /generate_cases route, after generating case_data:
         for case in case_data:
             question_prompt = case.get("case")
-            if question_prompt:
+            if question_prompt and question_type != 'study':
                    try:
                       # generate_image_for_question returns a data URL (e.g., "data:image/png;base64,...")
                       generated_image_data = generate_image_for_question(question_prompt)
@@ -471,8 +471,8 @@ def analysis():
         analysis_data = json.load(f)
     data = request.get_json()
 
-    # Filter out cases that have an 'answer'
-    answered_cases = [case for case in analysis_data['cases'] if 'answer' in case]
+    # Filter out cases that have an 'answer' and the answer is not empty, null, or None
+    answered_cases = [case for case in analysis_data['cases'] if 'answer' in case and case['answer']]
     if not answered_cases:
         return jsonify({"error": "No answered cases found for analysis."}), 400
 
@@ -481,14 +481,16 @@ def analysis():
 
     role = data.get('role', None)
     question_type = data.get('question_type')
+    language = data.get('language')  # Fetch language as form data
     if question_type is None:
         return jsonify({"error": "Question type data is missing in the request."}), 400
 
     analysis_data['role'] = role
     analysis_data['question_type'] = question_type
+    analysis_data['language'] = language  # Include language in the analysis data
     analysis_data_str = json.dumps(analysis_data, indent=4)
 
-    prompt_template = """Analyze the following data. You are a '{role}'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'answer' key). The 'optimal' key indicates the correct option.  Determine the language used in the data and STRICTLY PROVIDE YOUR ANALYSIS IN THE LANGUAGE USED.  Format your response as JSON:
+    prompt_template = """Analyze the following data. You are a '{role}'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'answer' key). The 'optimal' key indicates the correct option.  Determine the language used in the data and STRICTLY PROVIDE YOUR ANALYSIS IN THE LANGUAGE {language}.  Format your response as JSON:
 
 {{
   "overall_judgement": "A concise summary of the player's overall {judgement_aspect}.",
@@ -516,7 +518,8 @@ Data: {analysis_data_str}"""
     prompt = prompt_template.format(
         role=role, 
         judgement_aspect=judgement_aspect, 
-        analysis_data_str=analysis_data_str
+        analysis_data_str=analysis_data_str,
+        language=language
     )
 
     try:
@@ -600,6 +603,7 @@ def submit_responses():
     role = data.get('role')
     question_type = data.get('question_type')
     sub_type = data.get('sub_type')
+    language = data.get('language')  # Fetch language as form data
 
     # Validate the basic payload.
     if not user_answers or not isinstance(user_answers, list):
@@ -630,8 +634,8 @@ def submit_responses():
 
     # Retrieve all cases from the conversation JSON.
     all_cases = conversation_data.get('data', {}).get('cases', [])
-    # Determine unanswered cases (those without a 'user_answer' key).
-    unanswered_cases = [case for case in all_cases if 'user_answer' not in case]
+    # Determine unanswered cases (those without a 'user_answer' key or with an empty/null/None answer).
+    unanswered_cases = [case for case in all_cases if 'user_answer' not in case or not case['user_answer']]
 
     # If the user has provided more answers than available unanswered cases, error out.
     if len(user_answers) > len(unanswered_cases):
@@ -640,7 +644,7 @@ def submit_responses():
     # Update the first N unanswered cases with the provided answers.
     answers_to_apply = iter(user_answers)
     for idx in range(len(all_cases)):
-        if 'user_answer' not in all_cases[idx]:
+        if 'user_answer' not in all_cases[idx] or not all_cases[idx]['user_answer']:
             try:
                 all_cases[idx]['user_answer'] = next(answers_to_apply)
             except StopIteration:
@@ -651,7 +655,7 @@ def submit_responses():
     analysis_cases = analysis_data.get('cases', [])
     answers_to_apply = iter(user_answers)
     for idx in range(len(analysis_cases)):
-        if 'answer' not in analysis_cases[idx]:
+        if 'answer' not in analysis_cases[idx] or not analysis_cases[idx]['answer']:
             try:
                 analysis_cases[idx]['answer'] = next(answers_to_apply)
             except StopIteration:
@@ -668,13 +672,13 @@ def submit_responses():
         return jsonify({"error": f"Error updating files: {str(e)}"}), 500
 
     # Prepare for analysis: filter to only include answered cases.
-    answered_cases = [case for case in analysis_data.get('cases', []) if 'answer' in case]
+    answered_cases = [case for case in analysis_data.get('cases', []) if 'answer' in case and case['answer']]
     if not answered_cases:
         return jsonify({"error": "No answered cases found for analysis."}), 400
     analysis_data['cases'] = answered_cases
 
     # Build the analysis prompt.
-    prompt_template = """Analyze the following data. You are a '{role}'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'answer' key). The 'optimal' key indicates the correct option.  Determine the language used in the data and STRICTLY PROVIDE YOUR ANALYSIS IN THE LANGUAGE USED.  Format your response as JSON:
+    prompt_template = """Analyze the following data. You are a '{role}'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'answer' key). The 'optimal' key indicates the correct option.  Determine the language used in the data and STRICTLY PROVIDE YOUR ANALYSIS IN THE LANGUAGE {language}.  Format your response as JSON:
 
 {{
   "overall_judgement": "A concise summary of the player's overall {judgement_aspect}.",
@@ -703,7 +707,8 @@ Data: {analysis_data_str}"""
     prompt = prompt_template.format(
         role=role,
         judgement_aspect=judgement_aspect,
-        analysis_data_str=analysis_data_str
+        analysis_data_str=analysis_data_str,
+        language=language
     )
 
     # Trigger the analysis.
@@ -734,3 +739,4 @@ if __name__ == '__main__':
     os.makedirs('data', exist_ok=True)
     read_json(USER_DATA_FILE)
     app.run(debug=True)
+

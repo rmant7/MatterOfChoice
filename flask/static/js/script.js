@@ -49,6 +49,7 @@ updateSubTypeOptions(questionTypeSelect.value);
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
+  
   loadingSpinner.classList.remove('hidden');
   responseContainer.classList.add('hidden');
   responseContainer.classList.remove('success');
@@ -79,7 +80,6 @@ caseForm.addEventListener('submit', async (event) => {
   responseContainer.classList.add('hidden');
   responseContainer.classList.remove('success');
   responseContainer.classList.remove('error');
-
   const formData = new FormData(form);
   const data = {};
   formData.forEach((value, key) => data[key] = value);
@@ -370,6 +370,10 @@ function createCaseElement(caseData) {
     optionElement.appendChild(radioInput);
     optionElement.appendChild(label);
     caseElement.appendChild(optionElement);
+
+    // Add a horizontal line after each option
+    const hr = document.createElement('hr');
+    caseElement.appendChild(hr);
   });
 
   return caseElement;
@@ -402,13 +406,16 @@ async function analyzeResults() {
   responseContainer.classList.remove('success');
   responseContainer.classList.remove('error');
 
+
+  const language = document.getElementById('language').value;
+
   const role = document.getElementById('role').value;
   const question_type = document.getElementById('question_type').value;
 
   try {
     const response = await fetch('/analysis', {
       method: 'POST',
-      body: JSON.stringify({ role: role, question_type: question_type }),
+      body: JSON.stringify({ role: role, question_type: question_type, language: language }),
       headers: { 'Content-Type': 'application/json' }
     });
 
@@ -435,6 +442,7 @@ async function analyzeResults() {
 
 function displayAnalysis(analysis) {
   responseContainer.innerHTML = `
+    <button id="backButton">Clear Analysisk</button>
     <h2>Analysis Results</h2>
     <div class="analysis-content">`;
   
@@ -460,7 +468,6 @@ function displayAnalysis(analysis) {
   
   responseContainer.innerHTML += `
     </div>
-    <button id="backButton">Go back</button>
   `;
   
   const backButton = document.getElementById('backButton');
@@ -469,6 +476,8 @@ function displayAnalysis(analysis) {
     window.location.reload();
   });
 }
+
+
 
 function displayError(errorData) {
     // Create the modal container

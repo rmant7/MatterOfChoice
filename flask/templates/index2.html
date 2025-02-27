@@ -105,7 +105,6 @@
 
     <p style="color: blue;">*you can change a subject before generating the next set of cases</p>
 
-    
     <div id="form-container">
       <form id="generateForm">
         <label for="language">Language:</label>
@@ -157,8 +156,7 @@
 
         <label for="question_type">Question Type:</label>
         <select id="question_type" name="question_type" required>
-            <option value="study">Study</option>
-
+          <option value="study">Study</option>
           <option value="behavioral">Behavioral</option>
           <option value="hiring">Hiring</option>
         </select>
@@ -171,20 +169,13 @@
         <label for="role">Role (Will be used for analysis part):</label>
         <input type="text" id="role" name="role" value="" >
 
-<div>
-        <button id="generateButton" type="submit">Generate Cases</button>
-   
-    </div>
-
-
-
-
-
-
-    </form>
-    <div>
+        <div>
+          <button id="generateButton" type="submit">Generate Cases</button>
+        </div>
+      </form>
+      <div>
         <button id="resetButton" style="background-color: red; margin-bottom: 20px; margin-top: 40px;">Reset Game</button>
-    </div>
+      </div>
     </div>
     <div id="loading-spinner" class="hidden">
       <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
@@ -211,5 +202,99 @@
     <!-- Content for analysis will go here -->
   </div>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script>
+    // Function to update URL parameters
+    function updateURLParameter(param, value) {
+      const url = new URL(window.location);
+      url.searchParams.set(param, value);
+      window.history.replaceState({}, '', url);
+    }
+
+    // Function to prefill form fields from URL parameters
+    function prefillFormFromURL() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const language = urlParams.get('language');
+      const age = urlParams.get('age');
+      const subject = urlParams.get('subject');
+      const difficulty = urlParams.get('difficulty');
+      const question_type = urlParams.get('question_type');
+      const sub_type = urlParams.get('sub_type');
+      const role = urlParams.get('role');
+
+      if (language) document.getElementById('language').value = language;
+      if (age) document.getElementById('age').value = age;
+      if (subject) document.getElementById('subject').value = subject;
+      if (difficulty) document.getElementById('difficulty').value = difficulty;
+      if (question_type) document.getElementById('question_type').value = question_type;
+      if (sub_type) document.getElementById('sub_type').value = sub_type;
+      if (role) document.getElementById('role').value = role;
+    }
+
+    // Add event listeners to update URL parameters when form fields change
+    document.getElementById('language').addEventListener('change', (e) => updateURLParameter('language', e.target.value));
+    document.getElementById('age').addEventListener('change', (e) => updateURLParameter('age', e.target.value));
+    document.getElementById('subject').addEventListener('input', (e) => updateURLParameter('subject', e.target.value));
+    document.getElementById('difficulty').addEventListener('change', (e) => updateURLParameter('difficulty', e.target.value));
+    document.getElementById('question_type').addEventListener('change', (e) => updateURLParameter('question_type', e.target.value));
+    document.getElementById('sub_type').addEventListener('change', (e) => updateURLParameter('sub_type', e.target.value));
+    document.getElementById('role').addEventListener('input', (e) => updateURLParameter('role', e.target.value));
+
+    // Prefill form fields when the page loads
+    window.addEventListener('load', prefillFormFromURL);
+
+    // Function to toggle the visibility of the generate button
+    function toggleGenerateButton(show) {
+      const generateButton = document.getElementById('generateButton');
+      if (show) {
+        generateButton.style.display = 'block';
+      } else {
+        generateButton.style.display = 'none';
+      }
+    }
+
+    // Function to display analysis and toggle buttons
+    function displayAnalysis(analysis) {
+      responseContainer.innerHTML = `
+        <button id="backButton">Go back</button>
+        <h2>Analysis Results</h2>
+        <div class="analysis-content">`;
+      
+      if (typeof analysis === 'object') {
+        for (const key in analysis) {
+          responseContainer.innerHTML += `
+            <div class="analysis-section">
+              <h3 class="analysis-heading">${key}</h3>
+              <ul class="analysis-list">`;
+          if (Array.isArray(analysis[key])) {
+            analysis[key].forEach(item => {
+              responseContainer.innerHTML += `<li class="analysis-item">${item}</li>`;
+            });
+          } else {
+            responseContainer.innerHTML += `<li class="analysis-item">${analysis[key]}</li>`;
+          }
+          responseContainer.innerHTML += `</ul>
+            </div>`;
+        }
+      } else {
+        responseContainer.innerHTML += `<p class="analysis-text">${analysis}</p>`;
+      }
+      
+      responseContainer.innerHTML += `
+        </div>
+      `;
+      
+      const backButton = document.getElementById('backButton');
+      backButton.addEventListener('click', () => {
+        startNewGame();
+        window.location.reload();
+      });
+
+      // Hide the generate button when the back button is displayed
+      toggleGenerateButton(false);
+    }
+
+    // Show the generate button when the page loads
+    window.addEventListener('load', () => toggleGenerateButton(true));
+  </script>
 </body>
 </html>
