@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">matterofchoice</string>
+    <string name="app_name">Matter of choice</string>
     <string-array name="languages">
 
         <item>Amharic</item>

@@ -3,6 +3,7 @@ package com.matterofchoice.screens
 import android.content.Context
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -84,71 +85,74 @@ fun UserInput(
 
     val isExposedLanguage = remember { mutableStateOf(false) }
 
-
-    Column(
-        modifier = Modifier
-            .background(Color.White)
-            .padding(24.dp)
-            .verticalScroll(rememberScrollState())
-            .fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-
-        Text(
-            text = "Matter of choice", fontSize = 28.sp,
-            fontWeight = FontWeight.Bold,
-            fontFamily = myFont,
+    Box(modifier = Modifier.fillMaxSize().background(Color.White)) {
+        Column(
             modifier = Modifier
-                .align(Alignment.CenterHorizontally)
-                .padding(bottom = 15.dp, top = 28.dp)
-        )
+                .background(Color.White)
+                .padding(24.dp)
+                .verticalScroll(rememberScrollState())
+                .fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
 
-        Text(
-            text = "The scenarios will be based on your selections",
-            fontSize = 12.sp,
-            color = Color.Gray,
-            modifier = Modifier
-                .align(Alignment.CenterHorizontally)
-                .padding(bottom = 20.dp)
-        )
+            Text(
+                text = "Matter of choice", fontSize = 28.sp,
+                fontWeight = FontWeight.Bold,
+                fontFamily = myFont,
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+                    .padding(bottom = 15.dp, top = 28.dp)
+            )
 
-        GameTextField(
-            text = userSubject,
-            onValueChange = { userSubject = it },
-            labelTxt = "Enter the subject"
-        )
+            Text(
+                text = "The scenarios will be based on your selections",
+                fontSize = 12.sp,
+                color = Color.Gray,
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+                    .padding(bottom = 20.dp)
+            )
 
-        DropDownMenu(questionTypes, isExposedType, userQuestionType, "Select question type")
-        DropDownMenu(subTypes, isExposedSub, subtype, "Select the subtype")
-        DropDownMenu(genders, isExposedGender, userGender, "Optional: Select your gender")
+            GameTextField(
+                text = userSubject,
+                onValueChange = { userSubject = it },
+                labelTxt = "Enter the subject"
+            )
 
-
-        GameTextField(
-            text = userAge,
-            onValueChange = { userAge = it },
-            labelTxt = "Optional: Enter your Age",
-        )
-
-        DropDownMenu(sortedLanguages, isExposedLanguage, userLanguage, "Select your language")
-
-        GameButton(
-            onClick = {
-                editor.putBoolean("isFirst", false)
-                editor.putString("userSubject", userSubject).apply()
-                editor.putString("userAge", userAge).apply()
-                editor.putString("userGender", userGender.value).apply()
-                editor.putString("userLanguage", userLanguage.value).apply()
-                editor.apply()
-                navController.navigate(Screens.GameScreen.screen) {
-                    popUpTo(0)
-                }
-            },
-            text = "Generate Cases"
-        )
+            DropDownMenu(questionTypes, isExposedType, userQuestionType, "Select question type")
+            DropDownMenu(subTypes, isExposedSub, subtype, "Select the subtype")
+            DropDownMenu(genders, isExposedGender, userGender, "Optional: Select your gender")
 
 
+            GameTextField(
+                text = userAge,
+                onValueChange = { userAge = it },
+                labelTxt = "Optional: Enter your Age",
+            )
+
+            DropDownMenu(sortedLanguages, isExposedLanguage, userLanguage, "Select your language")
+
+            GameButton(
+                onClick = {
+                    editor.putBoolean("isFirst", false)
+                    editor.putString("userSubject", userSubject).apply()
+                    editor.putString("userAge", userAge).apply()
+                    editor.putString("userGender", userGender.value).apply()
+                    editor.putString("userLanguage", userLanguage.value).apply()
+                    editor.apply()
+                    navController.navigate(Screens.GameScreen.screen) {
+                        popUpTo(0)
+                    }
+                },
+                text = "Generate Cases"
+            )
+
+
+        }
     }
+
+
 
 }
 

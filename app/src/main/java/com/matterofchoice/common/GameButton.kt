@@ -1,6 +1,5 @@
 package com.matterofchoice.common
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -8,28 +7,27 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.matterofchoice.ui.theme.ButtonColor
+import com.matterofchoice.ui.theme.MatterofchoiceTheme
 
 @Composable
 fun GameButton(
     onClick: () -> Unit,
     text: String,
 ) {
-    val gradientColors = listOf(Color(0xFFFF00CC), Color(0xFF333399))
+
 
     Button(
         onClick = onClick,
-        shape = RoundedCornerShape(16.dp),
+
         modifier = Modifier
-            .padding(top = 20.dp)
-            .background(
-                brush = Brush.horizontalGradient(gradientColors),
-                shape = RoundedCornerShape(16.dp)
-            ),
-        colors = ButtonDefaults.buttonColors(Color.Transparent)
+            .padding(top = 20.dp, bottom = 4.dp),
+        shape = RoundedCornerShape(16.dp),
+        elevation = ButtonDefaults.buttonElevation(8.dp),
+        colors = ButtonDefaults.buttonColors(ButtonColor)
     ) {
         Text(
             text = text, modifier = Modifier.padding(
@@ -44,4 +42,15 @@ fun GameButton(
 
     }
 
+}
+
+@Preview
+@Composable
+fun MyButtonPrevieew(){
+    MatterofchoiceTheme {
+        GameButton(
+            onClick = {},
+            text = "Next"
+        )
+    }
 }
