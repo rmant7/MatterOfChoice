@@ -171,11 +171,11 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                 previous_turn_summary += f"\nThe person selected option {user_choice}.\n\n"
 
             if question_type == 'behavioral':
-                prompt = f"""{prompts['cases']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number"""
+                prompt = f"""{prompts['cases']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. PLACE THE OPTIMAL OPTION AT ANY RANDOM POINT BETWEEN OPTTIONS 1 TO 8 MAKE SURE TO RANDOMIZE"""
             elif question_type == 'study':
-                prompt = f"""{prompts['study']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number"""
+                prompt = f"""{prompts['study']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. PLACE THE OPTIMAL OPTION AT ANY RANDOM POINT BETWEEN OPTTIONS 1 TO 8 MAKE SURE TO RANDOMIZE"""
             elif question_type == 'hiring':
-                prompt = f"""{prompts['hiring']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number"""
+                prompt = f"""{prompts['hiring']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. PLACE THE OPTIMAL OPTION AT ANY RANDOM POINT BETWEEN OPTTIONS 1 TO 8 MAKE SURE TO RANDOMIZE"""
             logger.debug(f"Follow-up prompt generated: {prompt}")
 
         response = get_response_gemini(prompt)
@@ -210,7 +210,7 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
 
                 print(f"new cases lenth: ", len(new_cases))
                 max = 3
-                attempts = 1
+                attempts = 0
 
                 while attempts < 3 and len(new_cases) < max:
                     response = get_response_gemini(prompt)
