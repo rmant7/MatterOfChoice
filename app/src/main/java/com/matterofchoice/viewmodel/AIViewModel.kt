@@ -45,9 +45,6 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-    private var _analysisChoices = MutableStateFlow("")
-    var analysisChoices: StateFlow<String> = _analysisChoices
-
     private val sharedPreferences =
         application.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
@@ -55,13 +52,6 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _isInitialized = MutableStateFlow(false)
     val isInitialized: StateFlow<Boolean> get() = _isInitialized
-
-    private val _errorAnalysis = MutableStateFlow("")
-    val errorAnalysis: StateFlow<String> get() = _errorAnalysis
-
-
-    private val _isLoadingAnalysis = MutableStateFlow(false)
-    val isLoadingAnalysis: StateFlow<Boolean> get() = _isLoadingAnalysis
 
     var _state = mutableStateOf(GameState())
     var state: State<GameState> = _state
@@ -293,65 +283,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun resetAnalysisState() {
-        _analysisChoices.value = ""
-        _errorAnalysis.value = ""
-        _isLoadingAnalysis.value = false
-    }
 
-    fun loadAnalysis(context: Context, role: String): String {
-        val outputPath = context.getExternalFilesDir("tool")?.absolutePath ?: ""
-        var userChoices = ""
 
-        _isLoadingAnalysis.value = true
-        if (outputPath.isEmpty()) {
-            Log.e("OUTPUT_PATH", "Failed to get app-specific external storage directory.")
-            _errorAnalysis.value = "No data to analysis"
-            _isLoadingAnalysis.value = false
-        } else {
-            val outputDirectory = File(outputPath)
-
-            if (outputDirectory.exists() && outputDirectory.isDirectory) {
-                val files = outputDirectory.listFiles() // Get all files in the directory
-                if (files != null && files.isNotEmpty()) {
-                    for (file in files) {
-                        if (file.isFile) { // Check if it's a file
-                            try {
-                                val fileContents = file.readText()
-                                userChoices += fileContents
-                                Log.v("FILE_CONTENTS", "Contents of ${file.name}: $fileContents")
-                            } catch (e: IOException) {
-                                Log.e("FILE_READ", "Failed to read file ${file.name}: ${e.message}")
-
-                                _errorAnalysis.value = "No data to analysis"
-                                _isLoadingAnalysis.value = false
-                            }
-                        }
-                    }
-                } else {
-                    Log.v("DIRECTORY", "No files found in the directory.")
-                    _errorAnalysis.value = "No data to analysis"
-                    _isLoadingAnalysis.value = false
-                }
-            } else {
-                Log.e("DIRECTORY", "Output directory does not exist or is not a directory.")
-                _errorAnalysis.value = "No data to analysis"
-                _isLoadingAnalysis.value = false
-            }
-        }
-
-        viewModelScope.launch {
-            try {
-                val analysis =
-                    model.generateContent("This is each scenario with the user choice and the role is $role. provide me with concise and general analysis and recommendations of the user: $userChoices")
-                _analysisChoices.value = analysis.text!!
-                _isLoadingAnalysis.value = false
-            } catch (e: Exception) {
-                _errorAnalysis.value = e.message.toString()
-                _isLoadingAnalysis.value = false
-            }
-        }
-        return userChoices
-    }
 
 }

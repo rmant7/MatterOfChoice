@@ -34,21 +34,7 @@ fun BottomNav(navController: NavHostController) {
             unselectedIcon = R.drawable.game2,
             onClick = {
                 navController.navigate(Screens.GameScreen.screen) {
-                    popUpTo(navController.graph.startDestinationId) { saveState = true }
-                    launchSingleTop = true
-                    restoreState = true
-                }
-            }
-        )
-
-        BottomNavItem(
-            modifier = Modifier.weight(1f),
-            isSelected = currentRoute == Screens.ResultScreen.screen,
-            selectedIcon = R.drawable.result,
-            unselectedIcon = R.drawable.result2,
-            onClick = {
-                navController.navigate(Screens.ResultScreen.screen) {
-                    popUpTo(navController.graph.startDestinationId) { saveState = true }
+                    popUpTo(Screens.SettingsScreen.screen) { saveState = true }
                     launchSingleTop = true
                     restoreState = true
                 }
@@ -58,8 +44,8 @@ fun BottomNav(navController: NavHostController) {
         BottomNavItem(
             modifier = Modifier.weight(1f),
             isSelected = currentRoute == Screens.SettingsScreen.screen,
-            selectedIcon = R.drawable.settings1,
-            unselectedIcon = R.drawable.settings2,
+            selectedIcon = R.drawable.settings_2,
+            unselectedIcon = R.drawable.settings_1,
             onClick = {
                 navController.navigate(Screens.SettingsScreen.screen) {
                     popUpTo(navController.graph.startDestinationId) { saveState = true }

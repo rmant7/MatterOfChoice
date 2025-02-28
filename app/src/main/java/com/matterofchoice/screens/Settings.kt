@@ -61,6 +61,10 @@ fun UserInput(
     val isExposedSub = remember { mutableStateOf(false) }
 
 
+    val difficults = listOf("normal", "easy", "hard")
+    val isDifficultExposed = remember { mutableStateOf(false) }
+    val difficult = remember { mutableStateOf(difficults[0]) }
+
     val userQuestionType = remember { mutableStateOf(questionTypes[0]) }
     val subtype = remember { mutableStateOf(subTypes[0]) }
 
@@ -122,6 +126,7 @@ fun UserInput(
 
             DropDownMenu(questionTypes, isExposedType, userQuestionType, "Select question type")
             DropDownMenu(subTypes, isExposedSub, subtype, "Select the subtype")
+            DropDownMenu(difficults, isDifficultExposed, difficult,"Select the difficult level")
             DropDownMenu(genders, isExposedGender, userGender, "Optional: Select your gender")
 
 

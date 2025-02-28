@@ -6,53 +6,42 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.matterofchoice.AnalysisViewModel
 import com.matterofchoice.R
-import com.matterofchoice.ui.theme.MatterofchoiceTheme
+import com.matterofchoice.common.GameButton
+import com.matterofchoice.common.GameTextField
 import com.matterofchoice.ui.theme.myFont
-import com.matterofchoice.viewmodel.AIViewModel
 
 
 @Composable
-fun Analysis(viewModel: AIViewModel = viewModel()) {
+fun Analysis(viewModel: AnalysisViewModel = viewModel()) {
     val context = LocalContext.current
 
 
-    val userChoices by viewModel.analysisChoices.collectAsState()
-    val error by viewModel.errorAnalysis.collectAsState()
-    val isLoading by viewModel.isLoadingAnalysis.collectAsState()
+    val state = viewModel.state.value
+
 
     DisposableEffect(Unit) {
-        viewModel.resetAnalysisState()
-
 
         onDispose {
 
@@ -60,10 +49,11 @@ fun Analysis(viewModel: AIViewModel = viewModel()) {
     }
 
     var userRole by remember { mutableStateOf("") }
-    val gradientColors = listOf(Color(0xFFFF00CC), Color(0xFF333399))
 
-    if (!isLoading) {
 
+
+
+    if (!state.isLoading) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top,
@@ -85,86 +75,52 @@ fun Analysis(viewModel: AIViewModel = viewModel()) {
                 modifier = Modifier.padding(bottom = 15.dp, top = 28.dp)
             )
 
-            OutlinedTextField(
-                value = userRole,
+            GameTextField(
+                text = userRole,
                 onValueChange = { userRole = it },
-                colors = TextFieldDefaults.colors(
-                    unfocusedContainerColor = Color.White
-                ),
-                shape = RoundedCornerShape(16.dp),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp),
-                label = { Text(text = "Optional: Enter the role, e.g., Student", color = Color.Gray) }
-
+                labelTxt = "Optional: Enter the role, e.g., Student"
             )
 
-            Button(
+            GameButton(
                 onClick = {
-                    viewModel.loadAnalysis(context, userRole)
+                    viewModel.loadAnalysis(context = context, role = userRole)
                 },
-                shape = RoundedCornerShape(16.dp),
+                text = "Analysis my choices"
+            )
+
+    }
+
+
+    if (state.isLoading) {
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Loader()
+        }
+    } else {
+        state.analysis?.let {
+
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center,
                 modifier = Modifier
-                    .padding(top = 20.dp)
-                    .background(
-                        brush = Brush.horizontalGradient(gradientColors),
-                        shape = RoundedCornerShape(16.dp)
-                    ),
-                colors = ButtonDefaults.buttonColors(Color.Transparent)
+                    .background(Color.White)
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState())
+
             ) {
-                Text(
-                    "start analysis",
-                    modifier = Modifier.padding(
-                        start = 20.dp,
-                        end = 20.dp,
-                        top = 5.dp,
-                        bottom = 5.dp
-                    ),
-                    fontSize = 22.sp
-                )
+                Text(text = state.analysis, Modifier.padding(16.dp))
+            }
+        }
+        state.error?.let {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(Color.White)
+            ) {
+                Text(text = state.error.toString())
             }
         }
     }
-
-    if (isLoading) {
-        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-            Loader()
-        }
-    }
-    if (userChoices.isNotEmpty()) {
-        val scrollState = rememberScrollState()
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center,
-            modifier = Modifier
-                .background(Color.White)
-                .fillMaxSize()
-                .verticalScroll(scrollState)
-
-        ) {
-            Text(text = userChoices, Modifier.padding(16.dp))
-        }
-    }
-    if (error.isNotEmpty()) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center,
-            modifier = Modifier
-                .fillMaxSize()
-                .background(Color.White)
-        ) {
-            Text(text = "Something went wrong")
-        }
-    }
-
 }
-
-@Preview
-@Composable
-fun MyPreview2() {
-    MatterofchoiceTheme {
-        Analysis()
-    }
-
-
 }
