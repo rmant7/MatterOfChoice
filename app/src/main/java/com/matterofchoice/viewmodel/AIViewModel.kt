@@ -209,7 +209,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         val client = OkHttpClient()
 
         // API Key (Keep this secure, don't hardcode it in production)
-        val apiKey = "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"
+        val apiKey = "your_api_key"
 
         // JSON request body
         val json = JSONObject()
