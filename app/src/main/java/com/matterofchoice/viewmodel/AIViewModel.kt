@@ -209,7 +209,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         val client = OkHttpClient()
 
         // API Key (Keep this secure, don't hardcode it in production)
-        val apiKey = "your_api_key"
+
 
         // JSON request body
         val json = JSONObject()
@@ -220,7 +220,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
         val request = Request.Builder()
             .url("https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large-turbo")
-            .addHeader("Authorization", "Bearer $apiKey")
+            .addHeader("Authorization", "Bearer your_api_key")
             .addHeader("Content-Type", "application/json")
             .post(requestBody)
             .build()
