@@ -212,7 +212,7 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                 max = 3
                 attempts = 0
 
-                while attempts < 3 and len(new_cases) < max:
+                while attempts < 1 and len(new_cases) < max:
                     response = get_response_gemini(prompt)
                     cleaned_response = clean_response(response)
                     list_content = extract_list(cleaned_response)

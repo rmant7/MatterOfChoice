@@ -206,8 +206,15 @@ logger.debug("Logger configured. Starting app...")
 # Routes
 # ----------------------------
 
+import uuid
+
+def generate_user_id():
+    return str(uuid.uuid4())
+
 @app.route('/cases')
 def cases():
+    user_id = generate_user_id()
+    session['user_id'] = user_id
     return render_template('index2.html')
 
 @app.route('/')
@@ -323,8 +330,20 @@ def dashboard():
 
 @app.route('/generate_cases', methods=['POST', 'GET'])
 def generate_cases():
+    user_id = session.get('user_id')
+    if not user_id:
+        return jsonify({"error": "User ID is required."}), 400
+
+    user_data_file = BASE_DIR / f"data/{user_id}_users.json"
+    output_filepath = BASE_DIR / f'output/{user_id}/game/conversation.json'
+    analysis_filepath = BASE_DIR / f'output/{user_id}/game/analysis.json'
+    output_dir = output_filepath.parent
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    turn = session.get(f'{user_id}_turn', 1)
+    print(f"Current turn for case generation: {turn}")
     if request.method == 'GET':
-        session.pop('turn', None)
+        session.pop(f'{user_id}_turn', None)
         return jsonify({"message": "Session cleared."}), 200
 
     logger.debug("generate_cases route entered")
@@ -337,27 +356,16 @@ def generate_cases():
     sub_type = data.get('sub_type')            # Parameter for sub type
     role = data.get('role', None)     # Optional role parameter with a default value
     sex = data.get('sex', 'unspecified')         # Optional sex parameter with a default value
+    allow_image = data.get('allow_image' , False)
 
     user_answer = data.get('answers')
 
     if not all([language, subject, difficulty, question_type, sub_type]):
         return jsonify({"error": "language, subject, difficulty, question_type, and sub_type are required."}), 400
-    # if age is not None:
-    #     try:
-    #         age = int(age)
-    #     except ValueError:
-    #         return jsonify({"error": "Invalid age (must be an integer)."}), 400
-
-    output_filepath = BASE_DIR / 'output' / 'game' / 'conversation.json'
-    analysis_filepath = BASE_DIR / 'output' / 'game' / 'analysis.json'
-    output_dir = output_filepath.parent
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    turn = session.get('turn', 1)
 
     if turn > 4:
         turn = 1
-        session['turn'] = 1
+        turn = 1
         return jsonify({"message": "CONGRATULATIONS YOU FINISHED THE GAME"}), 200
 
     try:
@@ -371,83 +379,109 @@ def generate_cases():
                 case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex)
                 
             if case_data is None:
-                    return jsonify({"error": "Failed to generate initial case."}), 500
+                return jsonify({"error": "Failed to generate initial case."}), 500
 
-            session['turn'] = 2
+            for case in case_data:
+                case['turn'] = turn
+            session[f'{user_id}_turn'] = 2
             # Initialize analysis.json with the first set of cases (each case has no answer yet)
             with open(analysis_filepath, 'w') as f:
                 json.dump({'cases': case_data}, f, indent=4)
         else:
-            if user_answer is None:
-                return jsonify({"error": "User answer is required."}), 400
-            # Expecting user_answer as a list of answers (one per case)
-            if not isinstance(user_answer, list):
-                return jsonify({"error": "User answers must be provided as a list."}), 400
+            # if user_answer is None:
+            #     return jsonify({"error": "User answer is required."}), 400
+            # # Expecting user_answer as a list of answers (one per case)
+            if user_answer:
 
-            try:
-                with open(output_filepath, 'r') as f:
-                    conversation_data = json.load(f)
-                # Use the structure: conversation_data = { "data": { "cases": [ ... ] } }
-                all_cases = conversation_data.get('data', {}).get('cases', [])
-                num_answers = len(user_answer)
-                if num_answers > len(all_cases):
-                    return jsonify({"error": "The number of answers provided does not match the number of cases."}), 400
+                if not isinstance(user_answer, list):
+                    return jsonify({"error": "User answers must be provided as a list."}), 400
+                if user_answer:
+                    if not isinstance(user_answer, list):
+                        return jsonify({"error": "User answers must be provided as a list."}), 400
+                    try:
+                        with open(output_filepath, 'r') as f:
+                            conversation_data = json.load(f)
+                        # Use the structure: conversation_data = { "data": { "cases": [ ... ] } }
+                        all_cases = conversation_data.get('data', {}).get('cases', [])
+                        num_answers = len(user_answer)
+                        if num_answers > len(all_cases):
+                            return jsonify({"error": "The number of answers provided does not match the number of cases."}), 400
 
-                # Assume the current set of cases are the last num_answers entries
-                current_cases = all_cases[-num_answers:]
-                if len(user_answer) != len(current_cases):
-                    return jsonify({"error": "The number of answers provided does not match the number of cases."}), 400
+                        # Assume the current set of cases are the last num_answers entries
+                        current_cases = all_cases[-num_answers:]
+                        if len(user_answer) != len(current_cases):
+                            return jsonify({"error": "The number of answers provided does not match the number of cases."}), 400
 
-                # Update each current case with its corresponding answer (as a single number)
-                for i, case in enumerate(current_cases):
-                    case['user_answer'] = user_answer[i]
+                        # Update each current case with its corresponding answer (as a single number)
+                        for i, case in enumerate(current_cases):
+                            case['user_answer'] = user_answer[i]
+                            case['turn'] = turn
 
-                # Replace the current cases in all_cases with the updated ones
-                all_cases[-num_answers:] = current_cases
-                conversation_data['data']['cases'] = all_cases
+                        # Replace the current cases in all_cases with the updated ones
+                        all_cases[-num_answers:] = current_cases
+                        conversation_data['data']['cases'] = all_cases
 
-                # Update analysis.json so that each of the last num_answers cases gets its answer
+                        # Update analysis.json so that each of the last num_answers cases gets its answer
+                        with open(analysis_filepath, 'r') as f:
+                            analysis_data = json.load(f)
+                        # Here we assume that analysis_data['cases'] is a list of cases
+                        for i in range(num_answers):
+                            analysis_data['cases'][-num_answers + i]['answer'] = user_answer[i]
+                        with open(analysis_filepath, 'w') as f:
+                            json.dump(analysis_data, f, indent=4)
+
+                        case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, conversation_data, sex=sex)
+                        if case_data is None:
+                            return jsonify({"error": "Failed to generate case."}), 500
+                        session[f'{user_id}_turn'] = min(turn + 1, 7)
+
+                        # *** FIX: Use extend instead of append to add new cases individually ***
+                        analysis_data['cases'].extend(case_data)
+                        with open(analysis_filepath, 'w') as f:
+                            json.dump(analysis_data, f, indent=4)
+                    except (FileNotFoundError, json.JSONDecodeError, ValueError, KeyError) as e:
+                        return jsonify({"error": f"Error processing user response: {e}"}), 500
+            else:
+                max = 5
+                attempts = 1
+                case_data = None
+                while attempts < max and case_data is None:
+                    attempts += 1
+                    case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex)
+                        # Update analysis.json so that each of the last num_answers cases gets its answer
+
                 with open(analysis_filepath, 'r') as f:
                     analysis_data = json.load(f)
-                # Here we assume that analysis_data['cases'] is a list of cases
-                for i in range(num_answers):
-                    analysis_data['cases'][-num_answers + i]['answer'] = user_answer[i]
-                with open(analysis_filepath, 'w') as f:
-                    json.dump(analysis_data, f, indent=4)
+                                    # *** FIX: Use extend instead of append to add new cases individually ***
+                for case in case_data:
+                    case['turn'] = turn
+                session[f'{user_id}_turn'] = min(turn + 1, 7)
 
-                case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, conversation_data, sex=sex)
-                if case_data is None:
-                    return jsonify({"error": "Failed to generate case."}), 500
-                session['turn'] = min(turn + 1, 7)
-
-                # *** FIX: Use extend instead of append to add new cases individually ***
                 analysis_data['cases'].extend(case_data)
                 with open(analysis_filepath, 'w') as f:
                     json.dump(analysis_data, f, indent=4)
-            except (FileNotFoundError, json.JSONDecodeError, ValueError, KeyError) as e:
-                return jsonify({"error": f"Error processing user response: {e}"}), 500
-
+        
         # Within your /generate_cases route, after generating case_data:
+        
         for case in case_data:
             question_prompt = case.get("case")
-            if question_prompt and question_type != 'study':
-                   try:
-                      # generate_image_for_question returns a data URL (e.g., "data:image/png;base64,...")
-                      generated_image_data = generate_image_for_question(question_prompt)
-                      # Attach the data URL directly to the case data
-                      case['generated_image_data'] = generated_image_data
-                   except Exception as e:
-                           logger.exception(f"Image generation from question failed: {e}")
-                           case['generated_image_data'] = None
-        
+            if question_prompt and question_type != 'study' and allow_image:
+                try:
+                    # generate_image_for_question returns a data URL (e.g., "data:image/png;base64,...")
+                    generated_image_data = generate_image_for_question(question_prompt)
+                    # Attach the data URL directly to the case data
+                    case['generated_image_data'] = generated_image_data
+                except Exception as e:
+                    logger.exception(f"Image generation from question failed: {e}")
+                    case['generated_image_data'] = None
             else:
-                   case['generated_image_data'] = None
-
+                case['generated_image_data'] = None
 
         return jsonify({'data': case_data}), 200
     except Exception as e:
         logger.exception(f"An unexpected error occurred: {e}")
         return jsonify({"error": "An unexpected error occurred."}), 500
+
 
 
 
@@ -461,8 +495,12 @@ def submit_answers():
 
 @app.route('/analysis', methods=['POST'])
 def analysis():
-    conversation_filepath = BASE_DIR / 'output' / 'game' / 'conversation.json'
-    analysis_filepath = BASE_DIR / 'output' / 'game' / 'analysis.json'
+    user_id = session.get('user_id')
+    if not user_id:
+        return jsonify({"error": "User ID is required."}), 400
+
+    conversation_filepath = BASE_DIR / f'output/{user_id}/game/conversation.json'
+    analysis_filepath = BASE_DIR / f'output/{user_id}/game/analysis.json'
     
     if not analysis_filepath.exists():
         return jsonify({"error": "Analysis file not found."}), 400
@@ -527,10 +565,10 @@ Data: {analysis_data_str}"""
 
         # Reset session turn and delete the files if they exist.
         session['turn'] = 1
-        if conversation_filepath.exists():
-            conversation_filepath.unlink()
-        if analysis_filepath.exists():
-            analysis_filepath.unlink()
+        # if conversation_filepath.exists():
+        #     conversation_filepath.unlink()
+        # if analysis_filepath.exists():
+        #     analysis_filepath.unlink()
 
         # Send Gemini's analysis along with the answered cases as performance data.
         return jsonify({
@@ -548,9 +586,13 @@ Data: {analysis_data_str}"""
 
 @app.route('/reset', methods=['POST'])
 def reset():
-    session['turn'] = 1
-    conversation_filepath = BASE_DIR / 'output' / 'game' / 'conversation.json'
-    analysis_filepath = BASE_DIR / 'output' / 'game' / 'analysis.json'
+    user_id = session.get('user_id')
+    if not user_id:
+        return jsonify({"error": "User ID is required."}), 400
+
+    session[f'{user_id}_turn'] = 1
+    conversation_filepath = BASE_DIR / f'output/{user_id}/game/conversation.json'
+    analysis_filepath = BASE_DIR / f'output/{user_id}/game/analysis.json'
     if conversation_filepath.exists():
         conversation_filepath.unlink()
     if analysis_filepath.exists():
@@ -589,21 +631,19 @@ def analyze_image():
 
 
 
-
 @app.route('/submit_responses', methods=['POST'])
 def submit_responses():
-    """
-    This endpoint accepts a set of answers and immediately triggers analysis.
-    The client can submit one or more answers (as a list) that will be applied
-    to the current unanswered cases in the JSON files. If more answers are sent
-    than available cases, an error is returned.
-    """
+    user_id = session.get('user_id')
+    if not user_id:
+        return jsonify({"error": "User ID is required."}), 400
+
     data = request.get_json()
     user_answers = data.get('answers')
     role = data.get('role')
     question_type = data.get('question_type')
     sub_type = data.get('sub_type')
-    language = data.get('language')  # Fetch language as form data
+    language = data.get('language')
+
 
     # Validate the basic payload.
     if not user_answers or not isinstance(user_answers, list):
@@ -611,10 +651,10 @@ def submit_responses():
     if not role or not question_type or not sub_type:
         return jsonify({"error": "role, question_type, and sub_type are required."}), 400
 
-    # Define file paths.
-    conversation_filepath = BASE_DIR / 'output' / 'game' / 'conversation.json'
-    analysis_filepath = BASE_DIR / 'output' / 'game' / 'analysis.json'
-    
+    conversation_filepath = BASE_DIR / f'output/{user_id}/game/conversation.json'
+    analysis_filepath = BASE_DIR / f'output/{user_id}/game/analysis.json'
+    final_filepath = BASE_DIR / f'output/{user_id}/game/final.json'
+
     if not conversation_filepath.exists() or not analysis_filepath.exists():
         return jsonify({"error": "Required data files not found."}), 400
 
@@ -662,6 +702,36 @@ def submit_responses():
                 break
     analysis_data['cases'] = analysis_cases
 
+    unanalyzed_cases = [case for case in analysis_data['cases'] if 'turn' not in case or not case['turn']]
+
+    # Append the current turn to each case in the analysis data.
+
+    # Append the current turn to each case in the analysis data.
+    current_turn = session.get(f'{user_id}_turn', 1) 
+    previous_turn = current_turn - 1
+    # for case in analysis_data['cases']:
+    #     if case.get('turn') != current_turn:
+    #         turn_value = case.get('turn')  # Safely retrieve 'turn'
+    #         case['turn'] = current_turn
+    #         print(f"Case turn: {turn_value}")
+    #         if turn_value is None:
+    #             print("This is None")  
+
+            # if turn_value == 2:
+            #     print("This is two")
+
+            # if turn_value is not None:  # Check if turn exists
+            #     print("It exists")
+            # else:
+            #     print("It does not")
+
+
+
+
+
+    # session[f'{user_id}_turn'] = min(current_turn + 1, 7)
+
+
     # Save the updated JSON files.
     try:
         with open(conversation_filepath, 'w') as f:
@@ -671,11 +741,33 @@ def submit_responses():
     except Exception as e:
         return jsonify({"error": f"Error updating files: {str(e)}"}), 500
 
-    # Prepare for analysis: filter to only include answered cases.
-    answered_cases = [case for case in analysis_data.get('cases', []) if 'answer' in case and case['answer']]
+    try:
+        with open(final_filepath, 'r') as f:
+            existing_data = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        existing_data = {'cases': []}
+
+    # Append the new case data to the existing data
+    existing_data['cases'].extend(analysis_data['cases'])
+
+    # Write the updated data back to the file
+    with open(final_filepath, 'w') as f:
+        json.dump(existing_data, f, indent=4)
+
+    # Prepare for analysis: filter to only include answered cases with the current turn.
+    answered_cases = [case for case in analysis_data['cases'] if 'answer' in case and case['answer']]
     if not answered_cases:
         return jsonify({"error": "No answered cases found for analysis."}), 400
-    analysis_data['cases'] = answered_cases
+
+    # Filter cases based on the current turn.
+    filtered_cases = [case for case in answered_cases if case.get('turn') == previous_turn]
+    print(f"Previous turn: {current_turn}")
+
+    if not filtered_cases:
+        print(f"Current turn: {current_turn}")
+        return jsonify({"error": "No cases found for the current turn."}), 400
+
+    analysis_data['cases'] = filtered_cases
 
     # Build the analysis prompt.
     prompt_template = """Analyze the following data. You are a '{role}'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'answer' key). The 'optimal' key indicates the correct option.  Determine the language used in the data and STRICTLY PROVIDE YOUR ANALYSIS IN THE LANGUAGE {language}.  Format your response as JSON:
@@ -716,22 +808,20 @@ Data: {analysis_data_str}"""
         response_analysis = get_response_gemini(prompt)
 
         # Reset or clean up the stored files (optional).
-        session['turn'] = 1
+        # session['turn'] = 1
 
-        if conversation_filepath.exists():
-            conversation_filepath.unlink()
-        if analysis_filepath.exists():
-            analysis_filepath.unlink()
+        # if conversation_filepath.exists():
+        #     conversation_filepath.unlink()
+        # if analysis_filepath.exists():
+        #     analysis_filepath.unlink()
 
         return jsonify({
             "analysis": response_analysis,
-            "performance": answered_cases
+            "performance": filtered_cases
         }), 200
     except Exception as e:
         logger.exception(f"Error during analysis: {e}")
         return jsonify({"error": "An error occurred while processing analysis."}), 500
-
-
 
 
 
