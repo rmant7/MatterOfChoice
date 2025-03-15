@@ -139,6 +139,11 @@ resetButton.addEventListener('click', async () => {
   }
 });
 
+
+
+
+
+
 function startNewGame() {
   // Reset game state if necessary
 }
@@ -157,6 +162,11 @@ async function handleGenerateCasesResponse(response) {
     displayError(errorData);
     return;
   }
+
+
+  responseContainer.innerHTML = `
+
+  <div class="case-content">`;
 
   const jsonData = await response.json();
 
@@ -193,9 +203,99 @@ async function handleGenerateCasesResponse(response) {
 }
 
 
+async function handleGenerateCasesResponsex(response) {
+  if (!response.ok) {
+    const errorData = await response.json();
+    displayError(errorData);
+    return;
+  }
+
+  responseContainer.innerHTML = `
+
+  <div class="case-content">`;
+
+  const jsonData = await response.json();
+
+
+
+
+  if (jsonData.message && jsonData.message === "CONGRATULATIONS YOU FINISHED THE GAME") {
+    displayCongratulations(jsonData.message);
+    return;
+  }
+
+  
+
+  if (!jsonData.data) {
+    displayError({ error: "Server response missing 'data' field." });
+    return;
+  }
+
+  batchCounter++;
+  casesBatch = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data];
+
+  try {
+    // Clear storage before setting new data
+    localStorage.removeItem('casesBatch');
+
+    // Give a slight delay to allow storage to be freed up
+    await new Promise(resolve => setTimeout(resolve, 10));
+
+    // Store the new batch
+    localStorage.setItem('casesBatch', JSON.stringify(casesBatch));
+  } catch (error) {
+    console.error("Storage Error:", error);
+    // displayError({ error: "Failed to store data. Try clearing browser storage." });
+  }
+
+  currentCaseIndex = 0;
+  answersBatch = new Array(casesBatch.length);
+  displayCurrentCasex();
+}
+
+
+
+
+function displayCurrentCasex() {
+  responseContainer.innerHTML = `
+
+    `;
+  if (casesBatch.length === 0 || currentCaseIndex >= casesBatch.length) {
+    displayError({ error: "No case available." });
+    return;
+  }
+
+  const caseData = casesBatch[currentCaseIndex];
+  const caseElement = createCaseElement(caseData);
+  responseContainer.appendChild(caseElement);
+
+
+
+  const submitButton = document.createElement('button');
+  submitButton.type = 'button';
+  submitButton.classList.add('submit-button');
+  submitButton.innerText = 'Next Case';
+  submitButton.addEventListener('click', submitCurrentAnswer2);
+  responseContainer.appendChild(submitButton);
+
+
+
+  const submitButtonm = document.createElement('button');
+  submitButtonm.type = 'button';
+  submitButtonm.id = 'submitButtonm';
+  submitButtonm.classList.add('submit-buttonm');
+  submitButtonm.innerText = 'Submit And Analyze';
+  submitButtonm.addEventListener('click', submitCurrentAnswerM);
+  responseContainer.appendChild(submitButtonm);
+} 
+
+
+
 function displayCurrentCase() {
     caseForm.innerHTML = '';
-  
+    responseContainer.innerHTML = `
+
+    `;
     if (casesBatch.length === 0 || currentCaseIndex >= casesBatch.length) {
       displayError({ error: "No case available." });
       return;
@@ -204,7 +304,8 @@ function displayCurrentCase() {
     const caseData = casesBatch[currentCaseIndex];
     const caseElement = createCaseElement(caseData);
     caseForm.appendChild(caseElement);
-  
+    responseContainer.appendChild(caseElement);
+
   //   if (batchCounter > 1 && currentCaseIndex % 3 === 0) {
   //     const analyzeButton = document.createElement('button');
   //     analyzeButton.type = 'button';
@@ -221,7 +322,8 @@ function displayCurrentCase() {
     submitButton.innerText = 'Next Case';
     submitButton.addEventListener('click', submitCurrentAnswer);
     caseForm.appendChild(submitButton);
-  
+    responseContainer.appendChild(submitButton);
+
   
   
     const submitButtonm = document.createElement('button');
@@ -231,6 +333,8 @@ function displayCurrentCase() {
     submitButtonm.innerText = 'Submit And Analyze';
     submitButtonm.addEventListener('click', submitCurrentAnswerM);
     caseForm.appendChild(submitButtonm);
+    responseContainer.appendChild(submitButtonm);
+
   } 
 
 
@@ -267,6 +371,41 @@ function submitCurrentAnswer() {
   }
 }
 
+
+
+function submitCurrentAnswer2() {
+  if (currentCaseIndex >= casesBatch.length) {
+    displayError({ error: "No more cases to answer." });
+    return;
+  }
+
+  const caseData = casesBatch[currentCaseIndex];
+  if (!caseData) {
+    displayError({ error: "Case data is undefined." });
+    return;
+  }
+
+  const selected = document.querySelector(`input[name="${caseData.case_id}"]:checked`);
+  if (!selected) {
+    displayError({ error: "Please select an answer." });
+    return;
+  }
+
+  answersBatch[currentCaseIndex] = parseInt(selected.value, 10);
+  currentCaseIndex++;
+
+  if (currentCaseIndex < casesBatch.length) {
+    displayCurrentCase();
+  } else {
+    const submitBtn = document.querySelector('.submit-button');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+    }
+    sendAnswersToBackend(answersBatch);
+  }
+}
+
+
 async function sendAnswersToBackend(answersArr) {
   const loadingSpinner = document.getElementById('loading-spinner');
   if (loadingSpinner) {
@@ -286,6 +425,7 @@ async function sendAnswersToBackend(answersArr) {
   const questionTypeEl = document.getElementById('question_type') || { value: localStorage.getItem('question_type') || "" };
   const subTypeEl = document.getElementById('sub_type');
   const sexEl = document.getElementById('sex') || { value: localStorage.getItem('sex') || "" };
+  const imageEl = document.getElementById('allow_image') || { value: localStorage.getItem('allow_image') || "" };
 
   if (!subTypeEl) {
     displayError({ error: "Sub-type form element is missing." });
@@ -302,7 +442,8 @@ async function sendAnswersToBackend(answersArr) {
     sub_type: subTypeEl.value,
     role: 'default_role',
     sex: sexEl.value,
-    answers: answersArr
+    answers: answersArr,
+    allow_image: imageEl.value
   };
 
   try {
@@ -343,7 +484,7 @@ function createCaseElement(caseData) {
     caseElement.appendChild(img);
   } else {
     const noImageText = document.createElement('p');
-    noImageText.innerText = 'No image available.';
+    noImageText.innerText = '';
     caseElement.appendChild(noImageText);
   }
 
@@ -442,7 +583,8 @@ async function analyzeResults() {
 
 function displayAnalysis(analysis) {
   responseContainer.innerHTML = `
-    <button id="backButton">Clear Analysisk</button>
+    <button id="againButton">Analayze</button>
+
     <h2>Analysis Results</h2>
     <div class="analysis-content">`;
   
@@ -470,11 +612,21 @@ function displayAnalysis(analysis) {
     </div>
   `;
   
-  const backButton = document.getElementById('backButton');
-  backButton.addEventListener('click', () => {
-    startNewGame();
-    window.location.reload();
+  const againButton = document.getElementById('againButton');
+  againButton.addEventListener('click', () => {
+  analyzeResults()
   });
+
+
+
+  const submitButtonx = document.createElement('button');
+  submitButtonx.type = 'button';
+  submitButtonx.id = 'submitButtonx';
+  submitButtonx.classList.add('submit-buttonx');
+  submitButtonx.innerText = 'Proceed';
+  submitButtonx.addEventListener('click', submitCurrentAnswerx);
+  responseContainer.appendChild(submitButtonx);
+
 }
 
 
@@ -615,6 +767,23 @@ function submitCurrentAnswerM() {
 
 
 
+  function submitCurrentAnswerx() {
+
+  
+
+  
+
+
+      const submitBtn = document.querySelector('.submit-button');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+      }
+      sendAnswersToBackendx(answersBatch);
+  }
+  
+
+
+
 
 
   async function sendAnswersToBackendM(answersArr) {
@@ -636,7 +805,8 @@ function submitCurrentAnswerM() {
     const questionTypeEl = document.getElementById('question_type') || { value: localStorage.getItem('question_type') || "" };
     const subTypeEl = document.getElementById('sub_type');
     const sexEl = document.getElementById('sex') || { value: localStorage.getItem('sex') || "" };
-  
+    const imageEl = document.getElementById('allow_image') || { value: localStorage.getItem('allow_image') || "" };
+
     if (!subTypeEl) {
       displayError({ error: "Sub-type form element is missing." });
       if (loadingSpinner) loadingSpinner.classList.add('hidden');
@@ -652,7 +822,9 @@ function submitCurrentAnswerM() {
       sub_type: subTypeEl.value,
       role: 'default_role',
       sex: sexEl.value,
-      answers: answersArr
+      answers: answersArr,
+      allow_image: imageEl.value
+
     };
   
     try {
@@ -684,6 +856,76 @@ function submitCurrentAnswerM() {
         loadingSpinner.classList.add('hidden');
         responseContainer.classList.remove('hidden');
       }
+  }
+  
+
+
+
+
+  
+  async function sendAnswersToBackendx(answersArr) {
+    const loadingSpinner = document.getElementById('loading-spinner');
+    if (loadingSpinner) {
+      loadingSpinner.classList.remove('hidden');
+    }
+    const responseContainer = document.getElementById('response-container');
+    if (responseContainer) {
+      responseContainer.classList.add('hidden');
+      responseContainer.classList.remove('success');
+      responseContainer.classList.remove('error');
+    }
+  
+    const languageEl = document.getElementById('language') || { value: localStorage.getItem('language') || "" };
+    const ageEl = document.getElementById('age') || { value: localStorage.getItem('age') || "" };
+    const subjectEl = document.getElementById('subject') || { value: localStorage.getItem('subject') || "" };
+    const difficultyEl = document.getElementById('difficulty') || { value: localStorage.getItem('difficulty') || "" };
+    const questionTypeEl = document.getElementById('question_type') || { value: localStorage.getItem('question_type') || "" };
+    const subTypeEl = document.getElementById('sub_type');
+    const sexEl = document.getElementById('sex') || { value: localStorage.getItem('sex') || "" };
+    const imageEl = document.getElementById('allow_image') || { value: localStorage.getItem('allow_image') || "" };
+
+    if (!subTypeEl) {
+      displayError({ error: "Sub-type form element is missing." });
+      if (loadingSpinner) loadingSpinner.classList.add('hidden');
+      return;
+    }
+  
+    const payload = {
+      language: languageEl.value,
+      age: ageEl.value,
+      subject: subjectEl.value,
+      difficulty: difficultyEl.value,
+      question_type: questionTypeEl.value,
+      sub_type: subTypeEl.value,
+      role: 'default_role',
+      sex: sexEl.value,
+      allow_image: imageEl.value
+
+    };
+  
+    try {
+      const response = await fetch('/generate_cases', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      localStorage.removeItem('casesBatch');
+      await handleGenerateCasesResponsex(response);
+
+
+
+
+
+    } catch (error) {
+      displayError({ error: error.message });
+    } finally {
+      if (loadingSpinner) {
+        loadingSpinner.classList.add('hidden');
+      }
+      if (responseContainer) {
+        responseContainer.classList.remove('hidden');
+      }
+    }
   }
   
 

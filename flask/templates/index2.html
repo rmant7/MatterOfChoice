@@ -107,6 +107,16 @@
 
     <div id="form-container">
       <form id="generateForm">
+
+
+        <label for="sex">Sex</label>
+        <select id="sex" name="sex">
+          <option value=""></option>
+          <option value="male">male</option>
+          <option value="female">female</option>
+        </select>
+
+
         <label for="language">Language:</label>
         <select id="language" name="language" required>
           <option value="English">English</option>
@@ -147,6 +157,9 @@
         <label for="subject">Subject:</label>
         <input type="text" id="subject" name="subject" required>
 
+        <label for="allow_image">Allow Image Generation:</label>
+        <input type="checkbox" id="allow_image" name="allow_image" value="true">
+        
         <label for="difficulty">Difficulty Level:</label>
         <select id="difficulty" name="difficulty" required>
           <option value="normal">normal</option>
@@ -170,7 +183,7 @@
         <input type="text" id="role" name="role" value="" >
 
         <div>
-          <button id="generateButton" type="submit">Generate Cases</button>
+          <button id="generateButton" type="submit">Start New Game</button>
         </div>
       </form>
       <div>
@@ -215,6 +228,8 @@
       const urlParams = new URLSearchParams(window.location.search);
       const language = urlParams.get('language');
       const age = urlParams.get('age');
+      const sex = urlParams.get('sex');
+
       const subject = urlParams.get('subject');
       const difficulty = urlParams.get('difficulty');
       const question_type = urlParams.get('question_type');
@@ -228,6 +243,8 @@
       if (question_type) document.getElementById('question_type').value = question_type;
       if (sub_type) document.getElementById('sub_type').value = sub_type;
       if (role) document.getElementById('role').value = role;
+      if (sex) document.getElementById('sex').value = sex;
+
     }
 
     // Add event listeners to update URL parameters when form fields change
@@ -238,6 +255,7 @@
     document.getElementById('question_type').addEventListener('change', (e) => updateURLParameter('question_type', e.target.value));
     document.getElementById('sub_type').addEventListener('change', (e) => updateURLParameter('sub_type', e.target.value));
     document.getElementById('role').addEventListener('input', (e) => updateURLParameter('role', e.target.value));
+    document.getElementById('sex').addEventListener('change', (e) => updateURLParameter('sex', e.target.value));
 
     // Prefill form fields when the page loads
     window.addEventListener('load', prefillFormFromURL);
@@ -252,48 +270,7 @@
       }
     }
 
-    // Function to display analysis and toggle buttons
-    function displayAnalysis(analysis) {
-      responseContainer.innerHTML = `
-        <button id="backButton">Go back</button>
-        <h2>Analysis Results</h2>
-        <div class="analysis-content">`;
-      
-      if (typeof analysis === 'object') {
-        for (const key in analysis) {
-          responseContainer.innerHTML += `
-            <div class="analysis-section">
-              <h3 class="analysis-heading">${key}</h3>
-              <ul class="analysis-list">`;
-          if (Array.isArray(analysis[key])) {
-            analysis[key].forEach(item => {
-              responseContainer.innerHTML += `<li class="analysis-item">${item}</li>`;
-            });
-          } else {
-            responseContainer.innerHTML += `<li class="analysis-item">${analysis[key]}</li>`;
-          }
-          responseContainer.innerHTML += `</ul>
-            </div>`;
-        }
-      } else {
-        responseContainer.innerHTML += `<p class="analysis-text">${analysis}</p>`;
-      }
-      
-      responseContainer.innerHTML += `
-        </div>
-      `;
-      
-      const backButton = document.getElementById('backButton');
-      backButton.addEventListener('click', () => {
-        startNewGame();
-        window.location.reload();
-      });
-
-      // Hide the generate button when the back button is displayed
-      toggleGenerateButton(false);
-    }
-
-    // Show the generate button when the page loads
+ // Show the generate button when the page loads
     window.addEventListener('load', () => toggleGenerateButton(true));
   </script>
 

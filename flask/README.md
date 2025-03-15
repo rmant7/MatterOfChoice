@@ -32,9 +32,9 @@ Install all required packages by running:
 pip install -r requirements.txt
 ```
 
-### 4. **Set Up the GOOGLE API KEY**  
+### 4. **Set Up the GOOGLE API KEY(Gemini API KEY)**  
 - Create a `.env` file in the root of the project.  
-- Add your GOOGLE API key to the file as follows:  
+- Add your GOOGLE API key(Gemini API KEY) to the file as follows:  
   ```
   GOOGLE_API_KEY=<YOUR_GOOGLE_API_KEY>
   ```
