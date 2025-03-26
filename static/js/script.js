@@ -174,6 +174,11 @@ async function handleGenerateCasesResponse(response) {
 
   <div class="case-content">`;
 
+
+  responseContainer.innerHTML = `
+
+  <div class="case-content">`;
+
   const jsonData = await response.json();
 
   if (jsonData.message && jsonData.message === "CONGRATULATIONS YOU FINISHED THE GAME") {
@@ -284,6 +289,7 @@ async function sendAnswersToBackend(answersArr) {
   const subTypeEl = document.getElementById('sub_type');
   const sexEl = document.getElementById('sex') || { value: localStorage.getItem('sex') || "" };
   const imageEl = document.getElementById('allow_image') || { value: localStorage.getItem('allow_image') || "" };
+  const imageEl = document.getElementById('allow_image') || { value: localStorage.getItem('allow_image') || "" };
 
   if (!subTypeEl) {
     displayError({ error: "Sub-type form element is missing." });
@@ -300,6 +306,8 @@ async function sendAnswersToBackend(answersArr) {
     sub_type: subTypeEl.value,
     role: 'default_role',
     sex: sexEl.value,
+    answers: answersArr,
+    allow_image: imageEl.value
     answers: answersArr,
     allow_image: imageEl.value
   };
@@ -342,6 +350,7 @@ function createCaseElement(caseData) {
     caseElement.appendChild(img);
   } else {
     const noImageText = document.createElement('p');
+    noImageText.innerText = '';
     noImageText.innerText = '';
     caseElement.appendChild(noImageText);
   }
@@ -608,6 +617,8 @@ function submitCurrentResponses() {
     const sexEl = document.getElementById('sex') || { value: localStorage.getItem('sex') || "" };
     const imageEl = document.getElementById('allow_image') || { value: localStorage.getItem('allow_image') || "" };
 
+    const imageEl = document.getElementById('allow_image') || { value: localStorage.getItem('allow_image') || "" };
+
     if (!subTypeEl) {
       displayError({ error: "Sub-type form element is missing." });
       if (loadingSpinner) loadingSpinner.classList.add('hidden');
@@ -623,6 +634,9 @@ function submitCurrentResponses() {
       sub_type: subTypeEl.value,
       role: 'default_role',
       sex: sexEl.value,
+      answers: answersArr,
+      allow_image: imageEl.value
+
       answers: answersArr,
       allow_image: imageEl.value
 
