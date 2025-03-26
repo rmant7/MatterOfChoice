@@ -3,6 +3,10 @@ const responseContainer = document.getElementById('response-container');
 const loadingSpinner = document.getElementById('loading-spinner');
 const caseForm = document.getElementById('caseForm');
 const resetButton = document.getElementById('resetButton');
+let bufferedCases = null;
+let isBackgroundFetching = false;
+
+
 
 // Define subtypes for each question type
 const subtypes = {
@@ -146,6 +150,8 @@ resetButton.addEventListener('click', async () => {
 
 function startNewGame() {
   // Reset game state if necessary
+  window.location.reload();
+
 }
 
 // Global variables for managing current batch of cases
@@ -203,207 +209,59 @@ async function handleGenerateCasesResponse(response) {
 }
 
 
-async function handleGenerateCasesResponsex(response) {
-  if (!response.ok) {
-    const errorData = await response.json();
-    displayError(errorData);
-    return;
-  }
-
-  responseContainer.innerHTML = `
-
-  <div class="case-content">`;
-
-  const jsonData = await response.json();
 
 
 
 
-  if (jsonData.message && jsonData.message === "CONGRATULATIONS YOU FINISHED THE GAME") {
-    displayCongratulations(jsonData.message);
-    return;
-  }
-
-  
-
-  if (!jsonData.data) {
-    displayError({ error: "Server response missing 'data' field." });
-    return;
-  }
-
-  batchCounter++;
-  casesBatch = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data];
-
-  try {
-    // Clear storage before setting new data
-    localStorage.removeItem('casesBatch');
-
-    // Give a slight delay to allow storage to be freed up
-    await new Promise(resolve => setTimeout(resolve, 10));
-
-    // Store the new batch
-    localStorage.setItem('casesBatch', JSON.stringify(casesBatch));
-  } catch (error) {
-    console.error("Storage Error:", error);
-    // displayError({ error: "Failed to store data. Try clearing browser storage." });
-  }
-
-  currentCaseIndex = 0;
-  answersBatch = new Array(casesBatch.length);
-  displayCurrentCasex();
-}
 
 
-
-
-function displayCurrentCasex() {
-  responseContainer.innerHTML = `
-
-    `;
-  if (casesBatch.length === 0 || currentCaseIndex >= casesBatch.length) {
-    displayError({ error: "No case available." });
-    return;
-  }
-
-  const caseData = casesBatch[currentCaseIndex];
-  const caseElement = createCaseElement(caseData);
-  responseContainer.appendChild(caseElement);
-
-
-
-  const submitButton = document.createElement('button');
-  submitButton.type = 'button';
-  submitButton.classList.add('submit-button');
-  submitButton.innerText = 'Next Case';
-  submitButton.addEventListener('click', submitCurrentAnswer2);
-  responseContainer.appendChild(submitButton);
-
-
-
-  const submitButtonm = document.createElement('button');
-  submitButtonm.type = 'button';
-  submitButtonm.id = 'submitButtonm';
-  submitButtonm.classList.add('submit-buttonm');
-  submitButtonm.innerText = 'Submit And Analyze';
-  submitButtonm.addEventListener('click', submitCurrentAnswerM);
-  responseContainer.appendChild(submitButtonm);
-} 
-
-
-
-function displayCurrentCase() {
-    caseForm.innerHTML = '';
-    responseContainer.innerHTML = `
-
-    `;
-    if (casesBatch.length === 0 || currentCaseIndex >= casesBatch.length) {
-      displayError({ error: "No case available." });
-      return;
-    }
-  
-    const caseData = casesBatch[currentCaseIndex];
-    const caseElement = createCaseElement(caseData);
-    caseForm.appendChild(caseElement);
-    responseContainer.appendChild(caseElement);
-
-  //   if (batchCounter > 1 && currentCaseIndex % 3 === 0) {
-  //     const analyzeButton = document.createElement('button');
-  //     analyzeButton.type = 'button';
-  //     analyzeButton.id = 'analyzeButton';
-  //     analyzeButton.classList.add('analyze-button');
-  //     analyzeButton.innerText = 'Analyze Results';
-  //     caseForm.appendChild(analyzeButton);
-  //     attachAnalyzeButtonListener();
-  //   }
-  
-    const submitButton = document.createElement('button');
-    submitButton.type = 'button';
-    submitButton.classList.add('submit-button');
-    submitButton.innerText = 'Next Case';
-    submitButton.addEventListener('click', submitCurrentAnswer);
-    caseForm.appendChild(submitButton);
-    responseContainer.appendChild(submitButton);
-
-  
-  
-    const submitButtonm = document.createElement('button');
-    submitButtonm.type = 'button';
-    submitButtonm.id = 'submitButtonm';
-    submitButtonm.classList.add('submit-buttonm');
-    submitButtonm.innerText = 'Submit And Analyze';
-    submitButtonm.addEventListener('click', submitCurrentAnswerM);
-    caseForm.appendChild(submitButtonm);
-    responseContainer.appendChild(submitButtonm);
-
-  } 
 
 
 
 function submitCurrentAnswer() {
   if (currentCaseIndex >= casesBatch.length) {
-    displayError({ error: "No more cases to answer." });
-    return;
+      displayError({ error: "No more cases to answer." });
+      return;
   }
 
   const caseData = casesBatch[currentCaseIndex];
   if (!caseData) {
-    displayError({ error: "Case data is undefined." });
-    return;
+      displayError({ error: "Case data is undefined." });
+      return;
   }
 
   const selected = document.querySelector(`input[name="${caseData.case_id}"]:checked`);
   if (!selected) {
-    displayError({ error: "Please select an answer." });
-    return;
+      displayError({ error: "Please select an answer." });
+      return;
   }
 
   answersBatch[currentCaseIndex] = parseInt(selected.value, 10);
   currentCaseIndex++;
 
   if (currentCaseIndex < casesBatch.length) {
-    displayCurrentCase();
+      displayCurrentCase();
   } else {
-    const submitBtn = document.querySelector('.submit-button');
-    if (submitBtn) {
-      submitBtn.disabled = true;
-    }
-    sendAnswersToBackend(answersBatch);
+      // Check if we have buffered cases before calling backend
+      if (bufferedCases && bufferedCases.length > 0) {
+          console.log("Using buffered cases instead of calling backend");
+          casesBatch = bufferedCases;
+          bufferedCases = null;
+          currentCaseIndex = 0;
+          answersBatch = new Array(casesBatch.length);
+          displayCurrentCase();
+      } else {
+          console.log("No buffered cases available, calling backend");
+          const submitBtn = document.querySelector('.submit-button');
+          if (submitBtn) {
+              submitBtn.disabled = true;
+          }
+          sendAnswersToBackend(answersBatch);
+      }
   }
 }
 
 
-
-function submitCurrentAnswer2() {
-  if (currentCaseIndex >= casesBatch.length) {
-    displayError({ error: "No more cases to answer." });
-    return;
-  }
-
-  const caseData = casesBatch[currentCaseIndex];
-  if (!caseData) {
-    displayError({ error: "Case data is undefined." });
-    return;
-  }
-
-  const selected = document.querySelector(`input[name="${caseData.case_id}"]:checked`);
-  if (!selected) {
-    displayError({ error: "Please select an answer." });
-    return;
-  }
-
-  answersBatch[currentCaseIndex] = parseInt(selected.value, 10);
-  currentCaseIndex++;
-
-  if (currentCaseIndex < casesBatch.length) {
-    displayCurrentCase();
-  } else {
-    const submitBtn = document.querySelector('.submit-button');
-    if (submitBtn) {
-      submitBtn.disabled = true;
-    }
-    sendAnswersToBackend(answersBatch);
-  }
-}
 
 
 async function sendAnswersToBackend(answersArr) {
@@ -542,93 +400,53 @@ function attachAnalyzeButtonListener() {
 }
 
 async function analyzeResults() {
+  console.log("analyzeResults: Function started.");
   loadingSpinner.classList.remove('hidden');
   responseContainer.classList.add('hidden');
   responseContainer.classList.remove('success');
   responseContainer.classList.remove('error');
 
-
   const language = document.getElementById('language').value;
-
   const role = document.getElementById('role').value;
   const question_type = document.getElementById('question_type').value;
 
+  console.log("analyzeResults: Sending request with", { role, question_type, language });
   try {
     const response = await fetch('/analysis', {
       method: 'POST',
       body: JSON.stringify({ role: role, question_type: question_type, language: language }),
       headers: { 'Content-Type': 'application/json' }
     });
+    console.log("analyzeResults: Response status", response.status);
 
     if (!response.ok) {
       const errorData = await response.json();
+      console.error("analyzeResults: Error response from server", errorData);
       displayError(errorData);
       return;
     }
 
     const analysisData = await response.json();
-    if (analysisData && analysisData.analysis) {
-      displayAnalysis(analysisData.analysis);
+    console.log("analyzeResults: Raw analysisData received:", analysisData);
+    
+    // Instead of expecting analysisData.analysis, pass the entire analysisData.
+    if (analysisData && analysisData.cases) {
+      console.log("analyzeResults: Valid analysisData detected. Passing to displayAnalysis.");
+      displayAnalysis(analysisData);
     } else {
+      console.error("analyzeResults: Invalid analysis data structure:", analysisData);
       displayError({ error: "Invalid analysis data received from server." });
     }
     responseContainer.classList.add('success');
   } catch (error) {
+    console.error("analyzeResults: Exception occurred:", error);
     displayError({ error: `Analysis failed: ${error}` });
   } finally {
     loadingSpinner.classList.add('hidden');
     responseContainer.classList.remove('hidden');
+    console.log("analyzeResults: Finished execution.");
   }
 }
-
-function displayAnalysis(analysis) {
-  responseContainer.innerHTML = `
-    <button id="againButton">Analayze</button>
-
-    <h2>Analysis Results</h2>
-    <div class="analysis-content">`;
-  
-  if (typeof analysis === 'object') {
-    for (const key in analysis) {
-      responseContainer.innerHTML += `
-        <div class="analysis-section">
-          <h3 class="analysis-heading">${key}</h3>
-          <ul class="analysis-list">`;
-      if (Array.isArray(analysis[key])) {
-        analysis[key].forEach(item => {
-          responseContainer.innerHTML += `<li class="analysis-item">${item}</li>`;
-        });
-      } else {
-        responseContainer.innerHTML += `<li class="analysis-item">${analysis[key]}</li>`;
-      }
-      responseContainer.innerHTML += `</ul>
-        </div>`;
-    }
-  } else {
-    responseContainer.innerHTML += `<p class="analysis-text">${analysis}</p>`;
-  }
-  
-  responseContainer.innerHTML += `
-    </div>
-  `;
-  
-  const againButton = document.getElementById('againButton');
-  againButton.addEventListener('click', () => {
-  analyzeResults()
-  });
-
-
-
-  const submitButtonx = document.createElement('button');
-  submitButtonx.type = 'button';
-  submitButtonx.id = 'submitButtonx';
-  submitButtonx.classList.add('submit-buttonx');
-  submitButtonx.innerText = 'Proceed';
-  submitButtonx.addEventListener('click', submitCurrentAnswerx);
-  responseContainer.appendChild(submitButtonx);
-
-}
-
 
 
 function displayError(errorData) {
@@ -735,7 +553,7 @@ function displayResults(data) {
 
 
 
-function submitCurrentAnswerM() {
+function submitCurrentResponses() {
     if (currentCaseIndex >= casesBatch.length) {
       displayError({ error: "No more cases to answer." });
       return;
@@ -761,24 +579,7 @@ function submitCurrentAnswerM() {
       if (submitBtn) {
         submitBtn.disabled = true;
       }
-      sendAnswersToBackendM(answersBatch);
-  }
-  
-
-
-
-  function submitCurrentAnswerx() {
-
-  
-
-  
-
-
-      const submitBtn = document.querySelector('.submit-button');
-      if (submitBtn) {
-        submitBtn.disabled = true;
-      }
-      sendAnswersToBackendx(answersBatch);
+      submitResponses(answersBatch);
   }
   
 
@@ -786,7 +587,7 @@ function submitCurrentAnswerM() {
 
 
 
-  async function sendAnswersToBackendM(answersArr) {
+  async function submitResponses(answersArr) {
     const loadingSpinner = document.getElementById('loading-spinner');
     if (loadingSpinner) {
       loadingSpinner.classList.remove('hidden');
@@ -842,8 +643,8 @@ function submitCurrentAnswerM() {
         return;
       }
       const analysisData = await response.json();
-        if (analysisData && analysisData.analysis) {
-            displayAnalysis(analysisData.analysis);
+        if (analysisData) {
+            displayAnalysis(analysisData);
             
         } else {    
             displayError({ error: "Invalid analysis data received from server." });
@@ -857,75 +658,293 @@ function submitCurrentAnswerM() {
         responseContainer.classList.remove('hidden');
       }
   }
-  
-
-
-
-
-  
-  async function sendAnswersToBackendx(answersArr) {
-    const loadingSpinner = document.getElementById('loading-spinner');
-    if (loadingSpinner) {
-      loadingSpinner.classList.remove('hidden');
-    }
-    const responseContainer = document.getElementById('response-container');
-    if (responseContainer) {
-      responseContainer.classList.add('hidden');
-      responseContainer.classList.remove('success');
-      responseContainer.classList.remove('error');
-    }
-  
-    const languageEl = document.getElementById('language') || { value: localStorage.getItem('language') || "" };
-    const ageEl = document.getElementById('age') || { value: localStorage.getItem('age') || "" };
-    const subjectEl = document.getElementById('subject') || { value: localStorage.getItem('subject') || "" };
-    const difficultyEl = document.getElementById('difficulty') || { value: localStorage.getItem('difficulty') || "" };
-    const questionTypeEl = document.getElementById('question_type') || { value: localStorage.getItem('question_type') || "" };
-    const subTypeEl = document.getElementById('sub_type');
-    const sexEl = document.getElementById('sex') || { value: localStorage.getItem('sex') || "" };
-    const imageEl = document.getElementById('allow_image') || { value: localStorage.getItem('allow_image') || "" };
-
-    if (!subTypeEl) {
-      displayError({ error: "Sub-type form element is missing." });
-      if (loadingSpinner) loadingSpinner.classList.add('hidden');
-      return;
-    }
-  
-    const payload = {
-      language: languageEl.value,
-      age: ageEl.value,
-      subject: subjectEl.value,
-      difficulty: difficultyEl.value,
-      question_type: questionTypeEl.value,
-      sub_type: subTypeEl.value,
-      role: 'default_role',
-      sex: sexEl.value,
-      allow_image: imageEl.value
-
-    };
-  
-    try {
-      const response = await fetch('/generate_cases', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      localStorage.removeItem('casesBatch');
-      await handleGenerateCasesResponsex(response);
 
 
 
 
 
-    } catch (error) {
-      displayError({ error: error.message });
-    } finally {
-      if (loadingSpinner) {
-        loadingSpinner.classList.add('hidden');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function checkUnansweredCases() {
+  // Count only cases that haven't been answered yet
+  let unansweredCount = 0;
+  for (let i = currentCaseIndex; i < casesBatch.length; i++) {
+      if (typeof answersBatch[i] === 'undefined' || answersBatch[i] === null) {
+          unansweredCount++;
       }
-      if (responseContainer) {
-        responseContainer.classList.remove('hidden');
-      }
-    }
   }
+  console.log(`Found ${unansweredCount} unanswered cases remaining`);
+  return unansweredCount;
+}
+
+
+
+
+
+function proceedCases() {
+    console.log("proceedCases: Starting with buffered cases:", bufferedCases?.length);
+    
+    if (bufferedCases && bufferedCases.length > 0) {
+        // Use the buffered cases
+        casesBatch = bufferedCases;
+        bufferedCases = null;
+        currentCaseIndex = 0;
+        answersBatch = new Array(casesBatch.length);
+        displayCurrentCase();
+        console.log("proceedCases: Using buffered cases");
+    } else {
+        // Fallback to original behavior
+        console.log("proceedCases: No buffered cases available, falling back to sendAnswersToBackend");
+        sendAnswersToBackend(answersBatch);
+    }
+}
+
+
+
+
+
+async function fetchCasesInBackground(answersArr = null) {
+  // Prevent multiple simultaneous fetches
+  if (isBackgroundFetching) return;
   
+  // Check if we actually need new cases
+  const unansweredCases = checkUnansweredCases();
+  if (unansweredCases > 1 || bufferedCases) {
+      console.log("No need to fetch cases: sufficient cases available");
+      return;
+  }
+
+  isBackgroundFetching = true;
+  console.log("Starting background case fetch");
+
+  const payload = {
+      language: document.getElementById('language')?.value || localStorage.getItem('language') || "",
+      age: document.getElementById('age')?.value || localStorage.getItem('age') || "",
+      subject: document.getElementById('subject')?.value || localStorage.getItem('subject') || "",
+      difficulty: document.getElementById('difficulty')?.value || localStorage.getItem('difficulty') || "",
+      question_type: document.getElementById('question_type')?.value || localStorage.getItem('question_type') || "",
+      sub_type: document.getElementById('sub_type')?.value || "",
+      role: 'default_role',
+      sex: document.getElementById('sex')?.value || localStorage.getItem('sex') || "",
+      allow_image: document.getElementById('allow_image')?.value || localStorage.getItem('allow_image') || ""
+  };
+
+  // Include answersArr in the payload if provided
+  if (answersArr) {
+      payload.answers = answersArr;
+  }
+
+  try {
+      const response = await fetch('/generate_cases', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+          console.error('Background case fetching failed:', response.status);
+          return;
+      }
+
+      const jsonData = await response.json();
+      if (jsonData.data) {
+          bufferedCases = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data];
+          console.log('Successfully buffered new cases:', bufferedCases.length);
+      }
+  } catch (error) {
+      console.error('Error in background case fetching:', error);
+  } finally {
+      isBackgroundFetching = false;
+  }
+}
+
+function displayCurrentCase(checkBufferedCases = true) {
+  caseForm.innerHTML = '';
+  responseContainer.innerHTML = '';
+
+  if (casesBatch.length === 0 || currentCaseIndex >= casesBatch.length) {
+      displayError({ error: "No case available." });
+      return;
+  }
+
+  // // Check remaining unanswered cases and trigger background fetch if needed
+  // if (checkBufferedCases) {
+  //     const unansweredCases = checkUnansweredCases();
+  //     if (unansweredCases <= 1 && !isBackgroundFetching && !bufferedCases) {
+  //         console.log("Only 1 or fewer unanswered cases remaining, triggering background fetch");
+  //         fetchCasesInBackground(answersBatch);
+  //     }
+  // }
+
+  const caseData = casesBatch[currentCaseIndex];
+  const caseElement = createCaseElement(caseData);
+  caseForm.appendChild(caseElement);
+  responseContainer.appendChild(caseElement);
+
+  const submitButton = document.createElement('button');
+  submitButton.type = 'button';
+  submitButton.classList.add('submit-button');
+  submitButton.innerText = 'Next Case';
+  submitButton.addEventListener('click', submitCurrentAnswer);
+  caseForm.appendChild(submitButton);
+  responseContainer.appendChild(submitButton);
+
+  const submitButtonm = document.createElement('button');
+  submitButtonm.type = 'button';
+  submitButtonm.id = 'submitButtonm';
+  submitButtonm.classList.add('submit-buttonm');
+  submitButtonm.innerText = 'Submit And Analyze';
+  submitButtonm.addEventListener('click', submitCurrentResponses);
+  caseForm.appendChild(submitButtonm);
+  responseContainer.appendChild(submitButtonm);
+}
+
+function displayAnalysis(analysis) {
+  console.log("displayAnalysis: Function started with input:", analysis);
+  let analysisData;
+
+  // Start background fetch immediately without answersArr
+  fetchCasesInBackground();
+
+  // If analysis is a string, try to parse it.
+  if (typeof analysis === "string") {
+      console.log("displayAnalysis: Analysis is a string. Attempting to parse.");
+      try {
+          analysisData = JSON.parse(analysis);
+          console.log("displayAnalysis: Parsed analysisData from string:", analysisData);
+      } catch (e) {
+          console.error("displayAnalysis: Failed to parse analysis string:", analysis);
+          displayError({ error: "Analysis data is not valid JSON." });
+          return;
+      }
+  } else if (typeof analysis === "object" && analysis !== null) {
+      analysisData = analysis;
+      console.log("displayAnalysis: Analysis is already an object:", analysisData);
+  } else {
+      console.error("displayAnalysis: Invalid analysis data type received:", analysis);
+      displayError({ error: "Invalid analysis data type received from server." });
+      return;
+  }
+
+  // If the response is wrapped in a "data" property, unwrap it.
+  if (analysisData.data) {
+      console.log("displayAnalysis: Unwrapping nested data property.");
+      analysisData = analysisData.data;
+  }
+
+  // Debug log for unexpected structure.
+  if (!analysisData || typeof analysisData !== "object" || !Array.isArray(analysisData.cases)) {
+      console.error("displayAnalysis: Unexpected analysis data structure:", analysisData);
+      displayError({ error: "Invalid analysis data received from server." });
+      return;
+  }
+
+  console.log("displayAnalysis: Data validated successfully. Proceeding to render UI.");
+  const overallJudgement = analysisData.overall_judgement || "No overall judgment available";
+  const cases = analysisData.cases;
+
+  // Calculate percentage score
+  const correctCases = cases.filter(caseItem => caseItem.player_choice === caseItem.optimal_choice).length;
+  const totalCases = cases.length;
+  const percentageScore = ((correctCases / totalCases) * 100).toFixed(1);
+
+  responseContainer.innerHTML = `
+      <div class="analysis-container">
+          <!-- Header Section -->
+          <div class="analysis-header">
+              <button id="againButton" class="analysis-button">
+                  <i class="fas fa-sync-alt"></i> Analyze Again
+              </button>
+              <h2 class="analysis-title">Analysis Results</h2>
+              <div class="score-display">
+                  <span class="score-label">Score:</span>
+                  <span class="score-value ${percentageScore >= 70 ? 'good-score' : 'needs-improvement'}">
+                      ${percentageScore}%
+                  </span>
+                  <span class="score-details">(${correctCases}/${totalCases} correct)</span>
+              </div>
+          </div>
+
+          <!-- Overall Judgment Section -->
+          <div class="overall-judgment">
+              <h3>Overall Assessment</h3>
+              <div class="judgment-content">
+                  <i class="fas fa-chart-line judgment-icon"></i>
+                  <p>${overallJudgement}</p>
+              </div>
+          </div>
+
+          <!-- Cases Analysis Section -->
+          <div class="cases-analysis">
+              <h3>Detailed Case Analysis</h3>
+              ${cases.map((caseItem, index) => `
+                  <div class="case-analysis-item ${caseItem.player_choice === caseItem.optimal_choice ? 'correct' : 'incorrect'}">
+                      <div class="case-number">Case ${index + 1}</div>
+                      <div class="case-content">
+                          <div class="case-question">
+                              <i class="fas fa-question-circle"></i>
+                              <p>${caseItem.case_description || "No description available"}</p>
+                          </div>
+                          <div class="choices-comparison">
+                              <div class="choice player-choice">
+                                  <span class="choice-label">Your Answer:</span>
+                                  <span class="choice-value">${caseItem.player_choice || "N/A"}</span>
+                              </div>
+                              <div class="choice correct-choice">
+                                  <span class="choice-label">Correct Answer:</span>
+                                  <span class="choice-value">${caseItem.optimal_choice || "N/A"}</span>
+                              </div>
+                          </div>
+                          <div class="case-feedback">
+                              <i class="fas fa-lightbulb"></i>
+                              <p>${caseItem.analysis || "No analysis available"}</p>
+                          </div>
+                      </div>
+                  </div>
+              `).join('')}
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="analysis-actions">
+              <button id="submitButtonx" class="proceed-button">
+                  <i class="fas fa-arrow-right"></i> Proceed
+              </button>
+          </div>
+      </div>
+  `;
+
+  // Add event listeners
+  const againButton = document.getElementById("againButton");
+  if (againButton) {
+      console.log("displayAnalysis: Adding event listener to 'againButton'.");
+      againButton.addEventListener("click", () => {
+          analyzeResults();
+      });
+  }
+
+  const submitButtonx = document.getElementById("submitButtonx");
+  if (submitButtonx) {
+      console.log("displayAnalysis: Adding event listener to 'submitButtonx'.");
+      submitButtonx.addEventListener("click", proceedCases);
+  }
+
+  console.log("displayAnalysis: UI rendered successfully.");
+}
 

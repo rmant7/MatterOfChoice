@@ -11,7 +11,7 @@ import base64
 from PIL import Image
 from utils import gen_cases, create_db, get_response_gemini  # keep these for other endpoints
 from image import get_info_from_image  # for image analysis
-
+import time
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -356,14 +356,18 @@ def generate_cases():
     sub_type = data.get('sub_type')            # Parameter for sub type
     role = data.get('role', None)     # Optional role parameter with a default value
     sex = data.get('sex', 'unspecified')         # Optional sex parameter with a default value
-    allow_image = data.get('allow_image' , False)
+    allow_image = data.get('allow_image' , "False")
 
     user_answer = data.get('answers')
+
+
+    print(f"User ID: {user_id}, Language: {language}, Age: {age}, Subject: {subject}, Difficulty: {difficulty}, Question Type: {question_type}, Sub Type: {sub_type}, allow_image: {allow_image}")
+
 
     if not all([language, subject, difficulty, question_type, sub_type]):
         return jsonify({"error": "language, subject, difficulty, question_type, and sub_type are required."}), 400
 
-    if turn > 4:
+    if turn > 3:
         turn = 1
         turn = 1
         return jsonify({"message": "CONGRATULATIONS YOU FINISHED THE GAME"}), 200
@@ -415,7 +419,6 @@ def generate_cases():
                         # Update each current case with its corresponding answer (as a single number)
                         for i, case in enumerate(current_cases):
                             case['user_answer'] = user_answer[i]
-                            case['turn'] = turn
 
                         # Replace the current cases in all_cases with the updated ones
                         all_cases[-num_answers:] = current_cases
@@ -433,6 +436,9 @@ def generate_cases():
                         case_data, conversation_data = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, conversation_data, sex=sex)
                         if case_data is None:
                             return jsonify({"error": "Failed to generate case."}), 500
+                       
+                        for case in case_data:
+                            case['turn'] = turn                       
                         session[f'{user_id}_turn'] = min(turn + 1, 7)
 
                         # *** FIX: Use extend instead of append to add new cases individually ***
@@ -463,19 +469,23 @@ def generate_cases():
         
         # Within your /generate_cases route, after generating case_data:
         
-        for case in case_data:
-            question_prompt = case.get("case")
-            if question_prompt and question_type != 'study' and allow_image:
-                try:
-                    # generate_image_for_question returns a data URL (e.g., "data:image/png;base64,...")
-                    generated_image_data = generate_image_for_question(question_prompt)
-                    # Attach the data URL directly to the case data
-                    case['generated_image_data'] = generated_image_data
-                except Exception as e:
-                    logger.exception(f"Image generation from question failed: {e}")
-                    case['generated_image_data'] = None
-            else:
-                case['generated_image_data'] = None
+        # for case in case_data:
+        #     question_prompt = case.get("case")
+        #     if allow_image == "True":
+        #         if question_prompt and question_type != 'study':
+        #             try:
+        #                 # generate_image_for_question returns a data URL (e.g., "data:image/png;base64,...")
+        #                 generated_image_data = generate_image_for_question(question_prompt)
+        #                 # Attach the data URL directly to the case data
+        #                 case['generated_image_data'] = generated_image_data
+        #             except Exception as e:
+        #                 logger.exception(f"Image generation from question failed: {e}")
+        #                 case['generated_image_data'] = None
+        #         else:
+        #             case['generated_image_data'] = None
+        #     else:
+        #         case['generated_image_data'] = None
+        
 
         return jsonify({'data': case_data}), 200
     except Exception as e:
@@ -492,93 +502,6 @@ def submit_answers():
 
 
 
-
-@app.route('/analysis', methods=['POST'])
-def analysis():
-    user_id = session.get('user_id')
-    if not user_id:
-        return jsonify({"error": "User ID is required."}), 400
-
-    conversation_filepath = BASE_DIR / f'output/{user_id}/game/conversation.json'
-    analysis_filepath = BASE_DIR / f'output/{user_id}/game/analysis.json'
-    
-    if not analysis_filepath.exists():
-        return jsonify({"error": "Analysis file not found."}), 400
-
-    with open(analysis_filepath, 'r') as f:
-        analysis_data = json.load(f)
-    data = request.get_json()
-
-    # Filter out cases that have an 'answer' and the answer is not empty, null, or None
-    answered_cases = [case for case in analysis_data['cases'] if 'answer' in case and case['answer']]
-    if not answered_cases:
-        return jsonify({"error": "No answered cases found for analysis."}), 400
-
-    # Only include answered cases in the analysis data
-    analysis_data['cases'] = answered_cases
-
-    role = data.get('role', None)
-    question_type = data.get('question_type')
-    language = data.get('language')  # Fetch language as form data
-    if question_type is None:
-        return jsonify({"error": "Question type data is missing in the request."}), 400
-
-    analysis_data['role'] = role
-    analysis_data['question_type'] = question_type
-    analysis_data['language'] = language  # Include language in the analysis data
-    analysis_data_str = json.dumps(analysis_data, indent=4)
-
-    prompt_template = """Analyze the following data. You are a '{role}'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'answer' key). The 'optimal' key indicates the correct option.  Determine the language used in the data and STRICTLY PROVIDE YOUR ANALYSIS IN THE LANGUAGE {language}.  Format your response as JSON:
-
-{{
-  "overall_judgement": "A concise summary of the player's overall {judgement_aspect}.",
-  "cases": [
-    {{
-      "case_description": "The case description.",
-      "player_choice": "The player's selected option in words.",
-      "optimal_choice": "The optimal option in words.",
-      "analysis": "A detailed analysis of the player's choice, including reasoning and implications."
-    }}
-  ]
-}}
-
-Data: {analysis_data_str}"""
-
-    if question_type == 'behavioral':
-        judgement_aspect = "behavioral tendencies"
-    elif question_type == 'study':
-        judgement_aspect = "knowledge and learning style"
-    elif question_type == 'hiring':
-        judgement_aspect = "suitability for the job"
-    else:
-        return jsonify({"error": "Invalid question_type"}), 400
-
-    prompt = prompt_template.format(
-        role=role, 
-        judgement_aspect=judgement_aspect, 
-        analysis_data_str=analysis_data_str,
-        language=language
-    )
-
-    try:
-        response = get_response_gemini(prompt)
-
-        # Reset session turn and delete the files if they exist.
-        session['turn'] = 1
-        # if conversation_filepath.exists():
-        #     conversation_filepath.unlink()
-        # if analysis_filepath.exists():
-        #     analysis_filepath.unlink()
-
-        # Send Gemini's analysis along with the answered cases as performance data.
-        return jsonify({
-            "analysis": response,
-            "performance": answered_cases
-        }), 200
-
-    except Exception as e:
-        logger.exception(f"An error occurred while getting the analysis from Gemini: {e}")
-        return jsonify({"error": "An error occurred while getting the analysis from Gemini."}), 500
 
 
 
@@ -629,148 +552,48 @@ def analyze_image():
         return jsonify({'error': str(e)}), 500
 
 
-
-
-@app.route('/submit_responses', methods=['POST'])
-def submit_responses():
+@app.route('/analysis', methods=['POST'])
+def analysis():
     user_id = session.get('user_id')
     if not user_id:
         return jsonify({"error": "User ID is required."}), 400
 
-    data = request.get_json()
-    user_answers = data.get('answers')
-    role = data.get('role')
-    question_type = data.get('question_type')
-    sub_type = data.get('sub_type')
-    language = data.get('language')
-
-
-    # Validate the basic payload.
-    if not user_answers or not isinstance(user_answers, list):
-        return jsonify({"error": "User answers must be provided as a non-empty list."}), 400
-    if not role or not question_type or not sub_type:
-        return jsonify({"error": "role, question_type, and sub_type are required."}), 400
-
     conversation_filepath = BASE_DIR / f'output/{user_id}/game/conversation.json'
     analysis_filepath = BASE_DIR / f'output/{user_id}/game/analysis.json'
-    final_filepath = BASE_DIR / f'output/{user_id}/game/final.json'
+    
+    if not analysis_filepath.exists():
+        return jsonify({"error": "Analysis file not found."}), 400
 
-    if not conversation_filepath.exists() or not analysis_filepath.exists():
-        return jsonify({"error": "Required data files not found."}), 400
+    with open(analysis_filepath, 'r') as f:
+        analysis_data = json.load(f)
+    data = request.get_json()
 
-    # Load the existing conversation data.
-    try:
-        with open(conversation_filepath, 'r') as f:
-            conversation_data = json.load(f)
-    except Exception as e:
-        return jsonify({"error": f"Error reading conversation data: {str(e)}"}), 500
-
-    # Load the analysis data.
-    try:
-        with open(analysis_filepath, 'r') as f:
-            analysis_data = json.load(f)
-    except Exception as e:
-        return jsonify({"error": f"Error reading analysis data: {str(e)}"}), 500
-
-    # Retrieve all cases from the conversation JSON.
-    all_cases = conversation_data.get('data', {}).get('cases', [])
-    # Determine unanswered cases (those without a 'user_answer' key or with an empty/null/None answer).
-    unanswered_cases = [case for case in all_cases if 'user_answer' not in case or not case['user_answer']]
-
-    # If the user has provided more answers than available unanswered cases, error out.
-    if len(user_answers) > len(unanswered_cases):
-        return jsonify({"error": "The number of answers provided exceeds the number of unanswered cases."}), 400
-
-    # Update the first N unanswered cases with the provided answers.
-    answers_to_apply = iter(user_answers)
-    for idx in range(len(all_cases)):
-        if 'user_answer' not in all_cases[idx] or not all_cases[idx]['user_answer']:
-            try:
-                all_cases[idx]['user_answer'] = next(answers_to_apply)
-            except StopIteration:
-                break
-    conversation_data['data']['cases'] = all_cases
-
-    # Similarly update the analysis JSON.
     analysis_cases = analysis_data.get('cases', [])
-    answers_to_apply = iter(user_answers)
-    for idx in range(len(analysis_cases)):
-        if 'answer' not in analysis_cases[idx] or not analysis_cases[idx]['answer']:
-            try:
-                analysis_cases[idx]['answer'] = next(answers_to_apply)
-            except StopIteration:
-                break
     analysis_data['cases'] = analysis_cases
 
-    unanalyzed_cases = [case for case in analysis_data['cases'] if 'turn' not in case or not case['turn']]
+    role = data.get('role', None)
+    question_type = data.get('question_type')
+    language = data.get('language')
+    if question_type is None:
+        return jsonify({"error": "Question type data is missing in the request."}), 400
 
-    # Append the current turn to each case in the analysis data.
+    if question_type == 'behavioral':
+        judgement_aspect = "behavioral tendencies"
+    elif question_type == 'study':
+        judgement_aspect = "knowledge and learning style"
+    elif question_type == 'hiring':
+        judgement_aspect = "suitability for the job"
+    else:
+        return jsonify({"error": "Invalid question_type"}), 400
 
-    # Append the current turn to each case in the analysis data.
-    current_turn = session.get(f'{user_id}_turn', 1) 
-    previous_turn = current_turn - 1
-    # for case in analysis_data['cases']:
-    #     if case.get('turn') != current_turn:
-    #         turn_value = case.get('turn')  # Safely retrieve 'turn'
-    #         case['turn'] = current_turn
-    #         print(f"Case turn: {turn_value}")
-    #         if turn_value is None:
-    #             print("This is None")  
+    analysis_data['role'] = role
+    analysis_data['question_type'] = question_type
+    analysis_data['language'] = language
+    prompt_cases =  [case for case in analysis_data['cases'] if 'answer' in case and case['answer']]
 
-            # if turn_value == 2:
-            #     print("This is two")
+    analysis_data_str = json.dumps(prompt_cases, indent=4)
 
-            # if turn_value is not None:  # Check if turn exists
-            #     print("It exists")
-            # else:
-            #     print("It does not")
-
-
-
-
-
-    # session[f'{user_id}_turn'] = min(current_turn + 1, 7)
-
-
-    # Save the updated JSON files.
-    try:
-        with open(conversation_filepath, 'w') as f:
-            json.dump(conversation_data, f, indent=4)
-        with open(analysis_filepath, 'w') as f:
-            json.dump(analysis_data, f, indent=4)
-    except Exception as e:
-        return jsonify({"error": f"Error updating files: {str(e)}"}), 500
-
-    try:
-        with open(final_filepath, 'r') as f:
-            existing_data = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        existing_data = {'cases': []}
-
-    # Append the new case data to the existing data
-    existing_data['cases'].extend(analysis_data['cases'])
-
-    # Write the updated data back to the file
-    with open(final_filepath, 'w') as f:
-        json.dump(existing_data, f, indent=4)
-
-    # Prepare for analysis: filter to only include answered cases with the current turn.
-    answered_cases = [case for case in analysis_data['cases'] if 'answer' in case and case['answer']]
-    if not answered_cases:
-        return jsonify({"error": "No answered cases found for analysis."}), 400
-
-    # Filter cases based on the current turn.
-    filtered_cases = [case for case in answered_cases if case.get('turn') == previous_turn]
-    print(f"Previous turn: {current_turn}")
-
-    if not filtered_cases:
-        print(f"Current turn: {current_turn}")
-        return jsonify({"error": "No cases found for the current turn."}), 400
-
-    analysis_data['cases'] = filtered_cases
-
-    # Build the analysis prompt.
-    prompt_template = """Analyze the following data. You are a '{role}'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'answer' key). The 'optimal' key indicates the correct option.  Determine the language used in the data and STRICTLY PROVIDE YOUR ANALYSIS IN THE LANGUAGE {language}.  Format your response as JSON:
+    prompt_template = """Analyze the following data. You are a '{role}'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'answer' key). The 'optimal' key indicates the correct option.  Determine the language used in the data and STRICTLY PROVIDE YOUR ANALYSIS IN THE LANGUAGE {language}.Do not analyze unanswered cases.  Format your response as JSON:
 
 {{
   "overall_judgement": "A concise summary of the player's overall {judgement_aspect}.",
@@ -786,42 +609,186 @@ def submit_responses():
 
 Data: {analysis_data_str}"""
 
-    if question_type == 'behavioral':
-        judgement_aspect = "behavioral tendencies"
-    elif question_type == 'study':
-        judgement_aspect = "knowledge and learning style"
-    elif question_type == 'hiring':
-        judgement_aspect = "suitability for the job"
-    else:
-        return jsonify({"error": "Invalid question_type"}), 400
-
-    analysis_data_str = json.dumps(analysis_data, indent=4)
     prompt = prompt_template.format(
-        role=role,
-        judgement_aspect=judgement_aspect,
+        role=role, 
+        judgement_aspect=judgement_aspect, 
         analysis_data_str=analysis_data_str,
         language=language
     )
 
-    # Trigger the analysis.
+    max_attempts = 5
+    attempt = 0
+    while attempt < max_attempts:
+        try:
+            response_analysis = get_response_gemini(prompt)
+            parsed_analysis = parse_json_response(response_analysis)
+            
+            if not isinstance(parsed_analysis, dict):
+                raise ValueError("Analysis response is not a dictionary")
+            
+            if 'overall_judgement' not in parsed_analysis:
+                raise ValueError("Missing overall_judgement in analysis")
+                
+            if 'cases' not in parsed_analysis or not isinstance(parsed_analysis['cases'], list):
+                raise ValueError("Missing or invalid cases array in analysis")
+            
+            session['turn'] = 1
+            return jsonify(parsed_analysis), 200
+            
+        except (json.JSONDecodeError, ValueError) as e:
+            attempt += 1
+            logger.error(f"Attempt {attempt} failed to parse Gemini response as JSON: {e}")
+            if attempt >= max_attempts:
+                return jsonify({"error": "Failed to parse analysis response after multiple attempts"}), 500
+
+    return jsonify({"error": "An unexpected error occurred."}), 500
+
+@app.route('/submit_responses', methods=['POST'])
+def submit_responses():
+    user_id = session.get('user_id')
+    if not user_id:
+        return jsonify({"error": "User ID is required."}), 400
+
+    data = request.get_json()
+    user_answers = data.get('answers')
+    role = data.get('role')
+    question_type = data.get('question_type')
+    sub_type = data.get('sub_type')
+    language = data.get('language')
+
+    if not user_answers or not isinstance(user_answers, list):
+        return jsonify({"error": "User answers must be provided as a non-empty list."}), 400
+    if not role or not question_type or not sub_type:
+        return jsonify({"error": "role, question_type, and sub_type are required."}), 400
+
+    conversation_filepath = BASE_DIR / f'output/{user_id}/game/conversation.json'
+    analysis_filepath = BASE_DIR / f'output/{user_id}/game/analysis.json'
+    final_filepath = BASE_DIR / f'output/{user_id}/game/final.json'
+
+    if not conversation_filepath.exists() or not analysis_filepath.exists():
+        return jsonify({"error": "Required data files not found."}), 400
+
     try:
-        response_analysis = get_response_gemini(prompt)
+        with open(conversation_filepath, 'r') as f:
+            conversation_data = json.load(f)
+        
+        with open(analysis_filepath, 'r') as f:
+            analysis_data = json.load(f)
 
-        # Reset or clean up the stored files (optional).
-        # session['turn'] = 1
+        all_cases = conversation_data.get('data', {}).get('cases', [])
+        analysis_cases = analysis_data.get('cases', [])
+        
+        answers_to_apply = iter(user_answers)
+        for idx in range(len(all_cases)):
+            if 'user_answer' not in all_cases[idx] or not all_cases[idx]['user_answer']:
+                try:
+                    all_cases[idx]['user_answer'] = next(answers_to_apply)
+                except StopIteration:
+                    break
+        conversation_data['data']['cases'] = all_cases
 
-        # if conversation_filepath.exists():
-        #     conversation_filepath.unlink()
-        # if analysis_filepath.exists():
-        #     analysis_filepath.unlink()
+        answers_to_apply = iter(user_answers)
+        for idx in range(len(analysis_cases)):
+            if 'answer' not in analysis_cases[idx] or not analysis_cases[idx]['answer']:
+                try:
+                    analysis_cases[idx]['answer'] = next(answers_to_apply)
+                except StopIteration:
+                    break
+        analysis_data['cases'] = analysis_cases
 
-        return jsonify({
-            "analysis": response_analysis,
-            "performance": filtered_cases
-        }), 200
+        with open(conversation_filepath, 'w') as f:
+            json.dump(conversation_data, f, indent=4)
+        with open(analysis_filepath, 'w') as f:
+            json.dump(analysis_data, f, indent=4)
+
+        prompt_cases =  [case for case in analysis_data['cases'] if 'answer' in case and case['answer']]
+
+        if question_type == 'behavioral':
+            judgement_aspect = "behavioral tendencies"
+        elif question_type == 'study':
+            judgement_aspect = "knowledge and learning style"
+        elif question_type == 'hiring':
+            judgement_aspect = "suitability for the job"
+        else:
+            return jsonify({"error": "Invalid question_type"}), 400
+
+        analysis_data_str = json.dumps(prompt_cases, indent=4)
+        prompt = f"""Analyze the following data. You are a '{role}'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'answer' key). The 'optimal' key indicates the correct option.  Determine the language used in the data and STRICTLY PROVIDE YOUR ANALYSIS IN THE LANGUAGE {language}.DO NOT ANALYZE ANY CASE WHERE THE USER DID NOT ANSWER THE QUESTION JUST LEAVE IT OUT OF THE JSON AND FOCUS ONLY ON ANSWERED ONES.  Format your response as JSON:
+
+{{
+    "overall_judgement": "A concise summary of the player's overall {judgement_aspect}.",
+    "cases": [
+        {{
+            "case_description": "The case description.",
+            "player_choice": "The player's selected option in words.",
+            "optimal_choice": "The optimal option in words.",
+            "analysis": "A detailed analysis of the player's choice, including reasoning and implications."
+        }}
+    ]
+}}
+
+Data: {analysis_data_str}"""
+
+        max_attempts = 5
+        attempt = 0
+        while attempt < max_attempts:
+            try:
+                response_analysis = get_response_gemini(prompt)
+                parsed_analysis = parse_json_response(response_analysis)
+                
+                if not isinstance(parsed_analysis, dict):
+                    raise ValueError("Analysis response is not a dictionary")
+                
+                if 'overall_judgement' not in parsed_analysis:
+                    raise ValueError("Missing overall_judgement in analysis")
+                    
+                if 'cases' not in parsed_analysis or not isinstance(parsed_analysis['cases'], list):
+                    raise ValueError("Missing or invalid cases array in analysis")
+                
+                return jsonify(parsed_analysis), 200
+                
+            except (json.JSONDecodeError, ValueError) as e:
+                attempt += 1
+                logger.error(f"Attempt {attempt} failed to parse Gemini response as JSON: {e}")
+                if attempt >= max_attempts:
+                    return jsonify({"error": "Failed to parse analysis response after multiple attempts"}), 500
+
+        return jsonify({"error": "An unexpected error occurred."}), 500
+
     except Exception as e:
         logger.exception(f"Error during analysis: {e}")
         return jsonify({"error": "An error occurred while processing analysis."}), 500
+
+
+
+def parse_json_response(response):
+    """
+    Attempts to clean and parse a JSON response that may be slightly unstructured.
+    This includes stripping code block markers and extraneous text.
+    """
+    # First, strip whitespace
+    cleaned = response.strip()
+    # Remove common code block markers
+    if cleaned.startswith("```"):
+        lines = cleaned.splitlines()
+        # Remove the first line if it starts with ```
+        if lines[0].startswith("```"):
+            lines = lines[1:]
+        # Remove the last line if it ends with ```
+        if lines and lines[-1].startswith("```"):
+            lines = lines[:-1]
+        cleaned = "\n".join(lines).strip()
+    
+    # Attempt to extract substring that starts with '{' and ends with the last '}'
+    start_index = cleaned.find('{')
+    end_index = cleaned.rfind('}')
+    if start_index != -1 and end_index != -1 and end_index > start_index:
+        cleaned = cleaned[start_index:end_index+1]
+    
+    # Final attempt to parse JSON
+    return json.loads(cleaned)
+
+
 
 
 
