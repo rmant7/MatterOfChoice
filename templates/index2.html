@@ -6,100 +6,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    .container {
-      width: 90%;
-      max-width: 600px;
-      margin: auto;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
-    }
-    h6 {
-      font-size: 1em;
-      margin: 0.5em 0;
-    }
-    #form-container {
-      margin-bottom: 20px;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    label {
-      margin: 10px 0 5px;
-    }
-    select, input[type="text"] {
-      padding: 10px;
-      margin-bottom: 20px;
-      width: 100%;
-      max-width: 300px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 1em;
-      cursor: pointer;
-    }
-    #loading-spinner {
-      margin: 20px 0;
-    }
-    .lds-ring {
-      display: inline-block;
-      position: relative;
-      width: 64px;
-      height: 64px;
-    }
-    .lds-ring div {
-      box-sizing: border-box;
-      display: block;
-      position: absolute;
-      width: 51px;
-      height: 51px;
-      margin: 6px;
-      border: 6px solid #000;
-      border-radius: 50%;
-      animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-      border-color: #000 transparent transparent transparent;
-    }
-    .lds-ring div:nth-child(1) {
-      animation-delay: -0.45s;
-    }
-    .lds-ring div:nth-child(2) {
-      animation-delay: -0.3s;
-    }
-    .lds-ring div:nth-child(3) {
-      animation-delay: -0.15s;
-    }
-    @keyframes lds-ring {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-    .hidden {
-      display: none;
-    }
-    .submit-button {
-      margin-top: 20px;
-    }
-    .case-image {
-      max-width: 100%;
-      height: auto;
-      margin: 10px 0;
-    }
-  </style>
+
 </head>
 <body>
   <div class="container">
@@ -153,11 +60,7 @@
 
         <label for="subject">Subject:</label>
         <input type="text" id="subject" name="subject" required>
-        <!-- <label for="allow_image">Allow Image Generation:</label>
-        <select id="allow_image" name="allow_image">
-            <option value="False" selected>No</option>
-            <option value="True">Yes</option>
-        </select> -->
+
          
         <label for="difficulty">Difficulty Level:</label>
         <select id="difficulty" name="difficulty" required>
@@ -165,13 +68,25 @@
           <option value="easy">easy</option>
           <option value="hard">hard</option>
         </select>
+<!-- Move this block before the question_type select -->
+<div class="form-group">
+  <label for="allow_image" id="allow-image-container">
+      <input type="checkbox" 
+             id="allow_image" 
+             name="allow_image" 
+             onchange="this.value = this.checked.toString()"
+             style="width: auto; margin-right: 8px;">
+      Allow Image Generation
+  </label>
+</div>
 
-        <label for="question_type">Question Type:</label>
-        <select id="question_type" name="question_type" required>
-          <option value="study">Study</option>
-          <option value="behavioral">Behavioral</option>
-          <option value="hiring">Hiring</option>
-        </select>
+<label for="question_type">Question Type:</label>
+<select id="question_type" name="question_type" required>
+  <option value="study">Study</option>
+  <option value="behavioral">Behavioral</option>
+  <option value="hiring">Hiring</option>
+</select>
+
 
         <label for="sub_type">Sub Type:</label>
         <select id="sub_type" name="sub_type" required>
@@ -215,6 +130,65 @@
   </div>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   <script>
+
+document.getElementById('allow_image').addEventListener('change', function() {
+    const questionTypeSelect = document.getElementById('question_type');
+    const studyOption = questionTypeSelect.querySelector('option[value="study"]');
+    
+    if (this.checked) {
+        // If checkbox is checked, remove study option
+        if (studyOption) {
+            // If currently selected option is study, change it to behavioral
+            if (questionTypeSelect.value === 'study') {
+                questionTypeSelect.value = 'behavioral';
+            }
+            studyOption.remove();
+        }
+    } else {
+        // If checkbox is unchecked, add study option back if it doesn't exist
+        if (!studyOption) {
+            const newStudyOption = document.createElement('option');
+            newStudyOption.value = 'study';
+            newStudyOption.text = 'Study';
+            // Insert at the beginning of the select
+            questionTypeSelect.insertBefore(newStudyOption, questionTypeSelect.firstChild);
+        }
+    }
+});
+
+// Handle initial state when page loads
+window.addEventListener('load', () => {
+    const allowImageCheckbox = document.getElementById('allow_image');
+    
+    // If checkbox is checked on page load, remove study option
+    if (allowImageCheckbox.checked) {
+        const questionTypeSelect = document.getElementById('question_type');
+        const studyOption = questionTypeSelect.querySelector('option[value="study"]');
+        if (studyOption) {
+            if (questionTypeSelect.value === 'study') {
+                questionTypeSelect.value = 'behavioral';
+            }
+            studyOption.remove();
+        }
+        toggleGenerateButton(true);
+
+    }
+});
+
+// Function to toggle the visibility of the generate button
+        function toggleGenerateButton(show) {
+        const generateButton = document.getElementById('generateButton');
+        if (show) {
+            generateButton.style.display = 'block';
+        } else {
+            generateButton.style.display = 'none';
+        }
+    }
+
+    // For automatic scrolling, add these attributes to your containers
+    document.getElementById('analysis-section').setAttribute('onchange', 'this.scrollIntoView({behavior: "smooth", block: "start"})');
+
+
     // Function to update URL parameters
     function updateURLParameter(param, value) {
       const url = new URL(window.location);

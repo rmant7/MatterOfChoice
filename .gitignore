@@ -8,3 +8,4 @@ flask/__pycache__/
 flask/.env
 flask/output/game/
 /
+flask_app.log
