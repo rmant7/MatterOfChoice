@@ -6,24 +6,22 @@ const resetButton = document.getElementById('resetButton');
 let bufferedCases = null;
 let isBackgroundFetching = false;
 
-
-
 // Define subtypes for each question type
 const subtypes = {
   behavioral: [
-    { value: 'interpersonal_skills', text: 'Interpersonal Skills' },
-    { value: 'ethical_dilemmas', text: 'Ethical Dilemmas' },
-    { value: 'stress_management', text: 'Stress Management' }
+    { value: 'interpersonal_skills', text: window.i18n ? window.i18n.getTranslation('interpersonal_skills') : 'Interpersonal Skills' },
+    { value: 'ethical_dilemmas', text: window.i18n ? window.i18n.getTranslation('ethical_dilemmas') : 'Ethical Dilemmas' },
+    { value: 'stress_management', text: window.i18n ? window.i18n.getTranslation('stress_management') : 'Stress Management' }
   ],
   study: [
-    { value: 'subject_mastery', text: 'Subject Mastery' },
-    { value: 'critical_thinking', text: 'Critical Thinking' },
-    { value: 'practical_application', text: 'Practical Application' }
+    { value: 'subject_mastery', text: window.i18n ? window.i18n.getTranslation('subject_mastery') : 'Subject Mastery' },
+    { value: 'critical_thinking', text: window.i18n ? window.i18n.getTranslation('critical_thinking') : 'Critical Thinking' },
+    { value: 'practical_application', text: window.i18n ? window.i18n.getTranslation('practical_application') : 'Practical Application' }
   ],
   hiring: [
-    { value: 'technical_skills', text: 'Technical Skills' },
-    { value: 'behavioral_interview', text: 'Behavioral Interview' },
-    { value: 'situational_judgment', text: 'Situational Judgment' }
+    { value: 'technical_skills', text: window.i18n ? window.i18n.getTranslation('technical_skills') : 'Technical Skills' },
+    { value: 'behavioral_interview', text: window.i18n ? window.i18n.getTranslation('behavioral_interview') : 'Behavioral Interview' },
+    { value: 'situational_judgment', text: window.i18n ? window.i18n.getTranslation('situational_judgment') : 'Situational Judgment' }
   ]
 };
 
@@ -42,7 +40,8 @@ function updateSubTypeOptions(selectedType) {
     subtypes[selectedType].forEach(subtype => {
       const option = document.createElement('option');
       option.value = subtype.value;
-      option.text = subtype.text;
+      option.text = window.i18n ? window.i18n.getTranslation(subtype.value) : subtype.text;
+      option.setAttribute('data-translate', subtype.value);
       subTypeSelect.appendChild(option);
     });
   }
@@ -109,18 +108,12 @@ resetButton.addEventListener('click', async () => {
   }
 });
 
-
-
-
-
-
 function startNewGame() {
   // Reset game state if necessary
   userAnswers = {}; // Reset userAnswers
   casesBatch = []; // Clear the current batch of cases
 
   window.location.reload();
-
 }
 
 // Global variables for managing current batch of cases
@@ -129,8 +122,6 @@ let casesBatch = [];
 let userAnswers = {}; // Changed to an object
 let batchCounter = 0;
 
-
-
 async function handleGenerateCasesResponse(response) {
   if (!response.ok) {
     const errorData = await response.json();
@@ -138,27 +129,30 @@ async function handleGenerateCasesResponse(response) {
     return;
   }
 
-
   responseContainer.innerHTML = `
-
   <div class="case-content">`;
 
-
   responseContainer.innerHTML = `
-
   <div class="case-content">`;
 
   const jsonData = await response.json();
 
+  // if (jsonData.message && jsonData.message === window.i18n.getTranslation("congratulations")) {
+  //   displayCongratulations(jsonData.message);
+  //   userAnswers = {}; // Reset userAnswers to an empty object
+  //   return;
+  // }
+
   if (jsonData.message && jsonData.message === "CONGRATULATIONS YOU FINISHED THE GAME") {
-    displayCongratulations(jsonData.message);
+    const message = window.i18n.getTranslation("congratulations");
+    displayCongratulations(message);
     userAnswers = {}; // Reset userAnswers to an empty object
 
     return;
   }
 
   if (!jsonData.data) {
-    displayError({ error: "Server response missing 'data' field." });
+    displayError({ error: window.i18n.getTranslation("error") + ": " + window.i18n.getTranslation("no_case") });
     return;
   }
 
@@ -183,31 +177,21 @@ async function handleGenerateCasesResponse(response) {
   displayCurrentCase();
 }
 
-
-
-
-
-
-
-
-
-
-
 function submitCurrentAnswer() {
   if (currentCaseIndex >= casesBatch.length) {
-      displayError({ error: "No more cases to answer." });
+      displayError({ error: window.i18n.getTranslation("no_case") });
       return;
   }
 
   const caseData = casesBatch[currentCaseIndex];
   if (!caseData) {
-      displayError({ error: "Case data is undefined." });
+      displayError({ error: window.i18n.getTranslation("no_case") });
       return;
   }
 
   const selected = document.querySelector(`input[name="${caseData.case_id}"]:checked`);
   if (!selected) {
-      displayError({ error: "Please select an answer." });
+      displayError({ error: window.i18n.getTranslation("please_select") });
       return;
   }
 
@@ -235,9 +219,6 @@ function submitCurrentAnswer() {
   }
 }
 
-
-
-
 async function sendAnswersToBackend(userAnswers) { // Changed parameter name
   const loadingSpinner = document.getElementById('loading-spinner');
   if (loadingSpinner) {
@@ -260,7 +241,7 @@ async function sendAnswersToBackend(userAnswers) { // Changed parameter name
   const imageEl = document.getElementById('allow_image') || { value: localStorage.getItem('allow_image') || "" };
 
   if (!subTypeEl) {
-    displayError({ error: "Sub-type form element is missing." });
+    displayError({ error: window.i18n.getTranslation("error") });
     if (loadingSpinner) loadingSpinner.classList.add('hidden');
     return;
   }
@@ -311,7 +292,7 @@ function createCaseElement(caseData) {
   if (caseData.generated_image_data) {
     const img = document.createElement('img');
     img.src = caseData.generated_image_data;
-    img.alt = 'Generated image for case';
+    img.alt = window.i18n.getTranslation('generated_image_alt');
     img.classList.add('case-image');
     caseElement.appendChild(img);
   } else {
@@ -357,8 +338,8 @@ function displayCongratulations(message) {
   responseContainer.classList.add('success');
   responseContainer.innerHTML = `
     <h2>${message}</h2>
-    <button id="newGameButton">Finish</button>
-    <button id="analyzeButton">Analyze </button>
+    <button id="newGameButton">${window.i18n.getTranslation('proceed')}</button>
+    <button id="analyzeButton">${window.i18n.getTranslation('analyze_again')}</button>
   `;
   const newGameButton = document.getElementById('newGameButton');
   newGameButton.addEventListener('click', startNewGame);
@@ -410,19 +391,18 @@ async function analyzeResults() {
       displayAnalysis(analysisData);
     } else {
       console.error("analyzeResults: Invalid analysis data structure:", analysisData);
-      displayError({ error: "Invalid analysis data received from server." });
+      displayError({ error: window.i18n.getTranslation('no_analysis') });
     }
     responseContainer.classList.add('success');
   } catch (error) {
     console.error("analyzeResults: Exception occurred:", error);
-    displayError({ error: `Analysis failed: ${error}` });
+    displayError({ error: `${window.i18n.getTranslation('error')}: ${error}` });
   } finally {
     loadingSpinner.classList.add('hidden');
     responseContainer.classList.remove('hidden');
     console.log("analyzeResults: Finished execution.");
   }
 }
-
 
 function displayError(errorData) {
     // Create the modal container
@@ -456,7 +436,7 @@ function displayError(errorData) {
 
     // Add error message
     modal.innerHTML = `
-      <p><strong>Error:</strong> ${errorData.error}</p>
+      <p><strong>${window.i18n.getTranslation('error')}:</strong> ${errorData.error}</p>
     `;
     modal.appendChild(closeButton);
 
@@ -485,169 +465,127 @@ function displayError(errorData) {
     }
   }
 
-
-
-
 function displayResults(data) {
   responseContainer.innerHTML = `
-    <h2>Results</h2>
+    <h2>${window.i18n.getTranslation('analysis_results')}</h2>
     <div class="result-summary">
-      <p><strong>Your Score:</strong> ${data.total_score}</p>
-      <p><strong>Max Possible Score:</strong> ${data.max_total_score}</p>
+      <p><strong>${window.i18n.getTranslation('score')}</strong> ${data.total_score}</p>
+      <p><strong>${window.i18n.getTranslation('overall_assessment')}:</strong> ${data.max_total_score}</p>
     </div>
     <div class="result-details">
   `;
   data.results.forEach(result => {
     responseContainer.innerHTML += `
       <div class="case-result">
-        <p><strong>Case ID:</strong> ${result.case_id}</p>
-        <p><strong>Your Score:</strong> ${result.score}</p>
-        <p><strong>Max Score:</strong> ${result.max_score}</p>
+        <p><strong>${window.i18n.getTranslation('case')}:</strong> ${result.case_id}</p>
+        <p><strong>${window.i18n.getTranslation('your_answer')}:</strong> ${result.score}</p>
+        <p><strong>${window.i18n.getTranslation('correct_answer')}:</strong> ${result.max_score}</p>
       </div>
     `;
   });
   responseContainer.innerHTML += `</div>`;
   const newGameButton = document.createElement('button');
   newGameButton.id = 'newGameButton';
-  newGameButton.textContent = 'New Game';
+  newGameButton.textContent = window.i18n.getTranslation('start_game');
   newGameButton.addEventListener('click', startNewGame);
   responseContainer.appendChild(newGameButton);
 }
 
-
-
 function submitCurrentResponses() {
     if (currentCaseIndex >= casesBatch.length) {
-      displayError({ error: "No more cases to answer." });
+      displayError({ error: window.i18n.getTranslation('no_case') });
       return;
     }
 
     const caseData = casesBatch[currentCaseIndex];
     if (!caseData) {
-      displayError({ error: "Case data is undefined." });
+      displayError({ error: window.i18n.getTranslation('no_case') });
       return;
     }
 
     const selected = document.querySelector(`input[name="${caseData.case_id}"]:checked`);
     if (!selected) {
-      displayError({ error: "Please select an answer." });
+      displayError({ error: window.i18n.getTranslation('please_select') });
       return;
     }
 
     userAnswers[caseData.case_id] = parseInt(selected.value, 10);
     currentCaseIndex++;
 
+    const submitBtn = document.querySelector('.submit-button');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+    }
+    submitResponses(userAnswers);
+}
 
-      const submitBtn = document.querySelector('.submit-button');
-      if (submitBtn) {
-        submitBtn.disabled = true;
-      }
-      submitResponses(userAnswers);
+async function submitResponses(userAnswers) {
+  const loadingSpinner = document.getElementById('loading-spinner');
+  if (loadingSpinner) {
+    loadingSpinner.classList.remove('hidden');
+  }
+  const responseContainer = document.getElementById('response-container');
+  if (responseContainer) {
+    responseContainer.classList.add('hidden');
+    responseContainer.classList.remove('success');
+    responseContainer.classList.remove('error');
   }
 
+  const languageEl = document.getElementById('language') || { value: localStorage.getItem('language') || "" };
+  const ageEl = document.getElementById('age') || { value: localStorage.getItem('age') || "" };
+  const subjectEl = document.getElementById('subject') || { value: localStorage.getItem('subject') || "" };
+  const difficultyEl = document.getElementById('difficulty') || { value: localStorage.getItem('difficulty') || "" };
+  const questionTypeEl = document.getElementById('question_type') || { value: localStorage.getItem('question_type') || "" };
+  const subTypeEl = document.getElementById('sub_type');
+  const sexEl = document.getElementById('sex') || { value: localStorage.getItem('sex') || "" };
+  const imageEl = document.getElementById('allow_image') || { value: localStorage.getItem('allow_image') || "" };
 
+  if (!subTypeEl) {
+    displayError({ error: window.i18n.getTranslation('error') });
+    if (loadingSpinner) loadingSpinner.classList.add('hidden');
+    return;
+  }
 
+  const payload = {
+    language: languageEl.value,
+    age: ageEl.value,
+    subject: subjectEl.value,
+    difficulty: difficultyEl.value,
+    question_type: questionTypeEl.value,
+    sub_type: subTypeEl.value,
+    role: 'default_role',
+    sex: sexEl.value,
+    answers: userAnswers,
+    allow_image: imageEl.value
+  };
 
+  try {
+    const response = await fetch('/submit_responses', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    localStorage.removeItem('casesBatch');
 
-
-  async function submitResponses(userAnswers) {
-    const loadingSpinner = document.getElementById('loading-spinner');
-    if (loadingSpinner) {
-      loadingSpinner.classList.remove('hidden');
-    }
-    const responseContainer = document.getElementById('response-container');
-    if (responseContainer) {
-      responseContainer.classList.add('hidden');
-      responseContainer.classList.remove('success');
-      responseContainer.classList.remove('error');
-    }
-
-    const languageEl = document.getElementById('language') || { value: localStorage.getItem('language') || "" };
-    const ageEl = document.getElementById('age') || { value: localStorage.getItem('age') || "" };
-    const subjectEl = document.getElementById('subject') || { value: localStorage.getItem('subject') || "" };
-    const difficultyEl = document.getElementById('difficulty') || { value: localStorage.getItem('difficulty') || "" };
-    const questionTypeEl = document.getElementById('question_type') || { value: localStorage.getItem('question_type') || "" };
-    const subTypeEl = document.getElementById('sub_type');
-    const sexEl = document.getElementById('sex') || { value: localStorage.getItem('sex') || "" };
-    const imageEl = document.getElementById('allow_image') || { value: localStorage.getItem('allow_image') || "" };
-
-
-    if (!subTypeEl) {
-      displayError({ error: "Sub-type form element is missing." });
-      if (loadingSpinner) loadingSpinner.classList.add('hidden');
+    if (!response.ok) {
+      const errorData = await response.json();
+      displayError(errorData);
       return;
     }
-
-    const payload = {
-      language: languageEl.value,
-      age: ageEl.value,
-      subject: subjectEl.value,
-      difficulty: difficultyEl.value,
-      question_type: questionTypeEl.value,
-      sub_type: subTypeEl.value,
-      role: 'default_role',
-      sex: sexEl.value,
-      answers: userAnswers,
-
-
-      allow_image: imageEl.value
-
-
-    };
-
-    try {
-      const response = await fetch('/submit_responses', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      localStorage.removeItem('casesBatch');
-
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        displayError(errorData);
-        return;
+    const analysisData = await response.json();
+      if (analysisData) {
+          displayAnalysis(analysisData);
+      } else {
+          displayError({ error: window.i18n.getTranslation('no_analysis') });
       }
-      const analysisData = await response.json();
-        if (analysisData) {
-            displayAnalysis(analysisData);
-
-        } else {
-            displayError({ error: "Invalid analysis data received from server." });
-        }
-        responseContainer.classList.add('success');
-
-    } catch (error) {
-        displayError({ error: `Analysis failed: ${error}` });
-    } finally {
-        loadingSpinner.classList.add('hidden');
-        responseContainer.classList.remove('hidden');
-      }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      responseContainer.classList.add('success');
+  } catch (error) {
+      displayError({ error: `${window.i18n.getTranslation('error')}: ${error}` });
+  } finally {
+      loadingSpinner.classList.add('hidden');
+      responseContainer.classList.remove('hidden');
+    }
+}
 
 function checkUnansweredCases() {
   // Count only cases that haven't been answered yet
@@ -660,10 +598,6 @@ function checkUnansweredCases() {
   console.log(`Found ${unansweredCount} unanswered cases remaining`);
   return unansweredCount;
 }
-
-
-
-
 
 function proceedCases() {
     console.log("proceedCases: Starting with buffered cases:", bufferedCases?.length);
@@ -683,10 +617,6 @@ function proceedCases() {
     }
 }
 
-
-
-
-
 async function fetchCasesInBackground(userAnswers = null) {
   // Prevent multiple simultaneous fetches
   if (isBackgroundFetching) return;
@@ -704,7 +634,7 @@ async function fetchCasesInBackground(userAnswers = null) {
   const payload = {
       language: document.getElementById('language')?.value || localStorage.getItem('language') || "",
       age: document.getElementById('age')?.value || localStorage.getItem('age') || "",
-      subject: document.getElementById('subject')?.value || localStorage.getItem('subject') || "",
+      subject: document.getElementById('subject')?.value || localStorage.getItem('subject')?.value || "",
       difficulty: document.getElementById('difficulty')?.value || localStorage.getItem('difficulty') || "",
       question_type: document.getElementById('question_type')?.value || localStorage.getItem('question_type') || "",
       sub_type: document.getElementById('sub_type')?.value || "",
@@ -747,7 +677,7 @@ function displayCurrentCase(checkBufferedCases = true) {
   responseContainer.innerHTML = '';
 
   if (casesBatch.length === 0 || currentCaseIndex >= casesBatch.length) {
-      displayError({ error: "No case available." });
+      displayError({ error: window.i18n.getTranslation('no_case') });
       return;
   }
 
@@ -765,17 +695,15 @@ function displayCurrentCase(checkBufferedCases = true) {
   caseForm.appendChild(caseElement);
   responseContainer.appendChild(caseElement);
 
+  // Hide the generate button when cases are displayed
+  toggleGenerateButton(false);
 
-      // Hide the generate button when cases are displayed
-      toggleGenerateButton(false);
-
-      responseContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
+  responseContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   const submitButton = document.createElement('button');
   submitButton.type = 'button';
   submitButton.classList.add('submit-button');
-  submitButton.innerText = 'Next Case';
+  submitButton.innerText = window.i18n.getTranslation('next_case');
   submitButton.addEventListener('click', submitCurrentAnswer);
   caseForm.appendChild(submitButton);
   responseContainer.appendChild(submitButton);
@@ -784,7 +712,7 @@ function displayCurrentCase(checkBufferedCases = true) {
   submitButtonm.type = 'button';
   submitButtonm.id = 'submitButtonm';
   submitButtonm.classList.add('submit-buttonm');
-  submitButtonm.innerText = 'Submit And Analyze';
+  submitButtonm.innerText = window.i18n.getTranslation('submit_analyze');
   submitButtonm.addEventListener('click', submitCurrentResponses);
   caseForm.appendChild(submitButtonm);
   responseContainer.appendChild(submitButtonm);
@@ -793,9 +721,8 @@ function displayCurrentCase(checkBufferedCases = true) {
 function displayAnalysis(analysis) {
   console.log("displayAnalysis: Function started with input:", analysis);
   let analysisData;
-      // Hide the generate button when cases are displayed
-      toggleGenerateButton(false);
-
+  // Hide the generate button when cases are displayed
+  toggleGenerateButton(false);
 
   // Start background fetch immediately without answersArr
   fetchCasesInBackground();
@@ -808,7 +735,7 @@ function displayAnalysis(analysis) {
           console.log("displayAnalysis: Parsed analysisData from string:", analysisData);
       } catch (e) {
           console.error("displayAnalysis: Failed to parse analysis string:", analysis);
-          displayError({ error: "Analysis data is not valid JSON." });
+          displayError({ error: window.i18n.getTranslation('no_analysis') });
           return;
       }
   } else if (typeof analysis === "object" && analysis !== null) {
@@ -816,7 +743,7 @@ function displayAnalysis(analysis) {
       console.log("displayAnalysis: Analysis is already an object:", analysisData);
   } else {
       console.error("displayAnalysis: Invalid analysis data type received:", analysis);
-      displayError({ error: "Invalid analysis data type received from server." });
+      displayError({ error: window.i18n.getTranslation('no_analysis') });
       return;
   }
 
@@ -829,12 +756,12 @@ function displayAnalysis(analysis) {
   // Debug log for unexpected structure.
   if (!analysisData || typeof analysisData !== "object" || !Array.isArray(analysisData.cases)) {
       console.error("displayAnalysis: Unexpected analysis data structure:", analysisData);
-      displayError({ error: "Invalid analysis data received from server." });
+      displayError({ error: window.i18n.getTranslation('no_analysis') });
       return;
   }
 
   console.log("displayAnalysis: Data validated successfully. Proceeding to render UI.");
-  const overallJudgement = analysisData.overall_judgement || "No overall judgment available";
+  const overallJudgement = analysisData.overall_judgement || window.i18n.getTranslation('no_analysis');
   const cases = analysisData.cases;
 
   // Calculate percentage score
@@ -847,11 +774,11 @@ function displayAnalysis(analysis) {
           <!-- Header Section -->
           <div class="analysis-header">
               <button id="againButton" class="analysis-button">
-                  <i class="fas fa-sync-alt"></i> Analyze Again
+                  <i class="fas fa-sync-alt"></i> ${window.i18n.getTranslation('analyze_again')}
               </button>
-              <h2 class="analysis-title">Analysis Results</h2>
+              <h2 class="analysis-title">${window.i18n.getTranslation('analysis_results')}</h2>
               <div class="score-display">
-                  <span class="score-label">Score:</span>
+                  <span class="score-label">${window.i18n.getTranslation('score')}</span>
                   <span class="score-value ${percentageScore >= 70 ? 'good-score' : 'needs-improvement'}">
                       ${percentageScore}%
                   </span>
@@ -861,7 +788,7 @@ function displayAnalysis(analysis) {
 
           <!-- Overall Judgment Section -->
           <div class="overall-judgment">
-              <h3>Overall Assessment</h3>
+              <h3>${window.i18n.getTranslation('overall_assessment')}</h3>
               <div class="judgment-content">
                   <i class="fas fa-chart-line judgment-icon"></i>
                   <p>${overallJudgement}</p>
@@ -870,28 +797,28 @@ function displayAnalysis(analysis) {
 
           <!-- Cases Analysis Section -->
           <div class="cases-analysis">
-              <h3>Detailed Case Analysis</h3>
+              <h3>${window.i18n.getTranslation('detailed_case_analysis')}</h3>
               ${cases.map((caseItem, index) => `
                   <div class="case-analysis-item ${caseItem.player_choice === caseItem.optimal_choice ? 'correct' : 'incorrect'}">
-                      <div class="case-number">Case ${index + 1}</div>
+                      <div class="case-number">${window.i18n.getTranslation('case')} ${index + 1}</div>
                       <div class="case-content">
                           <div class="case-question">
                               <i class="fas fa-question-circle"></i>
-                              <p>${caseItem.case_description || "No description available"}</p>
+                              <p>${caseItem.case_description || window.i18n.getTranslation('no_case')}</p>
                           </div>
                           <div class="choices-comparison">
                               <div class="choice player-choice">
-                                  <span class="choice-label">Your Answer:</span>
+                                  <span class="choice-label">${window.i18n.getTranslation('your_answer')}</span>
                                   <span class="choice-value">${caseItem.player_choice || "N/A"}</span>
                               </div>
                               <div class="choice correct-choice">
-                                  <span class="choice-label">Correct Answer:</span>
+                                  <span class="choice-label">${window.i18n.getTranslation('correct_answer')}</span>
                                   <span class="choice-value">${caseItem.optimal_choice || "N/A"}</span>
                               </div>
                           </div>
                           <div class="case-feedback">
                               <i class="fas fa-lightbulb"></i>
-                              <p>${caseItem.analysis || "No analysis available"}</p>
+                              <p>${caseItem.analysis || window.i18n.getTranslation('no_analysis')}</p>
                           </div>
                       </div>
                   </div>
@@ -901,7 +828,7 @@ function displayAnalysis(analysis) {
           <!-- Action Buttons -->
           <div class="analysis-actions">
               <button id="proceedButton" class="proceed-button">
-                  <i class="fas fa-arrow-right"></i> Proceed
+                  <i class="fas fa-arrow-right"></i> ${window.i18n.getTranslation('proceed')}
               </button>
           </div>
       </div>
@@ -925,3 +852,12 @@ function displayAnalysis(analysis) {
   console.log("displayAnalysis: UI rendered successfully.");
 }
 
+let generateButtonVisible = true;
+
+function toggleGenerateButton(show) {
+    const generateButton = document.getElementById('generateButton');
+    if (generateButton) {
+        generateButton.style.display = show ? 'block' : 'none';
+        generateButtonVisible = show;
+    }
+}
