@@ -506,7 +506,7 @@ const translations = {
     lang_turkish: "তুর্কি",
   },
   ru: { 
-    title: "Вопрос Выбора",
+    title: "Дело Выбора",
     select_language: "Язык:",
     gender: "Пол",
     male: "мужской",

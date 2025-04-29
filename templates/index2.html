@@ -269,7 +269,39 @@ function prefillFormFromURL() {
   const sub_type = urlParams.get('sub_type');
   const role = urlParams.get('role');
 
-  if (language) document.getElementById('language').value = language;
+  if (language) {
+    const languageSelect = document.getElementById('language');
+    languageSelect.value = language;
+
+    // Map language to its code and update the UI language
+    const languageCodeMap = {
+      English: "en",
+      Spanish: "es",
+      French: "fr",
+      "Mandarin Chinese": "zh",
+      Hindi: "hi",
+      Arabic: "ar",
+      Bengali: "bn",
+      Russian: "ru",
+      Portuguese: "pt",
+      Urdu: "ur",
+      German: "de",
+      Japanese: "ja",
+      Swahili: "sw",
+      Marathi: "mr",
+      Telugu: "te",
+      Tamil: "ta",
+      Vietnamese: "vi",
+      Korean: "ko",
+      Turkish: "tr",
+    };
+
+    const langCode = languageCodeMap[language] || "en";
+    if (window.i18n && typeof window.i18n.updateLanguage === 'function') {
+      window.i18n.updateLanguage(langCode);
+    }
+  }
+
   if (age) document.getElementById('age').value = age;
   if (subject) document.getElementById('subject').value = subject;
   if (difficulty) document.getElementById('difficulty').value = difficulty;
