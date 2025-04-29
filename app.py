@@ -260,19 +260,19 @@ def generate_cases():
 
             session[f'{user_id}_turn'] = turn + 1
 
-        # for case in case_data:
-        #         question_prompt = case.get("case")
-        #         if question_prompt and allow_image:
-        #             try:
-        #                 # generate_image_for_question returns a data URL (e.g., "data:image/png;base64,...")
-        #                 generated_image_data = generate_image_for_question(question_prompt)
-        #                 # Attach the data URL directly to the case data
-        #                 case['generated_image_data'] = generated_image_data
-        #             except Exception as e:
-        #                 logger.exception(f"Image generation from question failed: {e}")
-        #                 case['generated_image_data'] = None
-        #         else:
-        #             case['generated_image_data'] = None
+        for case in case_data:
+                question_prompt = case.get("case")
+                if question_prompt and allow_image:
+                    try:
+                        # generate_image_for_question returns a data URL (e.g., "data:image/png;base64,...")
+                        generated_image_data = generate_image_for_question(question_prompt)
+                        # Attach the data URL directly to the case data
+                        case['generated_image_data'] = generated_image_data
+                    except Exception as e:
+                        logger.exception(f"Image generation from question failed: {e}")
+                        case['generated_image_data'] = None
+                else:
+                    case['generated_image_data'] = None
 
 
         return jsonify({'data': case_data}), 200

@@ -50,7 +50,7 @@ output_path.mkdir(parents=True, exist_ok=True)
 def get_response_gemini(prompt: str) -> str:
     try:
         logger(f"Generating response for prompt: {prompt[:50]}...")
-        model = genai.GenerativeModel('gemini-2.0-flash-exp')  # Update the model name
+        model = genai.GenerativeModel('gemini-2.5-flash-preview-04-17')  # Update the model name
         response = model.generate_content(prompt)
 
         if response and response._result.candidates:

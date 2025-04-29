@@ -9,3 +9,5 @@ flask/.env
 flask/output/game/
 /
 flask_app.log
+list_gemini_models.py
+generate_image.py
