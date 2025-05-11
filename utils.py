@@ -49,13 +49,13 @@ output_path.mkdir(parents=True, exist_ok=True)
 # Function to get a response from Gemini
 def get_response_gemini(prompt: str) -> str:
     try:
-        logger(f"Generating response for prompt: {prompt[:50]}...")
+        # logger(f"Generating response for prompt: {prompt[:50]}...")
         model = genai.GenerativeModel('gemini-2.5-flash-preview-04-17')  # Update the model name
         response = model.generate_content(prompt)
 
         if response and response._result.candidates:
             content = response._result.candidates[0].content.parts[0].text.strip()
-            logger(f"Received response: {content[:5000]}...")
+            # logger(f"Received response: {content[:5000]}...")
             return content
         else:
             logger("Empty or invalid response from Gemini.")
@@ -89,7 +89,7 @@ def extract_list(code: str) -> str:
 
 def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subject: str, question_type: str, subtype: str, conversation_data=None, sex: str = 'unspecified'):
     logger = logging.getLogger('my_app')
-    logger.debug(f"gen_cases function called with parameters: language={language}, age={age}, subject={subject}, difficulty={difficulty}, question_type={question_type}, subtype={subtype}, sex={sex}, conversation_data={conversation_data}")
+    # logger.debug(f"gen_cases function called with parameters: language={language}, age={age}, subject={subject}, difficulty={difficulty}, question_type={question_type}, subtype={subtype}, sex={sex}, conversation_data={conversation_data}")
 
     try:
         if conversation_data is None:
@@ -99,7 +99,7 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                 prompt = f"""{prompts['study']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
             elif question_type == 'hiring':
                 prompt = f"""{prompts['hiring']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
-            logger.debug(f"Initial prompt generated: {prompt}")
+            # logger.debug(f"Initial prompt generated: {prompt}")
         else:
             # conversation_data now has the structure: { "data": { "cases": [ ... ] } }
             previous_cases = conversation_data.get('data', {}).get('cases', [])
@@ -127,7 +127,7 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
             logger.debug(f"Follow-up prompt generated: {prompt}")
 
         response = get_response_gemini(prompt)
-        logger.debug(f"Gemini response: {response[:200]}...")
+        # logger.debug(f"Gemini response: {response[:200]}...")
 
         if not response:
             logger.error("Gemini API returned an empty response.")
@@ -135,7 +135,7 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
 
         cleaned_response = clean_response(response)
         list_content = extract_list(cleaned_response)
-        logger.debug(f"Extracted list content: {list_content}")
+        # logger.debug(f"Extracted list content: {list_content}")
 
         if list_content:
             try:
@@ -163,7 +163,7 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                         case_data['options'].append(option_item)
                     new_cases.append(case_data)
 
-                print(f"new cases lenth: ", len(new_cases))
+                # print(f"new cases lenth: ", len(new_cases))
                 max = 3
                 attempts = 0
 
@@ -171,7 +171,7 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                     response = get_response_gemini(prompt)
                     cleaned_response = clean_response(response)
                     list_content = extract_list(cleaned_response)
-                    logger.debug(f"Extracted list content: {list_content}")
+                    # logger.debug(f"Extracted list content: {list_content}")
                     attempts += 1
                     if list_content:
                             parsed = json.loads(list_content)
