@@ -135,18 +135,16 @@
                     <option value="easy" data-translate="easy">easy</option>
                     <option value="hard" data-translate="hard">hard</option>
                 </select>
-
-                <div class="form-group">
-                    <label for="allow_image" id="allow-image-container">
-                        <input type="checkbox" 
-                               id="allow_image" 
-                               name="allow_image" 
-                               onchange="this.value = this.checked.toString()"
-                               style="width: auto; margin-right: 8px;">
-                        <span data-translate="allow_image">Allow Image Generation</span>
-                    </label>
-                </div>
-
+<div class="form-group" id="allow-image-form-group" style="display: none;">
+    <label for="allow_image" id="allow-image-container">
+        <input type="checkbox" 
+               id="allow_image" 
+               name="allow_image" 
+               onchange="this.value = this.checked.toString()"
+               style="width: auto; margin-right: 8px;">
+        <span data-translate="allow_image">Allow Image Generation</span>
+    </label>
+</div>
                 <label for="question_type" data-translate="question_type">Question Type:</label>
                 <select id="question_type" name="question_type" required>
                     <option value="study" data-translate="study">Study</option>

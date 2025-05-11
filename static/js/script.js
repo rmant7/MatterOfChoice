@@ -54,6 +54,8 @@ form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   loadingSpinner.classList.remove('hidden');
+  loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
   responseContainer.classList.add('hidden');
   responseContainer.classList.remove('success');
   responseContainer.classList.remove('error');
@@ -79,6 +81,8 @@ form.addEventListener('submit', async (event) => {
 
 resetButton.addEventListener('click', async () => {
   loadingSpinner.classList.remove('hidden');
+  loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
   responseContainer.classList.add('hidden');
   responseContainer.classList.remove('success');
   responseContainer.classList.remove('error');
@@ -223,6 +227,7 @@ async function sendAnswersToBackend(userAnswers) { // Changed parameter name
   const loadingSpinner = document.getElementById('loading-spinner');
   if (loadingSpinner) {
     loadingSpinner.classList.remove('hidden');
+    loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
   const responseContainer = document.getElementById('response-container');
   if (responseContainer) {
@@ -238,7 +243,8 @@ async function sendAnswersToBackend(userAnswers) { // Changed parameter name
   const questionTypeEl = document.getElementById('question_type') || { value: localStorage.getItem('question_type') || "" };
   const subTypeEl = document.getElementById('sub_type');
   const sexEl = document.getElementById('sex') || { value: localStorage.getItem('sex') || "" };
-  const imageEl = document.getElementById('allow_image') || { value: localStorage.getItem('allow_image') || "" };
+  const imageEl = document.getElementById('allow_image'); // Always retrieve directly from the DOM
+  const allowImageValue = imageEl && imageEl.checked ? 'on' : ''; // Use the checkbox's checked state
 
   if (!subTypeEl) {
     displayError({ error: window.i18n.getTranslation("error") });
@@ -256,7 +262,7 @@ async function sendAnswersToBackend(userAnswers) { // Changed parameter name
     role: 'default_role',
     sex: sexEl.value,
     answers: userAnswers, // Send userAnswers object
-    allow_image: imageEl.value
+    allow_image: allowImageValue // Use the updated value
   };
 
   try {
@@ -294,10 +300,24 @@ function createCaseElement(caseData) {
     img.src = caseData.generated_image_data;
     img.alt = window.i18n.getTranslation('generated_image_alt');
     img.classList.add('case-image');
+
+    // Add placeholder text while the image is loading
+    const placeholderText = document.createElement('p');
+    placeholderText.innerText = 'Waiting for image...';
+    placeholderText.classList.add('image-placeholder');
+    caseElement.appendChild(placeholderText);
+
+    img.addEventListener('load', () => {
+      placeholderText.remove(); // Remove placeholder when image loads
+    });
+
+    img.addEventListener('error', () => {
+      placeholderText.innerText = 'Failed to load image'; // Update placeholder on error
+    });
+
     caseElement.appendChild(img);
   } else {
     const noImageText = document.createElement('p');
-    noImageText.innerText = '';
     noImageText.innerText = '';
     caseElement.appendChild(noImageText);
   }
@@ -358,6 +378,8 @@ function attachAnalyzeButtonListener() {
 async function analyzeResults() {
   console.log("analyzeResults: Function started.");
   loadingSpinner.classList.remove('hidden');
+  loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
   responseContainer.classList.add('hidden');
   responseContainer.classList.remove('success');
   responseContainer.classList.remove('error');
@@ -523,6 +545,8 @@ async function submitResponses(userAnswers) {
   const loadingSpinner = document.getElementById('loading-spinner');
   if (loadingSpinner) {
     loadingSpinner.classList.remove('hidden');
+    loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
   }
   const responseContainer = document.getElementById('response-container');
   if (responseContainer) {
@@ -538,7 +562,8 @@ async function submitResponses(userAnswers) {
   const questionTypeEl = document.getElementById('question_type') || { value: localStorage.getItem('question_type') || "" };
   const subTypeEl = document.getElementById('sub_type');
   const sexEl = document.getElementById('sex') || { value: localStorage.getItem('sex') || "" };
-  const imageEl = document.getElementById('allow_image') || { value: localStorage.getItem('allow_image') || "" };
+  const imageEl = document.getElementById('allow_image'); // Always retrieve directly from the DOM
+  const allowImageValue = imageEl && imageEl.checked ? 'on' : ''; // Use the checkbox's checked state
 
   if (!subTypeEl) {
     displayError({ error: window.i18n.getTranslation('error') });
@@ -556,7 +581,7 @@ async function submitResponses(userAnswers) {
     role: 'default_role',
     sex: sexEl.value,
     answers: userAnswers,
-    allow_image: imageEl.value
+    allow_image: allowImageValue // Use the updated value
   };
 
   try {
@@ -623,7 +648,7 @@ async function fetchCasesInBackground(userAnswers = null) {
 
   // Check if we actually need new cases
   const unansweredCases = checkUnansweredCases();
-  if (unansweredCases > 1 || bufferedCases) {
+  if (unansweredCases > 4 || bufferedCases) {
       console.log("No need to fetch cases: sufficient cases available");
       return;
   }
@@ -640,7 +665,7 @@ async function fetchCasesInBackground(userAnswers = null) {
       sub_type: document.getElementById('sub_type')?.value || "",
       role: 'default_role',
       sex: document.getElementById('sex')?.value || localStorage.getItem('sex') || "",
-      allow_image: document.getElementById('allow_image')?.value || localStorage.getItem('allow_image') || ""
+      allow_image: document.getElementById('allow_image')?.checked ? 'on' : '' // Always retrieve directly from the DOM
   };
 
   // Include answersArr in the payload if provided
@@ -684,8 +709,8 @@ function displayCurrentCase(checkBufferedCases = true) {
   // Check remaining unanswered cases and trigger background fetch if needed
   if (checkBufferedCases) {
       const unansweredCases = checkUnansweredCases();
-      if (unansweredCases <= 1 && !isBackgroundFetching && !bufferedCases) {
-          console.log("Only 1 or fewer unanswered cases remaining, triggering background fetch");
+      if (unansweredCases <= 3 && !isBackgroundFetching && !bufferedCases) {
+          console.log("Only 4 or fewer unanswered cases remaining, triggering background fetch");
           fetchCasesInBackground(userAnswers);
       }
   }
@@ -861,3 +886,80 @@ function toggleGenerateButton(show) {
         generateButtonVisible = show;
     }
 }
+
+// Scroll to the loading spinner when it is shown
+loadingSpinner.addEventListener('transitionend', () => {
+  if (!loadingSpinner.classList.contains('hidden')) {
+    loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+
+// --- ADDITIVE IMAGE POLLING FEATURE ---
+(function() {
+  // Only run after DOM is fully loaded
+  window.addEventListener('DOMContentLoaded', function() {
+    // Helper: check if images are enabled for this session
+    function imagesEnabled() {
+      const el = document.getElementById('allow_image');
+      return el && (el.checked || el.value === 'on' || el.value === 'true');
+    }
+
+    // Helper: poll for image for a given case_id and update placeholder
+    function pollForImage(caseId, placeholder) {
+      let attempts = 0;
+      const interval = setInterval(async function() {
+        attempts++;
+        try {
+          const resp = await fetch(`/get_image/${caseId}`);
+          if (!resp.ok) return;
+          const data = await resp.json();
+          if (data.generated_image_data === null) {
+            placeholder.innerText = window.i18n?.getTranslation('image_failed') || 'Image generation failed.';
+            clearInterval(interval);
+          } else if (data.generated_image_data) {
+            const img = document.createElement('img');
+            img.src = data.generated_image_data;
+            img.alt = window.i18n?.getTranslation('generated_image_alt') || 'Generated image';
+            img.className = 'case-image';
+            placeholder.replaceWith(img);
+            clearInterval(interval);
+          } else if (attempts > 60) {
+            placeholder.innerText = window.i18n?.getTranslation('image_timeout') || 'Image not available.';
+            clearInterval(interval);
+          }
+        } catch (e) {
+          // Ignore errors, keep polling
+        }
+      }, 2000);
+    }
+
+    // Hook: after each case is rendered, add placeholder and polling if needed
+    const origCreateCaseElement = window.createCaseElement;
+    if (typeof origCreateCaseElement === 'function') {
+      window.createCaseElement = function(caseData) {
+        const el = origCreateCaseElement(caseData);
+        // Only add if images are enabled and generated_image_data is null
+        if (imagesEnabled() && !caseData.generated_image_data) {
+          // Only add if not already present
+          if (!el.querySelector('.image-placeholder')) {
+            const placeholder = document.createElement('p');
+            placeholder.className = 'image-placeholder';
+            placeholder.innerText = window.i18n?.getTranslation('waiting_for_image') || 'Waiting for image...';
+            el.appendChild(placeholder);
+            pollForImage(caseData.case_id, placeholder);
+          }
+        } else if (!imagesEnabled()) {
+          // If images are disabled, show a message
+          if (!el.querySelector('.image-disabled-msg')) {
+            const msg = document.createElement('p');
+            msg.className = 'image-disabled-msg';
+            msg.innerText = window.i18n?.getTranslation('images_disabled') || 'Images are disabled for this session.';
+            el.appendChild(msg);
+          }
+        }
+        return el;
+      };
+    }
+  });
+})();
+// --- END ADDITIVE IMAGE POLLING FEATURE ---

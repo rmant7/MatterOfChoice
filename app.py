@@ -13,9 +13,8 @@ from utils import gen_cases, get_response_gemini  # keep these for other endpoin
 from image import get_info_from_image  # for image analysis
 import time
 from dotenv import load_dotenv
+import threading
 load_dotenv()
-
-
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True  # For development: auto-reload templates
@@ -32,6 +31,8 @@ BASE_DIR = Path(__file__).resolve().parent
 # (Uses HUGGINGFACE_TOKEN to match code 1's environment variable naming.)
 client = InferenceClient("stabilityai/stable-diffusion-3.5-large-turbo", token=os.getenv("HUGGINGFACE_API_KEY"))
 
+# In-memory storage for generated images
+image_storage = {}
 
 # ----------------------------
 # Helper functions for JSON I/O
@@ -71,7 +72,7 @@ def generate_image_for_question(question_text):
     max_retries = 10
     retry_delay = 5  # Initial delay in seconds
 
-    for attempt in range(max_retries):
+    for attempt in range(max_retries):  # Use range to create an iterable sequence
         try:
             print(f"Attempt {attempt + 1}: Generating image with prompt: {unique_prompt}")
             image_bytes = client.text_to_image(prompt=unique_prompt)
@@ -87,15 +88,11 @@ def generate_image_for_question(question_text):
             image.save(buffered, format="PNG")
             image_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
             return f"data:image/png;base64,{image_base64}"
-        
         except Exception as e:
-            # Handle rate limit separately
             if hasattr(e, 'response') and e.response is not None and e.response.status_code == 429:
                 print("Rate limit reached. Waiting for 60 seconds before retrying.")
                 time.sleep(60)
-                continue  # Retry without returning anything
-            
-            # Handle other exceptions with increasing delay
+                continue
             print(f"Attempt {attempt + 1} failed: {e}")
             time.sleep(retry_delay)
             retry_delay *= 1.5
@@ -103,7 +100,13 @@ def generate_image_for_question(question_text):
     print("Image generation failed after multiple attempts.")
     return None  # Ensures function only returns None if all retries fail
 
-
+def generate_image_background(case_id, question_prompt):
+    try:
+        generated_image_data = generate_image_for_question(question_prompt)
+        image_storage[case_id] = generated_image_data
+    except Exception as e:
+        logger.exception(f"Image generation failed for case {case_id}: {e}")
+        image_storage[case_id] = None
 
 # ----------------------------
 logger = logging.getLogger('my_app')
@@ -173,6 +176,7 @@ def generate_cases():
     role = data.get('role', None)
     sex = data.get('sex', 'unspecified')
     allow_image = data.get('allow_image', False)
+    print(f"allow_image: {allow_image}")    
     user_answers = data.get('answers', {})  # Changed to expect a dictionary
 
     if not all([language, subject, difficulty, question_type, sub_type]):
@@ -218,6 +222,10 @@ def generate_cases():
                 case['turn'] = turn
                 case['user_answer'] = None  # Initialize user_answer to None
                 case['answer'] = None
+                case['generated_image_data'] = None  # Always set placeholder
+                question_prompt = case.get("case")
+                if question_prompt and allow_image in ["true", "on"]:
+                    threading.Thread(target=generate_image_background, args=(case['case_id'], question_prompt)).start()
 
             session[f'{user_id}_turn'] = 2
             with open(analysis_filepath, 'w') as f:
@@ -253,6 +261,10 @@ def generate_cases():
                 case['turn'] = turn
                 case['user_answer'] = None
                 case['answer'] = None
+                case['generated_image_data'] = None  # Always set placeholder
+                question_prompt = case.get("case")
+                if question_prompt and allow_image in ["true", "on"]:
+                    threading.Thread(target=generate_image_background, args=(case['case_id'], question_prompt)).start()
             
             analysis_data['cases'].extend(case_data)
             with open(analysis_filepath, 'w') as f:
@@ -260,37 +272,16 @@ def generate_cases():
 
             session[f'{user_id}_turn'] = turn + 1
 
-        for case in case_data:
-                question_prompt = case.get("case")
-                if question_prompt and allow_image:
-                    try:
-                        # generate_image_for_question returns a data URL (e.g., "data:image/png;base64,...")
-                        generated_image_data = generate_image_for_question(question_prompt)
-                        # Attach the data URL directly to the case data
-                        case['generated_image_data'] = generated_image_data
-                    except Exception as e:
-                        logger.exception(f"Image generation from question failed: {e}")
-                        case['generated_image_data'] = None
-                else:
-                    case['generated_image_data'] = None
-
-
         return jsonify({'data': case_data}), 200
 
     except Exception as e:
         logger.exception(f"An unexpected error occurred: {e}")
         return jsonify({"error": "An unexpected error occurred."}), 500
-    
 
-
-
-
-
-
-
-
-
-
+@app.route('/get_image/<case_id>', methods=['GET'])
+def get_image(case_id):
+    image_data = image_storage.get(case_id)
+    return jsonify({"generated_image_data": image_data}), 200
 
 @app.route('/reset', methods=['POST'])
 def reset():
@@ -319,7 +310,7 @@ def converse():
     data = request.get_json()
     try:
         input_text = data.get('text')
-        print(f"Input text: {input_text}")
+        # print(f"Input text: {input_text}")
         response = get_response_gemini(input_text)
         return jsonify({'response': response}), 200
     except Exception as e:
