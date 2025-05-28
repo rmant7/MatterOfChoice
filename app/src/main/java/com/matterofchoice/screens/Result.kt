@@ -64,6 +64,9 @@ fun Result() {
                 text = rounds.toString(),
                 fontSize = 32.sp
             )
+            /*
+            // Commented out incorrect drawable reference - missing 'score' resource
+            // painterResource(R.drawable.score)
             Image(
                 painterResource(R.drawable.score),
                 contentDescription = null,
@@ -71,7 +74,7 @@ fun Result() {
                     .size(150.dp),
                 contentScale = ContentScale.Crop
 
-            )
+            )*/
             Text(
                 text = "Rounds",
                 fontSize = 32.sp,
