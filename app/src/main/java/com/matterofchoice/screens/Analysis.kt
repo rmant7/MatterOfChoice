@@ -69,7 +69,8 @@ fun Analysis(viewModel: AnalysisViewModel = viewModel()) {
                 modifier = Modifier.size(100.dp)
             )
             Text(
-                text = "Analysis your selections", color = Color.Black,
+                // changed text typo from analysis to analyse
+                text = "Analyse your selections", color = Color.Black,
                 fontFamily = myFont, fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 15.dp, top = 28.dp)
@@ -85,7 +86,8 @@ fun Analysis(viewModel: AnalysisViewModel = viewModel()) {
                 onClick = {
                     viewModel.loadAnalysis(context = context, role = userRole)
                 },
-                text = "Analysis my choices"
+                // changed text typo from analysis to analyse
+                text = "Analyse my choices"
             )
 
     }
