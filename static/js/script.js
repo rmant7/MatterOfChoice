@@ -290,8 +290,9 @@ function createCaseElement(caseData) {
   caseElement.classList.add('case-container');
 
   const caseTitle = document.createElement('div');
-  caseTitle.classList.add('case-title');
-  caseTitle.innerText = caseData.case;
+  const caseTitleLabel = document.createElement('label');
+  caseTitleLabel.innerText = caseData.case;
+  caseTitle.appendChild(caseTitleLabel);
   caseElement.appendChild(caseTitle);
 
   // Display generated image if available
