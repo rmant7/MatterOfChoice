@@ -11,6 +11,7 @@
     --button-text: #ffffff;
     --hover-bg: #0056b3;
     --home-text: #333333;
+    --label-color: #333333;
 }
 
 /* Dark theme */
@@ -25,6 +26,7 @@
     --button-text: #ffffff;
     --hover-bg: #0b5ed7;
     --home-text: #ffffff;
+    --label-color: #ffffff;
 }
 
 /* Apply theme variables */
@@ -118,4 +120,9 @@ button:hover {
 /* Loading spinner colors */
 .lds-ring div {
     border-color: var(--text-color) transparent transparent transparent;
+}
+
+/* Label styles */
+label {
+    color: var(--label-color) !important;
 } 
