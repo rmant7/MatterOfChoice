@@ -1,0 +1,121 @@
+/* Theme variables */
+:root {
+    /* Light theme (default) */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --container-bg: #f8f9fa;
+    --input-bg: #ffffff;
+    --input-border: #ced4da;
+    --input-text: #333333;
+    --button-bg: #007bff;
+    --button-text: #ffffff;
+    --hover-bg: #0056b3;
+    --home-text: #333333;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --container-bg: #2d2d2d;
+    --input-bg: #3d3d3d;
+    --input-border: #4d4d4d;
+    --input-text: #ffffff;
+    --button-bg: #0d6efd;
+    --button-text: #ffffff;
+    --hover-bg: #0b5ed7;
+    --home-text: #ffffff;
+}
+
+/* Apply theme variables */
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    background-color: var(--container-bg) !important;
+}
+
+/* New approach for input styling */
+.theme-input {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+    border: 1px solid var(--input-border) !important;
+}
+
+.theme-input:focus {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+    border-color: var(--input-border) !important;
+    outline: none !important;
+}
+
+/* Style for select options */
+.theme-input option {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+}
+
+/* Home page specific styles */
+.display-4, .lead {
+    color: var(--home-text) !important;
+}
+
+button {
+    background-color: var(--button-bg) !important;
+    color: var(--button-text) !important;
+}
+
+button:hover {
+    background-color: var(--hover-bg) !important;
+}
+
+/* Theme toggle button styles */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--container-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle i {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+/* Responsive adjustments for theme toggle */
+@media (max-width: 768px) {
+    .theme-toggle {
+        top: 15px;
+        right: 15px;
+        padding: 8px;
+    }
+    
+    .theme-toggle i {
+        font-size: 1.2rem;
+    }
+}
+
+/* Case container styles */
+.case {
+    background-color: var(--container-bg);
+    border: 1px solid var(--input-border);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* Loading spinner colors */
+.lds-ring div {
+    border-color: var(--text-color) transparent transparent transparent;
+} 
