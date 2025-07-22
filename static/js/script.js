@@ -50,33 +50,93 @@ function updateSubTypeOptions(selectedType) {
 // Initialize subtype options
 updateSubTypeOptions(questionTypeSelect.value);
 
+// New function to start the generation job and poll for results
+async function startCaseGenerationJob(payload, isBackgroundTask = false) {
+    if (!isBackgroundTask) {
+        loadingSpinner.classList.remove('hidden');
+        loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        responseContainer.classList.add('hidden');
+    }
+
+    try {
+        // Step 1: Start the generation job
+        const startResponse = await fetch('/start_case_generation', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (startResponse.status !== 202) {
+            const errorData = await startResponse.json();
+            throw new Error(errorData.error || 'Failed to start case generation.');
+        }
+
+        const { job_id } = await startResponse.json();
+
+        // Step 2: Poll for the job status
+        const pollJobStatus = async () => {
+            try {
+                const statusResponse = await fetch(`/get_job_status/${job_id}`);
+                if (!statusResponse.ok) {
+                    throw new Error('Failed to get job status.');
+                }
+
+                const job = await statusResponse.json();
+
+                if (job.status === 'complete') {
+                    if (isBackgroundTask) {
+                        if (job.result) {
+                            bufferedCases = Array.isArray(job.result) ? job.result : [job.result];
+                            console.log('Successfully buffered new cases:', bufferedCases.length);
+                        }
+                        isBackgroundFetching = false;
+                    } else {
+                        const simulatedResponse = {
+                            ok: true,
+                            json: async () => ({ data: job.result })
+                        };
+                        await handleGenerateCasesResponse(simulatedResponse);
+                        loadingSpinner.classList.add('hidden');
+                        responseContainer.classList.remove('hidden');
+                    }
+                } else if (job.status === 'failed') {
+                    throw new Error(job.error || 'Case generation failed.');
+                } else {
+                    setTimeout(pollJobStatus, isBackgroundTask ? 5000 : 2000);
+                }
+            } catch (error) {
+                if (isBackgroundTask) {
+                    console.error('Error in background job polling:', error);
+                    isBackgroundFetching = false;
+                } else {
+                    displayError({ error: error.message });
+                    loadingSpinner.classList.add('hidden');
+                    responseContainer.classList.remove('hidden');
+                }
+            }
+        };
+
+        pollJobStatus();
+
+    } catch (error) {
+        if (isBackgroundTask) {
+            console.error('Error in background case fetching:', error);
+            isBackgroundFetching = false;
+        } else {
+            displayError({ error: error.message });
+            loadingSpinner.classList.add('hidden');
+            responseContainer.classList.remove('hidden');
+        }
+    }
+}
+
+
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
-
-  loadingSpinner.classList.remove('hidden');
-  loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-  responseContainer.classList.add('hidden');
-  responseContainer.classList.remove('success');
-  responseContainer.classList.remove('error');
-
   const formData = new FormData(form);
   const data = {};
   formData.forEach((value, key) => data[key] = value);
-
-  try {
-    const response = await fetch('/generate_cases', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-    handleGenerateCasesResponse(response);
-  } catch (error) {
-    displayError({ error: error.message });
-  } finally {
-    loadingSpinner.classList.add('hidden');
-    responseContainer.classList.remove('hidden');
-  }
+  await startCaseGenerationJob(data);
 });
 
 resetButton.addEventListener('click', async () => {
@@ -136,16 +196,7 @@ async function handleGenerateCasesResponse(response) {
   responseContainer.innerHTML = `
   <div class="case-content">`;
 
-  responseContainer.innerHTML = `
-  <div class="case-content">`;
-
   const jsonData = await response.json();
-
-  // if (jsonData.message && jsonData.message === window.i18n.getTranslation("congratulations")) {
-  //   displayCongratulations(jsonData.message);
-  //   userAnswers = {}; // Reset userAnswers to an empty object
-  //   return;
-  // }
 
   if (jsonData.message && jsonData.message === "CONGRATULATIONS YOU FINISHED THE GAME") {
     const message = window.i18n.getTranslation("congratulations");
@@ -224,18 +275,6 @@ function submitCurrentAnswer() {
 }
 
 async function sendAnswersToBackend(userAnswers) { // Changed parameter name
-  const loadingSpinner = document.getElementById('loading-spinner');
-  if (loadingSpinner) {
-    loadingSpinner.classList.remove('hidden');
-    loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-  const responseContainer = document.getElementById('response-container');
-  if (responseContainer) {
-    responseContainer.classList.add('hidden');
-    responseContainer.classList.remove('success');
-    responseContainer.classList.remove('error');
-  }
-
   const languageEl = document.getElementById('language') || { value: localStorage.getItem('language') || "" };
   const ageEl = document.getElementById('age') || { value: localStorage.getItem('age') || "" };
   const subjectEl = document.getElementById('subject') || { value: localStorage.getItem('subject') || "" };
@@ -248,7 +287,6 @@ async function sendAnswersToBackend(userAnswers) { // Changed parameter name
 
   if (!subTypeEl) {
     displayError({ error: window.i18n.getTranslation("error") });
-    if (loadingSpinner) loadingSpinner.classList.add('hidden');
     return;
   }
 
@@ -265,24 +303,8 @@ async function sendAnswersToBackend(userAnswers) { // Changed parameter name
     allow_image: allowImageValue // Use the updated value
   };
 
-  try {
-    const response = await fetch('/generate_cases', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    localStorage.removeItem('casesBatch');
-    await handleGenerateCasesResponse(response);
-  } catch (error) {
-    displayError({ error: error.message });
-  } finally {
-    if (loadingSpinner) {
-      loadingSpinner.classList.add('hidden');
-    }
-    if (responseContainer) {
-      responseContainer.classList.remove('hidden');
-    }
-  }
+  await startCaseGenerationJob(payload);
+  localStorage.removeItem('casesBatch');
 }
 
 function createCaseElement(caseData) {
@@ -674,28 +696,7 @@ async function fetchCasesInBackground(userAnswers = null) {
       payload.answers = userAnswers;
   }
 
-  try {
-      const response = await fetch('/generate_cases', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-      });
-
-      if (!response.ok) {
-          console.error('Background case fetching failed:', response.status);
-          return;
-      }
-
-      const jsonData = await response.json();
-      if (jsonData.data) {
-          bufferedCases = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data];
-          console.log('Successfully buffered new cases:', bufferedCases.length);
-      }
-  } catch (error) {
-      console.error('Error in background case fetching:', error);
-  } finally {
-      isBackgroundFetching = false;
-  }
+  await startCaseGenerationJob(payload, true);
 }
 
 function displayCurrentCase(checkBufferedCases = true) {

@@ -160,13 +160,21 @@ def generate_user_id():
 def cases():
     user_id = generate_user_id()
     session['user_id'] = user_id
+    return render_template('index2.html')
+
+@app.route('/casesv2')
+def cases_v2():
     user_id = generate_user_id()
     session['user_id'] = user_id
-    return render_template('index2.html')
+    return render_template('cases_v2.html')
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/v2/')
+def index_v2():
+    return render_template('index_v2.html')
 
 from uuid import uuid4
 
@@ -522,12 +530,6 @@ Data: {analysis_data_str}"""
     except Exception as e:
         logger.exception(f"Error during analysis: {e}")
         return jsonify({"error": "An error occurred while processing analysis."}), 500
-
-
-
-
-
-
 
 
 
