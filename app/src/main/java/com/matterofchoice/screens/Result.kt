@@ -65,7 +65,7 @@ fun Result() {
                 fontSize = 32.sp
             )
             Image(
-                painterResource(R.drawable.score),
+                painterResource(R.drawable.w1),
                 contentDescription = null,
                 modifier = Modifier
                     .size(150.dp),
