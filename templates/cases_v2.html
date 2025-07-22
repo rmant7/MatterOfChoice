@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOC v2 - Cases</title>
+    <link rel="stylesheet" href="/static/css/v2.css">
+</head>
+<body>
+    <header>
+        <h1>MOC v2</h1>
+    </header>
+    <main>
+        <form id="generateFormV2" class="form-v2">
+            <div class="form-group">
+                <label for="language">Language</label>
+                <input type="text" id="language" name="language" value="English">
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" value="25">
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" value="General">
+            </div>
+            <div class="form-group">
+                <label for="difficulty">Difficulty</label>
+                <select id="difficulty" name="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question_type">Question Type</label>
+                <select id="question_type" name="question_type">
+                    <option value="behavioral">Behavioral</option>
+                    <option value="study">Study</option>
+                    <option value="hiring">Hiring</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sub_type">Sub Type</label>
+                <select id="sub_type" name="sub_type"></select>
+            </div>
+            <div class="form-group">
+                <label for="sex">Sex</label>
+                <select id="sex" name="sex">
+                    <option value="unspecified">Unspecified</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <button type="submit" class="button">Generate Cases</button>
+        </form>
+        <div id="loading-spinner" class="hidden">
+            <p>Loading...</p>
+        </div>
+        <div id="response-container"></div>
+        <div id="action-buttons" class="hidden">
+            <button id="nextButton" class="button">Next</button>
+            <button id="submitAnalysisButton" class="button button-secondary">Submit for Analysis</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 MOC</p>
+    </footer>
+    <script src="/static/js/v2.js"></script>
+</body>
+</html>
