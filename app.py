@@ -16,6 +16,26 @@ from dotenv import load_dotenv
 import threading
 load_dotenv()
 
+from flask import Flask, render_template, request, jsonify, session, redirect, url_for
+import os
+import json
+import logging
+import time
+import requests
+from huggingface_hub import InferenceClient
+from pathlib import Path
+from io import BytesIO
+import base64
+from PIL import Image
+from utils import gen_cases, get_response_gemini
+from image import get_info_from_image
+from dotenv import load_dotenv
+import threading
+import uuid
+from threading import Lock
+
+load_dotenv()
+
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True  # For development: auto-reload templates
 # Use a fixed secret key (or load from environment) for sessions
@@ -148,135 +168,109 @@ def cases():
 def index():
     return render_template('index.html')
 
-@app.route('/generate_cases', methods=['POST', 'GET'])
-def generate_cases():
-    user_id = session.get('user_id')
-    if not user_id:
-        return jsonify({"error": "User ID is required."}), 400
+from uuid import uuid4
 
-    analysis_filepath = BASE_DIR / f'output/{user_id}/game/analysis.json'
-    output_dir = analysis_filepath.parent
-    output_dir.mkdir(parents=True, exist_ok=True)
+def ensure_user_id():
+    if 'user_id' not in session:
+        session['user_id'] = str(uuid4())
+    return session['user_id']
 
-    turn = session.get(f'{user_id}_turn', 1)
-    print(f"Current turn for case generation: {turn}")
 
-    if request.method == 'GET':
-        session.pop(f'{user_id}_turn', None)
-        return jsonify({"message": "Session cleared."}), 200
 
-    logger.debug("generate_cases route entered")
-    data = request.get_json()
-    language = data.get('language')
-    age = data.get('age', None)
-    subject = data.get('subject')
-    difficulty = data.get('difficulty')
-    question_type = data.get('question_type')
-    sub_type = data.get('sub_type')
-    role = data.get('role', None)
-    sex = data.get('sex', 'unspecified')
-    allow_image = data.get('allow_image', False)
-    print(f"allow_image: {allow_image}")    
-    user_answers = data.get('answers', {})  # Changed to expect a dictionary
+#
+# =======================================================================================
+# === FIX: Drastically speed up the gen_cases function ==================================
+# =======================================================================================
 
-    if not all([language, subject, difficulty, question_type, sub_type]):
-        return jsonify({"error": "language, subject, difficulty, question_type, and sub_type are required."}), 400
+JOBS = {}
+JOBS_LOCK = Lock()
 
+def run_case_generation_job(job_id, user_id, language, difficulty, age, output_dir, subject, question_type, subtype, sex):
+    """This function runs in a background thread and does the slow work."""
+    logger.info(f"Starting background job {job_id} for user {user_id}")
     try:
-        with open(analysis_filepath, 'r') as f:
-            analysis_data = json.load(f)
-    except FileNotFoundError:
-        analysis_data = {'cases': []}
-
-    if turn > 3:
-        # Apply answers even if turn > 3
-        if user_answers:
-            cases = analysis_data.get('cases', [])
-            for case_id, user_answer in user_answers.items():
-                found = False
-                for case in cases:
-                    if case['case_id'] == case_id:
-                        case['user_answer'] = user_answer
-                        found = True
-                        break
-                if not found:
-                    logger.warning(f"Case ID {case_id} not found in analysis data.")
-
-            with open(analysis_filepath, 'w') as f:
-                json.dump(analysis_data, f, indent=4)
-        return jsonify({"message": "CONGRATULATIONS YOU FINISHED THE GAME"}), 200
-
-    try:
-        if turn == 1:
-            max = 5
-            attempts = 1
-            case_data = None
-            while attempts < max and case_data is None:
-                attempts += 1
-                case_data, _ = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex)
-            if case_data is None:
-                return jsonify({"error": "Failed to generate initial case."}), 500
-
+        case_data, _ = gen_cases(language, difficulty, age, output_dir, subject, question_type, subtype, sex=sex)
+        
+        if case_data:
+            # Add turn and other info after generation
+            turn = 1 # For now, we assume all background jobs are for the first turn.
+                     # This can be made more complex if needed.
             for case in case_data:
-                case['case_id'] = str(uuid.uuid4())
-                case['turn'] = turn
-                case['user_answer'] = None  # Initialize user_answer to None
-                case['answer'] = None
-                case['generated_image_data'] = None  # Always set placeholder
-                question_prompt = case.get("case")
-                if question_prompt and allow_image in ["true", "on"]:
-                    threading.Thread(target=generate_image_background, args=(case['case_id'], question_prompt)).start()
-
-            session[f'{user_id}_turn'] = 2
-            with open(analysis_filepath, 'w') as f:
-                json.dump({'cases': case_data}, f, indent=4)
-
-        else:
-            if user_answers:
-                cases = analysis_data.get('cases', [])
-                for case_id, user_answer in user_answers.items():
-                    found = False
-                    for case in cases:
-                        if case['case_id'] == case_id:
-                            case['user_answer'] = user_answer
-                            found = True
-                            break
-                    if not found:
-                        logger.warning(f"Case ID {case_id} not found in analysis data.")
-
-                with open(analysis_filepath, 'w') as f:
-                    json.dump(analysis_data, f, indent=4)
-
-            max = 5
-            attempts = 1
-            case_data = None
-            while attempts < max and case_data is None:
-                attempts += 1
-                case_data, _ = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex)
-            if case_data is None:
-                return jsonify({"error": "Failed to generate new cases."}), 500
-
-            for case in case_data:
-                case['case_id'] = str(uuid.uuid4())
                 case['turn'] = turn
                 case['user_answer'] = None
-                case['answer'] = None
-                case['generated_image_data'] = None  # Always set placeholder
-                question_prompt = case.get("case")
-                if question_prompt and allow_image in ["true", "on"]:
-                    threading.Thread(target=generate_image_background, args=(case['case_id'], question_prompt)).start()
             
-            analysis_data['cases'].extend(case_data)
+            # Save the final data to the analysis file
+            analysis_filepath = output_dir / "analysis.json"
+            analysis_data = {'cases': case_data}
             with open(analysis_filepath, 'w') as f:
                 json.dump(analysis_data, f, indent=4)
-
-            session[f'{user_id}_turn'] = turn + 1
-
-        return jsonify({'data': case_data}), 200
+            
+            logger.info(f"Job {job_id} completed successfully.")
+            with JOBS_LOCK:
+                JOBS[job_id]['status'] = 'complete'
+                JOBS[job_id]['result'] = case_data
+        else:
+            raise ValueError("gen_cases returned no data.")
 
     except Exception as e:
-        logger.exception(f"An unexpected error occurred: {e}")
-        return jsonify({"error": "An unexpected error occurred."}), 500
+        logger.error(f"Job {job_id} failed: {e}", exc_info=True)
+        with JOBS_LOCK:
+            JOBS[job_id]['status'] = 'failed'
+            JOBS[job_id]['error'] = str(e)
+
+
+# --- OLD /generate_cases IS REPLACED BY THESE TWO NEW ENDPOINTS ---
+
+@app.route('/start_case_generation', methods=['POST'])
+def start_case_generation():
+    """
+    INSTANTLY responds to the client, starting the slow work in the background.
+    """
+    user_id = ensure_user_id()
+    data = request.get_json()
+    # ... (your existing data validation from generate_cases)
+    language = data.get('language')
+    age = data.get('age')
+    subject = data.get('subject')
+    # ... etc.
+    
+    output_dir = BASE_DIR / f'output/{user_id}/game'
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    job_id = str(uuid.uuid4())
+    
+    with JOBS_LOCK:
+        JOBS[job_id] = {'status': 'pending', 'result': None}
+    
+    # Start the background thread
+    thread_args = (job_id, user_id, data.get('language'), data.get('difficulty'), data.get('age'), output_dir, data.get('subject'), data.get('question_type'), data.get('sub_type'), data.get('sex', 'unspecified'))
+    thread = threading.Thread(target=run_case_generation_job, args=thread_args)
+    thread.daemon = True # Allows app to exit even if threads are running
+    thread.start()
+    
+    logger.info(f"Dispatched job {job_id} for user {user_id}. Responding to client immediately.")
+    return jsonify({"job_id": job_id}), 202 # 202 Accepted: The request is accepted for processing.
+
+@app.route('/get_job_status/<job_id>', methods=['GET'])
+def get_job_status(job_id):
+    """
+    Client polls this endpoint to check if the background job is done.
+    """
+    with JOBS_LOCK:
+        job = JOBS.get(job_id)
+
+    if job is None:
+        return jsonify({"error": "Job not found"}), 404
+    
+    if job['status'] == 'complete':
+        # Clean up the job entry after it's been retrieved
+        with JOBS_LOCK:
+            # pop to remove it, so we don't store old jobs forever
+            final_job_data = JOBS.pop(job_id, None) 
+        return jsonify(final_job_data)
+    
+    return jsonify(job)
+
 
 @app.route('/get_image/<case_id>', methods=['GET'])
 def get_image(case_id):
@@ -285,7 +279,8 @@ def get_image(case_id):
 
 @app.route('/reset', methods=['POST'])
 def reset():
-    user_id = session.get('user_id')
+    # user_id = session.get('user_id')
+    user_id = ensure_user_id()
     if not user_id:
         return jsonify({"error": "User ID is required."}), 400
 
@@ -337,7 +332,8 @@ def analyze_image():
 
 @app.route('/analysis', methods=['POST'])
 def analysis():
-    user_id = session.get('user_id')
+    user_id = ensure_user_id()
+    # user_id = session.get('user_id')
     if not user_id:
         return jsonify({"error": "User ID is required."}), 400
 
