@@ -1,3 +1,4 @@
+
 package com.matterofchoice.screens
 
 import android.content.Context
@@ -34,11 +35,7 @@ import java.util.Locale
 
 @Composable
 fun Settings(navController: NavController) {
-
-
     UserInput(navController = navController)
-
-
 }
 
 @Composable
@@ -56,37 +53,36 @@ fun UserInput(
     val questionTypes = listOf("Study", "Behavioral", "Hiring")
     val isExposedType = remember { mutableStateOf(false) }
 
+    val subtypesMap = mapOf(
+        "Behavioral" to listOf("Interpersonal Skills", "Ethical Dilemmas", "Stress Management"),
+        "Study" to listOf("Subject Mastery", "Critical Thinking", "Practical Application"),
+        "Hiring" to listOf("Technical Skills", "Behavioral Interview", "Situational Judgment")
+    )
 
-    val subTypes = listOf("Subject Mastery", "Interpersonal Skills", "Technical Skills")
     val isExposedSub = remember { mutableStateOf(false) }
-
 
     val difficults = listOf("normal", "easy", "hard")
     val isDifficultExposed = remember { mutableStateOf(false) }
     val difficult = remember { mutableStateOf(difficults[0]) }
 
     val userQuestionType = remember { mutableStateOf(questionTypes[0]) }
-    val subtype = remember { mutableStateOf(subTypes[0]) }
+
+    val availableSubtypes = subtypesMap[userQuestionType.value] ?: emptyList()
+    val subtype = remember { mutableStateOf(availableSubtypes.firstOrNull() ?: "") }
 
     LaunchedEffect(userQuestionType.value) {
-        val index = questionTypes.indexOf(userQuestionType.value)
-        if (index in subTypes.indices) {
-            subtype.value = subTypes[index]
-        }
+        val updatedSubtypes = subtypesMap[userQuestionType.value] ?: emptyList()
+        subtype.value = updatedSubtypes.firstOrNull() ?: ""
     }
 
     val deviceLanguage = Locale.getDefault().displayLanguage
-    val genders = listOf("","Male", "Female")
+    val genders = listOf("", "Male", "Female")
     val languages = context.resources.getStringArray(R.array.languages).toList()
-
     val sortedLanguages = listOf(deviceLanguage) + languages.filter { it != deviceLanguage }
 
     val userLanguage = remember { mutableStateOf(sortedLanguages[0]) }
-
     val userGender = remember { mutableStateOf(genders[0]) }
-
     val isExposedGender = remember { mutableStateOf(false) }
-
     val isExposedLanguage = remember { mutableStateOf(false) }
 
     Box(modifier = Modifier.fillMaxSize().background(Color.White)) {
@@ -101,7 +97,8 @@ fun UserInput(
         ) {
 
             Text(
-                text = "Matter of choice", fontSize = 28.sp,
+                text = "Matter of choice",
+                fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = myFont,
                 modifier = Modifier
@@ -125,15 +122,14 @@ fun UserInput(
             )
 
             DropDownMenu(questionTypes, isExposedType, userQuestionType, "Select question type")
-            DropDownMenu(subTypes, isExposedSub, subtype, "Select the subtype")
-            DropDownMenu(difficults, isDifficultExposed, difficult,"Select the difficult level")
+            DropDownMenu(availableSubtypes, isExposedSub, subtype, "Select the subtype")
+            DropDownMenu(difficults, isDifficultExposed, difficult, "Select the difficult level")
             DropDownMenu(genders, isExposedGender, userGender, "Optional: Select your gender")
-
 
             GameTextField(
                 text = userAge,
                 onValueChange = { userAge = it },
-                labelTxt = "Optional: Enter your Age",
+                labelTxt = "Enter your Age",
             )
 
             DropDownMenu(sortedLanguages, isExposedLanguage, userLanguage, "Select your language")
@@ -145,6 +141,9 @@ fun UserInput(
                     editor.putString("userAge", userAge).apply()
                     editor.putString("userGender", userGender.value).apply()
                     editor.putString("userLanguage", userLanguage.value).apply()
+                    editor.putString("userQuestionType", userQuestionType.value).apply()
+                    editor.putString("subtype", subtype.value).apply()
+                    editor.putString("difficulty", difficult.value).apply()
                     editor.apply()
                     navController.navigate(Screens.GameScreen.screen) {
                         popUpTo(0)
@@ -152,13 +151,6 @@ fun UserInput(
                 },
                 text = "Generate Cases"
             )
-
-
         }
     }
-
-
-
 }
-
-

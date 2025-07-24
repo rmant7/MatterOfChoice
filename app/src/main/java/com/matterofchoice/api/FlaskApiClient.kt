@@ -24,12 +24,12 @@ data class JobStatusResponse(
 
 /**
  * A singleton object to handle all communication with our Flask backend.
- * Using an 'object' ensures we only have one instance of OkHttpClient.
+ * Using an 'object' ensures we only have one instanhttps://ajkg123.pythonanywhere.com/casesce of OkHttpClient.
  */
 object FlaskApiClient {
 
     // IMPORTANT: This is the development URL. For production, replace this with your deployed server's address.
-    private const val BASE_URL = "https://congenial-palm-tree-57qvwq7gjp9h4xrp-5000.app.github.dev"
+    private const val BASE_URL = "https://ajkg123.pythonanywhere.com/"
 
     private val client = OkHttpClient.Builder()
         .connectTimeout(160, TimeUnit.SECONDS)
