@@ -16,6 +16,9 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
+        buildConfigField("String", "GEMINI_API_KEY", "\"${project.properties["GEMINI_API_KEY"]}\"")
+        buildConfigField("String", "HUGGINGFACE_API_KEY", "\"${project.properties["HUGGINGFACE_API_KEY"]}\"")
+
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -38,6 +41,8 @@ android {
     }
     buildFeatures {
         compose = true
+        /*I added this to enable the added key embedded in build.gradle*/
+        buildConfig = true
     }
 }
 

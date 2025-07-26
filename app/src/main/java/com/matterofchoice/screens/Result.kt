@@ -3,6 +3,9 @@ package com.matterofchoice.screens
 import android.content.Context
 import android.util.Log
 import androidx.compose.foundation.Image
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,7 +19,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -28,6 +30,10 @@ import androidx.compose.ui.unit.sp
 import com.matterofchoice.R
 import com.matterofchoice.ui.theme.MatterofchoiceTheme
 import com.matterofchoice.ui.theme.myFont
+import org.w3c.dom.Text
+import java.nio.file.WatchEvent
+import androidx.compose.ui.unit.dp
+
 
 @Composable
 fun Result() {
@@ -58,13 +64,18 @@ fun Result() {
             modifier = Modifier.fillMaxWidth()
         ) {
 
-
             Text(
                 modifier = Modifier.padding(bottom = 20.dp),
                 text = rounds.toString(),
                 fontSize = 32.sp
             )
-            Image(
+            /*Text(
+                modifier = androidx.compose.ui.Modifier.padding(),
+                modifier = Modifier.padding(bottom = 20.dp),
+                text = rounds.toString(),
+                fontSize = 32.sp
+            )*/
+          /*  Image(
                 painterResource(R.drawable.score),
                 contentDescription = null,
                 modifier = Modifier
@@ -72,6 +83,8 @@ fun Result() {
                 contentScale = ContentScale.Crop
 
             )
+
+          */
             Text(
                 text = "Rounds",
                 fontSize = 32.sp,

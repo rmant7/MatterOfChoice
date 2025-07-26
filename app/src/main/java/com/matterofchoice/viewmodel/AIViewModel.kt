@@ -16,6 +16,8 @@ import com.matterofchoice.GameState
 import com.matterofchoice.R
 import com.matterofchoice.model.Case
 import com.matterofchoice.model.MessageModel
+// import com.matterofchoice.myKeys.Keys
+import com.matterofchoice.BuildConfig
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -37,7 +39,11 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
     private val model = GenerativeModel(
         modelName = "gemini-2.0-flash",
-        apiKey = "Your_api_key",
+        apiKey =    BuildConfig.GEMINI_API_KEY //  Keys.geminiKey
+
+
+
+        // Due to imcompatibilty in ny gradle vers. I decided to do it anothwr way
     )
 
     private val aiHistory by lazy {
@@ -209,7 +215,9 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         val client = OkHttpClient()
 
         // API Key (Keep this secure, don't hardcode it in production)
-        val apiKey = "your_api_key"
+
+        /* Yes, I'm not hardcoding*/
+        val apiKey = BuildConfig.HUGGINGFACE_API_KEY   //Keys.HUGGINGFACE_API_KEY
 
         // JSON request body
         val json = JSONObject()
