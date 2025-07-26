@@ -305,8 +305,29 @@ function prefillFormFromURL() {
   if (age) document.getElementById('age').value = age;
   if (subject) document.getElementById('subject').value = subject;
   if (difficulty) document.getElementById('difficulty').value = difficulty;
-  if (question_type) document.getElementById('question_type').value = question_type;
-  if (sub_type) document.getElementById('sub_type').value = sub_type;
+  if (question_type) {
+    const questionTypeSelect = document.getElementById('question_type');
+    questionTypeSelect.value = question_type;
+    // Dispatch a change event to trigger the sub_type update
+    questionTypeSelect.dispatchEvent(new Event('change'));
+  }
+  if (sub_type) {
+      const subTypeSelect = document.getElementById('sub_type');
+      let optionExists = false;
+      for (let i = 0; i < subTypeSelect.options.length; i++) {
+          if (subTypeSelect.options[i].value === sub_type) {
+              optionExists = true;
+              break;
+          }
+      }
+      if (!optionExists) {
+          const newOption = document.createElement('option');
+          newOption.value = sub_type;
+          newOption.text = sub_type;
+          subTypeSelect.add(newOption);
+      }
+      subTypeSelect.value = sub_type;
+  }
   if (role) document.getElementById('role').value = role;
   if (sex) document.getElementById('sex').value = sex;
 }

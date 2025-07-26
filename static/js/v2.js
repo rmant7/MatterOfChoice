@@ -1,3 +1,40 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const fields = ['language', 'age', 'subject', 'difficulty', 'question_type', 'sub_type', 'sex'];
+
+    fields.forEach(field => {
+        const value = urlParams.get(field);
+        if (value) {
+            const element = document.getElementById(field);
+            if (element) {
+                element.value = value;
+                if (field === 'question_type') {
+                    updateSubTypeOptions(value);
+                    const subTypeValue = urlParams.get('sub_type');
+                    if (subTypeValue) {
+                        const subTypeSelect = document.getElementById('sub_type');
+                        const formattedSubType = subTypeValue.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                        let optionExists = false;
+                        for (let i = 0; i < subTypeSelect.options.length; i++) {
+                            if (subTypeSelect.options[i].value === subTypeValue) {
+                                optionExists = true;
+                                break;
+                            }
+                        }
+                        if (!optionExists) {
+                            const newOption = document.createElement('option');
+                            newOption.value = subTypeValue;
+                            newOption.text = formattedSubType;
+                            subTypeSelect.add(newOption);
+                        }
+                        subTypeSelect.value = subTypeValue;
+                    }
+                }
+            }
+        }
+    });
+});
+
 const form = document.getElementById('generateFormV2');
 const responseContainer = document.getElementById('response-container');
 const loadingSpinner = document.getElementById('loading-spinner');
@@ -13,19 +50,13 @@ let userAnswers = {};
 
 const subtypes = {
   behavioral: [
-    { value: 'interpersonal_skills', text: 'Interpersonal Skills' },
-    { value: 'ethical_dilemmas', text: 'Ethical Dilemmas' },
-    { value: 'stress_management', text: 'Stress Management' }
+    { value: 'interpersonal_skills', text: 'Interpersonal Skills' }
   ],
   study: [
-    { value: 'subject_mastery', text: 'Subject Mastery' },
-    { value: 'critical_thinking', text: 'Critical Thinking' },
-    { value: 'practical_application', text: 'Practical Application' }
+    { value: 'subject_mastery', text: 'Subject Mastery' }
   ],
   hiring: [
-    { value: 'technical_skills', text: 'Technical Skills' },
-    { value: 'behavioral_interview', text: 'Behavioral Interview' },
-    { value: 'situational_judgment', text: 'Situational Judgment' }
+    { value: 'technical_skills', text: 'Technical Skills' }
   ]
 };
 
