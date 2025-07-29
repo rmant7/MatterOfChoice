@@ -328,7 +328,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                     // Ensure age is an integer, provide a safe default if parsing fails
                     put("age", userAge.toIntOrNull() ?: 25)
                     put("subject", userSubject)
-                    put("difficulty", "medium") // This can be made dynamic later
+                    put("difficulty", "medium") // TODO This can be made dynamic later
                     put("question_type", "behavioral") // This can be made dynamic later
                     put("sub_type", "scenario_analysis") // This can be made dynamic later
                     put("sex", userGender)
