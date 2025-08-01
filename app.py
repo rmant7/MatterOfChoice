@@ -378,6 +378,16 @@ def analysis():
     analysis_data['language'] = language
     prompt_cases =  [case for case in analysis_data['cases'] if 'user_answer' in case and case['user_answer']]
 
+    # If no cases were answered, return a specific message
+    if not prompt_cases:
+        return jsonify({
+            "analysis": {
+                "overall_judgement": "No data was provided for analysis, therefore, an overall assessment of your performance could not be conducted. Please provide cases with user answers for evaluation.",
+                "cases": []
+            },
+            "cases": analysis_data['cases']
+        }), 200
+
     analysis_data_str = json.dumps(prompt_cases, indent=4)
 
     prompt_template = """Analyze the following data. You are a '{role}'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'user_answer' key). The 'optimal' key indicates the correct option.  Determine the language used in the data and STRICTLY PROVIDE YOUR ANALYSIS IN THE LANGUAGE {language}.Do not analyze unanswered cases.  Format your response as JSON:
@@ -420,7 +430,11 @@ Data: {analysis_data_str}"""
                 raise ValueError("Missing or invalid cases array in analysis")
 
             session['turn'] = 1
-            return jsonify(parsed_analysis), 200
+            # Return both the analysis and the cases with user answers and optimal answers
+            return jsonify({
+                "analysis": parsed_analysis,
+                "cases": analysis_data['cases']
+            }), 200
 
         except (json.JSONDecodeError, ValueError) as e:
             attempt += 1
@@ -475,6 +489,16 @@ def submit_responses():
 
         prompt_cases =  [case for case in analysis_data['cases'] if 'user_answer' in case and case['user_answer']]
 
+        # If no cases were answered, return a specific message
+        if not prompt_cases:
+            return jsonify({
+                "analysis": {
+                    "overall_judgement": "No data was provided for analysis, therefore, an overall assessment of your performance could not be conducted. Please provide cases with user answers for evaluation.",
+                    "cases": []
+                },
+                "cases": analysis_data['cases']
+            }), 200
+
         if question_type == 'behavioral':
             judgement_aspect = "behavioral tendencies"
         elif question_type == 'study':
@@ -517,7 +541,11 @@ Data: {analysis_data_str}"""
                 if 'cases' not in parsed_analysis or not isinstance(parsed_analysis['cases'], list):
                     raise ValueError("Missing or invalid cases array in analysis")
 
-                return jsonify(parsed_analysis), 200
+                # Return both the analysis and the cases with user answers and optimal answers
+                return jsonify({
+                    "analysis": parsed_analysis,
+                    "cases": analysis_data['cases']
+                }), 200
 
             except (json.JSONDecodeError, ValueError) as e:
                 attempt += 1

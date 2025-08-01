@@ -1,8 +1,13 @@
 const form = document.getElementById('generateForm');
 const responseContainer = document.getElementById('response-container');
 const loadingSpinner = document.getElementById('loading-spinner');
+const questionTypeSelect = document.getElementById('question_type');
+const subTypeSelect = document.getElementById('sub_type');
 const caseForm = document.getElementById('caseForm');
 const resetButton = document.getElementById('resetButton');
+const generateButton = document.getElementById('generateButton');
+const progressBarContainer = document.getElementById('progress-bar-container');
+const progressBar = document.getElementById('progress-bar');
 let bufferedCases = null;
 let isBackgroundFetching = false;
 
@@ -26,9 +31,6 @@ const subtypes = {
 };
 
 // Update subtype options based on question type selection
-const questionTypeSelect = document.getElementById('question_type');
-const subTypeSelect = document.getElementById('sub_type');
-
 questionTypeSelect.addEventListener('change', (event) => {
   const selectedType = event.target.value;
   updateSubTypeOptions(selectedType);
@@ -133,10 +135,15 @@ async function startCaseGenerationJob(payload, isBackgroundTask = false) {
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
-  const formData = new FormData(form);
-  const data = {};
-  formData.forEach((value, key) => data[key] = value);
-  await startCaseGenerationJob(data);
+  // Reset all state for new game
+  casesBatch = [];
+  userAnswers = {};
+  lastCasesForScoring = [];
+  currentCaseIndex = 0;
+  bufferedCases = null;
+  progressBarContainer.style.display = 'none';
+  responseContainer.innerHTML = '';
+  await startCaseGenerationJob(Object.fromEntries(new FormData(form)));
 });
 
 resetButton.addEventListener('click', async () => {
@@ -234,28 +241,33 @@ async function handleGenerateCasesResponse(response) {
 
 function submitCurrentAnswer() {
   if (currentCaseIndex >= casesBatch.length) {
-      displayError({ error: window.i18n.getTranslation("no_case") });
+      displayError({ error: 'No cases available. Please try again or contact support.' });
+      progressBarContainer.style.display = 'none';
       return;
   }
 
   const caseData = casesBatch[currentCaseIndex];
   if (!caseData) {
-      displayError({ error: window.i18n.getTranslation("no_case") });
+      displayError({ error: 'Case data is missing. Please try again.' });
+      progressBarContainer.style.display = 'none';
       return;
   }
 
   const selected = document.querySelector(`input[name="${caseData.case_id}"]:checked`);
   if (!selected) {
-      displayError({ error: window.i18n.getTranslation("please_select") });
+      displayError({ error: window.i18n.getTranslation('please_select') });
       return;
   }
 
-  userAnswers[caseData.case_id] = parseInt(selected.value, 10); // Store answer with case_id as key
+  userAnswers[caseData.case_id] = parseInt(selected.value, 10);
   currentCaseIndex++;
 
   if (currentCaseIndex < casesBatch.length) {
       displayCurrentCase();
   } else {
+      // Show score after last question
+      showScore();
+      progressBarContainer.style.display = 'none';
       // Check if we have buffered cases before calling backend
       if (bufferedCases && bufferedCases.length > 0) {
           console.log("Using buffered cases instead of calling backend");
@@ -450,65 +462,66 @@ async function analyzeResults() {
 }
 
 function displayError(errorData) {
+    loadingSpinner.classList.add('hidden');
+    if (generateButton) generateButton.disabled = false;
     // Create the modal container
     const modal = document.createElement('div');
-    modal.id = 'errorModal';
     modal.style.position = 'fixed';
-    modal.style.top = '50%';
-    modal.style.left = '50%';
-    modal.style.transform = 'translate(-50%, -50%)';
-    modal.style.backgroundColor = '#fff';
-    modal.style.padding = '20px';
-    modal.style.borderRadius = '8px';
-    modal.style.boxShadow = '0px 4px 10px rgba(0, 0, 0, 0.2)';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    modal.style.display = 'flex';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
     modal.style.zIndex = '1000';
-    modal.style.textAlign = 'center';
-    modal.style.width = '300px';
 
-    // Close button (X)
-    const closeButton = document.createElement('span');
-    closeButton.innerHTML = '&times;';
-    closeButton.style.position = 'absolute';
-    closeButton.style.top = '10px';
-    closeButton.style.right = '15px';
-    closeButton.style.fontSize = '20px';
+    // Create the modal content
+    const modalContent = document.createElement('div');
+    modalContent.style.backgroundColor = 'white';
+    modalContent.style.padding = '20px';
+    modalContent.style.borderRadius = '5px';
+    modalContent.style.maxWidth = '500px';
+    modalContent.style.width = '90%';
+    modalContent.style.textAlign = 'center';
+
+    // Add close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Close';
+    closeButton.style.marginTop = '10px';
+    closeButton.style.padding = '8px 16px';
+    closeButton.style.backgroundColor = '#007bff';
+    closeButton.style.color = 'white';
+    closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '4px';
     closeButton.style.cursor = 'pointer';
-    closeButton.style.fontWeight = 'bold';
-    closeButton.style.color = '#333';
-
-    // Close modal when clicking the close button
-    closeButton.addEventListener('click', closeModal);
 
     // Add error message
-    modal.innerHTML = `
-      <p><strong>${window.i18n.getTranslation('error')}:</strong> ${errorData.error}</p>
-    `;
-    modal.appendChild(closeButton);
-
-    // Create a backdrop
-    const backdrop = document.createElement('div');
-    backdrop.id = 'modalBackdrop';
-    backdrop.style.position = 'fixed';
-    backdrop.style.top = '0';
-    backdrop.style.left = '0';
-    backdrop.style.width = '100%';
-    backdrop.style.height = '100%';
-    backdrop.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    backdrop.style.zIndex = '999';
-
-    // Close modal when clicking outside of it
-    backdrop.addEventListener('click', closeModal);
-
-    // Append modal and backdrop to the document body
-    document.body.appendChild(backdrop);
-    document.body.appendChild(modal);
-
-    // Function to close the modal
-    function closeModal() {
-      document.body.removeChild(modal);
-      document.body.removeChild(backdrop);
+    let errorMsg = errorData && errorData.error ? errorData.error : 'An error occurred.';
+    if (errorMsg.includes('no_case')) {
+        errorMsg = 'No cases available. Please try again or contact support.';
     }
-  }
+    modalContent.innerHTML = `
+      <p><strong>${window.i18n.getTranslation('error')}:</strong> ${errorMsg}</p>
+    `;
+    modalContent.appendChild(closeButton);
+
+    // Add event listener to close button
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+
+    // Add event listener to modal background
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            document.body.removeChild(modal);
+        }
+    });
+
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+}
 
 function displayResults(data) {
   responseContainer.innerHTML = `
@@ -537,33 +550,35 @@ function displayResults(data) {
 }
 
 function submitCurrentResponses() {
-    if (currentCaseIndex >= casesBatch.length) {
-      displayError({ error: window.i18n.getTranslation('no_case') });
+  if (!casesBatch || casesBatch.length === 0) {
+      displayError({ error: 'No cases available for analysis.' });
       return;
-    }
-
-    const caseData = casesBatch[currentCaseIndex];
-    if (!caseData) {
-      displayError({ error: window.i18n.getTranslation('no_case') });
+  }
+  
+  // Capture the current question's answer if user hasn't clicked Next yet
+  if (currentCaseIndex < casesBatch.length) {
+      const caseData = casesBatch[currentCaseIndex];
+      if (caseData) {
+          const selected = document.querySelector(`input[name="${caseData.case_id}"]:checked`);
+          if (selected) {
+              userAnswers[caseData.case_id] = parseInt(selected.value, 10);
+          }
+      }
+  }
+  
+  // Only allow analysis if at least one answer
+  const answered = Object.keys(userAnswers).length;
+  if (answered === 0) {
+      displayError({ error: 'Please answer at least one question before submitting for analysis.' });
       return;
-    }
+  }
 
-    const selected = document.querySelector(`input[name="${caseData.case_id}"]:checked`);
-    if (!selected) {
-      displayError({ error: window.i18n.getTranslation('please_select') });
-      return;
-    }
-
-    userAnswers[caseData.case_id] = parseInt(selected.value, 10);
-    currentCaseIndex++;
-
-    const submitBtn = document.querySelector('.submit-button');
-    if (submitBtn) {
-      submitBtn.disabled = true;
-    }
-    submitResponses(userAnswers);
+  const submitBtn = document.querySelector('.submit-button');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+  }
+  submitResponses(userAnswers);
 }
-
 async function submitResponses(userAnswers) {
   const loadingSpinner = document.getElementById('loading-spinner');
   if (loadingSpinner) {
@@ -620,19 +635,25 @@ async function submitResponses(userAnswers) {
       displayError(errorData);
       return;
     }
-    const analysisData = await response.json();
-      if (analysisData) {
-          displayAnalysis(analysisData);
-      } else {
-          displayError({ error: window.i18n.getTranslation('no_analysis') });
-      }
-      responseContainer.classList.add('success');
-  } catch (error) {
-      displayError({ error: `${window.i18n.getTranslation('error')}: ${error}` });
-  } finally {
-      loadingSpinner.classList.add('hidden');
-      responseContainer.classList.remove('hidden');
+    const responseData = await response.json();
+    // Save cases for scoring if present
+    if (responseData.cases && Array.isArray(responseData.cases)) {
+      lastCasesForScoring = responseData.cases;
+    } else {
+      lastCasesForScoring = [];
     }
+    if (responseData.analysis) {
+      displayAnalysis(responseData.analysis);
+    } else {
+      displayError({ error: window.i18n.getTranslation('no_analysis') });
+    }
+    responseContainer.classList.add('success');
+  } catch (error) {
+    displayError({ error: `${window.i18n.getTranslation('error')}: ${error}` });
+  } finally {
+    loadingSpinner.classList.add('hidden');
+    responseContainer.classList.remove('hidden');
+  }
 }
 
 function checkUnansweredCases() {
@@ -648,21 +669,23 @@ function checkUnansweredCases() {
 }
 
 function proceedCases() {
-    console.log("proceedCases: Starting with buffered cases:", bufferedCases?.length);
-
-    if (bufferedCases && bufferedCases.length > 0) {
-        // Use the buffered cases
-        casesBatch = bufferedCases;
-        bufferedCases = null;
-        currentCaseIndex = 0;
-        userAnswers = {}; // Reset userAnswers
-        displayCurrentCase();
-        console.log("proceedCases: Using buffered cases");
-    } else {
-        // Fallback to original behavior
-        console.log("proceedCases: No buffered cases available, falling back to sendAnswersToBackend");
-        sendAnswersToBackend(userAnswers);
-    }
+    console.log("proceedCases: Starting new game");
+    
+    // Reset all state for new game
+    casesBatch = [];
+    userAnswers = {};
+    lastCasesForScoring = [];
+    currentCaseIndex = 0;
+    bufferedCases = null;
+    progressBarContainer.style.display = 'none';
+    responseContainer.innerHTML = '';
+    
+    // Get form data and start new case generation
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => data[key] = value);
+    
+    startCaseGenerationJob(data);
 }
 
 async function fetchCasesInBackground(userAnswers = null) {
@@ -702,17 +725,19 @@ async function fetchCasesInBackground(userAnswers = null) {
 function displayCurrentCase(checkBufferedCases = true) {
   caseForm.innerHTML = '';
   responseContainer.innerHTML = '';
+  updateProgressBar();
 
   if (casesBatch.length === 0 || currentCaseIndex >= casesBatch.length) {
-      displayError({ error: window.i18n.getTranslation('no_case') });
+      displayError({ error: 'No cases available. Please try again or contact support.' });
+      progressBarContainer.style.display = 'none';
       return;
   }
 
-  // Check remaining unanswered cases and trigger background fetch if needed
-  if (checkBufferedCases) {
+  // Only trigger background fetch if user has finished answering all questions
+  if (checkBufferedCases && currentCaseIndex >= casesBatch.length - 1) {
       const unansweredCases = checkUnansweredCases();
       if (unansweredCases <= 3 && !isBackgroundFetching && !bufferedCases) {
-          console.log("Only 4 or fewer unanswered cases remaining, triggering background fetch");
+          console.log("User finished all questions, triggering background fetch");
           fetchCasesInBackground(userAnswers);
       }
   }
@@ -727,20 +752,30 @@ function displayCurrentCase(checkBufferedCases = true) {
 
   responseContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
+  // Next button
   const submitButton = document.createElement('button');
   submitButton.type = 'button';
   submitButton.classList.add('submit-button');
   submitButton.innerText = window.i18n.getTranslation('next_case');
   submitButton.addEventListener('click', submitCurrentAnswer);
+  // Hide Next button if last question
+  if (currentCaseIndex === casesBatch.length - 1) {
+      submitButton.style.display = 'none';
+  }
   caseForm.appendChild(submitButton);
   responseContainer.appendChild(submitButton);
 
+  // Submit for analysis button
   const submitButtonm = document.createElement('button');
   submitButtonm.type = 'button';
   submitButtonm.id = 'submitButtonm';
   submitButtonm.classList.add('submit-buttonm');
   submitButtonm.innerText = window.i18n.getTranslation('submit_analyze');
   submitButtonm.addEventListener('click', submitCurrentResponses);
+  // Only show submit for analysis on last question
+  if (currentCaseIndex !== casesBatch.length - 1) {
+      submitButtonm.style.display = 'none';
+  }
   caseForm.appendChild(submitButtonm);
   responseContainer.appendChild(submitButtonm);
 }
@@ -965,3 +1000,31 @@ loadingSpinner.addEventListener('transitionend', () => {
   });
 })();
 // --- END ADDITIVE IMAGE POLLING FEATURE ---
+
+function showScore() {
+    let casesForScore = lastCasesForScoring && lastCasesForScoring.length > 0 ? lastCasesForScoring : casesBatch;
+    // Only count cases with a user_answer
+    let answeredCases = casesForScore.filter(c => c.user_answer !== undefined && c.user_answer !== null);
+    let correct = 0;
+    let total = answeredCases.length;
+    for (const caseData of answeredCases) {
+        if (caseData.user_answer == caseData.optimal) {
+            correct++;
+        }
+    }
+    if (total === 0) {
+        responseContainer.innerHTML = `<div class="score-message">No questions were answered. Please try again.</div>`;
+        return;
+    }
+    let percent = ((correct / total) * 100).toFixed(1);
+    responseContainer.innerHTML = `<div class="score-message">You scored ${correct} out of ${total} (${percent}%).</div>`;
+}
+
+function updateProgressBar() {
+    if (!casesBatch || casesBatch.length === 0) {
+        progressBarContainer.style.display = 'none';
+        return;
+    }
+    progressBarContainer.style.display = 'block';
+    progressBar.textContent = `Question ${currentCaseIndex + 1} of ${casesBatch.length}`;
+}
