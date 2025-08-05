@@ -338,7 +338,7 @@ function createCaseElement(caseData) {
 
     // Add placeholder text while the image is loading
     const placeholderText = document.createElement('p');
-    placeholderText.innerText = 'Waiting for image...';
+    // placeholderText.innerText = 'Waiting for image...';
     placeholderText.classList.add('image-placeholder');
     caseElement.appendChild(placeholderText);
 
@@ -411,6 +411,14 @@ function attachAnalyzeButtonListener() {
 }
 
 async function analyzeResults() {
+  // Save the answer for the current case before analyzing.
+  if (currentCaseIndex < casesBatch.length) {
+    const caseData = casesBatch[currentCaseIndex];
+    const selected = document.querySelector(`input[name="${caseData.case_id}"]:checked`);
+    if (selected) {
+      userAnswers[caseData.case_id] = parseInt(selected.value, 10);
+    }
+  }
   console.log("analyzeResults: Function started.");
   loadingSpinner.classList.remove('hidden');
   loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -423,11 +431,11 @@ async function analyzeResults() {
   const role = document.getElementById('role').value;
   const question_type = document.getElementById('question_type').value;
 
-  console.log("analyzeResults: Sending request with", { role, question_type, language });
+  console.log("analyzeResults: Sending request with", { role, question_type, language, answers: userAnswers });
   try {
     const response = await fetch('/analysis', {
       method: 'POST',
-      body: JSON.stringify({ role: role, question_type: question_type, language: language }),
+      body: JSON.stringify({ role: role, question_type: question_type, language: language, answers: userAnswers }),
       headers: { 'Content-Type': 'application/json' }
     });
     console.log("analyzeResults: Response status", response.status);
@@ -442,10 +450,12 @@ async function analyzeResults() {
     const analysisData = await response.json();
     console.log("analyzeResults: Raw analysisData received:", analysisData);
 
-    // Instead of expecting analysisData.analysis, pass the entire analysisData.
-    if (analysisData && analysisData.cases) {
-      console.log("analyzeResults: Valid analysisData detected. Passing to displayAnalysis.");
-      displayAnalysis(analysisData);
+    // The server returns an object with two keys: "analysis" (the AI-generated content)
+    // and "cases" (the original case data). We need to pass the "analysis" part
+    // to the display function, which is responsible for rendering the results.
+    if (analysisData && analysisData.analysis && Array.isArray(analysisData.analysis.cases)) {
+      console.log("analyzeResults: Valid analysis data detected. Passing to displayAnalysis.");
+      displayAnalysis(analysisData.analysis);
     } else {
       console.error("analyzeResults: Invalid analysis data structure:", analysisData);
       displayError({ error: window.i18n.getTranslation('no_analysis') });
@@ -758,26 +768,18 @@ function displayCurrentCase(checkBufferedCases = true) {
   submitButton.classList.add('submit-button');
   submitButton.innerText = window.i18n.getTranslation('next_case');
   submitButton.addEventListener('click', submitCurrentAnswer);
-  // Hide Next button if last question
-  if (currentCaseIndex === casesBatch.length - 1) {
-      submitButton.style.display = 'none';
-  }
   caseForm.appendChild(submitButton);
   responseContainer.appendChild(submitButton);
 
-  // Submit for analysis button
-  const submitButtonm = document.createElement('button');
-  submitButtonm.type = 'button';
-  submitButtonm.id = 'submitButtonm';
-  submitButtonm.classList.add('submit-buttonm');
-  submitButtonm.innerText = window.i18n.getTranslation('submit_analyze');
-  submitButtonm.addEventListener('click', submitCurrentResponses);
-  // Only show submit for analysis on last question
-  if (currentCaseIndex !== casesBatch.length - 1) {
-      submitButtonm.style.display = 'none';
-  }
-  caseForm.appendChild(submitButtonm);
-  responseContainer.appendChild(submitButtonm);
+  // Analyze button
+  const analyzeButton = document.createElement('button');
+  analyzeButton.type = 'button';
+  analyzeButton.id = 'analyzeButton';
+  analyzeButton.classList.add('analyze-button');
+  analyzeButton.innerText = window.i18n.getTranslation('analyze');
+  analyzeButton.addEventListener('click', analyzeResults);
+  caseForm.appendChild(analyzeButton);
+  responseContainer.appendChild(analyzeButton);
 }
 
 function displayAnalysis(analysis) {
@@ -981,9 +983,9 @@ loadingSpinner.addEventListener('transitionend', () => {
           if (!el.querySelector('.image-placeholder')) {
             const placeholder = document.createElement('p');
             placeholder.className = 'image-placeholder';
-            placeholder.innerText = window.i18n?.getTranslation('waiting_for_image') || 'Waiting for image...';
+            // placeholder.innerText = window.i18n?.getTranslation('waiting_for_image') || 'Waiting for image...';
             el.appendChild(placeholder);
-            pollForImage(caseData.case_id, placeholder);
+            // pollForImage(caseData.case_id, placeholder);
           }
         } else if (!imagesEnabled()) {
           // If images are disabled, show a message

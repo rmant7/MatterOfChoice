@@ -4,31 +4,13 @@ import json
 import logging
 import time
 import requests
-from huggingface_hub import InferenceClient
+# from huggingface_hub import InferenceClient
 from pathlib import Path
 from io import BytesIO
 import base64
 from PIL import Image
 from utils import gen_cases, get_response_gemini  # keep these for other endpoints
-from image import get_info_from_image  # for image analysis
 import time
-from dotenv import load_dotenv
-import threading
-load_dotenv()
-
-from flask import Flask, render_template, request, jsonify, session, redirect, url_for
-import os
-import json
-import logging
-import time
-import requests
-from huggingface_hub import InferenceClient
-from pathlib import Path
-from io import BytesIO
-import base64
-from PIL import Image
-from utils import gen_cases, get_response_gemini
-from image import get_info_from_image
 from dotenv import load_dotenv
 import threading
 import uuid
@@ -49,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent
 
 # Initialize the image generation client using Stable Diffusion.
 # (Uses HUGGINGFACE_TOKEN to match code 1's environment variable naming.)
-client = InferenceClient("stabilityai/stable-diffusion-3.5-large-turbo", token=os.getenv("HUGGINGFACE_API_KEY"))
+# client = InferenceClient("stabilityai/stable-diffusion-3.5-large-turbo", token=os.getenv("HUGGINGFACE_API_KEY"))
 
 # In-memory storage for generated images
 image_storage = {}
@@ -82,51 +64,52 @@ from PIL import Image
 
 
 def generate_image_for_question(question_text):
-    instructions = [
-    "The image must not contain words",
-    "The image should be a comic style image"
-    ]
+    pass
+#     instructions = [
+#     "The image must not contain words",
+#     "The image should be a comic style image"
+#     ]
 
-    unique_prompt = f"{question_text}, *{', *'.join(instructions)}"
+#     unique_prompt = f"{question_text}, *{', *'.join(instructions)}"
 
-    max_retries = 10
-    retry_delay = 5  # Initial delay in seconds
+#     max_retries = 10
+#     retry_delay = 5  # Initial delay in seconds
 
-    for attempt in range(max_retries):  # Use range to create an iterable sequence
-        try:
-            print(f"Attempt {attempt + 1}: Generating image with prompt: {unique_prompt}")
-            image_bytes = client.text_to_image(prompt=unique_prompt)
+#     for attempt in range(max_retries):  # Use range to create an iterable sequence
+#         try:
+#             print(f"Attempt {attempt + 1}: Generating image with prompt: {unique_prompt}")
+#             image_bytes = client.text_to_image(prompt=unique_prompt)
 
-            # Handle different formats of returned images
-            if isinstance(image_bytes, Image.Image):
-                image = image_bytes
-            else:
-                image = Image.open(BytesIO(image_bytes))
+#             # Handle different formats of returned images
+#             if isinstance(image_bytes, Image.Image):
+#                 image = image_bytes
+#             else:
+#                 image = Image.open(BytesIO(image_bytes))
 
-            # Convert image to base64
-            buffered = BytesIO()
-            image.save(buffered, format="PNG")
-            image_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
-            return f"data:image/png;base64,{image_base64}"
-        except Exception as e:
-            if hasattr(e, 'response') and e.response is not None and e.response.status_code == 429:
-                print("Rate limit reached. Waiting for 60 seconds before retrying.")
-                time.sleep(60)
-                continue
-            print(f"Attempt {attempt + 1} failed: {e}")
-            time.sleep(retry_delay)
-            retry_delay *= 1.5
+#             # Convert image to base64
+#             buffered = BytesIO()
+#             image.save(buffered, format="PNG")
+#             image_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
+#             return f"data:image/png;base64,{image_base64}"
+#         except Exception as e:
+#             if hasattr(e, 'response') and e.response is not None and e.response.status_code == 429:
+#                 print("Rate limit reached. Waiting for 60 seconds before retrying.")
+#                 time.sleep(60)
+#                 continue
+#             print(f"Attempt {attempt + 1} failed: {e}")
+#             time.sleep(retry_delay)
+#             retry_delay *= 1.5
 
-    print("Image generation failed after multiple attempts.")
-    return None  # Ensures function only returns None if all retries fail
+#     print("Image generation failed after multiple attempts.")
+#     return None  # Ensures function only returns None if all retries fail
 
-def generate_image_background(case_id, question_prompt):
-    try:
-        generated_image_data = generate_image_for_question(question_prompt)
-        image_storage[case_id] = generated_image_data
-    except Exception as e:
-        logger.exception(f"Image generation failed for case {case_id}: {e}")
-        image_storage[case_id] = None
+# def generate_image_background(case_id, question_prompt):
+#     try:
+#         generated_image_data = generate_image_for_question(question_prompt)
+#         image_storage[case_id] = generated_image_data
+#     except Exception as e:
+#         logger.exception(f"Image generation failed for case {case_id}: {e}")
+#         image_storage[case_id] = None
 
 # ----------------------------
 logger = logging.getLogger('my_app')
@@ -171,10 +154,6 @@ def cases_v2():
 @app.route('/')
 def index():
     return render_template('index.html')
-
-@app.route('/v2/')
-def index_v2():
-    return render_template('index_v2.html')
 
 from uuid import uuid4
 
@@ -322,20 +301,20 @@ def converse():
 
 @app.route('/analyze-image', methods=['POST'])
 def analyze_image():
-    try:
-        print("Request form data:", request.form)
-        print("Request files:", request.files)
-        if 'image' not in request.files:
-            return jsonify({'error': 'No image file in request.files'}), 400
-        image_file = request.files['image']
-        if image_file.filename == '':
-            return jsonify({'error': 'No selected file'}), 400
-        input_text = request.form.get('prompt', '')
-        response = get_info_from_image(image_file, input_text)
-        return jsonify({'response': response}), 200
-    except Exception as e:
-        logger.exception(f"Error: {e}")
-        return jsonify({'error': str(e)}), 500
+    # try:
+    #     print("Request form data:", request.form)
+    #     print("Request files:", request.files)
+    #     if 'image' not in request.files:
+    #         return jsonify({'error': 'No image file in request.files'}), 400
+    #     image_file = request.files['image']
+    #     if image_file.filename == '':
+    #         return jsonify({'error': 'No selected file'}), 400
+    #     input_text = request.form.get('prompt', '')
+    #     response = get_info_from_image(image_file, input_text)
+    #     return jsonify({'response': response}), 200
+    # except Exception as e:
+    #     logger.exception(f"Error: {e}")
+    return jsonify({'error': 'Image analysis is disabled.'}), 500
 
 
 @app.route('/analysis', methods=['POST'])
@@ -354,8 +333,22 @@ def analysis():
     with open(analysis_filepath, 'r') as f:
         analysis_data = json.load(f)
     data = request.get_json()
+    user_answers = data.get('answers', {})  # Expect a dictionary
 
     analysis_cases = analysis_data.get('cases', [])
+    for case_id, user_answer in user_answers.items():
+        found = False
+        for case in analysis_cases:
+            if case['case_id'] == case_id:
+                case['user_answer'] = user_answer  # Update 'answer' field
+                found = True
+                break
+        if not found:
+            logger.warning(f"Case ID {case_id} not found in analysis data.")
+
+    with open(analysis_filepath, 'w') as f:
+        json.dump(analysis_data, f, indent=4)
+
     analysis_data['cases'] = analysis_cases
 
     role = data.get('role', None)
@@ -487,29 +480,41 @@ def submit_responses():
         with open(analysis_filepath, 'w') as f:
             json.dump(analysis_data, f, indent=4)
 
-        prompt_cases =  [case for case in analysis_data['cases'] if 'user_answer' in case and case['user_answer']]
+        # Always analyze, regardless of the number of answers
+        return perform_analysis(analysis_data, role, question_type, language)
 
-        # If no cases were answered, return a specific message
-        if not prompt_cases:
-            return jsonify({
-                "analysis": {
-                    "overall_judgement": "No data was provided for analysis, therefore, an overall assessment of your performance could not be conducted. Please provide cases with user answers for evaluation.",
-                    "cases": []
-                },
-                "cases": analysis_data['cases']
-            }), 200
+    except Exception as e:
+        logger.exception(f"Error during analysis: {e}")
+        return jsonify({"error": "An error occurred while processing analysis."}), 500
 
-        if question_type == 'behavioral':
-            judgement_aspect = "behavioral tendencies"
-        elif question_type == 'study':
-            judgement_aspect = "knowledge and learning style"
-        elif question_type == 'hiring':
-            judgement_aspect = "suitability for the job"
-        else:
-            return jsonify({"error": "Invalid question_type"}), 400
 
-        analysis_data_str = json.dumps(prompt_cases, indent=4)
-        prompt = f"""Analyze the following data. You are a '{role}'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'user_answer' key). The 'optimal' key indicates the correct option.  Determine the language used in the data and STRICTLY PROVIDE YOUR ANALYSIS IN THE LANGUAGE {language}.DO NOT ANALYZE ANY CASE WHERE THE USER DID NOT ANSWER THE QUESTION JUST LEAVE IT OUT OF THE JSON AND FOCUS ONLY ON ANSWERED ONES.  Format your response as JSON:
+
+
+
+
+def perform_analysis(analysis_data, role, question_type, language):
+    prompt_cases = [case for case in analysis_data['cases'] if 'user_answer' in case and case['user_answer']]
+
+    if not prompt_cases:
+        return jsonify({
+            "analysis": {
+                "overall_judgement": "No data was provided for analysis, therefore, an overall assessment of your performance could not be conducted. Please provide cases with user answers for evaluation.",
+                "cases": []
+            },
+            "cases": analysis_data['cases']
+        }), 200
+
+    if question_type == 'behavioral':
+        judgement_aspect = "behavioral tendencies"
+    elif question_type == 'study':
+        judgement_aspect = "knowledge and learning style"
+    elif question_type == 'hiring':
+        judgement_aspect = "suitability for the job"
+    else:
+        return jsonify({"error": "Invalid question_type"}), 400
+
+    analysis_data_str = json.dumps(prompt_cases, indent=4)
+    prompt = f"""Analyze the following data. You are a '{role}'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'user_answer' key). The 'optimal' key indicates the correct option.  Determine the language used in the data and STRICTLY PROVIDE YOUR ANALYSIS IN THE LANGUAGE {language}.DO NOT ANALYZE ANY CASE WHERE THE USER DID NOT ANSWER THE QUESTION JUST LEAVE IT OUT OF THE JSON AND FOCUS ONLY ON ANSWERED ONES.  Format your response as JSON:
 
 {{
     "overall_judgement": "A concise summary of the player's overall {judgement_aspect}.",
@@ -525,44 +530,35 @@ def submit_responses():
 
 Data: {analysis_data_str}"""
 
-        max_attempts = 5
-        attempt = 0
-        while attempt < max_attempts:
-            try:
-                response_analysis = get_response_gemini(prompt)
-                parsed_analysis = parse_json_response(response_analysis)
+    max_attempts = 5
+    attempt = 0
+    while attempt < max_attempts:
+        try:
+            response_analysis = get_response_gemini(prompt)
+            parsed_analysis = parse_json_response(response_analysis)
 
-                if not isinstance(parsed_analysis, dict):
-                    raise ValueError("Analysis response is not a dictionary")
+            if not isinstance(parsed_analysis, dict):
+                raise ValueError("Analysis response is not a dictionary")
 
-                if 'overall_judgement' not in parsed_analysis:
-                    raise ValueError("Missing overall_judgement in analysis")
+            if 'overall_judgement' not in parsed_analysis:
+                raise ValueError("Missing overall_judgement in analysis")
 
-                if 'cases' not in parsed_analysis or not isinstance(parsed_analysis['cases'], list):
-                    raise ValueError("Missing or invalid cases array in analysis")
+            if 'cases' not in parsed_analysis or not isinstance(parsed_analysis['cases'], list):
+                raise ValueError("Missing or invalid cases array in analysis")
 
-                # Return both the analysis and the cases with user answers and optimal answers
-                return jsonify({
-                    "analysis": parsed_analysis,
-                    "cases": analysis_data['cases']
-                }), 200
+            # Return both the analysis and the cases with user answers and optimal answers
+            return jsonify({
+                "analysis": parsed_analysis,
+                "cases": analysis_data['cases']
+            }), 200
 
-            except (json.JSONDecodeError, ValueError) as e:
-                attempt += 1
-                logger.error(f"Attempt {attempt} failed to parse Gemini response as JSON: {e}")
-                if attempt >= max_attempts:
-                    return jsonify({"error": "Failed to parse analysis response after multiple attempts"}), 500
+        except (json.JSONDecodeError, ValueError) as e:
+            attempt += 1
+            logger.error(f"Attempt {attempt} failed to parse Gemini response as JSON: {e}")
+            if attempt >= max_attempts:
+                return jsonify({"error": "Failed to parse analysis response after multiple attempts"}), 500
 
-        return jsonify({"error": "An unexpected error occurred."}), 500
-
-    except Exception as e:
-        logger.exception(f"Error during analysis: {e}")
-        return jsonify({"error": "An error occurred while processing analysis."}), 500
-
-
-
-
-
+    return jsonify({"error": "An unexpected error occurred."}), 500
 
 def parse_json_response(response):
     """

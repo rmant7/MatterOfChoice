@@ -1,0 +1,6 @@
+Fix: Ensure new game state on "Proceed" and prevent premature analysis trigger
+
+- Modified `proceedCases()` to reset state (`casesBatch`, `userAnswers`, `lastCasesForScoring`) and fetch fresh cases instead of using buffered ones.
+- Fixed logic in `displayCurrentCase()` to delay background fetching and analysis until all questions are answered.
+- Prevented `sendAnswersToBackend()` from triggering analysis prematurely when fewer than expected user answers exist.
+- Ensures accurate analysis results (e.g., 3/3 instead of 2/2) and a clean game restart on "Proceed".
