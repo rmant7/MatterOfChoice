@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Nyametsotso si wowɔ</string>
+    <string name="optional_enter_the_role_e_g_student">Ɖoe Ɖe Amewo Ɖoe Ɖe Amewo Ɖoe Ɖe Amewo Ɖoe Ɖe Amewo Nusrɔ̃vi</string>
+    <string name="analysis_my_choices">De ŋugble le nye tiatiawo ŋu</string>
+    <string name="analysis_your_selections">De ŋugble le wò tiatiawo ŋu</string>
+    <string name="rounds">Nuƒolawo</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Dzidzenu si wotu ɖe lãmesẽ, kesinɔnuwo, ƒomedodowo, dzidzɔkpɔkpɔ, sidzedze, karma, ɣeyiɣi dzi kpɔkpɔ, nu siwo gblẽa nu le xexea me, ame ŋutɔ ƒe tsitsi kple hadomegbanɔamedziwo dzi</string>
+    <string name="settings_title">Nyametsotso si wowɔ</string>
+    <string name="settings_subtitle">Nu siwo nàdi be yeawɔ la anɔ te ɖe wò nyametsotsowo dzi</string>
+    <string name="settings_label_subject">Ŋlɔ nyabiasea</string>
+    <string name="settings_hint_select_question_type">Tia nyabiase ƒomevi</string>
+    <string name="settings_hint_select_subtype">Tia Subtype la</string>
+    <string name="settings_hint_select_difficulty">Tia nɔnɔme sesẽa</string>
+    <string name="settings_hint_select_gender_optional">Ɖoe Ɖe Amewo Ɖoe Ɖe Amewo Ale Si Nàwɔ</string>
+    <string name="settings_label_age">Na Wò Ŋɔli Naɖe Edzi</string>
+    <string name="settings_hint_select_language">Tia wò gbegbɔgblɔ</string>
+    <string name="settings_button_generate_cases">Wɔ Nuwo</string>
+    <string name="question_type_study">Nusɔsrɔ̃</string>
+    <string name="question_type_behavioral">Nɔnɔmewɔnawo</string>
+    <string name="question_type_hiring">Subɔsubɔdɔ</string>
+    <string name="subtype_behavioral_interpersonal">Amegbetɔwo Dome Dzesidede</string>
+    <string name="subtype_behavioral_ethical">Aɖaŋuɖoɖo Siwo Ku Ðe Agbenɔnɔ Ŋu</string>
+    <string name="subtype_behavioral_stress">Teƒeɖoɖo ɖe nuteɖeamedzi ŋu</string>
+    <string name="subtype_study_mastery">Subject Me Ŋutete</string>
+    <string name="subtype_study_critical_thinking">Nuŋububu Vevitɔ</string>
+    <string name="subtype_study_practical_application">Dɔwɔwɔ Ðe Edzi</string>
+    <string name="subtype_hiring_technical">Mɔ̃ɖaŋununyawo</string>
+    <string name="subtype_hiring_behavioral_interview">Dzeɖoɖo Si Ku Ðe Agbenyuinɔnɔ Ŋu</string>
+    <string name="subtype_hiring_situational_judgment">Nɔnɔme Ŋuti Ʋɔnudrɔ̃ɖoɖo</string>
+    <string name="difficulty_normal">Nu si sɔ</string>
+    <string name="difficulty_easy">Easy</string>
+    <string name="difficulty_hard">sesẽ</string>
+    <string name="gender_male">Ŋutsu</string>
+    <string name="gender_female">Woman</string>
+    <string name="gender_select_prompt">Tia ŋutsu alo nyɔnu</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Nu aɖe gblẽ</string>
+    <string name="button_new_game">Fefe Yeye</string>
+    <string name="text_round_number">Ðeke %1$d</string>
+    <string name="text_scenario">Nɔnɔmetata</string>
+    <string name="button_next">Emegbe</string>
+    <string name="icon_desc_selected_option">Tiatia si wotia</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>Arabgbe (United Arab Emirates)</item>
+        <item>Assamtɔwo</item>
+        <item>Asturiatɔwo</item>
+        <item>Azerbaijangbe</item>
+        <item>Bambara</item>
+        <item>Belarusian</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibetatɔ</item>
+        <item>Bosnian</item>
+        <item>Bulgariagbe</item>
+        <item>Catalan</item>
+        <item>Czech</item>
+        <item>Welsh</item>
+        <item>Danigbe</item>
+        <item>Germanytɔ</item>
+        <item>Dzongkha</item>
+        <item>Helagbe</item>
+        <item>Eʋegbe</item>
+        <item>Estoniagbe</item>
+        <item>Eʋegbe</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Faroese</item>
+        <item>Finlandgbe</item>
+        <item>Fransegbe</item>
+        <item>Friulian</item>
+        <item>Scottish Gaelic</item>
+        <item>Irelandtɔ</item>
+        <item>Galician</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Hebrigbe</item>
+        <item>Hindi</item>
+        <item>Croatiagbe</item>
+        <item>Hungarygbe</item>
+        <item>Armeniagbe</item>
+        <item>Igbo</item>
+        <item>Indoneziatɔwo</item>
+        <item>Icelandic</item>
+        <item>Italiatɔwo</item>
+        <item>Japantɔwo</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Georgiagbe</item>
+        <item>Kazakhstani</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Koreatɔ</item>
+        <item>Laos (Laos)</item>
+        <item>Limburggbe</item>
+        <item>Lingala</item>
+        <item>Lithuanian</item>
+        <item>Luxembourggbe</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Letoniagbe</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Macedonian</item>
+        <item>Malagasy (Madagascar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Mongoliatɔ Halh</item>
+        <item>Malay (Malaysia)</item>
+        <item>Burmese</item>
+        <item>Netherlands</item>
+        <item>Norwegian Nynorsk</item>
+        <item>Norwaygbe Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Dagu Sudan)</item>
+        <item>Oromo (Etiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>Polandgbe</item>
+        <item>Portugalgbe</item>
+        <item>Persiagbe (Afganistan)</item>
+        <item>Persiagbe (Iran)</item>
+        <item>Pashto (Afganistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Romaniagbe</item>
+        <item>Rundi (Burundi)</item>
+        <item>Russiagbe</item>
+        <item>Sango (Togbe Afrika-dukɔ)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovak (Slovakia)</item>
+        <item>Sloveniagbe</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somalia</item>
+        <item>Spaingbe</item>
+        <item>Albaniagbe (Albania)</item>
+        <item>Serbiagbe</item>
+        <item>Swedengbe</item>
+        <item>Swahiligbe</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Thailandtɔ</item>
+        <item>Turkeygbe</item>
+        <item>Ukrainegbe</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (China)</item>
+        <item>Uzbekistan (Latin, Uzbekistan)</item>
+        <item>Vietnamtɔwo</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Kantonese</item>
+        <item>Mandarin Chinese Gbegbɔɖedzitɔe</item>
+        <item>Mandarin Chinese Habɔbɔa</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

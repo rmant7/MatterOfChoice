@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">"Ikibazo cy'amahitamo"</string>
+    <string name="optional_enter_the_role_e_g_student">Icyitonderwa: Andika umwanya, urugero: Umunyeshuri</string>
+    <string name="analysis_my_choices">Gusuzuma amahitamo yanjye</string>
+    <string name="analysis_your_selections">Suzuma amahitamo yawe</string>
+    <string name="rounds">"Ibikoresho by'umuriro"</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">"Gutanga amanota hashingiwe ku buzima, ubutunzi, imishyikirano, ibyishimo, ubumenyi, Karma, uburyo bwo gucunga igihe, ingaruka ku bidukikije, ukwiyongera k'umuntu n'inshingano z'imibereho myiza"</string>
+    <string name="settings_title">"Ikibazo cy'amahitamo"</string>
+    <string name="settings_subtitle">Ibivugwa muri iyo nkuru bizaba bishingiye ku byo wahisemo</string>
+    <string name="settings_label_subject">Andika umutwe</string>
+    <string name="settings_hint_select_question_type">"Hitamo ubwoko bw'ikibazo"</string>
+    <string name="settings_hint_select_subtype">"Hitamo ubwoko bw'ibikoresho"</string>
+    <string name="settings_hint_select_difficulty">Hitamo icyiciro kigoye</string>
+    <string name="settings_hint_select_gender_optional">Icyitonderwa: Hitamo igitsina cyawe</string>
+    <string name="settings_label_age">Jya mu kigero cyawe</string>
+    <string name="settings_hint_select_language">Hitamo ururimi ukoresha</string>
+    <string name="settings_button_generate_cases">Guteza imbere ibibazo</string>
+    <string name="question_type_study">Kwiyigisha</string>
+    <string name="question_type_behavioral">Imyitwarire</string>
+    <string name="question_type_hiring">Gushakira umuntu akazi</string>
+    <string name="subtype_behavioral_interpersonal">"Ubushobozi bwo gushyikirana n'abandi"</string>
+    <string name="subtype_behavioral_ethical">"Ibibazo by'amahame mbwirizamuco"</string>
+    <string name="subtype_behavioral_stress">"Uko wahangana n'imihangayiko"</string>
+    <string name="subtype_study_mastery">"Ubumenyi bw'ibanze"</string>
+    <string name="subtype_study_critical_thinking">Gutekereza mu buryo bushidikanywaho</string>
+    <string name="subtype_study_practical_application">Gushyira mu bikorwa</string>
+    <string name="subtype_hiring_technical">"Ubumenyi mu by'ikoranabuhanga"</string>
+    <string name="subtype_hiring_behavioral_interview">"Ikiganiro cy'imyitwarire"</string>
+    <string name="subtype_hiring_situational_judgment">Gucira imanza imimerere arimo</string>
+    <string name="difficulty_normal">ibisanzwe</string>
+    <string name="difficulty_easy">byoroshye</string>
+    <string name="difficulty_hard">birakomeye</string>
+    <string name="gender_male">Umugabo</string>
+    <string name="gender_female">Umugore</string>
+    <string name="gender_select_prompt">Hitamo igitsina</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Hari ikintu cyagenze nabi</string>
+    <string name="button_new_game">Umukino mushya</string>
+    <string name="text_round_number">Kuzenguruka %1$d</string>
+    <string name="text_scenario">Ingengabihe</string>
+    <string name="button_next">Ikurikiraho</string>
+    <string name="icon_desc_selected_option">Gahunda yatoranyijwe</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Ikinyarwanda</item>
+        <item>Akan</item>
+        <item>Ikinyarwanda</item>
+        <item>Icyarabu (UAE)</item>
+        <item>Abaturage bo muri Assam</item>
+        <item>Ikinyarwanda</item>
+        <item>Ikinyarwanda</item>
+        <item>Bambara</item>
+        <item>Ikinyarwanda</item>
+        <item>Bemba</item>
+        <item>Icyongereza</item>
+        <item>Igihugu cya Tibet</item>
+        <item>Igihugu cya Bosiniya</item>
+        <item>Ururimi rwo muri Bulugariya</item>
+        <item>Ikinyarwanda</item>
+        <item>Igihugu cya Tchèque</item>
+        <item>Igishushanyo mbonera</item>
+        <item>Igihugu cya Danimarike</item>
+        <item>Icyongereza</item>
+        <item>Dzongkha</item>
+        <item>Ikigiriki</item>
+        <item>Icyongereza</item>
+        <item>Icyesipanyoli</item>
+        <item>Igihugu cya Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Abanyarwanda</item>
+        <item>Igifinwa</item>
+        <item>Igifaransa</item>
+        <item>Ikinyarwanda</item>
+        <item>Icyongereza cya Scottish Gaelic</item>
+        <item>Icyongereza</item>
+        <item>Igishinwa cya Galiziya</item>
+        <item>Igihugu cya Gujarati</item>
+        <item>Igihugu cya Hausa</item>
+        <item>Mu Giheburayo</item>
+        <item>Icyongereza</item>
+        <item>Igiporutugali</item>
+        <item>Icyongereza</item>
+        <item>Ururimi rwo muri Arumeniya</item>
+        <item>Igigbo</item>
+        <item>Ikinyarwanda</item>
+        <item>Ikinyarwanda</item>
+        <item>Icyongereza</item>
+        <item>Abayapani</item>
+        <item>Igitabo cya Kabyle</item>
+        <item>Kamba</item>
+        <item>Ikinyarwanda</item>
+        <item>Igishinwa cyo muri Jeworujiya</item>
+        <item>Kazakhstani</item>
+        <item>Kabuverdianu (Ikigiriki cya Cape Verde)</item>
+        <item>Ikinyarwanda</item>
+        <item>Kikuyu</item>
+        <item>Ikinyarwanda</item>
+        <item>Kirigizisitani</item>
+        <item>"Koreya y'Epfo"</item>
+        <item>Igihugu cya Laos (Laos)</item>
+        <item>Igihugu cya Limburg</item>
+        <item>Ururimi rwa Lingala</item>
+        <item>Igihugu cya Lituwaniya</item>
+        <item>Icyongereza</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>"Ururimi rw'ikigereranyo rwo muri Letoniya"</item>
+        <item>Igihugu cya Malayalam</item>
+        <item>Igishushanyo mbonera</item>
+        <item>Igihugu cya Makedoniya</item>
+        <item>Igihugu cya Madagascar (Madagascar)</item>
+        <item>Igihugu cya Malte (Malta)</item>
+        <item>Icyongereza cya Halh</item>
+        <item>Malay (Malaysia)</item>
+        <item>Icyongereza</item>
+        <item>U Buholandi</item>
+        <item>Nynorsk yo muri Noruveje</item>
+        <item>Igishinwa cyo muri Noruveje</item>
+        <item>Igihugu cya Nepali (Nepal)</item>
+        <item>"Nuer (Sudan y'Epfo)"</item>
+        <item>Igihugu cya Eritereya</item>
+        <item>Ururimi (Kenya)</item>
+        <item>Odia (u Buhinde)</item>
+        <item>Icyongereza</item>
+        <item>Igipolonye</item>
+        <item>Igiporutugali</item>
+        <item>Igiporisi (Afuganisitani)</item>
+        <item>Igiporisi (Iran)</item>
+        <item>Pashto (Afuganisitani)</item>
+        <item>Igihugu cya Quechua (Bolivia)</item>
+        <item>Ikinyarwanda (Ecuador)</item>
+        <item>Igihugu cya Quechua (Peru)</item>
+        <item>Ikinyarumaniya</item>
+        <item>Rundi (Burundi)</item>
+        <item>Ikirusiya</item>
+        <item>Sango (République centrafricaine)</item>
+        <item>Icyongereza (Sri Lanka)</item>
+        <item>Igislovakiya (Slovakia)</item>
+        <item>Igisloveniya</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somaliya</item>
+        <item>Icyesipanyoli</item>
+        <item>Icyalubaniya (Albania)</item>
+        <item>Igisiribiya</item>
+        <item>Ikinyarwanda</item>
+        <item>Igiswayire</item>
+        <item>Ururimi rwa Tamil</item>
+        <item>Ururimi rwa Telugu</item>
+        <item>Igihugu cya Tayilande</item>
+        <item>Igiturukiya</item>
+        <item>Icyongereza</item>
+        <item>Urdu (Pakisitani)</item>
+        <item>Ururimi rwa Uyghur (Ubushinwa)</item>
+        <item>"Uzbekistan (mu rurimi rw'ikilatini, Uzbekistan)"</item>
+        <item>Icyongereza</item>
+        <item>Ikinyarwanda</item>
+        <item>Ikinyarwanda</item>
+        <item>Ikinyarwanda</item>
+        <item>"Igishinwa cy'ikimandarini cyoroheje"</item>
+        <item>"Igishinwa cyo mu rurimi rw'ikimandarini"</item>
+        <item>Abazungu</item>
+    </string-array>
+</resources>

@@ -43,6 +43,7 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -86,7 +87,10 @@ fun MainScreen() {
             composable(Screens.GameScreen.screen) { Game(navController) }
             composable(Screens.ResultScreen.screen) { Result() }
             composable(Screens.AnalysisScreen.screen) { Analysis() }
-            composable(Screens.SettingsScreen.screen) { Settings(navController = navController) }
+            composable(Screens.SettingsScreen.screen) {
+                Settings(navController = navController)
+             //   SettingsScreen()
+            }
         }
     }
 }
@@ -119,9 +123,6 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
     val context = LocalContext.current.applicationContext
     var caseNum by rememberSaveable { mutableIntStateOf(1) }
 
-
-    // Note: The `isInitialized` state flow is no longer used by the new ViewModel logic,
-    // so this line can eventually be removed if desired.
     val isInitialized by viewmodel.isInitialized.collectAsState()
     val coroutineScope = rememberCoroutineScope()
 
@@ -134,11 +135,9 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
 
 
     if (!isFirst) {
-        // This LaunchedEffect will run once when SetUpCase is first composed.
-        // It's the perfect place to start the game.
+
         LaunchedEffect(Unit) { // Use Unit to ensure it only runs once.
-            // FIX: Call the new, correct function to start the game.
-            // Do not call `viewmodel.main()` anymore.
+
             viewmodel.initiateGame()
         }
 
@@ -160,7 +159,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
             ) {
                 Log.e("SetUpCase", "An error occurred: ${state.error}")
                 Text(
-                    text = "Something went wrong", fontSize = 18.sp, modifier = Modifier
+                    text = stringResource(R.string.error_something_went_wrong), fontSize = 18.sp, modifier = Modifier
                         .align(
                             Alignment.CenterHorizontally
                         )
@@ -168,7 +167,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                 )
                 GameButton(
                     onClick = { navController.navigate(Screens.SettingsScreen.screen) },
-                    text = "New Game"
+                    text = stringResource(R.string.button_new_game)
                 )
             }
         } else if (state.casesList != null) {
@@ -206,7 +205,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
-                            "Round ${round.intValue}",
+                           text = stringResource(R.string.rounds)+"${round.intValue}",
                             fontFamily = titleFont,
                             textAlign = TextAlign.Justify,
                             fontSize = 22.sp,
@@ -321,7 +320,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                                         }
                                     }
                                 },
-                                text = "Next"
+                                text = stringResource(R.string.button_next)
                             )
                         }
                         Spacer(modifier = Modifier.height(16.dp))
@@ -334,7 +333,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             GameButton(
                 onClick = { navController.navigate(Screens.SettingsScreen.screen) },
-                text = "New Game"
+                text = stringResource(R.string.button_new_game)
             )
         }
     }

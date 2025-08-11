@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Mi̱ ci̱ rɔ̱ car</string>
+    <string name="optional_enter_the_role_e_g_student">Mi̱ ca go̱r: Ŋi̱i̱c gua̱a̱th, cäätdɛ, Ji̱ gɔ̱rä</string>
+    <string name="analysis_my_choices">Ŋi̱i̱c ti̱ göörä</string>
+    <string name="analysis_your_selections">Ŋi̱i̱c mi̱ ci̱ wä la̱t</string>
+    <string name="rounds">Runi̱</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Ŋi̱i̱c mi̱ ca ka̱m raar kɛ ta̱a̱ pua̱a̱ny, ria̱ŋ, ta̱a̱ ciɛŋni̱, tɛ̈th lɔaac, ŋäc ŋɔaani̱, karma, gua̱a̱th la̱t, ta̱a̱ gua̱thni̱, ta̱a̱ pua̱a̱nyni̱, ta̱a̱ ciɛɛŋä, kɛnɛ ta̱a̱ nath</string>
+    <string name="settings_title">Mi̱ ci̱ rɔ̱ car</string>
+    <string name="settings_subtitle">Kä ta̱a̱ ëë ca la̱t ɛ ji̱ bɛ la̱t kɛ min ci̱ guic</string>
+    <string name="settings_label_subject">Ŋi̱i̱c ŋɔaani̱</string>
+    <string name="settings_hint_select_question_type">Yi̱e̱e̱e̱ thi̱e̱e̱p thiecni̱</string>
+    <string name="settings_hint_select_subtype">Yi̱e̱e̱e̱ tha̱a̱ŋdɛ</string>
+    <string name="settings_hint_select_difficulty">Yi̱e̱e̱ni̱ pek in di̱i̱t</string>
+    <string name="settings_hint_select_gender_optional">Mi̱ go̱o̱ri̱: Yi̱i̱i̱ mi̱ gööl</string>
+    <string name="settings_label_age">Rɛy runi̱dun</string>
+    <string name="settings_hint_select_language">Yier thokdu</string>
+    <string name="settings_button_generate_cases">Ji̱i̱ni̱ ti̱ ca la̱t</string>
+    <string name="question_type_study">Ŋi̱i̱c</string>
+    <string name="question_type_behavioral">Kä ciɛŋ</string>
+    <string name="question_type_hiring">Mi̱ ca la̱t</string>
+    <string name="subtype_behavioral_interpersonal">Ŋi̱i̱c nath</string>
+    <string name="subtype_behavioral_ethical">Ri̱w ciɛŋni</string>
+    <string name="subtype_behavioral_stress">Mi̱ Ca̱a̱r Rɛydɛ</string>
+    <string name="subtype_study_mastery">Ŋi̱i̱c ŋɔaani̱</string>
+    <string name="subtype_study_critical_thinking">Ŋi̱i̱c in Rɛl Rɔ</string>
+    <string name="subtype_study_practical_application">Lätdɛ kä Lätdɛ</string>
+    <string name="subtype_hiring_technical">Ŋi̱i̱cni̱</string>
+    <string name="subtype_hiring_behavioral_interview">Ŋaknɔm ciɛŋä</string>
+    <string name="subtype_hiring_situational_judgment">Ŋi̱i̱c Rɛy Rɛy Ti̱ Ca La̱t</string>
+    <string name="difficulty_normal">mi̱ ro̱ŋ</string>
+    <string name="difficulty_easy">mi̱ thia̱k</string>
+    <string name="difficulty_hard">buɔ̱m</string>
+    <string name="gender_male">Rɛy wutni</string>
+    <string name="gender_female">Rɔ̱ɔ̱r</string>
+    <string name="gender_select_prompt">Yi̱e̱e̱e̱ kuën</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Tha̱a̱ŋ duɔ̱ɔ̱r cu tuɔɔk.</string>
+    <string name="button_new_game">Luak mi̱ pay tuɔɔk</string>
+    <string name="text_round_number">Rɛy %1$d</string>
+    <string name="text_scenario">Ta̱a̱ in te thi̱n</string>
+    <string name="button_next">Min dɔ̱diɛn</string>
+    <string name="icon_desc_selected_option">Mi̱ ca kuany</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>Arabik (United Arab Emirates)</item>
+        <item>Assamni̱</item>
+        <item>Asturian</item>
+        <item>Azerbaijanni̱</item>
+        <item>Bambara</item>
+        <item>Bi̱la̱th</item>
+        <item>Bemba</item>
+        <item>Bengal</item>
+        <item>Ti̱bi̱t</item>
+        <item>Bosnian</item>
+        <item>Bulgari̱an</item>
+        <item>Catalan</item>
+        <item>Ji̱ Czech</item>
+        <item>Welsh</item>
+        <item>Dänish</item>
+        <item>Ji̱ Germany</item>
+        <item>Dzongkha</item>
+        <item>Ji̱ Gi̱ri̱k</item>
+        <item>Ji̱ I̱thki̱li̱th</item>
+        <item>Ɛthtɔni̱</item>
+        <item>Ba̱thkue</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Ji̱ Färö</item>
+        <item>Wi̱i̱ Finland</item>
+        <item>Ji̱ France</item>
+        <item>Friulian</item>
+        <item>Scottish Gaelic</item>
+        <item>Ji̱ I̱ri̱th</item>
+        <item>Galician</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Ɣi̱-bɛ-ru</item>
+        <item>Ɣi̱ndi̱</item>
+        <item>Krɔat</item>
+        <item>Ɣi̱ŋri̱</item>
+        <item>Armenian</item>
+        <item>I̱go̱</item>
+        <item>Indonesian</item>
+        <item>I̱thla̱ni̱k</item>
+        <item>I̱thti̱lian</item>
+        <item>Ji̱ Japan</item>
+        <item>Kabylie</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Ji̱ Georgia</item>
+        <item>Ka̱ka̱th</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Ji̱ Korea</item>
+        <item>Lao (Laos)</item>
+        <item>Limburgi̱th</item>
+        <item>Lingala</item>
+        <item>Lithua</item>
+        <item>Lɛkthembörgi̱</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Läthi̱ni̱ ti̱ ca ŋa̱c</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Maci̱dɔn</item>
+        <item>Madagascar (Madagascar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Halh Mongolian</item>
+        <item>Malay (Malaysia)</item>
+        <item>Ji̱ Burma</item>
+        <item>Ji̱ Netherlands</item>
+        <item>Norwegian Nynorsk</item>
+        <item>Norwegian Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (South Sudan)</item>
+        <item>Oromo (Ethiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>Pi̱o̱li̱</item>
+        <item>Pɔrti̱gi̱c</item>
+        <item>Persian (Afghanistan)</item>
+        <item>Perth (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Rɔmni̱</item>
+        <item>Rundi (Burundi)</item>
+        <item>Rööth</item>
+        <item>Sango (Central African Republic)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovak (Slovakia)</item>
+        <item>I̱thla̱ni̱</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Thömal</item>
+        <item>I̱thpaani̱</item>
+        <item>Albania (Albania)</item>
+        <item>Tha̱a̱ŋ nath</item>
+        <item>Tha̱a̱ŋ nath</item>
+        <item>Swahili</item>
+        <item>Thaamil</item>
+        <item>Telugu</item>
+        <item>Thai</item>
+        <item>Turki̱</item>
+        <item>I̱thki̱ri̱</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (China)</item>
+        <item>Uzbek (Latin, Uzbekistan)</item>
+        <item>Wi̱i̱tnam</item>
+        <item>Ji̱ Xhosa</item>
+        <item>Yoruba</item>
+        <item>Cantonese</item>
+        <item>Mandarin Chinese (Mandarin Chinese) Lämkɛ jɛ</item>
+        <item>Mandarin Chinese Traditional</item>
+        <item>Ji̱ Zo̱lu</item>
+    </string-array>
+</resources>

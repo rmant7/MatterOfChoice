@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Abubuwan da aka zaɓa</string>
+    <string name="optional_enter_the_role_e_g_student">Zaɓin zaɓi: Shigar da matsayin, misali, Dalibi</string>
+    <string name="analysis_my_choices">Nazarin zaɓin da na yi</string>
+    <string name="analysis_your_selections">Ka bincika zaɓinka</string>
+    <string name="rounds">Abubuwan da suka faru</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Sakamakon lissafi dangane da kiwon lafiya, wadata, dangantaka, farin ciki, ilimi, Karma, sarrafa lokaci, tasirin muhalli, ci gaban mutum, da alhakin zamantakewa</string>
+    <string name="settings_title">Abubuwan da aka zaɓa</string>
+    <string name="settings_subtitle">Yanayin zai dogara ne akan zaɓin ku</string>
+    <string name="settings_label_subject">Shigar da batun</string>
+    <string name="settings_hint_select_question_type">Zaɓi nau\'in tambaya</string>
+    <string name="settings_hint_select_subtype">Zaɓi subtype</string>
+    <string name="settings_hint_select_difficulty">Zaɓi matakin wahala</string>
+    <string name="settings_hint_select_gender_optional">Zaɓin zaɓi: Zaɓi jinsi</string>
+    <string name="settings_label_age">Ka Shiga Shekararka</string>
+    <string name="settings_hint_select_language">Zaɓi yarenku</string>
+    <string name="settings_button_generate_cases">Ƙirƙirar Al\'amura</string>
+    <string name="question_type_study">Nazarin</string>
+    <string name="question_type_behavioral">Halaye</string>
+    <string name="question_type_hiring">Hayar mutane</string>
+    <string name="subtype_behavioral_interpersonal">Ƙwarewa a Tsakanin Mutane</string>
+    <string name="subtype_behavioral_ethical">Matsalolin Ɗabi\'a</string>
+    <string name="subtype_behavioral_stress">Gudanar da Matsala</string>
+    <string name="subtype_study_mastery">Gudanar da Batutuwa</string>
+    <string name="subtype_study_critical_thinking">Ra\'ayin da Ya Dace</string>
+    <string name="subtype_study_practical_application">Yadda Za a Yi Amfani da Shi</string>
+    <string name="subtype_hiring_technical">Ƙwarewar Fasaha</string>
+    <string name="subtype_hiring_behavioral_interview">Tattaunawa Game da Halaye</string>
+    <string name="subtype_hiring_situational_judgment">Hukuncin Yanayi</string>
+    <string name="difficulty_normal">al\'ada</string>
+    <string name="difficulty_easy">mai sauƙi</string>
+    <string name="difficulty_hard">mai wuya</string>
+    <string name="gender_male">Maza</string>
+    <string name="gender_female">Mace</string>
+    <string name="gender_select_prompt">Zaɓi jinsi</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Wani abu ya ɓace.</string>
+    <string name="button_new_game">Sabuwar Wasan</string>
+    <string name="text_round_number">Zagaye %1$d</string>
+    <string name="text_scenario">Yanayin da ya faru</string>
+    <string name="button_next">Na gaba</string>
+    <string name="icon_desc_selected_option">Zaɓaɓɓen zaɓi</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>Larabci (Al\'ummar Larabawa)</item>
+        <item>Assamese</item>
+        <item>Ƙasar Asturian</item>
+        <item>Hausa</item>
+        <item>Bambara</item>
+        <item>Belarusian</item>
+        <item>Bemba</item>
+        <item>Hausa</item>
+        <item>Ƙasar Tibet</item>
+        <item>Ƙasar Bosnia</item>
+        <item>Ƙasar Bulgaria</item>
+        <item>Catalan</item>
+        <item>Ƙasar Czech</item>
+        <item>Welsh</item>
+        <item>Danish</item>
+        <item>Jamusanci</item>
+        <item>Dzongkha</item>
+        <item>Girkanci</item>
+        <item>Turanci</item>
+        <item>Yaren mutanen Estonia</item>
+        <item>Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Ƙasar Faroese</item>
+        <item>Finnish</item>
+        <item>Faransanci</item>
+        <item>Friulian</item>
+        <item>Harshen Gaelic na Scotland</item>
+        <item>Ƙasar Irish</item>
+        <item>Galician</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Ibrananci</item>
+        <item>Hausa</item>
+        <item>Ƙasar Croatia</item>
+        <item>Ƙasar Hungary</item>
+        <item>Armeniyanci</item>
+        <item>Hausawa</item>
+        <item>Hausa</item>
+        <item>Ƙasar Iceland</item>
+        <item>Italiyanci</item>
+        <item>Jafananci</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Hausa</item>
+        <item>Kasashen Kazakhstan</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Ƙasar Koriya</item>
+        <item>Laos (Laos)</item>
+        <item>Ƙasar Limburg</item>
+        <item>Lingala</item>
+        <item>Harshen Lithuanian</item>
+        <item>Turanci na Luxembourg</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Harshen Latvian na yau da kullum</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Mutanen Makidoniya</item>
+        <item>Malagasy (Madagaskar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Halin Mongoliya</item>
+        <item>Malay (Malaysia)</item>
+        <item>Mutanen Birma</item>
+        <item>Yaren mutanen Holland</item>
+        <item>Nynorsk na ƙasar Norway</item>
+        <item>Bokmål na ƙasar Norway</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Kudancin Sudan)</item>
+        <item>Oromo (Atiyopiya)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odiya (Hindia)</item>
+        <item>Punjabi</item>
+        <item>Yaren mutanen Poland</item>
+        <item>Mutanen Fotigal</item>
+        <item>Farisa (Afghanistan)</item>
+        <item>Farisa (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Yaren Romaniya</item>
+        <item>Rundi (Burundi)</item>
+        <item>Rashanci</item>
+        <item>Sango (Jamhuriyar Afirka ta Tsakiya)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Ƙasar Slovakia (Slovakia)</item>
+        <item>Ƙasar Slovenia</item>
+        <item>Hausa (Zimbabwe)</item>
+        <item>Somaliya</item>
+        <item>Mutanen Espanya</item>
+        <item>Albanian (Albania)</item>
+        <item>Ƙasar Serbia</item>
+        <item>Yaren mutanen Sweden</item>
+        <item>Harshen Swahili</item>
+        <item>Mutanen Tamil</item>
+        <item>Hausa</item>
+        <item>Ƙasar Thailand</item>
+        <item>Turkanci</item>
+        <item>Yaren mutanen Ukraine</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Hausawa (China)</item>
+        <item>Uzbek (Latin, Uzbekistan)</item>
+        <item>Vietnamese</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Cantonese</item>
+        <item>Sinanci na Mandarin Mai Sauƙaƙe</item>
+        <item>Mandarin Sinanci na gargajiya</item>
+        <item>Hausawa</item>
+    </string-array>
+</resources>

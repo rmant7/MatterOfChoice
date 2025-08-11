@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Таңдалған мәселе</string>
+    <string name="optional_enter_the_role_e_g_student">Міндетті: рөлді келтіріңіз, мысалы, Студент</string>
+    <string name="analysis_my_choices">Менің таңдауларымды талдау</string>
+    <string name="analysis_your_selections">Сіздің таңдауыңызды талдау</string>
+    <string name="rounds">Көлдер</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Сәулет, байлық, қарым-қатынас, бақыт, білім, карма, уақыт басқару, қоршаған ортаға әсер ету, жеке өсу және әлеуметтік жауапкершілік негізінде бағаны есептеу</string>
+    <string name="settings_title">Таңдалған мәселе</string>
+    <string name="settings_subtitle">Сценарийлер сіздің таңдауыңызға негізделеді</string>
+    <string name="settings_label_subject">Тақырыпты келтіріңіз</string>
+    <string name="settings_hint_select_question_type">Сұрақ түрін таңдау</string>
+    <string name="settings_hint_select_subtype">Кіші түрін таңдаңыз</string>
+    <string name="settings_hint_select_difficulty">Қиындық деңгейін таңдаңыз</string>
+    <string name="settings_hint_select_gender_optional">Функционалды: жынысыңызды таңдаңыз</string>
+    <string name="settings_label_age">Жасыңа кір</string>
+    <string name="settings_hint_select_language">Тіл таңдаңыз</string>
+    <string name="settings_button_generate_cases">Деректерді құру</string>
+    <string name="question_type_study">Зерттеу</string>
+    <string name="question_type_behavioral">мінез-құлық</string>
+    <string name="question_type_hiring">Жалдау</string>
+    <string name="subtype_behavioral_interpersonal">Адамдар арасындағы дағдылар</string>
+    <string name="subtype_behavioral_ethical">Этикалық қиындықтар</string>
+    <string name="subtype_behavioral_stress">Стрессті басқару</string>
+    <string name="subtype_study_mastery">Субъектілік шеберлігі</string>
+    <string name="subtype_study_critical_thinking">Критикалық ойлау</string>
+    <string name="subtype_study_practical_application">Қолданбалы қолдану</string>
+    <string name="subtype_hiring_technical">Техникалық дағдылар</string>
+    <string name="subtype_hiring_behavioral_interview">Әдептілік сұхбаты</string>
+    <string name="subtype_hiring_situational_judgment">Жағдайға қатысты үкім</string>
+    <string name="difficulty_normal">қалыпты</string>
+    <string name="difficulty_easy">оңай</string>
+    <string name="difficulty_hard">қатты</string>
+    <string name="gender_male">Еркек</string>
+    <string name="gender_female">Әйел</string>
+    <string name="gender_select_prompt">Жынысты таңдау</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Бірдеңе дұрыс болмады</string>
+    <string name="button_new_game">Жаңа ойын</string>
+    <string name="text_round_number">Дөңгелек %1$d</string>
+    <string name="text_scenario">Сценарий</string>
+    <string name="button_next">Келесі:</string>
+    <string name="icon_desc_selected_option">Таңдалған нұсқа</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Африкаанс</item>
+        <item>Ақан</item>
+        <item>Амар тілі</item>
+        <item>Араб тілі (Біріккен Араб Әмірліктері)</item>
+        <item>Ассамдықтар</item>
+        <item>Астуриялық</item>
+        <item>Әзірбайжан тілі</item>
+        <item>Бамбар</item>
+        <item>Беларус тілі</item>
+        <item>Бемба</item>
+        <item>Бенгал тілі</item>
+        <item>Тибет</item>
+        <item>Босниялық</item>
+        <item>Болгария тілі</item>
+        <item>Каталония</item>
+        <item>Чехия</item>
+        <item>Уэльс</item>
+        <item>Даниялық</item>
+        <item>Неміс</item>
+        <item>Dzongkha</item>
+        <item>Грек</item>
+        <item>ағылшын тілі</item>
+        <item>Эстон тілі</item>
+        <item>Баск</item>
+        <item>Ewe (Гана)</item>
+        <item>Ewe (Того)</item>
+        <item>Фарерлер</item>
+        <item>Финляндиялық</item>
+        <item>Француз тілі</item>
+        <item>Фриуль тілі</item>
+        <item>Шотландиялық гаель тілі</item>
+        <item>Ирландиялық</item>
+        <item>Галиция тілі</item>
+        <item>Гуджарати</item>
+        <item>Хаусса</item>
+        <item>Еврей тілі</item>
+        <item>Үнді</item>
+        <item>Хорватиялық</item>
+        <item>Венгриялық</item>
+        <item>Армян тілі</item>
+        <item>Игбо</item>
+        <item>Индонезиялық</item>
+        <item>Исландиялық</item>
+        <item>Италиялық</item>
+        <item>Жапон</item>
+        <item>Қабіл</item>
+        <item>Қамба</item>
+        <item>Канад</item>
+        <item>Грузия тілі</item>
+        <item>Қазақ</item>
+        <item>Kabuverdianu (Кейп-Верде креолы)</item>
+        <item>Кхмер</item>
+        <item>Кикую</item>
+        <item>Кinyarwanda</item>
+        <item>Қырғызстан</item>
+        <item>Кореялық</item>
+        <item>Лаос (Лаос)</item>
+        <item>Лимбург тілі</item>
+        <item>Лингала</item>
+        <item>Литва тілі</item>
+        <item>Люксембург тілі</item>
+        <item>Ганда</item>
+        <item>Лоу</item>
+        <item>Стандартты латыш тілі</item>
+        <item>Малайалам</item>
+        <item>Маратхи</item>
+        <item>Македониялық</item>
+        <item>Малагаси (Мадагаскар)</item>
+        <item>Мальта тілі (Мальта)</item>
+        <item>Халх монгол тілі</item>
+        <item>Малайзия (Малазия)</item>
+        <item>Мьянма</item>
+        <item>Нидерланд</item>
+        <item>Норвегиялық Нинорск</item>
+        <item>Норвегиялық Bokmål</item>
+        <item>Непал (Непал)</item>
+        <item>Нуер (Оңтүстік Судан)</item>
+        <item>Оромо (Эфиопия)</item>
+        <item>Оромо (Кения)</item>
+        <item>Одия (Индия)</item>
+        <item>Панджаби</item>
+        <item>Польша</item>
+        <item>Португал тілі</item>
+        <item>Парсы тілі (Афғанстан)</item>
+        <item>Парсы тілі (Иран)</item>
+        <item>Пашту (Афғанстан)</item>
+        <item>Кечуа (Боливия)</item>
+        <item>Кечуа (Эквадор)</item>
+        <item>Кечуа (Перу)</item>
+        <item>Румыниялық</item>
+        <item>Рунди (Бүрундi)</item>
+        <item>Орыс тілі</item>
+        <item>Санго (Орта Африка Республикасы)</item>
+        <item>Сингалия (Шри-Ланка)</item>
+        <item>Словакия (Словакия)</item>
+        <item>Словения тілі</item>
+        <item>Шона (Зимбабве)</item>
+        <item>Сомали</item>
+        <item>Испан тілі</item>
+        <item>Албания (Альбания)</item>
+        <item>Сербиялық</item>
+        <item>Швед тілі</item>
+        <item>Суахили тілі</item>
+        <item>Тамиль</item>
+        <item>Телугу</item>
+        <item>Таиланд</item>
+        <item>Түрік</item>
+        <item>Украина тілі</item>
+        <item>Урду (Пакистан)</item>
+        <item>Ұйғыр (Қытай)</item>
+        <item>Өзбек (латынша, Өзбекстан)</item>
+        <item>Вьетнамдық</item>
+        <item>Xhosa тілі</item>
+        <item>Яруба тілі</item>
+        <item>Кантон тілі</item>
+        <item>Қарапайымдалған мандарин қытай</item>
+        <item>Мандариндік қытайлық дәстүрлі</item>
+        <item>Зулулар</item>
+    </string-array>
+</resources>

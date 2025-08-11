@@ -21,6 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -73,7 +74,7 @@ fun Result() {
 
             )
             Text(
-                text = "Rounds",
+                text = stringResource(R.string.rounds),
                 fontSize = 32.sp,
                 modifier = Modifier.padding(top = 10.dp)
             )
@@ -98,11 +99,14 @@ fun Result() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Score calculate based on health, wealth, relationships, happiness, knowledge, karma, time management, environmental impact, personal growth, and social responsibility",
+                text = stringResource(R.string.score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility),
                 textAlign = TextAlign.Justify,
                 fontSize = 14.sp,
                 color = Color.Gray,
-                modifier = Modifier.align(Alignment.CenterHorizontally).padding(16.dp).padding(bottom = 4.dp)
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+                    .padding(16.dp)
+                    .padding(bottom = 4.dp)
             )
         }
     }

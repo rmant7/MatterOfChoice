@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Valinnanvara</string>
+    <string name="optional_enter_the_role_e_g_student">Valinnainen: Kirjoita rooli, esimerkiksi Opiskelija</string>
+    <string name="analysis_my_choices">Analysoin valintojani</string>
+    <string name="analysis_your_selections">Analysoida valintasi</string>
+    <string name="rounds">Laukaukset</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Palkinto lasketaan terveyden, vaurauden, suhteiden, onnellisuuden, tiedon, karman, ajanhallinnan, ympäristövaikutusten, henkilökohtaisen kasvun ja sosiaalisen vastuun perusteella</string>
+    <string name="settings_title">Valinnanvara</string>
+    <string name="settings_subtitle">Scenarioit perustuvat valintasi .</string>
+    <string name="settings_label_subject">Kirjoita aihe</string>
+    <string name="settings_hint_select_question_type">Valitse kysymyksen tyyppi</string>
+    <string name="settings_hint_select_subtype">Valitse alatyyppi</string>
+    <string name="settings_hint_select_difficulty">Valitse vaikea taso</string>
+    <string name="settings_hint_select_gender_optional">Valinnainen: Valitse sukupuoli</string>
+    <string name="settings_label_age">Tule vanhaksi</string>
+    <string name="settings_hint_select_language">Valitse kieli</string>
+    <string name="settings_button_generate_cases">Tuotetaan tapauksia</string>
+    <string name="question_type_study">Tutkimus</string>
+    <string name="question_type_behavioral">Käyttäytyminen</string>
+    <string name="question_type_hiring">Palkkaaminen</string>
+    <string name="subtype_behavioral_interpersonal">Henkilökunnan väliset taidot</string>
+    <string name="subtype_behavioral_ethical">Eettiset dilemmat</string>
+    <string name="subtype_behavioral_stress">Stressinhallinta</string>
+    <string name="subtype_study_mastery">Aiheen osaaminen</string>
+    <string name="subtype_study_critical_thinking">Kriittinen ajattelu</string>
+    <string name="subtype_study_practical_application">Käytännöllinen käyttö</string>
+    <string name="subtype_hiring_technical">Tekniset taidot</string>
+    <string name="subtype_hiring_behavioral_interview">Käyttäytymiskeskustelu</string>
+    <string name="subtype_hiring_situational_judgment">Tilannetta koskeva tuomio</string>
+    <string name="difficulty_normal">normaali</string>
+    <string name="difficulty_easy">helppoa</string>
+    <string name="difficulty_hard">Vaikea</string>
+    <string name="gender_male">Mies</string>
+    <string name="gender_female">Nainen</string>
+    <string name="gender_select_prompt">Valitse sukupuoli</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Jokin meni pieleen.</string>
+    <string name="button_new_game">Uusi peli</string>
+    <string name="text_round_number">Pyöreä %1$d</string>
+    <string name="text_scenario">Scenario</string>
+    <string name="button_next">Seuraava .</string>
+    <string name="icon_desc_selected_option">Valittu vaihtoehto</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikkalainen</item>
+        <item>Akan</item>
+        <item>Amharialainen</item>
+        <item>Arabia (Yhdistyneet arabiemiirikunnat)</item>
+        <item>Assamialainen</item>
+        <item>Asturialainen</item>
+        <item>Aserbaidžaani</item>
+        <item>Bambara</item>
+        <item>Valko-Venäjä</item>
+        <item>Bemba</item>
+        <item>Bengalilainen</item>
+        <item>Tiibetiläinen</item>
+        <item>Bosnialainen</item>
+        <item>Bulgarian kieli</item>
+        <item>Katalonia</item>
+        <item>Tekijä</item>
+        <item>Valkoinen</item>
+        <item>Tanskalainen</item>
+        <item>Saksalainen</item>
+        <item>Dzongkha</item>
+        <item>Kreikkalainen</item>
+        <item>Englanti</item>
+        <item>Virolainen</item>
+        <item>Baski</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Færealaiset</item>
+        <item>Suomalainen</item>
+        <item>Ranskalainen</item>
+        <item>Friulialainen</item>
+        <item>Skottish Gaelic</item>
+        <item>Irlanti</item>
+        <item>Galician</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Heprealainen</item>
+        <item>Intialainen</item>
+        <item>Kroatialainen</item>
+        <item>Unkarilainen</item>
+        <item>Armenialainen</item>
+        <item>Igbo</item>
+        <item>Indonesiankielinen</item>
+        <item>Islantilainen</item>
+        <item>Italialainen</item>
+        <item>Japanilaiset</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Georgiankielinen</item>
+        <item>Kazakhstani</item>
+        <item>Kabuverdianu (Kape Verde kreoli)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirgistan</item>
+        <item>Korealainen</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgian kieli</item>
+        <item>Lingala</item>
+        <item>Liettuankielinen</item>
+        <item>Luxemburgiainen</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Säännöllinen latvialainen</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Makedonialainen</item>
+        <item>Malagasi (Madagascar)</item>
+        <item>Malttainen (Malta)</item>
+        <item>Halh mongolinen</item>
+        <item>Malay (Malaysia)</item>
+        <item>Burmankielinen</item>
+        <item>Alankomaat</item>
+        <item>Norjan Nynorsk</item>
+        <item>Norjan bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Etelä-Sudan)</item>
+        <item>Oromo (Ethiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (Intia)</item>
+        <item>Punjabi</item>
+        <item>Puolainen</item>
+        <item>Portugalilainen</item>
+        <item>Persian (Afganistan)</item>
+        <item>Persian (Iran)</item>
+        <item>Pashto (Afganistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Romaniankielinen</item>
+        <item>Rundi (Burundi)</item>
+        <item>Venäjällä</item>
+        <item>Sango (keski-afrikkalainen tasavalta)</item>
+        <item>Sinhalainen (Sri Lanka)</item>
+        <item>Slovakian (Slovakia)</item>
+        <item>Sloveniankielinen</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somalian</item>
+        <item>Espanjalainen</item>
+        <item>Albanian (Albania)</item>
+        <item>Serbialainen</item>
+        <item>Ruotsi</item>
+        <item>Swahili</item>
+        <item>Tamililainen</item>
+        <item>Telugu</item>
+        <item>Thaimaalainen</item>
+        <item>Turkkilainen</item>
+        <item>Ukrainankielinen</item>
+        <item>Urdu (Pakistani)</item>
+        <item>Uiguri (Kiina)</item>
+        <item>Uzbekistan (latinalainen Uzbekistan)</item>
+        <item>Vietnamilainen</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Kantoninen</item>
+        <item>Mandariini kiinalainen yksinkertaistettu</item>
+        <item>Mandariini kiinalainen perinteinen</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

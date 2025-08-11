@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -69,7 +70,7 @@ fun Analysis(viewModel: AnalysisViewModel = viewModel()) {
                 modifier = Modifier.size(100.dp)
             )
             Text(
-                text = "Analysis your selections", color = Color.Black,
+                text = stringResource(R.string.analysis_your_selections), color = Color.Black,
                 fontFamily = myFont, fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 15.dp, top = 28.dp)
@@ -78,14 +79,14 @@ fun Analysis(viewModel: AnalysisViewModel = viewModel()) {
             GameTextField(
                 text = userRole,
                 onValueChange = { userRole = it },
-                labelTxt = "Optional: Enter the role, e.g., Student"
+                labelTxt = stringResource(R.string.optional_enter_the_role_e_g_student)
             )
 
             GameButton(
                 onClick = {
                     viewModel.loadAnalysis(context = context, role = userRole)
                 },
-                text = "Analysis my choices"
+                text = stringResource(R.string.analysis_my_choices)
             )
 
     }

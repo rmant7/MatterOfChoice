@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Likambo ya kopona</string>
+    <string name="optional_enter_the_role_e_g_student">Likambo ya kopona: Tyá mokumba, na ndakisa, Moyekoli</string>
+    <string name="analysis_my_choices">Koyekola bikateli na ngai</string>
+    <string name="analysis_your_selections">Talelá makambo oyo oponi</string>
+    <string name="rounds">Masasi</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Mpo na koyeba makambo yango, esengeli kotalela makambo lokola sante, bozwi, boyokani, esengo, boyebi, karma, ndenge ya kosalela ntango, bopusi na yango likoló ya molɔ́ngɔ́, bokoli ya moto mpe mokumba na ye na makambo ya bato</string>
+    <string name="settings_title">Likambo ya kopona</string>
+    <string name="settings_subtitle">Makambo oyo okosala esimbami na makambo oyo okopona</string>
+    <string name="settings_label_subject">Kɔtá likambo</string>
+    <string name="settings_hint_select_question_type">Poná lolenge ya motuna</string>
+    <string name="settings_hint_select_subtype">Poná motángo</string>
+    <string name="settings_hint_select_difficulty">Poná esika ya mpasi</string>
+    <string name="settings_hint_select_gender_optional">Likambo ya kopona: Poná mwasi to mobali na yo</string>
+    <string name="settings_label_age">Kobá kokóma mokóló</string>
+    <string name="settings_hint_select_language">Poná monɔkɔ na yo</string>
+    <string name="settings_button_generate_cases">Kobimisa makambo</string>
+    <string name="question_type_study">Koyekola</string>
+    <string name="question_type_behavioral">Bizaleli</string>
+    <string name="question_type_hiring">Kosomba moto</string>
+    <string name="subtype_behavioral_interpersonal">Mayele ya kosolola na bato</string>
+    <string name="subtype_behavioral_ethical">Mikakatano ya bizaleli malamu</string>
+    <string name="subtype_behavioral_stress">Ndenge ya kosilisa mitungisi</string>
+    <string name="subtype_study_mastery">Mayele ya koyekola</string>
+    <string name="subtype_study_critical_thinking">Makanisi ya mabe</string>
+    <string name="subtype_study_practical_application">Ndenge ya kosalela yango</string>
+    <string name="subtype_hiring_technical">Mayele ya mosala</string>
+    <string name="subtype_hiring_behavioral_interview">Lisolo na likambo etali bizaleli</string>
+    <string name="subtype_hiring_situational_judgment">Kosambisa na kotalela makambo</string>
+    <string name="difficulty_normal">ya malamu</string>
+    <string name="difficulty_easy">ya pɛtɛɛ</string>
+    <string name="difficulty_hard">makasi</string>
+    <string name="gender_male">Mobali</string>
+    <string name="gender_female">Mwasi</string>
+    <string name="gender_select_prompt">Poná mwasi to mobali</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Likambo moko elekaki mabe</string>
+    <string name="button_new_game">Masano ya sika</string>
+    <string name="text_round_number">Mboka mobimba %1$d</string>
+    <string name="text_scenario">Ndakisa</string>
+    <string name="button_next">Na nsima</string>
+    <string name="icon_desc_selected_option">Option oyo oponi</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Na monɔkɔ ya Amharique</item>
+        <item>Arabe (Emirats Arabes Unis)</item>
+        <item>Bato ya Assam</item>
+        <item>monɔkɔ ya Asturien</item>
+        <item>monɔkɔ ya Azerbaïdjan</item>
+        <item>Bambara</item>
+        <item>Na monɔkɔ ya Bélarus</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibet</item>
+        <item>Na Bosnie</item>
+        <item>Na monɔkɔ ya Bulgare</item>
+        <item>monɔkɔ ya Catalan</item>
+        <item>Tchèque</item>
+        <item>Bato ya Pays de Galles</item>
+        <item>Danemark</item>
+        <item>Allemand</item>
+        <item>Dzongkha</item>
+        <item>Grɛki</item>
+        <item>Lingelesi</item>
+        <item>Estonie</item>
+        <item>Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Bato ya Féroé</item>
+        <item>Finnois</item>
+        <item>Lifalanse</item>
+        <item>Friulien</item>
+        <item>Gaélique ya Écosse</item>
+        <item>Bato ya Irlande</item>
+        <item>Galicien</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Elobeli ya Ebre</item>
+        <item>Lingelesi</item>
+        <item>monɔkɔ ya Croatie</item>
+        <item>monɔkɔ ya Hongrie</item>
+        <item>monɔkɔ ya Arménie</item>
+        <item>Ba-Igbo</item>
+        <item>Indonésien</item>
+        <item>Na monɔkɔ ya Islande</item>
+        <item>Italien</item>
+        <item>Bato ya Japon</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Na monɔkɔ ya Géorgien</item>
+        <item>Kazakh</item>
+        <item>Kabuverdianu (Kreole ya Cap-Vert)</item>
+        <item>Bato ya Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirghizstan</item>
+        <item>Bakorea</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgis</item>
+        <item>Lingala</item>
+        <item>monɔkɔ ya Lituanien</item>
+        <item>Na lokótá Luxembourg</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Lingelesi ya ekólo Lettonie</item>
+        <item>Malayalam</item>
+        <item>Elobeli ya Marathi</item>
+        <item>monɔkɔ ya Macédonien</item>
+        <item>Madagascar (Madagascar)</item>
+        <item>Na monɔkɔ ya Malte (Malta)</item>
+        <item>Lingelesi ya Mongolie</item>
+        <item>Malaisie (Malaisie)</item>
+        <item>Bato ya Birmanie</item>
+        <item>Pays-Bas</item>
+        <item>Norvège Nynorsk</item>
+        <item>Bokmål ya Norvège</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Soudan du Sud)</item>
+        <item>Bato ya ekólo Oromo (Éthiopie)</item>
+        <item>Bato ya ekólo Oromo (Kenya)</item>
+        <item>Odia (Inde)</item>
+        <item>Na monɔkɔ ya Punjabi</item>
+        <item>Lingelesi</item>
+        <item>Lingelesi</item>
+        <item>Perse (Afghanistan)</item>
+        <item>Perse (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivie)</item>
+        <item>Quechua (Équateur)</item>
+        <item>Quechua (Pérou)</item>
+        <item>monɔkɔ ya Roumanie</item>
+        <item>Rundi (Burundi)</item>
+        <item>Russe</item>
+        <item>Sango (République centrafricaine)</item>
+        <item>Lingelesi (Sri Lanka)</item>
+        <item>monɔkɔ ya Slovak (Slovakia)</item>
+        <item>monɔkɔ ya Slovénie</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somali</item>
+        <item>Espagnol</item>
+        <item>Albanais (Albanie)</item>
+        <item>monɔkɔ ya Serbie</item>
+        <item>Na Suède</item>
+        <item>Elobeli ya Swahili</item>
+        <item>Bato ya Tamil</item>
+        <item>Télugu</item>
+        <item>Thaïlandais</item>
+        <item>Na monɔkɔ ya Turc</item>
+        <item>monɔkɔ ya Ukrainien</item>
+        <item>Elobeli ya Urdu (Pakistan)</item>
+        <item>Uighur (Chine)</item>
+        <item>Ouzbékistan (Latin, Ouzbékistan)</item>
+        <item>Ba Vietnamiens</item>
+        <item>Bato ya Xhosa</item>
+        <item>Elobeli ya Yoruba</item>
+        <item>Kantonese</item>
+        <item>Mandarin Chinois na elobeli ya pɛtɛɛ</item>
+        <item>Mandarin Chinois Traditionnel</item>
+        <item>Bazulu</item>
+    </string-array>
+</resources>

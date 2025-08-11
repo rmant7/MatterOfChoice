@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">La cuestión de la elección</string>
+    <string name="optional_enter_the_role_e_g_student">Opcional: Introduza\'l papel, por casu, Estudiante</string>
+    <string name="analysis_my_choices">Analizando les mies opciones</string>
+    <string name="analysis_your_selections">Analizar les sos selecciones</string>
+    <string name="rounds">Les rondes</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">La puntuación calcular en función de la salú, la riqueza, les relaciones, la felicidá, el conocimientu, el karma, la xestión del tiempu, l\'impactu ambiental, el crecimientu personal y la responsabilidad social</string>
+    <string name="settings_title">La cuestión de la elección</string>
+    <string name="settings_subtitle">Los escenarios se basarán en les sos selecciones</string>
+    <string name="settings_label_subject">Introducir el tema</string>
+    <string name="settings_hint_select_question_type">Seleccione\'l tipu de pregunta</string>
+    <string name="settings_hint_select_subtype">Seleccione\'l subtipu</string>
+    <string name="settings_hint_select_difficulty">Seleccione\'l nivel difícil</string>
+    <string name="settings_hint_select_gender_optional">Opcional: Seleccione\'l so xéneru</string>
+    <string name="settings_label_age">Entra na so Edá</string>
+    <string name="settings_hint_select_language">Seleccione\'l so idioma</string>
+    <string name="settings_button_generate_cases">Xenerar casos</string>
+    <string name="question_type_study">Estudiu</string>
+    <string name="question_type_behavioral">El comportamientu</string>
+    <string name="question_type_hiring">La contratación</string>
+    <string name="subtype_behavioral_interpersonal">Les habilidaes interpersonales</string>
+    <string name="subtype_behavioral_ethical">Los dilemes éticos</string>
+    <string name="subtype_behavioral_stress">Tratamientu del estrés</string>
+    <string name="subtype_study_mastery">La maestría del tema</string>
+    <string name="subtype_study_critical_thinking">El pensamientu críticu</string>
+    <string name="subtype_study_practical_application">Aplicación práctica</string>
+    <string name="subtype_hiring_technical">Les competencies técniques</string>
+    <string name="subtype_hiring_behavioral_interview">Una entrevista de comportamientu</string>
+    <string name="subtype_hiring_situational_judgment">El xuiciu de la situación</string>
+    <string name="difficulty_normal">Normal</string>
+    <string name="difficulty_easy">Facil.</string>
+    <string name="difficulty_hard">Difícil</string>
+    <string name="gender_male">Los machos</string>
+    <string name="gender_female">Femenina</string>
+    <string name="gender_select_prompt">Seleccione\'l xéneru</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Algo salió mal.</string>
+    <string name="button_new_game">El nuevu xuegu</string>
+    <string name="text_round_number">Ronda %1$d</string>
+    <string name="text_scenario">Escénariu</string>
+    <string name="button_next">El siguiente.</string>
+    <string name="icon_desc_selected_option">Opción seleccionada</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>L\'afrikaans</item>
+        <item>Akan</item>
+        <item>Amharicu</item>
+        <item>Arabe (Emirates Árabes Uníos)</item>
+        <item>Assamés</item>
+        <item>Asturianos</item>
+        <item>Azerbaiyán</item>
+        <item>Bambara</item>
+        <item>Bielorrusia</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>El tibetanu</item>
+        <item>Bosniacu</item>
+        <item>La llingua búlgara</item>
+        <item>Cataluña</item>
+        <item>Checoslovaquia</item>
+        <item>Galés</item>
+        <item>Danés</item>
+        <item>Alemán</item>
+        <item>Dzongkha</item>
+        <item>Griego</item>
+        <item>L\'inglés</item>
+        <item>Estianu</item>
+        <item>El vascu</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Faroese</item>
+        <item>Finlandés</item>
+        <item>Francés</item>
+        <item>Friulianu</item>
+        <item>El gaélicu escocés</item>
+        <item>Irlanda</item>
+        <item>Galician</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>L\'hébreu</item>
+        <item>Indiu</item>
+        <item>Croacia</item>
+        <item>L\'húngaru</item>
+        <item>Armenia</item>
+        <item>L\'idioma Igbo</item>
+        <item>Indonesiu</item>
+        <item>Islandés</item>
+        <item>L\'italianu</item>
+        <item>Japonés</item>
+        <item>El cabaylu</item>
+        <item>Kamba</item>
+        <item>Canadiense</item>
+        <item>La llingua georgiana</item>
+        <item>El Kazajistán</item>
+        <item>Kabuverdianu (creol de Cabo Verde)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>El Kinyarwanda</item>
+        <item>Kirguistán</item>
+        <item>Corea del Sur</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgu</item>
+        <item>Lingala</item>
+        <item>Lituanu</item>
+        <item>Luxemburguesa</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>La llingua letona estándar</item>
+        <item>Malayalam</item>
+        <item>L\'asturianu ye llingua asturiana</item>
+        <item>Macedonianu</item>
+        <item>Madagascar (Madagascar)</item>
+        <item>Malteses (Malta)</item>
+        <item>Halh mongol</item>
+        <item>Malaisia (Malaisia)</item>
+        <item>Burmese</item>
+        <item>Holandeses</item>
+        <item>Noruegu Nynorsk</item>
+        <item>Noruegu Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Sudán del Sur)</item>
+        <item>L\'Oro (Etiopía)</item>
+        <item>Orómu (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>Polonés</item>
+        <item>Portugués</item>
+        <item>Persa (Afganistán)</item>
+        <item>Persa (Irán)</item>
+        <item>Pashto (Afganistán)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Perú)</item>
+        <item>L\'español</item>
+        <item>Rundi (Burundi)</item>
+        <item>Rusia</item>
+        <item>Sango (República Centroafricana)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Eslovacu (Eslovaquia)</item>
+        <item>Eslovenia</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somalí</item>
+        <item>Español</item>
+        <item>Albanés (Albania)</item>
+        <item>L\'idioma serbiu</item>
+        <item>Suecu</item>
+        <item>El swahili</item>
+        <item>Tamil</item>
+        <item>Telugu (Telugu)</item>
+        <item>Tailandés</item>
+        <item>Turcu</item>
+        <item>Ucranianu</item>
+        <item>Urdu (Pakistán)</item>
+        <item>Uyghur (China)</item>
+        <item>Uzbekistan (en llatín, Uzbekistán)</item>
+        <item>Vietnamés</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Cantonés</item>
+        <item>El mandarim chinu simplificáu</item>
+        <item>Mandarín Tradicional Chinesu</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

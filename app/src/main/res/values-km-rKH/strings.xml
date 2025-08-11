@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">បញ្ហា នៃ ការជ្រើសរើស</string>
+    <string name="optional_enter_the_role_e_g_student">ជម្រើស: ចូលក្នុងតួនាទី, ឧទាហរណ៍, និស្សិត</string>
+    <string name="analysis_my_choices">ការ វិភាគ ជម្រើស របស់ ខ្ញុំ</string>
+    <string name="analysis_your_selections">វិភាគការជ្រើសរើសរបស់អ្នក</string>
+    <string name="rounds">កាំភ្លើង</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">លទ្ធផល គណនា ដោយ ផ្អែកលើ សុខភាព, ទ្រព្យសម្បត្តិ, ទំនាក់ទំនង, សុភមង្គល, ចំណេះដឹង, ក្រមា, ការគ្រប់គ្រង ពេលវេលា, ផលប៉ះពាល់ បរិស្ថាន, កំណើន ផ្ទាល់ខ្លួន និង ការទទួលខុសត្រូវ សង្គម</string>
+    <string name="settings_title">បញ្ហា នៃ ការជ្រើសរើស</string>
+    <string name="settings_subtitle">ភាពយន្ត នឹង ផ្អែក លើ ការ ជ្រើសរើស របស់ អ្នក</string>
+    <string name="settings_label_subject">បញ្ចូល ប្រធានបទ</string>
+    <string name="settings_hint_select_question_type">ជ្រើសរើស ប្រភេទ សំណួរ</string>
+    <string name="settings_hint_select_subtype">ជ្រើសរើស Subtype</string>
+    <string name="settings_hint_select_difficulty">ជ្រើសរើស កម្រិត លំបាក</string>
+    <string name="settings_hint_select_gender_optional">ដោយ ឥតគិតថ្លៃ: ជ្រើស រើស ប្រភេទ របស់ អ្នក</string>
+    <string name="settings_label_age">ចូល ដល់ វ័យ របស់ អ្នក</string>
+    <string name="settings_hint_select_language">ជ្រើសរើស ភាសា របស់ អ្នក</string>
+    <string name="settings_button_generate_cases">បង្កើត ករណី</string>
+    <string name="question_type_study">ការ សិក្សា</string>
+    <string name="question_type_behavioral">ប្រតិបត្តិការ</string>
+    <string name="question_type_hiring">ការជួល</string>
+    <string name="subtype_behavioral_interpersonal">សមត្ថភាព ក្នុង ចំណោម មនុស្ស</string>
+    <string name="subtype_behavioral_ethical">បញ្ហា អវិជ្ជាជីវៈ</string>
+    <string name="subtype_behavioral_stress">ការ គ្រប់គ្រង ភាព តានតឹង</string>
+    <string name="subtype_study_mastery">ការ គ្រប់គ្រង ប្រធានបទ</string>
+    <string name="subtype_study_critical_thinking">ការ គិត រិះគន់</string>
+    <string name="subtype_study_practical_application">ការ ប្រើ ប្រាស់ ជា ប្រវត្តិសាស្ត្រ</string>
+    <string name="subtype_hiring_technical">ជំនាញ បច្ចេកទេស</string>
+    <string name="subtype_hiring_behavioral_interview">បទសម្ភាសន៍ អំពី សីលធម៌</string>
+    <string name="subtype_hiring_situational_judgment">ការ វិនិច្ឆ័យ តាម ស្ថានភាព</string>
+    <string name="difficulty_normal">ធម្មតា</string>
+    <string name="difficulty_easy">ងាយស្រួល</string>
+    <string name="difficulty_hard">ធ្ងន់</string>
+    <string name="gender_male">បុរស</string>
+    <string name="gender_female">ស្ត្រី</string>
+    <string name="gender_select_prompt">ជ្រើស រើស ភេទ</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">មានរឿងមួយកើតឡើង</string>
+    <string name="button_new_game">Game ថ្មី</string>
+    <string name="text_round_number">ជុំវិញ %1$d</string>
+    <string name="text_scenario">ប្រវត្តិ</string>
+    <string name="button_next">បន្ទាប់</string>
+    <string name="icon_desc_selected_option">ជម្រើសដែលត្រូវបានជ្រើសរើស</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>អាហ្វ្រិកអង់គ្លេស</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>អារ៉ាប៊ីសាអូឌីត (សហរដ្ឋអារ៉ាប៊ីសាអូឌីត)</item>
+        <item>Assamese</item>
+        <item>អាស៊ីសេរី</item>
+        <item>អប្សរា</item>
+        <item>Bambara</item>
+        <item>Belarusian</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>ពិភពលោក រមណីយដ្ឋាន</item>
+        <item>ប្រទេស បូសនីយ៍</item>
+        <item>ភាសា ប៊ុលហ្គារី</item>
+        <item>អង់គ្លេស</item>
+        <item>តួកគី</item>
+        <item>Welsh</item>
+        <item>អាល្លឺម៉ង់</item>
+        <item>អាល្លឺម៉ង់</item>
+        <item>Dzongkha</item>
+        <item>អង់គ្លេស</item>
+        <item>អង់គ្លេស</item>
+        <item>ភាសាអេស្ប៉ាញ</item>
+        <item>Basque</item>
+        <item>Ewe (ហ្គាណា)</item>
+        <item>Ewe (Togo)</item>
+        <item>ប្រទេស ហារ៉េ</item>
+        <item>ហ្វីលីពីន</item>
+        <item>បារាំង</item>
+        <item>Fulfulde នីហ្សេរីយ៉ា</item>
+        <item>អង់គ្លេស អង់គ្លេស</item>
+        <item>អៀរឡង់</item>
+        <item>អង់គ្លេស</item>
+        <item>Gujarati</item>
+        <item>ហូស្សា</item>
+        <item>អេស្ប៉ាញ</item>
+        <item>ហ្វីលីពីន</item>
+        <item>កូរ៉េខាងជើង</item>
+        <item>អង់គ្លេស</item>
+        <item>អាល្លឺម៉ង់</item>
+        <item>អ៊ីហ្គូ</item>
+        <item>ឥណ្ឌូនេស៊ី</item>
+        <item>អ៊ីស្លង់</item>
+        <item>អ៊ីតាលី</item>
+        <item>ជប៉ុន</item>
+        <item>កាប៊ីល</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>ប្រទេស ហ្ស៊ូជីញ៉ា</item>
+        <item>កាហ្សាក់</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>ខ្មែរ</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>ប្រទេស គីរីហ្ស៊ី</item>
+        <item>កូរ៉េ</item>
+        <item>ឡាវ (ឡាវ)</item>
+        <item>អាល្លឺម៉ង់</item>
+        <item>Lingala</item>
+        <item>អាល្លឺម៉ង់</item>
+        <item>អាល្លឺម៉ង់</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>អាល្លឺម៉ង់ ធម្មតា</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>ម៉ាស្សេដូនី</item>
+        <item>ម៉ាឡា ហ្សិក (ម៉ាឡា ហ្សិក)</item>
+        <item>Maltese (ម៉ាលតា)</item>
+        <item>Halh ម៉ុងហ្គោលី</item>
+        <item>ម៉ាឡេស៊ី (ម៉ាឡេស៊ី)</item>
+        <item>មីយ៉ាន់ម៉ា</item>
+        <item>អាល្លឺម៉ង់</item>
+        <item>ន័រវែស Nynorsk</item>
+        <item>Bokmål ន័រវែស</item>
+        <item>នេប៉ាល់ (នេប៉ាល់)</item>
+        <item>Nuer (សូដង់ខាងត្បូង)</item>
+        <item>Oromo (អេត្យូពី)</item>
+        <item>Oromo (កេនយ៉ា)</item>
+        <item>Odia (ឥណ្ឌា)</item>
+        <item>ពោធិ៍សាត់</item>
+        <item>ប៉ូឡូញ</item>
+        <item>ព័រទុយហ្គាល់</item>
+        <item>Persian (អាហ្វហ្គានីស្ថាន)</item>
+        <item>Persian (អ៊ីរ៉ង់)</item>
+        <item>Pashto (អាហ្វហ្គានីស្ថាន)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (អេគូឌ័រ)</item>
+        <item>Quechua (Peru)</item>
+        <item>រ៉ូម៉ានី</item>
+        <item>Rundi (Burundi)</item>
+        <item>ប្រទេស រុស្ស៊ី</item>
+        <item>Sango (សាធារណរដ្ឋអាហ្វ្រិកកណ្តាល)</item>
+        <item>សិង្ហបុរី (Sri Lanka)</item>
+        <item>ស្លូវ៉ាគី (ស្លូវ៉ាគី)</item>
+        <item>ភាសា ស្លូវ៉េន</item>
+        <item>Shona (ស៊ីមបាវេ)</item>
+        <item>សៀមរាប</item>
+        <item>អាល្លឺម៉ង់</item>
+        <item>អាល់បេនី (អាល់បេនី)</item>
+        <item>Serbian</item>
+        <item>ភាសាអង់គ្លេស</item>
+        <item>ភាសា សូវ៉ា ហ៊ីលី</item>
+        <item>តាលី</item>
+        <item>Telugu</item>
+        <item>ប្រទេស ថៃ</item>
+        <item>តួកគី</item>
+        <item>អ៊ុយក្រែន</item>
+        <item>អ៊ុយក្រែន (ប៉ាគីស្ថាន)</item>
+        <item>Uighur (ចិន)</item>
+        <item>Uzbek (Latin, Uzbekistan)</item>
+        <item>ជនជាតិ វៀតណាម</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>ភាសា Cantonese</item>
+        <item>ភាសា ចិន ម៉ាន់ដា រិន ភាសា សាមញ្ញ</item>
+        <item>ចិន Mandarin ប្រពៃណី</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">தேர்ந்தெடுக்கப்பட்ட விஷயம்</string>
+    <string name="optional_enter_the_role_e_g_student">விருப்பம்ஃ பாத்திரத்தை உள்ளிடவும், உதாரணமாக, மாணவர்</string>
+    <string name="analysis_my_choices">எனது தேர்வுகளை பகுப்பாய்வு செய்யுங்கள்</string>
+    <string name="analysis_your_selections">உங்கள் தேர்வுகள் பகுப்பாய்வு</string>
+    <string name="rounds">ரவுண்டுகள்</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">உடல்நலம், செல்வம், உறவுகள், மகிழ்ச்சி, அறிவு, கர்மா, நேர மேலாண்மை, சுற்றுச்சூழல் பாதிப்பு, தனிப்பட்ட வளர்ச்சி மற்றும் சமூக பொறுப்பு ஆகியவற்றின் அடிப்படையில் மதிப்பெண் கணக்கிடப்படுகிறது</string>
+    <string name="settings_title">தேர்ந்தெடுக்கப்பட்ட விஷயம்</string>
+    <string name="settings_subtitle">சூழ்நிலைகள் உங்கள் தேர்வுகளின் அடிப்படையில் இருக்கும்</string>
+    <string name="settings_label_subject">தலைப்பை உள்ளிடவும்</string>
+    <string name="settings_hint_select_question_type">கேள்வி வகையைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="settings_hint_select_subtype">துணை வகை தேர்ந்தெடுக்கவும்</string>
+    <string name="settings_hint_select_difficulty">கடினமான அளவைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="settings_hint_select_gender_optional">விருப்பம்ஃ உங்கள் பாலினத்தைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="settings_label_age">உங்கள் வயதில் நுழையுங்கள்</string>
+    <string name="settings_hint_select_language">உங்கள் மொழியைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="settings_button_generate_cases">வழக்குகளை உருவாக்குதல்</string>
+    <string name="question_type_study">படிப்பு</string>
+    <string name="question_type_behavioral">நடத்தை</string>
+    <string name="question_type_hiring">பணியமர்த்தல்</string>
+    <string name="subtype_behavioral_interpersonal">நட்புறவுத் திறன்கள்</string>
+    <string name="subtype_behavioral_ethical">நெறிமுறை சிக்கல்கள்</string>
+    <string name="subtype_behavioral_stress">மன அழுத்தத்தை நிர்வகித்தல்</string>
+    <string name="subtype_study_mastery">பொருள் மேலாண்மை</string>
+    <string name="subtype_study_critical_thinking">விமர்சன சிந்தனை</string>
+    <string name="subtype_study_practical_application">நடைமுறை பயன்பாடு</string>
+    <string name="subtype_hiring_technical">தொழில்நுட்ப திறன்கள்</string>
+    <string name="subtype_hiring_behavioral_interview">நடத்தை பேட்டி</string>
+    <string name="subtype_hiring_situational_judgment">சூழ்நிலை தீர்ப்பு</string>
+    <string name="difficulty_normal">சாதாரணமானது</string>
+    <string name="difficulty_easy">எளிதாக</string>
+    <string name="difficulty_hard">கடினமான</string>
+    <string name="gender_male">ஆண்</string>
+    <string name="gender_female">பெண்</string>
+    <string name="gender_select_prompt">பாலினத்தைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">ஏதோ தவறு நடந்தது</string>
+    <string name="button_new_game">புதிய விளையாட்டு</string>
+    <string name="text_round_number">சுற்றி %1$d</string>
+    <string name="text_scenario">காட்சி</string>
+    <string name="button_next">அடுத்து</string>
+    <string name="icon_desc_selected_option">தேர்ந்தெடுக்கப்பட்ட விருப்பம்</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>ஆப்பிரிக்கா மொழி</item>
+        <item>அகான்</item>
+        <item>அமர் மொழி</item>
+        <item>அரபு (ஐக்கிய அரபு எமிரேட்ஸ்)</item>
+        <item>அசாமியர்</item>
+        <item>அஸ்தூரியன்</item>
+        <item>அஜர்பைஜானிய மொழி</item>
+        <item>பாம்பரா</item>
+        <item>பெலாரஷ்ய மொழி</item>
+        <item>பெம்பா</item>
+        <item>பெங்காலி</item>
+        <item>திபெத்தியர்</item>
+        <item>போஸ்னியா</item>
+        <item>புல்கர்</item>
+        <item>கத்தாலன்</item>
+        <item>செக்</item>
+        <item>வால்ஸ்</item>
+        <item>டேனிஷ்</item>
+        <item>ஜெர்மன்</item>
+        <item>ஜொங்க்கா</item>
+        <item>கிரேக்க மொழி</item>
+        <item>ஆங்கிலம்</item>
+        <item>எஸ்டோனியன்</item>
+        <item>பாஸ்க்</item>
+        <item>ஈவே (கானா)</item>
+        <item>ஈவே (டோகோ)</item>
+        <item>ஃபேரோக்கள்</item>
+        <item>ஃபின்லாந்து</item>
+        <item>பிரெஞ்சு</item>
+        <item>ஃப்ரூலியன்</item>
+        <item>ஸ்காட்டிஷ் கேலிக்</item>
+        <item>அயர்லாந்து</item>
+        <item>கலீசியன்</item>
+        <item>குஜராத்தி</item>
+        <item>ஹவுசா</item>
+        <item>எபிரெய மொழி</item>
+        <item>ஹிந்தி</item>
+        <item>குரோஷியன்</item>
+        <item>ஹங்கேரிய மொழி</item>
+        <item>ஆர்மீனியன்</item>
+        <item>இக்போ</item>
+        <item>இந்தோனேசியம்</item>
+        <item>ஐஸ்லாந்து</item>
+        <item>இத்தாலிய மொழி</item>
+        <item>ஜப்பானியர்கள்</item>
+        <item>கபிலி</item>
+        <item>கம்பா</item>
+        <item>கன்னடம்</item>
+        <item>ஜோர்ஜியன்</item>
+        <item>கசாக்</item>
+        <item>கபுர்டியு (கேப் வெர்டி கிரியோல்)</item>
+        <item>கிம்மர்</item>
+        <item>கிகுயு</item>
+        <item>கினியார்வாண்டா</item>
+        <item>கிர்கிஸ்தான்</item>
+        <item>கொரிய</item>
+        <item>லாவோ</item>
+        <item>லிம்பர்கிஷ்</item>
+        <item>லிங்கலா</item>
+        <item>லிதுவேனியா</item>
+        <item>லக்ஸம்பர்க் மொழி</item>
+        <item>கந்தா</item>
+        <item>லுவோ</item>
+        <item>நிலையான லாட்வியா மொழி</item>
+        <item>மலையாளம்</item>
+        <item>மராத்தி</item>
+        <item>மாசிடோனியன்</item>
+        <item>மாலகாசி (மாலகாஸ்கர்)</item>
+        <item>மால்டா (மால்டா)</item>
+        <item>ஹால் மங்கோலியன்</item>
+        <item>மலேசிய (மலேசியா)</item>
+        <item>பர்மா</item>
+        <item>நெதர்லாந்து</item>
+        <item>நோர்வே நைனோர்ஸ்க்</item>
+        <item>நோர்வே மொழியில் Bokmål</item>
+        <item>நேபாளி (நேபாளம்)</item>
+        <item>நூர் (தெற்கு சூடான்)</item>
+        <item>ஒரோமோ (எத்தியோப்பியா)</item>
+        <item>ஒரோமோ (கேன்யா)</item>
+        <item>ஒடியா (இந்தியா)</item>
+        <item>பஞ்சாபி</item>
+        <item>போலந்து</item>
+        <item>போர்த்துகீசியம்</item>
+        <item>பாரசீக (ஆப்கானிஸ்தான்)</item>
+        <item>பாரசீக (ஈரான்)</item>
+        <item>பாஷ்டோ (ஆப்கானிஸ்தான்)</item>
+        <item>கெட்சுவா (போலிவியா)</item>
+        <item>கெட்சுவா (ஈக்வடார்)</item>
+        <item>கெட்சுவா (பெரு)</item>
+        <item>ருமேனிய மொழி</item>
+        <item>ரூண்டி (புருண்டி)</item>
+        <item>ரஷியன்</item>
+        <item>சங்கோ (மத்திய ஆப்பிரிக்க குடியரசு)</item>
+        <item>சிங்களம் (ஸ்ரீலங்கா)</item>
+        <item>ஸ்லோவாக் (ஸ்லோவாக்)</item>
+        <item>ஸ்லோவேனியன்</item>
+        <item>ஷோனா (சிம்பாப்வே)</item>
+        <item>சோமாலியா</item>
+        <item>ஸ்பானிஷ்</item>
+        <item>அல்பேனியன் (அல்பேனியா)</item>
+        <item>செர்பியன்</item>
+        <item>ஸ்வீடிஷ்</item>
+        <item>ஸ்வாஹிலி</item>
+        <item>தமிழ்</item>
+        <item>தெலுங்கு</item>
+        <item>தாய்லாந்து</item>
+        <item>துருக்கிய மொழி</item>
+        <item>உக்ரைனியன்</item>
+        <item>உருது (பாகிஸ்தான்)</item>
+        <item>உய்குர் (சீனா)</item>
+        <item>உஸ்பெகிஸ்தான் (லத்தீன், உஸ்பெகிஸ்தான்)</item>
+        <item>வியட்நாமியர்</item>
+        <item>க்சோசா</item>
+        <item>யோருபா</item>
+        <item>கான்டோனிய மொழி</item>
+        <item>மாண்டரின் சீன எளிமைப்படுத்தப்பட்டது</item>
+        <item>மாண்டரின் சீன பாரம்பரியம்</item>
+        <item>சூலுக்கள்</item>
+    </string-array>
+</resources>

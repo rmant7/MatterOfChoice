@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Materie di scelte</string>
+    <string name="optional_enter_the_role_e_g_student">Opzionâl: inserî il rûl, par esempli Student</string>
+    <string name="analysis_my_choices">Analisi des mieis opzions</string>
+    <string name="analysis_your_selections">Analisi de tô selezion</string>
+    <string name="rounds">Rondis</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Scôr calcolât su la fonde de salût, de ricjece, des relazions, de felicitât, de cognossince, dal karma, de gjestion dal timp, dal impat ambientâl, de cressite personâl e de responsabilitât sociâl</string>
+    <string name="settings_title">Materie di scelte</string>
+    <string name="settings_subtitle">I scenaris a saran basâts su lis tôs selezions</string>
+    <string name="settings_label_subject">Intrâ l\' argoment</string>
+    <string name="settings_hint_select_question_type">Selezionâ il tip di domande</string>
+    <string name="settings_hint_select_subtype">Selezionâ il sottip</string>
+    <string name="settings_hint_select_difficulty">Selezionâ il nivel dificil</string>
+    <string name="settings_hint_select_gender_optional">Opzionâl: sielzi il to gjenar</string>
+    <string name="settings_label_age">Dentri te tô etât</string>
+    <string name="settings_hint_select_language">Selezionâ la tô lenghe</string>
+    <string name="settings_button_generate_cases">Gjenarâ câs</string>
+    <string name="question_type_study">Studiâ</string>
+    <string name="question_type_behavioral">Comportamentâl</string>
+    <string name="question_type_hiring">Incuintri</string>
+    <string name="subtype_behavioral_interpersonal">Abilitâts interpersonâls</string>
+    <string name="subtype_behavioral_ethical">Dilemmis etichis</string>
+    <string name="subtype_behavioral_stress">Gestion dal stress</string>
+    <string name="subtype_study_mastery">Maestriazion dai sogjets</string>
+    <string name="subtype_study_critical_thinking">Pensament critic</string>
+    <string name="subtype_study_practical_application">Aplicazion pratiche</string>
+    <string name="subtype_hiring_technical">Abilitâts tecnichis</string>
+    <string name="subtype_hiring_behavioral_interview">Incuintri sul compuartament</string>
+    <string name="subtype_hiring_situational_judgment">Il judizi situazionâl</string>
+    <string name="difficulty_normal">normâl</string>
+    <string name="difficulty_easy">facil</string>
+    <string name="difficulty_hard">fuart</string>
+    <string name="gender_male">Masculin</string>
+    <string name="gender_female">La femine</string>
+    <string name="gender_select_prompt">Selezion dal gjenar</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Al è saltât fûr cualchi robe.</string>
+    <string name="button_new_game">Gjoc gnûf</string>
+    <string name="text_round_number">Ronde %1$d</string>
+    <string name="text_scenario">Scjenari</string>
+    <string name="button_next">Al prossim</string>
+    <string name="icon_desc_selected_option">Opzion selezionade</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Africanês</item>
+        <item>Acan</item>
+        <item>Lenghe amâr</item>
+        <item>Arabe (Emirâts Arabis Unîts)</item>
+        <item>Assamês</item>
+        <item>Asturian</item>
+        <item>Lenghe azerbaijane</item>
+        <item>Bambara</item>
+        <item>Lenghe bielorusse</item>
+        <item>Bemba</item>
+        <item>Lenghe bengale</item>
+        <item>Tibetans</item>
+        <item>Bosnian</item>
+        <item>Lenghe bulgare</item>
+        <item>Catalan</item>
+        <item>Cjargne</item>
+        <item>Lenghe galês</item>
+        <item>Danês</item>
+        <item>Gjermanis</item>
+        <item>Dzongkha</item>
+        <item>Grec</item>
+        <item>Inglês</item>
+        <item>Lenghe estone</item>
+        <item>Bascês</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Furlans</item>
+        <item>Lenghe finlandese</item>
+        <item>Furlanês</item>
+        <item>Friulês</item>
+        <item>Gaelic scozês</item>
+        <item>Irlande</item>
+        <item>Galizian</item>
+        <item>Gujarati</item>
+        <item>La lenghe Hausa</item>
+        <item>Lenghe ebraiche</item>
+        <item>Indie</item>
+        <item>Croatês</item>
+        <item>Ungjarês</item>
+        <item>Armenês</item>
+        <item>Ibighe</item>
+        <item>Indonesie</item>
+        <item>Lenghe islandese</item>
+        <item>Italians</item>
+        <item>Gjaponês</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Il canadês</item>
+        <item>Lenghe gjeorgiane</item>
+        <item>Il cazaç</item>
+        <item>Kabuverdianu (creol di Cape Verde)</item>
+        <item>Khmer</item>
+        <item>Kikuyu (kikuyu)</item>
+        <item>Kinyarwanda</item>
+        <item>Kirghizistan</item>
+        <item>Lenghe coreane</item>
+        <item>Laos (Laos)</item>
+        <item>Limburghês</item>
+        <item>Lingala</item>
+        <item>Lenghe taliane</item>
+        <item>Lussemburghês</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Lenghe letone standard</item>
+        <item>Malayalam</item>
+        <item>Lenghe maratiche</item>
+        <item>Macedonie</item>
+        <item>Maladagje (Madagascar)</item>
+        <item>Maltês (Malta)</item>
+        <item>Lenghe mongolês</item>
+        <item>Malaisie (Malaisie)</item>
+        <item>Lenghe birmane</item>
+        <item>Paîs Basc</item>
+        <item>Norvegje Nynorsk</item>
+        <item>Bokmål norvegjês</item>
+        <item>Nepali (Nepâl)</item>
+        <item>Nuer (Sudan dal Sud)</item>
+        <item>Oromo (Etiopie)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odie (Indie)</item>
+        <item>Punjabi</item>
+        <item>Polonês</item>
+        <item>Portughês</item>
+        <item>Furlan (Afganistan)</item>
+        <item>Furlan (Iran)</item>
+        <item>Pashto (Afganistan)</item>
+        <item>Quechua (Bolivie)</item>
+        <item>Quechua (Ecuadôr)</item>
+        <item>Quechua (Peru)</item>
+        <item>Lenghe romane</item>
+        <item>Rundi (Burundi)</item>
+        <item>Russe</item>
+        <item>Sango (Republiche centrafricane)</item>
+        <item>Sinhalese (Sri Lanka)</item>
+        <item>Slovenie (Slovagne)</item>
+        <item>lenghe slovene</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somâl</item>
+        <item>Spagnûl</item>
+        <item>Albanês (Albanie)</item>
+        <item>Lenghe serbe</item>
+        <item>La lenghe svedese</item>
+        <item>Il swahili</item>
+        <item>Lenghe taliane</item>
+        <item>Lenghe taliane</item>
+        <item>Tailandês</item>
+        <item>Turcje</item>
+        <item>Ucrainês</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (Cjine)</item>
+        <item>Uzbekistan (Latin, Uzbekistan)</item>
+        <item>Vietnamês</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Cantonês</item>
+        <item>Il cinês mandarin semplificât</item>
+        <item>Mandarin tradizionâl cinês</item>
+        <item>Zuluts</item>
+    </string-array>
+</resources>

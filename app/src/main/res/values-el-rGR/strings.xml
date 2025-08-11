@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Θέμα επιλογής</string>
+    <string name="optional_enter_the_role_e_g_student">Επιλογικό: Εισάγετε τον ρόλο, π.χ. Σπουδαίος</string>
+    <string name="analysis_my_choices">Ανάλυση των επιλογών μου</string>
+    <string name="analysis_your_selections">Ανάλυση των επιλογών σας</string>
+    <string name="rounds">Πυροβολές</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Το βαθμό υπολογίζεται με βάση την υγεία, τον πλούτο, τις σχέσεις, την ευτυχία, τη γνώση, το κάρμα, τη διαχείριση του χρόνου, την περιβαλλοντική επίδραση, την προσωπική ανάπτυξη και την κοινωνική ευθύνη</string>
+    <string name="settings_title">Θέμα επιλογής</string>
+    <string name="settings_subtitle">Τα σενάρια θα βασίζονται στις επιλογές σας</string>
+    <string name="settings_label_subject">Εισάγετε το θέμα</string>
+    <string name="settings_hint_select_question_type">Επιλέξτε τον τύπο ερωτήματος</string>
+    <string name="settings_hint_select_subtype">Επιλέξτε τον υποτύπο</string>
+    <string name="settings_hint_select_difficulty">Επιλέξτε το επίπεδο δυσκολίας</string>
+    <string name="settings_hint_select_gender_optional">Επιλογικό: Επιλέξτε το φύλο σας</string>
+    <string name="settings_label_age">Μείνε στην ηλικία σου.</string>
+    <string name="settings_hint_select_language">Επιλέξτε τη γλώσσα σας</string>
+    <string name="settings_button_generate_cases">Δημιουργία περιπτώσεων</string>
+    <string name="question_type_study">Μελέτη</string>
+    <string name="question_type_behavioral">Συμπεριφορά</string>
+    <string name="question_type_hiring">Απασχόληση</string>
+    <string name="subtype_behavioral_interpersonal">Διαπροσωπικές δεξιότητες</string>
+    <string name="subtype_behavioral_ethical">Εθικά Διλήμματα</string>
+    <string name="subtype_behavioral_stress">Διαχείριση του στρες</string>
+    <string name="subtype_study_mastery">Διοίκηση του αντικειμένου</string>
+    <string name="subtype_study_critical_thinking">Κριτική Σκέψη</string>
+    <string name="subtype_study_practical_application">Πρακτική εφαρμογή</string>
+    <string name="subtype_hiring_technical">Τεχνικές δεξιότητες</string>
+    <string name="subtype_hiring_behavioral_interview">Συνέντευξη Συμπεριφοράς</string>
+    <string name="subtype_hiring_situational_judgment">Κρίση κατάστασης</string>
+    <string name="difficulty_normal">φυσιολογικό</string>
+    <string name="difficulty_easy">εύκολο</string>
+    <string name="difficulty_hard">σκληρό</string>
+    <string name="gender_male">Άνδρες</string>
+    <string name="gender_female">Γυναίκα</string>
+    <string name="gender_select_prompt">Επιλέξτε φύλο</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Κάτι πήγε στραβά.</string>
+    <string name="button_new_game">Νέο παιχνίδι</string>
+    <string name="text_round_number">Γύρω %1$d</string>
+    <string name="text_scenario">Σενάριο</string>
+    <string name="button_next">Το επόμενο .</string>
+    <string name="icon_desc_selected_option">Επιλεγμένη επιλογή</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Αφροαγγλικά</item>
+        <item>Ακάν</item>
+        <item>Αμαρικά</item>
+        <item>Αραβικά (Ηνωμένα Αραβικά Εμιράτα)</item>
+        <item>Ασσάμα</item>
+        <item>Αστούρια</item>
+        <item>Αζερμπαϊτζάν</item>
+        <item>Μπαμπάρα</item>
+        <item>Λευκορωσικά</item>
+        <item>Μπέμπα</item>
+        <item>Βεγγαλικά</item>
+        <item>Θιβετιανό</item>
+        <item>Βοσνία</item>
+        <item>Βουλγαρική</item>
+        <item>Καταλανικά</item>
+        <item>Τσεχικά</item>
+        <item>Ουαλία</item>
+        <item>Δανικά</item>
+        <item>Γερμανικά</item>
+        <item>Ντζόγκχα</item>
+        <item>Ελληνικά</item>
+        <item>Αγγλικά</item>
+        <item>Εσθονικά</item>
+        <item>Βάσκη</item>
+        <item>Εβέ (Γκάνα)</item>
+        <item>Εβέ (Τόγκο)</item>
+        <item>Φεροέζοι</item>
+        <item>Φινλανδικά</item>
+        <item>Γαλλικά</item>
+        <item>Φριούλιαν</item>
+        <item>Σκοτσέζικος Γκέιλικος</item>
+        <item>Ιρλανδικά</item>
+        <item>Γαλιτσιάνος</item>
+        <item>Γκουτζάρατι</item>
+        <item>Χουζά</item>
+        <item>Εβραϊκή</item>
+        <item>Ινδικά</item>
+        <item>Κροατική</item>
+        <item>Ουγγρικά</item>
+        <item>Αρμενικά</item>
+        <item>Ίγκμπο</item>
+        <item>Ινδονησιακή</item>
+        <item>Ισλανδικά</item>
+        <item>Ιταλικά</item>
+        <item>Ιαπωνικά</item>
+        <item>Καμπύλ</item>
+        <item>Καμπά</item>
+        <item>Καναδά</item>
+        <item>Γεωργικά</item>
+        <item>Καζακός</item>
+        <item>Καμπουρδίνου (Κρεόλη Κέιπ Βέρτε)</item>
+        <item>Χμερ</item>
+        <item>Κίκουγιου</item>
+        <item>Κινιάρβαντα</item>
+        <item>Κιργιζιστάν</item>
+        <item>Κορεατική</item>
+        <item>Λάο (Λάο)</item>
+        <item>Λιμπουργκ</item>
+        <item>Λινγκάλα</item>
+        <item>Λιθουανικά</item>
+        <item>Λουξεμβούργο</item>
+        <item>Γκαντά</item>
+        <item>Λο</item>
+        <item>Τυπική Λετονική</item>
+        <item>Μαλαγιαλάμ</item>
+        <item>Μαραθιά</item>
+        <item>Μακεδονικά</item>
+        <item>Μαδαγασκάριος (Μαδαγασκάρη)</item>
+        <item>Μάλτα (Μάλτα)</item>
+        <item>Μονγκόλη Halh</item>
+        <item>Μαλαισία (Μαλαισία)</item>
+        <item>Βιρμανικά</item>
+        <item>Ολλανδικά</item>
+        <item>Νορβηγικό Νύνορσκ</item>
+        <item>Νορβηγικά Bokmål</item>
+        <item>Νεπάλ (Νεπάλ)</item>
+        <item>Νούερ (Νότιο Σουδάν)</item>
+        <item>Ορόμο (Αιθιοπία)</item>
+        <item>Ορόμο (Κένυα)</item>
+        <item>Ονέα (Ινδία)</item>
+        <item>Παντζάμπι</item>
+        <item>Πολωνικά</item>
+        <item>Πορτογαλικά</item>
+        <item>Περσικά (Αφγανιστάν)</item>
+        <item>Περσικά (Ιράν)</item>
+        <item>Παστού (Αφγανιστάν)</item>
+        <item>Κουτσούα (Μπολιβία)</item>
+        <item>Κουτσούα (Εκουαδόρ)</item>
+        <item>Κουτσούα (Περού)</item>
+        <item>Ρουμανικά</item>
+        <item>Ρούντι (Μουρούντι)</item>
+        <item>Ρωσικά</item>
+        <item>Σάνγκο (Κεντρική Αφρικανική Δημοκρατία)</item>
+        <item>Σινχάλα (Σρι Λάνκα)</item>
+        <item>Σλοβακική (Σλοβακία)</item>
+        <item>Σλοβενικά</item>
+        <item>Σόνα (Ζιμπάμπουε)</item>
+        <item>Σομαλία</item>
+        <item>Ισπανικά</item>
+        <item>Αλβανική (Αλβανία)</item>
+        <item>Σερβική</item>
+        <item>Σουηδικά</item>
+        <item>Σουαχίλι</item>
+        <item>Τάμιλ</item>
+        <item>Τελούγκου</item>
+        <item>Ταϊλάνδης</item>
+        <item>Τούρκη</item>
+        <item>Ουκρανικά</item>
+        <item>Ουρδού (Πακιστάν)</item>
+        <item>Ουιγύρος (Κίνα)</item>
+        <item>Ουζμπεκιστάν (Λατινικά, Ουζμπεκιστάν)</item>
+        <item>Βιετναμέζοι</item>
+        <item>Χοσσός</item>
+        <item>Γιορούμπα</item>
+        <item>Κάντονέζικη</item>
+        <item>Μανδαρινό Κινέζικο Απλοποιημένο</item>
+        <item>Μανδαρινό Κινέζικο Παραδοσιακό</item>
+        <item>Ζουλού</item>
+    </string-array>
+</resources>

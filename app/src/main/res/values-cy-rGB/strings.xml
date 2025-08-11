@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Pwnc dewis</string>
+    <string name="optional_enter_the_role_e_g_student">Yn ddewisol: Rhowch y rôl, er enghraifft, Myfyriwr</string>
+    <string name="analysis_my_choices">Adolygu fy opsiynau</string>
+    <string name="analysis_your_selections">Adolygu eich dewisiadau</string>
+    <string name="rounds">Cerdynnau</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Cyfrifo sgôr yn seiliedig ar iechyd, cyfoeth, perthnasoedd, hapusrwydd, gwybodaeth, karma, rheoli amser, effaith amgylcheddol, twf personol, a chyfrifoldeb cymdeithasol</string>
+    <string name="settings_title">Pwnc dewis</string>
+    <string name="settings_subtitle">Bydd y senario\'n seiliedig ar eich dewis</string>
+    <string name="settings_label_subject">Rhowch y pwnc</string>
+    <string name="settings_hint_select_question_type">Dewiswch math cwestiwn</string>
+    <string name="settings_hint_select_subtype">Dewiswch y is-gen</string>
+    <string name="settings_hint_select_difficulty">Dewiswch y lefel anodd</string>
+    <string name="settings_hint_select_gender_optional">Yn ddewisol: Dewiswch eich rhyw</string>
+    <string name="settings_label_age">Dewch i mewn i\'ch oedran</string>
+    <string name="settings_hint_select_language">Dewiswch eich iaith</string>
+    <string name="settings_button_generate_cases">Generwch Achosion</string>
+    <string name="question_type_study">Astudiaeth</string>
+    <string name="question_type_behavioral">Ymddygiad</string>
+    <string name="question_type_hiring">Cyflogi</string>
+    <string name="subtype_behavioral_interpersonal">Meddrau Rhywunol</string>
+    <string name="subtype_behavioral_ethical">Dilemmau Ethol</string>
+    <string name="subtype_behavioral_stress">Rheoli Strys</string>
+    <string name="subtype_study_mastery">Maestru\'r Pwnc</string>
+    <string name="subtype_study_critical_thinking">Meddyliadau Critigol</string>
+    <string name="subtype_study_practical_application">Gweithredu Gweithredol</string>
+    <string name="subtype_hiring_technical">sgiliau technegol</string>
+    <string name="subtype_hiring_behavioral_interview">Cyfweliad Ymddygiad</string>
+    <string name="subtype_hiring_situational_judgment">Cyfarfod y sefyllfa</string>
+    <string name="difficulty_normal">arferol</string>
+    <string name="difficulty_easy">hawdd</string>
+    <string name="difficulty_hard">yn anodd</string>
+    <string name="gender_male">Mae dynion</string>
+    <string name="gender_female">Gwraig</string>
+    <string name="gender_select_prompt">Dewiswch rhyw</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Mae rhywbeth wedi mynd yn anghywir</string>
+    <string name="button_new_game">Gêm newydd</string>
+    <string name="text_round_number">Rhwng %1$d</string>
+    <string name="text_scenario">Scenario</string>
+    <string name="button_next">Y nesaf</string>
+    <string name="icon_desc_selected_option">opsiwn a ddewiswyd</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>Arab (Emiredd Arabaidd Unedig)</item>
+        <item>Assamese</item>
+        <item>Asturiaidd</item>
+        <item>Aserbaidjan</item>
+        <item>Bambara</item>
+        <item>Rwsiaidd</item>
+        <item>Bemba</item>
+        <item>Saesneg</item>
+        <item>Tibet</item>
+        <item>Bosniaidd</item>
+        <item>Y Gymraeg</item>
+        <item>Catalan</item>
+        <item>Cewch</item>
+        <item>Cymreig</item>
+        <item>Ddaneg</item>
+        <item>Almaeneg</item>
+        <item>Dzongkha</item>
+        <item>Gredig</item>
+        <item>Saesneg</item>
+        <item>Dyddoniaidd</item>
+        <item>Bascaidd</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Feroes</item>
+        <item>Y Gymraeg</item>
+        <item>Ffrangeg</item>
+        <item>Friulian</item>
+        <item>Gaelic yr Alban</item>
+        <item>Gweinidogion</item>
+        <item>Cymreig</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Hebraeg</item>
+        <item>Indiaidd</item>
+        <item>Rhyddoniaidd</item>
+        <item>Ynghrair</item>
+        <item>Armeniaidd</item>
+        <item>Igbo</item>
+        <item>Saesneg</item>
+        <item>Y Gymraeg</item>
+        <item>Eidal</item>
+        <item>Japaniaid</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Canada</item>
+        <item>Georgian</item>
+        <item>Cawsca</item>
+        <item>Kabuverdianu (Creole Cape Verde)</item>
+        <item>Rhydd</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Koreaidd</item>
+        <item>Laos (Laos)</item>
+        <item>Cymreig</item>
+        <item>Lingala</item>
+        <item>Llyfrgell</item>
+        <item>Y Gymraeg</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Mae\'r iaith safonol Llatwy</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Cymreig</item>
+        <item>Madagascar (Madagascar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Mongoliad Halh</item>
+        <item>Malay (Malaysia)</item>
+        <item>Myrmaidd</item>
+        <item>Nadolig</item>
+        <item>Nynorsk y Norwy</item>
+        <item>Bokmål y Norwy</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (South Sudan)</item>
+        <item>Oromo (Ethiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>Y Gymraeg</item>
+        <item>Saesneg</item>
+        <item>Persiaidd (Afganistan)</item>
+        <item>Persiaidd (Iran)</item>
+        <item>Pashto (Afganistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Rwsiaidd</item>
+        <item>Rundi (Burundi)</item>
+        <item>Rwsiaidd</item>
+        <item>Sango (Republik Canol Affrica)</item>
+        <item>Cynhalaidd (Sri Lanka)</item>
+        <item>Slofaeg (Slofaeg)</item>
+        <item>Y Gymraeg</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Cymreig</item>
+        <item>Saesneg</item>
+        <item>Albanedig (Albania)</item>
+        <item>Y Gymraeg</item>
+        <item>Saesneg</item>
+        <item>Swahili</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Thai</item>
+        <item>Twrci</item>
+        <item>Saesneg</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (China)</item>
+        <item>Uzbekistan (Latin, Uzbekistan)</item>
+        <item>Gweinidogion</item>
+        <item>Xhosa</item>
+        <item>Y Yoruba</item>
+        <item>Cantonese</item>
+        <item>Mae\'r Tsieineaidd Mandarin wedi ei symlhau</item>
+        <item>Mandarin Traddodiadol Tsieineaidd</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

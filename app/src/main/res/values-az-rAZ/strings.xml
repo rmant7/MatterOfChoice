@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Seçim məsələsi</string>
+    <string name="optional_enter_the_role_e_g_student">Seçilmiş: Rol daxil edin, məsələn, Tələbə</string>
+    <string name="analysis_my_choices">Seçimlərimi təhlil edin</string>
+    <string name="analysis_your_selections">Seçimlərinizi təhlil edin</string>
+    <string name="rounds">Atışlar</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Skor sağlamlıq, zənginlik, münasibətlər, xoşbəxtlik, bilik, karma, vaxt idarəetmə, ətraf mühitə təsir, şəxsi böyümə və sosial məsuliyyət əsasında hesablanır</string>
+    <string name="settings_title">Seçim məsələsi</string>
+    <string name="settings_subtitle">Ssenarilər sizin seçimlərinizə əsaslanır.</string>
+    <string name="settings_label_subject">Mövzu daxil edin</string>
+    <string name="settings_hint_select_question_type">Sual növünü seçin</string>
+    <string name="settings_hint_select_subtype">Alt tipli seçin</string>
+    <string name="settings_hint_select_difficulty">Çətin səviyyəni seçin</string>
+    <string name="settings_hint_select_gender_optional">Seçim: Cinsiyyətinizi seçin</string>
+    <string name="settings_label_age">Yaşınıza daxil olun</string>
+    <string name="settings_hint_select_language">Dillərinizi seçin</string>
+    <string name="settings_button_generate_cases">Məlumatlar yaratmaq</string>
+    <string name="question_type_study">Tədqiqat</string>
+    <string name="question_type_behavioral">Davranış</string>
+    <string name="question_type_hiring">İşə götürmək</string>
+    <string name="subtype_behavioral_interpersonal">Kişilər arasında bacarıqlar</string>
+    <string name="subtype_behavioral_ethical">Əxlaq problemləri</string>
+    <string name="subtype_behavioral_stress">Stresin idarə edilməsi</string>
+    <string name="subtype_study_mastery">Mövzu ustalığı</string>
+    <string name="subtype_study_critical_thinking">Tənqidçi düşüncə</string>
+    <string name="subtype_study_practical_application">Fəali tətbiq</string>
+    <string name="subtype_hiring_technical">Texniki bacarıqlar</string>
+    <string name="subtype_hiring_behavioral_interview">Davranış müsahibəsi</string>
+    <string name="subtype_hiring_situational_judgment">Vəziyyətlərə görə hökm</string>
+    <string name="difficulty_normal">normal</string>
+    <string name="difficulty_easy">asanlıqla</string>
+    <string name="difficulty_hard">çətindir</string>
+    <string name="gender_male">Kişilər</string>
+    <string name="gender_female">Qadın</string>
+    <string name="gender_select_prompt">Cinsiyyət seçin</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Bir şey səhv oldu.</string>
+    <string name="button_new_game">Yeni oyun</string>
+    <string name="text_round_number">Dönüş %1$d</string>
+    <string name="text_scenario">Ssenari</string>
+    <string name="button_next">Növbəti</string>
+    <string name="icon_desc_selected_option">Seçilmiş variant</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>Ərəb (Birləşmiş Ərəb Əmirlikləri)</item>
+        <item>Assamlılar</item>
+        <item>Asturiyalı</item>
+        <item>Azərbaycan dili</item>
+        <item>Bambara</item>
+        <item>Belarus dili</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibet</item>
+        <item>Bosniya dili</item>
+        <item>Bolqar dilində</item>
+        <item>Kataloniya</item>
+        <item>Çex</item>
+        <item>Uels</item>
+        <item>Danimarka</item>
+        <item>Alman dilində</item>
+        <item>Dzongkha</item>
+        <item>Yunan dilində</item>
+        <item>İngilis dili</item>
+        <item>Eston dilində</item>
+        <item>Bask</item>
+        <item>Ewe (Qana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Faroese</item>
+        <item>Fin dilində</item>
+        <item>Fransız dilində</item>
+        <item>Friul dili</item>
+        <item>Şotlandiya gaeliki</item>
+        <item>İrlandiya</item>
+        <item>Galiciyalı</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>İbrani</item>
+        <item>Hindi</item>
+        <item>Xorvatiyalı</item>
+        <item>Macar dili</item>
+        <item>Ermənistan dili</item>
+        <item>İqbo</item>
+        <item>İndoneziya</item>
+        <item>İslandiya dili</item>
+        <item>İtaliya</item>
+        <item>Yaponiyalı</item>
+        <item>Qəbil</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Gürcüstan dili</item>
+        <item>Qazax</item>
+        <item>Kabuverdianu (Cape Verde kreol)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Qırğızıstan</item>
+        <item>Koreya</item>
+        <item>Lao (Laos)</item>
+        <item>Limburq dili</item>
+        <item>Lingala</item>
+        <item>Litva dili</item>
+        <item>Lüksemburq dili</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Standart Latviya dili</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Makedoniya dili</item>
+        <item>Madagaskar (Madagaskar)</item>
+        <item>Maltalı (Malta)</item>
+        <item>Halh Moğol dili</item>
+        <item>Malay (Malaziya)</item>
+        <item>Birma dili</item>
+        <item>Hollandiya</item>
+        <item>Norveçli Nynorsk</item>
+        <item>Norveç Bokmål</item>
+        <item>Nepal (Nepal)</item>
+        <item>Nuer (Cənub Sudan)</item>
+        <item>Oromo (İtiopiya)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (Hindistan)</item>
+        <item>Punjabi</item>
+        <item>Polşa</item>
+        <item>Portuqaliya</item>
+        <item>Fars (Əfqanıstan)</item>
+        <item>Fars (İran)</item>
+        <item>Pashto (Əfqanıstan)</item>
+        <item>Quechua (Boliviya)</item>
+        <item>Quechua (Ekuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Rumıniya dili</item>
+        <item>Rundi (Burundi)</item>
+        <item>Rus dilində</item>
+        <item>Sango (Mərkəzi Afrika Respublikası)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovakiya (Slovakiya)</item>
+        <item>Sloveniya dili</item>
+        <item>Şona (Zimbabve)</item>
+        <item>Somali</item>
+        <item>İspaniya</item>
+        <item>Albaniya (Albaniya)</item>
+        <item>Serbiya</item>
+        <item>İsveç</item>
+        <item>Swahili</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Tayland</item>
+        <item>Türk dili</item>
+        <item>Ukrayna dili</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyğur (Çin)</item>
+        <item>Özbəkistan (latınca, Özbəkistan)</item>
+        <item>Vyetnamlılar</item>
+        <item>Xosa dili</item>
+        <item>Yoruba</item>
+        <item>Kanton dili</item>
+        <item>Mandarin Çin dilində sadələşdirilmiş</item>
+        <item>Mandarin Çin ənənəvi</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

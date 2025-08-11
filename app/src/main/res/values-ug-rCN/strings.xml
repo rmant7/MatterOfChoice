@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">تاللاش مەسىلىسى</string>
+    <string name="optional_enter_the_role_e_g_student">ئىختىيارىي: رولنى كىرگۈزۈڭ، مەسىلەن: ئوقۇغۇچى</string>
+    <string name="analysis_my_choices">مېنىڭ تاللىشىمنى ئانالىز قىلىڭ</string>
+    <string name="analysis_your_selections">تاللىغىنىڭلارنى ئانالىز قىلىڭ</string>
+    <string name="rounds">ئايروپىلانلار</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">سالامەتلىك، بايلىق، مۇناسىۋەت، بەخت، بىلىم، كارما، ۋاقىت باشقۇرۇش، مۇھىت تەسىرى، شەخسىي ئۆسۈش ۋە ئىجتىمائىي مەسئۇلىيەت قاتارلىقلارغا ئاساسەن نەتىجە ھېسابلىنىدۇ</string>
+    <string name="settings_title">تاللاش مەسىلىسى</string>
+    <string name="settings_subtitle">بۇ خىل ئەھۋاللار سىزنىڭ تاللىشىڭىزغا ئاساسەن چىقىدۇ</string>
+    <string name="settings_label_subject">تېمىنى كىرگۈزۈڭ</string>
+    <string name="settings_hint_select_question_type">سۇئال تىپىنى تاللا</string>
+    <string name="settings_hint_select_subtype">تۆۋەن تىپنى تاللا</string>
+    <string name="settings_hint_select_difficulty">قىيىن دەرىجىنى تاللاڭ</string>
+    <string name="settings_hint_select_gender_optional">ئىختىيارىي: جىنسىڭىزنى تاللاڭ</string>
+    <string name="settings_label_age">ئۆز يېشىڭغا كىر</string>
+    <string name="settings_hint_select_language">تىلىڭىزنى تاللاڭ</string>
+    <string name="settings_button_generate_cases">ھۆججەت ياساش</string>
+    <string name="question_type_study">ئۆگىنىش</string>
+    <string name="question_type_behavioral">ئەخلاق - ئەخلاق</string>
+    <string name="question_type_hiring">خىزمەتچى قوبۇل قىلىش</string>
+    <string name="subtype_behavioral_interpersonal">شەخسىي ئالاقە ئىقتىدارى</string>
+    <string name="subtype_behavioral_ethical">ئەخلاق مەسىلىلىرى</string>
+    <string name="subtype_behavioral_stress">بېسىمنى باشقۇرۇش</string>
+    <string name="subtype_study_mastery">تېمىغا ماسلىشىش</string>
+    <string name="subtype_study_critical_thinking">تەنقىدىي ئويلىنىش</string>
+    <string name="subtype_study_practical_application">ئىشلىتىشكە تېگىشلىك ئىشلار</string>
+    <string name="subtype_hiring_technical">تېخنىكا ئىقتىدارى</string>
+    <string name="subtype_hiring_behavioral_interview">ئىجتىمائىي زىيارەت</string>
+    <string name="subtype_hiring_situational_judgment">ئەھۋاللارنى بىر تەرەپ قىلىش</string>
+    <string name="difficulty_normal">نورمال</string>
+    <string name="difficulty_easy">ئاسانلىقچە</string>
+    <string name="difficulty_hard">قاتتىق</string>
+    <string name="gender_male">ئەركەك</string>
+    <string name="gender_female">ئايال</string>
+    <string name="gender_select_prompt">جىنسى تاللا</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">بىر ئىش خاتا بولدى</string>
+    <string name="button_new_game">يېڭى ئويۇن</string>
+    <string name="text_round_number">%1$d ئايلانما</string>
+    <string name="text_scenario">سىنارىيە</string>
+    <string name="button_next">كېيىنكىسى:</string>
+    <string name="icon_desc_selected_option">تاللانغان تاللاش</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>ئافرىقا تىلى</item>
+        <item>ئوكان</item>
+        <item>ئامھار تىلى</item>
+        <item>ئەرەبچە (بىرلەشكەن ئەرەب بىرلەشمىسى)</item>
+        <item>ئاساملىقلار</item>
+        <item>ئاستىرىيە تىلى</item>
+        <item>ئەزەربەيجان تىلى</item>
+        <item>بامبارا</item>
+        <item>بىيلارۇسىيە تىلى</item>
+        <item>بېمبا</item>
+        <item>بېنگالچە</item>
+        <item>تىبەت</item>
+        <item>بوسنىيەلىك</item>
+        <item>بۇلغارچە</item>
+        <item>كاتالانىيە</item>
+        <item>چېخ</item>
+        <item>ئەنگىلىيە</item>
+        <item>دانىيە</item>
+        <item>گېرمانىيە</item>
+        <item>زۇڭخۇا</item>
+        <item>يۇنان تىلى</item>
+        <item>ئىنگلىزچە</item>
+        <item>ئېستونچە</item>
+        <item>باسكىيە</item>
+        <item>ئېۋې (غانا)</item>
+        <item>ئېۋې (توگو)</item>
+        <item>فېرو</item>
+        <item>فىنلاندىيە</item>
+        <item>فىرانسىيە</item>
+        <item>فرىۋلىيە تىلى</item>
+        <item>شاتلاندىيە گېلىيە تىلى</item>
+        <item>ئېرلاندىيە</item>
+        <item>گالىسىيە تىلى</item>
+        <item>گۇجاراتى تىلى</item>
+        <item>ھۇسا</item>
+        <item>ئىبرانىيچە</item>
+        <item>ھىندىچە</item>
+        <item>خرواتچە</item>
+        <item>ئەنگلىيە</item>
+        <item>ئەرمەنچە</item>
+        <item>ئىگبو</item>
+        <item>ھىندونېزىيە</item>
+        <item>ئيسلاندىيە تىلى</item>
+        <item>ئىتالىيە</item>
+        <item>ياپونىيە</item>
+        <item>كابىل</item>
+        <item>كامبا</item>
+        <item>كانادا</item>
+        <item>جورجىيە تىلى</item>
+        <item>قازاق</item>
+        <item>كابوۋېردىئانۇ (كابوۋېردى كرىئول)</item>
+        <item>خىمەر</item>
+        <item>كيكۇيۇ</item>
+        <item>كينارۋاندا</item>
+        <item>قىرغىزىستان</item>
+        <item>كورېيە</item>
+        <item>لاۋ (لاۋ)</item>
+        <item>لىمبورگچە</item>
+        <item>لىنجالا تىلى</item>
+        <item>لىتۋانىيە</item>
+        <item>لوكىسمبورگ تىلى</item>
+        <item>گاندا</item>
+        <item>لوۋ</item>
+        <item>ئۆلچەملىك لاتۋىيە</item>
+        <item>مىللىيچە</item>
+        <item>ماراتى</item>
+        <item>ماكېدونىيە</item>
+        <item>ماگاشا (ماگاشا)</item>
+        <item>مالتا تىلى (مالتا)</item>
+        <item>موڭغۇل تىلى</item>
+        <item>مالاي (مالايسىيا)</item>
+        <item>بورما تىلى</item>
+        <item>گوللاندىيە</item>
+        <item>نورۋېگىيە نىنورسك</item>
+        <item>نورۋېگىيەلىك بوكمال</item>
+        <item>نېپال (نېپال)</item>
+        <item>نۇئېر (جەنۇبىي سۇدان)</item>
+        <item>ئورومو (ئىتىوپىيە)</item>
+        <item>ئورومو (كىنىيە)</item>
+        <item>ئۇديا (ھىندىستان)</item>
+        <item>پونجاب تىلى</item>
+        <item>پولشا تىلى</item>
+        <item>پورتۇگالىيە</item>
+        <item>پارسچە (ئافغانستان)</item>
+        <item>پارسچە (ئىران)</item>
+        <item>پەشتو (ئافغانىستان)</item>
+        <item>كېچوا (بولىۋىيە)</item>
+        <item>كېچۇئا (ئەكوۋادور)</item>
+        <item>كېچۇا (پېرو)</item>
+        <item>رومانىيە تىلى</item>
+        <item>رۇندى (Burundi)</item>
+        <item>رۇسىيە</item>
+        <item>سانگو (مەدەنىي ئافرىقا جۇمھۇرىيىتى)</item>
+        <item>سىنگالچە (شىرىلانكا)</item>
+        <item>سلوۋاكىيە (سلوۋاكىيە)</item>
+        <item>سلوۋېن تىلى</item>
+        <item>شونا (زىمبابوۋې)</item>
+        <item>سومالىيە</item>
+        <item>ئىسپانىيە</item>
+        <item>ئالبانىيە (ئالبانىيە)</item>
+        <item>خەنزۇچە</item>
+        <item>شىۋېتسىيە</item>
+        <item>خەنزۇچە</item>
+        <item>تامل</item>
+        <item>تېلۇگو</item>
+        <item>تايلاند</item>
+        <item>تۈركىيە</item>
+        <item>ئۇكرائىنا تىلى</item>
+        <item>ئوردۇ (پاكىستان)</item>
+        <item>ئۇيغۇر (خىتاي)</item>
+        <item>ئۆزبېكىستان (لاتىنچە، ئۆزبېكىستان)</item>
+        <item>ۋېيتناملىق</item>
+        <item>خوسا تىلى</item>
+        <item>يۇرۇبا</item>
+        <item>كانتون تىلى</item>
+        <item>ئاددىيلاشتۇرۇلغان ماندىرىن خەنزۇچە</item>
+        <item>خەنزۇچە ئەنئەنىۋى خەنزۇچە</item>
+        <item>زۇلۇلار</item>
+    </string-array>
+</resources>

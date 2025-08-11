@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Voorwerp van keuze</string>
+    <string name="optional_enter_the_role_e_g_student">Facultatief: Voer de rol in, bijvoorbeeld Student</string>
+    <string name="analysis_my_choices">Analyse van mijn keuzes</string>
+    <string name="analysis_your_selections">Analyseer uw keuzes</string>
+    <string name="rounds">Rondes</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Score berekenen op basis van gezondheid, rijkdom, relaties, geluk, kennis, karma, tijdbeheer, milieu-impact, persoonlijke groei en sociale verantwoordelijkheid</string>
+    <string name="settings_title">Voorwerp van keuze</string>
+    <string name="settings_subtitle">De scenario\'s zijn gebaseerd op uw keuzes.</string>
+    <string name="settings_label_subject">Voer het onderwerp in</string>
+    <string name="settings_hint_select_question_type">Selecteer vraagtype</string>
+    <string name="settings_hint_select_subtype">Selecteer het subtype</string>
+    <string name="settings_hint_select_difficulty">Selecteer het moeilijke niveau</string>
+    <string name="settings_hint_select_gender_optional">Optioneel: Selecteer uw geslacht</string>
+    <string name="settings_label_age">Ingaan in je leeftijd</string>
+    <string name="settings_hint_select_language">Kies uw taal</string>
+    <string name="settings_button_generate_cases">Het genereren van gevallen</string>
+    <string name="question_type_study">Onderzoek</string>
+    <string name="question_type_behavioral">Gedrag</string>
+    <string name="question_type_hiring">Huur</string>
+    <string name="subtype_behavioral_interpersonal">Interpersoonlijke vaardigheden</string>
+    <string name="subtype_behavioral_ethical">Ethische dilemma\'s</string>
+    <string name="subtype_behavioral_stress">Stressbeheersing</string>
+    <string name="subtype_study_mastery">Onderwerpbeheersing</string>
+    <string name="subtype_study_critical_thinking">Critisch denken</string>
+    <string name="subtype_study_practical_application">Praktische toepassing</string>
+    <string name="subtype_hiring_technical">Technische vaardigheden</string>
+    <string name="subtype_hiring_behavioral_interview">Gedragsinterview</string>
+    <string name="subtype_hiring_situational_judgment">Situationeel oordeel</string>
+    <string name="difficulty_normal">normale</string>
+    <string name="difficulty_easy">gemakkelijk</string>
+    <string name="difficulty_hard">hard</string>
+    <string name="gender_male">Vrouwen</string>
+    <string name="gender_female">Vrouwen</string>
+    <string name="gender_select_prompt">Selecteer geslacht</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Er is iets mis gegaan.</string>
+    <string name="button_new_game">Nieuw spel</string>
+    <string name="text_round_number">Ronde %1$d</string>
+    <string name="text_scenario">Scenario</string>
+    <string name="button_next">Volgende .</string>
+    <string name="icon_desc_selected_option">Geselecteerde optie</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amhariek</item>
+        <item>Arabisch (Verenigde Arabische Emiraten)</item>
+        <item>Assamese</item>
+        <item>Asturijnse taal</item>
+        <item>Azerbeidzjanisch</item>
+        <item>Bambara</item>
+        <item>Wit-Russisch</item>
+        <item>Bemba</item>
+        <item>Bengaals</item>
+        <item>Tibetaans</item>
+        <item>Bosnisch</item>
+        <item>Bulgaars</item>
+        <item>Catalaans</item>
+        <item>Tsjechisch</item>
+        <item>Welsh</item>
+        <item>Deense taal</item>
+        <item>Duits</item>
+        <item>Dzongkha</item>
+        <item>Grieks</item>
+        <item>Engelse taal</item>
+        <item>Oostenrijk</item>
+        <item>Basken</item>
+        <item>Ewe (Ghana)</item>
+        <item>Eeve (Togo)</item>
+        <item>Faroese</item>
+        <item>Finse taal</item>
+        <item>Frans</item>
+        <item>Friulian</item>
+        <item>Schotse Gaelic</item>
+        <item>Ierse</item>
+        <item>Galicië</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Hebreeuws</item>
+        <item>Hindi</item>
+        <item>Kroatisch</item>
+        <item>Hongaars</item>
+        <item>Armeens</item>
+        <item>Igbo\'s</item>
+        <item>Indonesisch</item>
+        <item>IJslandse taal</item>
+        <item>Italiaans</item>
+        <item>Japanse</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Georgies</item>
+        <item>Kazachstan</item>
+        <item>Kabuverdianu (Cape Verde Creool)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirgizië</item>
+        <item>Koreaans</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgse</item>
+        <item>Lingala</item>
+        <item>Litouwen</item>
+        <item>Luxemburgse taal</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Normaal Latijns</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Macedonisch</item>
+        <item>Malagasy (Madagascar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Halh Mongoolisch</item>
+        <item>Maleisië</item>
+        <item>Burmese</item>
+        <item>Nederlandse</item>
+        <item>Noorse Nynorsk</item>
+        <item>Noorse Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Zuid-Soedan)</item>
+        <item>Oromo (Ethiopië)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>Pools</item>
+        <item>Portugees</item>
+        <item>Perzisch (Afghanistan)</item>
+        <item>Perzisch (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Roemeens</item>
+        <item>Rundi (Burundi)</item>
+        <item>Russisch</item>
+        <item>Sango (Centraal-Afrikaanse Republiek)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slowaaks (Slowakie)</item>
+        <item>Slovenië</item>
+        <item>Schona (Zimbabwe)</item>
+        <item>Somalië</item>
+        <item>Spaans</item>
+        <item>Albanees (Albanië)</item>
+        <item>Servisch</item>
+        <item>Zweedse</item>
+        <item>Swahili</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Thaise</item>
+        <item>Turkse</item>
+        <item>Oekraïens</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uighur (China)</item>
+        <item>Oezbekistan (Latin, Oezbekistan)</item>
+        <item>Vietnamese</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Cantonese</item>
+        <item>Mandarijns-Chinese vereenvoudigd</item>
+        <item>Traditioneel Chinees Mandarijn</item>
+        <item>Zulu\'s</item>
+    </string-array>
+</resources>

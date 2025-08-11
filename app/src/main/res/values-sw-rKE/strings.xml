@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Suala la uchaguzi</string>
+    <string name="optional_enter_the_role_e_g_student">Chaguo: Ingiza jukumu, kwa mfano, Mwanafunzi</string>
+    <string name="analysis_my_choices">Kuchunguza Maamuzi Yangu</string>
+    <string name="analysis_your_selections">Kuchambua uteuzi wako</string>
+    <string name="rounds">Vipande</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Hesabu ya alama kulingana na afya, utajiri, uhusiano, furaha, maarifa, karma, usimamizi wa wakati, athari za mazingira, ukuaji wa kibinafsi, na uwajibikaji wa kijamii</string>
+    <string name="settings_title">Suala la uchaguzi</string>
+    <string name="settings_subtitle">Scenarios zitategemea uchaguzi wako</string>
+    <string name="settings_label_subject">Ingiza kichwa</string>
+    <string name="settings_hint_select_question_type">Chagua aina ya swali</string>
+    <string name="settings_hint_select_subtype">Chagua aina ndogo</string>
+    <string name="settings_hint_select_difficulty">Chagua kiwango ngumu</string>
+    <string name="settings_hint_select_gender_optional">Faida: Chagua jinsia yako</string>
+    <string name="settings_label_age">Kuingia Katika Umri Wako</string>
+    <string name="settings_hint_select_language">Chagua lugha yako</string>
+    <string name="settings_button_generate_cases">Kuzalisha Kesi</string>
+    <string name="question_type_study">Funzo</string>
+    <string name="question_type_behavioral">Mwenendo</string>
+    <string name="question_type_hiring">Kuajiri</string>
+    <string name="subtype_behavioral_interpersonal">Uwezo wa Kuwasiliana na Wengine</string>
+    <string name="subtype_behavioral_ethical">Matatizo ya Maadili</string>
+    <string name="subtype_behavioral_stress">Kudhibiti Mkazo</string>
+    <string name="subtype_study_mastery">Ujuzi wa Suala</string>
+    <string name="subtype_study_critical_thinking">Kufikiri kwa Ukatili</string>
+    <string name="subtype_study_practical_application">Matumizi Yenye Kutumika</string>
+    <string name="subtype_hiring_technical">Ujuzi wa kiufundi</string>
+    <string name="subtype_hiring_behavioral_interview">Mahojiano ya Mwenendo</string>
+    <string name="subtype_hiring_situational_judgment">Hukumu Kutokana na Hali</string>
+    <string name="difficulty_normal">kawaida</string>
+    <string name="difficulty_easy">rahisi</string>
+    <string name="difficulty_hard">ngumu</string>
+    <string name="gender_male">Kiume</string>
+    <string name="gender_female">Mwanamke</string>
+    <string name="gender_select_prompt">Chagua jinsia</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Kitu kilikwenda vibaya</string>
+    <string name="button_new_game">Mchezo Mpya</string>
+    <string name="text_round_number">Mzunguko %1$d</string>
+    <string name="text_scenario">Scenario</string>
+    <string name="button_next">Yafuatayo</string>
+    <string name="icon_desc_selected_option">Chaguo lililochaguliwa</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Kiamhari</item>
+        <item>Kiarabu (UAE)</item>
+        <item>Assamese</item>
+        <item>Kiasturia</item>
+        <item>Kiarabu</item>
+        <item>Bambara</item>
+        <item>Kibelarusi</item>
+        <item>Bemba</item>
+        <item>Kiswahili</item>
+        <item>Tibetani</item>
+        <item>Kiswahili</item>
+        <item>Kibulgaria</item>
+        <item>Kikatalani</item>
+        <item>Kicheki</item>
+        <item>Swahili</item>
+        <item>Denmark</item>
+        <item>Kijerumani</item>
+        <item>Dzongkha</item>
+        <item>Kigiriki</item>
+        <item>Kiingereza</item>
+        <item>Kiestonia</item>
+        <item>Kibaski</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Wafaeroe</item>
+        <item>Kifini</item>
+        <item>Kifaransa</item>
+        <item>Friulian</item>
+        <item>Kigaeliki cha Scotland</item>
+        <item>Ireland</item>
+        <item>Kigaliki</item>
+        <item>Lugha ya Gujarati</item>
+        <item>Hausa</item>
+        <item>Kiebrania</item>
+        <item>Hindi</item>
+        <item>Kikroatia</item>
+        <item>Kiungari</item>
+        <item>Kiarmenia</item>
+        <item>Igbo</item>
+        <item>Kiindonesia</item>
+        <item>Kisiwa cha Iceland</item>
+        <item>Kiitaliano</item>
+        <item>Kijapani</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kiswahili</item>
+        <item>Kigeorgia</item>
+        <item>Kiarabu</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Kikorea</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgish</item>
+        <item>Lingala</item>
+        <item>Kilithuania</item>
+        <item>Lugha ya Luxemburg</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Kilatvia cha kawaida</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Kimakedonia</item>
+        <item>Madagaska (Madagascar)</item>
+        <item>Kimalta (Malta)</item>
+        <item>Halh Kimongolia</item>
+        <item>Malay (Malaysia)</item>
+        <item>Kiswahili</item>
+        <item>Uholanzi</item>
+        <item>Norway Nynorsk</item>
+        <item>Bokmål ya Norway</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Sudan Kusini)</item>
+        <item>Oromo (Ethiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>Kipolishi</item>
+        <item>Kireno</item>
+        <item>Kiajemi (Afghanistan)</item>
+        <item>Kiajemi (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Kiquechua (Bolivia)</item>
+        <item>Kiquechua (Ecuador)</item>
+        <item>Kiquechua (Peru)</item>
+        <item>Kiromani</item>
+        <item>Rundi (Burundi)</item>
+        <item>Kirusi</item>
+        <item>Sango (Jamhuri ya Afrika ya Kati)</item>
+        <item>Kiswahili (Sri Lanka)</item>
+        <item>Kislovakia (Slovakia)</item>
+        <item>Kislovenia</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somalia</item>
+        <item>Kihispania</item>
+        <item>Kialbanian (Albania)</item>
+        <item>Kiserbia</item>
+        <item>Swahili</item>
+        <item>Kiswahili</item>
+        <item>Kiswahili</item>
+        <item>Telugu</item>
+        <item>Thai</item>
+        <item>Kituruki</item>
+        <item>Kiukrainia</item>
+        <item>Kiurdu (Pakistan)</item>
+        <item>Uighur (Uchina)</item>
+        <item>Uzbek (Kilatini, Uzbekistan)</item>
+        <item>Kivietnam</item>
+        <item>Kixhosa</item>
+        <item>Kiyoruba</item>
+        <item>Kantonese</item>
+        <item>Kichina cha Kimandarini</item>
+        <item>Mandarin Kichina ya jadi</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

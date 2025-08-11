@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Arrimaha doorashada</string>
+    <string name="optional_enter_the_role_e_g_student">ikhtiyaar: Ku qor doorka, tusaale ahaan, Ardayga</string>
+    <string name="analysis_my_choices">Falanqaynta doorashadayda</string>
+    <string name="analysis_your_selections">Falanqaynta doorashadaada</string>
+    <string name="rounds">Daawooyinka</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Xisaabinta dhibcaha waxay ku saleysan tahay caafimaadka, hodantinimada, xiriirka, farxadda, aqoonta, karma, maareynta waqtiga, saameynta deegaanka, koritaanka shaqsiyeed, iyo mas\'uuliyadda bulshada</string>
+    <string name="settings_title">Arrimaha doorashada</string>
+    <string name="settings_subtitle">Sawirada waxay ku saleysan doonaan doorashadaada</string>
+    <string name="settings_label_subject">Ku qor mawduuca</string>
+    <string name="settings_hint_select_question_type">Dooro nooca su\'aasha</string>
+    <string name="settings_hint_select_subtype">Dooro nooca hoose</string>
+    <string name="settings_hint_select_difficulty">Xulo heerka adag</string>
+    <string name="settings_hint_select_gender_optional">ikhtiyaar: Dooro jinsigaaga</string>
+    <string name="settings_label_age">Ku soo biir da\'daada</string>
+    <string name="settings_hint_select_language">Dooro luuqadaada</string>
+    <string name="settings_button_generate_cases">Abuurista kiisaska</string>
+    <string name="question_type_study">Waxbarashada</string>
+    <string name="question_type_behavioral">Dabeecadda</string>
+    <string name="question_type_hiring">Shaqaaleysiinta</string>
+    <string name="subtype_behavioral_interpersonal">Aqoonta Iskaashiga</string>
+    <string name="subtype_behavioral_ethical">Dhibaatooyinka anshaxa</string>
+    <string name="subtype_behavioral_stress">Maareynta walbahaarka</string>
+    <string name="subtype_study_mastery">Aqoonta mawduuca</string>
+    <string name="subtype_study_critical_thinking">Fikirka Xasaasiga ah</string>
+    <string name="subtype_study_practical_application">Codsi Wax ku ool ah</string>
+    <string name="subtype_hiring_technical">Aqoonta farsamada</string>
+    <string name="subtype_hiring_behavioral_interview">Wareysiga Habdhaqanka</string>
+    <string name="subtype_hiring_situational_judgment">Xukunka Xaaladda</string>
+    <string name="difficulty_normal">caadi ah</string>
+    <string name="difficulty_easy">fududahay</string>
+    <string name="difficulty_hard">waa adag tahay</string>
+    <string name="gender_male">Ragga</string>
+    <string name="gender_female">Dumarka</string>
+    <string name="gender_select_prompt">Xulo jinsiga</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Wax baa dhacay.</string>
+    <string name="button_new_game">Ciyaarta Cusub</string>
+    <string name="text_round_number">Wareegga %1$d</string>
+    <string name="text_scenario">Muuqaalka</string>
+    <string name="button_next">Marka xigta</string>
+    <string name="icon_desc_selected_option">Xulashada la doortay</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afka Afrikaans</item>
+        <item>Akan</item>
+        <item>Afka Amharic</item>
+        <item>Carabi (Isbahaysiga Imaaraadka Carabta)</item>
+        <item>Assamese</item>
+        <item>Afka Asturian</item>
+        <item>Azerbaijani</item>
+        <item>Bambara</item>
+        <item>Belarusiyaanka</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibetanka</item>
+        <item>Bosnian</item>
+        <item>Bulgaariya</item>
+        <item>Catalan</item>
+        <item>Czech</item>
+        <item>Welsh</item>
+        <item>Danish</item>
+        <item>Jarmalka</item>
+        <item>Dzongkha</item>
+        <item>Giriigga</item>
+        <item>Ingiriisiga</item>
+        <item>Soomaalida Estonia</item>
+        <item>Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Dadka reer Faroole</item>
+        <item>Finnish</item>
+        <item>Faransiiska</item>
+        <item>Afka Friulian</item>
+        <item>Codka Scottish Gaelic</item>
+        <item>Dalka Ireland</item>
+        <item>Galician</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Cibraaniga</item>
+        <item>Hindiga</item>
+        <item>Carabta</item>
+        <item>Hungarian</item>
+        <item>Armenian</item>
+        <item>Somaliland</item>
+        <item>Indonesian</item>
+        <item>Icelandic</item>
+        <item>Talyaaniga</item>
+        <item>Jarmalka</item>
+        <item>Qabiil</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Georgian</item>
+        <item>Qazax</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Kuuriyaanka</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgian</item>
+        <item>Lingala</item>
+        <item>Lucuun</item>
+        <item>Luuqadda Luxembourg</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Luuqada caadiga ah ee Latvian</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Somaliland</item>
+        <item>Madagascar (Madagascar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Halh Mongolian</item>
+        <item>Malay (Malaysia)</item>
+        <item>Burmese</item>
+        <item>Dalka Holland</item>
+        <item>Norwegian Nynorsk</item>
+        <item>Bokmål-ka Norwey</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Koonfurta Suudaan)</item>
+        <item>Oromo (Ethiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>Booliska</item>
+        <item>Boortaqiiska</item>
+        <item>Farshiyaanka (Afgaanistaan)</item>
+        <item>Afka Faaris (Iiraan)</item>
+        <item>Pashto (Afgaanistaan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Ruumiyaan</item>
+        <item>Rundi (Burundi)</item>
+        <item>Ruush</item>
+        <item>Sango (Jamhuriyadda Bartamaha Afrika)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovak (Slovakia)</item>
+        <item>Luqadda Slovenian</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Soomaalida</item>
+        <item>Isbaanish</item>
+        <item>Albanian (Albania)</item>
+        <item>Soomaalida</item>
+        <item>Iswidhishka</item>
+        <item>Luqadda Swahili</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Talyaaniga</item>
+        <item>Turkiga</item>
+        <item>Afka Yukreeniyaan</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uighur (Shiinaha)</item>
+        <item>Uzbekistan (Latin, Uzbekistan)</item>
+        <item>Vietnamese</item>
+        <item>Xhosa</item>
+        <item>Afka Yoruba</item>
+        <item>Cantonese</item>
+        <item>Shiinaha Mandarin oo loo fududeeyay</item>
+        <item>Shiinaha Mandarin Dhaqanka</item>
+        <item>Soomaalida</item>
+    </string-array>
+</resources>

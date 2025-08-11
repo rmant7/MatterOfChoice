@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">选择问题</string>
+    <string name="optional_enter_the_role_e_g_student">选择性:输入角色,例如,学生</string>
+    <string name="analysis_my_choices">分析我的选择</string>
+    <string name="analysis_your_selections">分析您的选择</string>
+    <string name="rounds">轮子</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">根据健康,财富,关系,幸福,知识,功夫,时间管理,环境影响,个人成长和社会责任计算得分</string>
+    <string name="settings_title">选择问题</string>
+    <string name="settings_subtitle">场景将根据您的选择</string>
+    <string name="settings_label_subject">输入主题</string>
+    <string name="settings_hint_select_question_type">选择问题类型</string>
+    <string name="settings_hint_select_subtype">选择子类型</string>
+    <string name="settings_hint_select_difficulty">选择难度级别</string>
+    <string name="settings_hint_select_gender_optional">选择性:选择性别</string>
+    <string name="settings_label_age">进入你的年龄</string>
+    <string name="settings_hint_select_language">选择您的语言</string>
+    <string name="settings_button_generate_cases">产生案例</string>
+    <string name="question_type_study">学习</string>
+    <string name="question_type_behavioral">行为</string>
+    <string name="question_type_hiring">招聘</string>
+    <string name="subtype_behavioral_interpersonal">人际关系技能</string>
+    <string name="subtype_behavioral_ethical">伦理问题</string>
+    <string name="subtype_behavioral_stress">压力管理</string>
+    <string name="subtype_study_mastery">主题掌握</string>
+    <string name="subtype_study_critical_thinking">批判性思维</string>
+    <string name="subtype_study_practical_application">实际应用</string>
+    <string name="subtype_hiring_technical">技术技能</string>
+    <string name="subtype_hiring_behavioral_interview">行为面试</string>
+    <string name="subtype_hiring_situational_judgment">情况判断</string>
+    <string name="difficulty_normal">正常</string>
+    <string name="difficulty_easy">简单</string>
+    <string name="difficulty_hard">硬的</string>
+    <string name="gender_male">男人</string>
+    <string name="gender_female">女人</string>
+    <string name="gender_select_prompt">选择性别</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">有什么问题发生了.</string>
+    <string name="button_new_game">新的游戏</string>
+    <string name="text_round_number">圆 %1$d</string>
+    <string name="text_scenario">场景</string>
+    <string name="button_next">接下来</string>
+    <string name="icon_desc_selected_option">选择选项</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>非洲语</item>
+        <item>亚干</item>
+        <item>亚马里语</item>
+        <item>阿拉伯语 (阿拉伯联合长国)</item>
+        <item>亚萨姆人</item>
+        <item>阿斯图里亚语</item>
+        <item>阿塞拜疆语</item>
+        <item>巴巴拉</item>
+        <item>白俄罗斯语</item>
+        <item>孟巴</item>
+        <item>孟加拉语</item>
+        <item>西藏语</item>
+        <item>波斯尼亚人</item>
+        <item>保加利亚语</item>
+        <item>加泰罗尼亚语</item>
+        <item>捷克</item>
+        <item>威尔士语</item>
+        <item>丹麦</item>
+        <item>德国人</item>
+        <item>克哈</item>
+        <item>希腊语</item>
+        <item>英语</item>
+        <item>爱沙尼亚语</item>
+        <item>巴斯克语</item>
+        <item>伊韦 (加纳)</item>
+        <item>伊维 (托戈)</item>
+        <item>费尔摩人</item>
+        <item>芬兰语</item>
+        <item>法语</item>
+        <item>佛罗里亚语</item>
+        <item>苏格兰盖尔语</item>
+        <item>爱尔兰</item>
+        <item>加利西亚语</item>
+        <item>印度语</item>
+        <item>哈萨斯语</item>
+        <item>希伯来语</item>
+        <item>印度语</item>
+        <item>克罗地亚语</item>
+        <item>匈牙利语</item>
+        <item>亚美尼亚语</item>
+        <item>伊戈尔语</item>
+        <item>印尼语</item>
+        <item>冰岛语</item>
+        <item>意大利语</item>
+        <item>日本人</item>
+        <item>卡比尔语</item>
+        <item>坎巴</item>
+        <item>加拿大语</item>
+        <item>格鲁吉亚语</item>
+        <item>哈萨克斯坦</item>
+        <item>卡布verdianu (加布韦德克里奥尔语)</item>
+        <item>克尔语</item>
+        <item>基库</item>
+        <item>基纳鲁旺达</item>
+        <item>吉尔吉斯</item>
+        <item>韩国</item>
+        <item>拉索 (拉索)</item>
+        <item>林伯格语</item>
+        <item>语文</item>
+        <item>立陶宛语</item>
+        <item>卢森堡语</item>
+        <item>甘达</item>
+        <item>洛伊</item>
+        <item>标准拉脱维语</item>
+        <item>马拉雅语</item>
+        <item>马拉西语</item>
+        <item>马其顿语</item>
+        <item>马达加斯加 (马达加斯加)</item>
+        <item>马耳他语 (马耳他语)</item>
+        <item>哈尔蒙古语</item>
+        <item>马来西亚</item>
+        <item>缅甸语</item>
+        <item>荷兰</item>
+        <item>挪威尼诺尔斯克</item>
+        <item>挪威语Bokmål</item>
+        <item>尼泊尔 (尼泊尔)</item>
+        <item>努尔 (南苏丹)</item>
+        <item>奥罗莫 (埃塞俄比亚)</item>
+        <item>乌罗莫 (肯尼亚)</item>
+        <item>俄比亚 (印度)</item>
+        <item>孟加拉语</item>
+        <item>波兰语</item>
+        <item>葡萄牙语</item>
+        <item>波斯语 (阿富汗)</item>
+        <item>波斯语 (伊朗)</item>
+        <item>巴什图语 (阿富汗)</item>
+        <item>基丘亚语 (玻利维亚)</item>
+        <item>奎楚亚语 (厄瓜多尔)</item>
+        <item>奎丘亚语 (秘鲁)</item>
+        <item>罗马尼亚语</item>
+        <item>卢迪 (布隆迪)</item>
+        <item>俄罗斯</item>
+        <item>桑戈 (中非共和国)</item>
+        <item>辛加拉语 (斯里兰卡)</item>
+        <item>斯洛伐克 (斯洛伐克)</item>
+        <item>斯洛文尼亚语</item>
+        <item>语 (津巴布韦)</item>
+        <item>索马里</item>
+        <item>西班牙语</item>
+        <item>阿尔巴尼亚语 (阿尔巴尼亚)</item>
+        <item>塞尔维亚语</item>
+        <item>瑞典语</item>
+        <item>斯瓦希利语</item>
+        <item>泰米尔语</item>
+        <item>泰国语</item>
+        <item>泰国</item>
+        <item>土耳其语</item>
+        <item>乌克兰语</item>
+        <item>乌尔都语 (巴基斯坦)</item>
+        <item>维吾尔语 (中国)</item>
+        <item>乌兹别克斯坦 (拉丁语,乌兹别克斯坦)</item>
+        <item>越南人</item>
+        <item>克索萨语</item>
+        <item>约鲁巴语</item>
+        <item>广东语</item>
+        <item>汉语简体化</item>
+        <item>汉语传统</item>
+        <item>祖鲁语</item>
+    </string-array>
+</resources>

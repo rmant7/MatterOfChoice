@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">เรื่องการเลือก</string>
+    <string name="optional_enter_the_role_e_g_student">เป็นทางเลือก: กําหนดบทบาท เช่น นักเรียน</string>
+    <string name="analysis_my_choices">วิเคราะห์การเลือกของฉัน</string>
+    <string name="analysis_your_selections">วิเคราะห์การเลือกของคุณ</string>
+    <string name="rounds">กระสุน</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">คะแนนคํานวณจากสุขภาพ ความร่ํารวย ความสัมพันธ์ ความสุข ความรู้ คาร์ม่า การจัดการเวลา ความผลกระทบต่อสิ่งแวดล้อม การเติบโตส่วนตัว และความรับผิดชอบทางสังคม</string>
+    <string name="settings_title">เรื่องการเลือก</string>
+    <string name="settings_subtitle">ภาพยนตร์จะขึ้นอยู่กับการเลือกของคุณ</string>
+    <string name="settings_label_subject">ใส่หัวข้อ</string>
+    <string name="settings_hint_select_question_type">เลือกประเภทคําถาม</string>
+    <string name="settings_hint_select_subtype">เลือกย่อยชนิด</string>
+    <string name="settings_hint_select_difficulty">เลือกระดับที่ยาก</string>
+    <string name="settings_hint_select_gender_optional">เป็นทางเลือก: เลือกเพศของคุณ</string>
+    <string name="settings_label_age">เข้าสู่วัยของคุณ</string>
+    <string name="settings_hint_select_language">เลือกภาษาของคุณ</string>
+    <string name="settings_button_generate_cases">สร้างกรณี</string>
+    <string name="question_type_study">การ ศึกษา</string>
+    <string name="question_type_behavioral">การพฤติกรรม</string>
+    <string name="question_type_hiring">รับจ้าง</string>
+    <string name="subtype_behavioral_interpersonal">ทักษะระหว่างบุคคล</string>
+    <string name="subtype_behavioral_ethical">ปัญหาการจริยธรรม</string>
+    <string name="subtype_behavioral_stress">การจัดการความเครียด</string>
+    <string name="subtype_study_mastery">ปฏิหาริชย์</string>
+    <string name="subtype_study_critical_thinking">แนวคิดวิจารณ์</string>
+    <string name="subtype_study_practical_application">การ ใช้ ใน กิจกรรม</string>
+    <string name="subtype_hiring_technical">ความสามารถทางเทคนิค</string>
+    <string name="subtype_hiring_behavioral_interview">สัมภาษณ์พฤติกรรม</string>
+    <string name="subtype_hiring_situational_judgment">การ ตัดสิน ใจ ตาม สถานการณ์</string>
+    <string name="difficulty_normal">ปัจจัยปกติ</string>
+    <string name="difficulty_easy">ง่ายๆ</string>
+    <string name="difficulty_hard">ยาก</string>
+    <string name="gender_male">เพศชาย</string>
+    <string name="gender_female">หญิง</string>
+    <string name="gender_select_prompt">เลือกเพศ</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">มีบางอย่างผิดพลาด</string>
+    <string name="button_new_game">เกมใหม่</string>
+    <string name="text_round_number">รอบ %1$d</string>
+    <string name="text_scenario">ภาพยนตร์</string>
+    <string name="button_next">ต่อไป</string>
+    <string name="icon_desc_selected_option">ตัวเลือกที่เลือก</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>ภาษาอังกฤษ</item>
+        <item>อากาน</item>
+        <item>ภาษาอัมการี</item>
+        <item>ภาษาอาหรับ (สหราชอาหรับเอมิเรตส์)</item>
+        <item>ชาวอาซาม</item>
+        <item>ภาษาอัสตูเรีย</item>
+        <item>อาเซอร์ไบเจียน</item>
+        <item>บัมบาร่า</item>
+        <item>ภาษาเบลารุส</item>
+        <item>Bemba</item>
+        <item>ภาษาเบงกาลี</item>
+        <item>ภาษาทิเบต</item>
+        <item>โบสเนีย</item>
+        <item>ภาษาบัลแกเรีย</item>
+        <item>คาตาลานี</item>
+        <item>เช็ก</item>
+        <item>เวลส์</item>
+        <item>ภาษาเดนมาร์ก</item>
+        <item>ภาษาเยอรมัน</item>
+        <item>Dzongkha</item>
+        <item>กรีก</item>
+        <item>ภาษาอังกฤษ</item>
+        <item>อีสโตเนีย</item>
+        <item>ภาษาบาสก</item>
+        <item>Ewe (กานา)</item>
+        <item>Ewe (โตโก)</item>
+        <item>ฟาเรอส</item>
+        <item>ฟินแลนด์</item>
+        <item>ฝรั่งเศส</item>
+        <item>ภาษาฟริูลี</item>
+        <item>สกอตแลนด์เกาลิก</item>
+        <item>ไอร์แลนด์</item>
+        <item>กาลิเซีย</item>
+        <item>ภาษากูจาราติ</item>
+        <item>ภาษาฮาซ่า</item>
+        <item>ภาษาฮีบรู</item>
+        <item>ภาษาฮินดี</item>
+        <item>โครเอเชีย</item>
+        <item>ภาษาฮังการี</item>
+        <item>อาร์เมเนีย</item>
+        <item>อีบโก้</item>
+        <item>อินโดนีเซีย</item>
+        <item>ภาษาไอซ์แลนด์</item>
+        <item>อิตาลี</item>
+        <item>ภาษาญี่ปุ่น</item>
+        <item>คาบิล</item>
+        <item>คัมบะ</item>
+        <item>คันนาดา</item>
+        <item>ภาษาจอร์จี</item>
+        <item>คาซาก</item>
+        <item>คาบัวร์ดีนู (ภาษาครีโอลแคปเด้ร์ด)</item>
+        <item>กัมเมอร์</item>
+        <item>คิคิว</item>
+        <item>คินาร์วานดา</item>
+        <item>กิจกิซสถาน</item>
+        <item>เกาหลี</item>
+        <item>ลาว (ลาว)</item>
+        <item>ภาษาลิมเบิร์ก</item>
+        <item>ลินกัลลา</item>
+        <item>ภาษาลิทวานี</item>
+        <item>ภาษาลักเซมเบิร์ก</item>
+        <item>กานดา</item>
+        <item>โลโว</item>
+        <item>ภาษาลาตฟีแบบมาตรฐาน</item>
+        <item>มาเลียลัม</item>
+        <item>มาราธิ</item>
+        <item>ภาษาแม็กซิโดเนีย</item>
+        <item>มาลาเกเซีย (มาลาเกเซีย)</item>
+        <item>มัลต้า (มัลต้า)</item>
+        <item>ฮัลฮ มองโกเลีย</item>
+        <item>มาเลเซีย (มาเลเซีย)</item>
+        <item>ภาษาเบอร์มา</item>
+        <item>ประเทศเนเธอร์แลนด์</item>
+        <item>นอร์เวย์ นินอร์สก</item>
+        <item>นอร์เวย์ Bokmål</item>
+        <item>เนปาลี (เนปาล)</item>
+        <item>นูเออร์ (ซูดานใต้)</item>
+        <item>ออร์โม (เอธิโอเปีย)</item>
+        <item>ออร์โม (เคนยา)</item>
+        <item>อุดรธานี (อินเดีย)</item>
+        <item>ภาษาพังงาบี</item>
+        <item>โปแลนด์</item>
+        <item>โปรตุเกส</item>
+        <item>ภาษาเปอร์เซีย (อัฟกานิสถาน)</item>
+        <item>เพอร์เซีย (อิหร่าน)</item>
+        <item>ปัชโต (อัฟกานิสถาน)</item>
+        <item>คิวชัว (โบลิเวีย)</item>
+        <item>คิวชัว (อีคัวโดร)</item>
+        <item>คิวชัว (เปรู)</item>
+        <item>โรมาเนีย</item>
+        <item>รุนดี้ (Burundi)</item>
+        <item>ภาษารัสเซีย</item>
+        <item>Sango (สาธารณรัฐแอฟริกากลาง)</item>
+        <item>สิงห์ลา (ศรีลังกา)</item>
+        <item>สโลวาเกีย (สโลวาเกีย)</item>
+        <item>สโลเวเนีย</item>
+        <item>โชน่า (ซิมบะเบวี)</item>
+        <item>โซมาเลีย</item>
+        <item>สเปน</item>
+        <item>อัลเบเนีย (อัลเบเนีย)</item>
+        <item>เซอร์เบีย</item>
+        <item>สวีเดน</item>
+        <item>สวาฮิลี</item>
+        <item>ภาษาทามิล</item>
+        <item>ภาษาเทลูโก</item>
+        <item>ประเทศไทย</item>
+        <item>ภาษาตุรกี</item>
+        <item>ภาษายูเครน</item>
+        <item>ภาษาออร์ดู (ปากีสถาน)</item>
+        <item>อุยกูร์ (จีน)</item>
+        <item>อุซเบกิสต์ (ละติน อุซเบกิสตาน)</item>
+        <item>ภาษาเวียดนาม</item>
+        <item>ภาษาชอซ่า</item>
+        <item>ภาษายอร์บ่า</item>
+        <item>ภาษาแคนโตเนส</item>
+        <item>ภาษาจีนแมนเดริน เรียกง่าย</item>
+        <item>ภาษาจีนแมนเดริน ประเพณี</item>
+        <item>ภาษาซูลู</item>
+    </string-array>
+</resources>

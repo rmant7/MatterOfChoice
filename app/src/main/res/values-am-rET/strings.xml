@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">የምርጫ ጉዳይ</string>
+    <string name="optional_enter_the_role_e_g_student">አማራጭ: ሚና ያስገቡ, ለምሳሌ, ተማሪ</string>
+    <string name="analysis_my_choices">ምርጫዎቼን መመርመር</string>
+    <string name="analysis_your_selections">የእርስዎን ምርጫዎች መተንተን</string>
+    <string name="rounds">ዙሮች</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">ውጤት በጤና፣ በሀብት፣ በግንኙነቶች፣ በደስታ፣ በእውቀት፣ በካርማ፣ በጊዜ አስተዳደር፣ በአካባቢ ተፅዕኖ፣ በግል እድገት እና በማህበራዊ ኃላፊነት ላይ የተመሠረተ ነው</string>
+    <string name="settings_title">የምርጫ ጉዳይ</string>
+    <string name="settings_subtitle">ሁኔታዎቹ በምርጫዎ ላይ የተመሠረቱ ናቸው</string>
+    <string name="settings_label_subject">ርዕሰ ጉዳዩን ያስገቡ</string>
+    <string name="settings_hint_select_question_type">የጥያቄ አይነት ይምረጡ</string>
+    <string name="settings_hint_select_subtype">ንዑስ አይነቱን ይምረጡ</string>
+    <string name="settings_hint_select_difficulty">አስቸጋሪውን ደረጃ ይምረጡ</string>
+    <string name="settings_hint_select_gender_optional">አማራጭ: ፆታህን ምረጥ</string>
+    <string name="settings_label_age">ዕድሜህን አስገባ</string>
+    <string name="settings_hint_select_language">ቋንቋህን ምረጥ</string>
+    <string name="settings_button_generate_cases">ጉዳዮችን ማመንጨት</string>
+    <string name="question_type_study">ጥናት</string>
+    <string name="question_type_behavioral">ባህሪ</string>
+    <string name="question_type_hiring">መቅጠር</string>
+    <string name="subtype_behavioral_interpersonal">የግለሰቦች መስተጋብር</string>
+    <string name="subtype_behavioral_ethical">ሥነ ምግባራዊ ችግሮች</string>
+    <string name="subtype_behavioral_stress">የጭንቀት አያያዝ</string>
+    <string name="subtype_study_mastery">የጉዳይ ማስተማር</string>
+    <string name="subtype_study_critical_thinking">ወሳኝ አስተሳሰብ</string>
+    <string name="subtype_study_practical_application">ተግባራዊ አሠራር</string>
+    <string name="subtype_hiring_technical">የቴክኒክ ክህሎት</string>
+    <string name="subtype_hiring_behavioral_interview">የባህሪ ቃለ መጠይቅ</string>
+    <string name="subtype_hiring_situational_judgment">የሁኔታው ፍርድ</string>
+    <string name="difficulty_normal">መደበኛ</string>
+    <string name="difficulty_easy">ቀላል</string>
+    <string name="difficulty_hard">ከባድ</string>
+    <string name="gender_male">ወንድ</string>
+    <string name="gender_female">ሴት</string>
+    <string name="gender_select_prompt">ፆታ ይምረጡ</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">የሆነ ነገር ተበላሸ</string>
+    <string name="button_new_game">አዲስ ጨዋታ</string>
+    <string name="text_round_number">ዙር %1$d</string>
+    <string name="text_scenario">ትዕይንት</string>
+    <string name="button_next">ቀጣዩ</string>
+    <string name="icon_desc_selected_option">የተመረጠው አማራጭ</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>አፍሪካንስ</item>
+        <item>አካን</item>
+        <item>አማርኛ</item>
+        <item>አረብኛ (የተባበሩት አረብ ኤሚሬቶች)</item>
+        <item>የአሳማውያን</item>
+        <item>የአስቶሪያኛ ቋንቋ</item>
+        <item>የአዘርባጃንኛ</item>
+        <item>ባባራ</item>
+        <item>ቤላሩስኛ</item>
+        <item>ቤምባ</item>
+        <item>ቤንጋሊኛ</item>
+        <item>ቲቤትኛ</item>
+        <item>ቦስኒያኛ</item>
+        <item>ቡልጋሪያኛ</item>
+        <item>ካታላንኛ</item>
+        <item>ቼክ</item>
+        <item>ዌልሽ</item>
+        <item>የዴንማርክ</item>
+        <item>ጀርመንኛ</item>
+        <item>Dzongkha</item>
+        <item>ግሪክኛ</item>
+        <item>እንግሊዝኛ</item>
+        <item>ኢስቶኒያኛ</item>
+        <item>ባስክ</item>
+        <item>ኤዌ (ጋና)</item>
+        <item>ኤዌ (ቶጎ)</item>
+        <item>የፌሮኛ</item>
+        <item>ፊንላንድኛ</item>
+        <item>ፈረንሳይኛ</item>
+        <item>ፍሪዩልኛ</item>
+        <item>የስኮትላንድ ጌሊክ</item>
+        <item>አየርላንድ</item>
+        <item>ጋሊሺያኛ</item>
+        <item>ጉጃራቲ</item>
+        <item>ሃውሳ</item>
+        <item>ዕብራይስጥ</item>
+        <item>ሂንዲ</item>
+        <item>ክሮኤሽያኛ</item>
+        <item>ሃንጋሪኛ</item>
+        <item>አርሜኒያኛ</item>
+        <item>አይግቦ</item>
+        <item>ኢንዶኔዥያኛ</item>
+        <item>አይስላንድኛ</item>
+        <item>ጣሊያንኛ</item>
+        <item>ጃፓንኛ</item>
+        <item>ካቢሌ</item>
+        <item>ካምባ</item>
+        <item>ካናዳ</item>
+        <item>ጆርጂያኛ</item>
+        <item>ካዛክ</item>
+        <item>ካቡርዲኑ (የኬፕ ቨርዴ ክሪኦል)</item>
+        <item>ክመር</item>
+        <item>ኪኩዩ</item>
+        <item>ኪንያርዋንዳ</item>
+        <item>ኪርጊዝስታን</item>
+        <item>ኮሪያኛ</item>
+        <item>ላኦስ</item>
+        <item>ሊምበርግኛ</item>
+        <item>ሊንጋላ</item>
+        <item>የሊቱዌኒያኛ</item>
+        <item>ሉክሰምበርግኛ</item>
+        <item>ጋንዳ</item>
+        <item>ሎው</item>
+        <item>መደበኛ የላትቪያ ቋንቋ</item>
+        <item>ማላያላም</item>
+        <item>ማራቲኛ</item>
+        <item>የመቄዶንያኛ</item>
+        <item>ማዳጋስካር</item>
+        <item>ማልታኛ (ማልታ)</item>
+        <item>ሃል ሞንጎልኛ</item>
+        <item>ማሌዥያ (ማሌዥያ)</item>
+        <item>የበርማኛ</item>
+        <item>የደች</item>
+        <item>የኖርዌይ ኒኖርስክ</item>
+        <item>የኖርዌይ ቦክማል</item>
+        <item>ኔፓሊ (ኔፓል)</item>
+        <item>ኑር (ደቡብ ሱዳን)</item>
+        <item>ኦሮሞ (ኢትዮጵያ)</item>
+        <item>ኦሮሞ (ኬንያ)</item>
+        <item>ኦድያ (ሕንድ)</item>
+        <item>የፓንጃቢ</item>
+        <item>ፖላንድኛ</item>
+        <item>ፖርቱጋልኛ</item>
+        <item>ፋርስኛ (አፍጋኒስታን)</item>
+        <item>ፋርስኛ (ኢራን)</item>
+        <item>ፓሽቶ (አፍጋኒስታን)</item>
+        <item>ኬቹዋ (ቦሊቪያ)</item>
+        <item>ኬቹዋ (ኢኳዶር)</item>
+        <item>ኬቹዋ (ፔሩ)</item>
+        <item>ሮማኒያኛ</item>
+        <item>ሩንዲ (ቡሩንዲ)</item>
+        <item>ሩሲያኛ</item>
+        <item>ሳንጎ (ማዕከላዊ አፍሪካ ሪፐብሊክ)</item>
+        <item>ሲንጋላ (ስሪ ላንካ)</item>
+        <item>ስሎቫኪያ (ስሎቫኪያ)</item>
+        <item>ስሎቬኒያኛ</item>
+        <item>Shona (ዚምባብዌ)</item>
+        <item>ሶማሊያ</item>
+        <item>ስፓኒሽ</item>
+        <item>የአልባኒያኛ (አልባኒያ)</item>
+        <item>ሰርቢያኛ</item>
+        <item>የስዊድንኛ</item>
+        <item>ስዋሂሊ</item>
+        <item>ታሚል</item>
+        <item>ቴሉጉኛ</item>
+        <item>ታይላንድ</item>
+        <item>ቱርክኛ</item>
+        <item>ዩክሬንኛ</item>
+        <item>ኡርዱ (ፓኪስታን)</item>
+        <item>ኡይጉር (ቻይና)</item>
+        <item>ኡዝቤክኛ (ላቲን፣ ኡዝቤኪስታን)</item>
+        <item>ቬትናምኛ</item>
+        <item>የክሶሳ ቋንቋ</item>
+        <item>ዮሩባ</item>
+        <item>ካንቶንኛ</item>
+        <item>ማንዳሪን ቻይንኛ</item>
+        <item>ማንዳሪን ቻይንኛ ባህላዊ</item>
+        <item>ዙሉ</item>
+    </string-array>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Aye so a soro ti sara ni</string>
+    <string name="optional_enter_the_role_e_g_student">A yeke na lege ni pëpe ti sara ni: Fa kusala ni, na tapande, Student</string>
+    <string name="analysis_my_choices">Bâ asarango ye ti mbi</string>
+    <string name="analysis_your_selections">Bâ asarango ye ti mo</string>
+    <string name="rounds">Aye ti ngangu</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Aye ti nzoni so azo ayeke wara na lege ti seni, mosoro, songo, ngia, hingango ye, karma, sarango kua na ngoi, aye so ayeke sara na ndo ti sese, maïngo ti zo nga na dutingo ti lo na ndo ti azo</string>
+    <string name="settings_title">Aye so a soro ti sara ni</string>
+    <string name="settings_subtitle">A yeke sara ye alingbi na aye so mo soro ti sara</string>
+    <string name="settings_label_subject">Mû tënë ni</string>
+    <string name="settings_hint_select_question_type">Soro mara ti hundango tënë</string>
+    <string name="settings_hint_select_subtype">Soro kete type ni</string>
+    <string name="settings_hint_select_difficulty">Sarango ni ayeke ngangu</string>
+    <string name="settings_hint_select_gender_optional">A yeke nzoni mo soro koli wala wali ti mo</string>
+    <string name="settings_label_age">Ga na yâ ti ngu ti mo</string>
+    <string name="settings_hint_select_language">Soro yanga ti kodoro ti mo</string>
+    <string name="settings_button_generate_cases">Ti leke ambeni tënë</string>
+    <string name="question_type_study">Mandango ye</string>
+    <string name="question_type_behavioral">Lege ti sarango ye</string>
+    <string name="question_type_hiring">Zingo zo</string>
+    <string name="subtype_behavioral_interpersonal">Akode ti sarango ye na popo ti zo</string>
+    <string name="subtype_behavioral_ethical">Akpale ti salango ye</string>
+    <string name="subtype_behavioral_stress">Gbu li ti mo na ndö ti kpale ti stress</string>
+    <string name="subtype_study_mastery">Kangbi ni Kangbi ni</string>
+    <string name="subtype_study_critical_thinking">Lege ti gbu li na ndo ti aye</string>
+    <string name="subtype_study_practical_application">Tongana nyen la a lingbi ti sara kua na ni</string>
+    <string name="subtype_hiring_technical">Akode ti mandango ye</string>
+    <string name="subtype_hiring_behavioral_interview">Mbeni lisoro na ndo ti sarango ye</string>
+    <string name="subtype_hiring_situational_judgment">Tënë ti fango ngbanga na ndo ti aye so asi</string>
+    <string name="difficulty_normal">A yeke na lege ni</string>
+    <string name="difficulty_easy">yeke yeke</string>
+    <string name="difficulty_hard">ngangu</string>
+    <string name="gender_male">Koli</string>
+    <string name="gender_female">Wali</string>
+    <string name="gender_select_prompt">Soro koli wala wali</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Mbeni ye ague sioni</string>
+    <string name="button_new_game">Fini ngia</string>
+    <string name="text_round_number">Kâ na yâ ti %1$d</string>
+    <string name="text_scenario">Scenario ni</string>
+    <string name="button_next">Na pekoni</string>
+    <string name="icon_desc_selected_option">A soro ni</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharique</item>
+        <item>Arabe (Émirats Arabes Unis)</item>
+        <item>Azo ti Assam</item>
+        <item>Azo ti Asturien</item>
+        <item>Azo ti Azerbaïdjan</item>
+        <item>Bambara</item>
+        <item>yanga ti Bélarus</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibète</item>
+        <item>Azo ti kodoro ti Bosnie</item>
+        <item>yanga ti Bulgarie</item>
+        <item>Catalan</item>
+        <item>Tchèque</item>
+        <item>Azo ti Pays de Galles</item>
+        <item>Danemark</item>
+        <item>Allemand</item>
+        <item>Dzongkha</item>
+        <item>Grec</item>
+        <item>Anglais</item>
+        <item>Estonie</item>
+        <item>Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Azo ti Féroé</item>
+        <item>Finlandais</item>
+        <item>Na Français</item>
+        <item>Friulien</item>
+        <item>Gaélique ti Écosse</item>
+        <item>Azo ti Irlande</item>
+        <item>Azo ti Galice</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Hébreu</item>
+        <item>Hindi</item>
+        <item>Na yanga ti Croatie</item>
+        <item>yanga ti Hongrie</item>
+        <item>Azo ti Arménie</item>
+        <item>A-Igbo</item>
+        <item>Indonésien</item>
+        <item>yanga ti Islande</item>
+        <item>Azo ti Italie</item>
+        <item>Azo ti Japon</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Na yanga ti Géorgie</item>
+        <item>Azo ti Kazakhstan</item>
+        <item>Kabuverdianu (Créole ti Cap-Vert)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirghizstan</item>
+        <item>Azo ti Corée</item>
+        <item>Laos (Lao)</item>
+        <item>Limburge</item>
+        <item>Lingala</item>
+        <item>Na yanga ti Lituanie</item>
+        <item>Luxembourgeois</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Lingua ti kodoro ti Lettonie</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Azo ti Macédoine</item>
+        <item>Madagascar (Madagascar)</item>
+        <item>Na yanga ti Maltese (Malta)</item>
+        <item>Mongolien Halh</item>
+        <item>Azo ti Malaisie (Malaisie)</item>
+        <item>Azo ti Birmanie</item>
+        <item>Azo ti Pays-Bas</item>
+        <item>Norwegian Nynorsk</item>
+        <item>yanga ti Bokmål ti Norvège</item>
+        <item>Népalais (Népal)</item>
+        <item>Nuer (Soudan ti Mbongo)</item>
+        <item>Oromo (Éthiopie)</item>
+        <item>Azo ti kodoro ti Oromo (Kenya)</item>
+        <item>Odia (Inde)</item>
+        <item>Punjabi</item>
+        <item>Azo ti Pologne</item>
+        <item>Portugais</item>
+        <item>Perse (Afghanistan)</item>
+        <item>Perse (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivie)</item>
+        <item>Quechua (Équateur)</item>
+        <item>Quechua (Pérou)</item>
+        <item>yanga ti Roumanie</item>
+        <item>Rundi (Burundi)</item>
+        <item>Na yanga ti Russe</item>
+        <item>Sango (République centrafricaine)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovak (Slovakie)</item>
+        <item>yanga ti Slovénie</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Azo ti Somali</item>
+        <item>Espagnol</item>
+        <item>Albanais (Albanie)</item>
+        <item>Na yanga ti Serbie</item>
+        <item>Na yanga ti Suède</item>
+        <item>Na yanga ti Swahili</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Thaïlandais</item>
+        <item>Na yanga ti Turquie</item>
+        <item>Na yanga ti Ukraine</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uighur (Chine)</item>
+        <item>Ouzbékistan (Latin, Ouzbékistan)</item>
+        <item>Azo ti Vietnam</item>
+        <item>Azo ti kodoro ti Xhosa</item>
+        <item>Yoruba</item>
+        <item>Azo ti kodoro ti Canton</item>
+        <item>Mandarin Chinois so a sara si tënë ti yanga ti kodoro ni aga simple</item>
+        <item>Mandarin Traditionnel Chine</item>
+        <item>Azo ti kodoro ti Zulu</item>
+    </string-array>
+</resources>

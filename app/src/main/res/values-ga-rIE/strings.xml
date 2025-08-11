@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ábhar roghnaithe</string>
+    <string name="optional_enter_the_role_e_g_student">Roghnach: Cuir isteach an ról, e.g., Oileanach</string>
+    <string name="analysis_my_choices">Anailís a dhéanamh ar mo roghanna</string>
+    <string name="analysis_your_selections">Anailís do roghanna</string>
+    <string name="rounds">Rounds</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Scór a ríomh bunaithe ar shláinte, saibhreas, caidrimh, sona, eolas, karma, bainistiú ama, tionchar comhshaoil, fás pearsanta agus freagracht shóisialta</string>
+    <string name="settings_title">Ábhar roghnaithe</string>
+    <string name="settings_subtitle">Beidh na cásanna bunaithe ar do rogha</string>
+    <string name="settings_label_subject">Cuir isteach an t-ábhar</string>
+    <string name="settings_hint_select_question_type">Roghnaigh cineál ceist</string>
+    <string name="settings_hint_select_subtype">Roghnaigh an fho-chineál</string>
+    <string name="settings_hint_select_difficulty">Roghnaigh an leibhéal deacair</string>
+    <string name="settings_hint_select_gender_optional">Roghnach: Roghnaigh do ghnéas</string>
+    <string name="settings_label_age">Téigh isteach i do Aois</string>
+    <string name="settings_hint_select_language">Roghnaigh do theanga</string>
+    <string name="settings_button_generate_cases">Cásanna a ghiniúint</string>
+    <string name="question_type_study">Foghlaim</string>
+    <string name="question_type_behavioral">Behavioral</string>
+    <string name="question_type_hiring">Freastalaíocht</string>
+    <string name="subtype_behavioral_interpersonal">Scileanna Idirphrionsabail</string>
+    <string name="subtype_behavioral_ethical">Díleamaí Eachtúla</string>
+    <string name="subtype_behavioral_stress">Bainistiú Stress</string>
+    <string name="subtype_study_mastery">Máistreacht Subject</string>
+    <string name="subtype_study_critical_thinking">Smaoinigh Criticiúil</string>
+    <string name="subtype_study_practical_application">Úsáid Gníomhach</string>
+    <string name="subtype_hiring_technical">Scileanna teicniúla</string>
+    <string name="subtype_hiring_behavioral_interview">Agallamh Behavioral</string>
+    <string name="subtype_hiring_situational_judgment">Breithiúnas Sa chás</string>
+    <string name="difficulty_normal">caighdeánach</string>
+    <string name="difficulty_easy">éasca</string>
+    <string name="difficulty_hard">hard</string>
+    <string name="gender_male">Fhir</string>
+    <string name="gender_female">Baineann</string>
+    <string name="gender_select_prompt">Roghnaigh inscne</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">D\'éirigh rud éigin mícheart</string>
+    <string name="button_new_game">Cluichí Nua</string>
+    <string name="text_round_number">Round %1$d</string>
+    <string name="text_scenario">Scáileán</string>
+    <string name="button_next">An chéad cheann eile</string>
+    <string name="icon_desc_selected_option">Rogha roghnaithe</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>Araibis (Emirates Arabes Unis)</item>
+        <item>Assamese</item>
+        <item>Asturian</item>
+        <item>Azerbaijani</item>
+        <item>Bambara</item>
+        <item>Belarús</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tíobáinis</item>
+        <item>Bosnian</item>
+        <item>Bhulgáir</item>
+        <item>Catalan</item>
+        <item>Ceicis</item>
+        <item>Gaels</item>
+        <item>Danmhairg</item>
+        <item>Gearmánach</item>
+        <item>Dzongkha</item>
+        <item>Ghréig</item>
+        <item>Béarla</item>
+        <item>Éistín</item>
+        <item>Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Fhairéalaigh</item>
+        <item>Fionlainnis</item>
+        <item>na Fraince</item>
+        <item>Friulian</item>
+        <item>Gaelic na hAlba</item>
+        <item>Éireannach</item>
+        <item>Gailcián</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Hebraic</item>
+        <item>Hindi</item>
+        <item>Cróitigh</item>
+        <item>Béarla</item>
+        <item>Armáinis</item>
+        <item>Igbo</item>
+        <item>Indonesian</item>
+        <item>An t-Éirinn</item>
+        <item>Iodáilis</item>
+        <item>Seapáinis</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Georgian</item>
+        <item>Kazakh</item>
+        <item>Kabuverdianu (Creole Cape Verde)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>An Chóiré</item>
+        <item>Lao (Laos)</item>
+        <item>Limburgish</item>
+        <item>Lingala</item>
+        <item>Liotuáinis</item>
+        <item>Lucsamburg</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Staidéal na Lótáine</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Macadóineach</item>
+        <item>Malagasy (Madagascar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Halh Mongol</item>
+        <item>Malay (Malaisia)</item>
+        <item>Burmese</item>
+        <item>Oileáinis</item>
+        <item>Nynorsk an Iorua</item>
+        <item>Norvéis Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Súdán Theas)</item>
+        <item>Oromo (Eitiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>an Pholainn</item>
+        <item>Portaingéilis</item>
+        <item>Persian (Afghánistáin)</item>
+        <item>Persian (Irán)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Rúnaí</item>
+        <item>Rundi (Burundi)</item>
+        <item>An Rúis</item>
+        <item>Sango (Phoblacht Mheán Afraic)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slóvaic (Slóvaic)</item>
+        <item>Slóivéinis</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somali</item>
+        <item>Spáinnis</item>
+        <item>Albanian (Albania)</item>
+        <item>Seirbeach</item>
+        <item>An tSualainn</item>
+        <item>Swahili</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Táilleach</item>
+        <item>Turcaigh</item>
+        <item>Úcráinis</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uighur (An tSín)</item>
+        <item>Uzbek (Latin, Uzbekistan)</item>
+        <item>Vietnamese</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Cantonese</item>
+        <item>Sínis Mandarin Simplified</item>
+        <item>Mandarin Sínis Thraidisiúnta</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

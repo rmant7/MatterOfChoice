@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">مسألة الخيار</string>
+    <string name="optional_enter_the_role_e_g_student">اختياري: إدخال الدور، على سبيل المثال، الطالب</string>
+    <string name="analysis_my_choices">تحليل خياراتي</string>
+    <string name="analysis_your_selections">تحليل اختياراتك</string>
+    <string name="rounds">الجولات</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">حساب النتيجة بناءً على الصحة والثروة والعلاقات والسعادة والمعرفة والكارما وإدارة الوقت والتأثير البيئي والنمو الشخصي والمسؤولية الاجتماعية</string>
+    <string name="settings_title">مسألة الخيار</string>
+    <string name="settings_subtitle">السيناريوهات ستعتمد على اختياراتك</string>
+    <string name="settings_label_subject">أدخل الموضوع</string>
+    <string name="settings_hint_select_question_type">اختر نوع السؤال</string>
+    <string name="settings_hint_select_subtype">حدد النوع الفرعي</string>
+    <string name="settings_hint_select_difficulty">اختر المستوى الصعب</string>
+    <string name="settings_hint_select_gender_optional">اختياري: اختر جنسك</string>
+    <string name="settings_label_age">ادخل عمرك</string>
+    <string name="settings_hint_select_language">اختر لغتك</string>
+    <string name="settings_button_generate_cases">توليد الحالات</string>
+    <string name="question_type_study">الدراسة</string>
+    <string name="question_type_behavioral">السلوك</string>
+    <string name="question_type_hiring">التوظيف</string>
+    <string name="subtype_behavioral_interpersonal">المهارات الشخصية</string>
+    <string name="subtype_behavioral_ethical">المشاكل الأخلاقية</string>
+    <string name="subtype_behavioral_stress">إدارة الإجهاد</string>
+    <string name="subtype_study_mastery">السيطرة على الموضوع</string>
+    <string name="subtype_study_critical_thinking">التفكير النقدي</string>
+    <string name="subtype_study_practical_application">التطبيق العملي</string>
+    <string name="subtype_hiring_technical">المهارات الفنية</string>
+    <string name="subtype_hiring_behavioral_interview">مقابلة سلوكية</string>
+    <string name="subtype_hiring_situational_judgment">الحكم على الوضع</string>
+    <string name="difficulty_normal">طبيعي</string>
+    <string name="difficulty_easy">سهل</string>
+    <string name="difficulty_hard">صعبة</string>
+    <string name="gender_male">الذكور</string>
+    <string name="gender_female">الإناث</string>
+    <string name="gender_select_prompt">إختيار الجنس</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">شيء خاطئ</string>
+    <string name="button_new_game">لعبة جديدة</string>
+    <string name="text_round_number">الجولة %1$d</string>
+    <string name="text_scenario">السيناريو</string>
+    <string name="button_next">التالي</string>
+    <string name="icon_desc_selected_option">الخيار المختار</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>الإفريقية</item>
+        <item>أكان</item>
+        <item>اللغة الأمارية</item>
+        <item>العربية (إمارات العرب المتحدة)</item>
+        <item>آسامية</item>
+        <item>الأستورية</item>
+        <item>الأذربيجانية</item>
+        <item>بامبارا</item>
+        <item>اللغة البلاروسية</item>
+        <item>بيمبا</item>
+        <item>البنغالية</item>
+        <item>التبتية</item>
+        <item>البوسنة</item>
+        <item>البلغارية</item>
+        <item>الكاتالونية</item>
+        <item>التشيكية</item>
+        <item>ويلزية</item>
+        <item>الدنماركية</item>
+        <item>الألمانية</item>
+        <item>(دجونغكا)</item>
+        <item>اليونانية</item>
+        <item>الإنجليزية</item>
+        <item>الإستونية</item>
+        <item>البسكي</item>
+        <item>إيه (غانا)</item>
+        <item>إيه (توغو)</item>
+        <item>الفارويين</item>
+        <item>الفنلندية</item>
+        <item>الفرنسية</item>
+        <item>الفريولية</item>
+        <item>الكاليكية الاسكتلندية</item>
+        <item>الإيرلندي</item>
+        <item>اللغة الجاليسية</item>
+        <item>اللغة الججراتية</item>
+        <item>الهوسة</item>
+        <item>اللغة العبرية</item>
+        <item>الهندية</item>
+        <item>الكرواتية</item>
+        <item>الهنغارية</item>
+        <item>الأرمني</item>
+        <item>إيغبو</item>
+        <item>الإندونيسية</item>
+        <item>الإيسلندية</item>
+        <item>الإيطالية</item>
+        <item>اليابانية</item>
+        <item>الكابيل</item>
+        <item>كامبا</item>
+        <item>الكنادا</item>
+        <item>الجورجية</item>
+        <item>كازاخستان</item>
+        <item>كابورديانو (كريول كيب وردي)</item>
+        <item>الخمر</item>
+        <item>(كيكيو)</item>
+        <item>الكينارواندا</item>
+        <item>كيرغيزستان</item>
+        <item>الكورية</item>
+        <item>لاو (لاو)</item>
+        <item>ليمبورغية</item>
+        <item>اللينغالية</item>
+        <item>ليتوانية</item>
+        <item>اللغة اللوكسمبورجية</item>
+        <item>غاندا</item>
+        <item>(لو)</item>
+        <item>اللاتفية القياسية</item>
+        <item>اللغة الملايو</item>
+        <item>اللغة المغربية</item>
+        <item>المقدونية</item>
+        <item>مالغازية (مالغازاكر)</item>
+        <item>مالطية (مالطا)</item>
+        <item>الهاله مغولية</item>
+        <item>ماليزيا (ماليزيا)</item>
+        <item>المانمارية</item>
+        <item>الهولندية</item>
+        <item>نينورسك النرويجية</item>
+        <item>اللغة النرويجية بوكمل</item>
+        <item>نيبالي (نيبال)</item>
+        <item>نير (سودان الجنوبي)</item>
+        <item>أورو (إثيوبيا)</item>
+        <item>أورو (كينيا)</item>
+        <item>أوديا (الهند)</item>
+        <item>البنجابي</item>
+        <item>البولندية</item>
+        <item>البرتغالية</item>
+        <item>الفارسية (أفغانستان)</item>
+        <item>الفارسية (إيران)</item>
+        <item>البشتو (أفغانستان)</item>
+        <item>الكيشوا (بوليفيا)</item>
+        <item>الكيشوا (إكوادور)</item>
+        <item>الكيشوا (بيرو)</item>
+        <item>الرومانية</item>
+        <item>راندي (بروندي)</item>
+        <item>الروسية</item>
+        <item>سانجو (جمهورية أفريقيا الوسطى)</item>
+        <item>السنغالية (سريلانكا)</item>
+        <item>السلوفاكية (سلوفاكيا)</item>
+        <item>السلوفينية</item>
+        <item>شونا (زيمبابوي)</item>
+        <item>الصومالية</item>
+        <item>الإسبانية</item>
+        <item>الألباني (ألبانيا)</item>
+        <item>الصربية</item>
+        <item>السويدية</item>
+        <item>السواحلية</item>
+        <item>التاميل</item>
+        <item>التلغوي</item>
+        <item>التايلاندي</item>
+        <item>التركية</item>
+        <item>الأوكرانية</item>
+        <item>الأردو (باكستان)</item>
+        <item>الأويغور (الصين)</item>
+        <item>أوزبكستان (اللاتينية، أوزبكستان)</item>
+        <item>الفيتنامية</item>
+        <item>الـ (Xhosa)</item>
+        <item>اللغة اليونانية</item>
+        <item>الكانتونية</item>
+        <item>الصينية الماندارينية مبسطة</item>
+        <item>اللغة الصينية التقليدية</item>
+        <item>الزولوي</item>
+    </string-array>
+</resources>

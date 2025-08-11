@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Pasirinkimo klausimas</string>
+    <string name="optional_enter_the_role_e_g_student">Privalomas: Įveskite vaidmenį, pvz., Studentas</string>
+    <string name="analysis_my_choices">Analizė mano pasirinkimų</string>
+    <string name="analysis_your_selections">Analizuokite savo pasirinkimus</string>
+    <string name="rounds">Rūnai</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Skolo apskaičiavimas pagal sveikatą, turtą, santykius, laimę, žinias, karmę, laiko valdymą, poveikį aplinkai, asmeninį augimą ir socialinę atsakomybę</string>
+    <string name="settings_title">Pasirinkimo klausimas</string>
+    <string name="settings_subtitle">Scenarijai bus pagrįsti jūsų pasirinkimais.</string>
+    <string name="settings_label_subject">Įveskite temą</string>
+    <string name="settings_hint_select_question_type">Pasirinkite klausimo tipą</string>
+    <string name="settings_hint_select_subtype">Pasirinkite pakartotį</string>
+    <string name="settings_hint_select_difficulty">Pasirinkite sudėtingą lygį</string>
+    <string name="settings_hint_select_gender_optional">Privalomas: Pasirinkite savo lytį</string>
+    <string name="settings_label_age">Įeik į savo amžių</string>
+    <string name="settings_hint_select_language">Pasirinkite savo kalbą</string>
+    <string name="settings_button_generate_cases">Sukurti atvejus</string>
+    <string name="question_type_study">Tyrimas</string>
+    <string name="question_type_behavioral">Bendravimas</string>
+    <string name="question_type_hiring">Įdarbinimas</string>
+    <string name="subtype_behavioral_interpersonal">Žmogaus tarpusavio įgūdžiai</string>
+    <string name="subtype_behavioral_ethical">Etikos dilemos</string>
+    <string name="subtype_behavioral_stress">Stresų valdymas</string>
+    <string name="subtype_study_mastery">Subjektų valdymas</string>
+    <string name="subtype_study_critical_thinking">Kritinis mąstymas</string>
+    <string name="subtype_study_practical_application">Praktinis taikymas</string>
+    <string name="subtype_hiring_technical">Techniniai įgūdžiai</string>
+    <string name="subtype_hiring_behavioral_interview">Elgsenos pokalbis</string>
+    <string name="subtype_hiring_situational_judgment">Sprendimas dėl situacijos</string>
+    <string name="difficulty_normal">normalus</string>
+    <string name="difficulty_easy">lengva</string>
+    <string name="difficulty_hard">stiprus</string>
+    <string name="gender_male">Vyrai</string>
+    <string name="gender_female">Moteris</string>
+    <string name="gender_select_prompt">Pasirinkite lytį</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Kažkas nutiko blogai.</string>
+    <string name="button_new_game">Naujasis žaidimas</string>
+    <string name="text_round_number">Aplinkis %1$d</string>
+    <string name="text_scenario">Scenarijus</string>
+    <string name="button_next">Kitas</string>
+    <string name="icon_desc_selected_option">Pasirinktas pasirinkimas</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akanas</item>
+        <item>Amharų kalba</item>
+        <item>Arabų kalba (Jungtinės Arabų Emyratai)</item>
+        <item>Assamiečiai</item>
+        <item>Asturijos kalba</item>
+        <item>Azerbaidžano kalba</item>
+        <item>Bambara</item>
+        <item>Baltarusija</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibetų</item>
+        <item>Bosnijos kalba</item>
+        <item>Bulgarijos kalba</item>
+        <item>Kataloniškas</item>
+        <item>Čekijos</item>
+        <item>Velsų kalba</item>
+        <item>Danija</item>
+        <item>Vokiečiai</item>
+        <item>Dzongkha</item>
+        <item>Graikų kalba</item>
+        <item>Anglų kalba</item>
+        <item>Estijos kalba</item>
+        <item>Baskai</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Faerų</item>
+        <item>Suomija</item>
+        <item>Prancūzų kalba</item>
+        <item>Friulija</item>
+        <item>Škotiškas gaeliškas</item>
+        <item>Airijos</item>
+        <item>Galicija</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Hebrajų kalba</item>
+        <item>Indiškai</item>
+        <item>Kroatija</item>
+        <item>Mažų kalba</item>
+        <item>Armėniškas</item>
+        <item>Igbo</item>
+        <item>Indonezijos kalba</item>
+        <item>Islandija</item>
+        <item>Italija</item>
+        <item>Japonai</item>
+        <item>Kabylų kalba</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Gruzijos kalba</item>
+        <item>Kazachstanas</item>
+        <item>Kabuverdianu (Kap Verde kreolų kalba)</item>
+        <item>Khmerų</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirgizijos</item>
+        <item>Korėjos</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgų kalba</item>
+        <item>Lingala</item>
+        <item>Lietuvos kalba</item>
+        <item>Liuksemburgo kalba</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Standartinis Latvijos kalba</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Makedonijos kalba</item>
+        <item>Madagaskaras (Madagaskara)</item>
+        <item>Maltų kalba (Malta)</item>
+        <item>Mongolų kalba</item>
+        <item>Malaija (Malaizija)</item>
+        <item>Birmų kalba</item>
+        <item>Nyderlandų</item>
+        <item>Norvegijos Nynorsk</item>
+        <item>Norvegijos bokmål</item>
+        <item>Nepali (Nepalis)</item>
+        <item>Nuer (Pieturio Sudanas)</item>
+        <item>Oromo (Etiopija)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odja (Indija)</item>
+        <item>Punjabi</item>
+        <item>Polijos kalba</item>
+        <item>Portugalija</item>
+        <item>Persų kalba (Afganistanas)</item>
+        <item>Persų kalba (Iranas)</item>
+        <item>Pashto (Afganistanas)</item>
+        <item>Kečua kalba (Bolivija)</item>
+        <item>Kečua kalba (Ekvadoras)</item>
+        <item>Kečua kalba (Peru)</item>
+        <item>Rumunijos kalba</item>
+        <item>Rundi (Burundi)</item>
+        <item>Rusų kalba</item>
+        <item>Sango (Šiaurės Afrikos Respublika)</item>
+        <item>Sinhalas (Sri Lanka)</item>
+        <item>Slovakija (Slovakija)</item>
+        <item>Slovėnija</item>
+        <item>Šona (Zimbabwe)</item>
+        <item>Somalija</item>
+        <item>Ispanijos kalba</item>
+        <item>Albanų kalba (Albanija)</item>
+        <item>Serbijos kalba</item>
+        <item>Švedų kalba</item>
+        <item>Švahili kalba</item>
+        <item>Tamilų kalba</item>
+        <item>Telugu</item>
+        <item>Taizė</item>
+        <item>Turkiškas</item>
+        <item>Ukrainos kalba</item>
+        <item>Urdu (Pakistanas)</item>
+        <item>Uiguras (Kinija)</item>
+        <item>Uzbekistanas (lat. Uzbekistanas)</item>
+        <item>Vietnams</item>
+        <item>Xhosa kalba</item>
+        <item>Yoruba kalba</item>
+        <item>Kantonų kalba</item>
+        <item>Mandarinų kinų kalba paprasta</item>
+        <item>Mandarinų kinų tradicinis</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

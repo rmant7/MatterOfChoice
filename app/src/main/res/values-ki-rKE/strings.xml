@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ũndũ wa gũthuura</string>
+    <string name="optional_enter_the_role_e_g_student">Ũrĩa ũngĩenda: Ũtoonye wĩra-inĩ ta Mũrutwo</string>
+    <string name="analysis_my_choices">Gũthuthuria matua makwa</string>
+    <string name="analysis_your_selections">Thuthuria maũndũ marĩa ũthuurĩte</string>
+    <string name="rounds">Mĩtaratara</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Kũhingũra mũtaratara kũringana na ũgima wa mwĩrĩ, ũtonga, ũkuruhanu, gĩkeno, ũmenyo, karma, ũtonga wa ihinda, ũgucania wa mũthiũrũrũko wa mũthiũrũrũko, gũkũra kwa mũndũ kĩũmbe, na ũtongoria wa andũ.</string>
+    <string name="settings_title">Ũndũ wa gũthuura</string>
+    <string name="settings_subtitle">Cionereria icio nĩ ikaarũgamĩrĩra ũrĩa ũgũthuura</string>
+    <string name="settings_label_subject">Andĩka kĩongo</string>
+    <string name="settings_hint_select_question_type">Thuura mũthemba wa kĩũria</string>
+    <string name="settings_hint_select_subtype">Thuura subtype</string>
+    <string name="settings_hint_select_difficulty">Thuura mũtaratara mũritũ</string>
+    <string name="settings_hint_select_gender_optional">Wĩyathi wa gwĩthuurĩra: Thuura kĩhĩĩ gĩaku</string>
+    <string name="settings_label_age">Ũtoonye Ũrĩa Ũrarĩ</string>
+    <string name="settings_hint_select_language">Thuura rũthiomi rwaku</string>
+    <string name="settings_button_generate_cases">Kũgĩa na Maũndũ</string>
+    <string name="question_type_study">Wĩruti</string>
+    <string name="question_type_behavioral">Mĩtugo</string>
+    <string name="question_type_hiring">Kũruta wĩra</string>
+    <string name="subtype_behavioral_interpersonal">Ũhoti wa Kũmenyeria Andũ</string>
+    <string name="subtype_behavioral_ethical">Mathĩna Ma Maũndũ-inĩ ma Ũtungata</string>
+    <string name="subtype_behavioral_stress">Kũhiũrania na Mĩtangĩko</string>
+    <string name="subtype_study_mastery">Gũtaũkĩrũo nĩ Ciugo</string>
+    <string name="subtype_study_critical_thinking">Wĩcirĩrie wa Gũciria</string>
+    <string name="subtype_study_practical_application">Ũrĩa Ũngĩhũthĩra Ũguo</string>
+    <string name="subtype_hiring_technical">Ũmenyeru wa Ũmenyeru</string>
+    <string name="subtype_hiring_behavioral_interview">Gũcemania na Andũ Arĩa Marĩ na Ngumo</string>
+    <string name="subtype_hiring_situational_judgment">Gũtua Ciira Kũringana na Maũndũ</string>
+    <string name="difficulty_normal">gĩthaka</string>
+    <string name="difficulty_easy">ũhũthũ</string>
+    <string name="difficulty_hard">hinya</string>
+    <string name="gender_male">Mũndũrũme</string>
+    <string name="gender_female">Mũtumia</string>
+    <string name="gender_select_prompt">Thuura Gender</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Nĩ kwarĩ na ũndũ wahĩtanire</string>
+    <string name="button_new_game">Gĩcunjĩ Kĩerũ</string>
+    <string name="text_round_number">Kĩmĩruru %1$d</string>
+    <string name="text_scenario">Maũndũ marĩa marekĩka</string>
+    <string name="button_next">Ũrĩa ũgũthiĩ</string>
+    <string name="icon_desc_selected_option">Njĩra ĩrĩa ĩthuurĩtwo</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Rũthiomi rwa Afrikaans</item>
+        <item>Akana</item>
+        <item>Rũthiomi rwa Amharic</item>
+        <item>Kĩarabu (United Arab Emirates)</item>
+        <item>Andũ a Assam</item>
+        <item>Rũthiomi rwa Gĩkũyũ</item>
+        <item>Rũthiomi rwa Azerbaijani</item>
+        <item>Gĩkũyũ</item>
+        <item>Rũthiomi rwa Gĩthũngũ</item>
+        <item>Bemba</item>
+        <item>Rũthiomi rwa Gĩkũyũ</item>
+        <item>Ũhoro wa Gĩkũyũ</item>
+        <item>Kĩbũrũri kĩa Bosnia</item>
+        <item>Rũthiomi rwa Gĩkũyũ</item>
+        <item>Gĩcatalan</item>
+        <item>Gĩkũyũ</item>
+        <item>Gĩgĩkũyũ</item>
+        <item>Rũthiomi rwa Denmark</item>
+        <item>Rũthiomi rwa Gĩthũngũ</item>
+        <item>Dzongkha</item>
+        <item>Kĩngiriki</item>
+        <item>Gĩthũngũ</item>
+        <item>Rũthiomi rwa Estonia</item>
+        <item>Gĩkũyũ</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Andũ a bũrũri wa Faroe</item>
+        <item>Rũthiomi rwa Gĩkũyũ</item>
+        <item>Rũthiomi rwa Gĩthũngũ</item>
+        <item>Rũthiomi rwa Gĩkũyũ</item>
+        <item>Rũthiomi rwa Gĩkũyũ rwa Scotland</item>
+        <item>Gĩkũyũ</item>
+        <item>Kĩgalicia</item>
+        <item>Rũthiomi rwa Gujarati</item>
+        <item>Rũthiomi rwa Gĩkũyũ</item>
+        <item>Kĩhibirania</item>
+        <item>Gĩkũyũ</item>
+        <item>Rũthiomi rwa Gĩkũyũ</item>
+        <item>Rũthiomi rwa Gĩthũngũ</item>
+        <item>Rũthiomi rwa Armenia</item>
+        <item>Kĩbũyũ</item>
+        <item>Kĩindonesia</item>
+        <item>Rũthiomi rwa Gĩthũngũ</item>
+        <item>Kĩitaliano</item>
+        <item>Rũthiomi rwa Kĩjapani</item>
+        <item>Gĩkũyũ</item>
+        <item>Kamba</item>
+        <item>Rũthiomi rwa Gĩkũyũ</item>
+        <item>Rũthiomi rwa Georgia</item>
+        <item>Gĩkũyũ</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Gĩkũyũ</item>
+        <item>Kikuyu</item>
+        <item>Rũthiomi rwa Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Gĩkũyũ</item>
+        <item>Laos (Laos)</item>
+        <item>Rũthiomi rwa Gĩkũyũ</item>
+        <item>Rũthiomi rwa Gĩkũyũ</item>
+        <item>Rũthiomi rwa Gĩthũngũ</item>
+        <item>Rũthiomi rwa Luxembourg</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Rũthiomi rwa Gĩthũngũ rwa Gĩthũngũ</item>
+        <item>Kĩmalayalam</item>
+        <item>Kĩmarathi</item>
+        <item>Kĩamacedonia</item>
+        <item>Madagascar (Madagascar)</item>
+        <item>Gĩkũyũ (Malta)</item>
+        <item>Kĩmongolia kĩa Halh</item>
+        <item>Mũlawii (Malaysia)</item>
+        <item>Rũthiomi rwa Burma</item>
+        <item>Ndũrĩrĩ cia Dutch</item>
+        <item>Norwegian Nynorsk</item>
+        <item>Rũthiomi rwa Kĩnoruwa rwa Bokmål</item>
+        <item>Nepal (Nepal)</item>
+        <item>Nuer (South Sudan)</item>
+        <item>Oromo (Ethiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Rũthiomi rwa Gĩkũyũ</item>
+        <item>Rũthiomi rwa Gĩthũngũ</item>
+        <item>Rũthiomi rwa Kĩportuguese</item>
+        <item>Kĩperisia (Afghanistan)</item>
+        <item>Kĩperisia (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Rũthiomi rwa Quechua (Ecuador)</item>
+        <item>Rũthiomi rwa Quechua (Peru)</item>
+        <item>Kĩromania</item>
+        <item>Rundi (Burundi)</item>
+        <item>Rũthiomi rwa Gĩthũngũ</item>
+        <item>Sango (Central African Republic)</item>
+        <item>Gĩkũyũ (Sri Lanka)</item>
+        <item>Kĩslovakia (Slovakia)</item>
+        <item>Kĩslovenia</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Andũ a Somalia</item>
+        <item>Gĩthũngũ</item>
+        <item>Rũthiomi rwa Gĩkũyũ (Albania)</item>
+        <item>Rũthiomi rwa Kwaria</item>
+        <item>Rũthiomi rwa Gĩthũngũ</item>
+        <item>Gĩthũngũ</item>
+        <item>Rũthiomi rwa Gĩkũyũ</item>
+        <item>Rũthiomi rwa Telugu</item>
+        <item>Gĩkũyũ</item>
+        <item>Rũthiomi rwa Gĩthũngũ</item>
+        <item>Rũthiomi rwa Ukraine</item>
+        <item>Rũthiomi rwa Urdu (Pakistan)</item>
+        <item>Gĩgĩkũyũ (China)</item>
+        <item>Uzbek (Latini, Uzbekistan)</item>
+        <item>Andũ a Vietnam</item>
+        <item>Gĩgĩkũyũ</item>
+        <item>Rũthiomi rwa Gĩkũyũ</item>
+        <item>Rũthiomi rwa Kantonese</item>
+        <item>Rũthiomi rwa Gĩchaina rwa Mandarin Rũthondeketio</item>
+        <item>Rũthiomi rwa Gĩthũngũ rwa Gĩthũngũ</item>
+        <item>Mũrũ wa Ithe witũ Zulu</item>
+    </string-array>
+</resources>

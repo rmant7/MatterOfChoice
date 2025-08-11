@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">തിരഞ്ഞെടുപ്പ് വിഷയം</string>
+    <string name="optional_enter_the_role_e_g_student">ഓപ്ഷണൽഃ റോൾ നൽകുക, ഉദാഹരണത്തിന്, വിദ്യാർത്ഥി</string>
+    <string name="analysis_my_choices">എന്റെ തീരുമാനങ്ങള് വിശകലനം ചെയ്യുക</string>
+    <string name="analysis_your_selections">നിങ്ങളുടെ തെരഞ്ഞെടുപ്പ് വിശകലനം ചെയ്യുക</string>
+    <string name="rounds">റൌണ്ടുകൾ</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">ആരോഗ്യം, സമ്പത്ത്, ബന്ധങ്ങൾ, സന്തോഷം, അറിവ്, കർമ്മം, സമയ മാനേജ്മെന്റ്, പരിസ്ഥിതി സ്വാധീനം, വ്യക്തിഗത വളർച്ച, സാമൂഹിക ഉത്തരവാദിത്വം എന്നിവ അടിസ്ഥാനമാക്കിയുള്ള സ്കോർ കണക്കുകൂട്ടൽ</string>
+    <string name="settings_title">തിരഞ്ഞെടുപ്പ് വിഷയം</string>
+    <string name="settings_subtitle">നിങ്ങളുടെ തെരഞ്ഞെടുപ്പിനെ അടിസ്ഥാനമാക്കിയുള്ളതാണ് ഈ സാഹചര്യങ്ങള് .</string>
+    <string name="settings_label_subject">വിഷയം നൽകുക</string>
+    <string name="settings_hint_select_question_type">ചോദ്യ തരം തിരഞ്ഞെടുക്കുക</string>
+    <string name="settings_hint_select_subtype">സബ്ടൈപ്പ് തിരഞ്ഞെടുക്കുക</string>
+    <string name="settings_hint_select_difficulty">ബുദ്ധിമുട്ടുള്ള നില തിരഞ്ഞെടുക്കുക</string>
+    <string name="settings_hint_select_gender_optional">ഓപ്ഷണൽഃ നിങ്ങളുടെ ലിംഗഭേദം തിരഞ്ഞെടുക്കുക</string>
+    <string name="settings_label_age">നിങ്ങളുടെ പ്രായത്തിലേക്ക് കടക്കുക</string>
+    <string name="settings_hint_select_language">നിങ്ങളുടെ ഭാഷ തിരഞ്ഞെടുക്കുക</string>
+    <string name="settings_button_generate_cases">കേസുകൾ സൃഷ്ടിക്കുക</string>
+    <string name="question_type_study">പഠനം</string>
+    <string name="question_type_behavioral">പെരുമാറ്റം</string>
+    <string name="question_type_hiring">നിയമനം</string>
+    <string name="subtype_behavioral_interpersonal">വ്യക്തിപരമായ വൈദഗ്ധ്യം</string>
+    <string name="subtype_behavioral_ethical">ധാർമിക പ്രശ്നങ്ങൾ</string>
+    <string name="subtype_behavioral_stress">സമ്മർദ്ദം കൈകാര്യം ചെയ്യുക</string>
+    <string name="subtype_study_mastery">വിഷയം മാസ്റ്ററിംഗ്</string>
+    <string name="subtype_study_critical_thinking">വിമർശനാത്മക ചിന്ത</string>
+    <string name="subtype_study_practical_application">പ്രായോഗിക പ്രയോഗം</string>
+    <string name="subtype_hiring_technical">സാങ്കേതിക വൈദഗ്ധ്യം</string>
+    <string name="subtype_hiring_behavioral_interview">പെരുമാറ്റ അഭിമുഖം</string>
+    <string name="subtype_hiring_situational_judgment">സ്ഥിതിവിവരക്കണക്കുകൾ</string>
+    <string name="difficulty_normal">സാധാരണ</string>
+    <string name="difficulty_easy">സുഗമമായി</string>
+    <string name="difficulty_hard">കഠിനമായി</string>
+    <string name="gender_male">പുരുഷൻ</string>
+    <string name="gender_female">സ്ത്രീ</string>
+    <string name="gender_select_prompt">ലിംഗഭേദം തിരഞ്ഞെടുക്കുക</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">എന്തോ കുഴപ്പമുണ്ടായി.</string>
+    <string name="button_new_game">പുതിയ കളി</string>
+    <string name="text_round_number">ചുറ്റും %1$d</string>
+    <string name="text_scenario">സ്ക്രിപ്റ്റ്</string>
+    <string name="button_next">അടുത്തത്</string>
+    <string name="icon_desc_selected_option">തിരഞ്ഞെടുത്ത ഓപ്ഷൻ</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>അഫ്രിക്കാൻസ്</item>
+        <item>അഖാൻ</item>
+        <item>അംഹരി</item>
+        <item>അറബി (യുണൈറ്റഡ് അറബ് എമിറേറ്റ്സ്)</item>
+        <item>അസമീസ്</item>
+        <item>അസ്തൂറിയൻ</item>
+        <item>അസർബൈജാനി</item>
+        <item>ബംബാറ</item>
+        <item>ബെലാറസ്</item>
+        <item>ബെംബ</item>
+        <item>ബംഗാളി</item>
+        <item>ടിബറ്റൻ</item>
+        <item>ബോസ്നിയൻ</item>
+        <item>ബൾഗേറിയൻ</item>
+        <item>കാറ്റലോണിയൻ</item>
+        <item>ചെക്ക്</item>
+        <item>വെൽസ്</item>
+        <item>ഡാനിഷ്</item>
+        <item>ജർമനി</item>
+        <item>ദ്ജോങ്ഖ</item>
+        <item>ഗ്രീക്ക്</item>
+        <item>ഇംഗ്ലീഷ്</item>
+        <item>എസ്റ്റോണിയൻ</item>
+        <item>ബാസ്ക്</item>
+        <item>എവി (ഗാന)</item>
+        <item>എവി (ടോഗോ)</item>
+        <item>ഫേറോസ്</item>
+        <item>ഫിന്നിഷ്</item>
+        <item>ഫ്രഞ്ചു</item>
+        <item>ഫ്രീലിയൻ</item>
+        <item>സ്കോട്ടിഷ് ഗെയ്ലിക്</item>
+        <item>ഐറിഷ്</item>
+        <item>ഗലീഷ്യൻ</item>
+        <item>ഗുജറാത്തി</item>
+        <item>ഹൌസ</item>
+        <item>എബ്രായ ഭാഷ</item>
+        <item>ഹിന്ദി</item>
+        <item>ക്രൊയേഷ്യൻ</item>
+        <item>ഹംഗേറിയൻ</item>
+        <item>അർമേനിയൻ</item>
+        <item>ഇഗ്ബോ</item>
+        <item>ഇന്തോനേഷ്യൻ</item>
+        <item>ഐസ്ലാന്റ്</item>
+        <item>ഇറ്റാലിയൻ</item>
+        <item>ജപ്പാനീസ്</item>
+        <item>കബിലി</item>
+        <item>കാംബ</item>
+        <item>കന്നഡ</item>
+        <item>ജോർജിയൻ ഭാഷ</item>
+        <item>കസാഖ്</item>
+        <item>കബെർദിയാനു (കാപ് വെർഡ് ക്രീഒൽ)</item>
+        <item>ഖ്മർ</item>
+        <item>കികുയൂ</item>
+        <item>കിനാർവാണ്ട</item>
+        <item>കിര് ഗിസ്ഥാന്</item>
+        <item>കൊറിയൻ</item>
+        <item>ലാവോസ്</item>
+        <item>ലിംബർഗീസ്</item>
+        <item>ലിംഗാല</item>
+        <item>ലിത്വാനിയ</item>
+        <item>ലക്സംബർഗീസ്</item>
+        <item>ഗാൻഡ</item>
+        <item>ലൂ</item>
+        <item>സാധാരണ ലാറ്റ്വിയൻ</item>
+        <item>മലയാളം</item>
+        <item>മറാത്തി</item>
+        <item>മാസിഡോണിയൻ</item>
+        <item>മാലഗാസി (മാലഗാസ്കാർ)</item>
+        <item>മാൾട്ടീസ് (മാൾട്ട)</item>
+        <item>ഹൽ മംഗോളിയൻ</item>
+        <item>മലയാളി (മലേഷ്യ)</item>
+        <item>ബർമീസ്</item>
+        <item>നെതർലാന്റ്സ്</item>
+        <item>നോർവീജിയൻ നിനോർസ്ക്</item>
+        <item>നോർവീജിയൻ ബൊക്മോൾ</item>
+        <item>നേപ്പാളി (നേപ്പാൾ)</item>
+        <item>നൂർ (ദക്ഷിണ സുഡാൻ)</item>
+        <item>ഒറോമോ (ഇത്യോപ്യ)</item>
+        <item>ഒറോമോ (കെന്യാ)</item>
+        <item>ഒഡിയ (ഇന്ത്യ)</item>
+        <item>പഞ്ചാബി</item>
+        <item>പോളിഷ്</item>
+        <item>പോർച്ചുഗീസ്</item>
+        <item>പേർഷ്യൻ (അഫ്ഗാനിസ്ഥാൻ)</item>
+        <item>പേർഷ്യൻ (ഇറാൻ)</item>
+        <item>പശ്തു (അഫ്ഗാനിസ്ഥാൻ)</item>
+        <item>ക്വിച്വ (ബൊലിവിയ)</item>
+        <item>ക്വചുവ (ഇക്വഡോർ)</item>
+        <item>ക്വിച്വ (പെറു)</item>
+        <item>റൊമാനിയൻ</item>
+        <item>റണ്ടി (ബുരുണ്ടി)</item>
+        <item>റഷ്യൻ ഭാഷ</item>
+        <item>സാംഗോ (സെൻട്രൽ ആഫ്രിക്കൻ റിപ്പബ്ലിക്)</item>
+        <item>സിംഗാളി (ശ്രീലങ്ക)</item>
+        <item>സ്ലൊവാക് (സ്ലൊവാക്യ)</item>
+        <item>സ്ലോവേനിയൻ</item>
+        <item>ഷോണ (സിംബാബ്വെ)</item>
+        <item>സൊമാലിയ</item>
+        <item>സ്പാനിഷ്</item>
+        <item>അൽബേനിയൻ (അൽബേനിയ)</item>
+        <item>സെർബിയൻ</item>
+        <item>സ്വീഡിഷ്</item>
+        <item>സ്വാഹിലി</item>
+        <item>തമിഴ്</item>
+        <item>തെലുങ്ക്</item>
+        <item>തായ്</item>
+        <item>തുർക്കിഷ്</item>
+        <item>ഉക്രേനിയൻ</item>
+        <item>ഉറുദു (പാകിസ്താൻ)</item>
+        <item>ഉയ്ഗൂർ (ചൈന)</item>
+        <item>ഉസ്ബക്കിസ്ഥാൻ (ലാറ്റിൻ, ഉസ്ബക്കിസ്ഥാൻ)</item>
+        <item>വിയറ്റ്നാമീസ്</item>
+        <item>ക്സോസ</item>
+        <item>യൊറൂബ</item>
+        <item>കന്റോൺ</item>
+        <item>ലളിതമാക്കിയ മാൻഡറിൻ ചൈനീസ്</item>
+        <item>പരമ്പരാഗത ചൈനീസ് മന്ദാരിൻ</item>
+        <item>സുലൂ</item>
+    </string-array>
+</resources>

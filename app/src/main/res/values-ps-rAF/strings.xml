@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">د انتخاب موضوع</string>
+    <string name="optional_enter_the_role_e_g_student">اختیاري: رول دننه کړئ، د بیلګې په توګه، زده کونکی</string>
+    <string name="analysis_my_choices">زما د انتخابونو تحلیل</string>
+    <string name="analysis_your_selections">ستاسو د انتخابونو تحلیل</string>
+    <string name="rounds">ټوپکونه</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">سکور د روغتیا، شتمنۍ، اړیکو، خوښۍ، پوهې، کارما، د وخت مدیریت، چاپیریال اغیزو، شخصي ودې او ټولنیز مسؤلیت پر بنسټ محاسبه کیږي</string>
+    <string name="settings_title">د انتخاب موضوع</string>
+    <string name="settings_subtitle">سناریوونه به ستاسو د انتخابونو پراساس وي</string>
+    <string name="settings_label_subject">موضوع ته ننوځئ</string>
+    <string name="settings_hint_select_question_type">د پوښتنې ډول غوره کړئ</string>
+    <string name="settings_hint_select_subtype">د فرعي ډول غوره کړئ</string>
+    <string name="settings_hint_select_difficulty">د ستونزمنې کچې غوره کړئ</string>
+    <string name="settings_hint_select_gender_optional">اختیاري: خپل جنسیت غوره کړئ</string>
+    <string name="settings_label_age">خپل عمر ته ورسیږئ</string>
+    <string name="settings_hint_select_language">خپله ژبه غوره کړئ</string>
+    <string name="settings_button_generate_cases">د قضیو رامنځته کول</string>
+    <string name="question_type_study">مطالعه کول</string>
+    <string name="question_type_behavioral">د چلند په اړه</string>
+    <string name="question_type_hiring">ګمارنه</string>
+    <string name="subtype_behavioral_interpersonal">د انسانانو ترمنځ مهارتونه</string>
+    <string name="subtype_behavioral_ethical">اخلاقي ستونزې</string>
+    <string name="subtype_behavioral_stress">د فشار مدیریت</string>
+    <string name="subtype_study_mastery">د موضوع پوهه</string>
+    <string name="subtype_study_critical_thinking">انتقادي فکر</string>
+    <string name="subtype_study_practical_application">عملي غوښتنلیک</string>
+    <string name="subtype_hiring_technical">تخنیکي مهارتونه</string>
+    <string name="subtype_hiring_behavioral_interview">د چلند مرکې</string>
+    <string name="subtype_hiring_situational_judgment">د وضعیت په اړه قضاوت</string>
+    <string name="difficulty_normal">په عادي ډول</string>
+    <string name="difficulty_easy">په اسانۍ سره</string>
+    <string name="difficulty_hard">سختې</string>
+    <string name="gender_male">نارینه</string>
+    <string name="gender_female">ښځینه</string>
+    <string name="gender_select_prompt">د جنسیت ټاکنه</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">یو څه غلط شو</string>
+    <string name="button_new_game">نوی لوبه</string>
+    <string name="text_round_number">شاوخوا %1$d</string>
+    <string name="text_scenario">سناریو</string>
+    <string name="button_next">په راتلونکې کې</string>
+    <string name="icon_desc_selected_option">ټاکل شوی انتخاب</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>افریقایي ژبه</item>
+        <item>اکانې</item>
+        <item>د امارايي ژبې</item>
+        <item>عربي (د متحده عربي اماراتو)</item>
+        <item>د آسامیانو</item>
+        <item>د آسټوریا ژبه</item>
+        <item>د آذربایجان ژبه</item>
+        <item>بامبارې</item>
+        <item>د بیلاروس ژبه</item>
+        <item>بیمبا</item>
+        <item>بنګالي</item>
+        <item>د تبت په اړه</item>
+        <item>د بوسنیا ژبه</item>
+        <item>بلغاري ژبه</item>
+        <item>کاتالاني</item>
+        <item>په چک کې</item>
+        <item>په ویلز کې</item>
+        <item>د ډنمارک</item>
+        <item>په آلمان کې</item>
+        <item>ډونګکا</item>
+        <item>يوناني ژبه</item>
+        <item>انګلیسي ژبه</item>
+        <item>د استونیا ژبه</item>
+        <item>د باسکی</item>
+        <item>ایوی (ګانا)</item>
+        <item>ایو (تګو)</item>
+        <item>د فیرويانو</item>
+        <item>فنلندي ژبه</item>
+        <item>فرانسوي ژبه</item>
+        <item>د افريقا ژبه</item>
+        <item>د سکاټلینډ ګیلک</item>
+        <item>ایرلنډي</item>
+        <item>ګالیسي ژبه</item>
+        <item>ګجراتي ژبه</item>
+        <item>هوسا ژبې</item>
+        <item>په عبراني ژبه</item>
+        <item>هندي ژبه</item>
+        <item>کرواټي ژبه</item>
+        <item>په هنګري ژبه</item>
+        <item>د ارمنستان ژبه</item>
+        <item>ایګبو</item>
+        <item>د اندونیزیا</item>
+        <item>د آیسلنډي</item>
+        <item>ایټالیا</item>
+        <item>جاپاني</item>
+        <item>د کابل ژبه</item>
+        <item>کیمبا</item>
+        <item>کاناډا</item>
+        <item>د جورجیا ژبه</item>
+        <item>د قزاقستان</item>
+        <item>کیبوریډیانو (کیپ ورډ کریول)</item>
+        <item>خمر ژبه</item>
+        <item>کیکویو</item>
+        <item>کیناروانډا</item>
+        <item>قرغزستان</item>
+        <item>کوریا</item>
+        <item>لاؤس (لاؤس)</item>
+        <item>لیمبورګي</item>
+        <item>لینګالا</item>
+        <item>د لیتوانی ژبې</item>
+        <item>د لوکزامبورګ ژبه</item>
+        <item>ګنډا</item>
+        <item>لوګي</item>
+        <item>د لاتویا معیاري ژبه</item>
+        <item>ملائیلامي</item>
+        <item>ماراټي ژبه</item>
+        <item>د مقدونیا ژبه</item>
+        <item>مالګاسي (مالګاسکر)</item>
+        <item>د مالټا (مالټا)</item>
+        <item>هاله مغولي</item>
+        <item>مالیزیا (مالیزیا)</item>
+        <item>د برما ژبه</item>
+        <item>هالنډي</item>
+        <item>د ناروې ناینورسک</item>
+        <item>د ناروې بوکمل</item>
+        <item>نیپالی (نیپال)</item>
+        <item>نویر (جنوبي سوډان)</item>
+        <item>اورومو (افغانستان)</item>
+        <item>اورومو (کینیا)</item>
+        <item>اوډیا (هندوستان)</item>
+        <item>پنجابي ژبه</item>
+        <item>پولنډي</item>
+        <item>پرتګالي</item>
+        <item>فارسي (افغانستان)</item>
+        <item>فارسي (ایران)</item>
+        <item>پښتو (افغانستان)</item>
+        <item>کیچوا (بولیویا)</item>
+        <item>کیچوا (اکوادور)</item>
+        <item>کیچوا (پیرو)</item>
+        <item>د رومانیا ژبه</item>
+        <item>روندي (بورنډي)</item>
+        <item>روسي ژبه</item>
+        <item>سانګو (مرکزي افريقا جمهوريت)</item>
+        <item>سنګالي (شريلانکا)</item>
+        <item>سلواکی (سلواکیا)</item>
+        <item>د سلووینیا ژبه</item>
+        <item>شونا (زمبابوې)</item>
+        <item>سوماليايي</item>
+        <item>هسپانوي</item>
+        <item>الباني (البانيا)</item>
+        <item>د صربستان ژبه</item>
+        <item>د سویډن ژبه</item>
+        <item>سواحلي ژبه</item>
+        <item>تامیلي</item>
+        <item>په تیلوګو</item>
+        <item>تایلنډي</item>
+        <item>ترکي ژبه</item>
+        <item>د اوکراین ژبه</item>
+        <item>اردو (پاکستان)</item>
+        <item>اویغور (چین)</item>
+        <item>ازبکستان (لاتین، ازبکستان)</item>
+        <item>ویتنامي</item>
+        <item>زوسا ژبه</item>
+        <item>یوروبه ژبه</item>
+        <item>کانتونیز ژبه</item>
+        <item>د مینډرین چینایي ساده شوی</item>
+        <item>د مینډرین چینایي دودیز</item>
+        <item>زولو</item>
+    </string-array>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ընտրության հարց</string>
+    <string name="optional_enter_the_role_e_g_student">Ընտրական. Գտեք դերը, օրինակ, ուսանող</string>
+    <string name="analysis_my_choices">Վերլուծել իմ ընտրությունները</string>
+    <string name="analysis_your_selections">Վերլուծել ձեր ընտրությունները</string>
+    <string name="rounds">Գնդակներ</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Վարկանիշը հաշվարկվում է առողջության, հարստության, հարաբերությունների, երջանկության, գիտելիքների, կարման, ժամանակի կառավարման, շրջակա միջավայրի վրա ունեցած ազդեցության, անձնական աճի եւ սոցիալական պատասխանատվության հիման վրա</string>
+    <string name="settings_title">Ընտրության հարց</string>
+    <string name="settings_subtitle">Սցենարները հիմնված են ձեր ընտրությունների վրա:</string>
+    <string name="settings_label_subject">Մուտքագրեք առարկա</string>
+    <string name="settings_hint_select_question_type">Ընտրեք հարցի տիպը</string>
+    <string name="settings_hint_select_subtype">Ընտրեք ենթատիպը</string>
+    <string name="settings_hint_select_difficulty">Ընտրեք դժվար մակարդակը</string>
+    <string name="settings_hint_select_gender_optional">Ընտրել ձեր սեռը</string>
+    <string name="settings_label_age">Գնացեք ձեր տարիքին</string>
+    <string name="settings_hint_select_language">Ընտրեք ձեր լեզուն</string>
+    <string name="settings_button_generate_cases">Դեպքերի ստեղծում</string>
+    <string name="question_type_study">Ուսումնական</string>
+    <string name="question_type_behavioral">Բարոյականություն</string>
+    <string name="question_type_hiring">Հարձակումը</string>
+    <string name="subtype_behavioral_interpersonal">Մարդկանց միջեւ ունակություններ</string>
+    <string name="subtype_behavioral_ethical">Էթիկական երկխոսություններ</string>
+    <string name="subtype_behavioral_stress">Սթրեսի կառավարումը</string>
+    <string name="subtype_study_mastery">Սուբյեկտային տիրապետում</string>
+    <string name="subtype_study_critical_thinking">Քննադատական մտածողություն</string>
+    <string name="subtype_study_practical_application">Գործնական կիրառություն</string>
+    <string name="subtype_hiring_technical">Տեխնիկական հմտություններ</string>
+    <string name="subtype_hiring_behavioral_interview">Բարոյական հարցազրույց</string>
+    <string name="subtype_hiring_situational_judgment">Իրավիճակի վերաբերյալ դատողություն</string>
+    <string name="difficulty_normal">նորմալ</string>
+    <string name="difficulty_easy">հեշտ</string>
+    <string name="difficulty_hard">կոշտ</string>
+    <string name="gender_male">Տղամարդ</string>
+    <string name="gender_female">Կինը</string>
+    <string name="gender_select_prompt">Ընտրեք սեռը</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Ինչ-որ բան սխալվեց:</string>
+    <string name="button_new_game">Նոր խաղ</string>
+    <string name="text_round_number">Շրջանային %1$d</string>
+    <string name="text_scenario">Սցենար</string>
+    <string name="button_next">Հաջորդը</string>
+    <string name="icon_desc_selected_option">Ընտրված տարբերակը</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Աֆրիկաներեն</item>
+        <item>Ական</item>
+        <item>Ամարերեն</item>
+        <item>Արաբական (Միացյալ Արաբական Էմիրություններ)</item>
+        <item>Ասամացիներ</item>
+        <item>Աստուրերեն</item>
+        <item>Ադրբեջաներեն</item>
+        <item>Բամբարա</item>
+        <item>Բելառուսերեն</item>
+        <item>Բեմբա</item>
+        <item>Բենգալերեն</item>
+        <item>Տիբեթյան</item>
+        <item>Բոսնիացի</item>
+        <item>Բուլղարերեն</item>
+        <item>Կատալաներեն</item>
+        <item>Չեխական</item>
+        <item>Վելսերեն</item>
+        <item>Դանիական</item>
+        <item>Գերմաներեն</item>
+        <item>Dzongkha</item>
+        <item>Հուներեն</item>
+        <item>Անգլերեն</item>
+        <item>Էստոներեն</item>
+        <item>Բասկերեն</item>
+        <item>Ewe (գանա)</item>
+        <item>Ewe (տոգո)</item>
+        <item>Ֆերոներ</item>
+        <item>Ֆինլանդերեն</item>
+        <item>Ֆրանսերեն</item>
+        <item>Ֆրիուլերեն</item>
+        <item>Շոտլանդական Գեյլերեն</item>
+        <item>Իռլանդական</item>
+        <item>Գալիզիա</item>
+        <item>Գուջարատերեն</item>
+        <item>Հաուսա</item>
+        <item>Եբրայերեն</item>
+        <item>Հինդերեն</item>
+        <item>Խորվաթերեն</item>
+        <item>Հունգարերեն</item>
+        <item>Հայերեն</item>
+        <item>Իգբո</item>
+        <item>Ինդոնեզիա</item>
+        <item>Իսլանդերեն</item>
+        <item>Իտալական</item>
+        <item>Ճապոնական</item>
+        <item>Կաբիլերեն</item>
+        <item>Կամբա</item>
+        <item>Կանադա</item>
+        <item>Վրաստան</item>
+        <item>Կազախական</item>
+        <item>Կուբերդիանու (Կեյպ Վերդե կրիոլերեն)</item>
+        <item>Խմեր</item>
+        <item>Kikuyu</item>
+        <item>Կինարվանդա</item>
+        <item>Ղրղզստան</item>
+        <item>Կորեացի</item>
+        <item>Լաո (լաո)</item>
+        <item>Լիմբուրգերեն</item>
+        <item>Լինգալա</item>
+        <item>Լիտվերեն</item>
+        <item>Լուքսեմբուրգերեն</item>
+        <item>Գանդա</item>
+        <item>Լոու</item>
+        <item>Սովորական լատվիերեն</item>
+        <item>Մալայալամ</item>
+        <item>Մարատիերեն</item>
+        <item>Մակեդոներեն</item>
+        <item>Մալագասերեն (Մալագասկար)</item>
+        <item>Մալթերեն (Մալթա)</item>
+        <item>Halh մոնղոլերեն</item>
+        <item>Մալայերեն (Մալայզիա)</item>
+        <item>Բիրմաներեն</item>
+        <item>Հոլանդական</item>
+        <item>Նորվեգական Նինորսկ</item>
+        <item>Նորվեգերեն Bokmål</item>
+        <item>Նեպալի (Նեպալի)</item>
+        <item>Նուեր (Հարավային Սուդան)</item>
+        <item>Օռոմո (Եթովպիա)</item>
+        <item>Օռոմո (Կենիա)</item>
+        <item>Օդիա (Հնդկաստան)</item>
+        <item>Պանջաբերեն</item>
+        <item>Լեհերեն</item>
+        <item>Պորտուգալերեն</item>
+        <item>Պարսկերեն (Աֆղանստան)</item>
+        <item>Պարսկերեն (Իրան)</item>
+        <item>Պաշտո (Աֆղանստան)</item>
+        <item>Քեչուա (Բոլիվիա)</item>
+        <item>Քեչուա (Էկվադոր)</item>
+        <item>Քեչուա (պերու)</item>
+        <item>Ռումիներեն</item>
+        <item>Ռունդի (Burundi)</item>
+        <item>Ռուսերեն</item>
+        <item>Սանգո (Կենտրոնական Աֆրիկյան Հանրապետություն)</item>
+        <item>Սինհալա (Շրի Լանկա)</item>
+        <item>Սլովակիա (Սլովակիա)</item>
+        <item>Սլովեներեն</item>
+        <item>Շոնա (Զիմբավեբա)</item>
+        <item>Սոմալիա</item>
+        <item>Իսպաներեն</item>
+        <item>Ալբաներեն (Ալբանիա)</item>
+        <item>Սերբերեն</item>
+        <item>Շվեդերեն</item>
+        <item>Սվահիլերեն</item>
+        <item>Թամիլերեն</item>
+        <item>Թելուգու</item>
+        <item>Թաիլանդական</item>
+        <item>Թուրքական</item>
+        <item>Ուկրաիներեն</item>
+        <item>Ուրդու (Պակիստան)</item>
+        <item>Ուիգուր (Չինաստան)</item>
+        <item>Ուզբեկստան (լատիներեն, Ուզբեկստան)</item>
+        <item>Վիետնամացիներ</item>
+        <item>Xhosa լեզուն</item>
+        <item>Յորուբա</item>
+        <item>Կանտոներեն</item>
+        <item>Մանդարին չինական պարզեցված</item>
+        <item>Մանդարին չինական ավանդական</item>
+        <item>Զուլուներ</item>
+    </string-array>
+</resources>

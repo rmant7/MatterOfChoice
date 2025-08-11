@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Сонгуулийн асуудал</string>
+    <string name="optional_enter_the_role_e_g_student">Сонгон шалгаруулалтаар: Тухайлбал, Оюутан</string>
+    <string name="analysis_my_choices">Миний сонголтыг шинжилгээ хийх</string>
+    <string name="analysis_your_selections">Таны сонголтыг шинжилгээ хийх</string>
+    <string name="rounds">Хөдөлмөр</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Эрүүл мэнд, баялаг, харилцаа, аз жаргал, мэдлэг, карма, цаг хугацааны удирдлага, байгаль орчинд нөлөөлөх, хувийн өсөлт, нийгмийн хариуцлага дээр тулгуурласан оноо тооцоо</string>
+    <string name="settings_title">Сонгуулийн асуудал</string>
+    <string name="settings_subtitle">Сцэнарыуд таны сонголт дээр тулгуурлана</string>
+    <string name="settings_label_subject">Үндсэн хэсгийг оруулах</string>
+    <string name="settings_hint_select_question_type">Судалгааны хэлбэрийг сонгох</string>
+    <string name="settings_hint_select_subtype">Нүүр хуудас</string>
+    <string name="settings_hint_select_difficulty">Хөгжсөн түвшинг сонго</string>
+    <string name="settings_hint_select_gender_optional">Сонгон шалгаруулалт: Таны эрэгтэй/эрэгтэй/эрэгтэй/эрэгтэй/эрэгтэй/эрэгтэй/эрэгтэй/эрэгтэй/</string>
+    <string name="settings_label_age">Насанд хүрнэ үү?</string>
+    <string name="settings_hint_select_language">Таны хэлийг сонго</string>
+    <string name="settings_button_generate_cases">Хэрэг үүсгэх</string>
+    <string name="question_type_study">Сургалт</string>
+    <string name="question_type_behavioral">Хувьсгал</string>
+    <string name="question_type_hiring">Хөдөлмөр</string>
+    <string name="subtype_behavioral_interpersonal">Хүн хоорондын ур чадвар</string>
+    <string name="subtype_behavioral_ethical">Ёс зүйн асуудал</string>
+    <string name="subtype_behavioral_stress">Стрессийн удирдлага</string>
+    <string name="subtype_study_mastery">Сургалтын эрх мэдэл</string>
+    <string name="subtype_study_critical_thinking">Ардчилсан үзэл бодол</string>
+    <string name="subtype_study_practical_application">Үйл ажиллагааны хэрэглээ</string>
+    <string name="subtype_hiring_technical">Техникийн ур чадвар</string>
+    <string name="subtype_hiring_behavioral_interview">Зохиоллын ярилцлага</string>
+    <string name="subtype_hiring_situational_judgment">Асуудлын дүгнэлт</string>
+    <string name="difficulty_normal">хэвийн</string>
+    <string name="difficulty_easy">хялбар</string>
+    <string name="difficulty_hard">хатуу</string>
+    <string name="gender_male">Эрэгтэй</string>
+    <string name="gender_female">Эмэгтэй</string>
+    <string name="gender_select_prompt">Женсийг сонгох</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Нэг зүйл буруу болсон.</string>
+    <string name="button_new_game">Шинэ тоглоом</string>
+    <string name="text_round_number">Хөвсгөл %1$d</string>
+    <string name="text_scenario">Сценарий</string>
+    <string name="button_next">Дараа нь</string>
+    <string name="icon_desc_selected_option">Сонгосон сонголт</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Африкан хэл</item>
+        <item>Акан</item>
+        <item>Амхарын хэл</item>
+        <item>Араб хэл (Нэгдсэн Арабын Эмират)</item>
+        <item>Ассамын</item>
+        <item>Астури хэл</item>
+        <item>Азербайжан хэл</item>
+        <item>Бамбар</item>
+        <item>Беларусын хэл</item>
+        <item>Бэмба</item>
+        <item>Бенгал хэл</item>
+        <item>Тибет</item>
+        <item>Bosnian</item>
+        <item>Болгар хэл</item>
+        <item>Каталан</item>
+        <item>Чех</item>
+        <item>Уэльс</item>
+        <item>Данияд</item>
+        <item>Германы</item>
+        <item>Жонхха</item>
+        <item>Грек</item>
+        <item>Англи хэл</item>
+        <item>Эстон хэл</item>
+        <item>Баск</item>
+        <item>Ээ (Гана)</item>
+        <item>Ээ (Того)</item>
+        <item>Faroese</item>
+        <item>Финланд хэл</item>
+        <item>Франц хэл</item>
+        <item>Фриулын хэл</item>
+        <item>Шотландын гаелийн хэл</item>
+        <item>Ирланд</item>
+        <item>Галиц</item>
+        <item>Гуджари</item>
+        <item>Хаус хэл</item>
+        <item>Еврей хэл</item>
+        <item>Хинди</item>
+        <item>Хорват хэл</item>
+        <item>Унгар хэл</item>
+        <item>Армени хэл</item>
+        <item>Игбо</item>
+        <item>Индонезий</item>
+        <item>Исланд хэл</item>
+        <item>Итальян</item>
+        <item>Япон</item>
+        <item>Кабыль</item>
+        <item>Камба</item>
+        <item>Канад</item>
+        <item>Грузин хэл</item>
+        <item>Казак</item>
+        <item>Кабувердиану (Кэп Верде Креол)</item>
+        <item>Кхмер</item>
+        <item>Кикую</item>
+        <item>Кinyarwanda</item>
+        <item>Кыргызстан</item>
+        <item>Солонгос</item>
+        <item>Лаос (Laos)</item>
+        <item>Лимбург хэл</item>
+        <item>Лингал</item>
+        <item>Литва</item>
+        <item>Люксембург хэл</item>
+        <item>Ганда</item>
+        <item>Луо</item>
+        <item>Стандарт латви хэл</item>
+        <item>Малайлам</item>
+        <item>Маратхи</item>
+        <item>Македоны</item>
+        <item>Малагаси (Малагасгар)</item>
+        <item>Мальта хэл (Мальта)</item>
+        <item>Халх монгол хэл</item>
+        <item>Малайз (Малази)</item>
+        <item>Мьянма</item>
+        <item>Нидерландын</item>
+        <item>Норвегийн Нинорск</item>
+        <item>Норвегийн Bokmål</item>
+        <item>Непаль (Нэпал)</item>
+        <item>Нуер (Умард Судан)</item>
+        <item>Оромо (Эфиопия)</item>
+        <item>Оромо (Кенья)</item>
+        <item>Одиа (Энэтхэг)</item>
+        <item>Панджаби</item>
+        <item>Польш хэл</item>
+        <item>Португал хэл</item>
+        <item>Перс хэл (Афганистан)</item>
+        <item>Перс хэл (Иран)</item>
+        <item>Пашту (Афганистан)</item>
+        <item>Кечуа (Боливиа)</item>
+        <item>Кечуа (Эквадор)</item>
+        <item>Кечуа (Перу)</item>
+        <item>Румын хэл</item>
+        <item>Рунди (Burundi)</item>
+        <item>Орос хэл</item>
+        <item>Санго (Төв Африкийн Бүгд Найрамдах Улс)</item>
+        <item>Сингалай (Шри Ланка)</item>
+        <item>Словак (Словаки)</item>
+        <item>Словени хэл</item>
+        <item>Шона (Зимбабве)</item>
+        <item>Сомали</item>
+        <item>Испани хэл</item>
+        <item>Албан хэл (Албань)</item>
+        <item>Серби</item>
+        <item>Швед хэл</item>
+        <item>Суахили</item>
+        <item>Тамил</item>
+        <item>Телугу</item>
+        <item>Тайланд</item>
+        <item>Турк хэл</item>
+        <item>Украин хэл</item>
+        <item>Урду (Пакистан)</item>
+        <item>Уйгур (Хятад)</item>
+        <item>Үзбэк (лат., Үзбэкстан)</item>
+        <item>Вьетнам</item>
+        <item>Хоссо хэл</item>
+        <item>Ёруба хэл</item>
+        <item>Кантон хэл</item>
+        <item>Мандарин хятад хэлийг энгийн болгосон</item>
+        <item>Мандарин Хятадын уламжлалт</item>
+        <item>Зулу</item>
+    </string-array>
+</resources>

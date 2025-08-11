@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Auswahlsachen</string>
+    <string name="optional_enter_the_role_e_g_student">Optional: Eingabe der Rolle, z.B. Student</string>
+    <string name="analysis_my_choices">Analyse meiner Entscheidungen</string>
+    <string name="analysis_your_selections">Analyse Ihrer Auswahl</string>
+    <string name="rounds">Runden</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Score berechnen basierend auf Gesundheit, Reichtum, Beziehungen, Glück, Wissen, Karma, Zeitmanagement, Umweltbelastung, persönlichem Wachstum und sozialer Verantwortung</string>
+    <string name="settings_title">Auswahlsachen</string>
+    <string name="settings_subtitle">Die Szenarien basieren auf Ihren Entscheidungen.</string>
+    <string name="settings_label_subject">Geben Sie das Thema ein</string>
+    <string name="settings_hint_select_question_type">Wählen Sie die Art der Frage</string>
+    <string name="settings_hint_select_subtype">Wählen Sie den Untertyp aus</string>
+    <string name="settings_hint_select_difficulty">Wählen Sie die schwierige Ebene aus</string>
+    <string name="settings_hint_select_gender_optional">Optional: Wählen Sie Ihr Geschlecht aus</string>
+    <string name="settings_label_age">Kommen Sie in Ihr Alter</string>
+    <string name="settings_hint_select_language">Wählen Sie Ihre Sprache aus</string>
+    <string name="settings_button_generate_cases">Fälle erzeugen</string>
+    <string name="question_type_study">Studium</string>
+    <string name="question_type_behavioral">Verhalten</string>
+    <string name="question_type_hiring">Einstellung</string>
+    <string name="subtype_behavioral_interpersonal">Interpersonelle Fähigkeiten</string>
+    <string name="subtype_behavioral_ethical">Ethische Dilemmen</string>
+    <string name="subtype_behavioral_stress">Stressbewältigung</string>
+    <string name="subtype_study_mastery">Fähigkeit zur Beherrschung</string>
+    <string name="subtype_study_critical_thinking">Kritisches Denken</string>
+    <string name="subtype_study_practical_application">Praktische Anwendung</string>
+    <string name="subtype_hiring_technical">Technische Fähigkeiten</string>
+    <string name="subtype_hiring_behavioral_interview">Verhaltensgespräch</string>
+    <string name="subtype_hiring_situational_judgment">Lagebezogene Urteile</string>
+    <string name="difficulty_normal">normal</string>
+    <string name="difficulty_easy">einfach</string>
+    <string name="difficulty_hard">schwer</string>
+    <string name="gender_male">Männlich</string>
+    <string name="gender_female">Weibliche</string>
+    <string name="gender_select_prompt">Auswählen Sie das Geschlecht</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Etwas ist falsch gelaufen.</string>
+    <string name="button_new_game">Neues Spiel</string>
+    <string name="text_round_number">Runde %1$d</string>
+    <string name="text_scenario">Szenario</string>
+    <string name="button_next">Als Nächstes</string>
+    <string name="icon_desc_selected_option">Ausgewählte Option</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharisch</item>
+        <item>Arabisch (Vereinigte Arabische Emirate)</item>
+        <item>Assamische</item>
+        <item>Asturische Sprache</item>
+        <item>Aserbaidschanisch</item>
+        <item>Bambara</item>
+        <item>Weißrussisch</item>
+        <item>Bemba</item>
+        <item>Bengalisch</item>
+        <item>Tibeter</item>
+        <item>Bosnischer</item>
+        <item>Bulgarisch</item>
+        <item>Katalanisch</item>
+        <item>Tschechische</item>
+        <item>Welsh</item>
+        <item>Dänisch</item>
+        <item>Deutsch</item>
+        <item>Dzongkha</item>
+        <item>Griechisch</item>
+        <item>Englisch</item>
+        <item>Estnisch</item>
+        <item>Baskisch</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Färöer</item>
+        <item>Finnisch</item>
+        <item>Französisch</item>
+        <item>Friulianisch</item>
+        <item>Schottisches Gaelic</item>
+        <item>Irland</item>
+        <item>Galizianisch</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Hebräisch</item>
+        <item>Hindi</item>
+        <item>Kroatisch</item>
+        <item>Ungarisch</item>
+        <item>Armenier</item>
+        <item>Igbo</item>
+        <item>Indonesisch</item>
+        <item>Isländisch</item>
+        <item>Italienisch</item>
+        <item>Japanisch</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Georgianisch</item>
+        <item>Kazachstan</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirgisistan</item>
+        <item>Südkorea</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgisch</item>
+        <item>Lingala</item>
+        <item>Litauisch</item>
+        <item>Luxemburgisch</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Standard Lettisch</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Mazedonisch</item>
+        <item>Madagaskar (Madagaskar)</item>
+        <item>Malteser (Malta)</item>
+        <item>Halh mongolisch</item>
+        <item>Malaysisch (Malaysia)</item>
+        <item>Burmesisch</item>
+        <item>Niederländisch</item>
+        <item>Norwegische Nynorsk</item>
+        <item>Norwegisches Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Süd-Sudan)</item>
+        <item>Oromo (Äthiopien)</item>
+        <item>Oromo (Kenia)</item>
+        <item>Odia (Indien)</item>
+        <item>Punjabi</item>
+        <item>Polnisch</item>
+        <item>Portugiesisch</item>
+        <item>Persisch (Afghanistan)</item>
+        <item>Persisch (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivien)</item>
+        <item>Quechua (Equador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Rumänisch</item>
+        <item>Rundi (Burundi)</item>
+        <item>Russisch</item>
+        <item>Sango (Zentralafrikanische Republik)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slowakisch (Slowakie)</item>
+        <item>Slowenisch</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somalische</item>
+        <item>Spanisch</item>
+        <item>Albanisch (Albanien)</item>
+        <item>Serbisch</item>
+        <item>Schwedisch</item>
+        <item>Swahili</item>
+        <item>Tamilisch</item>
+        <item>Telugu</item>
+        <item>Thailändisch</item>
+        <item>Türkisch</item>
+        <item>Ukrainisch</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (China)</item>
+        <item>Usbekisch (latinisch, Usbekistan)</item>
+        <item>Vietnamese</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Kantonisch</item>
+        <item>Mandarinchinesisch Vereinfacht</item>
+        <item>Mandarinchinesische Tradition</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

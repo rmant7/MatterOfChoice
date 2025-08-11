@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Valimise küsimus</string>
+    <string name="optional_enter_the_role_e_g_student">Võimalik: Kirjuta ülesanne, näiteks Õpilane</string>
+    <string name="analysis_my_choices">Analüüs minu valikuid</string>
+    <string name="analysis_your_selections">Analüüs oma valikuid</string>
+    <string name="rounds">Raundid</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Punktide arvutamine tervis, rikkus, suhted, õnn, teadmised, karma, aja haldamine, keskkonnamõju, isiklik kasv ja sotsiaalne vastutus</string>
+    <string name="settings_title">Valimise küsimus</string>
+    <string name="settings_subtitle">Scenarioid põhinevad teie valikul.</string>
+    <string name="settings_label_subject">Sisesta teema</string>
+    <string name="settings_hint_select_question_type">Vali küsimustiik</string>
+    <string name="settings_hint_select_subtype">Võtke all tüüp</string>
+    <string name="settings_hint_select_difficulty">Vali keeruline tase</string>
+    <string name="settings_hint_select_gender_optional">Võimalik: vali oma soost</string>
+    <string name="settings_label_age">Võtke oma vanuse sisse</string>
+    <string name="settings_hint_select_language">Valige oma keel</string>
+    <string name="settings_button_generate_cases">Juhtumite tekkimine</string>
+    <string name="question_type_study">Uurimine</string>
+    <string name="question_type_behavioral">Käitumissagedus</string>
+    <string name="question_type_hiring">Tööandmine</string>
+    <string name="subtype_behavioral_interpersonal">Inimestevahelised oskused</string>
+    <string name="subtype_behavioral_ethical">Etilised dilemmad</string>
+    <string name="subtype_behavioral_stress">Stressi juhtimine</string>
+    <string name="subtype_study_mastery">Subjekti juhtimine</string>
+    <string name="subtype_study_critical_thinking">Kriitiline mõtlemine</string>
+    <string name="subtype_study_practical_application">Praktiline rakendamine</string>
+    <string name="subtype_hiring_technical">Tehnilised oskused</string>
+    <string name="subtype_hiring_behavioral_interview">Käitumise intervjuu</string>
+    <string name="subtype_hiring_situational_judgment">Kohtuotsus</string>
+    <string name="difficulty_normal">normaalne</string>
+    <string name="difficulty_easy">kerge</string>
+    <string name="difficulty_hard">keeruline</string>
+    <string name="gender_male">Mees</string>
+    <string name="gender_female">Naine</string>
+    <string name="gender_select_prompt">Vali sugu</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Midagi läks valesti.</string>
+    <string name="button_new_game">Uus mäng</string>
+    <string name="text_round_number">Tavaline %1$d</string>
+    <string name="text_scenario">Scenario</string>
+    <string name="button_next">Järgmine</string>
+    <string name="icon_desc_selected_option">Valitud valik</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amhari keel</item>
+        <item>Araabia keel (Ühendatud Araabia Emiraadid)</item>
+        <item>Assamlased</item>
+        <item>Astüria keel</item>
+        <item>Aserbaidžaani keel</item>
+        <item>Bambara</item>
+        <item>Valgevene</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tiibetlased</item>
+        <item>Bosnia keel</item>
+        <item>Bulgaaria keel</item>
+        <item>Kataloonia keel</item>
+        <item>Tšehhi</item>
+        <item>Valsslased</item>
+        <item>Taani keel</item>
+        <item>Saksamaa</item>
+        <item>Dzongkha</item>
+        <item>Kreeka keel</item>
+        <item>Inglise keel</item>
+        <item>Eesti keel</item>
+        <item>Vaski keel</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ee (Togo)</item>
+        <item>Fääri keel</item>
+        <item>Soome keel</item>
+        <item>Prantsuse keel</item>
+        <item>Friuli keel</item>
+        <item>Šoti keel</item>
+        <item>Iirimaa</item>
+        <item>Galicia keel</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Heebrea keeles</item>
+        <item>Hindist</item>
+        <item>Kroatia keel</item>
+        <item>Ungari keel</item>
+        <item>Armeenia keel</item>
+        <item>Igbo</item>
+        <item>Indoneesia keel</item>
+        <item>Islandi keel</item>
+        <item>Itaalia</item>
+        <item>Jaapani</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Gruusia keel</item>
+        <item>Kazahstan</item>
+        <item>Kabuverdianu (Kape Verde kreoolne)</item>
+        <item>Kmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirgizia</item>
+        <item>Korea</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgi keel</item>
+        <item>Lingala</item>
+        <item>Leedu keel</item>
+        <item>Luksemburgi keel</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Tavaline Läti keel</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Makedoonia</item>
+        <item>Madagaskar (Madagascar)</item>
+        <item>Malta keel (Malta)</item>
+        <item>Halh mongolne</item>
+        <item>Maalia (Malaysia)</item>
+        <item>Birmaa keel</item>
+        <item>Hollandi</item>
+        <item>Norra Nynorsk</item>
+        <item>Norra Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer ( Lõuna-Sudan)</item>
+        <item>Oromo (Etioopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>Poola keel</item>
+        <item>Portugali keel</item>
+        <item>Persia keel (Afganistan)</item>
+        <item>Persia keel (Iran)</item>
+        <item>Pashto (Afganistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ekuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Rumeenia keel</item>
+        <item>Rundi (Burundi)</item>
+        <item>Vene keel</item>
+        <item>Sango (Sentral-Aafrika Vabariik)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovakkia (Slovakia)</item>
+        <item>Slovenia keel</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somaalia</item>
+        <item>Hispaania keel</item>
+        <item>Albaania keel (Albaania)</item>
+        <item>Serbi keel</item>
+        <item>Rootsi keel</item>
+        <item>Swahili keel</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Tai keel</item>
+        <item>Türgi keel</item>
+        <item>Ukraina keel</item>
+        <item>Urdu (Pakistani)</item>
+        <item>Uigur (Hiina)</item>
+        <item>Uzbekistan (latina keeles, Uzbekistan)</item>
+        <item>Vietnamlased</item>
+        <item>Xhosa keel</item>
+        <item>Yoruba</item>
+        <item>Kantonees</item>
+        <item>Mandariini keelt lihtsustatud</item>
+        <item>Mandariini Hiina traditsiooniline</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

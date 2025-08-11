@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">A választási kérdés</string>
+    <string name="optional_enter_the_role_e_g_student">Választható: Adja be a szerepet, pl.</string>
+    <string name="analysis_my_choices">Az én döntéseim elemzése</string>
+    <string name="analysis_your_selections">Az Ön választásainak elemzése</string>
+    <string name="rounds">Lövések</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Az eredmény az egészség, a gazdagság, a kapcsolatok, a boldogság, a tudás, a karma, az időkezelés, a környezeti hatás, a személyes növekedés és a társadalmi felelősség alapján számít.</string>
+    <string name="settings_title">A választási kérdés</string>
+    <string name="settings_subtitle">A forgatókönyvek a választásokon alapulnak.</string>
+    <string name="settings_label_subject">Adja be a témát</string>
+    <string name="settings_hint_select_question_type">Válassza ki a kérdés típusát</string>
+    <string name="settings_hint_select_subtype">Válassza ki az altípusot</string>
+    <string name="settings_hint_select_difficulty">Válassza ki a nehéz szintet</string>
+    <string name="settings_hint_select_gender_optional">Válassza ki a nemét</string>
+    <string name="settings_label_age">Jöjjön be a korába!</string>
+    <string name="settings_hint_select_language">Válassza ki a nyelvét</string>
+    <string name="settings_button_generate_cases">Ügyek létrehozása</string>
+    <string name="question_type_study">Tanulmány</string>
+    <string name="question_type_behavioral">A viselkedés</string>
+    <string name="question_type_hiring">Foglalkoztatás</string>
+    <string name="subtype_behavioral_interpersonal">Személyközi készségek</string>
+    <string name="subtype_behavioral_ethical">Az etikai dilemma</string>
+    <string name="subtype_behavioral_stress">A stressz kezelése</string>
+    <string name="subtype_study_mastery">A tárgyi tudás</string>
+    <string name="subtype_study_critical_thinking">Kritikus gondolkodás</string>
+    <string name="subtype_study_practical_application">Praktikus alkalmazás</string>
+    <string name="subtype_hiring_technical">Technikai készségek</string>
+    <string name="subtype_hiring_behavioral_interview">A viselkedési interjú</string>
+    <string name="subtype_hiring_situational_judgment">Szituációs ítélet</string>
+    <string name="difficulty_normal">normális</string>
+    <string name="difficulty_easy">Könnyű</string>
+    <string name="difficulty_hard">kemény</string>
+    <string name="gender_male">Férfi</string>
+    <string name="gender_female">Hölgy</string>
+    <string name="gender_select_prompt">Válassza ki a nemet</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Valami rosszul ment.</string>
+    <string name="button_new_game">Új játék</string>
+    <string name="text_round_number">Körös %1$d</string>
+    <string name="text_scenario">Forgatókönyv</string>
+    <string name="button_next">Következő</string>
+    <string name="icon_desc_selected_option">Kiválasztott lehetőség</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>Arab (Az Egyesült Arab Emírségek)</item>
+        <item>Assamos</item>
+        <item>Ástúriai</item>
+        <item>Azerbajdzsán</item>
+        <item>Bambara</item>
+        <item>Fehérorosz</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibet</item>
+        <item>Bosznia</item>
+        <item>Bolgár</item>
+        <item>Katalán</item>
+        <item>Csehország</item>
+        <item>Welsh</item>
+        <item>Dániában</item>
+        <item>Németország</item>
+        <item>Dzongkha</item>
+        <item>Görögország</item>
+        <item>Angolul</item>
+        <item>Észtország</item>
+        <item>Baszk</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Férók</item>
+        <item>Finnország</item>
+        <item>Franciaország</item>
+        <item>Friulián</item>
+        <item>Skóci Gaelic</item>
+        <item>Írország</item>
+        <item>Galícia</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Héber</item>
+        <item>Hindi</item>
+        <item>Horvátország</item>
+        <item>Magyar nyelv</item>
+        <item>Örmény</item>
+        <item>Igbo</item>
+        <item>Indonézia</item>
+        <item>Izlandi</item>
+        <item>Olaszország</item>
+        <item>Japán</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Georgiában</item>
+        <item>Kazahország</item>
+        <item>Kabuverdianu (Cape Verde kreol)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirgizia</item>
+        <item>Koreai</item>
+        <item>Lao (Laos)</item>
+        <item>Limburg</item>
+        <item>Lingala</item>
+        <item>Litván</item>
+        <item>Luxemburgi nyelv</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Általános lett nyelv</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Macedónia</item>
+        <item>Malagasy (Madagaskár)</item>
+        <item>Maltai (Malta)</item>
+        <item>Halh mongol</item>
+        <item>Malajzia (Malajzia)</item>
+        <item>Birmák</item>
+        <item>Hollandia</item>
+        <item>Norvég Nynorsk</item>
+        <item>Norvég bokmål</item>
+        <item>Nepali (Nepál)</item>
+        <item>Nuer (Dél-szudán)</item>
+        <item>Orómo (Etiópia)</item>
+        <item>Orómo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>Lengyel</item>
+        <item>Portugália</item>
+        <item>Perzsa (Afganisztán)</item>
+        <item>Perzsa (Irán)</item>
+        <item>Pashto (Afganisztán)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Romániai</item>
+        <item>Rundi (Burundi)</item>
+        <item>Oroszország</item>
+        <item>Sango (közép-afrikai köztársaság)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Szlovákia (szlovákia)</item>
+        <item>Szlovén</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Szomália</item>
+        <item>Spanyolország</item>
+        <item>Albán (Albania)</item>
+        <item>Szerbia</item>
+        <item>Svéd</item>
+        <item>Sváhi</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Thaiföld</item>
+        <item>Törökország</item>
+        <item>Ukrajna</item>
+        <item>Urdu (Pakisztán)</item>
+        <item>Uyghur (Kína)</item>
+        <item>Ouzbék (latin, Ouzbékistan)</item>
+        <item>Vietnamiak</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Cantonés</item>
+        <item>Mandarin kínai egyszerűsítés</item>
+        <item>Mandarin kínai hagyományos</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Atkvæði úrvalsins</string>
+    <string name="optional_enter_the_role_e_g_student">Valfrjáls: Sækja hlutverk, t.d. Nemandi</string>
+    <string name="analysis_my_choices">Greiningu á valinu mínu</string>
+    <string name="analysis_your_selections">Greiningar úrvalið þitt</string>
+    <string name="rounds">Runnur</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Staðan reiknar út frá heilsu, auðlindum, samskiptum, hamingju, þekkingu, karma, tímastjórnun, umhverfisáhrifum, persónulegum vaxti og samfélagslegum ábyrgð</string>
+    <string name="settings_title">Atkvæði úrvalsins</string>
+    <string name="settings_subtitle">Staðan byggir á valinu þínu.</string>
+    <string name="settings_label_subject">Tektu inn efnið</string>
+    <string name="settings_hint_select_question_type">Veldu fyrirspurnartyp</string>
+    <string name="settings_hint_select_subtype">Veldu undirtegnið</string>
+    <string name="settings_hint_select_difficulty">Veldu erfitt stig</string>
+    <string name="settings_hint_select_gender_optional">Valfrjáls: Veldu kyn þitt</string>
+    <string name="settings_label_age">Komdu í aldurinn þinn</string>
+    <string name="settings_hint_select_language">Veldu tungumál þitt</string>
+    <string name="settings_button_generate_cases">Framleiða tilvik</string>
+    <string name="question_type_study">Kennsla</string>
+    <string name="question_type_behavioral">Viðhorf</string>
+    <string name="question_type_hiring">Að ráða</string>
+    <string name="subtype_behavioral_interpersonal">Starfsgreiningar</string>
+    <string name="subtype_behavioral_ethical">Siðferðilegar vandræður</string>
+    <string name="subtype_behavioral_stress">Stjórnun á streitu</string>
+    <string name="subtype_study_mastery">Efnismeðferð</string>
+    <string name="subtype_study_critical_thinking">gagnrýna hugsun</string>
+    <string name="subtype_study_practical_application">Góð notkun</string>
+    <string name="subtype_hiring_technical">Tæknileg færni</string>
+    <string name="subtype_hiring_behavioral_interview">Viðtal um hegðun</string>
+    <string name="subtype_hiring_situational_judgment">Dómur eftir aðstæðum</string>
+    <string name="difficulty_normal">eðlilegt</string>
+    <string name="difficulty_easy">Auðvelt</string>
+    <string name="difficulty_hard">erfiður</string>
+    <string name="gender_male">Karlmenn</string>
+    <string name="gender_female">Konur</string>
+    <string name="gender_select_prompt">Veldu kyn</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Það fór eitthvað úrskeiðis.</string>
+    <string name="button_new_game">Ný leikur</string>
+    <string name="text_round_number">Rundað %1$d</string>
+    <string name="text_scenario">Scenario</string>
+    <string name="button_next">Næst</string>
+    <string name="icon_desc_selected_option">Valinn valkostur</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>Arabísku (Samband arabískt ríki)</item>
+        <item>Assamese</item>
+        <item>Astúrískt</item>
+        <item>Azerbajdzjanskt</item>
+        <item>Bambara</item>
+        <item>Rússneska</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tíbetar</item>
+        <item>Bósneska</item>
+        <item>Búlgarskt</item>
+        <item>Íslenska</item>
+        <item>Þýsk</item>
+        <item>Welsh</item>
+        <item>Danverski</item>
+        <item>Þjóðverja</item>
+        <item>Dzongkha</item>
+        <item>Grikkur</item>
+        <item>Íslenska</item>
+        <item>Íslenska</item>
+        <item>Baski</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Færeyingar</item>
+        <item>Finnskt</item>
+        <item>Franska</item>
+        <item>Fríulskur</item>
+        <item>Skotsk Gaelic</item>
+        <item>Írlendingar</item>
+        <item>Galician</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Hebresku</item>
+        <item>Íslenska</item>
+        <item>Króatsk</item>
+        <item>Ungverskur</item>
+        <item>Íslenska</item>
+        <item>Íbúa</item>
+        <item>Indónesísk</item>
+        <item>Íslenska</item>
+        <item>Ítalsk</item>
+        <item>Japanska</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Gríski</item>
+        <item>Kazachstan</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirgistan</item>
+        <item>Í Kóreu</item>
+        <item>Lao (Laos)</item>
+        <item>Limburgski</item>
+        <item>Lingala</item>
+        <item>Litverskt</item>
+        <item>Lúxemborgska</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Norður Lettneskur</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Makedónska</item>
+        <item>Malgasí (Malgasíkar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Halh mongolsk</item>
+        <item>Malasíu (Malaysia)</item>
+        <item>Burmáni</item>
+        <item>Hollendingar</item>
+        <item>Norsk Nynorsk</item>
+        <item>Norsk Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Súdan)</item>
+        <item>Oromo (Etíópíu)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (Índland)</item>
+        <item>Punjabi</item>
+        <item>Pólska</item>
+        <item>Portúgalsk</item>
+        <item>Perskur (Afganistan)</item>
+        <item>Perskur (Íran)</item>
+        <item>Pashto (Afganistan)</item>
+        <item>Quechua (Bolívíu)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Rúmneska</item>
+        <item>Rundi (Burundi)</item>
+        <item>Rússneska</item>
+        <item>Sango (Mið-Afríska lýðveldið)</item>
+        <item>Sinhala (Srí Lanka)</item>
+        <item>Slóvakur (Slóvakía)</item>
+        <item>Íslenska</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somalía</item>
+        <item>Íslenska</item>
+        <item>Albanísk (Albanía)</item>
+        <item>Íslenska</item>
+        <item>Svenska</item>
+        <item>Swahili</item>
+        <item>Támíll</item>
+        <item>Telugu</item>
+        <item>Þýska</item>
+        <item>Tyrkneski</item>
+        <item>Úkraínu</item>
+        <item>Urdu (Pákistan)</item>
+        <item>Uyghur (Kína)</item>
+        <item>Uzbékistan (latínskt, Uzbékistan)</item>
+        <item>Víetnamskir</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Kantonese</item>
+        <item>Mandarin kínverskur einfaldaður</item>
+        <item>Mandarin kínverskur hefðbundinn</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

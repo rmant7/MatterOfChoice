@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ମନୋନୟନ ବିଷୟ</string>
+    <string name="optional_enter_the_role_e_g_student">ବୈକଳ୍ପିକ: ଭୂମିକାରେ ପ୍ରବେଶ କରନ୍ତୁ, ଉଦାହରଣ ସ୍ବରୂପ, ଛାତ୍ର</string>
+    <string name="analysis_my_choices">ମୋର ଚୟନଗୁଡ଼ିକର ବିଶ୍ଳେଷଣ</string>
+    <string name="analysis_your_selections">ଆପଣଙ୍କର ଚୟନକୁ ବିଶ୍ଳେଷଣ କରନ୍ତୁ</string>
+    <string name="rounds">ରାଉଣ୍ଡ</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">ସ୍ୱାସ୍ଥ୍ୟ, ସମ୍ପତ୍ତି, ସମ୍ପର୍କ, ସୁଖ, ଜ୍ଞାନ, କର୍ମ, ସମୟ ପରିଚାଳନା, ପରିବେଶ ପ୍ରଭାବ, ବ୍ୟକ୍ତିଗତ ଅଭିବୃଦ୍ଧି ଏବଂ ସାମାଜିକ ଦାୟିତ୍ୱ ଆଧାରରେ ସ୍କୋର ଗଣନା କରନ୍ତୁ</string>
+    <string name="settings_title">ମନୋନୟନ ବିଷୟ</string>
+    <string name="settings_subtitle">ପରିସ୍ଥିତି ଆପଣଙ୍କ ପସନ୍ଦ ଉପରେ ଆଧାରିତ ହେବ ।</string>
+    <string name="settings_label_subject">ବିଷୟ ପଞ୍ଜିକରଣ କରନ୍ତୁ</string>
+    <string name="settings_hint_select_question_type">ପ୍ରଶ୍ନର ପ୍ରକାର ଚୟନ କରନ୍ତୁ</string>
+    <string name="settings_hint_select_subtype">ଉପପ୍ରକାର ଚୟନ କରନ୍ତୁ</string>
+    <string name="settings_hint_select_difficulty">କଠିନ ସ୍ତର ବାଛନ୍ତୁ</string>
+    <string name="settings_hint_select_gender_optional">ବିକଳ୍ପ: ଆପଣଙ୍କ ଲିଙ୍ଗ ଚୟନ କରନ୍ତୁ</string>
+    <string name="settings_label_age">ତୁମ ବୟସରେ ପ୍ରବେଶ କର</string>
+    <string name="settings_hint_select_language">ଆପଣଙ୍କର ଭାଷା ଚୟନ କରନ୍ତୁ</string>
+    <string name="settings_button_generate_cases">ମାମଲା ସୃଷ୍ଟି କରନ୍ତୁ</string>
+    <string name="question_type_study">ଅଧ୍ୟୟନ</string>
+    <string name="question_type_behavioral">ଆଚରଣ</string>
+    <string name="question_type_hiring">ନିଯୁକ୍ତି</string>
+    <string name="subtype_behavioral_interpersonal">ପାରସ୍ପରିକ ଦକ୍ଷତା</string>
+    <string name="subtype_behavioral_ethical">ନୈତିକ ସମସ୍ୟା</string>
+    <string name="subtype_behavioral_stress">ଚାପ ପରିଚାଳନା</string>
+    <string name="subtype_study_mastery">ବିଷୟର ମାଷ୍ଟରିଂ</string>
+    <string name="subtype_study_critical_thinking">ସମାଲୋଚନାଶୀଳ ଚିନ୍ତାଧାରା</string>
+    <string name="subtype_study_practical_application">ବ୍ୟବହାରିକ ପ୍ରୟୋଗ</string>
+    <string name="subtype_hiring_technical">ବୈଷୟିକ ଦକ୍ଷତା</string>
+    <string name="subtype_hiring_behavioral_interview">ଆଚରଣଗତ ସାକ୍ଷାତକାର</string>
+    <string name="subtype_hiring_situational_judgment">ପରିସ୍ଥିତିର ବିଚାର</string>
+    <string name="difficulty_normal">ସ୍ୱାଭାବିକ</string>
+    <string name="difficulty_easy">ସରଳ</string>
+    <string name="difficulty_hard">କଠିନ</string>
+    <string name="gender_male">ପୁରୁଷ</string>
+    <string name="gender_female">ମହିଳା</string>
+    <string name="gender_select_prompt">ଲିଙ୍ଗ ଚୟନ କରନ୍ତୁ</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">କିଛି ଭୁଲ ହେଇଗଲା ।</string>
+    <string name="button_new_game">ନୂଆ ଖେଳ</string>
+    <string name="text_round_number">ଚତୁର୍ଦ୍ଦିଗ %1$d</string>
+    <string name="text_scenario">ଦୃଶ୍ୟ</string>
+    <string name="button_next">ପରବର୍ତ୍ତୀ</string>
+    <string name="icon_desc_selected_option">ମନୋନୀତ ବିକଳ୍ପ</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>ଆଫ୍ରିକାନସ</item>
+        <item>ଆକାନ</item>
+        <item>ଅମହାରୀ</item>
+        <item>ଆରବୀ (ସଂଯୁକ୍ତ ଆରବ ଏମିରେଟ୍ସ)</item>
+        <item>ଆସାମୀୟ</item>
+        <item>ଆଷ୍ଟ୍ରିଆନ୍ ଭାଷା</item>
+        <item>ଆଜେରବାଇଜାନୀ</item>
+        <item>ବାମ୍ବରା</item>
+        <item>ବେଲାରୁଷୀୟ ଭାଷା</item>
+        <item>ବେମ୍ବା</item>
+        <item>ବଙ୍ଗଳା</item>
+        <item>ତିବ୍ଦତୀୟ</item>
+        <item>ବୋସନୀୟ</item>
+        <item>ବଲଗାରୀ</item>
+        <item>କାଟଲାନ</item>
+        <item>ଚେକ୍</item>
+        <item>ୱେଲ୍ସ</item>
+        <item>ଡେନମାର୍କ</item>
+        <item>ଜର୍ମାନୀ</item>
+        <item>ଝୋଙ୍ଗ୍ଖା</item>
+        <item>ଗ୍ରୀକ୍ ଭାଷା</item>
+        <item>ଇଂରାଜୀ</item>
+        <item>ଏସ୍ଟୋନିୟ</item>
+        <item>ବାସ୍କ</item>
+        <item>ଇବେ (ଘାନା)</item>
+        <item>ଇଭେ (ଟୋଗୋ)</item>
+        <item>ଫେରୋ</item>
+        <item>ଫିନଲ୍ୟାଣ୍ଡୀ</item>
+        <item>ଫ୍ରେଞ୍ଚ</item>
+        <item>ଫ୍ରିଉଲୀୟ</item>
+        <item>ସ୍କଟଲ୍ୟାଣ୍ଡ ଗେଲିକ୍</item>
+        <item>ଆଇରଲାଣ୍ଡ</item>
+        <item>ଗାଲିଲିକୀୟ</item>
+        <item>ଗୁଜରାଟୀ</item>
+        <item>ହାଉସା</item>
+        <item>ଏବ୍ରୀ ଭାଷା</item>
+        <item>ହିନ୍ଦୀ</item>
+        <item>କ୍ରୋଏଟିୟ</item>
+        <item>ହଙ୍ଗେରୀ</item>
+        <item>ଆର୍ମେନିଆ</item>
+        <item>ଇଗବୋ</item>
+        <item>ଇଣ୍ଡୋନେସିଆ</item>
+        <item>ଆଇସଲ୍ୟାଣ୍ଡ</item>
+        <item>ଇଟାଲୀ</item>
+        <item>ଜାପାନୀ</item>
+        <item>କାବିଲ</item>
+        <item>କାମ୍ବା</item>
+        <item>କନ୍ନଡ଼</item>
+        <item>ଜର୍ଜିଆ</item>
+        <item>କାଜାଖିଆ</item>
+        <item>କାବୁର୍ଦିଆନୁ (କେବୁର୍ଦିଆନ୍ କ୍ରେଓଲ୍)</item>
+        <item>ଖମେର</item>
+        <item>କିକୁୟୁ</item>
+        <item>କିନ୍ନରୱାଣ୍ଡା</item>
+        <item>କିରଗିଜସ୍ତାନ</item>
+        <item>କୋରିଆ</item>
+        <item>ଲାଓ (ଲାଓ)</item>
+        <item>ଲିମ୍ବର୍ଗିସ</item>
+        <item>ଲିଙ୍ଗାଲା</item>
+        <item>ଲିଥୁଆନ୍ ଭାଷା</item>
+        <item>ଲକ୍ସମବର୍ଗୀ ଭାଷା</item>
+        <item>ଗାଣ୍ଡା</item>
+        <item>ଲୁଓ</item>
+        <item>ଷ୍ଟାଣ୍ଡାର୍ଡ ଲାଟିଭ ଭାଷା</item>
+        <item>ମାଲାୟଲମ</item>
+        <item>ମରାଠୀ</item>
+        <item>ମାକିଦନିଆ</item>
+        <item>ମାଲାଗାସୀ (ମାଲାଗାସ୍କର)</item>
+        <item>ମାଲ୍ଟୀୟ (ମାଲ୍ଟା)</item>
+        <item>ହାଲହ ମଙ୍ଗୋଲୀୟ</item>
+        <item>ମାଲେସିଆ (ମାଲେସିଆ)</item>
+        <item>ମିଆଁମାରୀ</item>
+        <item>ନେଦରଲାଣ୍ଡ</item>
+        <item>ନରୱେଜ୍ ନାଇନର୍ସ୍କ</item>
+        <item>ନରୱେଜୀୟ ବୋକମାଲ</item>
+        <item>ନେପାଳୀ (ନେପାଳ)</item>
+        <item>ନୁର (ଦକ୍ଷିଣ ସୁଦାନ)</item>
+        <item>ଓରୋମା (ଏଥିଓପିଆ)</item>
+        <item>ଓରୋମା (କେନିଆ)</item>
+        <item>ଓଡ଼ିଆ (ଭାରତ)</item>
+        <item>ପଞ୍ଜାବୀ</item>
+        <item>ପୋଲାଣ୍ଡ</item>
+        <item>ପର୍ତ୍ତୁଗୀଜ</item>
+        <item>ପାରସୀୟ (ଆଫଗାନିସ୍ତାନ)</item>
+        <item>ପାରସୀୟ (ଇରାନ)</item>
+        <item>ପାସ୍ତୁ (ଆଫଗାନିସ୍ତାନ)</item>
+        <item>କେଇଚୁଆ (ବୋଲିଭିୟା)</item>
+        <item>କେଇଚୁଆ (ଇକ୍ୱାଡୋର)</item>
+        <item>କେଚୁଆ (ପେରୁ)</item>
+        <item>ରୋମାନିଆ</item>
+        <item>ରୁଣ୍ଡି (ବୁରୁଣ୍ଡି)</item>
+        <item>ରୁଷୀୟ</item>
+        <item>ସାଙ୍ଗୋ (କେନ୍ଦ୍ର ଆଫ୍ରିକୀୟ ଗଣରାଜ୍ୟ)</item>
+        <item>ସିଙ୍ଗଲୀ (ଶ୍ରୀଲଙ୍କା)</item>
+        <item>ସ୍ଲୋଭାକିଆ (ସ୍ଲୋଭାକିୟା)</item>
+        <item>ସ୍ଲୋଭେନିୟ</item>
+        <item>ଶୋନା (ଜିମ୍ବାୱେ)</item>
+        <item>ସୋମାଲିଆ</item>
+        <item>ସ୍ପେନିଶ୍</item>
+        <item>ଆଲବାନିଆ (ଅଲବାନିଆ)</item>
+        <item>ସାର୍ବୀୟ ଭାଷା</item>
+        <item>ସ୍ୱିଡେନ୍</item>
+        <item>ସ୍ୱାହିଲି</item>
+        <item>ତାମିଲ</item>
+        <item>ତେଲୁଗୁ</item>
+        <item>ଥାଇଲାଣ୍ଡ</item>
+        <item>ତୁର୍କୀ</item>
+        <item>ୟୁକ୍ରେନୀୟ</item>
+        <item>ଉର୍ଦ୍ଦୁ (ପାକିସ୍ତାନ)</item>
+        <item>ଉଇଗୁର (ଚୀନ)</item>
+        <item>ଉଜବେକିସ୍ତାନ (ଲାତିନ, ଉଜବେକିସ୍ତାନ)</item>
+        <item>ଭିଏତନାମୀୟ</item>
+        <item>ଘୋଷା</item>
+        <item>ୟୋରୁବା</item>
+        <item>କାଣ୍ଟୋନୀୟ ଭାଷା</item>
+        <item>ମାଣ୍ଡାରିନ୍ ଚାଇନିଜ୍ ସରଳୀକରଣ</item>
+        <item>ମାଣ୍ଡାରିନ୍ ଚାଇନିଜ୍ ପାରମ୍ପରିକ</item>
+        <item>ଜୁଲୁ</item>
+    </string-array>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Seçim konusu</string>
+    <string name="optional_enter_the_role_e_g_student">Seçimsel: Rol gir, örneğin Öğrenci</string>
+    <string name="analysis_my_choices">Seçimlerimi analiz ediyorum .</string>
+    <string name="analysis_your_selections">Seçimlerinizi analiz edin</string>
+    <string name="rounds">Atışlar</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Sağlık, zenginlik, ilişkiler, mutluluk, bilgi, karma, zaman yönetimi, çevre etkisi, kişisel büyüme ve sosyal sorumluluk temelinde puan hesaplama</string>
+    <string name="settings_title">Seçim konusu</string>
+    <string name="settings_subtitle">Senaryolar seçimlerinize dayanır .</string>
+    <string name="settings_label_subject">Konuyu girin</string>
+    <string name="settings_hint_select_question_type">Soru türünü seçin</string>
+    <string name="settings_hint_select_subtype">Alt türü seçin</string>
+    <string name="settings_hint_select_difficulty">Zor düzeyi seçin</string>
+    <string name="settings_hint_select_gender_optional">Seçimsel: Cinsiyetinizi seçin</string>
+    <string name="settings_label_age">Yaşına Girin</string>
+    <string name="settings_hint_select_language">Dilinizi seçin</string>
+    <string name="settings_button_generate_cases">Durum Oluştur</string>
+    <string name="question_type_study">İnceleme</string>
+    <string name="question_type_behavioral">Davranış</string>
+    <string name="question_type_hiring">Kiralama</string>
+    <string name="subtype_behavioral_interpersonal">Kişisel İlişkiler Ürünleri</string>
+    <string name="subtype_behavioral_ethical">Ahlaksal Zorluklar</string>
+    <string name="subtype_behavioral_stress">Stres Yönetimi</string>
+    <string name="subtype_study_mastery">Konu Yönetimi</string>
+    <string name="subtype_study_critical_thinking">Eleştirel Düşünce</string>
+    <string name="subtype_study_practical_application">Uygulamalı Uygulama</string>
+    <string name="subtype_hiring_technical">Teknik beceriler</string>
+    <string name="subtype_hiring_behavioral_interview">Davranış Görüşmesi</string>
+    <string name="subtype_hiring_situational_judgment">Duruma Karar Vermek</string>
+    <string name="difficulty_normal">Normal</string>
+    <string name="difficulty_easy">kolay</string>
+    <string name="difficulty_hard">sert</string>
+    <string name="gender_male">Erkek</string>
+    <string name="gender_female">Kadın</string>
+    <string name="gender_select_prompt">Cinsiyet seçin</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Bir şey ters gitti.</string>
+    <string name="button_new_game">Yeni Oyun</string>
+    <string name="text_round_number">Dört %1$d</string>
+    <string name="text_scenario">Senaryo</string>
+    <string name="button_next">Sonraki .</string>
+    <string name="icon_desc_selected_option">Seçili seçenek</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>Arapça (Birleşik Arap Emirlikleri)</item>
+        <item>Assamlılar</item>
+        <item>Asturyalı</item>
+        <item>Azerbaycanca</item>
+        <item>Bambara</item>
+        <item>Belarusca</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibet</item>
+        <item>Bosnalı</item>
+        <item>Bulgarca</item>
+        <item>Katalanca</item>
+        <item>Çek</item>
+        <item>Galler</item>
+        <item>Danimarka</item>
+        <item>Almanca</item>
+        <item>Dzongkha</item>
+        <item>Yunanca</item>
+        <item>İngilizce</item>
+        <item>Estonya</item>
+        <item>Bask</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Faroese</item>
+        <item>Fince</item>
+        <item>Fransızca</item>
+        <item>Friulian</item>
+        <item>İskoç Gaelic</item>
+        <item>İrlanda</item>
+        <item>Galician</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>İbranice</item>
+        <item>Hindi</item>
+        <item>Hırvatça</item>
+        <item>Macarca</item>
+        <item>Ermeni</item>
+        <item>Igbo</item>
+        <item>Endonezya</item>
+        <item>İzlandaca</item>
+        <item>İtalyanca</item>
+        <item>Japonca</item>
+        <item>Kabile</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Gürcüce</item>
+        <item>Kazakistan</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Koreli</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgo</item>
+        <item>Lingala</item>
+        <item>Litvanya</item>
+        <item>Lüksemburgca</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Standart Letonya dili</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Makedonyalı</item>
+        <item>Madagaskar (Madagaskar)</item>
+        <item>Maltalı (Malta)</item>
+        <item>Halh Moğol</item>
+        <item>Malezya (Malaysia)</item>
+        <item>Myanmarca</item>
+        <item>Hollanda</item>
+        <item>Norveçli Nynorsk</item>
+        <item>Norveç Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Güney Sudan)</item>
+        <item>Oromo (Etiopya)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (Hindistan)</item>
+        <item>Punjabi</item>
+        <item>Polonyalı</item>
+        <item>Portekizce</item>
+        <item>Farsça (Afganistan)</item>
+        <item>Farsça (İran)</item>
+        <item>Pashto (Afganistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Romanya</item>
+        <item>Burundi (Burundi)</item>
+        <item>Rusça</item>
+        <item>Sango (Orta Afrika Cumhuriyeti)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovak (Slovakya)</item>
+        <item>Slovenya dili</item>
+        <item>Şona (Zimbabwe)</item>
+        <item>Somali</item>
+        <item>İspanyolca</item>
+        <item>Albanyalı (Albanya)</item>
+        <item>Sırpça</item>
+        <item>İsveççe</item>
+        <item>Swahili</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Tayland</item>
+        <item>Türkçe</item>
+        <item>Ukraynalı</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (Çin)</item>
+        <item>Özbekistan (Latin, Özbekistan)</item>
+        <item>Vietnamlı</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Kanton dili</item>
+        <item>Basitleştirilmiş Mandarin Çince</item>
+        <item>Mandarin Çince Geleneksel</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ihe a ga-ahọrọ</string>
+    <string name="optional_enter_the_role_e_g_student">Nhọrọ: Tinye ọrụ ahụ, dịka ọmụmaatụ, Nwa akwụkwọ</string>
+    <string name="analysis_my_choices">Nyochaa ihe ndị m kpebiri ime</string>
+    <string name="analysis_your_selections">Nyochaa nhọrọ gị</string>
+    <string name="rounds">Ụgbọala</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Ọnụ ọgụgụ na-agbakọ dabere na ahụike, akụnụba, mmekọrịta, obi ụtọ, ihe ọmụma, karma, njikwa oge, mmetụta gburugburu ebe obibi, uto onwe onye, na ibu ọrụ ọha na eze</string>
+    <string name="settings_title">Ihe a ga-ahọrọ</string>
+    <string name="settings_subtitle">Ihe ndị ị ga-eme ga-adabere n\'ihe ndị ị họọrọ.</string>
+    <string name="settings_label_subject">Tinye isiokwu ahụ</string>
+    <string name="settings_hint_select_question_type">Họrọ ụdị ajụjụ</string>
+    <string name="settings_hint_select_subtype">Họrọ subtype</string>
+    <string name="settings_hint_select_difficulty">Họrọ ọkwa siri ike</string>
+    <string name="settings_hint_select_gender_optional">Nhọrọ: Họrọ okike gị</string>
+    <string name="settings_label_age">Bịa n\'Oge Gị</string>
+    <string name="settings_hint_select_language">Họrọ asụsụ gị</string>
+    <string name="settings_button_generate_cases">Mepụta Ọnọdụ</string>
+    <string name="question_type_study">Ịmụ ihe</string>
+    <string name="question_type_behavioral">Àgwà</string>
+    <string name="question_type_hiring">Ịkwụ Ụgwọ</string>
+    <string name="subtype_behavioral_interpersonal">Amamihe Ndị Dị n\'Ebe Ndị Ọzọ Nọ</string>
+    <string name="subtype_behavioral_ethical">Nsogbu Ndị Dị n\'Omume</string>
+    <string name="subtype_behavioral_stress">Otú E Si Na-edozi Nchegbu</string>
+    <string name="subtype_study_mastery">Ịmụta Okwu nke Ọma</string>
+    <string name="subtype_study_critical_thinking">Echiche Dị Oké Mkpa</string>
+    <string name="subtype_study_practical_application">Ihe Ndị Ga-enyere Ha Aka</string>
+    <string name="subtype_hiring_technical">Amamihe Ndị Dị na Teknụzụ</string>
+    <string name="subtype_hiring_behavioral_interview">Ajụjụ Ọnụ Banyere Omume</string>
+    <string name="subtype_hiring_situational_judgment">Ikpe Banyere Ọnọdụ</string>
+    <string name="difficulty_normal">nkịtị</string>
+    <string name="difficulty_easy">dị mfe</string>
+    <string name="difficulty_hard">ike</string>
+    <string name="gender_male">Nwoke</string>
+    <string name="gender_female">Nwaanyị</string>
+    <string name="gender_select_prompt">Họrọ okike</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Ọ dị ihe merenụ .</string>
+    <string name="button_new_game">Egwuregwu Ọhụrụ</string>
+    <string name="text_round_number">Gburugburu %1$d</string>
+    <string name="text_scenario">Ihe e dere na ya</string>
+    <string name="button_next">Nke na-esote</string>
+    <string name="icon_desc_selected_option">Nhọrọ a họọrọ</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Ndị Akan</item>
+        <item>Amharic</item>
+        <item>Arabic (United Arab Emirates)</item>
+        <item>Assamese</item>
+        <item>asụsụ Asturian</item>
+        <item>Azerbaijani</item>
+        <item>Bambara</item>
+        <item>Belarusian</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Ndị Tibet</item>
+        <item>Bosnian</item>
+        <item>Bulgarian</item>
+        <item>Ndị Katalan</item>
+        <item>Czech</item>
+        <item>Ndị Welsh</item>
+        <item>Danish</item>
+        <item>N\'asụsụ German</item>
+        <item>Dzongkha</item>
+        <item>Grik</item>
+        <item>Bekee</item>
+        <item>asụsụ Estonian</item>
+        <item>Ndị Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Ndị Fero</item>
+        <item>asụsụ Finnish</item>
+        <item>French</item>
+        <item>Friulian</item>
+        <item>Asụsụ Scottish Gaelic</item>
+        <item>Ireland</item>
+        <item>Galician</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Hibru</item>
+        <item>Hindi</item>
+        <item>asụsụ Croatian</item>
+        <item>asụsụ Hungarian</item>
+        <item>Ndị Armenia</item>
+        <item>Igbo</item>
+        <item>Indonesian</item>
+        <item>asụsụ Icelandic</item>
+        <item>Ịtali</item>
+        <item>Ndị Japan</item>
+        <item>Igbo</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>asụsụ Georgian</item>
+        <item>Kazakstan</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Ndị Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Ndị Korea</item>
+        <item>Laos (Laos)</item>
+        <item>Asụsụ Limburg</item>
+        <item>asụsụ Lingala</item>
+        <item>asụsụ Lithuanian</item>
+        <item>Luxembourgish</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Standard Latvian</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Macedonian</item>
+        <item>Malagasy (Madagascar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Halh Mongolian</item>
+        <item>Malay (Malaysia)</item>
+        <item>Ndị Burma</item>
+        <item>N\'asụsụ Dutch</item>
+        <item>Norwegian Nynorsk</item>
+        <item>Bokmål Norwegian</item>
+        <item>Nepal (Nepal)</item>
+        <item>Nuer (South Sudan)</item>
+        <item>Oromo (Ethiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>Polish</item>
+        <item>Portuguese</item>
+        <item>Asụsụ Peshia (Afghanistan)</item>
+        <item>Asụsụ Peshia (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>asụsụ Romanian</item>
+        <item>Rwanda (Burundi)</item>
+        <item>Ndị Russia</item>
+        <item>Sango (Central African Republic)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovak (Slovakia)</item>
+        <item>asụsụ Slovenian</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somali</item>
+        <item>Spanish</item>
+        <item>Albanian (Albania)</item>
+        <item>asụsụ Serbian</item>
+        <item>asụsụ Swedish</item>
+        <item>Swahili</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Ndị Thai</item>
+        <item>asụsụ Tọki</item>
+        <item>Ukrainian</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uighur (China)</item>
+        <item>Uzbek (Latin, Uzbekistan)</item>
+        <item>Ndị Vietnamese</item>
+        <item>Ndị Xhosa</item>
+        <item>asụsụ Yoruba</item>
+        <item>asụsụ Cantonese</item>
+        <item>Asụsụ Mandarin Chinese Dị Mfe</item>
+        <item>Mandarin Chinese Traditional</item>
+        <item>Ndị Zulu</item>
+    </string-array>
+</resources>

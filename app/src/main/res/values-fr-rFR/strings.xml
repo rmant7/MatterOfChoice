@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Matériau de choix</string>
+    <string name="optional_enter_the_role_e_g_student">Facultatif: saisir le rôle, par exemple, étudiant</string>
+    <string name="analysis_my_choices">Analyser mes choix</string>
+    <string name="analysis_your_selections">Analysez vos choix</string>
+    <string name="rounds">Les coups</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Le score est calculé en fonction de la santé, de la richesse, des relations, du bonheur, des connaissances, du karma, de la gestion du temps, de l\'impact environnemental, de la croissance personnelle et de la responsabilité sociale.</string>
+    <string name="settings_title">Matériau de choix</string>
+    <string name="settings_subtitle">Les scénarios seront basés sur vos choix</string>
+    <string name="settings_label_subject">Entrez le sujet</string>
+    <string name="settings_hint_select_question_type">Sélectionnez le type de question</string>
+    <string name="settings_hint_select_subtype">Sélectionnez le sous-type</string>
+    <string name="settings_hint_select_difficulty">Sélectionnez le niveau difficile</string>
+    <string name="settings_hint_select_gender_optional">Facultatif: sélectionnez votre sexe</string>
+    <string name="settings_label_age">Entrez dans votre âge</string>
+    <string name="settings_hint_select_language">Sélectionnez votre langue</string>
+    <string name="settings_button_generate_cases">Générer des cas</string>
+    <string name="question_type_study">Étudier</string>
+    <string name="question_type_behavioral">Le comportement</string>
+    <string name="question_type_hiring">Le recrutement</string>
+    <string name="subtype_behavioral_interpersonal">Les compétences interpersonnelles</string>
+    <string name="subtype_behavioral_ethical">Les dilemmes éthiques</string>
+    <string name="subtype_behavioral_stress">Gestion du stress</string>
+    <string name="subtype_study_mastery">Maîtrise du sujet</string>
+    <string name="subtype_study_critical_thinking">Réflexion critique</string>
+    <string name="subtype_study_practical_application">Application pratique</string>
+    <string name="subtype_hiring_technical">Les compétences techniques</string>
+    <string name="subtype_hiring_behavioral_interview">Interview comportementale</string>
+    <string name="subtype_hiring_situational_judgment">Le jugement de la situation</string>
+    <string name="difficulty_normal">normalement</string>
+    <string name="difficulty_easy">facilement</string>
+    <string name="difficulty_hard">dur</string>
+    <string name="gender_male">Le mâle</string>
+    <string name="gender_female">Femme</string>
+    <string name="gender_select_prompt">Sélectionnez le sexe</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Quelque chose ne va pas.</string>
+    <string name="button_new_game">Nouveau jeu</string>
+    <string name="text_round_number">Ronde %1$d</string>
+    <string name="text_scenario">Scénario</string>
+    <string name="button_next">La prochaine .</string>
+    <string name="icon_desc_selected_option">Option sélectionnée</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Africaans</item>
+        <item>Akan</item>
+        <item>Amharique</item>
+        <item>Arabe (Émirats arabes unis)</item>
+        <item>Les Assamites</item>
+        <item>L\'Austurienne</item>
+        <item>L\'Azerbaïdjan</item>
+        <item>Le bambara</item>
+        <item>Biélorusse</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Le tibétain</item>
+        <item>La Bosnie</item>
+        <item>Bulgare</item>
+        <item>Catalan</item>
+        <item>Tchèque</item>
+        <item>Pays de Galles</item>
+        <item>Danois</item>
+        <item>En allemand</item>
+        <item>Le Dzongkha</item>
+        <item>Le grec</item>
+        <item>En anglais</item>
+        <item>L\'estonien</item>
+        <item>Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Éve (Togo)</item>
+        <item>Féroé</item>
+        <item>Finlandais</item>
+        <item>Français</item>
+        <item>Friulien</item>
+        <item>Gaélique écossais</item>
+        <item>Pays d\'Irlande</item>
+        <item>Galicien</item>
+        <item>Gujarati</item>
+        <item>Hausse</item>
+        <item>Hébreu</item>
+        <item>Le hindi</item>
+        <item>Croate</item>
+        <item>La langue hongroise</item>
+        <item>Arménie</item>
+        <item>L\'Igbo</item>
+        <item>Indonésien</item>
+        <item>La langue islandaise</item>
+        <item>L\'italien</item>
+        <item>Japonais</item>
+        <item>Le kabyle</item>
+        <item>Le Kamba</item>
+        <item>Le canadien</item>
+        <item>Géorgien</item>
+        <item>Le Kazakhstan</item>
+        <item>Kabuverdianu (créole du Cap-Vert)</item>
+        <item>Le Khmer</item>
+        <item>Le Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirghizistan</item>
+        <item>Coréen</item>
+        <item>Le Laos (Laos)</item>
+        <item>Le Limburg</item>
+        <item>Lingala</item>
+        <item>Lituanien</item>
+        <item>L\'espagnol</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Letton standard</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Macédoine</item>
+        <item>Malgache (Madagascar)</item>
+        <item>Maltais (Malte)</item>
+        <item>Halh mongol</item>
+        <item>Malaisie (Malaisie)</item>
+        <item>Les Birmans</item>
+        <item>Pays-Bas</item>
+        <item>Nynorsk norvégien</item>
+        <item>Bokmål norvégien</item>
+        <item>Népalais (Népal)</item>
+        <item>Nuer (Soudan du Sud)</item>
+        <item>Oromo (Éthiopie)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (Inde)</item>
+        <item>Punjabi</item>
+        <item>Polonais</item>
+        <item>Portugais</item>
+        <item>Perse (Afghanistan)</item>
+        <item>Perse (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivie)</item>
+        <item>Quechua (Équateur)</item>
+        <item>Quechua (Pérou)</item>
+        <item>La langue roumaine</item>
+        <item>Rundi (Burundi)</item>
+        <item>Le russe</item>
+        <item>Sango (République centrafricaine)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovaque (Slovaquie)</item>
+        <item>Slovénie</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>La Somalie</item>
+        <item>Espagnol</item>
+        <item>Albanais (Albanie)</item>
+        <item>La langue serbe</item>
+        <item>Suédois</item>
+        <item>Le swahili</item>
+        <item>Le tamoul</item>
+        <item>Télugu</item>
+        <item>Thaïlandais</item>
+        <item>Turquie</item>
+        <item>En ukrainien</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Ouïghour (Chine)</item>
+        <item>Ouzbékistan (latin, Ouzbékistan)</item>
+        <item>Le vietnamien</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Le cantonais</item>
+        <item>Le chinois mandarin simplifié</item>
+        <item>Traditionnel chinois mandarin</item>
+        <item>Zoulou</item>
+    </string-array>
+</resources>

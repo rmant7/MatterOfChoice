@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Materja ta\' għażla</string>
+    <string name="optional_enter_the_role_e_g_student">Optattiv: Daħħal ir-rwol, eż. Student</string>
+    <string name="analysis_my_choices">Analizza l-għażliet tiegħi</string>
+    <string name="analysis_your_selections">Analiżi l-għażliet tiegħek</string>
+    <string name="rounds">Runnings</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Il-punteġġ jiġi kkalkulat abbażi tas-saħħa, il-ġid, ir-relazzjonijiet, il-ferħ, il-għarfien, il-karma, il-ġestjoni tal-ħin, l-impatt ambjentali, it-tkabbir personali, u r-responsabbiltà soċjali</string>
+    <string name="settings_title">Materja ta\' għażla</string>
+    <string name="settings_subtitle">Is-senariji se jkunu bbażati fuq l-għażla tiegħek</string>
+    <string name="settings_label_subject">Daħħal is-suġġett</string>
+    <string name="settings_hint_select_question_type">Agħżel it-tip ta \' mistoqsija</string>
+    <string name="settings_hint_select_subtype">Agħżel is-sottotip</string>
+    <string name="settings_hint_select_difficulty">Agħżel il-livell diffiċli</string>
+    <string name="settings_hint_select_gender_optional">Optattiv: Agħżel is-sess tiegħek</string>
+    <string name="settings_label_age">Idħol fl-età tiegħek</string>
+    <string name="settings_hint_select_language">Agħżel il- lingwa tiegħek</string>
+    <string name="settings_button_generate_cases">Ġenera Każi</string>
+    <string name="question_type_study">Studju</string>
+    <string name="question_type_behavioral">L- imġiba</string>
+    <string name="question_type_hiring">Ħatra</string>
+    <string name="subtype_behavioral_interpersonal">Ħiliet Interpersonali</string>
+    <string name="subtype_behavioral_ethical">Dilemmi Etatiċi</string>
+    <string name="subtype_behavioral_stress">Ġestjoni tal- Stress</string>
+    <string name="subtype_study_mastery">Is-Sostituzzjoni tas-Sostituzzjoni</string>
+    <string name="subtype_study_critical_thinking">Ħsieb Kritiku</string>
+    <string name="subtype_study_practical_application">Applikazzjoni Prattika</string>
+    <string name="subtype_hiring_technical">Ħiliet tekniċi</string>
+    <string name="subtype_hiring_behavioral_interview">Intervista dwar il- Mġieba</string>
+    <string name="subtype_hiring_situational_judgment">Ġudizzju Situzzjonali</string>
+    <string name="difficulty_normal">normali</string>
+    <string name="difficulty_easy">faċli</string>
+    <string name="difficulty_hard">iebsa</string>
+    <string name="gender_male">Raġel</string>
+    <string name="gender_female">In-nisa</string>
+    <string name="gender_select_prompt">Agħżel is-sess</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Xi ħaġa marret ħażin</string>
+    <string name="button_new_game">Logħba ġdida</string>
+    <string name="text_round_number">Runt %1$d</string>
+    <string name="text_scenario">Scenarju</string>
+    <string name="button_next">Iktar tard</string>
+    <string name="icon_desc_selected_option">Opzjoni magħżula</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>Għarab (l-Emirati Għarab Magħquda)</item>
+        <item>L-Assam</item>
+        <item>Asturjan</item>
+        <item>L-Ażerbajġan</item>
+        <item>Bambara</item>
+        <item>Belorussku</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibetani</item>
+        <item>Il-Bosnja</item>
+        <item>Il-Bulgarija</item>
+        <item>Katalan</item>
+        <item>Ċeka</item>
+        <item>Ġermaniż</item>
+        <item>Danimarka</item>
+        <item>Ġermaniż</item>
+        <item>Dzongkha</item>
+        <item>Grieg</item>
+        <item>Ingliż</item>
+        <item>L-Estonja</item>
+        <item>Baski</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Ġermaniżi</item>
+        <item>L-Islandiż</item>
+        <item>Franċiż</item>
+        <item>Friulian</item>
+        <item>Il- Gaelic Iskotlandiż</item>
+        <item>Irlandiż</item>
+        <item>Galiċjan</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>L- Ebrajk</item>
+        <item>L-Indja</item>
+        <item>Il-Kroazjan</item>
+        <item>Ingliż</item>
+        <item>Ġermaniż</item>
+        <item>Igbo</item>
+        <item>Indoneżjan</item>
+        <item>Islandiż</item>
+        <item>L-Italjan</item>
+        <item>Ġappuniżi</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Ġorġjan</item>
+        <item>Il-Kazak</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Ġermaniż</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Il-Kirgiżistan</item>
+        <item>Il-Korea</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgiż</item>
+        <item>Lingala</item>
+        <item>Ġermaniż</item>
+        <item>Lussemburgiż</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Estandard tal-Latvja</item>
+        <item>Maljalam</item>
+        <item>Marathi</item>
+        <item>Ġermaniż</item>
+        <item>Maltin (Madagaskar)</item>
+        <item>Maltin (Malta)</item>
+        <item>Ħalħ Mongolu</item>
+        <item>Malay (Malasja)</item>
+        <item>Birmaniya</item>
+        <item>Olandiż</item>
+        <item>Nynorsk Norveġiża</item>
+        <item>Bokmål Norveġiż</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Is-Sudan t\'Isfel)</item>
+        <item>Oromo (l-Etiopja)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (l-Indja)</item>
+        <item>Punjabi</item>
+        <item>Ġermaniż</item>
+        <item>Portugiż</item>
+        <item>Persjan (l-Afganistan)</item>
+        <item>Persjan (l-Iran)</item>
+        <item>Pashto (l-Afganistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (l- Ekwador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Ġermaniż</item>
+        <item>Rundi (Burundi)</item>
+        <item>Ġermaniż</item>
+        <item>Sango (Repubblika tal-Afrika Ċentrali)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovakkja (Slovakkja)</item>
+        <item>Is-Slovenja</item>
+        <item>Shona (Żimbabwe)</item>
+        <item>Somalja</item>
+        <item>Spanjol</item>
+        <item>Albanian (l-Albanija)</item>
+        <item>Is-Serbja</item>
+        <item>Ġermaniż</item>
+        <item>Is- Suahili</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Tajlandiża</item>
+        <item>Ċipru</item>
+        <item>Ġermaniż</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (Ċina)</item>
+        <item>Uzbekistan (Latin, Uzbekistan)</item>
+        <item>Vjetnamita</item>
+        <item>Xhosa</item>
+        <item>Ġoruba</item>
+        <item>Kantonese</item>
+        <item>Is- Ċiniż Mandarin Semplifikat</item>
+        <item>Tradizzjonali Ċiniż Mandarin</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

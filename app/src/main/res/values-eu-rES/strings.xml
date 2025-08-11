@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Aukeraren arazoa</string>
+    <string name="optional_enter_the_role_e_g_student">Aukerako: Sartu papera, adibidez, ikaslea</string>
+    <string name="analysis_my_choices">Nire aukerak aztertu.</string>
+    <string name="analysis_your_selections">Zure aukeraketa aztertu</string>
+    <string name="rounds">Balak.</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Osasuna, aberastasuna, harremanak, zoriontasuna, ezagutza, karma, denbora kudeaketa, ingurumen-inpaktua, hazkunde pertsonala eta erantzukizun soziala.</string>
+    <string name="settings_title">Aukeraren arazoa</string>
+    <string name="settings_subtitle">Eszenarioak zure aukeraren arabera izango dira.</string>
+    <string name="settings_label_subject">Sartu gaia.</string>
+    <string name="settings_hint_select_question_type">Aukeratu galdera mota</string>
+    <string name="settings_hint_select_subtype">Aukeratu azpi-tipoa</string>
+    <string name="settings_hint_select_difficulty">Aukeratu maila zaila</string>
+    <string name="settings_hint_select_gender_optional">Aukerako: Aukeratu zure generoa</string>
+    <string name="settings_label_age">Sartu zure adinean.</string>
+    <string name="settings_hint_select_language">Aukeratu hizkuntza</string>
+    <string name="settings_button_generate_cases">Kasuak sortzea</string>
+    <string name="question_type_study">Ikasketa</string>
+    <string name="question_type_behavioral">Jarrera</string>
+    <string name="question_type_hiring">Kontratazioa</string>
+    <string name="subtype_behavioral_interpersonal">Pertsona arteko trebetasunak</string>
+    <string name="subtype_behavioral_ethical">Dilema etikoak</string>
+    <string name="subtype_behavioral_stress">Estresaren kudeaketa</string>
+    <string name="subtype_study_mastery">Subjektuaren jabetza</string>
+    <string name="subtype_study_critical_thinking">Pentsamendu kritikoa</string>
+    <string name="subtype_study_practical_application">Erabilera praktikoa</string>
+    <string name="subtype_hiring_technical">Gaitasun teknikoak</string>
+    <string name="subtype_hiring_behavioral_interview">Jarrera elkarrizketa</string>
+    <string name="subtype_hiring_situational_judgment">Egoeraren ebazpena</string>
+    <string name="difficulty_normal">Normala.</string>
+    <string name="difficulty_easy">Erraza.</string>
+    <string name="difficulty_hard">gogorra</string>
+    <string name="gender_male">Gizona</string>
+    <string name="gender_female">Emakumezkoak</string>
+    <string name="gender_select_prompt">Aukeratu generoa</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Zerbait gaizki atera da.</string>
+    <string name="button_new_game">Joko berria</string>
+    <string name="text_round_number">%1$d ingurukoa</string>
+    <string name="text_scenario">Eszenarioak</string>
+    <string name="button_next">Hurrengoa.</string>
+    <string name="icon_desc_selected_option">Aukera aukeratua</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans hitza</item>
+        <item>Akan</item>
+        <item>Amhariera</item>
+        <item>Arabiarra (Emiratu Arabiarrak)</item>
+        <item>Assamtarrak</item>
+        <item>Asturiarra</item>
+        <item>Azerbaijanoa</item>
+        <item>Bambara</item>
+        <item>Belarusiarra</item>
+        <item>Bemba</item>
+        <item>Bengala</item>
+        <item>Tibetarra</item>
+        <item>Bosniarra</item>
+        <item>Bulgarian</item>
+        <item>Kataluniarra</item>
+        <item>Txekiarra</item>
+        <item>Galeskoa</item>
+        <item>Danimarkako</item>
+        <item>Alemaniarra</item>
+        <item>Dzongkha</item>
+        <item>Greziarra</item>
+        <item>Ingelesez</item>
+        <item>Estoniarra</item>
+        <item>Euskal herria</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Faroekoak</item>
+        <item>Finlandiera</item>
+        <item>Frantsesa</item>
+        <item>Friuliarra</item>
+        <item>Gaeliko eskoziarra</item>
+        <item>Irlandarra</item>
+        <item>Galiziarra</item>
+        <item>Gujarati</item>
+        <item>Hausa hizkuntza</item>
+        <item>Hebreeraz</item>
+        <item>Indieraz</item>
+        <item>Kroatarra</item>
+        <item>Hungariarra</item>
+        <item>Armeniarra</item>
+        <item>Igboak</item>
+        <item>Indonesian</item>
+        <item>Islandiarra</item>
+        <item>Italiarra</item>
+        <item>Japoniarra</item>
+        <item>Kabylea</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Georgiarra</item>
+        <item>Kazaktarra</item>
+        <item>Kabuverdianu (Kabe Verdezko kreola)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirgistan</item>
+        <item>Korearra</item>
+        <item>Lao (Laos)</item>
+        <item>Limburgoak</item>
+        <item>Lingala</item>
+        <item>Lituaniera</item>
+        <item>Luxemburgoz</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Letoniar Estandarra</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Mazedoniarra</item>
+        <item>Malagasy (Madagaskar)</item>
+        <item>Maltarra (Malta)</item>
+        <item>HALH Mongoliarra</item>
+        <item>Malay (Malaysia)</item>
+        <item>Birmaniarra</item>
+        <item>Holandarra</item>
+        <item>Norvegiako Nynorsk</item>
+        <item>Norvegiako Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Hego Sudan)</item>
+        <item>Oromo (Etiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (Indiako)</item>
+        <item>Punjabi</item>
+        <item>Poloniarra</item>
+        <item>Portugesak</item>
+        <item>Persiarra (Afganistan)</item>
+        <item>Persiarra (Iran)</item>
+        <item>Pashto (Afganistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Errumanieraz</item>
+        <item>Rundi (Burundi)</item>
+        <item>Errusiarra</item>
+        <item>Sango (Erdialdeko Afrikako Errepublika)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Eslowakia (Eslowakia)</item>
+        <item>Eslovenieraz</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somaliarra</item>
+        <item>Gaztelania</item>
+        <item>Albaniarra (Albania)</item>
+        <item>Serbiarra</item>
+        <item>Suediarra</item>
+        <item>Suahila</item>
+        <item>Tamila</item>
+        <item>Telugu</item>
+        <item>Thailandiarra</item>
+        <item>Turkiarra</item>
+        <item>Ukrainarra</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (Txina)</item>
+        <item>Uzbekistan (latina, Uzbekistan)</item>
+        <item>Vietnamdarrak</item>
+        <item>Xhosa hizkuntza</item>
+        <item>Yoruba</item>
+        <item>Kantonesa</item>
+        <item>Txinatar hizkuntza sinplifikatua</item>
+        <item>Mandarin txinatar tradizionala</item>
+        <item>Zuluak</item>
+    </string-array>
+</resources>

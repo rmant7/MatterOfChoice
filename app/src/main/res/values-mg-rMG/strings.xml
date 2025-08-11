@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Zava-pifidianana</string>
+    <string name="optional_enter_the_role_e_g_student">Tsy voatery: Ampidiro ny andraikitra, ohatra: Mpianatra</string>
+    <string name="analysis_my_choices">Fandinihana ny safidiko</string>
+    <string name="analysis_your_selections">Fandinihana ny safidinao</string>
+    <string name="rounds">Tsipìka</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Manisa isa mifototra amin\'ny fahasalamana, harena, fifandraisana, fahasambarana, fahalalana, karma, fitantanana ny fotoana, fiantraikan\'ny tontolo iainana, fitomboana manokana ary andraikitra ara-tsosialy</string>
+    <string name="settings_title">Zava-pifidianana</string>
+    <string name="settings_subtitle">Miorina amin\'ny safidinao ny scenario</string>
+    <string name="settings_label_subject">Ampidiro ny lohahevitra</string>
+    <string name="settings_hint_select_question_type">Safidio ny karazana fanontaniana</string>
+    <string name="settings_hint_select_subtype">Safidio ny karazana</string>
+    <string name="settings_hint_select_difficulty">Safidio ny ambaratonga sarotra</string>
+    <string name="settings_hint_select_gender_optional">Tsy voatery: Safidio ny lahy sy ny vavy</string>
+    <string name="settings_label_age">Midira ao amin\'ny taonanao</string>
+    <string name="settings_hint_select_language">Safidio ny fiteninao</string>
+    <string name="settings_button_generate_cases">Mamorona tranga</string>
+    <string name="question_type_study">Fianarana</string>
+    <string name="question_type_behavioral">Ny fitondran-tena</string>
+    <string name="question_type_hiring">Manakarama olona</string>
+    <string name="subtype_behavioral_interpersonal">Fahaiza-manao eo Amin\'ny Olona</string>
+    <string name="subtype_behavioral_ethical">Olana Momba ny Fitondran-tena</string>
+    <string name="subtype_behavioral_stress">Fitantanana ny adin-tsaina</string>
+    <string name="subtype_study_mastery">Fitaizana amin\'ny lohahevitra</string>
+    <string name="subtype_study_critical_thinking">Fihetseham-po Manakiana</string>
+    <string name="subtype_study_practical_application">Fampiharana azo ampiharina</string>
+    <string name="subtype_hiring_technical">Fahaiza-manao ara-teknika</string>
+    <string name="subtype_hiring_behavioral_interview">Fanadinadinana momba ny fitondran-tena</string>
+    <string name="subtype_hiring_situational_judgment">Fitsarana avy Amin\'ny Toe-javatra</string>
+    <string name="difficulty_normal">ara-dalàna</string>
+    <string name="difficulty_easy">mora</string>
+    <string name="difficulty_hard">mafy</string>
+    <string name="gender_male">Lehilahy</string>
+    <string name="gender_female">Vehivavy</string>
+    <string name="gender_select_prompt">Safidio ny lahy sy ny vavy</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Nisy zavatra tsy nety.</string>
+    <string name="button_new_game">Lalao Vaovao</string>
+    <string name="text_round_number">Manodidina %1$d</string>
+    <string name="text_scenario">Scenario</string>
+    <string name="button_next">Manaraka</string>
+    <string name="icon_desc_selected_option">Safidy voafantina</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>Arabo (Emiraty Arabo Mitambatra)</item>
+        <item>Assamese</item>
+        <item>Asturiana</item>
+        <item>Azerbaïdjana</item>
+        <item>Bambara</item>
+        <item>Belarosiana</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibetana</item>
+        <item>Bosnianina</item>
+        <item>Bolgara</item>
+        <item>Katalanina</item>
+        <item>Tseky</item>
+        <item>Valesy</item>
+        <item>Danemark</item>
+        <item>Teny alemà</item>
+        <item>Dzongkha</item>
+        <item>Grika</item>
+        <item>Fiteny anglisy</item>
+        <item>Estonianina</item>
+        <item>Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Fary</item>
+        <item>Fiteny finlandey</item>
+        <item>Frantsay</item>
+        <item>Frisianina</item>
+        <item>Gaelika Scottish</item>
+        <item>Irlandy</item>
+        <item>Galizia</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Hebreo</item>
+        <item>Ny teny hindi</item>
+        <item>Kroaty</item>
+        <item>teny hongroà</item>
+        <item>Armeniana</item>
+        <item>Igbo</item>
+        <item>Indoneziana</item>
+        <item>Fiteny Islandy</item>
+        <item>Italiana</item>
+        <item>Japoney</item>
+        <item>Kabylie</item>
+        <item>Kamba</item>
+        <item>Ny teny Kannada</item>
+        <item>Teny géorgienne</item>
+        <item>Kazaky</item>
+        <item>Kabuverdianu (Kreola Cape Verde)</item>
+        <item>Kmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Koreana</item>
+        <item>Laos (Laos)</item>
+        <item>Limburge</item>
+        <item>Lingala</item>
+        <item>Litoanianina</item>
+        <item>Luxembourgeois</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Fiteny Latvian mahazatra</item>
+        <item>Malayalam</item>
+        <item>teny marathi</item>
+        <item>Malagasy</item>
+        <item>Malagasy (Madagasikara)</item>
+        <item>Malagasy (Malta)</item>
+        <item>Teny Mongoliana</item>
+        <item>Malaisy (Malaysia)</item>
+        <item>Birmana</item>
+        <item>Holandey</item>
+        <item>Norvezy Nynorsk</item>
+        <item>Bokmål norveziana</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Sodàna Atsimo)</item>
+        <item>Oromo (Etiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>Poloney</item>
+        <item>Portiogey</item>
+        <item>Persian (Afghanistan)</item>
+        <item>Persian (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ekuatera)</item>
+        <item>Quechua (Peru)</item>
+        <item>Rômanina</item>
+        <item>Rundi (Burundi)</item>
+        <item>Rosiana</item>
+        <item>Sango (Repoblika Afrikana Afovoany)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovakia (Slovakia)</item>
+        <item>fiteny slovene</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somaly</item>
+        <item>Espaniola</item>
+        <item>Albanian (Albania)</item>
+        <item>teny serba</item>
+        <item>teny soedoa</item>
+        <item>Fiteny swahili</item>
+        <item>Tamila</item>
+        <item>Telugu</item>
+        <item>Thailandy</item>
+        <item>Torkia</item>
+        <item>Okrainiana</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uighur (Shinoa)</item>
+        <item>Ozbekistan (latina, Ozbekistan)</item>
+        <item>Vietnamianina</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Kantonese</item>
+        <item>Sinoa Mandarin Tsotsotra</item>
+        <item>Sinoa Mandarin nentim-paharazana</item>
+        <item>Zolo</item>
+    </string-array>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">選択事項</string>
+    <string name="optional_enter_the_role_e_g_student">オプション: 役割を入力します.例えば,学生</string>
+    <string name="analysis_my_choices">選択を分析する</string>
+    <string name="analysis_your_selections">選択を分析する</string>
+    <string name="rounds">弾丸</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">健康,富,関係,幸福,知識,カルマ,時間管理,環境影響,個人成長,社会的責任に基づくスコア計算</string>
+    <string name="settings_title">選択事項</string>
+    <string name="settings_subtitle">シナリオは あなたの選択に基づきます</string>
+    <string name="settings_label_subject">テーマを入力する</string>
+    <string name="settings_hint_select_question_type">質問タイプを選択する</string>
+    <string name="settings_hint_select_subtype">サブタイプを選択する</string>
+    <string name="settings_hint_select_difficulty">難しいレベルを選択する</string>
+    <string name="settings_hint_select_gender_optional">オプション: 性別を選択する</string>
+    <string name="settings_label_age">自分 の 年齢 に 入る</string>
+    <string name="settings_hint_select_language">言語を選択する</string>
+    <string name="settings_button_generate_cases">ケースを生成する</string>
+    <string name="question_type_study">勉強</string>
+    <string name="question_type_behavioral">行動</string>
+    <string name="question_type_hiring">雇用</string>
+    <string name="subtype_behavioral_interpersonal">人間の 能力</string>
+    <string name="subtype_behavioral_ethical">倫理 的 な 問題</string>
+    <string name="subtype_behavioral_stress">ストレス管理</string>
+    <string name="subtype_study_mastery">テーマのマスター</string>
+    <string name="subtype_study_critical_thinking">批判 的 な 考え</string>
+    <string name="subtype_study_practical_application">実践 的 な 応用</string>
+    <string name="subtype_hiring_technical">技術技能</string>
+    <string name="subtype_hiring_behavioral_interview">行動面接</string>
+    <string name="subtype_hiring_situational_judgment">状況 の 判断</string>
+    <string name="difficulty_normal">普通</string>
+    <string name="difficulty_easy">簡単</string>
+    <string name="difficulty_hard">硬い</string>
+    <string name="gender_male">男性</string>
+    <string name="gender_female">女性</string>
+    <string name="gender_select_prompt">性別を選択する</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">何かが間違えた</string>
+    <string name="button_new_game">新しいゲーム</string>
+    <string name="text_round_number">丸 %1$d</string>
+    <string name="text_scenario">シナリオ</string>
+    <string name="button_next">次は</string>
+    <string name="icon_desc_selected_option">選択したオプション</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>アフリカ語</item>
+        <item>アカン</item>
+        <item>アマール語</item>
+        <item>アラビア語 (アラブ首長国連邦)</item>
+        <item>アッサム語</item>
+        <item>アスタリア語</item>
+        <item>アゼルバイジャン語</item>
+        <item>バンバラ</item>
+        <item>ベラルーシ語</item>
+        <item>ベンバ</item>
+        <item>ベンガル語</item>
+        <item>チベット語</item>
+        <item>ボスニア語</item>
+        <item>ブルガリア語</item>
+        <item>カタルーン語</item>
+        <item>チェコ</item>
+        <item>ウェールズ語</item>
+        <item>デンマーク語</item>
+        <item>ドイツ語</item>
+        <item>ゾングカ</item>
+        <item>ギリシャ語</item>
+        <item>英語</item>
+        <item>エストニア語</item>
+        <item>バスク語</item>
+        <item>エベ (ガーナ)</item>
+        <item>エイ (トゴ)</item>
+        <item>フェロー人</item>
+        <item>フィンランド語</item>
+        <item>フランス語</item>
+        <item>フリュール語</item>
+        <item>スコットランド・ゲイル語</item>
+        <item>アイルランド</item>
+        <item>ガリシア語</item>
+        <item>グジャラティ</item>
+        <item>ハウサ語</item>
+        <item>ヘブライ語</item>
+        <item>ヒンディー語</item>
+        <item>クロアチア語</item>
+        <item>ハンガリー語</item>
+        <item>アルメニア語</item>
+        <item>イグボ</item>
+        <item>インドネシア語</item>
+        <item>アイスランド語</item>
+        <item>イタリア語</item>
+        <item>日本語</item>
+        <item>カビール語</item>
+        <item>カンバ</item>
+        <item>カンナダ語</item>
+        <item>ジョージア語</item>
+        <item>カザフ語</item>
+        <item>カブverdianu (ケープ・ヴェルド・クレオール)</item>
+        <item>クメール</item>
+        <item>キクユ</item>
+        <item>キンヤルワンダ</item>
+        <item>キルギススタン</item>
+        <item>韓国語</item>
+        <item>ラオス (ラオス)</item>
+        <item>リンブルク語</item>
+        <item>リンガル語</item>
+        <item>リトアニア語</item>
+        <item>ルクセンブルク語</item>
+        <item>ガンダ</item>
+        <item>ロウ</item>
+        <item>標準ラトビア語</item>
+        <item>マレーシア語</item>
+        <item>マラシ語</item>
+        <item>マケドニア語</item>
+        <item>マラガシス (マダガスカル)</item>
+        <item>マルタ語 (マルタ語)</item>
+        <item>ハルモンゴル語</item>
+        <item>マレーシア (マレーシア)</item>
+        <item>ミャンマー語</item>
+        <item>オランダ</item>
+        <item>ノルウェー・ニノースク</item>
+        <item>ノルウェー語 ボクmål</item>
+        <item>ネパール (ネパール)</item>
+        <item>ヌエール (南スーダン)</item>
+        <item>オロモ (エチオピア)</item>
+        <item>オロモ (ケニア)</item>
+        <item>オディア (インド)</item>
+        <item>パンジャブ語</item>
+        <item>ポーランド語</item>
+        <item>ポルトガル語</item>
+        <item>ペルシャ語 (アフガニスタン)</item>
+        <item>ペルシャ語 (イラン)</item>
+        <item>パシュト (アフガニスタン)</item>
+        <item>ケチュア語 (ボリビア)</item>
+        <item>ケチュア語 (エクアドル)</item>
+        <item>ケチュア語 (ペルー)</item>
+        <item>ルーマニア語</item>
+        <item>ルーンディ (ブルンディ)</item>
+        <item>ロシア語</item>
+        <item>サンゴ (中央アフリカ共和国)</item>
+        <item>シンハラ語 (スリランカ)</item>
+        <item>スロバキア (スロバキア)</item>
+        <item>スロベニア語</item>
+        <item>ショナ (ジンバブエ)</item>
+        <item>ソマリア</item>
+        <item>スペイン語</item>
+        <item>アルバニア語 (アルバニア)</item>
+        <item>セルビア語</item>
+        <item>スウェーデン語</item>
+        <item>スワヒリ語</item>
+        <item>タミル語</item>
+        <item>テルグ</item>
+        <item>タイ語</item>
+        <item>トルコ語</item>
+        <item>ウクライナ語</item>
+        <item>ウルドゥー語 (パキスタン)</item>
+        <item>ウイグル語 (中国)</item>
+        <item>ウズベキスタン (ラテン語,ウズベキスタン)</item>
+        <item>ベトナム語</item>
+        <item>クソサ語</item>
+        <item>ヨーロバ語</item>
+        <item>カントーン語</item>
+        <item>マンダリン語 中国語 簡略化</item>
+        <item>マンダリン語 伝統語</item>
+        <item>祖族</item>
+    </string-array>
+</resources>

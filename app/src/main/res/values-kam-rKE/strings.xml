@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Kĩndũ kya kwĩnyuvĩa</string>
+    <string name="optional_enter_the_role_e_g_student">Ũndũ ũtonya kwĩka: Tũmĩa kĩanda, kwa ngelekany\'o, Mwana-a-asa</string>
+    <string name="analysis_my_choices">Kũvindĩĩsya motwi makwa</string>
+    <string name="analysis_your_selections">Ĩka ũkunĩkĩli ĩũlũ wa ũndũ ũnyuvĩte</string>
+    <string name="rounds">Mĩio ya kaũ</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Kĩsese kya ũsindi kĩeleetw\'e kwosana na maũndũ ta ũima wa mwĩĩ, ũthwii, ngwatanĩo, ũtanu, ũmanyi, karma, kũtongoesya ĩvinda, ũsũvĩo wa nthĩ, kwĩana kwa mũndũ, na kĩanda kyake maũndũnĩ ma andũ.</string>
+    <string name="settings_title">Kĩndũ kya kwĩnyuvĩa</string>
+    <string name="settings_subtitle">Syĩndũ ila ũnyuvĩte syosanĩte na ũndũ ũkwĩw\'a</string>
+    <string name="settings_label_subject">Tũmĩa ũvoo</string>
+    <string name="settings_hint_select_question_type">Nyuva mũthemba wa ĩkũlyo</string>
+    <string name="settings_hint_select_subtype">Nyuva mũsingi</string>
+    <string name="settings_hint_select_difficulty">Nyuva kĩla kĩthĩawa kĩ vinya</string>
+    <string name="settings_hint_select_gender_optional">Ũndũ ũtonya kwĩka: Nyuva mũndũ mũka kana mũndũ mũka</string>
+    <string name="settings_label_age">Ĩkalaa wĩ Mũima</string>
+    <string name="settings_hint_select_language">Nyuva kĩthyomo kyaku</string>
+    <string name="settings_button_generate_cases">Kũseũvya Syĩndũ</string>
+    <string name="question_type_study">Kwĩmanyĩsya</string>
+    <string name="question_type_behavioral">Kwĩthĩwa na mwĩkalĩle mũseo</string>
+    <string name="question_type_hiring">Kũthũkũma</string>
+    <string name="subtype_behavioral_interpersonal">Ũmanyi wa Kũtindany\'a</string>
+    <string name="subtype_behavioral_ethical">Mathĩna ma Mwĩkalĩle</string>
+    <string name="subtype_behavioral_stress">Kwĩkala wĩ Mwĩanĩe</string>
+    <string name="subtype_study_mastery">Ũmanyi wa Kĩsomo</string>
+    <string name="subtype_study_critical_thinking">Kwĩthĩwa na Mosũanĩo Maito</string>
+    <string name="subtype_study_practical_application">Ũndũ Ũtonya Kũmĩtũmĩa</string>
+    <string name="subtype_hiring_technical">Ũmanyi wa Kĩsese</string>
+    <string name="subtype_hiring_behavioral_interview">Ũneenany\'a na Andũ Maĩ na Nguma</string>
+    <string name="subtype_hiring_situational_judgment">Ũsilĩlo Wosanĩte na Maũndũ</string>
+    <string name="difficulty_normal">ũwau ũteĩsa kũvoa</string>
+    <string name="difficulty_easy">nĩ laisi</string>
+    <string name="difficulty_hard" />
+    <string name="gender_male">Mũndũũme</string>
+    <string name="gender_female">Mũndũ mũka</string>
+    <string name="gender_select_prompt">Nyuva mũndũ mũka kana mũndũ mũka</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Ve ũndũ weekĩkie ũtaĩ mũseo</string>
+    <string name="button_new_game">Wĩa Mweũ</string>
+    <string name="text_round_number">Ĩthyũlũlũkĩte %1$d</string>
+    <string name="text_scenario">Maũndũ ala meekĩkie</string>
+    <string name="button_next">Ũndũ wa kelĩ</string>
+    <string name="icon_desc_selected_option">Wĩa ũla ũnyuvĩtwe</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Kĩsũngũ</item>
+        <item>Kĩthyũlũlũko</item>
+        <item>Kĩthyomo kya Amharic</item>
+        <item>Kĩsũngũ (United Arab Emirates)</item>
+        <item>Assamese</item>
+        <item>kĩthyomo kya Asturian</item>
+        <item>kĩthyomo kya Azerbaijani</item>
+        <item>Ũũ nĩw\'o ũndũ ũsu weekĩkie</item>
+        <item>Kĩsũngũ</item>
+        <item>Kĩvathũkany\'o na ũu</item>
+        <item>Kĩsũngũ</item>
+        <item>Mbivilia ya kĩthyomo kya Tibetan</item>
+        <item>Kĩsũngũ</item>
+        <item>Kĩsũngũ</item>
+        <item>Kĩthyomonĩ kya Catalonia</item>
+        <item>Andũ ma nthĩ ya Czech</item>
+        <item>Kĩthyomonĩ kya Wales</item>
+        <item>Kĩsũngũ</item>
+        <item>Kĩsũngũ</item>
+        <item>Nzongkha</item>
+        <item>Kĩkiliki</item>
+        <item>Kĩsũngũ</item>
+        <item>Kĩsũngũ</item>
+        <item>Kĩsũngũ</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Andũ ma nthĩ ya Faroe</item>
+        <item>Kĩthyomo kya Finnish</item>
+        <item>Kĩsũngũ</item>
+        <item>Kĩthyomo kya Friulian</item>
+        <item>Kĩthyomo kya Scottish Gaelic</item>
+        <item>Kĩsio kya Ireland</item>
+        <item>Kĩthyomo kya Galician</item>
+        <item>Kĩthyomo kya Gujarati</item>
+        <item>Kĩsũngũ</item>
+        <item>Kĩevelania</item>
+        <item>Kĩsũngũ</item>
+        <item>Kĩthyomonĩ kya Croatia</item>
+        <item>kĩthyomo kya Hungary</item>
+        <item>Andũ ma Armenia</item>
+        <item>Andũ ma mbaĩ ya Igbo</item>
+        <item>Kĩsũngũ</item>
+        <item>kĩthyomo kya Icelandic</item>
+        <item>Andũ ma Italy</item>
+        <item>Andũ ma Japan</item>
+        <item>Kĩsũngũ</item>
+        <item>Kamba</item>
+        <item>kĩthyomo kya Kannada</item>
+        <item>Kĩthyomonĩ kya Georgia</item>
+        <item>Andũ ma Kazakhstan</item>
+        <item>Kĩthyomo kya Kabuverdianu (Cape Verde Creole)</item>
+        <item>Mbivilia ya Kĩsũngũ</item>
+        <item>Ũũ nĩw\'o ũndũ ũsu weekĩkie</item>
+        <item>kĩthyomo kya Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Andũ ma Korea</item>
+        <item>Laos (Laos)</item>
+        <item>Kĩthyomonĩ kya Limburg</item>
+        <item>Kĩsũngũ</item>
+        <item>Kĩthyomo kya Lithuanian</item>
+        <item>kĩthyomo kya Luxembourg</item>
+        <item>Mũndũũme wĩtawa Ganda</item>
+        <item>Luo</item>
+        <item>Kĩthyomo kya kĩthyomo kya Latvian</item>
+        <item>Kĩthyomonĩ kya Malayalam</item>
+        <item>Kĩthyomo kya Marathi</item>
+        <item>Kĩthyomonĩ kya Macedonia</item>
+        <item>Madagascar (Madagascar)</item>
+        <item>Kĩthyomo kya Maltese (Malta)</item>
+        <item>Kĩnongolia kya Halh</item>
+        <item>Malay (Malaysia)</item>
+        <item>Andũ ma Myanmar</item>
+        <item>Kĩthyomonĩ kya Netherlands</item>
+        <item>Nynorsk, Norway</item>
+        <item>Kĩsũngũ Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (South Sudan)</item>
+        <item>Andũ ma mbaĩ ya Oromo (Ethiopia)</item>
+        <item>Andũ ma mbaĩ ya Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>kĩthyomo kya Punjabi</item>
+        <item>Kĩsũngũ</item>
+        <item>Kĩsũngũ</item>
+        <item>kĩthyomo kya Persian (Afghanistan)</item>
+        <item>Kĩsũngũ (Iran)</item>
+        <item>Kĩthyomo kya Pashto (Afghanistan)</item>
+        <item>kĩthyomo kya Quechua (Bolivia)</item>
+        <item>kĩthyomo kya Quechua (Ecuador)</item>
+        <item>kĩthyomo kya Quechua (Peru)</item>
+        <item>Kĩsũngũ</item>
+        <item>Rundi (Burundi)</item>
+        <item>Kĩsũngũ</item>
+        <item>Sango (Central African Republic)</item>
+        <item>Kĩsũngũ (Sri Lanka)</item>
+        <item>kĩthyomo kya Slovak (Slovakia)</item>
+        <item>Kĩslovenia</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Andũ ma Somalia</item>
+        <item>Kĩsũngũ</item>
+        <item>Kĩsũngũ (Albania)</item>
+        <item>Kĩsovian</item>
+        <item>Kĩthyomo kya Kĩsweden</item>
+        <item>Kĩswahili</item>
+        <item>Tamil</item>
+        <item>Kĩthyũlũlũko</item>
+        <item>Andũ ma nthĩ ya Thailand</item>
+        <item>Mbivilia ya kĩthyomo kya Turkish</item>
+        <item>Kĩthyomo kya Ukraine</item>
+        <item>kĩthyomo kya Urdu (Pakistan)</item>
+        <item>kĩthyomo kya Uighur (China)</item>
+        <item>Uzbek (Latin, Uzbekistan)</item>
+        <item>Andũ ma Vietnam</item>
+        <item>Andũ ma mbaĩ ya Xhosa</item>
+        <item>Kĩthyomo kya Yoruba</item>
+        <item>Kĩsũngũ</item>
+        <item>Kĩsũngũ kya Mandarin Kĩ laisi</item>
+        <item>Kĩsũngũ kya Mandarin Traditional Chinese</item>
+        <item>Kĩsũngũ</item>
+    </string-array>
+</resources>

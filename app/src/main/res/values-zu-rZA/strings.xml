@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Indaba yokukhetha</string>
+    <string name="optional_enter_the_role_e_g_student">Okukhethwa kukho: Faka indima, isibonelo, Umfundi</string>
+    <string name="analysis_my_choices">Ukuhlaziya izinqumo zami</string>
+    <string name="analysis_your_selections">Hlola izinketho zakho</string>
+    <string name="rounds">Izinhlamvu</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Isikolo sibalwa ngokusekelwe empilweni, ingcebo, ubudlelwano, injabulo, ulwazi, ikarma, ukuphathwa kwesikhathi, umthelela emvelweni, ukukhula komuntu siqu, kanye nomthwalo wemfanelo kwezenhlalo</string>
+    <string name="settings_title">Indaba yokukhetha</string>
+    <string name="settings_subtitle">Imibono izosekelwe ekukhetheni kwakho</string>
+    <string name="settings_label_subject">Faka isihloko</string>
+    <string name="settings_hint_select_question_type">Khetha uhlobo lombuzo</string>
+    <string name="settings_hint_select_subtype">Khetha i-subtype</string>
+    <string name="settings_hint_select_difficulty">Khetha izinga elinzima</string>
+    <string name="settings_hint_select_gender_optional">Ongakhetha kukho: Khetha ubulili bakho</string>
+    <string name="settings_label_age">Finyelela Eminyakeni Yakho</string>
+    <string name="settings_hint_select_language">Khetha ulimi lwakho</string>
+    <string name="settings_button_generate_cases">Ukudala Amacala</string>
+    <string name="question_type_study">Ukutadisha</string>
+    <string name="question_type_behavioral">Ukuziphatha</string>
+    <string name="question_type_hiring">Ukuqasha</string>
+    <string name="subtype_behavioral_interpersonal">Amakhono Okuxhumana Nabantu</string>
+    <string name="subtype_behavioral_ethical">Izinkinga Zokuziphatha</string>
+    <string name="subtype_behavioral_stress">Ukubhekana Nokucindezeleka</string>
+    <string name="subtype_study_mastery">Ukuqonda Isihloko</string>
+    <string name="subtype_study_critical_thinking">Ukucabanga Okubucayi</string>
+    <string name="subtype_study_practical_application">Ukusetshenziswa Okuwusizo</string>
+    <string name="subtype_hiring_technical">Amakhono Ezobuchwepheshe</string>
+    <string name="subtype_hiring_behavioral_interview">Ukuxoxisana Nokuziphatha</string>
+    <string name="subtype_hiring_situational_judgment">Ukwahlulela Ngokwesimo</string>
+    <string name="difficulty_normal">okujwayelekile</string>
+    <string name="difficulty_easy">okulula</string>
+    <string name="difficulty_hard">okunzima</string>
+    <string name="gender_male">Owesilisa</string>
+    <string name="gender_female">Owesifazane</string>
+    <string name="gender_select_prompt">Khetha ubulili</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Kukhona okungahambi kahle</string>
+    <string name="button_new_game">Umdlalo Omusha</string>
+    <string name="text_round_number">Umjikelezo %1$d</string>
+    <string name="text_scenario">Isimo</string>
+    <string name="button_next">Okulandelayo</string>
+    <string name="icon_desc_selected_option">Inketho ekhethiwe</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Isi-Afrikaans</item>
+        <item>I-Akan</item>
+        <item>Isi-Amharic</item>
+        <item>Isi-Arabhu (i-United Arab Emirates)</item>
+        <item>Ama-Assamese</item>
+        <item>Isi-Asturian</item>
+        <item>isi-Azerbaijani</item>
+        <item>I-Bambara</item>
+        <item>IsiBelarusian</item>
+        <item>I-Bemba</item>
+        <item>IsiBengali</item>
+        <item>IsiTibetan</item>
+        <item>IsiBosnia</item>
+        <item>IsiBulgaria</item>
+        <item>IsiCatalan</item>
+        <item>I-Czech</item>
+        <item>IsiWelsh</item>
+        <item>Danish</item>
+        <item>IsiJalimane</item>
+        <item>I-Dzongkha</item>
+        <item>IsiGreki</item>
+        <item>IsiNgisi</item>
+        <item>Isi-Estonia</item>
+        <item>I-Basque</item>
+        <item>I-Ewe (eGhana)</item>
+        <item>Ewe (Togo)</item>
+        <item>AmaFeroe</item>
+        <item>IsiFinnish</item>
+        <item>IsiFulentshi</item>
+        <item>IsiFriulian</item>
+        <item>IsiGaelic saseScotland</item>
+        <item>I-Irish</item>
+        <item>IsiGalician</item>
+        <item>IsiGujarati</item>
+        <item>AmaHausa</item>
+        <item>IsiHebheru</item>
+        <item>IsiHindi</item>
+        <item>IsiCroatian</item>
+        <item>IsiHungary</item>
+        <item>Isi-Armenia</item>
+        <item>Ama-Igbo</item>
+        <item>Isi-Indonesia</item>
+        <item>Isi-Icelandic</item>
+        <item>IsiNtaliyane</item>
+        <item>IsiJapane</item>
+        <item>IsiKabil</item>
+        <item>I-Kamba</item>
+        <item>IsiKannada</item>
+        <item>IsiGeorgian</item>
+        <item>I-Kazakh</item>
+        <item>IsiKhuverdianu (isiCreole saseCape Verde)</item>
+        <item>AmaKhmer</item>
+        <item>I-Kikuyu</item>
+        <item>IsiKinyarwanda</item>
+        <item>IKyrgyzstan</item>
+        <item>IsiKorea</item>
+        <item>I-Lao (iLaos)</item>
+        <item>IsiLimburg</item>
+        <item>IsiLingala</item>
+        <item>IsiLithuanian</item>
+        <item>IsiLuxembourgish</item>
+        <item>I-Ganda</item>
+        <item>U-Luo</item>
+        <item>IsiLatvia esivamile</item>
+        <item>isiMalayalam</item>
+        <item>IsiMarathi</item>
+        <item>IsiMacedonia</item>
+        <item>IsiMalagasy (iMadagascar)</item>
+        <item>IsiMalta (iMalta)</item>
+        <item>IsiMongolia saseHalh</item>
+        <item>IsiMalaysian (iMalaysia)</item>
+        <item>IsiMyanmar</item>
+        <item>AmaDashi</item>
+        <item>INorsk yaseNorway</item>
+        <item>Isi-Bokmål saseNorway</item>
+        <item>Nepali (Nepal)</item>
+        <item>INuer (eNingizimu Sudan)</item>
+        <item>Isi-Oromo (i-Ethiopia)</item>
+        <item>Isi-Oromo (eKenya)</item>
+        <item>I-Odia (India)</item>
+        <item>IsiPunjabi</item>
+        <item>IsiPolish</item>
+        <item>IsiPutukezi</item>
+        <item>IsiPheresiya (e-Afghanistan)</item>
+        <item>IsiPheresiya (e-Iran)</item>
+        <item>IsiPashto (e-Afghanistan)</item>
+        <item>IsiQuechua (eBolivia)</item>
+        <item>IsiQuechua (e-Ecuador)</item>
+        <item>IsiQuechua (Peru)</item>
+        <item>IsiRomania</item>
+        <item>IsiRundi (isiBurundi)</item>
+        <item>IsiRashiya</item>
+        <item>ISango (Central African Republic)</item>
+        <item>IsiSingala (Sri Lanka)</item>
+        <item>IsiSlovak (iSlovakia)</item>
+        <item>IsiSlovenia</item>
+        <item>IsiShona (eZimbabwe)</item>
+        <item>ISomalia</item>
+        <item>IsiSpanishi</item>
+        <item>Isi-Albania</item>
+        <item>IsiSerbia</item>
+        <item>IsiSwidi</item>
+        <item>IsiSwahili</item>
+        <item>IsiTamil</item>
+        <item>IsiTelugu</item>
+        <item>IsiThai</item>
+        <item>IsiTurkey</item>
+        <item>Isi-Ukrainian</item>
+        <item>Isi-Urdu (ePakistan)</item>
+        <item>Isi-Uyghur (eChina)</item>
+        <item>I-Uzbek (isiLatini, i-Uzbekistan)</item>
+        <item>IsiVietnamese</item>
+        <item>IsiXhosa</item>
+        <item>IsiYoruba</item>
+        <item>IsiCantonese</item>
+        <item>IsiShayina Sesimane Esenziwe Lula</item>
+        <item>IsiMandarin Chinese Traditional</item>
+        <item>AmaZulu</item>
+    </string-array>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">चुनने का विषय</string>
+    <string name="optional_enter_the_role_e_g_student">वैकल्पिकः भूमिका दर्ज करें, उदाहरण के लिए छात्र</string>
+    <string name="analysis_my_choices">मेरे विकल्पों का विश्लेषण</string>
+    <string name="analysis_your_selections">अपनी पसंद का विश्लेषण करें</string>
+    <string name="rounds">राउंड्स</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">स्वास्थ्य, धन, संबंधों, खुशी, ज्ञान, कर्म, समय प्रबंधन, पर्यावरण प्रभाव, व्यक्तिगत विकास और सामाजिक जिम्मेदारी के आधार पर स्कोर गणना</string>
+    <string name="settings_title">चुनने का विषय</string>
+    <string name="settings_subtitle">परिदृश्य आपकी पसंद के आधार पर होंगे</string>
+    <string name="settings_label_subject">विषय दर्ज करें</string>
+    <string name="settings_hint_select_question_type">प्रश्न प्रकार का चयन करें</string>
+    <string name="settings_hint_select_subtype">उपप्रकार का चयन करें</string>
+    <string name="settings_hint_select_difficulty">कठिन स्तर का चयन करें</string>
+    <string name="settings_hint_select_gender_optional">वैकल्पिकः अपना लिंग चुनें</string>
+    <string name="settings_label_age">अपनी उम्र में प्रवेश करें</string>
+    <string name="settings_hint_select_language">अपनी भाषा चुनें</string>
+    <string name="settings_button_generate_cases">मामले उत्पन्न करें</string>
+    <string name="question_type_study">अध्ययन</string>
+    <string name="question_type_behavioral">व्यवहार</string>
+    <string name="question_type_hiring">किराए पर लेना</string>
+    <string name="subtype_behavioral_interpersonal">अंतरव्यक्तिगत कौशल</string>
+    <string name="subtype_behavioral_ethical">नैतिक कठिनाइयां</string>
+    <string name="subtype_behavioral_stress">तनाव प्रबंधन</string>
+    <string name="subtype_study_mastery">विषय प्रवीणता</string>
+    <string name="subtype_study_critical_thinking">आलोचनात्मक सोच</string>
+    <string name="subtype_study_practical_application">व्यावहारिक अनुप्रयोग</string>
+    <string name="subtype_hiring_technical">तकनीकी कौशल</string>
+    <string name="subtype_hiring_behavioral_interview">व्यवहार साक्षात्कार</string>
+    <string name="subtype_hiring_situational_judgment">परिस्थितियों का न्याय</string>
+    <string name="difficulty_normal">सामान्य</string>
+    <string name="difficulty_easy">आसान</string>
+    <string name="difficulty_hard">कठिन</string>
+    <string name="gender_male">पुरुष</string>
+    <string name="gender_female">महिला</string>
+    <string name="gender_select_prompt">लिंग का चयन करें</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">कुछ गलत हो गया</string>
+    <string name="button_new_game">नया खेल</string>
+    <string name="text_round_number">राउंड %1$d</string>
+    <string name="text_scenario">परिदृश्य</string>
+    <string name="button_next">अगला</string>
+    <string name="icon_desc_selected_option">चयनित विकल्प</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>अफरीकांस</item>
+        <item>अकन</item>
+        <item>अमर भाषा</item>
+        <item>अरबी (संयुक्त अरब अमीरात)</item>
+        <item>असम</item>
+        <item>आस्टुरियन</item>
+        <item>अज़रबैजान</item>
+        <item>बाम्बा</item>
+        <item>बेलारूसी</item>
+        <item>बेम्बा</item>
+        <item>बंगाली</item>
+        <item>तिब्बती</item>
+        <item>बोस्नियाई</item>
+        <item>बल्गेरियाई</item>
+        <item>कैटलन</item>
+        <item>चेक</item>
+        <item>वेल्श</item>
+        <item>डेनिश</item>
+        <item>जर्मन</item>
+        <item>ज़ोंगखा</item>
+        <item>ग्रीक</item>
+        <item>अंग्रेजी</item>
+        <item>एस्टोनियाई</item>
+        <item>बास्क</item>
+        <item>ईवी (घाना)</item>
+        <item>एवे (टोगो)</item>
+        <item>फ़ेरोई</item>
+        <item>फिनिश</item>
+        <item>फ्रांसीसी</item>
+        <item>फ्रिउलियन</item>
+        <item>स्कॉटिश गैलिक</item>
+        <item>आयरिश</item>
+        <item>गैलिशियन</item>
+        <item>गुजराती</item>
+        <item>हाउसा</item>
+        <item>हिब्रू</item>
+        <item>हिन्दी</item>
+        <item>क्रोएशियाई</item>
+        <item>हंगरी</item>
+        <item>अर्मेनियाई</item>
+        <item>इग्बो</item>
+        <item>इंडोनेशियाई</item>
+        <item>आइसलैंडिक</item>
+        <item>इतालवी</item>
+        <item>जापानी</item>
+        <item>कबील</item>
+        <item>कम्बा</item>
+        <item>कन्नड़</item>
+        <item>जॉर्जियाई</item>
+        <item>कज़ाख</item>
+        <item>काबुर्दीनु (कैप वर्डे क्रेओल)</item>
+        <item>खमेर</item>
+        <item>किकुयु</item>
+        <item>कinyarwanda</item>
+        <item>किर्गिज़स्तान</item>
+        <item>कोरियाई</item>
+        <item>लाओस</item>
+        <item>लिम्बुर्ग</item>
+        <item>लिंगाला</item>
+        <item>लिथुआनी</item>
+        <item>लक्ज़मबर्ग</item>
+        <item>गांडा</item>
+        <item>लुओ</item>
+        <item>मानक लातवियाई</item>
+        <item>मलयालम</item>
+        <item>मराठी</item>
+        <item>मैसेडोनियाई</item>
+        <item>मालागासी (मालागास्कर)</item>
+        <item>माल्टीज़ (माल्टा)</item>
+        <item>हलह मंगोलियाई</item>
+        <item>मलय (मलेशिया)</item>
+        <item>बर्मी</item>
+        <item>नीदरलैंड</item>
+        <item>नॉर्वेजियन नैनोर्स्क</item>
+        <item>नॉर्वेजियन बोकमाल</item>
+        <item>नेपाली (नेपाल)</item>
+        <item>नूर (दक्षिण सूडान)</item>
+        <item>ओरोमो (इथियोपिया)</item>
+        <item>ओरोमो (केन्या)</item>
+        <item>ओडिया (भारत)</item>
+        <item>पंजाबी</item>
+        <item>पोलिश</item>
+        <item>पुर्तगाली</item>
+        <item>फारसी (अफगानिस्तान)</item>
+        <item>फारसी (ईरान)</item>
+        <item>पश्तो (अफगानिस्तान)</item>
+        <item>केचुआ (बोलिविया)</item>
+        <item>केचुआ (इक्वाडोर)</item>
+        <item>केचुआ (पेरू)</item>
+        <item>रोमानियाई</item>
+        <item>रोंडी (बरुंडी)</item>
+        <item>रूसी</item>
+        <item>सांगो (मध्य अफ्रीकी गणराज्य)</item>
+        <item>सिंगाली (श्रीलंका)</item>
+        <item>स्लोवाक (स्लोवाकिया)</item>
+        <item>स्लोवेनियाई</item>
+        <item>शोन (जिम्बाब्वे)</item>
+        <item>सोमालिया</item>
+        <item>स्पेनिश</item>
+        <item>अल्बानियाई (अल्बानिया)</item>
+        <item>सर्बिया</item>
+        <item>स्वीडिश</item>
+        <item>स्वाहिली</item>
+        <item>तमिल</item>
+        <item>तेलुगु</item>
+        <item>थाई</item>
+        <item>तुर्की</item>
+        <item>यूक्रेनी</item>
+        <item>उर्दू (पाकिस्तान)</item>
+        <item>उइगर (चीन)</item>
+        <item>उज्बेकिस्तान (लैटिन, उज्बेकिस्तान)</item>
+        <item>वियतनामी</item>
+        <item>क्षोसा</item>
+        <item>योरुबा</item>
+        <item>कान्तोनी</item>
+        <item>मंदारिन चीनी सरल</item>
+        <item>मंदारिन चीनी पारंपरिक</item>
+        <item>ज़ुलू</item>
+    </string-array>
+</resources>

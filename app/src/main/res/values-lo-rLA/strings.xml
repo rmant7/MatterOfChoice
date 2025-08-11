@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ບັນຫາການເລືອກ</string>
+    <string name="optional_enter_the_role_e_g_student">ທາງເລືອກ: ໃສ່ບົດບາດ, ຕົວຢ່າງ, ນັກສຶກສາ</string>
+    <string name="analysis_my_choices">ການວິເຄາະການເລືອກຂອງຂ້ອຍ</string>
+    <string name="analysis_your_selections">ວິເຄາະການເລືອກຂອງທ່ານ</string>
+    <string name="rounds">ວົງການ</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">ການຄິດໄລ່ຄະແນນໂດຍອີງໃສ່ສຸຂະພາບ, ຄວາມອຸດົມສົມບູນ, ຄວາມ ສໍາ ພັນ, ຄວາມສຸກ, ຄວາມຮູ້, karma, ການຄຸ້ມຄອງເວລາ, ຜົນກະທົບຕໍ່ສິ່ງແວດລ້ອມ, ການເຕີບໂຕສ່ວນຕົວ, ແລະຄວາມຮັບຜິດຊອບທາງສັງຄົມ</string>
+    <string name="settings_title">ບັນຫາການເລືອກ</string>
+    <string name="settings_subtitle">ຮູບເງົາຈະອີງໃສ່ການເລືອກຂອງທ່ານ</string>
+    <string name="settings_label_subject">ໃສ່ຫົວຂໍ້</string>
+    <string name="settings_hint_select_question_type">ເລືອກປະເພດຄໍາຖາມ</string>
+    <string name="settings_hint_select_subtype">ເລືອກ subtype</string>
+    <string name="settings_hint_select_difficulty">ເລືອກລະດັບທີ່ຍາກ</string>
+    <string name="settings_hint_select_gender_optional">ທາງເລືອກ: ເລືອກເພດຂອງທ່ານ</string>
+    <string name="settings_label_age">ເຂົ້າສູ່ອາຍຸຂອງທ່ານ</string>
+    <string name="settings_hint_select_language">ເລືອກພາສາຂອງທ່ານ</string>
+    <string name="settings_button_generate_cases">ສ້າງກໍລະນີ</string>
+    <string name="question_type_study">ການ ສຶກສາ</string>
+    <string name="question_type_behavioral">ການປະພຶດ</string>
+    <string name="question_type_hiring">ການຈ້າງ</string>
+    <string name="subtype_behavioral_interpersonal">ຄວາມສາມາດລະຫວ່າງບຸກຄົນ</string>
+    <string name="subtype_behavioral_ethical">ບັນຫາທາງດ້ານສິນທໍາ</string>
+    <string name="subtype_behavioral_stress">ການຄຸ້ມຄອງຄວາມກົດດັນ</string>
+    <string name="subtype_study_mastery">ການຄຸ້ມຄອງຫົວຂໍ້</string>
+    <string name="subtype_study_critical_thinking">ການ ຄິດ ຄັດຄ້ານ</string>
+    <string name="subtype_study_practical_application">ການ ນໍາ ໃຊ້ ຕົວ ຈິງ</string>
+    <string name="subtype_hiring_technical">ຄວາມສາມາດດ້ານວິຊາການ</string>
+    <string name="subtype_hiring_behavioral_interview">ການ ສໍາພາດກ່ຽວກັບພຶດຕິ ກໍາ</string>
+    <string name="subtype_hiring_situational_judgment">ການ ຕັດສິນ ໃຈ ກ່ຽວ ກັບ ສະຖານະ ການ</string>
+    <string name="difficulty_normal">ປົກກະຕິ</string>
+    <string name="difficulty_easy">ງ່າຍໆ</string>
+    <string name="difficulty_hard">ແຂງແຮງ</string>
+    <string name="gender_male">ຜູ້ຊາຍ</string>
+    <string name="gender_female">ແມ່ຍິງ</string>
+    <string name="gender_select_prompt">ເລືອກເພດ</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">ບາງສິ່ງບາງຢ່າງໄດ້ຜິດພາດ</string>
+    <string name="button_new_game">ເກມໃຫມ່</string>
+    <string name="text_round_number">ຮອບ %1$d</string>
+    <string name="text_scenario">ຮູບເງົາ</string>
+    <string name="button_next">ຕໍ່ໄປ</string>
+    <string name="icon_desc_selected_option">ທາງເລືອກທີ່ເລືອກ</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>ພາສາ Afrikaans</item>
+        <item>Akan</item>
+        <item>ພາສາ Amharic</item>
+        <item>ພາສາອາຣັບ (ສະຫະລັດອາຣັບ Emiratos)</item>
+        <item>Assamese</item>
+        <item>ພາສາ Asturian</item>
+        <item>Azerbaijani</item>
+        <item>Bambara</item>
+        <item>ພາສາ Belarusian</item>
+        <item>Bemba</item>
+        <item>ພາສາ Bengali</item>
+        <item>ພາສາທິເບດ</item>
+        <item>Bosnian</item>
+        <item>ພາສາບູລີ</item>
+        <item>Catalan</item>
+        <item>ເຊັກໂກ</item>
+        <item>ພາສາ Welsh</item>
+        <item>ດານມາກ</item>
+        <item>ພາສາເຢຍລະມັນ</item>
+        <item>Dzongkha</item>
+        <item>ພາສາອັງກິດ</item>
+        <item>ພາສາອັງກິດ</item>
+        <item>ພາສາເອສໂຕເນຍ</item>
+        <item>ພາສາ Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>ພາສາເຟໂຣ</item>
+        <item>ພາສາຟິນແລນ</item>
+        <item>ພາສາຝຣັ່ງ</item>
+        <item>ພາສາ Friulian</item>
+        <item>ພາສາ Gaelic Scotland</item>
+        <item>ໄອແລນ</item>
+        <item>ພາສາ Galician</item>
+        <item>ພາສາ Gujarati</item>
+        <item>ພາສາ Hausa</item>
+        <item>ພາສາເຮບຣີ</item>
+        <item>ອິນເດຍ</item>
+        <item>ພາສາ Croatia</item>
+        <item>ພາສາຮັງກາຣີ</item>
+        <item>ພາສາ Armenia</item>
+        <item>ອິບໂກ</item>
+        <item>ພາສາອິນໂດເນເຊຍ</item>
+        <item>ພາສາອິສແລນ</item>
+        <item>ອິຕາລີ</item>
+        <item>ຍີ່ປຸ່ນ</item>
+        <item>ພາສາກາບີລ</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>ພາສາ Georgia</item>
+        <item>Kazakhstani</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>ພາສາ Kinyarwanda</item>
+        <item>ກໍາປູເຈຍ</item>
+        <item>ເກົາຫຼີ</item>
+        <item>Lao (Laos)</item>
+        <item>ພາສາ Limburg</item>
+        <item>ພາສາ Lingala</item>
+        <item>ພາສາ Lithuanian</item>
+        <item>ພາສາ Luxembourg</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>ພາສາລາວມາດຕະຖານ</item>
+        <item>ພາສາ Malayalam</item>
+        <item>ພາສາ Marathi</item>
+        <item>ພາສາ Macedonian</item>
+        <item>ປະເທດມາລາຊາເກີ (ມາລາຊາເກີ)</item>
+        <item>Maltese (Malta)</item>
+        <item>ພາສາ ມົງໂກລີ Halh</item>
+        <item>ມາເລເຊຍ (ມາເລເຊຍ)</item>
+        <item>ຊາວມຽນມາ</item>
+        <item>ປະເທດເນເທີແລນ</item>
+        <item>ນໍເວ Nynorsk</item>
+        <item>ພາສາ Bokmål ນໍເວ</item>
+        <item>ເນປາລີ (ເນປາລີ)</item>
+        <item>Nuer (ສູດານໃຕ້)</item>
+        <item>Oromo (ເອທິໂອເປຍ)</item>
+        <item>Oromo (ເຄນຢາ)</item>
+        <item>Odia (ອິນເດຍ)</item>
+        <item>ພາສາ Punjabi</item>
+        <item>ພາສາໂປໂລຍ</item>
+        <item>ພາສາປອກຕຸຍ</item>
+        <item>ພາສາເປີເຊຍ (ອັຟການິສຖານ)</item>
+        <item>ພາສາເປີເຊຍ (ອີຣ່ານ)</item>
+        <item>Pashto (ອັຟການິສຖານ)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>ພາສາ Quechua (ອີຄູາດໍ)</item>
+        <item>Quechua (ເປຣູ)</item>
+        <item>ພາສາ Romania</item>
+        <item>Rundi (Burundi)</item>
+        <item>ພາສາຣັດເຊຍ</item>
+        <item>Sango (ສາທາລະນະລັດອາຟຣິກາກາງ)</item>
+        <item>Sinhala (ສຣີລັງກາ)</item>
+        <item>ສະໂລວາເກຍ (ສະໂລວາເກຍ)</item>
+        <item>ພາສາ Slovenia</item>
+        <item>Shona (ຊິມບັບເວ)</item>
+        <item>ໂຊມາລີ</item>
+        <item>ພາສາສະເປນ</item>
+        <item>Albanian (ອັລເບນເນຍ)</item>
+        <item>ພາສາຊີເບຍ</item>
+        <item>ພາສາສະວີເດັນ</item>
+        <item>ພາສາ Swahili</item>
+        <item>Tamil</item>
+        <item>ພາສາ Telugu</item>
+        <item>ໄທ</item>
+        <item>ເທີກີ</item>
+        <item>ພາສາຢູເຄຣນ</item>
+        <item>ພາສາ Urdu (ປາກິສຖານ)</item>
+        <item>Uyghur (ຈີນ)</item>
+        <item>Uzbek (ພາສາລາຕິນ, Uzbekistan)</item>
+        <item>ພາສາ ຫວຽດນາມ</item>
+        <item>ພາສາ Xhosa</item>
+        <item>ພາສາ Yoruba</item>
+        <item>ພາສາ Cantonese</item>
+        <item>ພາສາຈີນ Mandarin ງ່າຍດາຍ</item>
+        <item>ພາສາຈີນ Mandarin ປະເພນີ</item>
+        <item>ພາສາ Zulu</item>
+    </string-array>
+</resources>

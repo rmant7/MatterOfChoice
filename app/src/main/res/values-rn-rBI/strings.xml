@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+   <!-- <string name="app_name">Ikibazo c\'ihitamwo</string>
+    <string name="optional_enter_the_role_e_g_student">Guhitamwo: Nushire mu kibanza, nk\'akarorero, Umunyeshure</string>
+    <string name="analysis_my_choices">Gusuzuma amahitamwo ngira</string>
+    <string name="analysis_your_selections">Nusuzume amahitamwo yawe</string>
+    <string name="rounds">Ibirwanisho</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Ibiharuro bigereranywa n\'amagara, ubutunzi, imigenderanire, agahimbare, ubumenyi, karma, uburyo bwo gucungera umwanya, ingaruka ku bidukikije, iterambere ry\'umuntu ku giti ciwe be n'umwidegemvyo mu kibano</string>
+    <string name="settings_title">Ikibazo c\'ihitamwo</string>
+    <string name="settings_subtitle">Ingene ibintu bizogenda bizoba bishingiye ku vyo wohitamwo</string>
+    <string name="settings_label_subject">Niwandike iciyumviro</string>
+    <string name="settings_hint_select_question_type">Nuhitemwo ubwoko bw\'ikibazo</string>
+    <string name="settings_hint_select_subtype">Hitamwo ubwoko bw\'ibikoresho</string>
+    <string name="settings_hint_select_difficulty">Nuhitemwo ikiringo kigoye</string>
+    <string name="settings_hint_select_gender_optional">Guhitamwo: Nuhitemwo igitsina</string>
+    <string name="settings_label_age">Nushike mu myaka yawe</string>
+    <string name="settings_hint_select_language">Hitamwo ururimi ukoresha</string>
+    <string name="settings_button_generate_cases">Rungika Rungika Rungika Rungika</string>
+    <string name="question_type_study">Kwiga</string>
+    <string name="question_type_behavioral">Ingeso</string>
+    <string name="question_type_hiring">Gushinga akazi</string>
+    <string name="subtype_behavioral_interpersonal">Ubumenyi bwo guhanahana amakuru</string>
+    <string name="subtype_behavioral_ethical">Ingorane zijanye n\'inyifato runtu</string>
+    <string name="subtype_behavioral_stress">Ingorane zo mu mutwe</string>
+    <string name="subtype_study_mastery">Ubumenyi bw\'ibikoresho</string>
+    <string name="subtype_study_critical_thinking">Ivyiyumviro bihambaye</string>
+    <string name="subtype_study_practical_application">Ivyogufasha</string>
+    <string name="subtype_hiring_technical">Ubumenyi mu vy\'ubuhinga</string>
+    <string name="subtype_hiring_behavioral_interview">Ikiganiro kijanye n\'inyifato</string>
+    <string name="subtype_hiring_situational_judgment">Ingingo ngenderwako</string>
+    <string name="difficulty_normal">ibisanzwe</string>
+    <string name="difficulty_easy">vyoroshe</string>
+    <string name="difficulty_hard">cane cane</string>
+    <string name="gender_male">Igitsina-gabo</string>
+    <string name="gender_female">Umugore</string>
+    <string name="gender_select_prompt">Nuhitemwo igitsina</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Hari ikintu cafashe nabi.</string>
+    <string name="button_new_game">Urukino rushasha</string>
+    <string name="text_round_number">Ronde %1$d</string>
+    <string name="text_scenario">Ingene ibintu vyifashe</string>
+    <string name="button_next">Ubukurikira</string>
+    <string name="icon_desc_selected_option">Uburyo bwo guhitamwo</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Ururimi rwa Afrikaans</item>
+        <item>Akan</item>
+        <item>Ikinyarwanda</item>
+        <item>Arabe (Emirats Arabes Unis)</item>
+        <item>Abasilamu</item>
+        <item>Ururimi rwo muri Asturias</item>
+        <item>Ururimi rwa Azerbayijani</item>
+        <item>Bambara</item>
+        <item>Ikirundi</item>
+        <item>Bemba</item>
+        <item>Ururimi rw\'ikibengali</item>
+        <item>Tibetani</item>
+        <item>Ururimi rwo muri Bosiniya</item>
+        <item>Ururimi rwo muri Bulugariya</item>
+        <item>Igicatalani</item>
+        <item>Igihugu ca Tchèque</item>
+        <item>Igihugu ca Galles</item>
+        <item>Igihugu ca Danemarke</item>
+        <item>Ubudagi</item>
+        <item>Dzongkha</item>
+        <item>Ikigiriki</item>
+        <item>Kirundi</item>
+        <item>Ururimi rwo muri Estoniya</item>
+        <item>Igisupanyoli</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Abari muri Faroe</item>
+        <item>Igifinwa</item>
+        <item>Igifaransa</item>
+        <item>Friulian</item>
+        <item>Ururimi rwa Gaélique rwo muri Écosse</item>
+        <item>Ururimi rwo muri Irlande</item>
+        <item>Ururimi rwo muri Galiliya</item>
+        <item>Ururimi rwa Gujarati</item>
+        <item>Igihugu ca Hausa</item>
+        <item>Mu giheburayo</item>
+        <item>Ikinyarwanda</item>
+        <item>Ururimi rwo muri Croatie</item>
+        <item>Ururimi rwo muri Hongiriya</item>
+        <item>Ururimi rwo muri Armeniya</item>
+        <item>Igigbo</item>
+        <item>Indoneziya</item>
+        <item>Ururimi rwo muri Iceland</item>
+        <item>Igitaliyano</item>
+        <item>Ubuyapani</item>
+        <item>Igitabu ca Kabyle</item>
+        <item>Kamba</item>
+        <item>Ikinyarwanda</item>
+        <item>Ururimi rwo muri Jeworojiya</item>
+        <item>Kazakhstani</item>
+        <item>Kabuverdianu (Igikrewole ca Cape Verde)</item>
+        <item>Umunya-Khmer</item>
+        <item>Kikuyu</item>
+        <item>Ikinyarwanda</item>
+        <item>Kirgistani</item>
+        <item>Koreya y\'epfo</item>
+        <item>Laos (Laos)</item>
+        <item>Ururimi rwa Limburga</item>
+        <item>Ururimi rwa Lingala</item>
+        <item>Ururimi rw\'ikirundi</item>
+        <item>Ururimi rwo muri Luxembourg</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Ururimi rwo muri Leta Zunze Ubumwe za Amerika</item>
+        <item>Igihugu ca Malayalam</item>
+        <item>Ururimi rw\'ikirundi</item>
+        <item>Abanyamakedoniya</item>
+        <item>Igihugu ca Madagaskari (Madagascar)</item>
+        <item>Igihugu ca Malte (Malta)</item>
+        <item>Ururimi rwo muri Mongoliya</item>
+        <item>Malay (Malaysia)</item>
+        <item>Ururimi rwo muri Birmaniya</item>
+        <item>Ubuholande</item>
+        <item>Nynorsk yo muri Norveje</item>
+        <item>Bokmål yo muri Norveje</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Sudan y\'Epfo)</item>
+        <item>Abarundi (Etiyopiya)</item>
+        <item>Abarundi (Kenya)</item>
+        <item>Ururimi (Ubuhindi)</item>
+        <item>Igipunjabi</item>
+        <item>Igipolonye</item>
+        <item>Ururimi rw\'igiportigale</item>
+        <item>Igiperesi (Afghanistan)</item>
+        <item>Igiperesi (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Ururimi rwa Quechua (Bolivia)</item>
+        <item>Ururimi rwa Quechua (Ecuador)</item>
+        <item>Ururimi rwa Quechua (Peru)</item>
+        <item>Kiromani</item>
+        <item>Rundi (Burundi)</item>
+        <item>Uburusiya</item>
+        <item>Sango (République Centrafricaine)</item>
+        <item>Ururimi rw\'igisingali (Sri Lanka)</item>
+        <item>Igislovakiya (Slovakia)</item>
+        <item>Igisloveniya</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somaliya</item>
+        <item>Igisupanyoli</item>
+        <item>Ururimi rwo muri Albaniya</item>
+        <item>Igisiribiya</item>
+        <item>Igiswedish</item>
+        <item>Igiswayire</item>
+        <item>Ururimi rw\'ikirundi</item>
+        <item>Ururimi rwa Telugu</item>
+        <item>Igihugu c\'Ubutaliyano</item>
+        <item>Ururimi</item>
+        <item>Ururimi rwo muri Ukraine</item>
+        <item>Urdu (Pakistani)</item>
+        <item>Uigur (Ubushinwa)</item>
+        <item>Uzbekistan (mu kilatini, Uzbekistan)</item>
+        <item>Abanyavietnam</item>
+        <item>Ururimi rw\'ikirundi</item>
+        <item>Ururimi rwa Yoruba</item>
+        <item>Ururimi rw\'igikantonese</item>
+        <item>Ururimi rw\'igishinwa rw\'ikimandarini rworoshe</item>
+        <item>Ururimi rw\'igishinwa rw\'ikiremwamuntu</item>
+        <item>Abazungu</item>
+    </string-array>-->
+</resources>

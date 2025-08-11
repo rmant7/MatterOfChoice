@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">পছন্দৰ বিষয়</string>
+    <string name="optional_enter_the_role_e_g_student">ঐচ্ছিকঃ ভূমিকা প্ৰবিষ্ট কৰক, উদাহৰণস্বৰূপে, ছাত্ৰ</string>
+    <string name="analysis_my_choices">মোৰ পছন্দসমূহ বিশ্লেষণ কৰক</string>
+    <string name="analysis_your_selections">আপোনাৰ পছন্দসমূহ বিশ্লেষণ কৰক</string>
+    <string name="rounds">ৰাউণ্ড</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">স্বাস্থ্য, সম্পদ, সম্পৰ্ক, সুখ, জ্ঞান, কৰ্মা, সময়ৰ ব্যৱস্থাপনা, পৰিৱেশৰ প্ৰভাৱ, ব্যক্তিগত বিকাশ আৰু সামাজিক দায়বদ্ধতাৰ ওপৰত ভিত্তি কৰি স্ক\'ৰ গণনা কৰা হয়</string>
+    <string name="settings_title">পছন্দৰ বিষয়</string>
+    <string name="settings_subtitle">এই দৃশ্যসমূহ আপোনাৰ পছন্দৰ ওপৰত ভিত্তি কৰি নিৰ্ণয় কৰা হ\'ব।</string>
+    <string name="settings_label_subject">বিষয়টো প্ৰবিষ্ট কৰক</string>
+    <string name="settings_hint_select_question_type">প্ৰশ্নৰ প্ৰকাৰ নিৰ্বাচন কৰক</string>
+    <string name="settings_hint_select_subtype">উপ-প্ৰকাৰ নিৰ্বাচন কৰক</string>
+    <string name="settings_hint_select_difficulty">কঠিন স্তৰ নিৰ্বাচন কৰক</string>
+    <string name="settings_hint_select_gender_optional">ঐচ্ছিকঃ আপোনাৰ লিংগ নিৰ্বাচন কৰক</string>
+    <string name="settings_label_age">আপোনাৰ বয়সত প্ৰৱেশ কৰক</string>
+    <string name="settings_hint_select_language">আপোনাৰ ভাষা নিৰ্বাচন কৰক</string>
+    <string name="settings_button_generate_cases">কেছ সৃষ্টি কৰা</string>
+    <string name="question_type_study">অধ্যয়ন</string>
+    <string name="question_type_behavioral">আচৰণ</string>
+    <string name="question_type_hiring">নিযুক্তি</string>
+    <string name="subtype_behavioral_interpersonal">আন্তঃব্যক্তিগত দক্ষতা</string>
+    <string name="subtype_behavioral_ethical">নৈতিক সমস্যা</string>
+    <string name="subtype_behavioral_stress">মানসিক চাপ নিয়ন্ত্ৰণ</string>
+    <string name="subtype_study_mastery">বিষয়ৰ মাষ্টাৰশিপ</string>
+    <string name="subtype_study_critical_thinking">সমালোচনামূলক চিন্তা</string>
+    <string name="subtype_study_practical_application">ব্যৱহাৰিক প্ৰয়োগ</string>
+    <string name="subtype_hiring_technical">কাৰিকৰী দক্ষতা</string>
+    <string name="subtype_hiring_behavioral_interview">আচৰণিক সাক্ষাৎকাৰ</string>
+    <string name="subtype_hiring_situational_judgment">পৰিস্থিতিৰ বিচাৰ</string>
+    <string name="difficulty_normal">স্বাভাৱিক</string>
+    <string name="difficulty_easy">সহজ</string>
+    <string name="difficulty_hard">কঠিন</string>
+    <string name="gender_male">পুৰুষ</string>
+    <string name="gender_female">মহিলা</string>
+    <string name="gender_select_prompt">লিংগ নিৰ্বাচন কৰক</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">কিছু ভুল হ\'ল</string>
+    <string name="button_new_game">নতুন খেল</string>
+    <string name="text_round_number">ঘূৰণীয়া %1$d</string>
+    <string name="text_scenario">দৃশ্যপট</string>
+    <string name="button_next">পৰৱৰ্তী</string>
+    <string name="icon_desc_selected_option">নিৰ্বাচিত বিকল্প</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>আফ্ৰিকানছ</item>
+        <item>আকান</item>
+        <item>আমহাৰিক</item>
+        <item>আৰবী (ইউনাইটেড আৰব এমিৰেটছ)</item>
+        <item>অসমীয়া</item>
+        <item>আষ্টুৰিয়ান</item>
+        <item>আজাৰবাইজান</item>
+        <item>বাম্বাৰা</item>
+        <item>বেলাৰুছিয়ান</item>
+        <item>বেম্বা</item>
+        <item>বঙালী</item>
+        <item>তিব্বতীয়</item>
+        <item>বসনিয়ান</item>
+        <item>বুলগেৰিয়ান</item>
+        <item>কাতালানী</item>
+        <item>চেক</item>
+        <item>ৱেলছ</item>
+        <item>ডেনমাৰ্ক</item>
+        <item>জাৰ্মান</item>
+        <item>জংখা</item>
+        <item>গ্ৰীক</item>
+        <item>ইংৰাজী</item>
+        <item>এষ্টোনিয়ান</item>
+        <item>বাস্ক</item>
+        <item>ইৱে (ঘানা)</item>
+        <item>ইৱে (টোগো)</item>
+        <item>ফাৰো</item>
+        <item>ফিনলেণ্ডীয়</item>
+        <item>ফৰাচী</item>
+        <item>ফ্ৰিলিয়ান</item>
+        <item>স্কটিছ গেইলিক</item>
+        <item>আইৰিছ</item>
+        <item>গালিচিয়ান</item>
+        <item>গুজৰাটী</item>
+        <item>হাউছা</item>
+        <item>ইব্ৰী</item>
+        <item>হিন্দি</item>
+        <item>ক্ৰোয়েটিয়ান</item>
+        <item>হাংগেৰিয়ান</item>
+        <item>আৰ্মেনিয়ান</item>
+        <item>ইগ্বো</item>
+        <item>ইণ্ডোনেছিয়ান</item>
+        <item>আইছলেণ্ডৰ ভাষা</item>
+        <item>ইটালিয়ান</item>
+        <item>জাপানী</item>
+        <item>কাবিল</item>
+        <item>কাম্বা</item>
+        <item>কানাডা</item>
+        <item>জৰ্জিয়ান</item>
+        <item>কাজাখ</item>
+        <item>কাবুৰ্দিয়ানু (কেপ ভাৰ্দে ক্ৰীঅ\'ল)</item>
+        <item>খমেৰ</item>
+        <item>কিকুয়ু</item>
+        <item>কিয়ানাৰৱাণ্ডা</item>
+        <item>কিৰগিজস্তান</item>
+        <item>কোৰিয়ান</item>
+        <item>লাও (লাও)</item>
+        <item>লিম্বাৰ্গীয়</item>
+        <item>লিংগালে</item>
+        <item>লিথুয়ান</item>
+        <item>লুক্ছেমবাৰ্জি ভাষা</item>
+        <item>গণ্ডা</item>
+        <item>লুই</item>
+        <item>ষ্টেণ্ডাৰ্ড লেট্ভা ভাষা</item>
+        <item>মালায়ালাম</item>
+        <item>মাৰাঠী</item>
+        <item>মাকিদনিয়ান</item>
+        <item>মালাগাজাৰী (মাগাজাকাৰ)</item>
+        <item>মাল্টিজ (মাল্টা)</item>
+        <item>হালহ মংগোলীয়</item>
+        <item>মালয়েছিয়া (মালয়েছিয়া)</item>
+        <item>ম্যানমাৰ</item>
+        <item>ডাচ</item>
+        <item>নৰৱেজীয়ান নাইনৰ্স্ক</item>
+        <item>নৰৱেজীয় বোকমেল</item>
+        <item>নেপাল (নেপাল)</item>
+        <item>নুৰ (দক্ষিণ ছুডান)</item>
+        <item>ওৰোমো (ইথিঅ\'পিয়া)</item>
+        <item>ওৰোমো (কেনিয়া)</item>
+        <item>ওড়িয়া (ভাৰত)</item>
+        <item>পঞ্জাবি</item>
+        <item>পোলিশ</item>
+        <item>পৰ্টুগীজ</item>
+        <item>পাৰ্চিয়ান (আফগানিস্তান)</item>
+        <item>পাৰ্চিয়ান (ইৰান)</item>
+        <item>পাষ্টু (আফগানিস্তান)</item>
+        <item>কেচুৱা (বলিভিয়া)</item>
+        <item>কেচুৱা (ইকুয়েডৰ)</item>
+        <item>কেচুৱা (পেৰু)</item>
+        <item>ৰোমানিয়ান</item>
+        <item>ৰুণ্ডী (Burundi)</item>
+        <item>ৰাছিয়ান</item>
+        <item>Sango (মধ্য আফ্ৰিকান গণৰাজ্য)</item>
+        <item>সিঙালী (শ্ৰীলংকা)</item>
+        <item>স্লোভাকিয়া (স্লোভাকিয়া)</item>
+        <item>স্লোভেনিয়ান</item>
+        <item>শোনা (জিম্বাবুৱা)</item>
+        <item>ছোমালী</item>
+        <item>স্পেনিচ</item>
+        <item>আলবেনিয়ান (আলবেনিয়া)</item>
+        <item>ছাৰ্বিয়ান</item>
+        <item>সুইডিশ</item>
+        <item>স্বাৱহীলি</item>
+        <item>তামিল</item>
+        <item>তেলুগু</item>
+        <item>থাই</item>
+        <item>তুৰ্কী</item>
+        <item>ইউক্ৰেইনিয়ান</item>
+        <item>উৰ্দু (পাকিস্তান)</item>
+        <item>উইগুৰ (চীনা)</item>
+        <item>উজবেকিস্তান (লাতিন, উজবেকিস্তান)</item>
+        <item>ভিয়েটনাম</item>
+        <item>কক্সোভা ভাষা</item>
+        <item>যোৰুবা</item>
+        <item>কান্তোনিজ ভাষা</item>
+        <item>মণ্ডাৰিন চীনা সৰলীকৰণ</item>
+        <item>মণ্ডাৰিন চীনা পৰম্পৰাগত</item>
+        <item>জুলু</item>
+    </string-array>
+</resources>

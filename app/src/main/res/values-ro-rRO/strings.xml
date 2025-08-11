@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Subiect de alegere</string>
+    <string name="optional_enter_the_role_e_g_student">Opțional: Introduceți rolul, de exemplu, Student</string>
+    <string name="analysis_my_choices">Analizează alegerile mele</string>
+    <string name="analysis_your_selections">Analizează alegerile tale</string>
+    <string name="rounds">Runde</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Scorul se calculează pe baza sănătății, bogăției, relațiilor, fericirii, cunoașterii, karmei, gestionării timpului, impactului asupra mediului, creșterii personale și responsabilității sociale</string>
+    <string name="settings_title">Subiect de alegere</string>
+    <string name="settings_subtitle">Scenariile vor fi bazate pe alegerile dvs.</string>
+    <string name="settings_label_subject">Introduceţi subiectul</string>
+    <string name="settings_hint_select_question_type">Selectați tipul de întrebare</string>
+    <string name="settings_hint_select_subtype">Selectați subtipul</string>
+    <string name="settings_hint_select_difficulty">Selectează nivelul dificil</string>
+    <string name="settings_hint_select_gender_optional">Opțional: Selectați sexul dvs.</string>
+    <string name="settings_label_age">Intră în vârstă</string>
+    <string name="settings_hint_select_language">Alegeţi-vă limba</string>
+    <string name="settings_button_generate_cases">Crearea de cazuri</string>
+    <string name="question_type_study">Studiul</string>
+    <string name="question_type_behavioral">Comportamentul</string>
+    <string name="question_type_hiring">Angajarea</string>
+    <string name="subtype_behavioral_interpersonal">Abilităţile interpersonale</string>
+    <string name="subtype_behavioral_ethical">Dilemmele etice</string>
+    <string name="subtype_behavioral_stress">Managementul stresului</string>
+    <string name="subtype_study_mastery">Maestria subiectului</string>
+    <string name="subtype_study_critical_thinking">Gândirea critică</string>
+    <string name="subtype_study_practical_application">Aplicare practică</string>
+    <string name="subtype_hiring_technical">Abilități tehnice</string>
+    <string name="subtype_hiring_behavioral_interview">Interviu comportamental</string>
+    <string name="subtype_hiring_situational_judgment">Judecata situaţională</string>
+    <string name="difficulty_normal">normal</string>
+    <string name="difficulty_easy">ușor</string>
+    <string name="difficulty_hard">grea</string>
+    <string name="gender_male">Bărbat</string>
+    <string name="gender_female">Femeie</string>
+    <string name="gender_select_prompt">Selectați sexul</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">S-a întâmplat ceva.</string>
+    <string name="button_new_game">Noul joc</string>
+    <string name="text_round_number">Rond %1$d</string>
+    <string name="text_scenario">Scenariul</string>
+    <string name="button_next">Următorul .</string>
+    <string name="icon_desc_selected_option">Opțiune selectată</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>Arabă (Emiratele Arabe Unite)</item>
+        <item>Assamese</item>
+        <item>Asturiană</item>
+        <item>Azerbaidjan</item>
+        <item>Bambara</item>
+        <item>Bielorusă</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibetani</item>
+        <item>Bosnian</item>
+        <item>București</item>
+        <item>Catalană</item>
+        <item>România</item>
+        <item>Welsh</item>
+        <item>Danemarca</item>
+        <item>Răspuns</item>
+        <item>Dzongkha</item>
+        <item>Greacă</item>
+        <item>În limba engleză</item>
+        <item>România</item>
+        <item>Bască</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Faroese</item>
+        <item>Finlandeză</item>
+        <item>Franceză</item>
+        <item>Friulian</item>
+        <item>Gaelică scoțiană</item>
+        <item>Irlanda</item>
+        <item>Galician</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>În ebraică</item>
+        <item>Hindi</item>
+        <item>România</item>
+        <item>Maghiară</item>
+        <item>Armeneză</item>
+        <item>Igbo</item>
+        <item>Indonesiană</item>
+        <item>Islandeză</item>
+        <item>Italiană</item>
+        <item>Japoneză</item>
+        <item>Kabilă</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Georgiană</item>
+        <item>Kazahstan</item>
+        <item>Kabuverdianu (creolul Cap Verde)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>România</item>
+        <item>Coreeană</item>
+        <item>Laos (Lao)</item>
+        <item>Limburgă</item>
+        <item>Lingala</item>
+        <item>Lituaniană</item>
+        <item>În limba luxemburgheză</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Letonia standard</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Macedoniană</item>
+        <item>Madagascar (Madagascar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Halh mongolă</item>
+        <item>Malaie (Malaezia)</item>
+        <item>Burmese</item>
+        <item>Olandezi</item>
+        <item>Norvegian Nynorsk</item>
+        <item>Bokmål norvegian</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Sudanul de Sud)</item>
+        <item>Oromo (Etiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>Poloneză</item>
+        <item>Portugheza</item>
+        <item>Persian (Afganistan)</item>
+        <item>Persian (Iran)</item>
+        <item>Pashto (Afganistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>România</item>
+        <item>Rundi (Burundi)</item>
+        <item>Rusă</item>
+        <item>Sango (Republica Centrala Africană)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovacia (Slovacia)</item>
+        <item>Slovenă</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somalie</item>
+        <item>Spaniola</item>
+        <item>Albanian (Albania)</item>
+        <item>Serbiană</item>
+        <item>Suedeză</item>
+        <item>Swahili</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Thailandeză</item>
+        <item>Turcia</item>
+        <item>Ucraineană</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (China)</item>
+        <item>Uzbekistan (latină, Uzbekistan)</item>
+        <item>Vietnamese</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Cantonese</item>
+        <item>Chineză mandarină simplificată</item>
+        <item>Mandarină chineză tradițională</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

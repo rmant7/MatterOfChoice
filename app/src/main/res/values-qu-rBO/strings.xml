@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Runasimi</string>
+    <string name="optional_enter_the_role_e_g_student">Qhapaq kaq: Qhapaq kaqmanta Qullasuyu qhichwa kaqpi</string>
+    <string name="analysis_my_choices">Imatapas akllasqaykita qhawarini</string>
+    <string name="analysis_your_selections">Qhapaq kaqkunata qhawarina</string>
+    <string name="rounds">Runakuna</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Yachay, karma, tiempo apaykachikunamanta, entorno-impact-manta, crecimiento personal-manta, responsabilidad social-manta.</string>
+    <string name="settings_title">Runasimi</string>
+    <string name="settings_subtitle">Qawasqanchikman hinaqa, imamantachus ajllasqa kasqaykita qhawarisunchik</string>
+    <string name="settings_label_subject">Ñawinchik</string>
+    <string name="settings_hint_select_question_type">Imaynatam tapukuy</string>
+    <string name="settings_hint_select_subtype">Rurana antacha Yapasqa:</string>
+    <string name="settings_hint_select_difficulty">Imamantachus mana allin kasqanta ajllasun</string>
+    <string name="settings_hint_select_gender_optional">Qhapaq kaq: Qhapaq qharikunata akllay</string>
+    <string name="settings_label_age">Qhapaq wataykiman yaykun</string>
+    <string name="settings_hint_select_language">Qhichwa simita akllay</string>
+    <string name="settings_button_generate_cases">Runasimi</string>
+    <string name="question_type_study">Yachay</string>
+    <string name="question_type_behavioral">Runasimi</string>
+    <string name="question_type_hiring">Runasqa</string>
+    <string name="subtype_behavioral_interpersonal">Qhapaqkunawan qhawariy</string>
+    <string name="subtype_behavioral_ethical">Ética nisqamanta llakiykuna</string>
+    <string name="subtype_behavioral_stress">Estresman atienekunapaq</string>
+    <string name="subtype_study_mastery">Qhapaq yachaqana</string>
+    <string name="subtype_study_critical_thinking">Allin yuyayniyoq</string>
+    <string name="subtype_study_practical_application">Imatapas ruwasunman</string>
+    <string name="subtype_hiring_technical">Yachaykuna</string>
+    <string name="subtype_hiring_behavioral_interview">Runasimi</string>
+    <string name="subtype_hiring_situational_judgment">Situacionpi juzgasqa</string>
+    <string name="difficulty_normal">Normal</string>
+    <string name="difficulty_easy">kʼacha</string>
+    <string name="difficulty_hard">Ch\'iñiña</string>
+    <string name="gender_male">Runakuna</string>
+    <string name="gender_female">Warmi</string>
+    <string name="gender_select_prompt">Runasimi</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Imapas mana allinchu karqa.</string>
+    <string name="button_new_game">mosoq pukllaykuna</string>
+    <string name="text_round_number">Runasimi %1$d</string>
+    <string name="text_scenario">Runasimi</string>
+    <string name="button_next">Qhapaq kaq</string>
+    <string name="icon_desc_selected_option">Qhapaqchasqa</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharica</item>
+        <item>Árabe (Emiratos Árabes Unidos)</item>
+        <item>Assamista</item>
+        <item>Asturiano</item>
+        <item>Azerbaiyán simi</item>
+        <item>Bambara</item>
+        <item>Runasimi</item>
+        <item>Bemba</item>
+        <item>Bengali simi</item>
+        <item>Tibetamanta</item>
+        <item>Bosnian</item>
+        <item>Bulgaria simipi</item>
+        <item>Katalán</item>
+        <item>Tsëcho</item>
+        <item>Welsh</item>
+        <item>Danish</item>
+        <item>Alemana</item>
+        <item>Dzongkha</item>
+        <item>Griego</item>
+        <item>Inglés simi</item>
+        <item>Estoniamanta</item>
+        <item>Euskadi</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Faroey</item>
+        <item>Finlandamanta</item>
+        <item>Francia</item>
+        <item>Friulian</item>
+        <item>Scottish Gaelic</item>
+        <item>Irlandés</item>
+        <item>Galicia simi</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Hebreo rimay</item>
+        <item>Hindi</item>
+        <item>Runasimi</item>
+        <item>Hungariano</item>
+        <item>Armenia simi</item>
+        <item>Igbo runasimi</item>
+        <item>Indonesiamanta</item>
+        <item>Islandiya simi</item>
+        <item>Italiamanta</item>
+        <item>Japonés</item>
+        <item>Kabila</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Georgiamanta</item>
+        <item>Qazaq</item>
+        <item>Kabuverdianu (Cape Verde creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Qirguistán</item>
+        <item>Koreamanta</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgo</item>
+        <item>Lingala</item>
+        <item>Lituania simi</item>
+        <item>Luxemburgués</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Estándar latino</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Macedoniamanta</item>
+        <item>Malagasy (Madagascar)</item>
+        <item>Malta (Malta)</item>
+        <item>Halh Mongolia simi</item>
+        <item>Malay (Malaysia)</item>
+        <item>Birmamanta</item>
+        <item>Hollanda</item>
+        <item>Norwegian Nynorsk</item>
+        <item>Norvegia simipi Bokmål</item>
+        <item>Nepal (Nepal)</item>
+        <item>Nuer (Sudan del Sur)</item>
+        <item>Oromo (Etiopía)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (Hindia)</item>
+        <item>Punjabi simi</item>
+        <item>Runasimi</item>
+        <item>Portugués</item>
+        <item>Persia (Afganistán)</item>
+        <item>Persia (Iran)</item>
+        <item>Pashto (Afganistán)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Rumania simi</item>
+        <item>Rundi (Burundi)</item>
+        <item>Rusia simipi</item>
+        <item>Sango (República Centroafricana)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovakiya (Slovakia)</item>
+        <item>Slovenia simipi</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somalia</item>
+        <item>Español</item>
+        <item>Albania (Albania)</item>
+        <item>Serbiamanta</item>
+        <item>Suécia simi</item>
+        <item>Swahili simi</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Tailandia</item>
+        <item>Turquía</item>
+        <item>Ucraniamanta</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (China)</item>
+        <item>Uzbekistan (Latin simipi: Uzbekistan)</item>
+        <item>Vietnam nacionmanta</item>
+        <item>Xhosa</item>
+        <item>Yoruba simi</item>
+        <item>Cantón simi</item>
+        <item>Mandarin simipi qhichwa simipi qhellichasqa</item>
+        <item>Mandarin qhichwa simipi</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

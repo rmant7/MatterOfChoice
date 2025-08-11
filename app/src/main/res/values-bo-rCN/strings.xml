@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">གདམ་ཁ་རྐྱབས་ཀྱི་གནད་དོན་</string>
+    <string name="optional_enter_the_role_e_g_student">གདམ་ཁ་རྐྱབས། འགན་འཁྲི་བཙུགས་ནི། དཔེར་ན་སློབ་ཕྲུག་</string>
+    <string name="analysis_my_choices">ང་ཡི་འདེམས་སྒྲུག་ལ་དཔྱད་པ།</string>
+    <string name="analysis_your_selections">ཁྱོད་ཀྱི་གདམ་ཁ་ལ་དཔྱད་པ།</string>
+    <string name="rounds">འཁོར་ལོ་ཚད།</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">ཚད་གཞིའི་རྩིས་གཞི། གསོ་བ་དང་། རྒྱུ་ནོར་། རྟེན་འབྲེལ་། དགའ་སྐྱིད་། ཤེས་ཡོན་། ཀར་མི། དུས་ཚོད་འཛིན་སྐྱོང་། མཐའ་འཁོར་གྱི་གནོད་འཚེ་། མི་སྣའི་ཡར་རྒྱས་དང་། མི་སྡེའི་འགན་འཁྲི།</string>
+    <string name="settings_title">གདམ་ཁ་རྐྱབས་ཀྱི་གནད་དོན་</string>
+    <string name="settings_subtitle">བརྙན་ཟློས་ནི་ཁྱོད་ཀྱི་གོམས་གཤིས་ལ་རག་ལས་རྒྱུ་ཡིན་</string>
+    <string name="settings_label_subject">གནད་དོན་དེའི་ནང་འཇུག་ཅིག</string>
+    <string name="settings_hint_select_question_type">དྲི་བའི་དབྱིབས་འདེམས་དགོས།</string>
+    <string name="settings_hint_select_subtype">སྣོད་དབྱིབས་འདེམས་དགོས།</string>
+    <string name="settings_hint_select_difficulty">དཀའ་ཐུབ་ཀྱི་གནས་ཚད་འདེམས་དགོས།</string>
+    <string name="settings_hint_select_gender_optional">གདམ་ཁ་རྐྱབས་: ཁྱོད་རའི་ཕོ་སྐྱེས་/ཕོ་མོ་ གདམ་ཁ་རྐྱབས་འབད།</string>
+    <string name="settings_label_age">ཁྱོད་རང་གི་ལོ་ན་ནང་འཛུལ་ཞིག</string>
+    <string name="settings_hint_select_language">ཁྱེད་ཀྱི་སྐད་ཡིག་གདམ་ཁ་རྐྱབས།</string>
+    <string name="settings_button_generate_cases">གནད་དོན་འབྱུང་ཁུངས།</string>
+    <string name="question_type_study">ཞིབ་འཇུག</string>
+    <string name="question_type_behavioral">སྤྱོད་ལམ་</string>
+    <string name="question_type_hiring">གླ་ཡོན།</string>
+    <string name="subtype_behavioral_interpersonal">ཁྱད་རིག་ཁྱད་ཆོས།</string>
+    <string name="subtype_behavioral_ethical">སྤྱོད་ལམ་གྱི་དཀའ་རྙོག་</string>
+    <string name="subtype_behavioral_stress">དཀའ་སྡུག་འཛིན་སྐྱོང་</string>
+    <string name="subtype_study_mastery">གནད་དོན་གྱི་ཤེས་ཡོན་</string>
+    <string name="subtype_study_critical_thinking">གལ་གནད་ཅན་གྱི་བསམ་བློ་</string>
+    <string name="subtype_study_practical_application">ལག་རྩལ་གྱི་ལག་ལེན་</string>
+    <string name="subtype_hiring_technical">ལག་རྩལ།</string>
+    <string name="subtype_hiring_behavioral_interview">སྤྱོད་འཇུག་གི་བཅར་འདྲི།</string>
+    <string name="subtype_hiring_situational_judgment">གནས་སྟངས་ཀྱི་ཐད་ནས་ཐག་གཅོད་</string>
+    <string name="difficulty_normal">དག་ཡིག</string>
+    <string name="difficulty_easy">སྟོད་ཁམས།</string>
+    <string name="difficulty_hard">དཀའ་ངལ།</string>
+    <string name="gender_male">ཕོ་སྐྱེས་</string>
+    <string name="gender_female">བུད་མེད་</string>
+    <string name="gender_select_prompt">སྐྱེ་དམན་འདེམས་དགོས།</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">རྟག་ཏུ་གང་ཞིག་འཁྲུལ་བྱུང་།</string>
+    <string name="button_new_game">རྩེད་འགྲན་གསར་པ།</string>
+    <string name="text_round_number">འཁོར་ %1$d</string>
+    <string name="text_scenario">བརྙན་རིས།</string>
+    <string name="button_next">རྗེས་མ།</string>
+    <string name="icon_desc_selected_option">གདམ་ཁ་རྐྱབས།</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>ཨ་ཕི་རི་ཀན་སི</item>
+        <item>ཨ་ཀན་</item>
+        <item>ཨ་མ་ར་ཡིག</item>
+        <item>ཨ་རབ་ (United Arab Emirates)</item>
+        <item>ཨ་སམ་པ།</item>
+        <item>ཨསཊུ་རི་ཡཱན་</item>
+        <item>ཨ་རུ་ར་བི་ཡཱན།</item>
+        <item>བམ་བྷ་ར་</item>
+        <item>བེ་ལ་རུསི་</item>
+        <item>བེམ་པཱ་</item>
+        <item>བྷེན་ག་ལི།</item>
+        <item>བོད་ཡིག</item>
+        <item>བོསི་ནི་ཡཱན་</item>
+        <item>བལ་གྷ་རི།</item>
+        <item>ཀ་ཏ་ལན།</item>
+        <item>ཊེག་</item>
+        <item>གྷེལ་སི།</item>
+        <item>དབྱིན་ཡིག</item>
+        <item>ཇར་མན་ཡིག</item>
+        <item>Dzongkha</item>
+        <item>གྷི་རིག་པ།</item>
+        <item>དབྱིན་ཡིག</item>
+        <item>ཨོསི་ཊོ་ནི་ཡ།</item>
+        <item>བྷ་སི་ཀ།</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>ཕེ་རེའུ།</item>
+        <item>ཕིན་ལན་ཡིག</item>
+        <item>དབྱིན་ཡིག</item>
+        <item>ཕི་རུ་ལི།</item>
+        <item>Scottish Gaelic</item>
+        <item>ཨར་ལེནཌི་</item>
+        <item>Galician</item>
+        <item>དགེ་ལེགས་ཕུག་</item>
+        <item>ཧུསུའུ།</item>
+        <item>ཧིབ་རུ་ཡིག</item>
+        <item>ཧིན་ཌི་</item>
+        <item>ཀོརའོ་ཡིག</item>
+        <item>དབྱིན་ཡིག</item>
+        <item>ཨར་མེན་ཡིག</item>
+        <item>Igbo</item>
+        <item>རྒྱ་གར་སྐད།</item>
+        <item>ཨེསི་ལེནཌི་</item>
+        <item>ཨི་ཊ་ལི་</item>
+        <item>ཇ་པཱན།</item>
+        <item>ཀཱ་པི་ལི།</item>
+        <item>ཀམ་བཱ་</item>
+        <item>ཀ་ན་ཌ་</item>
+        <item>གྷོ་རི་ཡཱན་</item>
+        <item>ཀ་ཛ་ཀ།</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>ཀ་མེ་རི།</item>
+        <item>ཀི་ཀོ་ཡུ་</item>
+        <item>ཀི་ན་ཝན་ཌ་</item>
+        <item>ཀིར་གྷི་སི་ཐན།</item>
+        <item>ཀོ་རི་ཡ་པ་</item>
+        <item>ལ་འོ་ (Laos)</item>
+        <item>ལིམ་བྷོར་ཇིཤ་</item>
+        <item>ལི་ན་གལ་</item>
+        <item>ལི་ཐུ་ཡཱན་</item>
+        <item>དབྱིན་ཡིག</item>
+        <item>གན་ཌ་</item>
+        <item>Luo</item>
+        <item>སྤྱིར་བཏང་ལཱ་ཏི་ཡཱན་སྐད་ཡིག</item>
+        <item>མ་ལ་ཡ་ལམ།</item>
+        <item>མ་ར་ཐི</item>
+        <item>མ་ཀེ་དོ་ནི་ཡ་</item>
+        <item>མ་ལ་གྷ་སི་ (མ་ལ་གྷ་སི་)</item>
+        <item>མལ་ཐི། (མལ་ཐི།)</item>
+        <item>མོན་གྷོ་ལི་ཡཱན་</item>
+        <item>མ་ལ་ཡ། (མ་ལ་ཡ།)</item>
+        <item>བི་ར་མི།</item>
+        <item>དབྱིན་ཡིག</item>
+        <item>ནོར་ཝེ་ནེ་ནོར་སི་ཀ</item>
+        <item>ནོར་ཝེ་སྐད་ Bokmål</item>
+        <item>ནེ་པཱལ་ (Nepal)</item>
+        <item>ནུ་ར (ལྷོ་ཕྱོགས་སུདན་)</item>
+        <item>ཨོ་རོ་མོ་ (ཨི་ཐི་ཨོ་པི་ཡ་)</item>
+        <item>ཨོ་རོ་མོ་ (ཀེ་ནི་ཡ།)</item>
+        <item>ཨོ་ཌི་ཡ་ (རྒྱ་གར་)</item>
+        <item>པན་ཇབ་ཡིག</item>
+        <item>པོ་ལིཀ་</item>
+        <item>བོད་ཡིག</item>
+        <item>ཕར་སིའི་ (ཨ་ཕ་གན་སི་ཐན།)</item>
+        <item>པར་སི། (ཨི་རན།)</item>
+        <item>པ་སཏོ (ཨ་ཕ་གན་སི་ཐན།)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>རུ་མན་ཡིག</item>
+        <item>རུན་ཌི་ (Burundi)</item>
+        <item>ཨེ་ཤི་ཡཱན།</item>
+        <item>Sango (དབུས་ཨ་ཕི་རི་ཀའི་སྤྱི་མཐུན་རྒྱལ་ཁབ་)</item>
+        <item>སི་ན་ཧཱ་ (སི་རི་ལན།)</item>
+        <item>བོད་ཡིག (Slovakia)</item>
+        <item>བོད་ཡིག</item>
+        <item>བོད་ཡིག (Zimbabwe)</item>
+        <item>索马里</item>
+        <item>བོད་ཡིག</item>
+        <item>ཨལ་བན་གྱི་སྐད་ (Albania)</item>
+        <item>སར་བི་ཡཱན་</item>
+        <item>བོད་ཡིག</item>
+        <item>ས་ཝཱ་ལི་</item>
+        <item>ཏམ་ལི</item>
+        <item>ཐེ་ལོ་གྷོ།</item>
+        <item>ཐའི་ལེནཌི་</item>
+        <item>དབྱིན་ཡིག</item>
+        <item>ཨོསི་ཊོ་ནི་ཡ།</item>
+        <item>ཨུར་ཌུ་ (པཱ་ཀིསི་ཐན།)</item>
+        <item>ཨུའུ་ཡུ་རི། (རྒྱ་ནག་)</item>
+        <item>ཨོསི་པེ་ཀིསི་ཊན། (Latin, Uzbekistan)</item>
+        <item>ཝེ་ཊན་མི།</item>
+        <item>ཀྲོ་སི།</item>
+        <item>ཡོར་བུ།</item>
+        <item>ཀན་ཊོན་ཡིག</item>
+        <item>རྒྱ་ཡིག མན་དར་ཡིག འཇམ་ཚད།</item>
+        <item>རྫོང་ཁའི་རྒྱ་ནག་གི་སྲོལ་རྒྱུན་</item>
+        <item>ཛུ་ལུ</item>
+    </string-array>
+</resources>

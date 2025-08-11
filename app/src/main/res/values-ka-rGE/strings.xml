@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">არჩევანის საკითხი</string>
+    <string name="optional_enter_the_role_e_g_student">ვარიანტი: შეიყვანეთ როლი, მაგალითად, სტუდენტი</string>
+    <string name="analysis_my_choices">ჩემი არჩევნების ანალიზი</string>
+    <string name="analysis_your_selections">ანალიზი თქვენი არჩევანი</string>
+    <string name="rounds">რაუნდები</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">ქულების გამოთვლა ჯანმრთელობის, სიმდიდრის, ურთიერთობების, ბედნიერების, ცოდნის, კარმის, დროის მართვის, გარემოსდაცვითი ზემოქმედების, პირადი ზრდის და სოციალური პასუხისმგებლობის საფუძველზე</string>
+    <string name="settings_title">არჩევანის საკითხი</string>
+    <string name="settings_subtitle">სცენარები ეფუძნება თქვენს არჩევანს.</string>
+    <string name="settings_label_subject">შეიყვანეთ საგანი</string>
+    <string name="settings_hint_select_question_type">შეარჩიეთ შეკითხვის ტიპი</string>
+    <string name="settings_hint_select_subtype">აირჩიეთ ქვეტიპი</string>
+    <string name="settings_hint_select_difficulty">აირჩიეთ რთული დონე</string>
+    <string name="settings_hint_select_gender_optional">ვარიანტი: აირჩიეთ თქვენი სქესი</string>
+    <string name="settings_label_age">შედით თქვენს ასაკში</string>
+    <string name="settings_hint_select_language">აირჩიეთ თქვენი ენა</string>
+    <string name="settings_button_generate_cases">შექმნა შემთხვევები</string>
+    <string name="question_type_study">შესწავლა</string>
+    <string name="question_type_behavioral">ქცევა</string>
+    <string name="question_type_hiring">დაქირავება</string>
+    <string name="subtype_behavioral_interpersonal">ინტერპერსონალური უნარები</string>
+    <string name="subtype_behavioral_ethical">ეთიკური დილემები</string>
+    <string name="subtype_behavioral_stress">სტრესის მართვა</string>
+    <string name="subtype_study_mastery">სუბიექტის მართვა</string>
+    <string name="subtype_study_critical_thinking">კრიტიკული აზროვნება</string>
+    <string name="subtype_study_practical_application">პრაქტიკული გამოყენება</string>
+    <string name="subtype_hiring_technical">ტექნიკური უნარები</string>
+    <string name="subtype_hiring_behavioral_interview">ქცევის ინტერვიუ</string>
+    <string name="subtype_hiring_situational_judgment">სიტუაციური განაჩენი</string>
+    <string name="difficulty_normal">ნორმალური</string>
+    <string name="difficulty_easy">მარტივი</string>
+    <string name="difficulty_hard">ძნელი</string>
+    <string name="gender_male">მამაკაცები</string>
+    <string name="gender_female">ქალები</string>
+    <string name="gender_select_prompt">შეარჩიეთ სქესი</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">რაღაც არასწორად წავიდა.</string>
+    <string name="button_new_game">ახალი თამაში</string>
+    <string name="text_round_number">მრგვალი %1$d</string>
+    <string name="text_scenario">სცენარი</string>
+    <string name="button_next">შემდეგი</string>
+    <string name="icon_desc_selected_option">არჩეული ვარიანტი</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>აფრიკაანსი</item>
+        <item>აკანები</item>
+        <item>ამხარი ენა</item>
+        <item>არაბული (ერთიანებული არაბეთის საამიროები)</item>
+        <item>ასამური</item>
+        <item>ასტურიული</item>
+        <item>აჭარაში</item>
+        <item>ბამბარა</item>
+        <item>ბელარუსი</item>
+        <item>ბემბა</item>
+        <item>ბენგალი</item>
+        <item>ტიბეტური</item>
+        <item>ბოსნიელი</item>
+        <item>ბულგარული</item>
+        <item>კატალონიური</item>
+        <item>ჩეხეთი</item>
+        <item>უელსური</item>
+        <item>დანიელი</item>
+        <item>გერმანული</item>
+        <item>ჯონგხა</item>
+        <item>ბერძნული</item>
+        <item>ინგლისური</item>
+        <item>ესტონური</item>
+        <item>ბასკი</item>
+        <item>ევე (განა)</item>
+        <item>ევე (თოგო)</item>
+        <item>ფერეველები</item>
+        <item>ფინური</item>
+        <item>ფრანგული</item>
+        <item>ფრიულური</item>
+        <item>შოტლანდიური გაელიური</item>
+        <item>ირლანდიური</item>
+        <item>გალიციური</item>
+        <item>გუჯარატი</item>
+        <item>ჰაუსა</item>
+        <item>ებრაული</item>
+        <item>ჰინდი</item>
+        <item>ხორვატიული</item>
+        <item>უნგრული</item>
+        <item>სომხური</item>
+        <item>იგბო</item>
+        <item>ინდონეზიური</item>
+        <item>ისლანდიური</item>
+        <item>იტალიური</item>
+        <item>იაპონელი</item>
+        <item>კაბილური</item>
+        <item>კამბა</item>
+        <item>კანადა</item>
+        <item>ქართული</item>
+        <item>ყაზახეთი</item>
+        <item>კაბუვერდიანუ (კაიფ-ვერდის კრეოლი)</item>
+        <item>კმერები</item>
+        <item>კიკუიუ</item>
+        <item>კინარუანდა</item>
+        <item>ყირგიზეთი</item>
+        <item>კორეელი</item>
+        <item>ლაოსი</item>
+        <item>ლიმბურგიული</item>
+        <item>ლინგალა</item>
+        <item>ლიტვური</item>
+        <item>ლუქსემბურგური</item>
+        <item>განდა</item>
+        <item>ლოუ</item>
+        <item>სტანდარტული ლატვიური</item>
+        <item>მალაილამი</item>
+        <item>მარატი</item>
+        <item>მაკედონიური</item>
+        <item>მადაგასკი (მადაგასკი)</item>
+        <item>მალტური (მალტური)</item>
+        <item>ჰალჰ მონღოლური</item>
+        <item>მალაიზეთი (მალაიზეთი)</item>
+        <item>ბირმელი</item>
+        <item>ჰოლანდიური</item>
+        <item>ნორვეგიული ნინორსკი</item>
+        <item>ნორვეგიული ბოკმელი</item>
+        <item>ნეპალი (ნეპალი)</item>
+        <item>ნუერი (სამხრეთ სუდანში)</item>
+        <item>ორომო (ეთიოპია)</item>
+        <item>ორომო (კენია)</item>
+        <item>ოდია (ინდოეთი)</item>
+        <item>პანჯაბური</item>
+        <item>პოლონური</item>
+        <item>პორტუგალიური</item>
+        <item>სპარსული (აფხაზეთი)</item>
+        <item>სპარსული (ირანი)</item>
+        <item>პაშტო (აფხაზეთი)</item>
+        <item>კეჩუა (ბოლივია)</item>
+        <item>კეჩუა (ეკვადორი)</item>
+        <item>კეჩუა (პერუ)</item>
+        <item>რუმინური</item>
+        <item>რუნდი (ბურუნდი)</item>
+        <item>რუსული</item>
+        <item>სანგო (ცენტრალური აფრიკის რესპუბლიკა)</item>
+        <item>სინჰალა (სრი-ლანკა)</item>
+        <item>სლოვაკეთი (სლოვაკეთი)</item>
+        <item>სლოვენიური</item>
+        <item>შონა (ზიმბაბვევი)</item>
+        <item>სომალი</item>
+        <item>ესპანური</item>
+        <item>ალბანური (ალბანეთი)</item>
+        <item>სერბული</item>
+        <item>შვედური</item>
+        <item>სუაჰილი</item>
+        <item>ტამილური</item>
+        <item>ტელუგუ</item>
+        <item>ტაილანდიელი</item>
+        <item>თურქული</item>
+        <item>უკრაინული</item>
+        <item>ურდუ (პაკისტანი)</item>
+        <item>უიგური (ჩინეთი)</item>
+        <item>უზბეკეთი (ლათ. უზბეკეთი)</item>
+        <item>ვიეტნამელები</item>
+        <item>ხოსა</item>
+        <item>იორუბა</item>
+        <item>კანტონური</item>
+        <item>მანდარინური ჩინური გამარტივებული</item>
+        <item>ჩინური ტრადიციული მანდარინი</item>
+        <item>ზულუები</item>
+    </string-array>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Sljedeća strana</string>
+    <string name="optional_enter_the_role_e_g_student">Opcionalno: Uložite ulogu, npr. Student</string>
+    <string name="analysis_my_choices">Analiza mojih izbora</string>
+    <string name="analysis_your_selections">Analiza vaših izbora</string>
+    <string name="rounds">Runde</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Rezultati se izračunavaju na temelju zdravlja, bogatstva, odnosa, sreće, znanja, karme, upravljanja vremenom, utjecaja na okoliš, osobnog rasta i društvene odgovornosti</string>
+    <string name="settings_title">Sljedeća strana</string>
+    <string name="settings_subtitle">Scenariji će se temeljiti na vašim izborima.</string>
+    <string name="settings_label_subject">Ubaci predmet</string>
+    <string name="settings_hint_select_question_type">Izberite tip pitanja</string>
+    <string name="settings_hint_select_subtype">Izberite podtip</string>
+    <string name="settings_hint_select_difficulty">Izaberite težak nivo</string>
+    <string name="settings_hint_select_gender_optional">Opcionalno: odaberite svoj spol</string>
+    <string name="settings_label_age">Uđite u svoj vek</string>
+    <string name="settings_hint_select_language">Izaberite jezik</string>
+    <string name="settings_button_generate_cases">Stvaranje slučajeva</string>
+    <string name="question_type_study">Studija</string>
+    <string name="question_type_behavioral">Ponašanje</string>
+    <string name="question_type_hiring">Iznajmljivanje</string>
+    <string name="subtype_behavioral_interpersonal">Interpersonalne vještine</string>
+    <string name="subtype_behavioral_ethical">Etičke dileme</string>
+    <string name="subtype_behavioral_stress">Upravljanje stresom</string>
+    <string name="subtype_study_mastery">Ponuđenje subjekta</string>
+    <string name="subtype_study_critical_thinking">Kritično razmišljanje</string>
+    <string name="subtype_study_practical_application">Praktična primjena</string>
+    <string name="subtype_hiring_technical">Tehničke vještine</string>
+    <string name="subtype_hiring_behavioral_interview">Intervju s ponašanjem</string>
+    <string name="subtype_hiring_situational_judgment">Sudije po situacijama</string>
+    <string name="difficulty_normal">normalna</string>
+    <string name="difficulty_easy">jednostavan</string>
+    <string name="difficulty_hard">teška</string>
+    <string name="gender_male">Muškarac</string>
+    <string name="gender_female">Žena</string>
+    <string name="gender_select_prompt">Izbor spola</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Nešto nije u redu.</string>
+    <string name="button_new_game">Nova igra</string>
+    <string name="text_round_number">Okružni %1$d</string>
+    <string name="text_scenario">Scenarij</string>
+    <string name="button_next">Sljedeći</string>
+    <string name="icon_desc_selected_option">Izbrana opcija</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharski</item>
+        <item>Arapski (Ujedinjeni Arapski Emirati)</item>
+        <item>Asamci</item>
+        <item>Asturijski</item>
+        <item>Azerbejdžanski</item>
+        <item>Bambara</item>
+        <item>Bjeloruski</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibetanski</item>
+        <item>Bosanski</item>
+        <item>Bugarska</item>
+        <item>Katalonski</item>
+        <item>Česki</item>
+        <item>Velski</item>
+        <item>Danski</item>
+        <item>Njemački</item>
+        <item>Dzongkha</item>
+        <item>Grčki</item>
+        <item>Engleski</item>
+        <item>Španjolski</item>
+        <item>Baskijski</item>
+        <item>Ewe (Ghana)</item>
+        <item>(Togo)</item>
+        <item>Farerski</item>
+        <item>Finska</item>
+        <item>Francuski</item>
+        <item>Friulijski</item>
+        <item>Škotski gaelički</item>
+        <item>Irski</item>
+        <item>Galicijanski</item>
+        <item>Gujarati</item>
+        <item>Husa</item>
+        <item>Jevrejski</item>
+        <item>Indijski</item>
+        <item>Hrvatski</item>
+        <item>Mađarski</item>
+        <item>Armenijski</item>
+        <item>Igbo</item>
+        <item>Indoneski</item>
+        <item>Islandijski</item>
+        <item>Italijski</item>
+        <item>Japanski</item>
+        <item>Kabilski</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Gruzijski</item>
+        <item>Kazahstan</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Korejski</item>
+        <item>Laos (Laos)</item>
+        <item>Limburški</item>
+        <item>Lingala</item>
+        <item>Litvanski</item>
+        <item>Luksemburgski</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Standardni latvijski</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Mađonski</item>
+        <item>Madagaskar (Madagaskar)</item>
+        <item>Maltinski (Malta)</item>
+        <item>Halh mongolski</item>
+        <item>Malajski (Malajzija)</item>
+        <item>Burmanski</item>
+        <item>Nizozemske</item>
+        <item>Norveški Nynorsk</item>
+        <item>Norveški Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Južni Sudan)</item>
+        <item>Oromo (Etiopija)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (Indija)</item>
+        <item>Punjabi</item>
+        <item>Poljski</item>
+        <item>Portugalski</item>
+        <item>Perzijski (Afganistan)</item>
+        <item>Perzijski (Iran)</item>
+        <item>Pashto (Afganistan)</item>
+        <item>Quechua (Bolivija)</item>
+        <item>Quechua (Ekuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Rumunijski</item>
+        <item>Rundi (Burundi)</item>
+        <item>Ruski</item>
+        <item>Sango (Srednja afrička republika)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovenska (Slovačka)</item>
+        <item>Slovenački</item>
+        <item>Šona (Zimbabwe)</item>
+        <item>Somalijska</item>
+        <item>Španjolski</item>
+        <item>Albanski (Albanija)</item>
+        <item>Srpski</item>
+        <item>Švedski</item>
+        <item>Švahilij</item>
+        <item>Tamski</item>
+        <item>Telugu</item>
+        <item>Tajlandski</item>
+        <item>Turski</item>
+        <item>Ukrajinski</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uiguri (Kina)</item>
+        <item>Uzbekistan (latinski, Uzbekistan)</item>
+        <item>Vijetnamci</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Kantonski</item>
+        <item>Mandarinski kineski pojednostavljen</item>
+        <item>Mandarinski kineski tradicionalni</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

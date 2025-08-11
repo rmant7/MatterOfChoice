@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Asuntu di skodje</string>
+    <string name="optional_enter_the_role_e_g_student">Opcional: Entra papel, purizénplu, Studanti</string>
+    <string name="analysis_my_choices">Analiza nha opson</string>
+    <string name="analysis_your_selections">Analiza bu vontadi</string>
+    <string name="rounds">Rondas</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Kalkulason di pontu baziadu na saúdi, rikéza, relason, filisidadi, konhisimentu, karma, gerensia di ténpu, impaktu ambiental, krimi pesoal i responsabilidadi sosial</string>
+    <string name="settings_title">Asuntu di skodje</string>
+    <string name="settings_subtitle">Kes situason ta ben baseadu na bu vontadi</string>
+    <string name="settings_label_subject">Entra téma</string>
+    <string name="settings_hint_select_question_type">Skodje tipu di pergunta</string>
+    <string name="settings_hint_select_subtype">Skodje subtipu</string>
+    <string name="settings_hint_select_difficulty">Skodje nível difísil</string>
+    <string name="settings_hint_select_gender_optional">Opcional: skodje bu séksu</string>
+    <string name="settings_label_age">Txiga na bu idadi</string>
+    <string name="settings_hint_select_language">Skodje bu língua</string>
+    <string name="settings_button_generate_cases">Jéneru kazu</string>
+    <string name="question_type_study">Studa Bíblia</string>
+    <string name="question_type_behavioral">Konportamentu</string>
+    <string name="question_type_hiring">Enkaregadu</string>
+    <string name="subtype_behavioral_interpersonal">Skills interpersonal</string>
+    <string name="subtype_behavioral_ethical">Dilemmas étiku</string>
+    <string name="subtype_behavioral_stress">Manda pa otu algen Manda pa otu algen Stresu</string>
+    <string name="subtype_study_mastery">Manda pa otu algen Manda pa otu algen</string>
+    <string name="subtype_study_critical_thinking">Pensamentu krítiku</string>
+    <string name="subtype_study_practical_application">Aplikason práktiku</string>
+    <string name="subtype_hiring_technical">Kompeténsia tékniku</string>
+    <string name="subtype_hiring_behavioral_interview">Entrevista sobri konportamentu</string>
+    <string name="subtype_hiring_situational_judgment">Sentinéla di situason</string>
+    <string name="difficulty_normal">normal</string>
+    <string name="difficulty_easy">fásil</string>
+    <string name="difficulty_hard">duru</string>
+    <string name="gender_male">Mudjer</string>
+    <string name="gender_female">Mudjer</string>
+    <string name="gender_select_prompt">Skodje ses séksu</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Kel-li kontise un kuza mariadu.</string>
+    <string name="button_new_game">Jogu novu</string>
+    <string name="text_round_number">Rondadu %1$d</string>
+    <string name="text_scenario">Scenariu</string>
+    <string name="button_next">Dipôs</string>
+    <string name="icon_desc_selected_option">Opson skodjedu</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Kabuverdianu</item>
+        <item>Alfabétu Kabuverdianu</item>
+        <item>Assamês</item>
+        <item>Kabuverdianu</item>
+        <item>Azerbaijanu</item>
+        <item>Bambara</item>
+        <item>Kabuverdianu</item>
+        <item>Bemba</item>
+        <item>Lingua bengali</item>
+        <item>Tibétu</item>
+        <item>Kabuverdianu</item>
+        <item>Kabuverdianu</item>
+        <item>Kabuverdianu</item>
+        <item>Kabuverdianu</item>
+        <item>Kabuverdianu</item>
+        <item>Kabuverdianu</item>
+        <item>Alemaniadu</item>
+        <item>Dzongkha</item>
+        <item>Gregu</item>
+        <item>Lingua Kabuverdianu</item>
+        <item>Kabuverdianu</item>
+        <item>Basku</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Kabuverdianu</item>
+        <item>língua finlandês</item>
+        <item>Kabuverdianu</item>
+        <item>Kabuverdianu</item>
+        <item>Lingua gaéliku skotsku</item>
+        <item>Irlandês</item>
+        <item>Gálisianu</item>
+        <item>Gujarati</item>
+        <item>língua Hausa</item>
+        <item>Língua ebraiku</item>
+        <item>Kabuverdianu</item>
+        <item>Kabuverdianu</item>
+        <item>Lingua di purtugês</item>
+        <item>Armênia</item>
+        <item>Kabuverdianu</item>
+        <item>Kabuverdianu</item>
+        <item>Islandês</item>
+        <item>Italianu</item>
+        <item>Japonês</item>
+        <item>Kabuverdianu</item>
+        <item>Kamba</item>
+        <item>Kabuverdianu</item>
+        <item>Língua kabuverdianu</item>
+        <item>Kabuverdianu</item>
+        <item>Kabuverdianu (Kréolu di Kabu Verdi)</item>
+        <item>Kabuverdianu</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirguizistão</item>
+        <item>Koreanu</item>
+        <item>Laos (Laos)</item>
+        <item>Kabuverdianu</item>
+        <item>Línguas</item>
+        <item>Lítu</item>
+        <item>Luxemburguês</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Lingua di Letónia</item>
+        <item>Kabuverdianu</item>
+        <item>Kabuverdianu</item>
+        <item>Kabuverdianu</item>
+        <item>Kabuverdianu (Madagascar)</item>
+        <item>Maltês (Malta)</item>
+        <item>Lingua kabuverdianu</item>
+        <item>Kabuverdianu (Malaysia)</item>
+        <item>Birmanês</item>
+        <item>Kabuverdianu</item>
+        <item>Norveguês Nynorsk</item>
+        <item>Bokmål na purtugês</item>
+        <item>Népal (Nepal)</item>
+        <item>Nuer (Sudan di Sudu)</item>
+        <item>Órmu (Étiopia)</item>
+        <item>Oromó (Kénia)</item>
+        <item>Odia (Índia)</item>
+        <item>Punjabi</item>
+        <item>Lingua di purtugês</item>
+        <item>Purtugês</item>
+        <item>Persianu (Afganistão)</item>
+        <item>Persianu (Irán)</item>
+        <item>Pashto (Afganistão)</item>
+        <item>Kichua (Bolivia)</item>
+        <item>Kabuverdianu (Ecuador)</item>
+        <item>Kichua (Peru)</item>
+        <item>Kabuverdianu</item>
+        <item>Rundi (Burundi)</item>
+        <item>Rusu</item>
+        <item>Sango (Republika di Afrika Sentral)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slováku (Slovákia)</item>
+        <item>Lingua di Slovénia</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Kabuverdianu</item>
+        <item>Kabuverdianu</item>
+        <item>Albanês (Albania)</item>
+        <item>Língua sérvu</item>
+        <item>Kabuverdianu</item>
+        <item>Língua Swahili</item>
+        <item>Kabuverdianu</item>
+        <item>Télugu</item>
+        <item>Tailandês</item>
+        <item>Turku</item>
+        <item>Kriolu di Kriolu</item>
+        <item>Urdu (Pakistão)</item>
+        <item>Uigur (Txina)</item>
+        <item>Ouzbek (Latin, Ouzbekistão)</item>
+        <item>Vietnamês</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Kabuverdianu</item>
+        <item>Manda pa otu algen Manda pa otu algen Chinês simplifikadu</item>
+        <item>Manda pa otu algen Manda pa otu algen</item>
+        <item>Kabuverdianu</item>
+    </string-array>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ရွေးချယ်မှု အကြောင်းအရာ</string>
+    <string name="optional_enter_the_role_e_g_student">ရွေးချယ်စရာ: အခန်းကိုထည့်ပါ။ ဥပမာ ကျောင်းသား။</string>
+    <string name="analysis_my_choices">ကျွန်မရဲ့ ရွေးချယ်မှုတွေကို ဆန်းစစ်ပါ။</string>
+    <string name="analysis_your_selections">သင့်ရွေးချယ်မှုကို ဆန်းစစ်ပါ။</string>
+    <string name="rounds">မော်တော်ယာဉ်</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">ကျန်းမာရေး၊ ချမ်းသာမှု၊ ဆက်ဆံရေး၊ ပျော်ရွှင်မှု၊ အသိပညာ၊ ကာမာ၊ အချိန် စီမံခန့်ခွဲမှု၊ ပတ်ဝန်းကျင် သက်ရောက်မှု၊ ကိုယ်ရေးကိုယ်တာ ကြီးထွားမှုနဲ့ လူမှုရေး တာဝန်ကို အခြေခံပြီး အမှတ် တွက်ချက်ခြင်း</string>
+    <string name="settings_title">ရွေးချယ်မှု အကြောင်းအရာ</string>
+    <string name="settings_subtitle">ဇာတ်ညွှန်းတွေဟာ သင့်ရွေးချယ်မှုအပေါ် အခြေခံပါလိမ့်မယ်။</string>
+    <string name="settings_label_subject">အကြောင်းအရာကိုထည့်ပါ။</string>
+    <string name="settings_hint_select_question_type">မေးခွန်းအမျိုးအစားကို ရွေးချယ်ပါ။</string>
+    <string name="settings_hint_select_subtype">Subtype ကိုရွေးပါ။</string>
+    <string name="settings_hint_select_difficulty">ခက်ခဲတဲ့ အဆင့်ကို ရွေးပါ။</string>
+    <string name="settings_hint_select_gender_optional">ရွေးချယ်စရာ: သင့်လိင်ကို ရွေးချယ်ပါ။</string>
+    <string name="settings_label_age">သင့်အသက်အရွယ်ကို ဝင်ပါ</string>
+    <string name="settings_hint_select_language">သင့်ဘာသာစကားကို ရွေးချယ်ပါ။</string>
+    <string name="settings_button_generate_cases">ကိစ္စများ ဖန်တီးခြင်း</string>
+    <string name="question_type_study">လေ့လာမှု</string>
+    <string name="question_type_behavioral">အပြုအမူ</string>
+    <string name="question_type_hiring">အလုပ်ခန့်ခြင်း</string>
+    <string name="subtype_behavioral_interpersonal">လူချင်းချင်း ကျွမ်းကျင်မှု</string>
+    <string name="subtype_behavioral_ethical">ကျင့်ဝတ်ဆိုင်ရာ ပြဿနာများ</string>
+    <string name="subtype_behavioral_stress">စိတ်ဖိစီးမှု စီမံခန့်ခွဲမှု</string>
+    <string name="subtype_study_mastery">ဘာသာရပ်ဆိုင်ရာ ကျွမ်းကျင်မှု</string>
+    <string name="subtype_study_critical_thinking">ဝေဖန်သုံးသပ်ခြင်း</string>
+    <string name="subtype_study_practical_application">လက်တွေ့ အသုံးချမှု</string>
+    <string name="subtype_hiring_technical">နည်းပညာ ကျွမ်းကျင်မှု</string>
+    <string name="subtype_hiring_behavioral_interview">အပြုအမူ အင်တာဗျူး</string>
+    <string name="subtype_hiring_situational_judgment">အခြေအနေဆိုင်ရာ ဆုံးဖြတ်ချက်</string>
+    <string name="difficulty_normal">ပုံမှန်</string>
+    <string name="difficulty_easy">အလွယ်တကူ</string>
+    <string name="difficulty_hard">ခဲယဉ်း</string>
+    <string name="gender_male">အမျိုးသား</string>
+    <string name="gender_female">အမျိုးသမီး</string>
+    <string name="gender_select_prompt">လိင်ကို ရွေးချယ်ပါ။</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">တစ်ခုခု မှားသွားတယ်</string>
+    <string name="button_new_game">ဂိမ်းသစ်</string>
+    <string name="text_round_number">%1$d အဝိုင်း</string>
+    <string name="text_scenario">ဇာတ်ညွှန်း</string>
+    <string name="button_next">နောက်တစ်ခု</string>
+    <string name="icon_desc_selected_option">ရွေးချယ်သော ရွေးချယ်မှု</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>အာဖရိကန်စကား</item>
+        <item>အာကန်</item>
+        <item>အာမာစကား</item>
+        <item>အာရပ်ဘာသာ (United Arab Emirates)</item>
+        <item>အာရှ</item>
+        <item>အာစတြီးယား</item>
+        <item>အာဇာဘီးဂျန်ဘာသာ</item>
+        <item>ဘမ်ဘာရာ</item>
+        <item>ဘီလာရုရှားဘာသာ</item>
+        <item>ဘင်ဘား</item>
+        <item>ဘင်္ဂါလီ</item>
+        <item>တိဘက်</item>
+        <item>ဘိုစနီးယား</item>
+        <item>ဘူးလ်ဂါရီးယား</item>
+        <item>ကက်တလန်</item>
+        <item>စစ်ကိုင်း</item>
+        <item>ဝေလသ</item>
+        <item>ဒိန်းမတ်</item>
+        <item>ဂျာမန်</item>
+        <item>Dzongkha</item>
+        <item>ဂရိဘာသာ</item>
+        <item>အင်္ဂလိပ်စာ</item>
+        <item>အီစတွန်</item>
+        <item>ဘတ်စကတ်</item>
+        <item>Ewe (ဂါနာ)</item>
+        <item>Ewe (တိုဂို)</item>
+        <item>ဖာရူး</item>
+        <item>ဖင်လန်</item>
+        <item>ပြင်သစ်</item>
+        <item>ဖရီူးလျန်</item>
+        <item>စကော့တလန်ဂေးလစ်</item>
+        <item>အိုင်ယာလန်</item>
+        <item>ဂါလီရှား</item>
+        <item>ဂူဂျာတီ</item>
+        <item>Hausa</item>
+        <item>ဟေဗြဲဘာသာ</item>
+        <item>ဟိန္ဒိယ</item>
+        <item>ကရိုအေးရှား</item>
+        <item>ဗြိတိန်</item>
+        <item>အာမေးနီးယား</item>
+        <item>အီဂို</item>
+        <item>အင်ဒိုနီးရှား</item>
+        <item>အိုက်စလန်</item>
+        <item>အီတလီ</item>
+        <item>ဂျပန်</item>
+        <item>ကာဘီလီ</item>
+        <item>Kamba</item>
+        <item>ကနေဒါ</item>
+        <item>ဂျော်ဂျီးယန်း</item>
+        <item>ကာဇက်</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>ခမာ</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>ကာဂျစ်စတန်</item>
+        <item>ကိုရီးယား</item>
+        <item>လာအို (လာအို)</item>
+        <item>Limburgish</item>
+        <item>Lingala</item>
+        <item>လစ်ဗျားဘာသာ</item>
+        <item>လူးဇင်ဘာဂ်</item>
+        <item>ဂန်ဒါ</item>
+        <item>Luo</item>
+        <item>ပုံမှန် လတ်တရှ်ဘာသာစကား</item>
+        <item>မလေးရှား</item>
+        <item>မာရာသီ</item>
+        <item>မက်ဆီဒေါနီးယား</item>
+        <item>မာလာဂါစကာ (မာလာဂါစကာ)</item>
+        <item>မော်လ်တာ (မော်လ်တာ)</item>
+        <item>မွန်ဂိုလီးယား</item>
+        <item>မလေးရှား (မလေးရှား)</item>
+        <item>မြန်မာဘာသာ</item>
+        <item>နယ်သာလန်</item>
+        <item>နော်ဝေ Nynorsk</item>
+        <item>နော်ဝေ Bokmål</item>
+        <item>နီပေါ (နီပေါ)</item>
+        <item>Nuer (တောင်ဆူဒန်)</item>
+        <item>အိုရိုမို (အီသီယိုးပီးယား)</item>
+        <item>အိုရိုမို (ကင်ညာ)</item>
+        <item>အိုဒီယာ (အိန္ဒိယ)</item>
+        <item>ပင်ဂျာဘီ</item>
+        <item>ပိုလန်</item>
+        <item>ပေါ်တူဂီစကား</item>
+        <item>ပါရှား (အာဖဂန်နစ္စတန်)</item>
+        <item>ပါရှား (အီရန်)</item>
+        <item>Pashto (အာဖဂန်နစ္စတန်)</item>
+        <item>Quechua (ဘိုလီဗီးယား)</item>
+        <item>Quechua (အီကွေတာ)</item>
+        <item>Quechua (Peru)</item>
+        <item>ရိုမေးနီးယား</item>
+        <item>ရွန်ဒီ (Burundi)</item>
+        <item>ရုရှား</item>
+        <item>ဆန်ဂို (ဗဟိုအာဖရိကနိုင်ငံ)</item>
+        <item>Sinhala (သီရိလင်္ကာ)</item>
+        <item>စလိုဗားကီ (စလိုဗားကီးယား)</item>
+        <item>စလိုဗီးယန်း</item>
+        <item>Shona (ဇင်ဘာဘွေ)</item>
+        <item>ဆိုမာလီ</item>
+        <item>စပိန်</item>
+        <item>အယ်လ်ဘနီးယား (အယ်လ်ဘနီးယား)</item>
+        <item>ဆာဗီးယား</item>
+        <item>ဆွီဒင်ဘာသာ</item>
+        <item>ဆွာဟီလီ</item>
+        <item>တာမွေ</item>
+        <item>Telugu</item>
+        <item>ထိုင်းနိုင်ငံ</item>
+        <item>တူရကီ</item>
+        <item>ယူကရိန်းဘာသာ</item>
+        <item>Urdu ( ပါကစ္စတန်)</item>
+        <item>Uyghur (တရုတ်)</item>
+        <item>အူဇဘက်စ် (လာတင်၊ အူဇဘက်စ်တန်)</item>
+        <item>ဗီယက်နမ်</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>ကန်တွန်ဘာသာစကား</item>
+        <item>မန်ဒါရင်း တရုတ်ဘာသာ ရိုးစင်း</item>
+        <item>မန်ဒါရင်း တရုတ်ရိုးရာ</item>
+        <item>ဇူလူးဘာသာ</item>
+    </string-array>
+</resources>

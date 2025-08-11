@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">තෝරාගැනීමේ කාරණය</string>
+    <string name="optional_enter_the_role_e_g_student">විකල්ප: කාර්යභාරය ඇතුලත් කරන්න, උදාහරණයක් ලෙස ශිෂ් යයා</string>
+    <string name="analysis_my_choices">මගේ තේරීම් විශ්ලේෂණය කරන්න</string>
+    <string name="analysis_your_selections">ඔබේ තේරීම් විශ්ලේෂණය කරන්න</string>
+    <string name="rounds">රවුම්</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">සෞඛ් යය, ධනය, සබඳතා, සතුට, දැනුම, කර්මය, කාලය කළමනාකරණය, පාරිසරික බලපෑම, පුද්ගලික වර්ධනය සහ සමාජ වගකීම මත පදනම්ව ලකුණු ගණනය කිරීම</string>
+    <string name="settings_title">තෝරාගැනීමේ කාරණය</string>
+    <string name="settings_subtitle">ප් රවෘත්ති ඔබේ තේරීම් මත පදනම් වෙනවා.</string>
+    <string name="settings_label_subject">විෂය ඇතුලත් කරන්න</string>
+    <string name="settings_hint_select_question_type">ප් රශ්න වර්ගය තෝරන්න</string>
+    <string name="settings_hint_select_subtype">උප වර්ගය තෝරන්න</string>
+    <string name="settings_hint_select_difficulty">දුෂ්කර මට්ටම තෝරන්න</string>
+    <string name="settings_hint_select_gender_optional">විකල්ප: ඔබේ ස්ත් රී පුරුෂ භාවය තෝරන්න</string>
+    <string name="settings_label_age">ඔයාගේ වයසට එන්න</string>
+    <string name="settings_hint_select_language">ඔබේ භාෂාව තෝරන්න</string>
+    <string name="settings_button_generate_cases">සිද්ධි නිර්මාණය කිරීම</string>
+    <string name="question_type_study">අධ් යයනය</string>
+    <string name="question_type_behavioral">හැසිරීම</string>
+    <string name="question_type_hiring">කුලියට ගැනීම</string>
+    <string name="subtype_behavioral_interpersonal">අන්තර් පුද්ගල කුසලතා</string>
+    <string name="subtype_behavioral_ethical">සදාචාරාත්මක ගැටලු</string>
+    <string name="subtype_behavioral_stress">ආතතිය පාලනය කිරීම</string>
+    <string name="subtype_study_mastery">විෂය පාලනය</string>
+    <string name="subtype_study_critical_thinking">විවේචනාත්මක චින්තනය</string>
+    <string name="subtype_study_practical_application">ප් රායෝගික භාවිතය</string>
+    <string name="subtype_hiring_technical">තාක්ෂණික කුසලතා</string>
+    <string name="subtype_hiring_behavioral_interview">හැසිරීම පිළිබඳ සම්මුඛ සාකච්ඡාව</string>
+    <string name="subtype_hiring_situational_judgment">තත්ව තීන්දුව</string>
+    <string name="difficulty_normal">සාමාන් ය</string>
+    <string name="difficulty_easy">පහසුයි</string>
+    <string name="difficulty_hard">දුෂ්කර</string>
+    <string name="gender_male">පිරිමි</string>
+    <string name="gender_female">ගැහැණු</string>
+    <string name="gender_select_prompt">ලිංගභේදය තෝරන්න</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">මොකක් හරි අවුලක් වුනා.</string>
+    <string name="button_new_game">නව ක් රීඩාව</string>
+    <string name="text_round_number">වටය %1$d</string>
+    <string name="text_scenario">දර්ශනය</string>
+    <string name="button_next">ඊලඟට</string>
+    <string name="icon_desc_selected_option">තෝරාගත් විකල්පය</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>අප් රිකානු භාෂාව</item>
+        <item>අකාන්</item>
+        <item>අමරියානු භාෂාව</item>
+        <item>අරාබි (එක්සත් අරාබි එමීර් රාජ් යය)</item>
+        <item>අසම් ජාතිකයන්</item>
+        <item>ඇස්ටියුරියානු භාෂාව</item>
+        <item>අසර්බයිජාන භාෂාව</item>
+        <item>බම්බාරා</item>
+        <item>බෙලාරුසියානු</item>
+        <item>බම්බා</item>
+        <item>බංග්ලාදේශ</item>
+        <item>ටිබෙටියානු</item>
+        <item>බොස්නියානු භාෂාව</item>
+        <item>බල්ගේරියානු</item>
+        <item>කැටලෝනියානු</item>
+        <item>චෙක්</item>
+        <item>වේල්සියානු භාෂාව</item>
+        <item>ඩෙන්මාර්ක භාෂාව</item>
+        <item>ජර්මානු</item>
+        <item>ජොන්ග්කා</item>
+        <item>ග් රීක භාෂාව</item>
+        <item>ඉංග් රීසි</item>
+        <item>එස්තෝනියානු භාෂාව</item>
+        <item>බාස්ක් භාෂාව</item>
+        <item>එවී (ගානාව)</item>
+        <item>ඊව් (ටෝගෝ)</item>
+        <item>ෆෙයාර් ජාතිකයන්</item>
+        <item>ෆින්ලන්ත භාෂාව</item>
+        <item>ප් රංශ</item>
+        <item>ෆ් රියුලියානු</item>
+        <item>ස්කොට්ලන්ත ගේලික් භාෂාව</item>
+        <item>අයර්ලන්තය</item>
+        <item>ගැලීසියානු භාෂාව</item>
+        <item>ගුජරාටි</item>
+        <item>හවුසා</item>
+        <item>හෙබ් රෙව් භාෂාව</item>
+        <item>හින්දි</item>
+        <item>ක් රොඒෂියානු</item>
+        <item>හංගේරියානු</item>
+        <item>ආර්මේනියානු භාෂාව</item>
+        <item>ඉගෝ</item>
+        <item>ඉන්දුනීසියානු</item>
+        <item>අයිස්ලන්ත භාෂාව</item>
+        <item>ඉතාලි</item>
+        <item>ජපන් භාෂාව</item>
+        <item>කබයිල් භාෂාව</item>
+        <item>කම්බා</item>
+        <item>කැනඩාව</item>
+        <item>ජෝර්ජියානු භාෂාව</item>
+        <item>කසකස්</item>
+        <item>කබර්ඩියානු (කේප් වර්ඩ් ක් රියෝල්)</item>
+        <item>ක්ෂේමර්</item>
+        <item>කිකුයූ</item>
+        <item>කින්නර්වන්ඩාව</item>
+        <item>කිර්ගිස්තානය</item>
+        <item>කොරියානු</item>
+        <item>ලාඕසය</item>
+        <item>ලිබර්ග් භාෂාව</item>
+        <item>සිංහල භාෂාව</item>
+        <item>ලිතුවේනියානු</item>
+        <item>ලක්සම්බර්ග් භාෂාව</item>
+        <item>ගන්ඩා</item>
+        <item>ලොයි</item>
+        <item>සම්මත ලැට්වියානු</item>
+        <item>මලයාලම්</item>
+        <item>මරාති</item>
+        <item>මැසිඩෝනියානු</item>
+        <item>මාලගාසි (මැඩගාස්කර්)</item>
+        <item>මෝල්ටාව (මල්ටාව)</item>
+        <item>හල් මොන්ගෝලියානු</item>
+        <item>මැලේසියාව</item>
+        <item>බර්මානු භාෂාව</item>
+        <item>නෙදර්ලන්තය</item>
+        <item>නෝර්වීජියානු නයිනර්ස්ක්</item>
+        <item>නෝර්වීජියානු බොක්මල්</item>
+        <item>නේපාලය (නේපාලය)</item>
+        <item>නුවර් (දකුණු සුඩානය)</item>
+        <item>ඕරෝමෝ (ඉතියෝපියාව)</item>
+        <item>ඕරෝමෝ (කෙන්යාව)</item>
+        <item>ඕඩියා (ඉන්දියාව)</item>
+        <item>පන්ජාබි</item>
+        <item>පෝලන්ත භාෂාව</item>
+        <item>පෘතුගීසි</item>
+        <item>පර්සියානු (ඇෆ්ගනිස්ථානය)</item>
+        <item>පර්සියානු (ඉරානය)</item>
+        <item>පෂ්ටෝ (ඇෆ්ගනිස්ථානය)</item>
+        <item>කෙචුවා (බොලිවියාව)</item>
+        <item>කෙචුවා (ඊකුවඩෝරය)</item>
+        <item>කෙචුවා (පෙරු)</item>
+        <item>රුමේනියානු භාෂාව</item>
+        <item>රූන්ඩි (බුරුන්ඩි)</item>
+        <item>රුසියානු</item>
+        <item>සැන්ගෝ (මධ් යම අප් රිකානු ජනරජය)</item>
+        <item>සිංහල (ශ් රී ලංකා)</item>
+        <item>ස්ලෝවැකියාව (ස්ලෝවැකියාව)</item>
+        <item>ස්ලෝවේනියානු භාෂාව</item>
+        <item>සිංහල (සිම්බාබ්වේ)</item>
+        <item>සෝමාලියාව</item>
+        <item>ස්පාඤ්ඤ</item>
+        <item>ඇල්බේනියානු (ඇල්බේනියාව)</item>
+        <item>සර්බියානු භාෂාව</item>
+        <item>ස්වීඩන් භාෂාව</item>
+        <item>සුවාහිලි භාෂාව</item>
+        <item>දෙමළ</item>
+        <item>ටෙලූගු</item>
+        <item>තායි</item>
+        <item>තුර්කි භාෂාව</item>
+        <item>යුක්රේන භාෂාව</item>
+        <item>උර්දු (පාකිස්තානය)</item>
+        <item>උයිගුර් (චීනය)</item>
+        <item>උස්බෙකිස්තානය (ලතින්, උස්බෙකිස්තානය)</item>
+        <item>වියට්නාම ජාතිකයන්</item>
+        <item>Xhosa භාෂාව</item>
+        <item>යෝරුබා</item>
+        <item>කැන්ටන් භාෂාව</item>
+        <item>සරල චීන භාෂාව</item>
+        <item>මැන්ඩරින් චීන සම්ප් රදායික</item>
+        <item>සුලූ</item>
+    </string-array>
+</resources>

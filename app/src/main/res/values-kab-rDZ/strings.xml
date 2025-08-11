@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Taɣawsa n yiɣil</string>
+    <string name="optional_enter_the_role_e_g_student">Isebtaren i sɛan azday ɣer "Aɣmis"</string>
+    <string name="analysis_my_choices">Analiz i yi-d-yefren</string>
+    <string name="analysis_your_selections">Aḥlil n tiferwin-ik</string>
+    <string name="rounds">Tiɣriwin</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Aḍris yettwaḥseb ɣef ddemma n tezmert, tazmert, timdukliwin, lfeṛḥ, tmussni, lkarma, uselmed n lweqt, usekkil n temnaḍt, tuɣit n wemdan, d temsalt taɣelnawt</string>
+    <string name="settings_title">Taɣawsa n yiɣil</string>
+    <string name="settings_subtitle">Isebtaren i sɛan azday ɣer</string>
+    <string name="settings_label_subject">Ad d-ternu temsalt</string>
+    <string name="settings_hint_select_question_type">Select question type</string>
+    <string name="settings_hint_select_subtype">Select subtype</string>
+    <string name="settings_hint_select_difficulty">Select the difficult level</string>
+    <string name="settings_hint_select_gender_optional">Isebtaren i sɛan azday</string>
+    <string name="settings_label_age">Ruḥ deg leɛmeṛ-ik</string>
+    <string name="settings_hint_select_language">Xdem tutlayt-ik</string>
+    <string name="settings_button_generate_cases">Isebtaren i sɛan azday</string>
+    <string name="question_type_study">Adlis</string>
+    <string name="question_type_behavioral">Tameddurt</string>
+    <string name="question_type_hiring">Ad d-yesseqdec</string>
+    <string name="subtype_behavioral_interpersonal">Tussniwin n wemdan</string>
+    <string name="subtype_behavioral_ethical">Timsalt n temsalt</string>
+    <string name="subtype_behavioral_stress">Tamaneɣt n umennuɣ</string>
+    <string name="subtype_study_mastery">Tamusni n temsalt</string>
+    <string name="subtype_study_critical_thinking">Tameẓla n tikli</string>
+    <string name="subtype_study_practical_application">Asebtar i d-yettunefken</string>
+    <string name="subtype_hiring_technical">Timussniwin timussniwin</string>
+    <string name="subtype_hiring_behavioral_interview">Timlilit ɣef tikli</string>
+    <string name="subtype_hiring_situational_judgment">Aḥeqq ɣef temsalt</string>
+    <string name="difficulty_normal">normal</string>
+    <string name="difficulty_easy">lehna</string>
+    <string name="difficulty_hard">yesɛan azal</string>
+    <string name="gender_male">Argaz</string>
+    <string name="gender_female">Tameṭṭut</string>
+    <string name="gender_select_prompt">Select gender</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Yella kra i d-yuɣen</string>
+    <string name="button_new_game">Agraw amaynut</string>
+    <string name="text_round_number">Tawrirt %1$d</string>
+    <string name="text_scenario">Ssenari</string>
+    <string name="button_next">Sdat-nni</string>
+    <string name="icon_desc_selected_option">Taggayt yettwafren</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan Akan</item>
+        <item>Amharic</item>
+        <item>Taɛrabt (Emirats Arabes Unis)</item>
+        <item>Assamis</item>
+        <item>Asturyan</item>
+        <item>azerbaycan</item>
+        <item>Bambara</item>
+        <item>Taselwit</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibet</item>
+        <item>Tawsit</item>
+        <item>Taglizit</item>
+        <item>Catalan</item>
+        <item>Taggayt</item>
+        <item>Welsh</item>
+        <item>Tamaziɣt</item>
+        <item>Talmanit</item>
+        <item>Dzongkha</item>
+        <item>Tagrikt</item>
+        <item>Taglizit</item>
+        <item>Estonian</item>
+        <item>Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Imdanen n Faroe</item>
+        <item>Tafinlandit</item>
+        <item>Tafransist</item>
+        <item>Friulian</item>
+        <item>Tamezgunt n tmurt n Lezzayer</item>
+        <item>Irlandiyen</item>
+        <item>Taglizit</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Taɛebṛanit</item>
+        <item>Hindi</item>
+        <item>Taglizit</item>
+        <item>Taglizit</item>
+        <item>Armen</item>
+        <item>Igbo</item>
+        <item>Indonésien</item>
+        <item>Icelandic</item>
+        <item>Tamaziɣt</item>
+        <item>Ijapaniyen</item>
+        <item>Taqbaylit</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Taglizit</item>
+        <item>Qazax</item>
+        <item>Kabuverdianu (Créole du Cap-Vert)</item>
+        <item>Tameẓla</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirgizistan</item>
+        <item>Tamaziɣt</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgish</item>
+        <item>Lingala</item>
+        <item>Tamaziɣt</item>
+        <item>Luxembourgish</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Tutlayt tatlilit n Letnan</item>
+        <item>Tamaziɣt</item>
+        <item>Marathi</item>
+        <item>Tamecdunit</item>
+        <item>Tamaziɣt (Madagascar)</item>
+        <item>Tamaziɣt (Malta)</item>
+        <item>Asmel n tmurt n Mongoli</item>
+        <item>Malay (Malaysia)</item>
+        <item>Tamaziɣt</item>
+        <item>Tamazight</item>
+        <item>Nynorsk n Norway</item>
+        <item>Tamazight Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Sudan unẓul)</item>
+        <item>Oromo (Ethiopie)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (Tindiya)</item>
+        <item>Punjabi</item>
+        <item>Taglizit</item>
+        <item>Tamaziɣt</item>
+        <item>Tafransist (Afganistan)</item>
+        <item>Tafransist (Iran)</item>
+        <item>Pashto (Afganistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Tamaziɣt</item>
+        <item>Rundi (Burundi)</item>
+        <item>Taṛuzit</item>
+        <item>Sango (République centrafricaine)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovak (Slovakia)</item>
+        <item>Isloveniyen</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somali</item>
+        <item>Tamaziɣt</item>
+        <item>Albanian (Albania)</item>
+        <item>Taserbitit</item>
+        <item>Taswidit</item>
+        <item>Taswahili</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Taylandit</item>
+        <item>Turquie</item>
+        <item>Tamaziɣt</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (Cina)</item>
+        <item>Uzbekistan (Latin, Uzbekistan)</item>
+        <item>Imdanen n Vyetnam</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Tutlayt n kantun</item>
+        <item>Tacinit tamandarin</item>
+        <item>Tacinit tamaneɣt tamaneɣt</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Väljfråga</string>
+    <string name="optional_enter_the_role_e_g_student">Optionell: Ange rollen, t.ex. Student</string>
+    <string name="analysis_my_choices">Analysera mina val</string>
+    <string name="analysis_your_selections">Analysera dina val</string>
+    <string name="rounds">Omgångar</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Skor beräknas baserat på hälsa, rikedom, relationer, lycka, kunskap, karma, tidshantering, miljöpåverkan, personlig tillväxt och socialt ansvar</string>
+    <string name="settings_title">Väljfråga</string>
+    <string name="settings_subtitle">Scenarierna baseras på dina val.</string>
+    <string name="settings_label_subject">Ange ämnet</string>
+    <string name="settings_hint_select_question_type">Välj fråga typ</string>
+    <string name="settings_hint_select_subtype">Välj undertyp</string>
+    <string name="settings_hint_select_difficulty">Välj svåra nivåer</string>
+    <string name="settings_hint_select_gender_optional">Alternativt: Välj ditt kön</string>
+    <string name="settings_label_age">Gå in i din ålder</string>
+    <string name="settings_hint_select_language">Välj ditt språk</string>
+    <string name="settings_button_generate_cases">Generera fall</string>
+    <string name="question_type_study">Att studera</string>
+    <string name="question_type_behavioral">Attityd</string>
+    <string name="question_type_hiring">Anställning</string>
+    <string name="subtype_behavioral_interpersonal">Interpersonella färdigheter</string>
+    <string name="subtype_behavioral_ethical">Etiska dilemma</string>
+    <string name="subtype_behavioral_stress">Stresshantering</string>
+    <string name="subtype_study_mastery">Subjektbeherskning</string>
+    <string name="subtype_study_critical_thinking">Kritiskt tänkande</string>
+    <string name="subtype_study_practical_application">Praktiska tillämpningar</string>
+    <string name="subtype_hiring_technical">Tekniska färdigheter</string>
+    <string name="subtype_hiring_behavioral_interview">En beteendeintervju</string>
+    <string name="subtype_hiring_situational_judgment">Situationsdomar</string>
+    <string name="difficulty_normal">normala</string>
+    <string name="difficulty_easy">lätta</string>
+    <string name="difficulty_hard">svåra</string>
+    <string name="gender_male">Män</string>
+    <string name="gender_female">Kvinnor</string>
+    <string name="gender_select_prompt">Välj kön</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Något gick fel.</string>
+    <string name="button_new_game">Nya spel</string>
+    <string name="text_round_number">Runda %1$d</string>
+    <string name="text_scenario">Scenario</string>
+    <string name="button_next">Nästa</string>
+    <string name="icon_desc_selected_option">Utvalda alternativ</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amhariska</item>
+        <item>Arabiska (förenade arabiska emiraten)</item>
+        <item>Assamiska</item>
+        <item>Asturiska</item>
+        <item>Azerbajdzjaniska</item>
+        <item>Bambara</item>
+        <item>Grekiska</item>
+        <item>Bemba</item>
+        <item>Bengaliska</item>
+        <item>Tibetanska</item>
+        <item>Bosnien</item>
+        <item>Bulgariska</item>
+        <item>Katalaniska</item>
+        <item>Tjeciska</item>
+        <item>Welsh</item>
+        <item>Den danska</item>
+        <item>Tyska</item>
+        <item>Dzongkha</item>
+        <item>Grekiska</item>
+        <item>Engelska</item>
+        <item>Den estniska</item>
+        <item>Baskiska</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Färöare</item>
+        <item>Finländska</item>
+        <item>Franska</item>
+        <item>Friuliska</item>
+        <item>Skotska Gaelic</item>
+        <item>Irländska</item>
+        <item>Galician</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Hebräiska</item>
+        <item>Hindi</item>
+        <item>Grekiska</item>
+        <item>Ungerska</item>
+        <item>Armeniska</item>
+        <item>Igbo</item>
+        <item>Indonesier</item>
+        <item>Isländska</item>
+        <item>Italieniska</item>
+        <item>Japanska</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Georgian</item>
+        <item>Kazachstan</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgystan</item>
+        <item>Koreanska</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgiska</item>
+        <item>Lingala</item>
+        <item>Litauiska</item>
+        <item>Luxemburgiska</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Standardlatviska</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Makedoniska</item>
+        <item>Malagasy (Madagaskar)</item>
+        <item>Maltesiska (Malta)</item>
+        <item>Halh mongoliska</item>
+        <item>Malajiska (Malaysia)</item>
+        <item>Burmesiska</item>
+        <item>Nederländska</item>
+        <item>Norwegian Nynorsk</item>
+        <item>Norska bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Süd-Sudan)</item>
+        <item>Oromo (Etiopien)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>Polska</item>
+        <item>Portugisiska</item>
+        <item>Persiska (Afghanistan)</item>
+        <item>Persk (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Rumäniska</item>
+        <item>Rundi (Burundi)</item>
+        <item>Ryska</item>
+        <item>Sango (centralafrikanska republiken)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovakiska (Slovakien)</item>
+        <item>Slovenska</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somaliska</item>
+        <item>Spanska</item>
+        <item>Albanska (Albanien)</item>
+        <item>Serbiska</item>
+        <item>Svenska</item>
+        <item>Swahili</item>
+        <item>Tamiliska</item>
+        <item>Telugu</item>
+        <item>Thailandiska</item>
+        <item>Turkiga</item>
+        <item>Ukrainska</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (Kina)</item>
+        <item>Uzbekistan (latinska: Uzbekistan)</item>
+        <item>Viatnamesiska</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Kantoniska</item>
+        <item>Mandarin kinesiska förenklat</item>
+        <item>Mandarin kinesisk traditionell</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

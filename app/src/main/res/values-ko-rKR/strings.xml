@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">선택 사항</string>
+    <string name="optional_enter_the_role_e_g_student">선택적: 역할을 입력, 예를 들어, 학생</string>
+    <string name="analysis_my_choices">내 선택에 대한 분석</string>
+    <string name="analysis_your_selections">선택의 분석</string>
+    <string name="rounds">라운드</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">건강, 부, 관계, 행복, 지식, 카르마, 시간 관리, 환경 영향, 개인적 성장 및 사회적 책임에 기초한 점수 계산</string>
+    <string name="settings_title">선택 사항</string>
+    <string name="settings_subtitle">시나리오는 여러분의 선택에 따라</string>
+    <string name="settings_label_subject">주제를 입력</string>
+    <string name="settings_hint_select_question_type">질문 유형을 선택</string>
+    <string name="settings_hint_select_subtype">하위 타입을 선택</string>
+    <string name="settings_hint_select_difficulty">어려운 레벨을 선택</string>
+    <string name="settings_hint_select_gender_optional">선택 사항: 성별을 선택</string>
+    <string name="settings_label_age">네 나이 를 들어라</string>
+    <string name="settings_hint_select_language">언어 를 선택 하십시오</string>
+    <string name="settings_button_generate_cases">사례를 생성</string>
+    <string name="question_type_study">연구</string>
+    <string name="question_type_behavioral">행동</string>
+    <string name="question_type_hiring">고용</string>
+    <string name="subtype_behavioral_interpersonal">사람 사이 기술</string>
+    <string name="subtype_behavioral_ethical">윤리적 딜레마</string>
+    <string name="subtype_behavioral_stress">스트레스 관리</string>
+    <string name="subtype_study_mastery">주체 숙달</string>
+    <string name="subtype_study_critical_thinking">비판적 인 생각</string>
+    <string name="subtype_study_practical_application">실용적 인 적용</string>
+    <string name="subtype_hiring_technical">기술력</string>
+    <string name="subtype_hiring_behavioral_interview">행동 면접</string>
+    <string name="subtype_hiring_situational_judgment">상황적 인 판단</string>
+    <string name="difficulty_normal">정상</string>
+    <string name="difficulty_easy">쉬운 일</string>
+    <string name="difficulty_hard">단단한</string>
+    <string name="gender_male">남성</string>
+    <string name="gender_female">여성</string>
+    <string name="gender_select_prompt">성별을 선택</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">뭔가 잘못됐어</string>
+    <string name="button_new_game">새로운 게임</string>
+    <string name="text_round_number">순환 %1$d</string>
+    <string name="text_scenario">시나리오</string>
+    <string name="button_next">다음으로</string>
+    <string name="icon_desc_selected_option">선택된 옵션</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>아프리카어</item>
+        <item>아칸</item>
+        <item>아마르어</item>
+        <item>아랍어 (이하 아랍에미리트)</item>
+        <item>아사미어</item>
+        <item>아스투리아어</item>
+        <item>아제르바이잔어</item>
+        <item>바바라</item>
+        <item>벨라루시어</item>
+        <item>Bemba</item>
+        <item>갈어</item>
+        <item>티베트어</item>
+        <item>보스니아어</item>
+        <item>불가리아어</item>
+        <item>카탈루냐어</item>
+        <item>체코</item>
+        <item>웨일스</item>
+        <item>덴마크어</item>
+        <item>독일어</item>
+        <item>카</item>
+        <item>그리스어</item>
+        <item>영어</item>
+        <item>에스토니아어</item>
+        <item>바스크어</item>
+        <item>에베 (가나)</item>
+        <item>에베 (토고)</item>
+        <item>페로어어</item>
+        <item>핀란드어</item>
+        <item>프랑스어</item>
+        <item>프리울리아어</item>
+        <item>스코틀랜드 게일어</item>
+        <item>아일랜드어</item>
+        <item>갈리시아어</item>
+        <item>구자라티어</item>
+        <item>하우사</item>
+        <item>히브리어</item>
+        <item>힌디어</item>
+        <item>크로아티아어</item>
+        <item>헝가리어</item>
+        <item>아르메니아어</item>
+        <item>이고보</item>
+        <item>인도네시아어</item>
+        <item>아이슬란드어</item>
+        <item>이탈리아어</item>
+        <item>일본어</item>
+        <item>카빌어</item>
+        <item>캄바</item>
+        <item>칸나다</item>
+        <item>조지아어</item>
+        <item>카자흐스탄</item>
+        <item>카부베르디누 (케이프 베르데 크레올어)</item>
+        <item>크메르</item>
+        <item>키쿠야</item>
+        <item>키냐르완다</item>
+        <item>키르기스스탄</item>
+        <item>한국어</item>
+        <item>라오스</item>
+        <item>림부르크어</item>
+        <item>린갈라어</item>
+        <item>리투아니아어</item>
+        <item>룩셈부르크어</item>
+        <item>칸다</item>
+        <item>로우</item>
+        <item>표준 라트비아어</item>
+        <item>말야람</item>
+        <item>마라티어</item>
+        <item>마케도니아어</item>
+        <item>마다가스카르 (마다가스카르)</item>
+        <item>몰타어 (말타어)</item>
+        <item>헐 몽골어</item>
+        <item>말레이 (말레이시아)</item>
+        <item>버마어어</item>
+        <item>네덜란드어</item>
+        <item>노르웨이 니노르스크</item>
+        <item>노르웨이 Bokmål</item>
+        <item>네팔어 (네팔)</item>
+        <item>누어 (남부 수단)</item>
+        <item>오로모 (아티오피아)</item>
+        <item>오로모 (케냐)</item>
+        <item>오디아 (인도)</item>
+        <item>펀자비</item>
+        <item>폴란드어</item>
+        <item>포르투갈어</item>
+        <item>페르시아어 (아프가니스탄)</item>
+        <item>페르시아어 (이란)</item>
+        <item>파슈토 (아프가니스탄)</item>
+        <item>키추아어 (볼리비아)</item>
+        <item>케추아어 (이콰도르)</item>
+        <item>케추아어 (페루)</item>
+        <item>루마니아어</item>
+        <item>룬디 (부룬디)</item>
+        <item>러시아어</item>
+        <item>산고 (중앙아프리카 공화국)</item>
+        <item>싱갈어 (스리랑카)</item>
+        <item>슬로바키아</item>
+        <item>슬로베니아어</item>
+        <item>쇼나 (잠바브웨)</item>
+        <item>소말리아</item>
+        <item>스페인어</item>
+        <item>알바니아어 (알바니아)</item>
+        <item>세르비아어</item>
+        <item>스웨덴어</item>
+        <item>스와힐리어</item>
+        <item>타밀어</item>
+        <item>텔루구</item>
+        <item>태국어</item>
+        <item>터키어</item>
+        <item>우크라이나어</item>
+        <item>우르두 (파키스탄)</item>
+        <item>위구르어 (중국)</item>
+        <item>우즈베키스탄 (라틴어, 우즈베키스탄)</item>
+        <item>베트남어</item>
+        <item>엑소사어</item>
+        <item>요루바어</item>
+        <item>칸토네스</item>
+        <item>중국어 간소화</item>
+        <item>만다린 중국 전통</item>
+        <item>즈루족</item>
+    </string-array>
+</resources>

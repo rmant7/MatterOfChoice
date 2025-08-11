@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ohun tí wọ́n yàn</string>
+    <string name="optional_enter_the_role_e_g_student">Ohun tó yẹ kó o ṣe: Ṣiṣii ojúṣe náà, bí àpẹẹrẹ, Ọmọléèwé</string>
+    <string name="analysis_my_choices">Ṣàgbéyẹ̀wò àwọn ìpinnu mi</string>
+    <string name="analysis_your_selections">Ṣàgbéyẹ̀wò àwọn ohun tó o yàn</string>
+    <string name="rounds">Àwọn àgbá</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Aṣayan ṣe iṣiro da lori ilera, ọlọrọ, awọn ibatan, ayọ, imọ, karma, iṣakoso akoko, ipa ayika, idagbasoke ti ara ẹni, ati ojuse awujọ</string>
+    <string name="settings_title">Ohun tí wọ́n yàn</string>
+    <string name="settings_subtitle">Àwọn àbá yìí máa dá lórí ohun tó o yàn láti ṣe</string>
+    <string name="settings_label_subject">Fọ́ kókó náà sínú</string>
+    <string name="settings_hint_select_question_type">Yan irú ìbéèrè</string>
+    <string name="settings_hint_select_subtype">Yan oríṣiríṣi</string>
+    <string name="settings_hint_select_difficulty">Yan ipele ti o nira</string>
+    <string name="settings_hint_select_gender_optional">Aṣayan: Yan akọ tabi abo rẹ</string>
+    <string name="settings_label_age">Wá Àkókò Tó O Yẹ</string>
+    <string name="settings_hint_select_language">Yan èdè rẹ</string>
+    <string name="settings_button_generate_cases">Ṣíṣe Àwọn Ìṣẹ̀lẹ̀</string>
+    <string name="question_type_study">Kẹ́kọ̀ọ́</string>
+    <string name="question_type_behavioral">Ìwà Rẹ̀</string>
+    <string name="question_type_hiring">Ṣiṣẹ́</string>
+    <string name="subtype_behavioral_interpersonal">Àwọn Ọgbọ́n Tó Wà láàárín Èèyàn</string>
+    <string name="subtype_behavioral_ethical">Àwọn Àríyànjiyàn Tó Wà Níbàámu Pẹ̀lú Ìwà Rere</string>
+    <string name="subtype_behavioral_stress">Ṣíṣakoso Ìṣòro</string>
+    <string name="subtype_study_mastery">Ìṣàkóso Àwọn Èèyàn</string>
+    <string name="subtype_study_critical_thinking">Irú Èrò Tó Dára Jù Lọ</string>
+    <string name="subtype_study_practical_application">Ohun Tó Wà Nínú Ìgbésí Ayé</string>
+    <string name="subtype_hiring_technical">Àwọn Èèyàn Tó Ní Ìmọnúṣe</string>
+    <string name="subtype_hiring_behavioral_interview">Ìfọ̀rọ̀wérọ̀ Nípa Ìṣe</string>
+    <string name="subtype_hiring_situational_judgment">Ìdájọ́ Tó Wà Nínú Ìṣòro</string>
+    <string name="difficulty_normal">kì í ṣe nǹkan míì</string>
+    <string name="difficulty_easy">ó rọrùn</string>
+    <string name="difficulty_hard">ó ṣòro gan - an</string>
+    <string name="gender_male">Ọkùnrin</string>
+    <string name="gender_female">Obìnrin</string>
+    <string name="gender_select_prompt">Yan ẹ̀yà</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Ohun kan ṣẹlẹ̀.</string>
+    <string name="button_new_game">Ojúṣe Tuntun</string>
+    <string name="text_round_number">Àyíká %1$d</string>
+    <string name="text_scenario">Àpilẹ̀kọ</string>
+    <string name="button_next">Ohun tó tẹ̀ lé e</string>
+    <string name="icon_desc_selected_option">Aṣayan ti a yan</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Èdè Afrikaans</item>
+        <item>Àwọn Akan</item>
+        <item>Èdè Amharic</item>
+        <item>Èdè Arabì (United Arab Emirates)</item>
+        <item>Àwọn ará Assam</item>
+        <item>Èdè Asturian</item>
+        <item>Èdè Azerbaijani</item>
+        <item>Àwọn ará Bambara</item>
+        <item>Belarusian</item>
+        <item>Bemba</item>
+        <item>Èdè Bengali</item>
+        <item>Àwọn ará Tibet</item>
+        <item>Àwọn ará Bosnia</item>
+        <item>Èdè Bulgarian</item>
+        <item>Èdè Catalan</item>
+        <item>Èdè Czech</item>
+        <item>Èdè Wales</item>
+        <item>Èdè Danish</item>
+        <item>èdè jámánì</item>
+        <item>Dzongkha</item>
+        <item>Gíríìkì</item>
+        <item>èdè gẹ̀ẹ́sì</item>
+        <item>Èsótónì</item>
+        <item>Èdè Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Àwọn ará Fèrò</item>
+        <item>Èdè Finnish</item>
+        <item>Èdè Faransé</item>
+        <item>Friulian</item>
+        <item>Èdè Scottish Gaelic</item>
+        <item>Orílẹ̀-èdè Ireland</item>
+        <item>Èdè Galician</item>
+        <item>Gujarati</item>
+        <item>Èdè Hausa</item>
+        <item>Èdè Hébérù</item>
+        <item>Èdè Hindi</item>
+        <item>Èdè Croatian</item>
+        <item>Èdè Hungarian</item>
+        <item>Èdè Armenia</item>
+        <item>Èdè Igbo</item>
+        <item>Èdè Indonesia</item>
+        <item>Èdè Iceland</item>
+        <item>Àwọn ará Ítálì</item>
+        <item>Àwọn ará Japan</item>
+        <item>Èdè Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Èdè Georgian</item>
+        <item>Kazakhstani</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Àwọn ará Khmer</item>
+        <item>Kikuyu</item>
+        <item>Èdè Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Àwọn ará Kòríà</item>
+        <item>Èdè Lao (Èdè Lao)</item>
+        <item>Èdè Limburg</item>
+        <item>Èdè Lingala</item>
+        <item>Èdè Lithuanian</item>
+        <item>èdè Luxembourg</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Èdè tí wọ́n ń sọ ní Latvia</item>
+        <item>Èdè Malayalam</item>
+        <item>Èdè Marathi</item>
+        <item>Èdè Makedóníà</item>
+        <item>Èdè Malagasy (Èdè Madagascar)</item>
+        <item>Èdè Maltese (Malta)</item>
+        <item>Halh Mongolian</item>
+        <item>Èdè Malay (Malay)</item>
+        <item>Èdè Burmese</item>
+        <item>Àwọn ará Nàìjíríà</item>
+        <item>Nynorsk lórílẹ̀-èdè Norway</item>
+        <item>Èdè Bokmål ti Norway</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (South Sudan)</item>
+        <item>Orómù (Etiopia)</item>
+        <item>Orómù (Kenya)</item>
+        <item>Odia (Íńdíà)</item>
+        <item>Èdè Punjabi</item>
+        <item>Àwọn ará Poland</item>
+        <item>Èdè Potogí</item>
+        <item>Èdè Páṣíà (Afghanistan)</item>
+        <item>Èdè Páṣíà (ìran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Èdè Quechua (Bolivia)</item>
+        <item>Èdè Quechua (Ecuador)</item>
+        <item>Èdè Quechua (Peru)</item>
+        <item>Èdè ará Romania</item>
+        <item>Rundi (Burundi)</item>
+        <item>Èdè Rọ́ṣíà</item>
+        <item>Sango (Orílẹ̀-èdè Àárín Gbùngbùn Áfíríkà)</item>
+        <item>Èdè Sinhala (Sri Lanka)</item>
+        <item>Èdè Slovak (Slovakia)</item>
+        <item>Èdè Slovenia</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Àwọn ará Somalia</item>
+        <item>Èdè Sípéènì</item>
+        <item>Èdè Albania (Albania)</item>
+        <item>Èdè Serbian</item>
+        <item>èdè swedish</item>
+        <item>Èdè Swahili</item>
+        <item>Èdè Tamil</item>
+        <item>Èdè Telugu</item>
+        <item>Orílẹ̀-èdè Thailand</item>
+        <item>Tọ́kì</item>
+        <item>èdè ukrainian</item>
+        <item>Èdè Urdu (Pakistan)</item>
+        <item>Èdè Uighur (China)</item>
+        <item>Uzbekistan (Latin, Uzbekistan)</item>
+        <item>Àwọn ará Vietnam</item>
+        <item>Èdè Xhosa</item>
+        <item>Èdè Yorùbá</item>
+        <item>Èdè Cantonese</item>
+        <item>Èdè Mandarin Chinese Lọ́nà Tó rọrùn</item>
+        <item>Mandarin Chinese Àṣà Oòduà</item>
+        <item>Èdè Zulu</item>
+    </string-array>
+</resources>

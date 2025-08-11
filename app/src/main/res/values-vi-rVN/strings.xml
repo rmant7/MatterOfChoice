@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Vấn đề lựa chọn</string>
+    <string name="optional_enter_the_role_e_g_student">Tùy chọn: Nhập vai trò, ví dụ: Học sinh</string>
+    <string name="analysis_my_choices">Phân tích lựa chọn của tôi</string>
+    <string name="analysis_your_selections">Phân tích lựa chọn của bạn</string>
+    <string name="rounds">Vòng đạn</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Điểm số tính toán dựa trên sức khỏe, sự giàu có, mối quan hệ, hạnh phúc, kiến thức, nghiệp vụ, quản lý thời gian, tác động môi trường, tăng trưởng cá nhân và trách nhiệm xã hội</string>
+    <string name="settings_title">Vấn đề lựa chọn</string>
+    <string name="settings_subtitle">Các kịch bản sẽ dựa trên sự lựa chọn của bạn</string>
+    <string name="settings_label_subject">Nhập chủ đề</string>
+    <string name="settings_hint_select_question_type">Chọn loại câu hỏi</string>
+    <string name="settings_hint_select_subtype">Chọn loại phụ</string>
+    <string name="settings_hint_select_difficulty">Chọn mức độ khó</string>
+    <string name="settings_hint_select_gender_optional">Tùy chọn: Chọn giới tính của bạn</string>
+    <string name="settings_label_age">Hãy bước vào tuổi của bạn</string>
+    <string name="settings_hint_select_language">Chọn ngôn ngữ của bạn</string>
+    <string name="settings_button_generate_cases">Tạo các trường hợp</string>
+    <string name="question_type_study">Nghiên cứu</string>
+    <string name="question_type_behavioral">Hành vi</string>
+    <string name="question_type_hiring">Việc thuê</string>
+    <string name="subtype_behavioral_interpersonal">Kỹ năng giao tiếp</string>
+    <string name="subtype_behavioral_ethical">Các vấn đề đạo đức</string>
+    <string name="subtype_behavioral_stress">Quản lý căng thẳng</string>
+    <string name="subtype_study_mastery">Kiến thức chủ đề</string>
+    <string name="subtype_study_critical_thinking">Tư duy phê phán</string>
+    <string name="subtype_study_practical_application">Sử dụng thực tế</string>
+    <string name="subtype_hiring_technical">Kỹ năng kỹ thuật</string>
+    <string name="subtype_hiring_behavioral_interview">Cuộc phỏng vấn về hành vi</string>
+    <string name="subtype_hiring_situational_judgment">Sự phán xét về tình huống</string>
+    <string name="difficulty_normal">bình thường</string>
+    <string name="difficulty_easy">dễ dàng</string>
+    <string name="difficulty_hard">khó khăn</string>
+    <string name="gender_male">Đàn ông</string>
+    <string name="gender_female">Phụ nữ</string>
+    <string name="gender_select_prompt">Chọn giới tính</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Có chuyện gì đó sai.</string>
+    <string name="button_new_game">Trò chơi mới</string>
+    <string name="text_round_number">Tròn %1$d</string>
+    <string name="text_scenario">Kịch bản</string>
+    <string name="button_next">Tiếp theo</string>
+    <string name="icon_desc_selected_option">Tùy chọn được chọn</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>tiếng Afrikaans</item>
+        <item>Akan</item>
+        <item>Tiếng Amharic</item>
+        <item>Tiếng Ả Rập (United Arab Emirates)</item>
+        <item>Assamese</item>
+        <item>Asturian</item>
+        <item>Tiếng Azerbaijan</item>
+        <item>Bambara</item>
+        <item>Tiếng Belarus</item>
+        <item>Bemba</item>
+        <item>Tiếng Bengali</item>
+        <item>Tây Tạng</item>
+        <item>Bosnian</item>
+        <item>Tiếng Bulgaria</item>
+        <item>Tiếng Catalan</item>
+        <item>Tiếng Séc</item>
+        <item>Tiếng Wales</item>
+        <item>Đan Mạch</item>
+        <item>Tiếng Đức</item>
+        <item>Dzongkha</item>
+        <item>Tiếng Hy Lạp</item>
+        <item>Tiếng Anh</item>
+        <item>Tiếng Estonia</item>
+        <item>Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Người Faroese</item>
+        <item>Tiếng Phần Lan</item>
+        <item>Tiếng Pháp</item>
+        <item>Friulian</item>
+        <item>Ngôn ngữ Gaelic Scotland</item>
+        <item>Ireland</item>
+        <item>Galician</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Tiếng Hê-bơ-rơ</item>
+        <item>Tiếng Hindi</item>
+        <item>Tiếng Croatia</item>
+        <item>Tiếng Hungary</item>
+        <item>Tiếng Armenia</item>
+        <item>Igbo</item>
+        <item>Tiếng Indonesia</item>
+        <item>tiếng Iceland</item>
+        <item>Ý</item>
+        <item>Nhật Bản</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Tiếng Kannada</item>
+        <item>Tiếng Georgia</item>
+        <item>Kazakhstan</item>
+        <item>Kabuverdianu (Creole Cape Verde)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Hàn Quốc</item>
+        <item>Lao (Laos)</item>
+        <item>Tiếng Limburg</item>
+        <item>Lingala</item>
+        <item>Tiếng Lithuanian</item>
+        <item>Tiếng Luxembourg</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Tiếng Latvia tiêu chuẩn</item>
+        <item>Malayalam</item>
+        <item>Tiếng Marathi</item>
+        <item>Macedonian</item>
+        <item>Madagascar (Madagascar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Halh tiếng Mông Cổ</item>
+        <item>Malaysia (Malaysia)</item>
+        <item>Tiếng Myanmar</item>
+        <item>Hà Lan</item>
+        <item>Nynorsk, Na Uy</item>
+        <item>Bokmål tiếng Na Uy</item>
+        <item>Nepal (Nepal)</item>
+        <item>Nuer (Nam Sudan)</item>
+        <item>Oromo (Ethiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (Ấn Độ)</item>
+        <item>Tiếng Punjabi</item>
+        <item>Tiếng Ba Lan</item>
+        <item>Tiếng Bồ Đào Nha</item>
+        <item>Tiếng Ba Tư (Afghanistan)</item>
+        <item>Tiếng Ba Tư (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Tiếng Romania</item>
+        <item>Rundi (Burundi)</item>
+        <item>Tiếng Nga</item>
+        <item>Sango (Trung Cộng hòa Trung Phi)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovak (Slovakia)</item>
+        <item>Tiếng Slovenia</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somalia</item>
+        <item>Tiếng Tây Ban Nha</item>
+        <item>tiếng Albania (Albania)</item>
+        <item>Tiếng Serbia</item>
+        <item>Tiếng Thụy Điển</item>
+        <item>Tiếng Swahili</item>
+        <item>Tamil</item>
+        <item>Tiếng Telugu</item>
+        <item>Thái Lan</item>
+        <item>Tiếng Thổ Nhĩ Kỳ</item>
+        <item>Tiếng Ukraine</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (Trung Quốc)</item>
+        <item>Uzbek (tiếng Latinh, Uzbekistan)</item>
+        <item>Việt Nam</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Tiếng Cantonese</item>
+        <item>Tiếng Trung Mandarin được đơn giản hóa</item>
+        <item>Trung Quốc truyền thống tiếng Mandarin</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

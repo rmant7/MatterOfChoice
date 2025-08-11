@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Dhimma filannaa</string>
+    <string name="optional_enter_the_role_e_g_student">"Filannoo: Ga'ii galchuu, fakkeenyaaf Barataa"</string>
+    <string name="analysis_my_choices">Filannoo koo qoru</string>
+    <string name="analysis_your_selections">Filannoo kee qoru</string>
+    <string name="rounds">Meeshaaleen</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">"Lakkoofsi fayyaa, badhaadhummaa, hariiroo, gammachuu, beekumsa, kaarma, bulchiinsa yeroo, dhiibbaa naannoo, guddina dhuunfaa fi itti gaafatamummaa hawaasummaa irratti hundaa'ee kan lakkaa'amu"</string>
+    <string name="settings_title">Dhimma filannaa</string>
+    <string name="settings_subtitle">"Suuraawwan kun filannaa keessan irratti kan hundaa'anidha"</string>
+    <string name="settings_label_subject">Dhimma galchuu</string>
+    <string name="settings_hint_select_question_type">Gosa gaaffii filadhu</string>
+    <string name="settings_hint_select_subtype">"Fooyya'icha filadhu"</string>
+    <string name="settings_hint_select_difficulty">Sadarkaa ulfaataa filadhu</string>
+    <string name="settings_hint_select_gender_optional">Filannoo: Jinsii kee filadhu</string>
+    <string name="settings_label_age">Umrii Keessanitti Geessaa</string>
+    <string name="settings_hint_select_language">Afaan kee filadhu</string>
+    <string name="settings_button_generate_cases">Dhimmoota uumuu</string>
+    <string name="question_type_study">Qayyabannaa</string>
+    <string name="question_type_behavioral">Amala</string>
+    <string name="question_type_hiring">Hojii fudhachuun</string>
+    <string name="subtype_behavioral_interpersonal">"Dandeettii Walitti Bu'iinsa Namootaa"</string>
+    <string name="subtype_behavioral_ethical">Rakkoowwan Amalaa</string>
+    <string name="subtype_behavioral_stress">Tajaajila Dhiibbaa</string>
+    <string name="subtype_study_mastery">Qajeelfama Qajeelfama</string>
+    <string name="subtype_study_critical_thinking">Yaada Gaddaa</string>
+    <string name="subtype_study_practical_application">Hojiirra oolchuu</string>
+    <string name="subtype_hiring_technical">Dandeettii Tekinooloojii</string>
+    <string name="subtype_hiring_behavioral_interview">"Walga'ii Amallii"</string>
+    <string name="subtype_hiring_situational_judgment">Murtoo Haala Keessatti Godhamu</string>
+    <string name="difficulty_normal">Amala</string>
+    <string name="difficulty_easy">salphaa</string>
+    <string name="difficulty_hard">ulfaataa</string>
+    <string name="gender_male">Dhiiraa</string>
+    <string name="gender_female">Dubartiin</string>
+    <string name="gender_select_prompt">Jinsii filachuu</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">"Wanti tokko dogoggora ta'e"</string>
+    <string name="button_new_game">Tapha Haaraa</string>
+    <string name="text_round_number">%1$d</string>
+    <string name="text_scenario">Seenaa</string>
+    <string name="button_next">Sana booda</string>
+    <string name="icon_desc_selected_option">Furmaanni filatame</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afaan Afrikaans</item>
+        <item>Akan</item>
+        <item>Afaan Amaaraa</item>
+        <item>Arabaa (Emirata Arabaa Yunaayitid)</item>
+        <item>Assamis</item>
+        <item>Afaan Asturiyaa</item>
+        <item>Afaan Amaaraa</item>
+        <item>Bambara</item>
+        <item>Afaan Biilaarusiyaa</item>
+        <item>Bemba</item>
+        <item>Afaan Bengali</item>
+        <item>Tibbaa</item>
+        <item>Bosniyaa</item>
+        <item>Afaan Bulgaa</item>
+        <item>Afaan Kataloonii</item>
+        <item>Cheekiyaa</item>
+        <item>Waaliyaa</item>
+        <item>Daaniish</item>
+        <item>Jarman</item>
+        <item>Dzongkha</item>
+        <item>Afaan Giriikii</item>
+        <item>Afaan Ingiliffa</item>
+        <item>Afaan Estoniyaa</item>
+        <item>Baaskii</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Faarees</item>
+        <item>Finfinnee</item>
+        <item>Faransaay</item>
+        <item>Afaan Friuliyaan</item>
+        <item>Afaan Iskootish Gaeliik</item>
+        <item>Irlandii</item>
+        <item>Galichiyaa</item>
+        <item>Gujarati</item>
+        <item>Haasaa</item>
+        <item>Afaan Ibrootaa</item>
+        <item>Hindii</item>
+        <item>Kirootiyaa</item>
+        <item>Afaan Awungariyaa</item>
+        <item>Afaan Armeenii</item>
+        <item>Igbo</item>
+        <item>Indoneesyaa</item>
+        <item>Afaan Islandii</item>
+        <item>Xaaliyaanii</item>
+        <item>Jaappaan</item>
+        <item>Afaan Kaabiil</item>
+        <item>Kambaa</item>
+        <item>Kannada</item>
+        <item>Afaan Joorjiyaa</item>
+        <item>Qazaak</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirgistaan</item>
+        <item>Kooriyaa</item>
+        <item>Laawos (Laawos)</item>
+        <item>Limburgis</item>
+        <item>Lingala</item>
+        <item>Liituwaaniyaa</item>
+        <item>Afaan Luuksemburgiyaa</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Afaan Lammaa Magarsaa</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Makedooniyaa</item>
+        <item>Maalaagaasii (Maalaagaaskaar)</item>
+        <item>Afaan Maltaa (Malta)</item>
+        <item>Afaan Mongoliyaa</item>
+        <item>Malaayiyaa (Malaayiyaa)</item>
+        <item>Afaan Birmaa</item>
+        <item>Hollandiyaa</item>
+        <item>Noorweey Nynorsk</item>
+        <item>Bokmål Noorweey</item>
+        <item>Nepali (Nepal)</item>
+        <item>"Nu'er (Sudan Kibbaa)"</item>
+        <item>Oromo (Itiyoophiyaa)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (Hindiyaa)</item>
+        <item>Punjabi</item>
+        <item>Poolaandiin</item>
+        <item>Afaan Poortugaal</item>
+        <item>Faarsaa (Afganistan)</item>
+        <item>Faarsaa (Iiraan)</item>
+        <item>Pashto (Afganistan)</item>
+        <item>Quechua (Boliviyaa)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Afaan Roomaa</item>
+        <item>Rundi (Burundi)</item>
+        <item>Raashiyaa</item>
+        <item>Sangoo (Rabaablikaa Giddugaleessaa Afrikaa)</item>
+        <item>Sinhalaa (Sri Lankaa)</item>
+        <item>Slovak (Slovakia)</item>
+        <item>Afaan Isloween</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somaaliyaa</item>
+        <item>Afaan Ispaanish</item>
+        <item>Albaniyaa (Albaniyaa)</item>
+        <item>Afaan Serbiyaa</item>
+        <item>Afaan Siwiidin</item>
+        <item>Afaan Swahili</item>
+        <item>Taamil</item>
+        <item>Telugu</item>
+        <item>Taayilaand</item>
+        <item>Turkii</item>
+        <item>Afaan Yukreeniyaa</item>
+        <item>Afaan Urdu (Paakistaan)</item>
+        <item>Uyghur (Chaayinaa)</item>
+        <item>Uzbekistan (Latin, Uzbekistan)</item>
+        <item>Viitnam</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Afaan Cantonese</item>
+        <item>"Afaan Mandariin Chaayinaa salphaa taʼe"</item>
+        <item>Afaan Mandariin Chaayinaa Aadaa</item>
+        <item>Zuluu</item>
+    </string-array>
+</resources>

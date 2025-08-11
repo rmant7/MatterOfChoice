@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Weche mag yiero</string>
+    <string name="optional_enter_the_role_e_g_student">Yore mag yiero: Donjo e migawo, kuom ranyisi, Japuonjre</string>
+    <string name="analysis_my_choices">Nono yiero ma ne atimo</string>
+    <string name="analysis_your_selections">Non ane yiero misetimo</string>
+    <string name="rounds">Yiengni</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">"Nonro ma itimo kaluwore gi weche mag thieth, mwandu, winjruok, mor, ng'eyo, tich ma ng'ato timo, tiyo gi thuolone e yo maber, rito alwora, dongo mar ng'ato owuon, kod ting' ma ng'ato nigo e ngima"</string>
+    <string name="settings_title">Weche mag yiero</string>
+    <string name="settings_subtitle">Weche mibiro nono biro luwore gi yiero mitimo</string>
+    <string name="settings_label_subject">Ket wach</string>
+    <string name="settings_hint_select_question_type">Yier kit penjo</string>
+    <string name="settings_hint_select_subtype">Yier kit piny</string>
+    <string name="settings_hint_select_difficulty">"Yier okang ' ma tek"</string>
+    <string name="settings_hint_select_gender_optional">Yore mag yiero: Yier dichwo kata dhako</string>
+    <string name="settings_label_age">Donj e Ndaluni</string>
+    <string name="settings_hint_select_language">Yier dhok midwaro</string>
+    <string name="settings_button_generate_cases">Loso Weche</string>
+    <string name="question_type_study">Puonjruok</string>
+    <string name="question_type_behavioral">Timbe</string>
+    <string name="question_type_hiring">"Tiego Ng'ato"</string>
+    <string name="subtype_behavioral_interpersonal">"Ng'eyo Kaka Ng'ato Nyalo Wuoyo gi Joge"</string>
+    <string name="subtype_behavioral_ethical">Chandruoge Motudore gi Timbe Jomoko</string>
+    <string name="subtype_behavioral_stress">Ritruok mar Parruok</string>
+    <string name="subtype_study_mastery">Puonjruok Wach</string>
+    <string name="subtype_study_critical_thinking">Paro e Yo Makare</string>
+    <string name="subtype_study_practical_application">Weche Minyalo Tiyogo</string>
+    <string name="subtype_hiring_technical">Ng\'eyo Weche Tekinoloji</string>
+    <string name="subtype_hiring_behavioral_interview">"Wuoyo gi Ng'ato e Wi Timbe"</string>
+    <string name="subtype_hiring_situational_judgment">"Ng'ado Bura Kaluwore gi Weche Manie Muma"</string>
+    <string name="difficulty_normal">mapile</string>
+    <string name="difficulty_easy">yot</string>
+    <string name="difficulty_hard">Ne ok yot</string>
+    <string name="gender_male">Dichwo</string>
+    <string name="gender_female">Dhako</string>
+    <string name="gender_select_prompt">Yier dichwo kata dhako</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Nitie gima ne ok dhi maber.</string>
+    <string name="button_new_game">Lweny Manyien</string>
+    <string name="text_round_number">Rondo %1$d</string>
+    <string name="text_scenario">Weche Minyalo Timore</string>
+    <string name="button_next">"Bang'e"</string>
+    <string name="icon_desc_selected_option">Yiero moyier</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Dho Amharic</item>
+        <item>Dho-Arabu (United Arab Emirates)</item>
+        <item>mar Assam</item>
+        <item>Dhok mar Asturian</item>
+        <item>Dhok mar Azerbaijan</item>
+        <item>mar Bambara</item>
+        <item>Belarusian</item>
+        <item>Bemba</item>
+        <item>Dhok mar Bengali</item>
+        <item>e piny Tibet</item>
+        <item>Jo-Bosnia</item>
+        <item>Dho Bulgaria</item>
+        <item>Katalonia</item>
+        <item>Jo - Czech</item>
+        <item>Welsh</item>
+        <item>Jo-Denmark</item>
+        <item>Jo - Jerman</item>
+        <item>Dzongkha</item>
+        <item>Jo-Grik</item>
+        <item>Dhok mar Kisungu</item>
+        <item>Dhok mar Estonia</item>
+        <item>Wach Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Jo - Faro</item>
+        <item>Dhok mar Finland</item>
+        <item>French</item>
+        <item>Friulian</item>
+        <item>Gaelic mar Scotland</item>
+        <item>Jo - Ireland</item>
+        <item>Jo-Galicia</item>
+        <item>Gujarati</item>
+        <item>Jo - Hausa</item>
+        <item>Dho Hibrania</item>
+        <item>Hindi</item>
+        <item>Jo - Croatia</item>
+        <item>dho Hungary</item>
+        <item>Dhok mar Armenia</item>
+        <item>Jo-Igbo</item>
+        <item>Indonesian</item>
+        <item>Dhok mar Iceland</item>
+        <item>Jo - Italia</item>
+        <item>Jo - Japan</item>
+        <item>Jo - Kabyle</item>
+        <item>Kamba</item>
+        <item>Piny mar Kannada</item>
+        <item>Jo-Georgia</item>
+        <item>Jo - Kazakhstan</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Jo - Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Jo - Korea</item>
+        <item>Laos (Laos)</item>
+        <item>Limburg</item>
+        <item>Dhok mar Lingala</item>
+        <item>dho Lithuania</item>
+        <item>Dhok mar Luxembourg</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Dhok mar Latvia</item>
+        <item>Dhok mar Malayalam</item>
+        <item>marathi</item>
+        <item>Jo - Makedonia</item>
+        <item>Madagascar (Madagascar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Dho Mongolia mar Halh</item>
+        <item>Malay (Malaysia)</item>
+        <item>Jo-Burma</item>
+        <item>Jo-Dutch</item>
+        <item>Norwegian Nynorsk</item>
+        <item>Bokmål mar Norway</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (South Sudan)</item>
+        <item>Oromo (Ethiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi</item>
+        <item>Jo - Poland</item>
+        <item>dho Portuguese</item>
+        <item>Dhok mar Persia (Afghanistan)</item>
+        <item>Dhok mar Persia (Iran)</item>
+        <item>Wach Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Dhok mar Romania</item>
+        <item>Rundi (Burundi)</item>
+        <item>Jo - Russia</item>
+        <item>Sango (Central African Republic)</item>
+        <item>Dhok mar Sinhala (Sri Lanka)</item>
+        <item>Slovak (Slovakia)</item>
+        <item>Dhok mar Slovenia</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somalia</item>
+        <item>Dho - Spain</item>
+        <item>Albanian (Albania)</item>
+        <item>Jo-Serbia</item>
+        <item>dho Sweden</item>
+        <item>Dho Swahili</item>
+        <item>Dhok mar Tamil</item>
+        <item>Dhok mar Telugu</item>
+        <item>Jo - Thailand</item>
+        <item>Dhok mar dho Turkey</item>
+        <item>Dhok mar Ukraine</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uighur (China)</item>
+        <item>Uzbek (Latin, Uzbekistan)</item>
+        <item>Jo-Vietnam</item>
+        <item>Jo-Xhosa</item>
+        <item>Dhok mar Yoruba</item>
+        <item>Dhok mar Cantonese</item>
+        <item>Dhok mar Mandarin e dho China</item>
+        <item>Dhok mar Mandarin Chinese Traditional</item>
+        <item>Jo - Zulu</item>
+    </string-array>
+</resources>

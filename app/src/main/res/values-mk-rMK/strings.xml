@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Предлог за избор</string>
+    <string name="optional_enter_the_role_e_g_student">Опционално: Влезте во улогата, на пример, Студент</string>
+    <string name="analysis_my_choices">Анализа на моите избори</string>
+    <string name="analysis_your_selections">Анализирајте ги вашите избори</string>
+    <string name="rounds">Рунди</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Резултатите се пресметаат врз основа на здравјето, богатството, односите, среќата, знаењето, кармата, управувањето со времето, влијанието на животната средина, личниот раст и социјалната одговорност</string>
+    <string name="settings_title">Предлог за избор</string>
+    <string name="settings_subtitle">Сценариовите ќе бидат базирани на вашите избори.</string>
+    <string name="settings_label_subject">Внесете предмет</string>
+    <string name="settings_hint_select_question_type">Изберете тип на прашање</string>
+    <string name="settings_hint_select_subtype">Изберете подтип</string>
+    <string name="settings_hint_select_difficulty">Изберете тешко ниво</string>
+    <string name="settings_hint_select_gender_optional">Опционално: Изберете го полот</string>
+    <string name="settings_label_age">Влезете во вашата возраст</string>
+    <string name="settings_hint_select_language">Изберете го вашиот јазик</string>
+    <string name="settings_button_generate_cases">Создавање на случаи</string>
+    <string name="question_type_study">Студија</string>
+    <string name="question_type_behavioral">Со однесување</string>
+    <string name="question_type_hiring">Наемање</string>
+    <string name="subtype_behavioral_interpersonal">Интерперсонални вештини</string>
+    <string name="subtype_behavioral_ethical">Етички дилеми</string>
+    <string name="subtype_behavioral_stress">Управување со стресот</string>
+    <string name="subtype_study_mastery">Мастерство на предметот</string>
+    <string name="subtype_study_critical_thinking">Критичко размислување</string>
+    <string name="subtype_study_practical_application">Практична примена</string>
+    <string name="subtype_hiring_technical">Технички вештини</string>
+    <string name="subtype_hiring_behavioral_interview">Интервју за однесување</string>
+    <string name="subtype_hiring_situational_judgment">Судот по ситуацијата</string>
+    <string name="difficulty_normal">нормален</string>
+    <string name="difficulty_easy">лесно</string>
+    <string name="difficulty_hard">тешко</string>
+    <string name="gender_male">Машки</string>
+    <string name="gender_female">Женска</string>
+    <string name="gender_select_prompt">Изберете пол</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Нешто не е во ред.</string>
+    <string name="button_new_game">Нова игра</string>
+    <string name="text_round_number">Окружен %1$d</string>
+    <string name="text_scenario">Сценарио</string>
+    <string name="button_next">Следниот</string>
+    <string name="icon_desc_selected_option">Избран избор</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Африкански</item>
+        <item>Акан</item>
+        <item>Амхарски</item>
+        <item>Арапски (Обединетите Арапски Емирати)</item>
+        <item>Асамски</item>
+        <item>Астуриски</item>
+        <item>Азербејџански</item>
+        <item>Бамбарски</item>
+        <item>Белоруски</item>
+        <item>Бемба</item>
+        <item>Бенгалски</item>
+        <item>Тибетски</item>
+        <item>Босначки</item>
+        <item>Бугарски</item>
+        <item>Каталонски</item>
+        <item>Чешки</item>
+        <item>Велски</item>
+        <item>Дански</item>
+        <item>Германски</item>
+        <item>Дзонгха</item>
+        <item>Грчки</item>
+        <item>Англиски</item>
+        <item>Естонски</item>
+        <item>Баскиски</item>
+        <item>Еве (Гана)</item>
+        <item>Еве (Того)</item>
+        <item>Фарерски</item>
+        <item>Фински</item>
+        <item>Француски</item>
+        <item>Фриулијански</item>
+        <item>Шкотски гаелски</item>
+        <item>Ирска</item>
+        <item>Галициски</item>
+        <item>Гуџарати</item>
+        <item>Хауса</item>
+        <item>Еврејски</item>
+        <item>Хинди</item>
+        <item>Хрватски</item>
+        <item>Унгарски</item>
+        <item>Арменски</item>
+        <item>Игбо</item>
+        <item>Индонезиски</item>
+        <item>Исландски</item>
+        <item>Италијански</item>
+        <item>Јапонски</item>
+        <item>Кабилски</item>
+        <item>Камба</item>
+        <item>Канадска</item>
+        <item>Грузински</item>
+        <item>Казакски</item>
+        <item>Кабувердиану (Креолскиот јазик од Капе Верде)</item>
+        <item>Кхмер</item>
+        <item>Кикују</item>
+        <item>Кинјарунда</item>
+        <item>Киргизстан</item>
+        <item>Корејски</item>
+        <item>Лао (лаос)</item>
+        <item>Лимбургски</item>
+        <item>Лингала</item>
+        <item>Литовски</item>
+        <item>Луксембургски</item>
+        <item>Ганда</item>
+        <item>Луо</item>
+        <item>Стандарден латвийски</item>
+        <item>Малајаламски</item>
+        <item>Маратски</item>
+        <item>Македонски</item>
+        <item>Малагашки (Мадагаскар)</item>
+        <item>Малтски (Малта)</item>
+        <item>Халх монголски</item>
+        <item>Малејски (Малезија)</item>
+        <item>Мурмански</item>
+        <item>Холандски</item>
+        <item>Норвешки Нинорск</item>
+        <item>Норвешки Bokmål</item>
+        <item>Непали (Непал)</item>
+        <item>Нуер (Южен Судан)</item>
+        <item>Оромо (Етиопија)</item>
+        <item>Оромо (Кенија)</item>
+        <item>Одија (Индија)</item>
+        <item>Пунџабски</item>
+        <item>Полски</item>
+        <item>Португалски</item>
+        <item>Персиски (Афганистан)</item>
+        <item>Персиски (Иран)</item>
+        <item>Пашту (Афганистан)</item>
+        <item>Кечуа (Боливија)</item>
+        <item>Кечуа (Еквадор)</item>
+        <item>Кечуа (Перу)</item>
+        <item>Румјански</item>
+        <item>Рунди (Бурунди)</item>
+        <item>Руски</item>
+        <item>Санго (Централноафриканска Република)</item>
+        <item>Сингалски (Шри Ланка)</item>
+        <item>Словачка (Словакија)</item>
+        <item>Словенски</item>
+        <item>Шона (Зимбабве)</item>
+        <item>Сомалија</item>
+        <item>Испански</item>
+        <item>Албански (Албанска)</item>
+        <item>Српски</item>
+        <item>Шведски</item>
+        <item>Суахили</item>
+        <item>Тамилски</item>
+        <item>Телуг</item>
+        <item>Тајландски</item>
+        <item>Турски</item>
+        <item>Украински</item>
+        <item>Урду (Пакистан)</item>
+        <item>Ујгурски јазик (Кинија)</item>
+        <item>Узбекски (латински: Uzbekistan)</item>
+        <item>Виетнамски</item>
+        <item>Xhosa</item>
+        <item>Јоруба</item>
+        <item>Кантонски</item>
+        <item>Мандарински кинески поедноставени</item>
+        <item>Мандарински кинески традиционален</item>
+        <item>Зулу</item>
+    </string-array>
+</resources>

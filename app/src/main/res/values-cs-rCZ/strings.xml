@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Výběr</string>
+    <string name="optional_enter_the_role_e_g_student">Možné: Vložte roli, např. Student</string>
+    <string name="analysis_my_choices">Analýza mých rozhodnutí</string>
+    <string name="analysis_your_selections">Analýza Vašich výběrů</string>
+    <string name="rounds">Závěry</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Výpočet skóre na základě zdraví, bohatství, vztahů, štěstí, znalostí, karmy, řízení času, dopadu na životní prostředí, osobního růstu a sociální odpovědnosti</string>
+    <string name="settings_title">Výběr</string>
+    <string name="settings_subtitle">Scenáře budou založeny na vašich výběrech.</string>
+    <string name="settings_label_subject">Vložte předmět</string>
+    <string name="settings_hint_select_question_type">Vyberte typ dotazu</string>
+    <string name="settings_hint_select_subtype">Vyber podtyp</string>
+    <string name="settings_hint_select_difficulty">Vyberte složitou úroveň</string>
+    <string name="settings_hint_select_gender_optional">Možné: Vyberte pohlaví</string>
+    <string name="settings_label_age">Vstupte do svého věku</string>
+    <string name="settings_hint_select_language">Vyberte si jazyk</string>
+    <string name="settings_button_generate_cases">Vytvořit případy</string>
+    <string name="question_type_study">Studování</string>
+    <string name="question_type_behavioral">Chování</string>
+    <string name="question_type_hiring">Zaměstnanost</string>
+    <string name="subtype_behavioral_interpersonal">Mezilidské dovednosti</string>
+    <string name="subtype_behavioral_ethical">Etické dilemy</string>
+    <string name="subtype_behavioral_stress">Řízení stresu</string>
+    <string name="subtype_study_mastery">Ovládání předmětů</string>
+    <string name="subtype_study_critical_thinking">Kritické myšlení</string>
+    <string name="subtype_study_practical_application">Praktické využití</string>
+    <string name="subtype_hiring_technical">Technické dovednosti</string>
+    <string name="subtype_hiring_behavioral_interview">Pohovor o chování</string>
+    <string name="subtype_hiring_situational_judgment">Soud podle situace</string>
+    <string name="difficulty_normal">normální</string>
+    <string name="difficulty_easy">snadné</string>
+    <string name="difficulty_hard">těžký</string>
+    <string name="gender_male">Mužský</string>
+    <string name="gender_female">Ženská</string>
+    <string name="gender_select_prompt">Vyberte pohlaví</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Něco se pokazilo.</string>
+    <string name="button_new_game">Nová hra</string>
+    <string name="text_round_number">Okruh %1$d</string>
+    <string name="text_scenario">Scenář</string>
+    <string name="button_next">Další .</string>
+    <string name="icon_desc_selected_option">Vybraná možnost</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharský</item>
+        <item>Arabština (Spojené arabské emiráty)</item>
+        <item>Assamské</item>
+        <item>Asturijština</item>
+        <item>Azerbajdžánština</item>
+        <item>Bambara</item>
+        <item>Běloruské</item>
+        <item>Bemba</item>
+        <item>Bengálština</item>
+        <item>Tibetské</item>
+        <item>Bosenský</item>
+        <item>Bulharština</item>
+        <item>Katalánština</item>
+        <item>Česká republika</item>
+        <item>České</item>
+        <item>Dánština</item>
+        <item>Německý</item>
+        <item>Dzongkha</item>
+        <item>Řecký</item>
+        <item>Angličtina</item>
+        <item>České</item>
+        <item>Euskadi</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Faerští</item>
+        <item>Finština</item>
+        <item>Francouzština</item>
+        <item>Friulština</item>
+        <item>Skotský gaelický jazyk</item>
+        <item>Irsko</item>
+        <item>Galický</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>Hebrejština</item>
+        <item>Hindi</item>
+        <item>Chorvatština</item>
+        <item>Maďarština</item>
+        <item>Arménština</item>
+        <item>Igbo</item>
+        <item>Indonéský</item>
+        <item>Islandský jazyk</item>
+        <item>Italština</item>
+        <item>Japonské</item>
+        <item>Kabýly</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Gruzínština</item>
+        <item>Česká republika</item>
+        <item>Kabuverdianu (kapverdecký kreolsky)</item>
+        <item>Česká republika</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Česká republika</item>
+        <item>Korejci</item>
+        <item>Laos (Laos)</item>
+        <item>Limburština</item>
+        <item>Lingala</item>
+        <item>České</item>
+        <item>Luxembursko</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Standardní letština</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Makedonština</item>
+        <item>Madagaskar (Madagaskar)</item>
+        <item>Maltská (Malta)</item>
+        <item>Halh mongolština</item>
+        <item>Malajština (Malajsie)</item>
+        <item>Burmština</item>
+        <item>Nizozemské</item>
+        <item>Norský Nynorsk</item>
+        <item>Norský bokmål</item>
+        <item>Nepali (Nepál)</item>
+        <item>Nuer (Jižní Súdán)</item>
+        <item>Oromo (Ethiopie)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (Indie)</item>
+        <item>Punjabi</item>
+        <item>Polsko</item>
+        <item>Portugalština</item>
+        <item>Perština (Afghánistán)</item>
+        <item>Perština (Irán)</item>
+        <item>Pashto (Afghánistán)</item>
+        <item>Quechua (Bolivie)</item>
+        <item>Quechua (ekvador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Rumunština</item>
+        <item>Rundi (Burundi)</item>
+        <item>Ruské</item>
+        <item>Sango (Střední africká republika)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovenská (Slovensko)</item>
+        <item>Slovenský</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somálsko</item>
+        <item>Španělština</item>
+        <item>Albánština (Albanie)</item>
+        <item>Srbština</item>
+        <item>Švédština</item>
+        <item>Swahili</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Thajsko</item>
+        <item>Turecký</item>
+        <item>Ukrajinština</item>
+        <item>Urdu (Pakistán)</item>
+        <item>Ujgur (Čína)</item>
+        <item>Uzbekistan (latinsky, Uzbekistan)</item>
+        <item>Vietnamci</item>
+        <item>Xhosa</item>
+        <item>Joruba</item>
+        <item>Kantonština</item>
+        <item>Mandarinská čínština zjednodušená</item>
+        <item>Tradiční čínský mandarin</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Chinhu chaunosarudza</string>
+    <string name="optional_enter_the_role_e_g_student">Kusarudzwa: Pinda basa, somuenzaniso, mudzidzi</string>
+    <string name="analysis_my_choices">Ongorora zvisarudzo zvangu</string>
+    <string name="analysis_your_selections">Ongorora zvaunosarudza</string>
+    <string name="rounds">Mabhatani</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Nhamba inoverengerwa zvichienderana nehutano, upfumi, ukama, mufaro, zivo, karma, nguva yekugadzirisa, kukanganisa kwezvakatipoteredza, kukura kwevanhu, uye mutoro wehurumende</string>
+    <string name="settings_title">Chinhu chaunosarudza</string>
+    <string name="settings_subtitle">Mamiriro ezvinhu acho achavakirwa pane zvaunosarudza</string>
+    <string name="settings_label_subject">Pinda nyaya yacho</string>
+    <string name="settings_hint_select_question_type">Sarudza mhando yemubvunzo</string>
+    <string name="settings_hint_select_subtype">Sarudza subtype</string>
+    <string name="settings_hint_select_difficulty">Sarudza danho rakaoma</string>
+    <string name="settings_hint_select_gender_optional">Kusarudzwa: Sarudza murume wako</string>
+    <string name="settings_label_age">Pinda Muzera Rako</string>
+    <string name="settings_hint_select_language">Sarudza mutauro wako</string>
+    <string name="settings_button_generate_cases">Gadzira Nyaya</string>
+    <string name="question_type_study">Kudzidza</string>
+    <string name="question_type_behavioral">Maitiro</string>
+    <string name="question_type_hiring">Kushanda</string>
+    <string name="subtype_behavioral_interpersonal">Unyanzvi Hwevanhu</string>
+    <string name="subtype_behavioral_ethical">Dambudziko Retsika</string>
+    <string name="subtype_behavioral_stress">Kushungurudzika</string>
+    <string name="subtype_study_mastery">Unyanzvi hwezvinhu</string>
+    <string name="subtype_study_critical_thinking">Kufunga Kwakakomba</string>
+    <string name="subtype_study_practical_application">Kushandiswa Kwakaita</string>
+    <string name="subtype_hiring_technical">Unyanzvi hweUnyanzvi</string>
+    <string name="subtype_hiring_behavioral_interview">Bvunzurudzo Yetsika</string>
+    <string name="subtype_hiring_situational_judgment">Kutonga Kwemamiriro ezvinhu</string>
+    <string name="difficulty_normal">zvakajairika</string>
+    <string name="difficulty_easy">nyore</string>
+    <string name="difficulty_hard">yakaoma</string>
+    <string name="gender_male">Varume</string>
+    <string name="gender_female">Mukadzi</string>
+    <string name="gender_select_prompt">Sarudza murume nomukadzi</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Chinhu chakakanganisika</string>
+    <string name="button_new_game">Mutambo Mutsva</string>
+    <string name="text_round_number">Round %1$d</string>
+    <string name="text_scenario">Mamiriro ezvinhu</string>
+    <string name="button_next">Zvadaro</string>
+    <string name="icon_desc_selected_option">Sarudzo yakasarudzwa</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>ChiAmharic</item>
+        <item>Arabic (United Arab Emirates)</item>
+        <item>Assamese</item>
+        <item>Chirungu</item>
+        <item>ChiAzerbaijani</item>
+        <item>Bambara</item>
+        <item>ChiBelarusian</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibetan</item>
+        <item>ChiBosnia</item>
+        <item>ChiBulgarian</item>
+        <item>ChiCatalan</item>
+        <item>ChiCzech</item>
+        <item>VaWales</item>
+        <item>Danish</item>
+        <item>ChiGerman</item>
+        <item>Dzongkha</item>
+        <item>ChiGiriki</item>
+        <item>Chirungu</item>
+        <item>ChiEstonia</item>
+        <item>Mashoko echiBasque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Faroese</item>
+        <item>ChiFinnish</item>
+        <item>ChiFrench</item>
+        <item>Friulian</item>
+        <item>ChiScottish Gaelic</item>
+        <item>ChiIrish</item>
+        <item>ChiGalician</item>
+        <item>ChiGujarati</item>
+        <item>Hausa</item>
+        <item>ChiHebheru</item>
+        <item>ChiHindi</item>
+        <item>ChiCroatian</item>
+        <item>ChiHungary</item>
+        <item>ChiArmenian</item>
+        <item>VaIgbo</item>
+        <item>ChiIndonesia</item>
+        <item>ChiIcelandic</item>
+        <item>ChiItalian</item>
+        <item>ChiJapanese</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>ChiGeorgian</item>
+        <item>Kazakhstani</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>VaKhmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>ChiKorea</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgish</item>
+        <item>ChiLingala</item>
+        <item>ChiLithuanian</item>
+        <item>ChiLuxembourgish</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Mutauro wechiLatvian Standard</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>ChiMakedhoniya</item>
+        <item>Malagasy (Madagascar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Halh wokuMongolia</item>
+        <item>Malay (Malaysia)</item>
+        <item>Chirungu</item>
+        <item>ChiDutch</item>
+        <item>Norwegian Nynorsk</item>
+        <item>Bokmål yeNorway</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (South Sudan)</item>
+        <item>Oromo (Ethiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>ChiPunjabi</item>
+        <item>ChiPolish</item>
+        <item>ChiPortuguese</item>
+        <item>ChiPersian (Afghanistan)</item>
+        <item>ChiPersian (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>ChiRomania</item>
+        <item>Rundi (Burundi)</item>
+        <item>Chirungu</item>
+        <item>Sango (Central African Republic)</item>
+        <item>ChiSingala (Sri Lanka)</item>
+        <item>Slovak (Slovakia)</item>
+        <item>ChiSlovenian</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somalia</item>
+        <item>ChiSpanish</item>
+        <item>ChiAlbania (Albania)</item>
+        <item>ChiSerbia</item>
+        <item>ChiSweden</item>
+        <item>ChiSwahili</item>
+        <item>VaTamil</item>
+        <item>ChiTelugu</item>
+        <item>ChiThai</item>
+        <item>ChiTurkey</item>
+        <item>ChiUkrainian</item>
+        <item>Urdu (Pakistan)</item>
+        <item>ChiUighur (China)</item>
+        <item>Uzbek (chiLatin, Uzbekistan)</item>
+        <item>MaVietnamese</item>
+        <item>ChiXhosa</item>
+        <item>ChiYoruba</item>
+        <item>ChiCantonese</item>
+        <item>ChiChinese cheMandarin Chakareruka</item>
+        <item>Mandarin Chinese Traditional</item>
+        <item>VaZulu</item>
+    </string-array>
+</resources>

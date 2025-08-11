@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Fɛɛrɛ min kofɔlen don</string>
+    <string name="optional_enter_the_role_e_g_student">Fanga: I bɛ jɔyɔrɔ don, misali la, kalanden</string>
+    <string name="analysis_my_choices">Ka n ka sugandiliw sɛgɛsɛgɛ</string>
+    <string name="analysis_your_selections">Aw bɛ aw ka fɛɛrɛw lajɛ</string>
+    <string name="rounds">Tɛmɛniw</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Sɔrɔli jatiminɛ basigilen bɛ kɛnɛya kan, nafolo, teriya, nisɔndiya, dɔnniya, karma, waati marali, lamini kɔlɔlɔ, mɔgɔ ɲɛtaa, ani sigida kunkanbaara</string>
+    <string name="settings_title">Fɛɛrɛ min kofɔlen don</string>
+    <string name="settings_subtitle">Scenariw bɛ basigi aw ka sugandili kan</string>
+    <string name="settings_label_subject">Aw bɛ fɛn dɔ sɛbɛn</string>
+    <string name="settings_hint_select_question_type">Ɲininkali suguya sugandi</string>
+    <string name="settings_hint_select_subtype">Aw bɛ tagamasiyɛn dɔ sugandi</string>
+    <string name="settings_hint_select_difficulty">Aw bɛ gɛlɛya hakɛ sugandi</string>
+    <string name="settings_hint_select_gender_optional">Fanga: Aw bɛ aw ka cɛnimusoko sugandi</string>
+    <string name="settings_label_age">I ka kan ka don i ka waati la</string>
+    <string name="settings_hint_select_language">Aw bɛ aw ka kan sugandi</string>
+    <string name="settings_button_generate_cases">Kalanw dilan</string>
+    <string name="question_type_study">Ka kalan kɛ</string>
+    <string name="question_type_behavioral">Tilenbaliya</string>
+    <string name="question_type_hiring">Ka baara ɲini</string>
+    <string name="subtype_behavioral_interpersonal">Mɔgɔ ni mɔgɔ cɛ dɔnniya</string>
+    <string name="subtype_behavioral_ethical">Ladili gɛlɛyaw</string>
+    <string name="subtype_behavioral_stress">Kɔrɔbɔli ɲɛnabɔli</string>
+    <string name="subtype_study_mastery">Kunnafoniw dɔnni</string>
+    <string name="subtype_study_critical_thinking">Hakili kɔrɔfɔli</string>
+    <string name="subtype_study_practical_application">Fɛɛrɛ minnu bayɛlɛmana</string>
+    <string name="subtype_hiring_technical">Fɛɛrɛsira dɔnniya</string>
+    <string name="subtype_hiring_behavioral_interview">Ɲiningali kɛcogo kan</string>
+    <string name="subtype_hiring_situational_judgment">Kunnafoniw lajɛ</string>
+    <string name="difficulty_normal">fɛn minnu ka ca</string>
+    <string name="difficulty_easy">a ka nɔgɔ</string>
+    <string name="difficulty_hard">ka gɛlɛn</string>
+    <string name="gender_male">Cɛmanw</string>
+    <string name="gender_female">Musow</string>
+    <string name="gender_select_prompt">Aw bɛ cɛnimusoko sugandi</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Fɛn dɔ y\'i fili</string>
+    <string name="button_new_game">Ɲɛnamaya kura</string>
+    <string name="text_round_number">Kɛlɛlen %1$d</string>
+    <string name="text_scenario">Sɛnɛri</string>
+    <string name="button_next">O kɔ,</string>
+    <string name="icon_desc_selected_option">Fɛɛrɛ min sugandi</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>Arabu (Emirates Arabes Unis)</item>
+        <item>Assamkaw</item>
+        <item>Asturien</item>
+        <item>Azerbaijani</item>
+        <item>Bambara</item>
+        <item>Bélarusikan</item>
+        <item>Bemba</item>
+        <item>Bengali</item>
+        <item>Tibetènw</item>
+        <item>Bosnian</item>
+        <item>Bamanankan</item>
+        <item>Catalan</item>
+        <item>Tchèki jamana</item>
+        <item>Galeskan</item>
+        <item>Danimarka</item>
+        <item>Jamanaw</item>
+        <item>Dzongkha</item>
+        <item>Gɛrɛkikan</item>
+        <item>Bamanankan</item>
+        <item>Ɛstɔn</item>
+        <item>Baski jamana</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Farawkaw</item>
+        <item>Finkan</item>
+        <item>Faransikan</item>
+        <item>Friulikan</item>
+        <item>Scottish Gaelic</item>
+        <item>Irlandi</item>
+        <item>Galikan</item>
+        <item>Gujarati</item>
+        <item>Hausaw</item>
+        <item>Heburukan</item>
+        <item>Bamanankan</item>
+        <item>Korowasi</item>
+        <item>Malikan</item>
+        <item>Arɛmɛnkan</item>
+        <item>Bamanankan</item>
+        <item>Indonésien</item>
+        <item>Islandikan</item>
+        <item>Italikan</item>
+        <item>Japɔnkaw</item>
+        <item>Kabilkan</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Georgian</item>
+        <item>kazakh</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda</item>
+        <item>Kirgistan jamana</item>
+        <item>Korɔnkaw</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgkan</item>
+        <item>Lingala</item>
+        <item>Lɛnkan</item>
+        <item>Luxembourgkan</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Latvian Standard</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Masedwanɛ</item>
+        <item>Madagasikari (Madagascar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Halh Mongolian</item>
+        <item>Malay (Malaysia)</item>
+        <item>Bamanankan</item>
+        <item>Néerlandais</item>
+        <item>Norwegian Nynorsk</item>
+        <item>Norvɛkikan Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (Sudan woroduguyanfan)</item>
+        <item>Oromo (Etiyopiya)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (hindi)</item>
+        <item>Punjabi</item>
+        <item>Polonɛkan</item>
+        <item>Pɔrtigɛkan</item>
+        <item>Persian (Afghanistan)</item>
+        <item>Persian (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivi)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Romɛkan</item>
+        <item>Rundi (Burundi)</item>
+        <item>Risi jamana kɔnɔ</item>
+        <item>Sango (République centrafricaine)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovakikan (Slovakiya)</item>
+        <item>Slovènkan</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somali jamana</item>
+        <item>Ɛspanyolkan</item>
+        <item>Albɛnkan (Albania)</item>
+        <item>Sɛrɛbi</item>
+        <item>Swede</item>
+        <item>Swahilikan</item>
+        <item>Tamil</item>
+        <item>Télugu</item>
+        <item>Thailandew</item>
+        <item>Turquie</item>
+        <item>Ukrainien</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (Chine)</item>
+        <item>Uzbékistan (latin, Uzbékistan)</item>
+        <item>Viyetnamkaw</item>
+        <item>Xhosa</item>
+        <item>Yoruba</item>
+        <item>Kantonkan</item>
+        <item>Mandarini siginiden nɔgɔya</item>
+        <item>Mandarin Chinɛkan Tradisiɔn</item>
+        <item>Zuluw</item>
+    </string-array>
+</resources>

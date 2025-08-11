@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ifya kusalila</string>
+    <string name="optional_enter_the_role_e_g_student">Ifingamwafwa: Iseni umulimo, pamo nga, Umusambi</string>
+    <string name="analysis_my_choices">Ukupituluka mu fyo nasalapo ukucita</string>
+    <string name="analysis_your_selections">Moneni ifyo musalile</string>
+    <string name="rounds">Imfuti</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Ifishinka ifilanda pa bumi, ifyuma, ifibusa, insansa, ukwishiba, karma, ukubomfya inshita, ukulenga ifintu ukubipa, ukulunduluka mu mikalile, e lyo no kuba no bufwayo mu mikalile</string>
+    <string name="settings_title">Ifya kusalila</string>
+    <string name="settings_subtitle">Ifi fikacitika ukulingana ne fyo musala</string>
+    <string name="settings_label_subject">Iseni iciputusha</string>
+    <string name="settings_hint_select_question_type">Saleni umusango wa cipusho</string>
+    <string name="settings_hint_select_subtype">Saleni umusango</string>
+    <string name="settings_hint_select_difficulty">Saleni umusango uwafya</string>
+    <string name="settings_hint_select_gender_optional">Ifyo mwingasalapo ukucita: Saleni umunobe</string>
+    <string name="settings_label_age">Fika mu Nshita yobe</string>
+    <string name="settings_hint_select_language">Saleni ululimi</string>
+    <string name="settings_button_generate_cases">Ukupanga Imilandu</string>
+    <string name="question_type_study">Isambililo</string>
+    <string name="question_type_behavioral">Imibele</string>
+    <string name="question_type_hiring">Ukusala</string>
+    <string name="subtype_behavioral_interpersonal">Amano ya Bantu Bonse</string>
+    <string name="subtype_behavioral_ethical">Ubulwele bwa mu Mwikashi</string>
+    <string name="subtype_behavioral_stress">Ifyo Mwingacita nga Muli na Masakamika</string>
+    <string name="subtype_study_mastery">Ukwishiba Ifya Kucita</string>
+    <string name="subtype_study_critical_thinking">Ukutontonkanya Ukwacindama</string>
+    <string name="subtype_study_practical_application">Ifya Kubomfya</string>
+    <string name="subtype_hiring_technical">Amano ya Bwino</string>
+    <string name="subtype_hiring_behavioral_interview">Ukulanshanya pa Fya Kucita</string>
+    <string name="subtype_hiring_situational_judgment">Ukupingula Ukulingana ne Fyacitika</string>
+    <string name="difficulty_normal">ca cine</string>
+    <string name="difficulty_easy">icayanguka</string>
+    <string name="difficulty_hard">ubwafya</string>
+    <string name="gender_male">Umwaume</string>
+    <string name="gender_female">Umwanakashi</string>
+    <string name="gender_select_prompt">Saleni umunobe</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Kwali ifyacitike</string>
+    <string name="button_new_game">Umutambo Uupya</string>
+    <string name="text_round_number">Iciputulwa %1$d</string>
+    <string name="text_scenario">Ifyacitike</string>
+    <string name="button_next">Lyena</string>
+    <string name="icon_desc_selected_option">Iciputusha capingulwa</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Amharic</item>
+        <item>Arabic (United Arab Emirates)</item>
+        <item>ba mu Assam</item>
+        <item>Ulupungu lwa kwa Kalinda</item>
+        <item>IciAzerbaijani</item>
+        <item>ya Bambara</item>
+        <item>Ululimi lwa ci Belarusian</item>
+        <item>Bemba</item>
+        <item>IciBengali</item>
+        <item>baTibet</item>
+        <item>Abena Bosnia</item>
+        <item>Ululimi lwa ciBulgaria</item>
+        <item>IciCatalan</item>
+        <item>Ica Czech</item>
+        <item>Abena Wales</item>
+        <item>Danish</item>
+        <item>IciGerman</item>
+        <item>Dzongkha</item>
+        <item>Amalembo ya ciGriki</item>
+        <item>IciNgeleshi</item>
+        <item>IciEstonia</item>
+        <item>IciBasque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Abena Faroese</item>
+        <item>Finnish</item>
+        <item>IciFrench</item>
+        <item>IciFriulian</item>
+        <item>IciGaelic ca ku Scotland</item>
+        <item>Abena Ireland</item>
+        <item>IciGalicia</item>
+        <item>Gujarati</item>
+        <item>Hausa</item>
+        <item>IciHebere</item>
+        <item>IciHindi</item>
+        <item>IciCroatia</item>
+        <item>Ululimi lwa ciHungarian</item>
+        <item>IciArmenia</item>
+        <item>AbaIgbo</item>
+        <item>IciIndonesia</item>
+        <item>Icelandic</item>
+        <item>IciItalian</item>
+        <item>Abena Japan</item>
+        <item>Kabyle</item>
+        <item>Kamba</item>
+        <item>IciKannada</item>
+        <item>IciGeorgian</item>
+        <item>IcaKazakh</item>
+        <item>Kabuverdianu (Creole ya Cape Verde)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>IciKinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Abena Korea</item>
+        <item>Laos (Laos)</item>
+        <item>Ulupungu lwa kwa Kalinda</item>
+        <item>Lingala</item>
+        <item>IciLithuanian</item>
+        <item>IciLuxembourgish</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Ululimi lwa ciLatvian</item>
+        <item>baMalayalam</item>
+        <item>Ba Marathi</item>
+        <item>IciMacedonian</item>
+        <item>BaMalagasy (Abena Madagascar)</item>
+        <item>Ululimi lwa ku Malta (Malta)</item>
+        <item>Halh Mongolian</item>
+        <item>Malaya (Malaysia)</item>
+        <item>Abantu ba ku Myanmar</item>
+        <item>UbuNetherlands</item>
+        <item>Norwegian Nynorsk</item>
+        <item>IciNorwegian Bokmål</item>
+        <item>Nepali (Nepali)</item>
+        <item>Nuer (South Sudan)</item>
+        <item>Abena Oromo (Etiopia)</item>
+        <item>Abena Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>IciPunjabi</item>
+        <item>IciPolish</item>
+        <item>IciPortuguese</item>
+        <item>IciPersian (Afghanistan)</item>
+        <item>IciPersian (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>IciQuechua (Bolivia)</item>
+        <item>IciQuechua (Ecuador)</item>
+        <item>IciQuechua (Peru)</item>
+        <item>Ululimi lwa ciRomanian</item>
+        <item>Rundi (Burundi)</item>
+        <item>IciRussian</item>
+        <item>Sango (Central African Republic)</item>
+        <item>IciSingala (Sri Lanka)</item>
+        <item>IciSlovak (Slovakia)</item>
+        <item>IciSlovenian</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somalia</item>
+        <item>IciSpanish</item>
+        <item>IciAlbania (Albania)</item>
+        <item>Ululimi lwa ciSerbia</item>
+        <item>IciSweden</item>
+        <item>IciSwahili</item>
+        <item>baTamil</item>
+        <item>IciTelugu</item>
+        <item>IciThai</item>
+        <item>IciTurkish</item>
+        <item>Ululimi lwa ciUkraine</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uighur (China)</item>
+        <item>Uzbekistan (mu ciLatin, Uzbekistan)</item>
+        <item>Abena Vietnam</item>
+        <item>Ba Xhosa</item>
+        <item>Ululimi lwa ciYoruba</item>
+        <item>Cantonese</item>
+        <item>IciChinese ca Mandarin Icayanguka</item>
+        <item>IciMandarin Chinese Traditional</item>
+        <item>Abena Zulu</item>
+    </string-array>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Adesuadeɛ a ɛtɔ so nnum</string>
+    <string name="optional_enter_the_role_e_g_student">Afahyɛ: Fa dwuma no hyɛ mu, d.e., Sukuufoɔ</string>
+    <string name="analysis_my_choices">Monhwɛ m\'apɛde</string>
+    <string name="analysis_your_selections">Hwehwɛ wo nhyehyԑeԑ mu</string>
+    <string name="rounds">Nhyehyɛeɛ</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Akwankyerɛ a wɔde gyina apɔwmuden, ahonyade, abusuabɔ, anigye, nimdeɛ, karma, bere a wɔde di dwuma, asetena mu nkɛntɛnso, ankorankoro nkɔso, ne asetenam asɛyɛde so</string>
+    <string name="settings_title">Adesuadeɛ a ɛtɔ so nnum</string>
+    <string name="settings_subtitle">Nsɛm tebea no gyina wo nhyehyԑeԑ so</string>
+    <string name="settings_label_subject">Fa asɛmti no di dwuma</string>
+    <string name="settings_hint_select_question_type">Paw nsɛmbisa no type</string>
+    <string name="settings_hint_select_subtype">Paw subtype no</string>
+    <string name="settings_hint_select_difficulty">Paw tebea a ɛyɛ den no</string>
+    <string name="settings_hint_select_gender_optional">Fa nwa awie Fa nwa awie Fa nwa awie Fa nwa awie</string>
+    <string name="settings_label_age">Kɔ w\'Abere mu</string>
+    <string name="settings_hint_select_language">Paw wo kasa</string>
+    <string name="settings_button_generate_cases">Twe Nsɛm Ho Nkɔmmɔ</string>
+    <string name="question_type_study">Sua ade</string>
+    <string name="question_type_behavioral">Nneyɛe</string>
+    <string name="question_type_hiring">Adwumayɛbea</string>
+    <string name="subtype_behavioral_interpersonal">Nnipa ntam nimdeɛ</string>
+    <string name="subtype_behavioral_ethical">Abrabɔ ho nsɛnnennen</string>
+    <string name="subtype_behavioral_stress">Adwenemyareɛ</string>
+    <string name="subtype_study_mastery">Adesuadeɛ a ɛtɔ nnum</string>
+    <string name="subtype_study_critical_thinking">Adwenkyerɛ a Emu Yɛ Mfomso</string>
+    <string name="subtype_study_practical_application">Ɔkwan a Wɔfa So Yɛ Adwuma</string>
+    <string name="subtype_hiring_technical">Twerεtohɔ nimdeɛ (technical skills)</string>
+    <string name="subtype_hiring_behavioral_interview">Abrabɔ Nsɛmmisa</string>
+    <string name="subtype_hiring_situational_judgment">Tebea Mu Atɛntrenee</string>
+    <string name="difficulty_normal">teaseɛnam</string>
+    <string name="difficulty_easy">ahoɔfɛ</string>
+    <string name="difficulty_hard">dennen</string>
+    <string name="gender_male">Mmarima</string>
+    <string name="gender_female">Mmaa</string>
+    <string name="gender_select_prompt">Paw ɔbarima ne ɔbea nna</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Biribi kɔɔ fam</string>
+    <string name="button_new_game">Agodie Foforo</string>
+    <string name="text_round_number">Ɔfasuo %1$d</string>
+    <string name="text_scenario">Scenario no</string>
+    <string name="button_next">Nea edi hɔ</string>
+    <string name="icon_desc_selected_option">Nhwɛso a wɔayi</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans kasa</item>
+        <item>Akanfoɔ</item>
+        <item>Amharic</item>
+        <item>Arabic (United Arab Emirates)</item>
+        <item>Assamfo</item>
+        <item>Asturian kasa</item>
+        <item>Azerbaijan kasa</item>
+        <item>Bambara</item>
+        <item>Belarusian kasa</item>
+        <item>Bemba</item>
+        <item>Bengali kasa</item>
+        <item>Tibetani</item>
+        <item>Bosnian</item>
+        <item>Bulgaria kasa</item>
+        <item>Catalan kasa</item>
+        <item>Czech</item>
+        <item>Welsh</item>
+        <item>Danish kasa</item>
+        <item>Germanfo</item>
+        <item>Dzongkha</item>
+        <item>Hela kasa</item>
+        <item>Borɔfo kasa</item>
+        <item>Estonia kasa</item>
+        <item>Basque kasa</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Faroesefoɔ</item>
+        <item>Finland kasa</item>
+        <item>Francefoɔ</item>
+        <item>Friulian kasa</item>
+        <item>Scottish Gaelic</item>
+        <item>Irelandfoɔ</item>
+        <item>Galician kasa</item>
+        <item>Gujarati kasa</item>
+        <item>Hausa kasa</item>
+        <item>Hebri kasa</item>
+        <item>Hindi kasa</item>
+        <item>Croatian kasa</item>
+        <item>Hungary kasa</item>
+        <item>Armeniafoɔ</item>
+        <item>Igbofoɔ</item>
+        <item>Indonesian kasa</item>
+        <item>Icelandic kasa</item>
+        <item>Italiafoɔ</item>
+        <item>Japanfo</item>
+        <item>Kabyle kasa</item>
+        <item>Kamba</item>
+        <item>Kannada kasa</item>
+        <item>Georgia kasa</item>
+        <item>Kazakh</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Kinyarwanda kasa</item>
+        <item>Kyrgyzstan</item>
+        <item>Koreafoɔ</item>
+        <item>Laos (Laos)</item>
+        <item>Limburgian</item>
+        <item>Lingala kasa</item>
+        <item>Lithuanian kasa</item>
+        <item>Luxembourg kasa</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Latvia kasa ahodoɔ</item>
+        <item>Malayalam kasa</item>
+        <item>Marathi kasa</item>
+        <item>Macedoniafoɔ</item>
+        <item>Madagascar (Madagascar)</item>
+        <item>Maltese (Malta)</item>
+        <item>Mongolia kasa</item>
+        <item>Malay (Malaysia)</item>
+        <item>Burmese kasa</item>
+        <item>Dutchfo</item>
+        <item>Norwegian Nynorsk</item>
+        <item>Norwegian Bokmål</item>
+        <item>Nepali (Nepal)</item>
+        <item>Nuer (South Sudan)</item>
+        <item>Oromo (Ethiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>Odia (India)</item>
+        <item>Punjabi kasa</item>
+        <item>Poland kasa</item>
+        <item>Portuguese kasa</item>
+        <item>Persia (Afghanistan)</item>
+        <item>Persia (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ecuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Romania kasa</item>
+        <item>Rundi (Burundi)</item>
+        <item>Russiafoɔ</item>
+        <item>Sango (Mfinimfini Afrika Republic)</item>
+        <item>Sinhala (Sri Lanka)</item>
+        <item>Slovak (Slovakia)</item>
+        <item>Slovenia kasa</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somalifoɔ</item>
+        <item>Spain kasa</item>
+        <item>Albania (Albania)</item>
+        <item>Serbiafoɔ</item>
+        <item>Swedish kasa</item>
+        <item>Swahili kasa</item>
+        <item>Tamil kasa</item>
+        <item>Telugu kasa</item>
+        <item>Thai kasa</item>
+        <item>Turkey kasa</item>
+        <item>Ukraine kasa</item>
+        <item>Urdu (Pakistan)</item>
+        <item>Uyghur (China)</item>
+        <item>Uzbekistan (Latin, Uzbekistan)</item>
+        <item>Vietnamfo</item>
+        <item>Xhosa kasa</item>
+        <item>Yoruba kasa</item>
+        <item>Cantonese kasa</item>
+        <item>Mandarin Chinese Ahoroɔ</item>
+        <item>Mandarin Chinese Ahonyadeɛ</item>
+        <item>Zulufoɔ</item>
+    </string-array>
+</resources>

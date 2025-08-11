@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Hal pilihan</string>
+    <string name="optional_enter_the_role_e_g_student">Opsional: Masukkan peran, misalnya, Siswa</string>
+    <string name="analysis_my_choices">Analisis pilihanku</string>
+    <string name="analysis_your_selections">Analisis pilihan Anda</string>
+    <string name="rounds">Putaran</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Skor menghitung berdasarkan kesehatan, kekayaan, hubungan, kebahagiaan, pengetahuan, karma, manajemen waktu, dampak lingkungan, pertumbuhan pribadi, dan tanggung jawab sosial</string>
+    <string name="settings_title">Hal pilihan</string>
+    <string name="settings_subtitle">Skenario akan didasarkan pada pilihan Anda</string>
+    <string name="settings_label_subject">Masukkan subjek</string>
+    <string name="settings_hint_select_question_type">Pilih jenis pertanyaan</string>
+    <string name="settings_hint_select_subtype">Pilih subtipe</string>
+    <string name="settings_hint_select_difficulty">Pilih tingkat sulit</string>
+    <string name="settings_hint_select_gender_optional">Opsional: Pilih jenis kelamin Anda</string>
+    <string name="settings_label_age">Masuklah ke Umurmu</string>
+    <string name="settings_hint_select_language">Pilih bahasa Anda</string>
+    <string name="settings_button_generate_cases">Menghasilkan Kasus</string>
+    <string name="question_type_study">Belajar</string>
+    <string name="question_type_behavioral">Perilaku</string>
+    <string name="question_type_hiring">Menyewa</string>
+    <string name="subtype_behavioral_interpersonal">Keterampilan Interpersonal</string>
+    <string name="subtype_behavioral_ethical">Dilema Etis</string>
+    <string name="subtype_behavioral_stress">Pengelolaan Stres</string>
+    <string name="subtype_study_mastery">Pengendalian Subjek</string>
+    <string name="subtype_study_critical_thinking">Pemikiran Kritis</string>
+    <string name="subtype_study_practical_application">Aplikasi Praktis</string>
+    <string name="subtype_hiring_technical">Keterampilan teknis</string>
+    <string name="subtype_hiring_behavioral_interview">Wawancara Perilaku</string>
+    <string name="subtype_hiring_situational_judgment">Penghakiman Situasi</string>
+    <string name="difficulty_normal">normal</string>
+    <string name="difficulty_easy">mudah</string>
+    <string name="difficulty_hard">keras</string>
+    <string name="gender_male">Pria</string>
+    <string name="gender_female">Perempuan</string>
+    <string name="gender_select_prompt">Pilih jenis kelamin</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Ada yang salah.</string>
+    <string name="button_new_game">Permainan Baru</string>
+    <string name="text_round_number">Bulat %1$d</string>
+    <string name="text_scenario">Skenario</string>
+    <string name="button_next">Selanjutnya</string>
+    <string name="icon_desc_selected_option">Pilihan yang dipilih</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Afrikaans</item>
+        <item>Akan</item>
+        <item>Bahasa Amharic</item>
+        <item>Arab (UAE)</item>
+        <item>Assamese</item>
+        <item>Bahasa Asturian</item>
+        <item>Bahasa Azerbaijan</item>
+        <item>Bambara</item>
+        <item>Bahasa Belarus</item>
+        <item>Bemba</item>
+        <item>Bahasa Bengali</item>
+        <item>Tibet</item>
+        <item>Bahasa Bosnia</item>
+        <item>Bahasa Bulgaria</item>
+        <item>Catalan</item>
+        <item>Republik Ceko</item>
+        <item>Bahasa Wales</item>
+        <item>Bahasa Denmark</item>
+        <item>Jerman</item>
+        <item>Dzongkha</item>
+        <item>Yunani</item>
+        <item>Bahasa Inggris</item>
+        <item>Bahasa Estonia</item>
+        <item>Basque</item>
+        <item>Ewe (Ghana)</item>
+        <item>Ewe (Togo)</item>
+        <item>Bahasa Faroese</item>
+        <item>Bahasa Finlandia</item>
+        <item>Bahasa Prancis</item>
+        <item>Friulian</item>
+        <item>Bahasa Gaelik Skotlandia</item>
+        <item>Irlandia</item>
+        <item>Bahasa Galician</item>
+        <item>Bahasa Gujarati</item>
+        <item>Bahasa Hausa</item>
+        <item>Bahasa Ibrani</item>
+        <item>Bahasa Hindi</item>
+        <item>Bahasa Kroasia</item>
+        <item>Bahasa Hongaria</item>
+        <item>Bahasa Armenia</item>
+        <item>Bahasa Igbo</item>
+        <item>Bahasa Indonesia</item>
+        <item>Bahasa Islandia</item>
+        <item>Italia</item>
+        <item>Jepang</item>
+        <item>Kabylie</item>
+        <item>Kamba</item>
+        <item>Kannada</item>
+        <item>Bahasa Georgia</item>
+        <item>Kazakhstan</item>
+        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Khmer</item>
+        <item>Kikuyu</item>
+        <item>Bahasa Kinyarwanda</item>
+        <item>Kyrgyzstan</item>
+        <item>Korea</item>
+        <item>Laos (Laos)</item>
+        <item>Bahasa Limburg</item>
+        <item>Bahasa Lingala</item>
+        <item>Bahasa Lithuanian</item>
+        <item>Bahasa Luksemburg</item>
+        <item>Ganda</item>
+        <item>Luo</item>
+        <item>Bahasa Latvia Standar</item>
+        <item>Malayalam</item>
+        <item>Bahasa Marathi</item>
+        <item>Bahasa Makedonia</item>
+        <item>Madagaskar (Madagaskar)</item>
+        <item>Bahasa Malta (Malta)</item>
+        <item>Halh Mongolia</item>
+        <item>Malaysia (Malaysia)</item>
+        <item>Bahasa Myanmar</item>
+        <item>Belanda</item>
+        <item>Norwegian Nynorsk</item>
+        <item>Bokmål Norwegia</item>
+        <item>Nepal (Nepal)</item>
+        <item>Nuer (Sudan Selatan)</item>
+        <item>Oromo (Etiopia)</item>
+        <item>Oromo (Kenya)</item>
+        <item>India (India)</item>
+        <item>Bahasa Punjabi</item>
+        <item>Bahasa Polandia</item>
+        <item>Bahasa Portugis</item>
+        <item>Bahasa Persia (Afghanistan)</item>
+        <item>Bahasa Persia (Iran)</item>
+        <item>Pashto (Afghanistan)</item>
+        <item>Quechua (Bolivia)</item>
+        <item>Quechua (Ekuador)</item>
+        <item>Quechua (Peru)</item>
+        <item>Bahasa Rumania</item>
+        <item>Rundi (Burundi)</item>
+        <item>Rusia</item>
+        <item>Sango (Republik Afrika Tengah)</item>
+        <item>Bahasa Sinhala (Sri Lanka)</item>
+        <item>Slovak (Slovakia)</item>
+        <item>Bahasa Slovenia</item>
+        <item>Shona (Zimbabwe)</item>
+        <item>Somalia</item>
+        <item>Bahasa Spanyol</item>
+        <item>Albania (Albania)</item>
+        <item>Bahasa Serbia</item>
+        <item>Bahasa Swedia</item>
+        <item>Bahasa Swahili</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Thailand</item>
+        <item>Turki</item>
+        <item>Bahasa Ukraina</item>
+        <item>Bahasa Urdu (Pakistan)</item>
+        <item>Uighur (China)</item>
+        <item>Uzbek (Latin, Uzbekistan)</item>
+        <item>Bahasa Vietnam</item>
+        <item>Bahasa Xhosa</item>
+        <item>Bahasa Yoruba</item>
+        <item>Bahasa Cantonese</item>
+        <item>Bahasa Mandarin Cina yang Sederhananya</item>
+        <item>Mandarin Cina Tradisional</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

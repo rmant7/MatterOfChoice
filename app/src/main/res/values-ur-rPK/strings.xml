@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">انتخاب کا معاملہ</string>
+    <string name="optional_enter_the_role_e_g_student">اختیاری: کردار درج کریں، مثال کے طور پر طالب علم</string>
+    <string name="analysis_my_choices">میرے انتخاب کا تجزیہ</string>
+    <string name="analysis_your_selections">آپ کے انتخاب کا تجزیہ</string>
+    <string name="rounds">گولیاں</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">صحت، دولت، تعلقات، خوشی، علم، کرما، وقت کے انتظام، ماحولیاتی اثرات، ذاتی ترقی اور معاشرتی ذمہ داری کی بنیاد پر سکور کا حساب لگایا جاتا ہے</string>
+    <string name="settings_title">انتخاب کا معاملہ</string>
+    <string name="settings_subtitle">سناریو آپ کے انتخاب پر مبنی ہوں گے</string>
+    <string name="settings_label_subject">موضوع درج کریں</string>
+    <string name="settings_hint_select_question_type">سوال کی قسم منتخب کریں</string>
+    <string name="settings_hint_select_subtype">ذیلی قسم کا انتخاب کریں</string>
+    <string name="settings_hint_select_difficulty">مشکل سطح کا انتخاب کریں</string>
+    <string name="settings_hint_select_gender_optional">اختیاری: اپنی جنس منتخب کریں</string>
+    <string name="settings_label_age">اپنی عمر میں داخل ہو</string>
+    <string name="settings_hint_select_language">اپنی زبان منتخب کریں</string>
+    <string name="settings_button_generate_cases">مقدمات پیدا کریں</string>
+    <string name="question_type_study">مطالعہ</string>
+    <string name="question_type_behavioral">طرزِ عمل</string>
+    <string name="question_type_hiring">خدمات حاصل کرنا</string>
+    <string name="subtype_behavioral_interpersonal">انٹر پرسنل مہارتیں</string>
+    <string name="subtype_behavioral_ethical">اخلاقی مشکلات</string>
+    <string name="subtype_behavioral_stress">تناؤ کا انتظام</string>
+    <string name="subtype_study_mastery">موضوع کی مہارت</string>
+    <string name="subtype_study_critical_thinking">تنقیدی سوچ</string>
+    <string name="subtype_study_practical_application">عملی استعمال</string>
+    <string name="subtype_hiring_technical">تکنیکی مہارت</string>
+    <string name="subtype_hiring_behavioral_interview">رویے کا انٹرویو</string>
+    <string name="subtype_hiring_situational_judgment">حالات کا فیصلہ</string>
+    <string name="difficulty_normal">عام</string>
+    <string name="difficulty_easy">آسان</string>
+    <string name="difficulty_hard">سخت</string>
+    <string name="gender_male">مرد</string>
+    <string name="gender_female">خاتون</string>
+    <string name="gender_select_prompt">صنف منتخب کریں</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">کچھ غلط ہو گیا</string>
+    <string name="button_new_game">نیا کھیل</string>
+    <string name="text_round_number">گول %1$d</string>
+    <string name="text_scenario">منظرنامہ</string>
+    <string name="button_next">اگلا</string>
+    <string name="icon_desc_selected_option">منتخب کردہ اختیار</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>افریقی زبان</item>
+        <item>آکان</item>
+        <item>امارکی</item>
+        <item>عربی (متحدہ عرب امارات)</item>
+        <item>آسامی</item>
+        <item>آسٹریا</item>
+        <item>آذربائیجان</item>
+        <item>بامبارہ</item>
+        <item>بیلاروس</item>
+        <item>بیمبا</item>
+        <item>بنگالی</item>
+        <item>تبت</item>
+        <item>بوسنیا</item>
+        <item>بلغاریہ</item>
+        <item>کاتالونیا</item>
+        <item>چیک</item>
+        <item>ویلز</item>
+        <item>ڈنمارک</item>
+        <item>جرمن</item>
+        <item>Dzongkha</item>
+        <item>یونانی</item>
+        <item>انگریزی</item>
+        <item>ایسٹونیا</item>
+        <item>باسکی</item>
+        <item>ایو (گھانا)</item>
+        <item>ایو (ٹوگو)</item>
+        <item>فیروزی</item>
+        <item>فن لینڈ</item>
+        <item>فرانسیسی</item>
+        <item>فریولین</item>
+        <item>سکاٹش گیلک</item>
+        <item>آئرش</item>
+        <item>گلیشیائی</item>
+        <item>گجراتی</item>
+        <item>ہاسا</item>
+        <item>عبرانی</item>
+        <item>ہندی</item>
+        <item>کرواتی</item>
+        <item>ہنگری</item>
+        <item>آرمینیائی</item>
+        <item>ایگبو</item>
+        <item>انڈونیشیا</item>
+        <item>آئس لینڈ</item>
+        <item>اطالوی</item>
+        <item>جاپانی</item>
+        <item>قبائلی</item>
+        <item>کمبا</item>
+        <item>کناڈا</item>
+        <item>جارجیا</item>
+        <item>قازقستان</item>
+        <item>کیبوردینو (کیپ ورڈ کریول)</item>
+        <item>خمیر</item>
+        <item>کیکویو</item>
+        <item>کینیارونڈا</item>
+        <item>کرغزستان</item>
+        <item>کوریا</item>
+        <item>لاؤ (لاؤس)</item>
+        <item>لیمبرگ</item>
+        <item>لنگالی</item>
+        <item>لیتوانیائی</item>
+        <item>لوکسمبرگ</item>
+        <item>گندا</item>
+        <item>لو</item>
+        <item>سٹینڈرڈ لیٹوین</item>
+        <item>ملیالم</item>
+        <item>مراٹھی</item>
+        <item>مقدونیائی</item>
+        <item>مالگاسی (مالگاسکر)</item>
+        <item>مالٹا (مالٹا)</item>
+        <item>ہالہ منگول</item>
+        <item>ملائیشیا</item>
+        <item>برما</item>
+        <item>ہالینڈ</item>
+        <item>ناروے کے نیورسک</item>
+        <item>ناروے کا بوکمل</item>
+        <item>نیپالی (نیپال)</item>
+        <item>نویر (جنوبی سوڈان)</item>
+        <item>اورومو (ایتھوپیا)</item>
+        <item>اورومو (کینیا)</item>
+        <item>اوڈیا (ہندوستان)</item>
+        <item>پنجابی</item>
+        <item>پولش</item>
+        <item>پرتگالی</item>
+        <item>فارسی (افغانستان)</item>
+        <item>فارسی (ایران)</item>
+        <item>پشتو (افغانستان)</item>
+        <item>کیچوا (بولیویا)</item>
+        <item>کیچوا (ایکواڈور)</item>
+        <item>کیچوا (پیرو)</item>
+        <item>رومانیہ</item>
+        <item>رنڈی (برونڈی)</item>
+        <item>روسی</item>
+        <item>سانگو (وسطی افریقی جمہوریہ)</item>
+        <item>سنہالی (سری لنکا)</item>
+        <item>سلواکی (سلوواکیہ)</item>
+        <item>سلووینیا</item>
+        <item>شونا (زمبابوے)</item>
+        <item>صومالی</item>
+        <item>ہسپانوی</item>
+        <item>البانیائی (البانیہ)</item>
+        <item>سربیا</item>
+        <item>سویڈش</item>
+        <item>سواحلی</item>
+        <item>تامل</item>
+        <item>تیلگو</item>
+        <item>تھائی</item>
+        <item>ترکی</item>
+        <item>یوکرینیائی</item>
+        <item>اردو (پاکستان)</item>
+        <item>اویغور (چین)</item>
+        <item>ازبکستان (لاطینی، ازبکستان)</item>
+        <item>ویتنامی</item>
+        <item>زوسا</item>
+        <item>یوروبی</item>
+        <item>کینٹون</item>
+        <item>مینڈارن چینی آسان</item>
+        <item>مینڈارن چینی روایتی</item>
+        <item>زولو</item>
+    </string-array>
+</resources>

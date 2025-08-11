@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Вопрос выбора</string>
+    <string name="optional_enter_the_role_e_g_student">Факультативная: Введите роль, например, Студент</string>
+    <string name="analysis_my_choices">Анализ моих выборов</string>
+    <string name="analysis_your_selections">Анализ ваших выборов</string>
+    <string name="rounds">Раунды</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Счет баллов на основе здоровья, богатства, отношений, счастья, знаний, кармы, управления временем, воздействия на окружающую среду, личностного роста и социальной ответственности</string>
+    <string name="settings_title">Вопрос выбора</string>
+    <string name="settings_subtitle">Сценарии будут основываться на ваших выборах</string>
+    <string name="settings_label_subject">Введите тему</string>
+    <string name="settings_hint_select_question_type">Выберите тип вопроса</string>
+    <string name="settings_hint_select_subtype">Выберите подтип</string>
+    <string name="settings_hint_select_difficulty">Выберите сложный уровень</string>
+    <string name="settings_hint_select_gender_optional">Опционально: выберите свой пол</string>
+    <string name="settings_label_age">Войди в свой возраст</string>
+    <string name="settings_hint_select_language">Выберите свой язык</string>
+    <string name="settings_button_generate_cases">Создание случаев</string>
+    <string name="question_type_study">Изучение</string>
+    <string name="question_type_behavioral">Поведение</string>
+    <string name="question_type_hiring">Наем</string>
+    <string name="subtype_behavioral_interpersonal">Межличностные навыки</string>
+    <string name="subtype_behavioral_ethical">Этические трудности</string>
+    <string name="subtype_behavioral_stress">Управление стрессом</string>
+    <string name="subtype_study_mastery">Владение предметом</string>
+    <string name="subtype_study_critical_thinking">Критическое мышление</string>
+    <string name="subtype_study_practical_application">Практическое применение</string>
+    <string name="subtype_hiring_technical">Технические навыки</string>
+    <string name="subtype_hiring_behavioral_interview">Собеседование по поведению</string>
+    <string name="subtype_hiring_situational_judgment">Суждение по ситуации</string>
+    <string name="difficulty_normal">нормальное</string>
+    <string name="difficulty_easy">Легко</string>
+    <string name="difficulty_hard">тяжелое</string>
+    <string name="gender_male">Мужчина</string>
+    <string name="gender_female">Женщина</string>
+    <string name="gender_select_prompt">Выберите пол</string>
+    <string name="prefs_file_key" translatable="false">MyPrefs</string>
+    <string name="pref_key_is_first" translatable="false">isFirst</string>
+    <string name="pref_key_user_score" translatable="false">userScore</string>
+    <string name="pref_key_total_score" translatable="false">totalScore</string>
+    <string name="pref_key_rounds" translatable="false">rounds</string>
+    <string name="error_something_went_wrong">Что-то пошло не так</string>
+    <string name="button_new_game">Новая игра</string>
+    <string name="text_round_number">Круглый %1$d</string>
+    <string name="text_scenario">Сценарий</string>
+    <string name="button_next">Следующий</string>
+    <string name="icon_desc_selected_option">Выбранный вариант</string>
+    <string-array name="question_types_array">
+        <item>@string/question_type_study</item>
+        <item>@string/question_type_behavioral</item>
+        <item>@string/question_type_hiring</item>
+    </string-array>
+    <string-array name="subtypes_behavioral_array">
+        <item>@string/subtype_behavioral_interpersonal</item>
+        <item>@string/subtype_behavioral_ethical</item>
+        <item>@string/subtype_behavioral_stress</item>
+    </string-array>
+    <string-array name="subtypes_study_array">
+        <item>@string/subtype_study_mastery</item>
+        <item>@string/subtype_study_critical_thinking</item>
+        <item>@string/subtype_study_practical_application</item>
+    </string-array>
+    <string-array name="subtypes_hiring_array">
+        <item>@string/subtype_hiring_technical</item>
+        <item>@string/subtype_hiring_behavioral_interview</item>
+        <item>@string/subtype_hiring_situational_judgment</item>
+    </string-array>
+    <string-array name="difficulty_levels_array">
+        <item>@string/difficulty_normal</item>
+        <item>@string/difficulty_easy</item>
+        <item>@string/difficulty_hard</item>
+    </string-array>
+    <string-array name="genders_array">
+        <item>@string/gender_select_prompt</item>
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+    <string-array name="languages">
+        <item>Африканский</item>
+        <item>Акан</item>
+        <item>Амарский язык</item>
+        <item>Арабский (Объединенные Арабские Эмираты)</item>
+        <item>Ассамский</item>
+        <item>Астурийский</item>
+        <item>Азербайджанский</item>
+        <item>Бамбара</item>
+        <item>Белорусский</item>
+        <item>Бемба</item>
+        <item>Бенгальский</item>
+        <item>Тибетский</item>
+        <item>Боснийский</item>
+        <item>Болгарский</item>
+        <item>Каталония</item>
+        <item>Чехия</item>
+        <item>Уэльский</item>
+        <item>Дания</item>
+        <item>Немецкий</item>
+        <item>Дзонхха</item>
+        <item>Греческий</item>
+        <item>Английский</item>
+        <item>Эстонский</item>
+        <item>Баскский</item>
+        <item>Эве (Гана)</item>
+        <item>Эве (Того)</item>
+        <item>Фарерские</item>
+        <item>Финский</item>
+        <item>Французский</item>
+        <item>Фриульский</item>
+        <item>Шотландский гаельский</item>
+        <item>Ирландский</item>
+        <item>Галицкий</item>
+        <item>Гуджарати</item>
+        <item>Хаусса</item>
+        <item>Еврейский</item>
+        <item>Индийский</item>
+        <item>Хорватский</item>
+        <item>Венгерский</item>
+        <item>Армянский</item>
+        <item>Игбо</item>
+        <item>Индонезийский</item>
+        <item>Исландский</item>
+        <item>Итальянский</item>
+        <item>Японский</item>
+        <item>Кабыльский</item>
+        <item>Камба</item>
+        <item>Канадский</item>
+        <item>Грузинский</item>
+        <item>Казахский</item>
+        <item>Кабуэрдиану (кап-вердский креол)</item>
+        <item>Кхмер</item>
+        <item>Кикую</item>
+        <item>Кinyarwanda</item>
+        <item>Кыргызстан</item>
+        <item>Корейский</item>
+        <item>Лаос</item>
+        <item>Лимбургский</item>
+        <item>Лингальский</item>
+        <item>Литовский</item>
+        <item>Люксембургский</item>
+        <item>Ганда</item>
+        <item>Луо</item>
+        <item>Стандартный латвийский</item>
+        <item>Малаяльский</item>
+        <item>Маратхи</item>
+        <item>Македонский</item>
+        <item>Малагаси (Мадагаскар)</item>
+        <item>Мальтийский (Мальта)</item>
+        <item>Халх монгольский</item>
+        <item>Малайский (Малазия)</item>
+        <item>Мьянма</item>
+        <item>Нидерландский</item>
+        <item>Норвежский Нинорск</item>
+        <item>Норвежский бокмол</item>
+        <item>Непальский (непальский)</item>
+        <item>Нуер (Южный Судан)</item>
+        <item>Оромо (Эфиопия)</item>
+        <item>Оромо (Кения)</item>
+        <item>Одиа (Индия)</item>
+        <item>Панджаби</item>
+        <item>Польский</item>
+        <item>Португальский</item>
+        <item>Персидский (Афганистан)</item>
+        <item>Персидский (Иран)</item>
+        <item>Пашту (Афганистан)</item>
+        <item>Кешуа (Боливия)</item>
+        <item>Кешуа (Эквадор)</item>
+        <item>Кешуа (Перу)</item>
+        <item>Румынский</item>
+        <item>Рунди (Burundi)</item>
+        <item>Русский</item>
+        <item>Санго (Центрально-Африканская Республика)</item>
+        <item>Сингальский (Шри-Ланка)</item>
+        <item>Словацкий (Словакия)</item>
+        <item>Словенский</item>
+        <item>Шона (Зимбабве)</item>
+        <item>Сомали</item>
+        <item>Испанский</item>
+        <item>Албанский (Альбания)</item>
+        <item>Сербский</item>
+        <item>Шведский</item>
+        <item>Суахили</item>
+        <item>Тамильский</item>
+        <item>Телугу</item>
+        <item>Тайский</item>
+        <item>Турецкий</item>
+        <item>Украинский</item>
+        <item>Урду (Пакистан)</item>
+        <item>Уйгурский язык (Китай)</item>
+        <item>Узбекский (лат. Uzbekistan)</item>
+        <item>Вьетнамцы</item>
+        <item>Xhosa</item>
+        <item>Яруба</item>
+        <item>Кантонский язык</item>
+        <item>Мандаринский китайский упрощенный</item>
+        <item>Традиционный китайский мандарин</item>
+        <item>Зулу</item>
+    </string-array>
+</resources>
