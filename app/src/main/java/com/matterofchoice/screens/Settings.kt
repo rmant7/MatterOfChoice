@@ -119,15 +119,15 @@ fun UserInput(
         val displayNamesNow = context.resources.getStringArray(R.array.languages)
         val codesNow = context.resources.getStringArray(R.array.language_codes)
 
-        val selectedCode = currentSelectedLanguageCode.value // Now non-nullable String
+        val selectedCode = currentSelectedLanguageCode.value
 
-        if (selectedCode == LanguagePreferenceHelper.SYSTEM_DEFAULT_MARKER_CODE) { // Check for your "System Default" marker
+        if (selectedCode == LanguagePreferenceHelper.SYSTEM_DEFAULT_MARKER_CODE) {
             val systemDefaultIndex =
                 codesNow.indexOf(LanguagePreferenceHelper.SYSTEM_DEFAULT_MARKER_CODE)
             if (systemDefaultIndex != -1 && systemDefaultIndex < displayNamesNow.size) {
                 displayNamesNow[systemDefaultIndex]
             } else {
-                // If "System Default" display name isn't found in arrays for some reason
+
                 context.getString(R.string.settings_hint_select_language)
             }
         } else {
@@ -237,7 +237,6 @@ fun UserInput(
                         .fillMaxWidth()
                 )
 
-
                 ExposedDropdownMenu(
                     expanded = languageDropdownExpanded,
                     onDismissRequest = { languageDropdownExpanded = false }
@@ -251,34 +250,23 @@ fun UserInput(
                             DropdownMenuItem(
                                 text = { Text(displayName) },
                                 onClick = {
-                                    val codeToSetForLocaleHelper: String?
 
-                                    if (languageCodeFromList == "en-US") {
-
-                                        codeToSetForLocaleHelper = ""
-                                    } else {
-                                        codeToSetForLocaleHelper = languageCodeFromList
-                                    }
+                                    val codeToSetForLocaleHelper = languageCodeFromList
 
                                     val currentlyPersistedLang =
                                         LanguagePreferenceHelper.getSelectedLanguage(context.applicationContext)
 
 
-                                    val newPersistedStateTarget =
-                                        if (codeToSetForLocaleHelper.isNullOrEmpty()) {
-                                            ""
-                                        } else {
-                                            codeToSetForLocaleHelper
-                                        }
-
-                                    if (currentlyPersistedLang != newPersistedStateTarget) {
+                                    if (currentlyPersistedLang != codeToSetForLocaleHelper) {
                                         LocaleHelper.setLocale(
                                             context.applicationContext,
                                             codeToSetForLocaleHelper
                                         )
 
+
                                         currentSelectedLanguageCode.value =
                                             LanguagePreferenceHelper.getSelectedLanguage(context.applicationContext)
+
                                         (context as? MainActivity)?.recreateActivity()
                                     }
                                     languageDropdownExpanded = false
