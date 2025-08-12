@@ -21,6 +21,16 @@ data class JobStatusResponse(
     val result: List<Case>?, // The list of cases when status is 'complete'
     val error: String?
 )
+data class AnalysisResponse(val analysis: String) // Assuming the analysis is a simple string
+
+data class AnalysisRequest(
+    val cases: List<Case>,
+    val user_choices: Map<String, String>,
+    val role: String,
+    val question_type: String,
+    val language: String
+)
+
 
 /**
  * A singleton object to handle all communication with our Flask backend.
@@ -29,7 +39,7 @@ data class JobStatusResponse(
 object FlaskApiClient {
 
     // IMPORTANT: This is the development URL. For production, replace this with your deployed server's address.
-    private const val BASE_URL = "https://ajkg123.pythonanywhere.com/"
+    private const val BASE_URL = "https://jackandjill.pythonanywhere.com/"
 
     private val client = OkHttpClient.Builder()
         .connectTimeout(160, TimeUnit.SECONDS)
@@ -126,4 +136,56 @@ object FlaskApiClient {
             client.newCall(request).cancel()
         }
     }
+    suspend fun postAnalysis(analysisRequest: AnalysisRequest): AnalysisResponse = suspendCancellableCoroutine { continuation ->
+        val requestBody = gson.toJson(analysisRequest).toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
+        val request = Request.Builder()
+            .url("$BASE_URL/analysis")
+            .post(requestBody)
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                if (continuation.isCancelled) return
+                continuation.resumeWithException(e)
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                response.use {
+                    val body = it.body?.string()
+                    if (!it.isSuccessful) {
+                        val errorBody = body
+                        val message = if (errorBody != null) {
+                            try {
+                                val json = JSONObject(errorBody)
+                                json.getJSONObject("error").getString("message")
+                            } catch (e: Exception) {
+                                "Unexpected error format"
+                            }
+                        } else {
+                            "Http error ${it.code}"
+                        }
+                        continuation.resumeWithException(IOException(message))
+                        return
+                    }
+
+
+                    if (body == null) {
+                        continuation.resumeWithException(IOException("Response body is null"))
+                        return
+                    }
+
+                    try {
+                        val analysisResponse = gson.fromJson(body, AnalysisResponse::class.java)
+                        continuation.resume(analysisResponse)
+                    } catch (e: JsonSyntaxException) {
+                        continuation.resumeWithException(e)
+                    }
+                }
+            }
+        })
+        continuation.invokeOnCancellation {
+            client.newCall(request).cancel()
+        }
+    }
+
 }

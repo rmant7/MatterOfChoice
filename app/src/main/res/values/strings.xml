@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Matter of choice</string>
+    <string name="app_name"   translatable="false">Matter of choice</string>
+    <string name="app_name_matter_of_choice"  translatable="false">Matter of choice</string>
+    <string name="matterofchoice_info">Matter Of Choice presents interactive scenarios to help you learn decision-making skills.</string>
     <string-array name="languages">
 
         <item>Amharic</item>
