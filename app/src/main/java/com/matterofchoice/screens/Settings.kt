@@ -237,45 +237,48 @@ fun UserInput(
                         .fillMaxWidth()
                 )
 
+
                 ExposedDropdownMenu(
                     expanded = languageDropdownExpanded,
                     onDismissRequest = { languageDropdownExpanded = false }
                 ) {
-                    val currentDisplayNames = stringArrayResource(id = R.array.languages)
-                    val currentCodes = stringArrayResource(id = R.array.language_codes)
 
-                    currentDisplayNames.forEachIndexed { index, displayName ->
-                        val languageCodeFromList = currentCodes.getOrNull(index)
-                        if (languageCodeFromList != null) {
-                            DropdownMenuItem(
-                                text = { Text(displayName) },
-                                onClick = {
+                    val unsortedDisplayNames = stringArrayResource(id = R.array.languages)
+                    val unsortedCodes = stringArrayResource(id = R.array.language_codes)
 
-                                    val codeToSetForLocaleHelper = languageCodeFromList
-
-                                    val currentlyPersistedLang =
-                                        LanguagePreferenceHelper.getSelectedLanguage(context.applicationContext)
-
-
-                                    if (currentlyPersistedLang != codeToSetForLocaleHelper) {
-                                        LocaleHelper.setLocale(
-                                            context.applicationContext,
-                                            codeToSetForLocaleHelper
-                                        )
-
-
-                                        currentSelectedLanguageCode.value =
-                                            LanguagePreferenceHelper.getSelectedLanguage(context.applicationContext)
-
-                                        (context as? MainActivity)?.recreateActivity()
-                                    }
-                                    languageDropdownExpanded = false
-                                }
-                            )
+                    val languagePairs = unsortedDisplayNames.mapIndexedNotNull { index, name ->
+                        unsortedCodes.getOrNull(index)?.let { code ->
+                            Pair(name, code)
                         }
                     }
-                }
 
+                    val sortedLanguagePairs = languagePairs.sortedBy { it.first }
+
+
+                    sortedLanguagePairs.forEach { (displayName, languageCode) ->
+
+                        DropdownMenuItem(
+                            text = { Text(displayName) },
+                            onClick = {
+
+                                val codeToSetForLocaleHelper = languageCode
+                                val currentlyPersistedLang =
+                                    LanguagePreferenceHelper.getSelectedLanguage(context.applicationContext)
+
+                                if (currentlyPersistedLang != codeToSetForLocaleHelper) {
+                                    LocaleHelper.setLocale(
+                                        context.applicationContext,
+                                        codeToSetForLocaleHelper
+                                    )
+                                    currentSelectedLanguageCode.value =
+                                        LanguagePreferenceHelper.getSelectedLanguage(context.applicationContext)
+                                    (context as? MainActivity)?.recreateActivity()
+                                }
+                                languageDropdownExpanded = false
+                            }
+                        )
+                    }
+                }
 
             }
 
