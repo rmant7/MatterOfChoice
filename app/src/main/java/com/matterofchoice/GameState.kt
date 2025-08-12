@@ -7,5 +7,7 @@ data class GameState(
     val isLoading: Boolean = false,
     val casesList: List<Case>? = null,
     val error: String? = null,
-    val image: Bitmap? = null
+    val image: Bitmap? = null,
+    val analysisResult: String? = null,
+    val userChoices: MutableMap<String, String> = mutableMapOf()
 )
