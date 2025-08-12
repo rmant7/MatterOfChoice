@@ -16,7 +16,7 @@ class AnalysisViewModel(application: Application) : AndroidViewModel(application
 
     private val model = GenerativeModel(
         modelName = "gemini-2.0-flash",
-        apiKey = "...",
+        apiKey = "***REMOVED***",
     )
 
     private val sharedPreferences =
