@@ -68,6 +68,7 @@ import com.matterofchoice.model.Option
 import com.matterofchoice.ui.theme.titleFont
 import com.matterofchoice.viewmodel.AIViewModel
 import kotlinx.coroutines.launch
+import androidx.core.content.edit
 
 
 @Composable
@@ -126,210 +127,225 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
     val isInitialized by viewmodel.isInitialized.collectAsState()
     val coroutineScope = rememberCoroutineScope()
 
-
-    val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-    val editor = sharedPreferences.edit()
-
-
-    val isFirst = sharedPreferences.getBoolean("isFirst", true)
-
-
-    if (!isFirst) {
-
-        LaunchedEffect(Unit) { // Use Unit to ensure it only runs once.
-
-            viewmodel.initiateGame()
+    // This LaunchedEffect runs when the game screen is entered.
+    LaunchedEffect(Unit) {
+        // Reset scores and rounds for a new game session.
+        val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        sharedPreferences.edit {
+            putInt("userScore", 0)
+            putInt("totalScore", 0)
+            putInt("rounds", 1)
+            apply()
         }
+        // Start fetching the cases from the server.
+        viewmodel.initiateGame()
+    }
 
-        if (state.isLoading) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color.White),
-                contentAlignment = Alignment.Center
-            ) {
-                Loader()
-            }
-        } else if (state.error != null) {
-            // Handle error state separately for clarity
+    if (state.isLoading) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color.White),
+            contentAlignment = Alignment.Center
+        ) {
+            Loader()
+        }
+    } else if (state.error != null) {
+        // Handle error state
+        Column(
+            Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Log.e("SetUpCase", "An error occurred: ${state.error}")
+            Text(
+                text = state.error ?: stringResource(R.string.error_something_went_wrong),
+                fontSize = 18.sp, modifier = Modifier
+                    .align(
+                        Alignment.CenterHorizontally
+                    )
+                    .padding(bottom = 20.dp)
+            )
+            GameButton(
+                onClick = { navController.navigate(Screens.SettingsScreen.screen) },
+                text = stringResource(R.string.button_new_game)
+            )
+        }
+    } else if (state.casesList != null && state.casesList.isNotEmpty()) {
+        // Handle the success state where we have cases
+        val scrollState = rememberScrollState()
+        val cases = state.casesList
+        var selectedItem by remember { mutableStateOf<Option?>(null) }
+        val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+
+
+        // Trigger image generation when the current case changes.
+//        LaunchedEffect(caseNum) {
+//            if (caseNum - 1 < cases.size) {
+//                viewmodel.generateImage(context = context, prompt = cases[caseNum - 1].case)
+//            }
+//        }
+
+        val round = remember { mutableIntStateOf(sharedPreferences.getInt("rounds", 1)) }
+
+        Column(
+            modifier = Modifier
+                .background(Color.White)
+                .fillMaxSize()
+                .verticalScroll(scrollState)
+        ) {
+            // Header UI
             Column(
-                Modifier.fillMaxSize(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .shadow(elevation = 8.dp)
+                    .background(Color.White),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Log.e("SetUpCase", "An error occurred: ${state.error}")
                 Text(
-                    text = stringResource(R.string.error_something_went_wrong), fontSize = 18.sp, modifier = Modifier
-                        .align(
-                            Alignment.CenterHorizontally
-                        )
-                        .padding(bottom = 20.dp)
-                )
-                GameButton(
-                    onClick = { navController.navigate(Screens.SettingsScreen.screen) },
-                    text = stringResource(R.string.button_new_game)
+                    text = stringResource(R.string.rounds)+"${round.intValue}",
+                    fontFamily = titleFont,
+                    textAlign = TextAlign.Justify,
+                    fontSize = 22.sp,
+                    modifier = Modifier.padding(3.dp)
                 )
             }
-        } else if (state.casesList != null) {
-            // Handle the success state where we have cases
-            val scrollState = rememberScrollState()
-            val cases = state.casesList
 
-            if (cases.isNotEmpty()) {
-                var selectedItem by remember { mutableStateOf<Option?>(null) }
-                val userScore = sharedPreferences.getInt("userScore", 0)
-                val totalScore = sharedPreferences.getInt("totalScore", 0)
+            // Main content column
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(top = 16.dp)
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 10.dp, start = 16.dp, end = 16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Text(
+                        text = "Scenario",
+                        fontFamily = titleFont,
+                        fontSize = 28.sp,
+                        modifier = Modifier.weight(1f),
+                        fontWeight = FontWeight.Bold
+                    )
+                    Image(
+                        painter = painterResource(R.drawable.fire),
+                        modifier = Modifier.size(28.dp),
+                        contentDescription = null
+                    )
+                    val userScore = sharedPreferences.getInt("userScore", 0)
+                    val totalScore = sharedPreferences.getInt("totalScore", 0)
+                    Text(
+                        text = "$userScore / $totalScore",
+                        fontFamily = titleFont,
+                        fontSize = 18.sp,
+                    )
+                }
 
-                // Trigger image generation when the current case changes.
-                LaunchedEffect(caseNum) {
-                    if (caseNum - 1 < cases.size) {
-                        viewmodel.generateImage(context = context, prompt = cases[caseNum - 1].case)
+                if (caseNum - 1 < cases.size) {
+                    val currentCase = cases[caseNum - 1]
+                    Text(
+                        text = currentCase.case,
+                        fontFamily = titleFont,
+                        textAlign = TextAlign.Justify,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(bottom = 20.dp, start = 16.dp, end = 16.dp)
+                    )
+
+                    // state.image?.let {
+                    //     Image(
+                    //         bitmap = it.asImageBitmap(),
+                    //         contentDescription = null,
+                    //         modifier = Modifier
+                    //             .padding(bottom = 25.dp, start = 16.dp, end = 16.dp)
+                    //             .fillMaxWidth()
+                    //             .height(350.dp)
+                    //             .shadow(elevation = 1.dp, shape = RoundedCornerShape(16.dp)),
+                    //         contentScale = ContentScale.Crop
+                    //     )
+                    // }
+
+                    currentCase.options.forEach { option ->
+                        OutlinedButton(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(bottom = 12.dp, start = 16.dp, end = 16.dp),
+                            onClick = {
+                                selectedItem = option
+                                coroutineScope.launch { scrollState.animateScrollTo(scrollState.maxValue) }
+                            },
+                            border = BorderStroke(width = 2.dp, color = if (selectedItem == option) Color.Green else Color.LightGray),
+                            shape = RoundedCornerShape(16.dp),
+                        ) {
+                            if (selectedItem == option) {
+                                Icon(imageVector = Icons.Default.Check, contentDescription = null, modifier = Modifier.padding(end = 5.dp), tint = Color.Green)
+                            }
+                            Text(
+                                text = option.option,
+                                color = Color.Black,
+                                fontFamily = titleFont,
+                                textAlign = TextAlign.Center,
+                                fontWeight = FontWeight.Bold,
+                                modifier = Modifier.padding(vertical = 8.dp)
+                            )
+                        }
                     }
                 }
 
-                val round = remember { mutableIntStateOf(sharedPreferences.getInt("rounds", 1) + 1) }
-
-                Column(
-                    modifier = Modifier
-                        .background(Color.White)
-                        .fillMaxSize()
-                        .verticalScroll(scrollState)
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center
                 ) {
-                    // Header UI
-                    Column(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .shadow(elevation = 8.dp)
-                            .background(Color.White),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Text(
-                           text = stringResource(R.string.rounds)+"${round.intValue}",
-                            fontFamily = titleFont,
-                            textAlign = TextAlign.Justify,
-                            fontSize = 22.sp,
-                            modifier = Modifier.padding(3.dp)
-                        )
-                    }
-
-                    // Main content column
-                    Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(top = 16.dp)
-                    ) {
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(bottom = 10.dp, start = 16.dp, end = 16.dp),
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.SpaceBetween
-                        ) {
-                            Text(
-                                text = "Scenario",
-                                fontFamily = titleFont,
-                                fontSize = 28.sp,
-                                modifier = Modifier.weight(1f),
-                                fontWeight = FontWeight.Bold
-                            )
-                            Image(
-                                painter = painterResource(R.drawable.fire),
-                                modifier = Modifier.size(28.dp),
-                                contentDescription = null
-                            )
-                            Text(
-                                text = (totalScore - userScore).toString(),
-                                fontFamily = titleFont,
-                                fontSize = 18.sp,
-                            )
-                        }
-
-                        if (caseNum - 1 < cases.size) {
-                            Text(
-                                text = cases[caseNum - 1].case,
-                                fontFamily = titleFont,
-                                textAlign = TextAlign.Justify,
-                                fontWeight = FontWeight.Bold,
-                                modifier = Modifier.padding(bottom = 20.dp, start = 16.dp, end = 16.dp)
-                            )
-
-                            state.image?.let {
-                                Image(
-                                    bitmap = it.asImageBitmap(),
-                                    contentDescription = null,
-                                    modifier = Modifier
-                                        .padding(bottom = 25.dp, start = 16.dp, end = 16.dp)
-                                        .fillMaxWidth()
-                                        .height(350.dp)
-                                        .shadow(elevation = 1.dp, shape = RoundedCornerShape(16.dp)),
-                                    contentScale = ContentScale.Crop
-                                )
-                            }
-
-                            cases[caseNum - 1].options.forEach { option ->
-                                OutlinedButton(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(bottom = 12.dp, start = 16.dp, end = 16.dp),
-                                    onClick = {
-                                        selectedItem = option
-                                        coroutineScope.launch { scrollState.animateScrollTo(scrollState.maxValue) }
-                                    },
-                                    border = BorderStroke(width = 2.dp, color = if (selectedItem == option) Color.Green else Color.LightGray),
-                                    shape = RoundedCornerShape(16.dp),
-                                ) {
-                                    if (selectedItem == option) {
-                                        Icon(imageVector = Icons.Default.Check, contentDescription = null, modifier = Modifier.padding(end = 5.dp), tint = Color.Green)
-                                    }
-                                    Text(
-                                        text = option.option,
-                                        color = Color.Black,
-                                        fontFamily = titleFont,
-                                        textAlign = TextAlign.Center,
-                                        fontWeight = FontWeight.Bold,
-                                        modifier = Modifier.padding(vertical = 8.dp)
-                                    )
-                                }
-                            }
-                        }
-
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.Center
-                        ) {
+                    Column {
+                        if (caseNum < cases.size) {
                             GameButton(
                                 onClick = {
                                     if (selectedItem != null) {
-                                        // The user has selected an answer
-                                        calculateScore(cases[caseNum - 1], selectedItem!!.option, context)
-                                        viewmodel.saveUserChoice(context, cases[caseNum - 1], selectedItem!!.option)
+                                        calculateScore(
+                                            cases[caseNum - 1],
+                                            selectedItem!!.option,
+                                            context
+                                        )
+                                        viewmodel.onUserChoice(cases[caseNum - 1].case, selectedItem!!.option)
 
-                                        if (caseNum < cases.size) {
-                                            // More cases in the current batch, move to the next one
-                                            editor.putInt("rounds", round.intValue++).apply()
-                                            caseNum++
-                                            selectedItem = null
-                                            coroutineScope.launch { scrollState.animateScrollTo(0) }
-                                        } else {
-                                            // FIX: The game is over, or you want to load a new batch.
-                                            // For now, let's navigate to a "Results" screen or similar.
-                                            // Calling initiateGame() here would start an endless loop.
-                                            Log.d("SetUpCase", "All cases finished. Navigating to results.")
-                                            navController.navigate(Screens.ResultScreen.screen)
+                                        round.intValue++
+                                        sharedPreferences.edit().putInt("rounds", round.intValue).apply()
+                                        caseNum++
+                                        selectedItem = null
+                                        coroutineScope.launch {
+                                            scrollState.animateScrollTo(0)
                                         }
                                     }
                                 },
                                 text = stringResource(R.string.button_next)
                             )
                         }
-                        Spacer(modifier = Modifier.height(16.dp))
+                        GameButton(
+                            text = stringResource(R.string.button_new_game),
+                            onClick = {
+                                if (selectedItem != null) {
+                                    calculateScore(
+                                        cases[caseNum - 1],
+                                        selectedItem!!.option,
+                                        context
+                                    )
+                                    viewmodel.onUserChoice(cases[caseNum - 1].case, selectedItem!!.option)
+                                    viewmodel.performAnalysis()
+                                    navController.navigate(Screens.AnalysisScreen.screen)
+                                }
+                            }
+                        )
                     }
                 }
+                Spacer(modifier = Modifier.height(16.dp))
             }
         }
     } else {
-        // This is the initial state before the user has played a game.
+        // This is the initial state before the user has played a game or if list is empty
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             GameButton(
                 onClick = { navController.navigate(Screens.SettingsScreen.screen) },
@@ -340,37 +356,36 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
 }
 
 
-fun calculateScore(cases: Case, selectedOption: String, context: Context) {
+fun calculateScore(case: Case, selectedOption: String, context: Context) {
     val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-    val editor = sharedPreferences.edit()
 
-    val userChoice = cases.options.find { it.option == selectedOption }
-    Log.v("USERCALCULATE", "User choice: $userChoice")
-    var userScore = 0
+    // Get the current total scores
+    val currentTotalUserScore = sharedPreferences.getInt("userScore", 0)
+    val currentTotalOptimalScore = sharedPreferences.getInt("totalScore", 0)
 
-    try {
-        userChoice?.apply {
-            userScore += health + wealth + relationships + happiness + knowledge + karma + timeManagement +
-                    environmentalImpact + personalGrowth + socialResponsibility
-        }
-        editor.putInt("userScore", userScore)
-        editor.apply()
-
-    } catch (e: Exception) {
-        Log.e("USERCALCULATE", e.message.toString())
+    // Calculate score for the user's choice in the current case
+    val userChoice = case.options.find { it.option == selectedOption }
+    var currentUserCaseScore = 0
+    userChoice?.let {
+        currentUserCaseScore = it.health + it.wealth + it.relationships + it.happiness + it.knowledge + it.karma + it.timeManagement +
+                it.environmentalImpact + it.personalGrowth + it.socialResponsibility
     }
 
-
-    var totalScore = 0
-
-    val optimalOption =
-        cases.options.find { it.number == cases.optimal.toIntOrNull() }
-
-    optimalOption?.apply {
-        totalScore += health + wealth + relationships + happiness + knowledge + karma + timeManagement +
-                environmentalImpact + personalGrowth + socialResponsibility
+    // Calculate score for the optimal choice in the current case
+    val optimalOption = case.options.find { it.number == case.optimal.toIntOrNull() }
+    var currentOptimalCaseScore = 0
+    optimalOption?.let {
+        currentOptimalCaseScore = it.health + it.wealth + it.relationships + it.happiness + it.knowledge + it.karma + it.timeManagement +
+                it.environmentalImpact + it.personalGrowth + it.socialResponsibility
     }
-    editor.putInt("totalScore", totalScore)
-    editor.apply()
 
+    // Add current case scores to the totals and save
+    sharedPreferences.edit {
+        putInt("userScore", currentTotalUserScore + currentUserCaseScore)
+        putInt("totalScore", currentTotalOptimalScore + currentOptimalCaseScore)
+        apply() // Use apply() for asynchronous save
+    }
+
+    Log.d("ScoreUpdate", "User Case Score: $currentUserCaseScore, New Total User Score: ${currentTotalUserScore + currentUserCaseScore}")
+    Log.d("ScoreUpdate", "Optimal Case Score: $currentOptimalCaseScore, New Total Optimal Score: ${currentTotalOptimalScore + currentOptimalCaseScore}")
 }

@@ -15,7 +15,7 @@ import java.io.IOException
 class AnalysisViewModel(application: Application) : AndroidViewModel(application = application) {
 
     private val model = GenerativeModel(
-        modelName = "gemini-2.0-flash",
+        modelName = "gemini-2.5-flash",
         apiKey = "...",
     )
 

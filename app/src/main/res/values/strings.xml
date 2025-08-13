@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Matter of choice</string>
+    <string name="app_name"   translatable="false">Matter of choice</string>
+    <string name="app_name_matter_of_choice"  translatable="false">Matter of choice</string>
+    <string name="matterofchoice_info">Matter Of Choice presents interactive scenarios to help you learn decision-making skills.</string>
     <string name="optional_enter_the_role_e_g_student">Optional: Enter the role, e.g., Student</string>
     <string name="analysis_my_choices">Analysis my choices</string>
     <string name="analysis_your_selections">Analysis your selections</string>
