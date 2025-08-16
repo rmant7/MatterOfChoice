@@ -1,9 +1,14 @@
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 
     id("kotlin-parcelize")
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.0"
+
+
+
 }
 
 android {
@@ -60,7 +65,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation(libs.androidx.navigation.compose)
-
+    implementation("com.google.code.gson:gson:2.10.1")
     implementation(libs.androidx.ui.text.google.fonts)
 
     implementation(libs.generativeai)
@@ -74,6 +79,9 @@ dependencies {
 
     implementation(libs.okhttp)
 
-
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.33.2-alpha")
+    implementation("com.google.accompanist:accompanist-placeholder-material:0.33.2-alpha")
 
 }
