@@ -40,7 +40,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     private val _isInitialized = MutableStateFlow(false)
     val isInitialized: StateFlow<Boolean> get() = _isInitialized
 
-    var _state = mutableStateOf(GameState())
+    private var _state = mutableStateOf(GameState())
     var state: State<GameState> = _state
 
     /**
@@ -155,9 +155,13 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun performAnalysis() {
+        Log.d("AIViewModel", "perform analysis is called")
         viewModelScope.launch {
+            Log.d("AIViewModel", "perform analysis is called within viewmodel")
             _state.value = _state.value.copy(isLoading = true, error = null)
             try {
+                Log.d("AIViewModel", "perform analysis is called within try")
+                Log.d("AiViewModel", _state.value.toString())
                 val request = AnalysisRequest(
                     cases = _state.value.casesList!!,
                     user_choices = _state.value.userChoices,
@@ -165,10 +169,15 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                     question_type = "behavioral",
                     language = "English"
                 )
+                Log.d("AIViewModel", "making analysis request")
                 val response = FlaskApiClient.postAnalysis(request)
                 _state.value = _state.value.copy(analysisResult = response.analysis, isLoading = false)
+                Log.d("info", response.analysis)
             } catch (e: Exception) {
+                Log.d("AIViewModel", e.toString())
                 _state.value = _state.value.copy(error = e.message, isLoading = false)
+                e.message?.let { Log.d("info", it) }
+
             }
         }
     }
