@@ -29,6 +29,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -37,15 +38,15 @@ import com.matterofchoice.R
 import com.matterofchoice.common.GameButton
 import com.matterofchoice.common.GameTextField
 import com.matterofchoice.ui.theme.myFont
+import com.matterofchoice.viewmodel.AIViewModel
 
-
-
+@Preview
 @Composable
-fun Analysis(viewModel: AnalysisViewModel = viewModel()) {
+fun Analysis(viewModel: AIViewModel = viewModel()) {
     val context = LocalContext.current
 
 
-    val state = viewModel.state.value
+    val state by viewModel.state
 
 
     DisposableEffect(Unit) {
@@ -90,7 +91,9 @@ fun Analysis(viewModel: AnalysisViewModel = viewModel()) {
 
             GameButton(
                 onClick = {
-                    viewModel.loadAnalysis(context = context, role = userRole)
+                    android.util.Log.d("Button", "Clicked")
+                    viewModel.performAnalysis()
+//                    viewModel.state.value.analysisResult//.loadAnalysis(context = context, role = userRole)
                 },
                 text = stringResource(R.string.analysis_my_choices)
             )
@@ -103,9 +106,9 @@ fun Analysis(viewModel: AnalysisViewModel = viewModel()) {
                 Loader()
             }
         } else {
-            state.analysis?.let {
+            state.analysisResult?.let { res ->
 
-                AnalysisUI(state.analysis)
+                AnalysisUI(res)
 
                  }
                     state.error?.let {

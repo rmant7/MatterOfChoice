@@ -1,6 +1,7 @@
 package com.matterofchoice.api
 
 
+import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
 import com.matterofchoice.model.Case
@@ -142,14 +143,18 @@ object FlaskApiClient {
             .url("$BASE_URL/analysis")
             .post(requestBody)
             .build()
-
+        Log.d("FlaskApiClient", "listening for post")
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
+
+                Log.d("FlaksApiClient","Analysis failed with ${e.toString()}")
                 if (continuation.isCancelled) return
                 continuation.resumeWithException(e)
+                Log.d("FlaksApiClient","Analysis failed with ${e.toString()}")
             }
 
             override fun onResponse(call: Call, response: Response) {
+                Log.d("FlaskApiClient", "listening for response ${response.code}")
                 response.use {
                     val body = it.body?.string()
                     if (!it.isSuccessful) {
@@ -164,6 +169,7 @@ object FlaskApiClient {
                         } else {
                             "Http error ${it.code}"
                         }
+                        Log.d("FlaksApiClient","Analysis failed with $message")
                         continuation.resumeWithException(IOException(message))
                         return
                     }
