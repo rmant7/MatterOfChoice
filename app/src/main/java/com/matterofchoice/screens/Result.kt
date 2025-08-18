@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -46,7 +47,7 @@ fun Result() {
 
     Column(
         modifier = Modifier
-            .background(Color.White)
+            .background(colorScheme.surface)
             .fillMaxSize()
             .padding(top = 45.dp),
         verticalArrangement = Arrangement.SpaceBetween

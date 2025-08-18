@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
+import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -33,13 +34,6 @@ data class AnalysisResult(
 fun AnalysisUI(jsonString: String) {
     val systemUiController = rememberSystemUiController()
 
-    SideEffect {
-        systemUiController.setStatusBarColor(
-            color = Color(0xFF1E1E1E),
-            darkIcons = false
-        )
-    }
-
     var analysisResult by remember { mutableStateOf<AnalysisResult?>(null) }
     var parseError by remember { mutableStateOf<String?>(null) }
 
@@ -62,13 +56,13 @@ fun AnalysisUI(jsonString: String) {
 
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = Color.White
+        color = colorScheme.surface
     ) {
         when {
             parseError != null -> {
                 Text(
                     text = "Error.",
-                    color = Color.Red,
+                    color = colorScheme.error,
                     modifier = Modifier.padding(16.dp)
                 )
             }
@@ -154,7 +148,7 @@ fun AnalysisUI(jsonString: String) {
                     modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
-                    CircularProgressIndicator(color = Color.White)
+                    CircularProgressIndicator()
                 }
             }
         }

@@ -22,6 +22,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -145,7 +146,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color.White),
+                .background(colorScheme.surface),
             contentAlignment = Alignment.Center
         ) {
             Loader()
@@ -190,7 +191,6 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
 
         Column(
             modifier = Modifier
-                .background(Color.White)
                 .fillMaxSize()
                 .verticalScroll(scrollState)
         ) {
@@ -198,8 +198,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .shadow(elevation = 8.dp)
-                    .background(Color.White),
+                    .shadow(elevation = 8.dp),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -286,7 +285,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                             }
                             Text(
                                 text = option.option,
-                                color = Color.Black,
+                                color = colorScheme.onSurface,
                                 fontFamily = titleFont,
                                 textAlign = TextAlign.Center,
                                 fontWeight = FontWeight.Bold,

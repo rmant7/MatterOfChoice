@@ -43,7 +43,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MatterofchoiceTheme {
-                Surface {
+                Surface() {
                     val context = LocalContext.current.applicationContext
                     Log.d("MainActivity_setContent", "Locale from LocalContext: ${context.resources.configuration.locales[0]}")
                     Log.d("MainActivity_setContent", "Test string from LocalContext: ${context.getString(R.string.error_something_went_wrong)}")

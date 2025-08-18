@@ -15,6 +15,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -67,7 +68,6 @@ fun Analysis(viewModel: AIViewModel = viewModel()) {
             verticalArrangement = Arrangement.Top,
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color.White)
                 .padding(24.dp)
                 .padding(top = 24.dp)
         ) {
@@ -77,7 +77,7 @@ fun Analysis(viewModel: AIViewModel = viewModel()) {
                 modifier = Modifier.size(100.dp)
             )
             Text(
-                text = stringResource(R.string.analysis_your_selections), color = Color.Black,
+                text = stringResource(R.string.analysis_your_selections),
                 fontFamily = myFont, fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 15.dp, top = 28.dp)
@@ -117,7 +117,7 @@ fun Analysis(viewModel: AIViewModel = viewModel()) {
                             verticalArrangement = Arrangement.Center,
                             modifier = Modifier
                                 .fillMaxSize()
-                                .background(Color.White)
+                                .background(color = colorScheme.surface)
                         ) {
                             Text(text = state.error.toString())
                         }

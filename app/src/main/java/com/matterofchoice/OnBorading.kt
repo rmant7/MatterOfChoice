@@ -24,6 +24,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults.buttonColors
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -101,7 +102,6 @@ private fun OnBoardingPager(
     val coroutineScope = rememberCoroutineScope()
     Column(modifier = Modifier
         .fillMaxSize()
-        .background(Color.White)
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -128,7 +128,6 @@ private fun OnBoardingPager(
                     Text(
                         text = item[page].title,
                         modifier = Modifier.padding(top = 25.dp),
-                        color = MyColor,
                         fontFamily = myFont,
                         fontSize = 38.sp,
                         fontWeight = FontWeight.Bold
@@ -142,7 +141,7 @@ private fun OnBoardingPager(
                             end = 4.dp,
                         ),
                         fontSize = 14.sp,
-                        color = Color.Gray,
+                        color = colorScheme.onSurfaceVariant,
                         style = MaterialTheme.typography.bodyMedium,
                         textAlign = TextAlign.Center
                     )
