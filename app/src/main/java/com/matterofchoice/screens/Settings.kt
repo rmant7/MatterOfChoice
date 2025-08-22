@@ -39,8 +39,10 @@ import com.matterofchoice.Screens
 import com.matterofchoice.common.DropDownMenu
 import com.matterofchoice.common.GameButton
 import com.matterofchoice.common.GameTextField
+import com.matterofchoice.utils.LanguageDefinition
 import com.matterofchoice.utils.LanguagePreferenceHelper
 import com.matterofchoice.utils.LocaleHelper
+import com.matterofchoice.utils.extraLanguages
 
 object PrefKeys {
     const val MY_PREFS = "MyPrefs"
@@ -117,35 +119,48 @@ fun UserInput(
 
 
     val currentLanguageDisplayName = remember(currentSelectedLanguageCode.value, Unit) {
-        val displayNamesNow = context.resources.getStringArray(R.array.languages)
-        val codesNow = context.resources.getStringArray(R.array.language_codes)
-
         val selectedCode = currentSelectedLanguageCode.value
+        val displayNamesFromResources = context.resources.getStringArray(R.array.languages)
+        val codesFromResources = context.resources.getStringArray(R.array.language_codes)
 
+        // 1. Handle System Default separately (as you did)
         if (selectedCode == LanguagePreferenceHelper.SYSTEM_DEFAULT_MARKER_CODE) {
-            val systemDefaultIndex =
-                codesNow.indexOf(LanguagePreferenceHelper.SYSTEM_DEFAULT_MARKER_CODE)
-            if (systemDefaultIndex != -1 && systemDefaultIndex < displayNamesNow.size) {
-                displayNamesNow[systemDefaultIndex]
+            // Try to find "System Default" in your resource arrays first
+            val systemDefaultIndexInResources =
+                codesFromResources.indexOf(LanguagePreferenceHelper.SYSTEM_DEFAULT_MARKER_CODE)
+            if (systemDefaultIndexInResources != -1 && systemDefaultIndexInResources < displayNamesFromResources.size) {
+                displayNamesFromResources[systemDefaultIndexInResources]
             } else {
-
-                context.getString(R.string.settings_hint_select_language)
+                // Fallback: Check if "System Default" is in extraLanguages (if you added it there)
+                val systemDefaultInExtra = extraLanguages.find { it.code == LanguagePreferenceHelper.SYSTEM_DEFAULT_MARKER_CODE }
+                systemDefaultInExtra?.displayName ?: "System Default" // Use a dedicated string
             }
         } else {
-            val index = codesNow.indexOf(selectedCode)
-            if (index != -1 && index < displayNamesNow.size) {
-                displayNamesNow[index]
+            // 2. Try to find in resource arrays
+            val indexInResources = codesFromResources.indexOf(selectedCode)
+            if (indexInResources != -1 && indexInResources < displayNamesFromResources.size) {
+                displayNamesFromResources[indexInResources]
             } else {
-                val defaultAppCodeIndex =
-                    codesNow.indexOf(LanguagePreferenceHelper.DEFAULT_APP_LANGUAGE_CODE)
-                if (defaultAppCodeIndex != -1 && defaultAppCodeIndex < displayNamesNow.size) {
-                    displayNamesNow[defaultAppCodeIndex]
+                // 3. If not in resources, try to find in extraLanguages
+                val languageInExtra = extraLanguages.find { it.code == selectedCode }
+                if (languageInExtra != null) {
+                    languageInExtra.displayName
                 } else {
-                    context.getString(R.string.settings_hint_select_language)
+                    // 4. Fallback: Try to find the default app language in resources (as you did)
+                    val defaultAppCodeIndexInResources =
+                        codesFromResources.indexOf(LanguagePreferenceHelper.DEFAULT_APP_LANGUAGE_CODE)
+                    if (defaultAppCodeIndexInResources != -1 && defaultAppCodeIndexInResources < displayNamesFromResources.size) {
+                        displayNamesFromResources[defaultAppCodeIndexInResources]
+                    } else {
+                        // 5. Ultimate Fallback: Check if default app language is in extraLanguages
+                        val defaultAppLangInExtra = extraLanguages.find { it.code == LanguagePreferenceHelper.DEFAULT_APP_LANGUAGE_CODE }
+                        defaultAppLangInExtra?.displayName ?: context.getString(R.string.settings_hint_select_language)
+                    }
                 }
             }
         }
     }
+
     var languageDropdownExpanded by remember { mutableStateOf(false) }
     LaunchedEffect(Unit) {
         if (!sharedPreferences.contains(PrefKeys.FIRST_OPEN)) {
@@ -243,29 +258,32 @@ fun UserInput(
                     onDismissRequest = { languageDropdownExpanded = false }
                 ) {
 
-                    val unsortedDisplayNames = stringArrayResource(id = R.array.languages)
-                    val unsortedCodes = stringArrayResource(id = R.array.language_codes)
+                    val resourceDisplayNames = stringArrayResource(id = R.array.languages)
+                    val resourceCodes = stringArrayResource(id = R.array.language_codes)
 
-                    val languagePairs = unsortedDisplayNames.mapIndexedNotNull { index, name ->
-                        unsortedCodes.getOrNull(index)?.let { code ->
-                            Pair(name, code)
+                    val resourceLanguageOptions = resourceDisplayNames.mapIndexedNotNull { index, name ->
+                        resourceCodes.getOrNull(index)?.let { code ->
+                            LanguageDefinition(name, code)
                         }
-                    }
+                    }.toMutableList()
+                    val extraLanguageDefinitions = extraLanguages
+                    val allLanguageOptions = (resourceLanguageOptions + extraLanguageDefinitions)
+                        .distinctBy { it.code } // Ensure codes are unique if overlap is possible
+                        .sortedBy { it.displayName }
 
-                    val sortedLanguagePairs = languagePairs.sortedBy { it.first }
 
 
-                    sortedLanguagePairs.forEach { (displayName, languageCode) ->
 
+                    allLanguageOptions.forEach { langOption ->
                         DropdownMenuItem(
-                            text = { Text(displayName) },
+                            text = { Text(langOption.displayName) },
                             onClick = {
-
-                                val codeToSetForLocaleHelper = languageCode
+                                val codeToSetForLocaleHelper = langOption.code
                                 val currentlyPersistedLang =
                                     LanguagePreferenceHelper.getSelectedLanguage(context.applicationContext)
 
                                 if (currentlyPersistedLang != codeToSetForLocaleHelper) {
+
                                     LocaleHelper.setLocale(
                                         context.applicationContext,
                                         codeToSetForLocaleHelper
