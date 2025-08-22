@@ -40,8 +40,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.asImageBitmap
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -49,6 +47,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.edit
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -64,17 +63,21 @@ import com.matterofchoice.GameState
 import com.matterofchoice.R
 import com.matterofchoice.Screens
 import com.matterofchoice.common.GameButton
-import com.matterofchoice.model.Case
 import com.matterofchoice.model.Option
 import com.matterofchoice.ui.theme.titleFont
 import com.matterofchoice.viewmodel.AIViewModel
 import kotlinx.coroutines.launch
-import androidx.core.content.edit
 
 
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
+    val viewModel: AIViewModel = viewModel()
+
+    // Initialize session when the app starts
+    LaunchedEffect(Unit) {
+        viewModel.initializeSession()
+    }
 
     Scaffold(
         bottomBar = {
@@ -86,22 +89,22 @@ fun MainScreen() {
             startDestination = Screens.SettingsScreen.screen,
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable(Screens.GameScreen.screen) { Game(navController) }
+            composable(Screens.GameScreen.screen) {
+                Game(navController, viewModel)
+            }
             composable(Screens.ResultScreen.screen) { Result() }
-            composable(Screens.AnalysisScreen.screen) { Analysis() }
+            composable(Screens.AnalysisScreen.screen) { AnalysisScreen(viewModel,navController) }
             composable(Screens.SettingsScreen.screen) {
                 Settings(navController = navController)
-             //   SettingsScreen()
             }
         }
     }
 }
 
-
 @Composable
-fun Game(navController: NavHostController) {
-    val viewmodel: AIViewModel = viewModel()
-    SetUpCase(navController = navController, state = viewmodel.state.value, viewmodel = viewmodel)
+fun Game(navController: NavHostController, viewModel: AIViewModel) {
+    val state by viewModel.state
+    SetUpCase(navController = navController, state = state, viewModel = viewModel)
 }
 
 @Composable
@@ -121,12 +124,27 @@ fun Loader() {
 }
 
 @Composable
-fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: GameState) {
+fun SetUpCase(viewModel: AIViewModel, navController: NavHostController, state: GameState) {
     val context = LocalContext.current.applicationContext
-    var caseNum by rememberSaveable { mutableIntStateOf(1) }
+    var currentCaseIndex by rememberSaveable { mutableIntStateOf(0) }
+    var currentSelection by remember { mutableStateOf<Map<String, String>>(emptyMap()) } // Track current selections
 
-    val isInitialized by viewmodel.isInitialized.collectAsState()
+    val isInitialized by viewModel.isInitialized.collectAsState()
     val coroutineScope = rememberCoroutineScope()
+
+    // Reset when turn changes
+    LaunchedEffect(state.currentTurn) {
+        currentCaseIndex = 0
+        currentSelection = emptyMap()
+    }
+
+    // Trigger case generation when cases list is empty but we're not loading and no error
+    LaunchedEffect(state.casesList.isEmpty(), state.isLoading, state.error) {
+        if (state.casesList.isEmpty() && !state.isLoading && state.error == null) {
+            Log.d("SetUpCase", "Automatically triggering case generation")
+            viewModel.initiateGame()
+        }
+    }
 
     // This LaunchedEffect runs when the game screen is entered.
     LaunchedEffect(Unit) {
@@ -138,8 +156,6 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
             putInt("rounds", 1)
             apply()
         }
-        // Start fetching the cases from the server.
-        viewmodel.initiateGame()
     }
 
     if (state.isLoading) {
@@ -161,230 +177,308 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
             Log.e("SetUpCase", "An error occurred: ${state.error}")
             Text(
                 text = state.error ?: stringResource(R.string.error_something_went_wrong),
-                fontSize = 18.sp, modifier = Modifier
-                    .align(
-                        Alignment.CenterHorizontally
-                    )
+                fontSize = 18.sp,
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
                     .padding(bottom = 20.dp)
             )
             GameButton(
-                onClick = { navController.navigate(Screens.SettingsScreen.screen) },
+                onClick = {
+                    viewModel.resetGame()
+                    navController.navigate(Screens.SettingsScreen.screen)
+                },
                 text = stringResource(R.string.button_new_game)
             )
         }
-    } else if (state.casesList != null && state.casesList.isNotEmpty()) {
-        // Handle the success state where we have cases
-        val scrollState = rememberScrollState()
-        val cases = state.casesList
-        var selectedItem by remember { mutableStateOf<Option?>(null) }
-        val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+    }  else if (state.casesList.isNotEmpty()) {
+    // Handle the success state where we have cases
+    val scrollState = rememberScrollState()
+    val cases = state.casesList
+    val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
+    // Get current case and caseId here, outside the if block
+    val currentCase = if (currentCaseIndex < cases.size) cases[currentCaseIndex] else null
+    val caseId = currentCase?.case_id ?: "unknown_$currentCaseIndex"
 
-        // Trigger image generation when the current case changes.
-//        LaunchedEffect(caseNum) {
-//            if (caseNum - 1 < cases.size) {
-//                viewmodel.generateImage(context = context, prompt = cases[caseNum - 1].case)
-//            }
-//        }
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(scrollState)
+    ) {
+        // Header UI
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .shadow(elevation = 8.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = "${stringResource(R.string.rounds)} ${state.currentTurn} - Case ${currentCaseIndex + 1} of ${cases.size}",
+                fontFamily = titleFont,
+                textAlign = TextAlign.Justify,
+                fontSize = 22.sp,
+                modifier = Modifier.padding(3.dp)
+            )
+        }
 
-        val round = remember { mutableIntStateOf(sharedPreferences.getInt("rounds", 1)) }
-
+        // Main content column
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .verticalScroll(scrollState)
+                .padding(top = 16.dp)
         ) {
-            // Header UI
-            Column(
+            Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .shadow(elevation = 8.dp),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
+                    .padding(bottom = 10.dp, start = 16.dp, end = 16.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
-                    text = stringResource(R.string.rounds)+"${round.intValue}",
+                    text = "Scenario",
                     fontFamily = titleFont,
-                    textAlign = TextAlign.Justify,
-                    fontSize = 22.sp,
-                    modifier = Modifier.padding(3.dp)
+                    fontSize = 28.sp,
+                    modifier = Modifier.weight(1f),
+                    fontWeight = FontWeight.Bold
+                )
+                Image(
+                    painter = painterResource(R.drawable.fire),
+                    modifier = Modifier.size(28.dp),
+                    contentDescription = null
+                )
+                val userScore = sharedPreferences.getInt("userScore", 0)
+                val totalScore = sharedPreferences.getInt("totalScore", 0)
+                Text(
+                    text = "$userScore / $totalScore",
+                    fontFamily = titleFont,
+                    fontSize = 18.sp,
                 )
             }
 
-            // Main content column
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(top = 16.dp)
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 10.dp, start = 16.dp, end = 16.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Text(
-                        text = "Scenario",
-                        fontFamily = titleFont,
-                        fontSize = 28.sp,
-                        modifier = Modifier.weight(1f),
-                        fontWeight = FontWeight.Bold
-                    )
-                    Image(
-                        painter = painterResource(R.drawable.fire),
-                        modifier = Modifier.size(28.dp),
-                        contentDescription = null
-                    )
-                    val userScore = sharedPreferences.getInt("userScore", 0)
-                    val totalScore = sharedPreferences.getInt("totalScore", 0)
-                    Text(
-                        text = "$userScore / $totalScore",
-                        fontFamily = titleFont,
-                        fontSize = 18.sp,
-                    )
-                }
+            if (currentCaseIndex < cases.size && currentCase != null) {
+                Text(
+                    text = currentCase.case ?: "No question available",
+                    fontFamily = titleFont,
+                    textAlign = TextAlign.Justify,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(bottom = 20.dp, start = 16.dp, end = 16.dp)
+                )
 
-                if (caseNum - 1 < cases.size) {
-                    val currentCase = cases[caseNum - 1]
-                    Text(
-                        text = currentCase.case,
-                        fontFamily = titleFont,
-                        textAlign = TextAlign.Justify,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(bottom = 20.dp, start = 16.dp, end = 16.dp)
-                    )
+                // Display options
+                currentCase.options?.forEachIndexed { index, option ->
+                    val choiceLetter = ('A' + index).toString()
+                    val isSelected = currentSelection[caseId] == choiceLetter
 
-                    // state.image?.let {
-                    //     Image(
-                    //         bitmap = it.asImageBitmap(),
-                    //         contentDescription = null,
-                    //         modifier = Modifier
-                    //             .padding(bottom = 25.dp, start = 16.dp, end = 16.dp)
-                    //             .fillMaxWidth()
-                    //             .height(350.dp)
-                    //             .shadow(elevation = 1.dp, shape = RoundedCornerShape(16.dp)),
-                    //         contentScale = ContentScale.Crop
-                    //     )
-                    // }
-
-                    currentCase.options.forEach { option ->
-                        OutlinedButton(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(bottom = 12.dp, start = 16.dp, end = 16.dp),
-                            onClick = {
-                                selectedItem = option
-                                coroutineScope.launch { scrollState.animateScrollTo(scrollState.maxValue) }
-                            },
-                            border = BorderStroke(width = 2.dp, color = if (selectedItem == option) Color.Green else Color.LightGray),
-                            shape = RoundedCornerShape(16.dp),
-                        ) {
-                            if (selectedItem == option) {
-                                Icon(imageVector = Icons.Default.Check, contentDescription = null, modifier = Modifier.padding(end = 5.dp), tint = Color.Green)
-                            }
-                            Text(
-                                text = option.option,
-                                color = colorScheme.onSurface,
-                                fontFamily = titleFont,
-                                textAlign = TextAlign.Center,
-                                fontWeight = FontWeight.Bold,
-                                modifier = Modifier.padding(vertical = 8.dp)
+                    OutlinedButton(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(bottom = 12.dp, start = 16.dp, end = 16.dp),
+                        onClick = {
+                            // Update current selection immediately when user clicks
+                            currentSelection = currentSelection + (caseId to choiceLetter)
+                            coroutineScope.launch { scrollState.animateScrollTo(scrollState.maxValue) }
+                        },
+                        border = BorderStroke(
+                            width = 2.dp,
+                            color = if (isSelected) Color.Green else Color.LightGray
+                        ),
+                        shape = RoundedCornerShape(16.dp),
+                    ) {
+                        if (isSelected) {
+                            Icon(
+                                imageVector = Icons.Default.Check,
+                                contentDescription = null,
+                                modifier = Modifier.padding(end = 5.dp),
+                                tint = Color.Green
                             )
                         }
-                    }
-                }
-
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    Column {
-                        if (caseNum < cases.size) {
-                            GameButton(
-                                onClick = {
-                                    if (selectedItem != null) {
-                                        calculateScore(
-                                            cases[caseNum - 1],
-                                            selectedItem!!.option,
-                                            context
-                                        )
-                                        viewmodel.onUserChoice(cases[caseNum - 1].case, selectedItem!!.option)
-
-                                        round.intValue++
-                                        sharedPreferences.edit().putInt("rounds", round.intValue).apply()
-                                        caseNum++
-                                        selectedItem = null
-                                        coroutineScope.launch {
-                                            scrollState.animateScrollTo(0)
-                                        }
-                                    }
-                                },
-                                text = stringResource(R.string.button_next)
-                            )
-                        }
-                        GameButton(
-                            text = stringResource(R.string.button_new_game),
-                            onClick = {
-                                if (selectedItem != null) {
-                                    calculateScore(
-                                        cases[caseNum - 1],
-                                        selectedItem!!.option,
-                                        context
-                                    )
-                                    viewmodel.onUserChoice(cases[caseNum - 1].case, selectedItem!!.option)
-                                    viewmodel.performAnalysis()
-                                    navController.navigate(Screens.AnalysisScreen.screen)
-                                }
-                            }
+                        Text(
+                            text = "$choiceLetter. ${option.option}",
+                            color = colorScheme.onSurface,
+                            fontFamily = titleFont,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(vertical = 8.dp)
                         )
                     }
                 }
-                Spacer(modifier = Modifier.height(16.dp))
             }
-        }
-    } else {
-        // This is the initial state before the user has played a game or if list is empty
-        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            GameButton(
-                onClick = { navController.navigate(Screens.SettingsScreen.screen) },
-                text = stringResource(R.string.button_new_game)
-            )
+
+            // Button section - different buttons based on context
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                // Check if user has selected an option for the current case
+                val hasSelectionForCurrentCase = currentSelection.containsKey(caseId)
+
+                if (hasSelectionForCurrentCase) {
+                    // User has selected an option - show appropriate action button
+                    if (currentCaseIndex < cases.size - 1) {
+                        // More cases in this turn - show "Next Case"
+                        GameButton(
+                            onClick = {
+                                // Save the selection to ViewModel state
+                                currentSelection[caseId]?.let { selectedChoice ->
+                                    viewModel.onUserChoice(caseId, selectedChoice)
+                                    calculateScore(currentCase!!, selectedChoice, context)
+                                }
+
+                                currentCaseIndex++
+                                currentSelection = emptyMap() // Reset selection for next case
+                                coroutineScope.launch { scrollState.animateScrollTo(0) }
+                            },
+                            text = "Next Case",
+                        )
+                    } else {
+                        // Last case in turn - show "Next Turn" or completion message
+                        if (state.currentTurn < 3) {
+                            GameButton(
+                                onClick = {
+                                    // Save the selection to ViewModel state
+                                    currentSelection[caseId]?.let { selectedChoice ->
+                                        viewModel.onUserChoice(caseId, selectedChoice)
+                                        calculateScore(currentCase!!, selectedChoice, context)
+                                    }
+                                    viewModel.nextTurn()
+                                    currentSelection = emptyMap() // Reset selection for next turn
+                                },
+                                text = "Next Turn",
+                            )
+                        } else {
+                            // Game completed - show completion message
+                            Text(
+                                text = "Congratulations, you finished the game!",
+                                fontSize = 18.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = colorScheme.primary,
+                                modifier = Modifier.padding(bottom = 16.dp)
+                            )
+
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceEvenly
+                            ) {
+                                GameButton(
+                                    onClick = {
+                                        viewModel.resetGame()
+                                        navController.navigate(Screens.SettingsScreen.screen)
+                                    },
+                                    text = "Play Again",
+                                )
+                                GameButton(
+                                    onClick = {
+                                        // Save current selection before analyzing
+                                        currentSelection[caseId]?.let { selectedChoice ->
+                                            viewModel.onUserChoice(caseId, selectedChoice)
+                                            calculateScore(currentCase!!, selectedChoice, context)
+                                        }
+                                        viewModel.performAnalysis()
+                                        navController.navigate(Screens.AnalysisScreen.screen)
+                                    },
+                                    text = "Analyze",
+
+                                )
+                            }
+                            return@Column // Skip the Analyze button below
+                        }
+                    }
+
+                    // Show Analyze button for last case of each turn (except final turn)
+                    if (currentCaseIndex == cases.size - 1 && state.currentTurn < 3) {
+                        Spacer(modifier = Modifier.height(8.dp))
+                        GameButton(
+                            onClick = {
+                                // Save current selection before analyzing
+                                currentSelection[caseId]?.let { selectedChoice ->
+                                    viewModel.onUserChoice(caseId, selectedChoice)
+                                    calculateScore(currentCase!!, selectedChoice, context)
+                                }
+                                // Navigate to analysis screen instead of calling performFinalAnalysis()
+                                navController.navigate(Screens.AnalysisScreen.screen)
+                            },
+                            text = "Analyze",
+                        )
+                    }
+                } else {
+                    // No selection yet - show "New Game" button only
+                    GameButton(
+                        onClick = {
+                            viewModel.resetGame()
+                            navController.navigate(Screens.SettingsScreen.screen)
+                        },
+                        text = "New Game",
+
+                    )
+                }
+            }
+            Spacer(modifier = Modifier.height(16.dp))
         }
     }
+} else {
+    // This is the initial state before the user has played a game or if list is empty
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        GameButton(
+            onClick = {
+                viewModel.initiateGame()
+            },
+            text = "Start Game"
+        )
+    }
+}
 }
 
 
-fun calculateScore(case: Case, selectedOption: String, context: Context) {
+
+fun calculateScore(case: Case, selectedChoice: String, context: Context) {
     val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
     // Get the current total scores
     val currentTotalUserScore = sharedPreferences.getInt("userScore", 0)
     val currentTotalOptimalScore = sharedPreferences.getInt("totalScore", 0)
 
-    // Calculate score for the user's choice in the current case
-    val userChoice = case.options.find { it.option == selectedOption }
+    // Find the selected option
+    val selectedOptionNumber = selectedChoice[0] - 'A' + 1 // Convert letter to number
+    val selectedOption = case.options?.find { it.number == selectedOptionNumber }
+
+    // Find the optimal option (optimal field contains the option number as string)
+    val optimalOptionNumber = case.optimal?.toIntOrNull()
+    val optimalOption = case.options?.find { it.number == optimalOptionNumber }
+
     var currentUserCaseScore = 0
-    userChoice?.let {
-        currentUserCaseScore = it.health + it.wealth + it.relationships + it.happiness + it.knowledge + it.karma + it.timeManagement +
-                it.environmentalImpact + it.personalGrowth + it.socialResponsibility
+    var currentOptimalCaseScore = 0
+
+    // Calculate scores
+    selectedOption?.let {
+        currentUserCaseScore = it.knowledge + it.personal_growth + it.time_management +
+                (it.health ?: 0) + (it.wealth ?: 0) + (it.relationships ?: 0) +
+                (it.happiness ?: 0) + (it.karma ?: 0) + (it.environmental_impact ?: 0) +
+                (it.social_responsibility ?: 0)
     }
 
-    // Calculate score for the optimal choice in the current case
-    val optimalOption = case.options.find { it.number == case.optimal.toIntOrNull() }
-    var currentOptimalCaseScore = 0
     optimalOption?.let {
-        currentOptimalCaseScore = it.health + it.wealth + it.relationships + it.happiness + it.knowledge + it.karma + it.timeManagement +
-                it.environmentalImpact + it.personalGrowth + it.socialResponsibility
+        currentOptimalCaseScore = it.knowledge + it.personal_growth + it.time_management +
+                (it.health ?: 0) + (it.wealth ?: 0) + (it.relationships ?: 0) +
+                (it.happiness ?: 0) + (it.karma ?: 0) + (it.environmental_impact ?: 0) +
+                (it.social_responsibility ?: 0)
     }
 
     // Add current case scores to the totals and save
     sharedPreferences.edit {
         putInt("userScore", currentTotalUserScore + currentUserCaseScore)
         putInt("totalScore", currentTotalOptimalScore + currentOptimalCaseScore)
-        apply() // Use apply() for asynchronous save
+        apply()
     }
 
-    Log.d("ScoreUpdate", "User Case Score: $currentUserCaseScore, New Total User Score: ${currentTotalUserScore + currentUserCaseScore}")
-    Log.d("ScoreUpdate", "Optimal Case Score: $currentOptimalCaseScore, New Total Optimal Score: ${currentTotalOptimalScore + currentOptimalCaseScore}")
+    Log.d(
+        "ScoreUpdate",
+        "User Case Score: $currentUserCaseScore, New Total User Score: ${currentTotalUserScore + currentUserCaseScore}"
+    )
+    Log.d(
+        "ScoreUpdate",
+        "Optimal Case Score: $currentOptimalCaseScore, New Total Optimal Score: ${currentTotalOptimalScore + currentOptimalCaseScore}"
+    )
 }

@@ -17,19 +17,44 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 
 @Serializable
+data class GenerateCasesResponse(val data: List<Case>)
+
+@Serializable
 data class Case(
-    val case_description: String,
-    val player_choice: String,
-    val optimal_choice: String,
-    val analysis: String
+    val answer: String? = null,
+    val case: String? = null, // This is the question text
+    val case_id: String? = null,
+    val optimal: String? = null,
+    val options: List<Option>? = null, // List of Option objects
+    val turn: Int? = null,
+    val user_answer: String? = null,
+
+    // Fields for analysis results (may be null)
+    val case_description: String? = null,
+    val player_choice: String? = null,
+    val optimal_choice: String? = null,
+    val analysis: String? = null
 )
 
 @Serializable
-data class AnalysisResult(
-    val overall_judgement: String,
-    val cases: List<Case>
+data class Option(
+    val knowledge: Int,
+    val number: Int,
+    val option: String, // This is the actual option text
+    val option_id: String,
+    val personal_growth: Int,
+    val time_management: Int,
+    // Add other fields that might be present
+    val health: Int? = 0,
+    val wealth: Int? = 0,
+    val relationships: Int? = 0,
+    val happiness: Int? = 0,
+    val karma: Int? = 0,
+    val environmental_impact: Int? = 0,
+    val social_responsibility: Int? = 0
 )
 
+/*
 @Composable
 fun AnalysisUI(jsonString: String) {
     val systemUiController = rememberSystemUiController()
@@ -153,4 +178,4 @@ fun AnalysisUI(jsonString: String) {
             }
         }
     }
-}
+}*/
