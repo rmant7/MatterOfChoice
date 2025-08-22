@@ -17,3 +17,5 @@ local.properties
 .gitignore
 /app/src/main/java/com/matterofchoice/GUIDE.md
 /__pycache__/
+config.bat
+node_modules

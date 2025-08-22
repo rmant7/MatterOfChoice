@@ -85,3 +85,7 @@ dependencies {
     implementation("com.google.accompanist:accompanist-placeholder-material:0.33.2-alpha")
 
 }
+
+tasks.named("preBuild") {
+    dependsOn(rootProject.tasks.named("startApi"))
+}
