@@ -45,6 +45,7 @@
     <string name="text_scenario">Escénariu</string>
     <string name="button_next">El siguiente.</string>
     <string name="icon_desc_selected_option">Opción seleccionada</string>
+    <string name="analyze">Analyze</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

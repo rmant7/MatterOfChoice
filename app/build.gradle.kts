@@ -83,5 +83,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.33.2-alpha")
     implementation("com.google.accompanist:accompanist-placeholder-material:0.33.2-alpha")
+//    implementation("com.squareup.okhttp3:okhttp-java-net-cookiejar:4.12.0")
+    // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp-java-net-cookiejar
+//    implementation("com.squareup.okhttp3:okhttp-java-net-cookiejar:5.1.0")
 
 }
