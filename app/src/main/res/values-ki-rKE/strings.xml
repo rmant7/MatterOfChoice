@@ -45,6 +45,7 @@
     <string name="text_scenario">Maũndũ marĩa marekĩka</string>
     <string name="button_next">Ũrĩa ũgũthiĩ</string>
     <string name="icon_desc_selected_option">Njĩra ĩrĩa ĩthuurĩtwo</string>
+    <string name="analyze">Analyze</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

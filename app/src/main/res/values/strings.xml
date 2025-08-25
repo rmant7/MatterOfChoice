@@ -90,6 +90,7 @@
     <string name="text_scenario">Scenario</string>
     <string name="button_next">Next</string>
     <string name="icon_desc_selected_option">Selected option</string>
+    <string name="analyze">Analyze</string>
 
     <string-array name="genders_array">
         <item>@string/gender_select_prompt</item> <!-- Or handle empty string differently in code -->

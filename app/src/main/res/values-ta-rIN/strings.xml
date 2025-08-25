@@ -45,6 +45,7 @@
     <string name="text_scenario">காட்சி</string>
     <string name="button_next">அடுத்து</string>
     <string name="icon_desc_selected_option">தேர்ந்தெடுக்கப்பட்ட விருப்பம்</string>
+    <string name="analyze">Analyze</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

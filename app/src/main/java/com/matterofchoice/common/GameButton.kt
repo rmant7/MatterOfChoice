@@ -17,12 +17,13 @@ import com.matterofchoice.ui.theme.MatterofchoiceTheme
 fun GameButton(
     onClick: () -> Unit,
     text: String,
+    enabled: Boolean = true
 ) {
 
 
     Button(
         onClick = onClick,
-
+        enabled = enabled,
         modifier = Modifier
             .padding(top = 20.dp, bottom = 4.dp),
         shape = RoundedCornerShape(16.dp),

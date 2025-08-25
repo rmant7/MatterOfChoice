@@ -45,6 +45,7 @@
     <string name="text_scenario">Maũndũ ala meekĩkie</string>
     <string name="button_next">Ũndũ wa kelĩ</string>
     <string name="icon_desc_selected_option">Wĩa ũla ũnyuvĩtwe</string>
+    <string name="analyze">Analyze</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

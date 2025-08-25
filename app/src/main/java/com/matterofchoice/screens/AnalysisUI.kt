@@ -6,15 +6,13 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.matterofchoice.model.Case
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.Json
 
 @Serializable
 data class Case(
@@ -27,31 +25,16 @@ data class Case(
 @Serializable
 data class AnalysisResult(
     val overall_judgement: String,
-    val cases: List<Case>
+    val cases: List<com.matterofchoice.screens.Case>
 )
 
 @Composable
-fun AnalysisUI(jsonString: String) {
-    val systemUiController = rememberSystemUiController()
+fun AnalysisUI(analysisResult: AnalysisResult) {
 
-    var analysisResult by remember { mutableStateOf<AnalysisResult?>(null) }
+
     var parseError by remember { mutableStateOf<String?>(null) }
 
 
-    LaunchedEffect(jsonString) {
-        try {
-            val cleanedJson = jsonString
-                .replace("'''json", "")
-                .replace("```json", "")
-                .replace("'''", "")
-                .replace("```", "")
-                .trim()
-            analysisResult = Json { ignoreUnknownKeys = true }
-                .decodeFromString<AnalysisResult>(cleanedJson)
-        } catch (e: Exception) {
-            parseError = e.message
-        }
-    }
 
 
     Surface(
@@ -66,7 +49,8 @@ fun AnalysisUI(jsonString: String) {
                     modifier = Modifier.padding(16.dp)
                 )
             }
-            analysisResult != null -> {
+
+            else -> {
                 LazyColumn(
                     modifier = Modifier
                         .fillMaxSize()
@@ -141,14 +125,6 @@ fun AnalysisUI(jsonString: String) {
                             }
                         }
                     }
-                }
-            }
-            else -> {
-                Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
-                ) {
-                    CircularProgressIndicator()
                 }
             }
         }
