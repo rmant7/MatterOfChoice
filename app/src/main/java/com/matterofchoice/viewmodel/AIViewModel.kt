@@ -2,35 +2,20 @@ package com.matterofchoice.viewmodel
 
 import android.app.Application
 import android.content.Context
-import android.graphics.BitmapFactory
 import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.snapshotFlow
-import androidx.compose.ui.semantics.Role
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.matterofchoice.GameState
-import com.matterofchoice.R
-import com.matterofchoice.api.AnalysisRequest
-import com.matterofchoice.api.AnalysisResponse
 import com.matterofchoice.api.FlaskApiClient
-import com.matterofchoice.model.Case
-import com.matterofchoice.screens.AnalysisResult
 import com.matterofchoice.api.ModalApiClient
-import com.matterofchoice.screens.Case
+import com.matterofchoice.model.Case
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.RequestBody
-import okhttp3.Response
 import org.json.JSONObject
 import java.io.File
 import java.io.FileWriter
@@ -206,12 +191,11 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
 
 
-    fun performAnalysis(role: String) {
-        Log.d("AIViewModel", "perform analysis is called")
+
     /**
      * Perform final analysis after all turns are complete
      */
-    // In your AIViewModel
+
     fun performAnalysis() {
         viewModelScope.launch {
             _state.value = _state.value.copy(isLoading = true, error = null)
@@ -229,7 +213,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                 )
 
                 _state.value = _state.value.copy(
-                    analysisResult = analysisResult.overall_judgement,
+                    analysisResulte = analysisResult.overall_judgement,
                     isLoading = false,
                     analysisData = analysisResult // Store the full analysis data
                 )
@@ -279,7 +263,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                     "complete" -> {
                         val result = status.result
                         _state.value = _state.value.copy(
-                            analysisResult = result?.overall_judgement ?: "Analysis complete",
+                            analysisResulte = result?.overall_judgement ?: "Analysis complete",
                             analysisData = result,
                             isLoading = false
                         )
@@ -374,6 +358,8 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
 }
 
+
+/*
 // You'll also need to update your GameState data class to include:
 data class GameState(
     val isLoading: Boolean = false,
@@ -383,4 +369,4 @@ data class GameState(
     val analysisResult: String? = null,
     val gameComplete: Boolean = false,
     val currentTurn: Int = 1
-)
+)*/

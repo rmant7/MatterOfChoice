@@ -40,6 +40,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -86,7 +88,7 @@ fun MainScreen(aiViewModel: AIViewModel = viewModel()) {
         ) {
             composable(Screens.GameScreen.screen) { Game(navController, aiViewModel) }
             composable(Screens.ResultScreen.screen) { Result() }
-            composable(Screens.AnalysisScreen.screen) { Analysis(aiViewModel) }
+            composable(Screens.AnalysisScreen.screen) { Analysis(aiViewModel,navController = navController) }
             composable(Screens.SettingsScreen.screen) {
                 Settings(navController = navController, viewmodel = aiViewModel)
             }

@@ -16,5 +16,5 @@ data class Option(
     val timeManagement: Int,         // Time management impact of this option
     val environmentalImpact: Int,    // Environmental impact of this option
     val personalGrowth: Int,         // Personal growth impact of this option
-    val socialResponsibility: Int    // Social responsibility impact of this option
+    val socialResponsibility: Int ,   // Social responsibility impact of this option
 ): Parcelable

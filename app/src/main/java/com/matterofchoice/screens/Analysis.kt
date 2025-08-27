@@ -2,10 +2,12 @@ package com.matterofchoice.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -22,7 +24,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -36,23 +37,22 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
-
 import com.matterofchoice.R
-import com.matterofchoice.api.AnalysisResultResponse
-import com.matterofchoice.api.CaseAnalysis
+import com.matterofchoice.api.AnalysisResultResponsee
+import com.matterofchoice.api.CaseAnalysise
 import com.matterofchoice.common.GameButton
 import com.matterofchoice.common.GameTextField
+import com.matterofchoice.model.Case
 import com.matterofchoice.ui.theme.myFont
 import com.matterofchoice.viewmodel.AIViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AnalysisScreen(
+fun Analysis(
     viewModel: AIViewModel = viewModel(),
     navController: NavHostController
 ) {
@@ -117,16 +117,18 @@ fun AnalysisScreen(
                 }
 
                 state.analysisData != null -> {
-                    AnalysisResultsUI(
-                        analysisData = state.analysisData!!,
-                        userChoices = state.userChoices, // Pass user choices
-                        cases = state.casesList, // Pass cases
-                        onRestart = {
-                            viewModel.resetGame()
-                            navController.popBackStack()
-                        },
-                        onBack = { navController.popBackStack() }
-                    )
+                    state.casesList?.let {
+                        AnalysisResultsUI(
+                            analysisData = state.analysisData!!,
+                            userChoices = state.userChoices, // Pass user choices
+                            cases = it, // Pass cases
+                            onRestart = {
+                                viewModel.resetGame()
+                                navController.popBackStack()
+                            },
+                            onBack = { navController.popBackStack() }
+                        )
+                    }
                 }
 
                 else -> {
@@ -151,7 +153,7 @@ fun AnalysisScreen(
 
 @Composable
 fun AnalysisResultsUI(
-    analysisData: AnalysisResultResponse,
+    analysisData: AnalysisResultResponsee,
     onRestart: () -> Unit,
     onBack: () -> Unit,
     userChoices: Map<String, String>, // Add user choices to calculate score
@@ -272,7 +274,7 @@ fun AnalysisResultsUI(
         }
     }
 }
-private fun calculateSimpleScore(analysisData: AnalysisResultResponse): Triple<Int, Int, Int> {
+private fun calculateSimpleScore(analysisData: AnalysisResultResponsee): Triple<Int, Int, Int> {
     var correctCount = 0
     val totalCount = analysisData.cases.size
 
@@ -287,7 +289,7 @@ private fun calculateSimpleScore(analysisData: AnalysisResultResponse): Triple<I
 }
 @Composable
 fun CaseAnalysisItem(
-    caseAnalysis: CaseAnalysis,
+    caseAnalysis: CaseAnalysise,
     caseNumber: Int,
     modifier: Modifier = Modifier
 ) {
@@ -665,11 +667,4 @@ fun ErrorUI(errorMessage: String, onRetry: () -> Unit) {
             text = "Retry",
         )
     }
-}
-
-
-@Preview
-@Composable
-fun PreviewAnalysisScreen() {
-    AnalysisScreen(navController = NavHostController(LocalContext.current))
 }

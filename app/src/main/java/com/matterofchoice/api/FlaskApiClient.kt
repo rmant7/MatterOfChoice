@@ -1,5 +1,10 @@
 package com.matterofchoice.api
 
+//import okhttp3.java.net.cookiejar.JavaNetCookieJar
+
+
+// CookieJar adapter backed by java.net.CookieManager (works even if JavaNetCookieJar is unavailable)
+
 import android.os.Parcelable
 import android.util.Log
 import androidx.lifecycle.AtomicReference
@@ -8,32 +13,31 @@ import com.google.gson.JsonElement
 import com.google.gson.JsonParser
 import com.google.gson.JsonSyntaxException
 import com.matterofchoice.model.Case
-import com.matterofchoice.model.Option
-import com.matterofchoice.screens.Case
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.parcelize.Parcelize
-import okhttp3.*
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody.Companion.toRequestBody
-//import okhttp3.java.net.cookiejar.JavaNetCookieJar
-import org.json.JSONObject
-import java.io.IOException
-import java.net.CookieManager
-import java.net.CookiePolicy
-import java.util.concurrent.TimeUnit
-import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
-
-
-// CookieJar adapter backed by java.net.CookieManager (works even if JavaNetCookieJar is unavailable)
+import okhttp3.Call
+import okhttp3.Callback
 import okhttp3.Cookie
 import okhttp3.CookieJar
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrl
-
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
+import okhttp3.Response
+import org.json.JSONObject
+import java.io.IOException
+import java.net.CookieManager
+import java.net.CookiePolicy
 import java.net.HttpCookie
 import java.net.URI
+import java.util.concurrent.TimeUnit
+import kotlin.coroutines.resume
+import kotlin.coroutines.resumeWithException
+
 
 class JavaNetCookieJarAdapter(private val cookieManager: CookieManager = CookieManager()): CookieJar {
 
@@ -137,10 +141,11 @@ object FlaskApiClient {
 
     private val gson = Gson()
 
-    /**
-     * startCaseGeneration used to start a job; with the new server it should return the generated cases immediately.
+
+   /*  * startCaseGeneration used to start a job; with the new server it should return the generated cases immediately.
      * Now this method calls POST /generate_cases and returns the List<Case> produced by the server.
      */
+
     // Returns server session user_id set by GET /cases
     suspend fun getSessionUserId(): String = suspendCancellableCoroutine { cont ->
         val request = Request.Builder()
@@ -337,25 +342,26 @@ object FlaskApiClient {
 
 }
 
-// Data classes for the new API responses
-data class GenerateCasesResponse(val data: List<Case>)
 
-data class AnalysisResultResponse(
+// Data classes for the new API responses
+data class GenerateCasesResponsee(val data: List<Case>)
+
+data class AnalysisResultResponsee(
     val overall_judgement: String,
-    val cases: List<CaseAnalysis>
+    val cases: List<CaseAnalysise>
 )
 
-data class CaseAnalysis(
+data class CaseAnalysise(
     val case_description: String,
     val player_choice: String,
     val optimal_choice: String,
     val analysis: String
 )
 
-data class StartAnalysisResponse(val job_id: String)
+data class StartAnalysisResponsee(val job_id: String)
 data class AnalysisStatusResponse(
     val status: String,
-    val result: AnalysisResultResponse?,
+    val result: AnalysisResultResponsee?,
     val error: String?
 )
 
@@ -505,7 +511,7 @@ object ModalApiClient {
                     }
 
                     try {
-                        val casesResponse = gson.fromJson(body, GenerateCasesResponse::class.java)
+                        val casesResponse = gson.fromJson(body, GenerateCasesResponsee::class.java)
                         continuation.resume(casesResponse.data)
                     } catch (e: JsonSyntaxException) {
                         continuation.resumeWithException(e)
@@ -627,7 +633,7 @@ object ModalApiClient {
 
                     try {
                         val analysisResponse =
-                            gson.fromJson(body, StartAnalysisResponse::class.java)
+                            gson.fromJson(body, StartAnalysisResponsee::class.java)
                         continuation.resume(analysisResponse.job_id)
                     } catch (e: JsonSyntaxException) {
                         continuation.resumeWithException(e)
@@ -688,7 +694,7 @@ object ModalApiClient {
         questionType: String,
         subType: String,
         language: String
-    ): AnalysisResultResponse = suspendCancellableCoroutine { continuation ->
+    ): AnalysisResultResponsee = suspendCancellableCoroutine { continuation ->
 
         val payload = JSONObject().apply {
             put("answers", JSONObject(answers))
@@ -727,7 +733,7 @@ object ModalApiClient {
 
                     try {
                         val analysisResponse =
-                            gson.fromJson(body, AnalysisResultResponse::class.java)
+                            gson.fromJson(body, AnalysisResultResponsee::class.java)
                         continuation.resume(analysisResponse)
                     } catch (e: JsonSyntaxException) {
                         continuation.resumeWithException(e)
@@ -813,3 +819,5 @@ object ModalApiClient {
         return cookie?.substringAfter("user_id=")?.substringBefore(";")
     }
 }
+
+

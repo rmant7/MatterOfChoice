@@ -1,22 +1,6 @@
 package com.matterofchoice.screens
 
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.*
-import androidx.compose.material3.MaterialTheme.colorScheme
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.Json
-
-@Serializable
+/*@Serializable
 data class GenerateCasesResponse(val data: List<Case>)
 
 @Serializable
@@ -52,7 +36,7 @@ data class Option(
     val karma: Int? = 0,
     val environmental_impact: Int? = 0,
     val social_responsibility: Int? = 0
-)
+)*/
 
 /*
 @Composable
