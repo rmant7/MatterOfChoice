@@ -2,21 +2,40 @@ package com.matterofchoice.viewmodel
 
 import android.app.Application
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.snapshotFlow
+import androidx.compose.ui.semantics.Role
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.matterofchoice.GameState
+import com.matterofchoice.R
+import com.matterofchoice.api.AnalysisRequest
+import com.matterofchoice.api.AnalysisResponse
+import com.matterofchoice.api.FlaskApiClient
+import com.matterofchoice.model.Case
+import com.matterofchoice.screens.AnalysisResult
 import com.matterofchoice.api.ModalApiClient
 import com.matterofchoice.screens.Case
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody
+import okhttp3.Response
+import org.json.JSONObject
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
+
 
 class AIViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -31,6 +50,19 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 
     private var _state = mutableStateOf(GameState())
     var state: State<GameState> = _state
+
+    init {
+        viewModelScope.launch {
+            snapshotFlow { state.value.casesList }
+                .collect { casesList ->
+                    Log.d("AIViewModel", "Cases list updated: ${casesList?.size ?: "null"} cases")
+                    // You can also log the content of the list if needed, for example:
+                    // casesList?.forEachIndexed { index, case ->
+                    //     Log.d("AIViewModel", "Case $index: ${case.title}")
+                    // }
+                }
+        }
+    }
 
     /**
      * Initialize the session before starting the game
@@ -62,6 +94,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
             return
         }
 
+
         viewModelScope.launch {
             _state.value = _state.value.copy(isLoading = true, error = null)
             try {
@@ -71,7 +104,18 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                 val userGender = sharedPreferences.getString("userGender", "any")!!
                 val userLanguage = sharedPreferences.getString("userLanguage", "English")!!
 
-                // 2. Generate cases with retry logic
+                // 2. Create the JSON payload for our Flask API
+                val payload = JSONObject().apply {
+                    put("language", userLanguage)
+                    // Ensure age is an integer, provide a safe default if parsing fails
+                    put("age", userAge.toIntOrNull() ?: 25)
+                    put("subject", userSubject)
+                    put("difficulty", "medium") // TODO This can be made dynamic later
+                    put("question_type", "behavioral") // This can be made dynamic later
+                    put("sub_type", "scenario_analysis") // This can be made dynamic later
+                    put("sex", userGender)
+                }
+
                 Log.d("AIViewModel", "Generating cases for turn ${_state.value.currentTurn}...")
                 val cases = ModalApiClient.generateCasesWithRetry(
                     language = userLanguage,
@@ -85,6 +129,15 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                     answers = if (_state.value.currentTurn > 1) _state.value.userChoices else null
                 )
 
+
+
+                val response = FlaskApiClient.startCaseGeneration(payload)// <- new direct call
+                Log.d("AIViewModel", "Response from server: $response")
+                _state.value = _state.value.copy(
+                            isLoading = false,
+                            casesList = response, // assuming API returns List<Case>
+                            error = null
+                )
                 // 3. Update state with new cases
                 _state.value = _state.value.copy(
                     isLoading = false,
@@ -143,12 +196,18 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun onUserChoice(caseId: String, choice: String) {
+        Log.d("onUserChoice", "called with caseId: $caseId, choice: $choice, userChoices: ${_state.value.userChoices}")
         val currentChoices = _state.value.userChoices.toMutableMap()
         currentChoices[caseId] = choice
+        Log.d("onUserChoice", "updated userChoices: $currentChoices")
         _state.value = _state.value.copy(userChoices = currentChoices)
         Log.d("AIViewModel", "User choice recorded: $caseId -> $choice")
     }
 
+
+
+    fun performAnalysis(role: String) {
+        Log.d("AIViewModel", "perform analysis is called")
     /**
      * Perform final analysis after all turns are complete
      */
@@ -282,6 +341,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+
     /**
      * Saves the user's choice for a given case to a local file.
      * This logic remains unchanged.
@@ -309,6 +369,9 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
     }
+
+
+
 }
 
 // You'll also need to update your GameState data class to include:

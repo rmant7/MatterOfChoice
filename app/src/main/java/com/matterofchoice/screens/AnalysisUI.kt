@@ -63,20 +63,6 @@ fun AnalysisUI(jsonString: String) {
     var parseError by remember { mutableStateOf<String?>(null) }
 
 
-    LaunchedEffect(jsonString) {
-        try {
-            val cleanedJson = jsonString
-                .replace("'''json", "")
-                .replace("```json", "")
-                .replace("'''", "")
-                .replace("```", "")
-                .trim()
-            analysisResult = Json { ignoreUnknownKeys = true }
-                .decodeFromString<AnalysisResult>(cleanedJson)
-        } catch (e: Exception) {
-            parseError = e.message
-        }
-    }
 
 
     Surface(
@@ -91,7 +77,8 @@ fun AnalysisUI(jsonString: String) {
                     modifier = Modifier.padding(16.dp)
                 )
             }
-            analysisResult != null -> {
+
+            else -> {
                 LazyColumn(
                     modifier = Modifier
                         .fillMaxSize()
@@ -166,14 +153,6 @@ fun AnalysisUI(jsonString: String) {
                             }
                         }
                     }
-                }
-            }
-            else -> {
-                Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
-                ) {
-                    CircularProgressIndicator()
                 }
             }
         }

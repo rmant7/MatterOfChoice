@@ -45,6 +45,7 @@
     <string name="text_scenario">Scenario no</string>
     <string name="button_next">Nea edi hɔ</string>
     <string name="icon_desc_selected_option">Nhwɛso a wɔayi</string>
+    <string name="analyze">Analyze</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

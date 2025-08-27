@@ -45,6 +45,7 @@
     <string name="text_scenario">ប្រវត្តិ</string>
     <string name="button_next">បន្ទាប់</string>
     <string name="icon_desc_selected_option">ជម្រើសដែលត្រូវបានជ្រើសរើស</string>
+    <string name="analyze">Analyze</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

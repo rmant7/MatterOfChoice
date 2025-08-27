@@ -42,6 +42,7 @@ import com.matterofchoice.common.GameTextField
 import com.matterofchoice.utils.LanguageDefinition
 import com.matterofchoice.utils.LanguagePreferenceHelper
 import com.matterofchoice.utils.LocaleHelper
+import com.matterofchoice.viewmodel.AIViewModel
 import com.matterofchoice.utils.extraLanguages
 
 object PrefKeys {
@@ -57,14 +58,15 @@ object PrefKeys {
 }
 
 @Composable
-fun Settings(navController: NavController) {
-    UserInput(navController = navController)
+fun Settings(navController: NavController, viewmodel: AIViewModel) {
+    UserInput(navController = navController, viewmodel = viewmodel)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UserInput(
     navController: NavController,
+    viewmodel: AIViewModel
 ) {
     val context = LocalContext.current
 
@@ -168,6 +170,9 @@ fun UserInput(
         }
     }
 
+    val isFormValid by remember(userSubject, userAge) {
+        mutableStateOf(userSubject.isNotBlank() && userAge.isNotBlank())
+    }
 
     Box(
         modifier = Modifier
@@ -313,11 +318,14 @@ fun UserInput(
                     editor.putString(PrefKeys.USER_DIFFICULTY, difficult.value).apply()
                     editor.apply()
 
+                    viewmodel.initiateGame() // Call initiateGame() here
+
                     navController.navigate(Screens.GameScreen.screen) {
                         popUpTo(0) { inclusive = true } // Added inclusive as it's common
                     }
                 },
-                text = stringResource(id = R.string.settings_button_generate_cases)
+                text = stringResource(id = R.string.settings_button_generate_cases),
+                enabled = isFormValid
             )
         }
     }
