@@ -57,10 +57,22 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
             _state.value = _state.value.copy(isLoading = true, error = null, casesList = emptyList())
             try {
                 // 1. Get user preferences from SharedPreferences
-                val userSubject = sharedPreferences.getString("userSubject", "life skills")!!
-                val userAge = sharedPreferences.getString("userAge", "25")!!
-                val userGender = sharedPreferences.getString("userGender", "any")!!
-                val userLanguage = sharedPreferences.getString("userLanguage", "English")!!
+                val userSubject = sharedPreferences.getString("userSubject", null)
+                val userAge = sharedPreferences.getString("userAge", null)
+                val userGender = sharedPreferences.getString("userGender", null)
+                val userLanguage = sharedPreferences.getString("userLanguage", null)
+                val userQuestionType = sharedPreferences.getString("userQuestionType", null)
+                val difficult = sharedPreferences.getString("difficult", null)
+                val subtype = sharedPreferences.getString("subtype", null)
+
+                
+                if  (userSubject == null || userAge == null || userLanguage == null || userQuestionType == null || difficult == null || subtype == null )  {
+                    _state.value = _state.value.copy(
+                        error = "Please complete all required before starting the game",
+                        isLoading = false
+                    )
+                    return@launch
+                }
 
                 // 2. Create the JSON payload for our Flask API
                 val payload = JSONObject().apply {
@@ -68,9 +80,9 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                     // Ensure age is an integer, provide a safe default if parsing fails
                     put("age", userAge.toIntOrNull() ?: 25)
                     put("subject", userSubject)
-                    put("difficulty", "medium") // TODO This can be made dynamic later
-                    put("question_type", "behavioral") // This can be made dynamic later
-                    put("sub_type", "scenario_analysis") // This can be made dynamic later
+                    put("difficulty", difficult)
+                    put("question_type", userQuestionType)
+                    put("sub_type", subtype)
                     put("sex", userGender)
                 }
 
@@ -162,12 +174,16 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
             try {
                 Log.d("AIViewModel", "perform analysis is called within try")
                 Log.d("AiViewModel", _state.value.toString())
+
+                val userQuestionType = sharedPreferences.getString("userQuestionType", null)
+                val userLanguage = sharedPreferences.getString("userLanguage", null)
+
                 val request = AnalysisRequest(
                     cases = _state.value.casesList!!,
                     user_choices = _state.value.userChoices,
                     role = "Parent",
-                    question_type = "behavioral",
-                    language = "English"
+                    question_type = userQuestionType ?: "behavioral",
+                    language = userLanguage ?: "English"
                 )
                 Log.d("AIViewModel", "making analysis request")
                 val response = FlaskApiClient.postAnalysis(request)

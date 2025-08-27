@@ -14,9 +14,15 @@ import java.io.IOException
 
 class AnalysisViewModel(application: Application) : AndroidViewModel(application = application) {
 
-    private val model = GenerativeModel(
-        modelName = "gemini-2.5-flash",
-        apiKey = "...",
+    private val apiKey: String by lazy {
+        getApplication<Application>().resources.openRawResource(R.raw.api_key)
+            .bufferedReader()
+            .use { it.readText().trim() }
+    }
+
+   private val model = GenerativeModel(
+       modelName = "gemini-2.5-flash",
+        apiKey = apiKey
     )
 
     private val sharedPreferences =

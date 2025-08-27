@@ -282,8 +282,15 @@ fun UserInput(
 
             }
 
+
             GameButton(
                 onClick = {
+                    // VALIDATE ALL FIELDS
+                    if (userSubject.isEmpty() || userAge.isEmpty() ||
+                    userQuestionType.value.isEmpty() || subtype.value.isEmpty() || difficult.value.isEmpty()) {
+                         // Show error message
+                    return@GameButton
+                }
                     // Your existing logic for saving preferences
                     val editor = sharedPreferences.edit() // Get editor here
                     editor.putBoolean(PrefKeys.IS_FIRST, false)
@@ -304,3 +311,5 @@ fun UserInput(
         }
     }
 }
+
+
