@@ -45,6 +45,7 @@
     <string name="text_scenario">시나리오</string>
     <string name="button_next">다음으로</string>
     <string name="icon_desc_selected_option">선택된 옵션</string>
+    <string name="analyze">Analyze</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

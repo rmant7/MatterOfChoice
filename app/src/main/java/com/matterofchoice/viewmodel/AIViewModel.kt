@@ -6,16 +6,21 @@ import android.graphics.BitmapFactory
 import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.snapshotFlow
+import androidx.compose.ui.semantics.Role
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.matterofchoice.GameState
 import com.matterofchoice.R
 import com.matterofchoice.api.AnalysisRequest
+import com.matterofchoice.api.AnalysisResponse
 import com.matterofchoice.api.FlaskApiClient
 import com.matterofchoice.model.Case
+import com.matterofchoice.screens.AnalysisResult
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import okhttp3.Call
 import okhttp3.Callback
@@ -43,6 +48,19 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     private var _state = mutableStateOf(GameState())
     var state: State<GameState> = _state
 
+    init {
+        viewModelScope.launch {
+            snapshotFlow { state.value.casesList }
+                .collect { casesList ->
+                    Log.d("AIViewModel", "Cases list updated: ${casesList?.size ?: "null"} cases")
+                    // You can also log the content of the list if needed, for example:
+                    // casesList?.forEachIndexed { index, case ->
+                    //     Log.d("AIViewModel", "Case $index: ${case.title}")
+                    // }
+                }
+        }
+    }
+
     /**
      * This is the main entry point to start the game.
      * Call this from your Composable or Activity when the user is ready.
@@ -52,27 +70,16 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
             Log.w("AIViewModel", "Game initiation already in progress. Ignoring new request.")
             return // Prevent multiple simultaneous calls
         }
+      
 
         viewModelScope.launch {
-            _state.value = _state.value.copy(isLoading = true, error = null, casesList = emptyList())
+            _state.value = _state.value.copy(isLoading = true, error = null)
             try {
                 // 1. Get user preferences from SharedPreferences
-                val userSubject = sharedPreferences.getString("userSubject", null)
-                val userAge = sharedPreferences.getString("userAge", null)
-                val userGender = sharedPreferences.getString("userGender", null)
-                val userLanguage = sharedPreferences.getString("userLanguage", null)
-                val userQuestionType = sharedPreferences.getString("userQuestionType", null)
-                val difficult = sharedPreferences.getString("difficult", null)
-                val subtype = sharedPreferences.getString("subtype", null)
-
-                
-                if  (userSubject == null || userAge == null || userLanguage == null || userQuestionType == null || difficult == null || subtype == null )  {
-                    _state.value = _state.value.copy(
-                        error = "Please complete all required before starting the game",
-                        isLoading = false
-                    )
-                    return@launch
-                }
+                val userSubject = sharedPreferences.getString("userSubject", "life skills")!!
+                val userAge = sharedPreferences.getString("userAge", "25")!!
+                val userGender = sharedPreferences.getString("userGender", "any")!!
+                val userLanguage = sharedPreferences.getString("userLanguage", "English")!!
 
                 // 2. Create the JSON payload for our Flask API
                 val payload = JSONObject().apply {
@@ -80,19 +87,20 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                     // Ensure age is an integer, provide a safe default if parsing fails
                     put("age", userAge.toIntOrNull() ?: 25)
                     put("subject", userSubject)
-                    put("difficulty", difficult)
-                    put("question_type", userQuestionType)
-                    put("sub_type", subtype)
+                    put("difficulty", "medium") // TODO This can be made dynamic later
+                    put("question_type", "behavioral") // This can be made dynamic later
+                    put("sub_type", "scenario_analysis") // This can be made dynamic later
                     put("sex", userGender)
                 }
 
-                // 3. Start the job on the backend and get a job ID
-                Log.d("AIViewModel", "Starting case generation job...")
-                val jobId = FlaskApiClient.startCaseGeneration(payload)
-                Log.d("AIViewModel", "Job started with ID: $jobId. Now polling for results...")
 
-                // 4. Poll for the result in a non-blocking way
-                pollForJobResult(jobId)
+                val response = FlaskApiClient.startCaseGeneration(payload)// <- new direct call
+                Log.d("AIViewModel", "Response from server: $response")
+                _state.value = _state.value.copy(
+                            isLoading = false,
+                            casesList = response, // assuming API returns List<Case>
+                            error = null
+                )
 
             } catch (e: Exception) {
                 Log.e("AIViewModel", "Failed to initiate game", e)
@@ -106,97 +114,125 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
      * Updates the UI state based on the job's progress (pending, failed, complete).
      * @param jobId The unique identifier for the job to poll.
      */
-    private suspend fun pollForJobResult(jobId: String) {
-        val maxPollTime = 150_000L // 2.5 minutes total timeout
-        val pollInterval = 5_000L  // Check status every 5 seconds
-        var elapsedTime = 0L
-
-        while (elapsedTime < maxPollTime) {
-            try {
-                val statusResponse = FlaskApiClient.getJobStatus(jobId)
-                Log.d("AIViewModel", "Job status: ${statusResponse.status}")
-
-                when (statusResponse.status) {
-                    "complete" -> {
-                        val cases = statusResponse.result ?: emptyList()
-                        _state.value = _state.value.copy(
-                            isLoading = false,
-                            casesList = cases,
-                            error = null
-                        )
-                        Log.i("AIViewModel", "Job complete! Received ${cases.size} cases.")
-                        return // Success! Exit the loop and function.
-                    }
-                    "failed" -> {
-                        val errorMessage = "Generation failed on server: ${statusResponse.error}"
-                        _state.value = _state.value.copy(isLoading = false, error = errorMessage)
-                        Log.e("AIViewModel", errorMessage)
-                        return // Failure. Exit the loop and function.
-                    }
-                    "pending" -> {
-                        // Job is not done yet. Wait for the interval and then poll again.
-                        delay(pollInterval)
-                        elapsedTime += pollInterval
-                    }
-                    else -> {
-                        // Unexpected status from the server
-                        val unexpectedStatusMessage = "Received unknown status from server: ${statusResponse.status}"
-                        _state.value = _state.value.copy(isLoading = false, error = unexpectedStatusMessage)
-                        Log.e("AIViewModel", unexpectedStatusMessage)
-                        return
-                    }
-                }
-            } catch (e: Exception) {
-                val errorMessage = "Error while polling for result: ${e.message}"
-                _state.value = _state.value.copy(isLoading = false, error = errorMessage)
-                Log.e("AIViewModel", errorMessage, e)
-                return // Exit on a network or parsing error during polling.
-            }
-        }
-
-        // If the while loop finishes without returning, it means we timed out.
-        val timeoutMessage = "Request timed out after ${maxPollTime / 1000} seconds."
-        _state.value = _state.value.copy(isLoading = false, error = timeoutMessage)
-        Log.e("AIViewModel", timeoutMessage)
-    }
 
     fun onUserChoice(caseId: String, choice: String) {
+        Log.d("onUserChoice", "called with caseId: $caseId, choice: $choice, userChoices: ${_state.value.userChoices}")
         val currentChoices = _state.value.userChoices
         currentChoices[caseId] = choice
+        Log.d("onUserChoice", "updated userChoices: $currentChoices")
         _state.value = _state.value.copy(userChoices = currentChoices)
     }
 
-    fun performAnalysis() {
+
+
+    fun performAnalysis(role: String) {
         Log.d("AIViewModel", "perform analysis is called")
         viewModelScope.launch {
-            Log.d("AIViewModel", "perform analysis is called within viewmodel")
             _state.value = _state.value.copy(isLoading = true, error = null)
             try {
-                Log.d("AIViewModel", "perform analysis is called within try")
-                Log.d("AiViewModel", _state.value.toString())
+                val cases = _state.value.casesList
+                
+                if (cases.isNullOrEmpty()) {
+                    _state.value = _state.value.copy(isLoading = false, error = "No cases to analyze")
+                    return@launch
+                }
 
-                val userQuestionType = sharedPreferences.getString("userQuestionType", null)
-                val userLanguage = sharedPreferences.getString("userLanguage", null)
+                // Ensure we have server session established (you must have called startCaseGeneration / GET /cases earlier)
+//                val userId = try {
+//                    FlaskApiClient.getSessionUserId()
+//                } catch (e: Exception) {
+//                    _state.value = _state.value.copy(isLoading = false, error = "Failed to obtain userId: ${e.message}")
+//                    return@launch
+//                }
 
                 val request = AnalysisRequest(
-                    cases = _state.value.casesList!!,
+//                    user_id = userId,
+                    cases = cases,
                     user_choices = _state.value.userChoices,
-                    role = "Parent",
-                    question_type = userQuestionType ?: "behavioral",
-                    language = userLanguage ?: "English"
+                    role = role,
+                    question_type = "behavioral",
+                    language = "English"
                 )
-                Log.d("AIViewModel", "making analysis request")
-                val response = FlaskApiClient.postAnalysis(request)
-                _state.value = _state.value.copy(analysisResult = response.analysis, isLoading = false)
-                Log.d("info", response.analysis)
-            } catch (e: Exception) {
-                Log.d("AIViewModel", e.toString())
-                _state.value = _state.value.copy(error = e.message, isLoading = false)
-                e.message?.let { Log.d("info", it) }
+                Log.d("AIViewModel154", "${request.cases.toString().substring(0..4)} ${request.user_choices.toString().substring(0..5) }")
 
+                // 1) start analysis -> get job id
+                val jobId = try {
+                    FlaskApiClient.postAnalysis(request)
+                } catch (e: Exception) {
+                    _state.value = _state.value.copy(isLoading = false, error = "Failed to start analysis: ${e.message}")
+                    Log.e("AIViewModel", "startAnalysis failed", e)
+                    return@launch
+                }
+
+                Log.d("AIViewModel", "Analysis job started: $jobId. Polling...")
+
+                // 2) Poll for status
+                val pollInterval = 3000L
+                val maxAttempts = 50
+                var attempts = 0
+
+                while (attempts < maxAttempts) {
+                    attempts++
+                    delay(pollInterval)
+
+                    val statusResp = try {
+                        FlaskApiClient.getJobStatus(jobId)
+                    } catch (e: Exception) {
+                        _state.value = _state.value.copy(isLoading = false, error = "Failed to poll job status: ${e.message}")
+                        Log.e("AIViewModel", "poll error", e)
+                        return@launch
+                    }
+
+                    when (statusResp.status.lowercase()) {
+                        "pending" -> continue
+                        "failed" -> {
+                            val err = statusResp.error ?: "Analysis job failed on server"
+                            _state.value = _state.value.copy(isLoading = false, error = err)
+                            Log.e("AIViewModel", "Analysis failed: $err")
+                            return@launch
+                        }
+                        "complete" -> {
+                            // Parse the result (JsonElement) into AnalysisResponse if possible
+                            val resultElem = statusResp.result
+                            val finalAnalysisString = try {
+
+                                    val jsonStr = resultElem.toString()
+                                    // Try to parse to AnalysisResponse (structured)
+                                    val parsed = com.google.gson.Gson().fromJson(jsonStr,
+                                        AnalysisResult::class.java)
+
+                                    _state.value = _state.value.copy(analysisResult = parsed, isLoading = false)
+                                    parsed
+                            } catch (e: Exception) {
+                                // fallback to raw JSON string
+                                statusResp.result?.toString() ?: "No analysis result"
+                            }
+
+
+                            Log.d("AIViewModel", "Analysis complete $finalAnalysisString")
+                            return@launch
+                        }
+                        else -> {
+                            val msg = "Unknown job status: ${statusResp.status}"
+                            _state.value = _state.value.copy(isLoading = false, error = msg)
+                            Log.e("AIViewModel", msg)
+                            return@launch
+                        }
+                    }
+                }
+
+                // Timed out
+                val timeoutMsg = "Analysis timed out after ${(pollInterval * maxAttempts) / 1000} seconds."
+                _state.value = _state.value.copy(isLoading = false, error = timeoutMsg)
+                Log.e("AIViewModel", timeoutMsg)
+
+            } catch (e: Exception) {
+                Log.e("AIViewModel", "performAnalysis failed", e)
+                _state.value = _state.value.copy(error = e.message, isLoading = false)
             }
         }
     }
+
 
     /**
      * Saves the user's choice for a given case to a local file.
@@ -226,55 +262,6 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    /**
-     * Generates an image using a third-party service (Hugging Face).
-     * This can be moved to the backend in the future to hide the API key,
-     * but for now, it remains on the client.
-     */
-    // fun generateImage(prompt: String, context: Context) {
-    //     // Show a placeholder immediately for a better user experience
-    //     val placeholderBitmap = BitmapFactory.decodeResource(context.resources, R.drawable.place_holder)
-    //     _state.value = _state.value.copy(image = placeholderBitmap)
-    //
-    //     val client = OkHttpClient()
-    //
-    //     // WARNING: Storing API keys in client-side code is not secure for production.
-    //     // This should be moved to a secure backend or BuildConfig fields for a real app.
-    //     val apiKey = "your_hugging_face_api_key" // TODO: Secure this key
-    //
-    //     val json = JSONObject()
-    //     json.put("inputs", prompt)
-    //     json.put("parameters", JSONObject().put("num_inference_steps", 5))
-    //
-    //     val requestBody = RequestBody.create("application/json".toMediaTypeOrNull(), json.toString())
-    //
-    //     val request = Request.Builder()
-    //         .url("https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large-turbo")
-    //         .addHeader("Authorization", "Bearer $apiKey")
-    //         .addHeader("Content-Type", "application/json")
-    //         .post(requestBody)
-    //         .build()
-    //
-    //     client.newCall(request).enqueue(object : Callback {
-    //         override fun onFailure(call: Call, e: IOException) {
-    //             Log.e("AIViewModel", "Image generation request failed", e)
-    //             // Optionally update UI to show an error state for the image
-    //         }
-    //
-    //         override fun onResponse(call: Call, response: Response) {
-    //             response.use {
-    //                 if (!response.isSuccessful) {
-    //                     Log.e("AIViewModel", "Image generation failed with code: ${response.code}")
-    //                     return
-    //                 }
-    //
-    //                 val imageBytes = response.body?.bytes()
-    //                 imageBytes?.let {
-    //                     val generatedBitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
-    //                     _state.value = _state.value.copy(image = generatedBitmap)
-    //                 }
-    //             }
-    //         }
-    //     })
-    // }
+
+
 }

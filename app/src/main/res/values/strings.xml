@@ -90,6 +90,7 @@
     <string name="text_scenario">Scenario</string>
     <string name="button_next">Next</string>
     <string name="icon_desc_selected_option">Selected option</string>
+    <string name="analyze">Analyze</string>
 
     <string-array name="genders_array">
         <item>@string/gender_select_prompt</item> <!-- Or handle empty string differently in code -->
@@ -109,111 +110,76 @@
         <item>Belarusian</item>
         <item>Bemba</item>
         <item>Bengali</item>
-
         <item>Tibetan</item>
         <item>Bosnian</item>
-
         <item>Bulgarian</item>
         <item>Catalan</item>
-
         <item>Czech</item>
-
         <item>Welsh</item>
         <item>Danish</item>
         <item>German</item>
-
-
         <item>Dzongkha</item>
         <item>Greek</item>
         <item>English</item>
-
         <item>Estonian</item>
         <item>Basque</item>
         <item>Ewe (Ghana)</item>
-
         <item>Ewe (Togo)</item>
         <item>Faroese</item>
-
         <item>Finnish</item>
-
         <item>French</item>
         <item>Friulian</item>
         <item>Scottish Gaelic</item>
         <item>Irish</item>
         <item>Galician</item>
-
         <item>Gujarati</item>
-
         <item>Hausa</item>
         <item>Hebrew</item>
         <item>Hindi</item>
-
         <item>Croatian</item>
         <item>Hungarian</item>
         <item>Armenian</item>
         <item>Igbo</item>
-
         <item>Indonesian</item>
         <item>Icelandic</item>
         <item>Italian</item>
         <item>Japanese</item>
         <item>Kabyle</item>
-
         <item>Kamba</item>
         <item>Kannada</item>
-
         <item>Georgian</item>
-
         <item>Kazakh</item>
-
         <item>Kabuverdianu (Cape Verde Creole)</item>
         <item>Khmer</item>
         <item>Kikuyu</item>
         <item>Kinyarwanda</item>
         <item>Kyrgyzstan</item>
-
-
         <item>Korean</item>
-
         <item>Lao (Laos)</item>
-
         <item>Limburgish</item>
         <item>Lingala</item>
         <item>Lithuanian</item>
-
         <item>Luxembourgish</item>
-
         <item>Ganda</item>
         <item>Luo</item>
-
         <item>Standard Latvian</item>
-
         <item>Malayalam</item>
         <item>Marathi</item>
-
         <item>Macedonian</item>
         <item>Malagasy (Madagascar)</item>
         <item>Maltese (Malta)</item>
-
         <item>Halh Mongolian</item>
-
-
         <item>Malay (Malaysia)</item>
         <item>Burmese</item>
         <item>Dutch</item>
         <item>Norwegian Nynorsk</item>
         <item>Norwegian Bokmål</item>
         <item>Nepali (Nepal)</item>
-
         <item>Nuer (South Sudan)</item>
-
-
         <item>Oromo (Ethiopia)</item>
         <item>Oromo (Kenya)</item>
         <item>Odia (India)</item>
-
         <item>Punjabi</item>
-
         <item>Polish</item>
         <item>Portuguese</item>
         <item>Persian (Afghanistan)</item>
@@ -226,43 +192,26 @@
         <item>Rundi (Burundi)</item>
         <item>Russian</item>
         <item>Sango (Central African Republic)</item>
-
-
         <item>Sinhala (Sri Lanka)</item>
         <item>Slovak (Slovakia)</item>
         <item>Slovenian</item>
-
         <item>Shona (Zimbabwe)</item>
-
         <item>Somali</item>
-
         <item>Spanish</item>
         <item>Albanian (Albania)</item>
-
         <item>Serbian</item>
-
         <item>Swedish</item>
         <item>Swahili</item>
-
         <item>Tamil</item>
-
         <item>Telugu</item>
-
         <item>Thai</item>
-
-
         <item>Turkish</item>
-
         <item>Ukrainian</item>
         <item>Urdu (Pakistan)</item>
         <item>Uyghur (China)</item>
         <item>Uzbek (Latin, Uzbekistan)</item>
-
         <item>Vietnamese</item>
-
-
         <item>Xhosa</item>
-
         <item>Yoruba</item>
         <item>Cantonese</item>
         <item>Mandarin Chinese Simplified</item>
@@ -341,7 +290,7 @@
         <!--  Gujarati  -->
         <item>ha-NE</item>
         <!--  Hausa  -->
-        <item>he-IL</item>
+        <item>iw-IL</item>
         <!--  Hebrew  -->
         <item>hi-IN</item>
         <!--  Hindi  -->

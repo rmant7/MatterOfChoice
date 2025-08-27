@@ -15,6 +15,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -40,6 +41,7 @@ import com.matterofchoice.common.GameButton
 import com.matterofchoice.common.GameTextField
 import com.matterofchoice.utils.LanguagePreferenceHelper
 import com.matterofchoice.utils.LocaleHelper
+import com.matterofchoice.viewmodel.AIViewModel
 
 object PrefKeys {
     const val MY_PREFS = "MyPrefs"
@@ -54,14 +56,15 @@ object PrefKeys {
 }
 
 @Composable
-fun Settings(navController: NavController) {
-    UserInput(navController = navController)
+fun Settings(navController: NavController, viewmodel: AIViewModel) {
+    UserInput(navController = navController, viewmodel = viewmodel)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UserInput(
     navController: NavController,
+    viewmodel: AIViewModel
 ) {
     val context = LocalContext.current
 
@@ -152,15 +155,17 @@ fun UserInput(
         }
     }
 
+    val isFormValid by remember(userSubject, userAge) {
+        mutableStateOf(userSubject.isNotBlank() && userAge.isNotBlank())
+    }
 
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.White)
+            .background(colorScheme.surface)
     ) {
         Column(
             modifier = Modifier
-                .background(Color.White)
                 .padding(24.dp)
                 .verticalScroll(rememberScrollState())
                 .fillMaxSize(),
@@ -302,11 +307,14 @@ fun UserInput(
                     editor.putString(PrefKeys.USER_DIFFICULTY, difficult.value).apply()
                     editor.apply()
 
+                    viewmodel.initiateGame() // Call initiateGame() here
+
                     navController.navigate(Screens.GameScreen.screen) {
                         popUpTo(0) { inclusive = true } // Added inclusive as it's common
                     }
                 },
-                text = stringResource(id = R.string.settings_button_generate_cases)
+                text = stringResource(id = R.string.settings_button_generate_cases),
+                enabled = isFormValid
             )
         }
     }

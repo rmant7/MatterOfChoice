@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
@@ -29,7 +30,7 @@ fun GameTextField(
         keyboardOptions = keyboardOptions ?: KeyboardOptions.Default,
         label = { Text(text = labelTxt) },
         colors = TextFieldDefaults.colors(
-            unfocusedContainerColor = Color.White,
+            unfocusedContainerColor = Color.Transparent,
             focusedContainerColor = Color.Transparent
         )
     )

@@ -1,30 +1,120 @@
 package com.matterofchoice.api
 
-
+import android.os.Parcelable
 import android.util.Log
+import androidx.lifecycle.AtomicReference
 import com.google.gson.Gson
+import com.google.gson.JsonElement
+import com.google.gson.JsonParser
 import com.google.gson.JsonSyntaxException
 import com.matterofchoice.model.Case
+import com.matterofchoice.model.Option
 import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlinx.parcelize.Parcelize
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
+//import okhttp3.java.net.cookiejar.JavaNetCookieJar
 import org.json.JSONObject
 import java.io.IOException
+import java.net.CookieManager
+import java.net.CookiePolicy
 import java.util.concurrent.TimeUnit
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 
-// Data classes to cleanly parse the JSON responses from our server
-data class StartJobResponse(val job_id: String)
+
+// CookieJar adapter backed by java.net.CookieManager (works even if JavaNetCookieJar is unavailable)
+import okhttp3.Cookie
+import okhttp3.CookieJar
+import okhttp3.HttpUrl
+
+import java.net.HttpCookie
+import java.net.URI
+
+class JavaNetCookieJarAdapter(private val cookieManager: CookieManager = CookieManager()): CookieJar {
+
+    init {
+        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL)
+    }
+
+    override fun saveFromResponse(url: HttpUrl, cookies: List<Cookie>) {
+        val uri = URI(url.scheme + "://" + url.host)
+        for (cookie in cookies) {
+            val httpCookie = HttpCookie(cookie.name, cookie.value).apply {
+                path = cookie.path
+                domain = cookie.domain
+                secure = cookie.secure
+                isHttpOnly = cookie.httpOnly
+                // maxAge unknown here — leave default (session) or set if you want
+            }
+            cookieManager.cookieStore.add(uri, httpCookie)
+        }
+    }
+
+    override fun loadForRequest(url: HttpUrl): List<Cookie> {
+        val uri = URI(url.scheme + "://" + url.host)
+        val store = cookieManager.cookieStore.get(uri)
+        val result = mutableListOf<Cookie>()
+        for (hc in store) {
+            // httpCookie.domain can be null; fall back to request host
+            val domain = hc.domain ?: url.host
+            val path = hc.path ?: "/"
+            val builder = Cookie.Builder()
+                .name(hc.name)
+                .value(hc.value)
+                .domain(domain)
+                .path(path)
+            if (hc.secure) builder.secure()
+            if (hc.isHttpOnly) builder.httpOnly()
+            result.add(builder.build())
+        }
+        return result
+    }
+}
+
+
+private val cookieManager = CookieManager().apply {
+    setCookiePolicy(CookiePolicy.ACCEPT_ALL)
+
+}
+private val client = OkHttpClient.Builder()
+    .cookieJar(JavaNetCookieJarAdapter(cookieManager))
+    .connectTimeout(160, TimeUnit.SECONDS)
+    .readTimeout(160, TimeUnit.SECONDS)
+    .build()
+
+// Response wrapper for /generate_cases endpoint: { "data": [...] }
+data class GenerateCasesResponse(val data: List<Case>?, val message: String? = null, val error: String? = null)
+
+// Job status / analysis-related response models (kept lightweight to match server)
+data class StartAnalysisResponse(val job_id: String?)
 data class JobStatusResponse(
     val status: String,
-    val result: List<Case>?, // The list of cases when status is 'complete'
-    val error: String?
+    val result: JsonElement? = null,
+    val error: String? = null
 )
-data class AnalysisResponse(val analysis: String) // Assuming the analysis is a simple string
+
+
+
+@Parcelize
+data class Option(
+    val number: Int,                  // The option number
+    val option: String,               // The description of the option
+    val health: Int,                  // Health impact of this option
+    val wealth: Int,                  // Wealth impact of this option
+    val relationships: Int,           // Relationship impact of this option
+    val happiness: Int,               // Happiness impact of this option
+    val knowledge: Int,               // Knowledge impact of this option
+    val karma: Int,                   // Karma impact of this option
+    val timeManagement: Int,         // Time management impact of this option
+    val environmentalImpact: Int,    // Environmental impact of this option
+    val personalGrowth: Int,         // Personal growth impact of this option
+    val socialResponsibility: Int    // Social responsibility impact of this option
+): Parcelable
 
 data class AnalysisRequest(
+//    val user_id: String,               // << server requires user_id
     val cases: List<Case>,
     val user_choices: Map<String, String>,
     val role: String,
@@ -32,166 +122,214 @@ data class AnalysisRequest(
     val language: String
 )
 
+data class AnalysisResponse(
+    val overall_judgement: String?,
+    val cases: List<Any>?
+)
 
-/**
- * A singleton object to handle all communication with our Flask backend.
- * Using an 'object' ensures we only have one instanhttps://ajkg123.pythonanywhere.com/casesce of OkHttpClient.
- */
+
 object FlaskApiClient {
 
-    // IMPORTANT: This is the development URL. For production, replace this with your deployed server's address.
-    private const val BASE_URL = "https://jackandjill.pythonanywhere.com/"
-
-    private val client = OkHttpClient.Builder()
-        .connectTimeout(160, TimeUnit.SECONDS)
-        .readTimeout(160, TimeUnit.SECONDS)
-        .build()
+    private const val BASE_URL = "https://reqeique--matter-of-choice-v-fastapi-app.modal.run/"
 
     private val gson = Gson()
 
     /**
-     * Calls the /start_case_generation endpoint.
-     * This is a suspend function, making it easy to call from a coroutine.
-     * @return The job_id for the background task.
-     * @throws Exception if the network call fails or the server returns an error.
+     * startCaseGeneration used to start a job; with the new server it should return the generated cases immediately.
+     * Now this method calls POST /generate_cases and returns the List<Case> produced by the server.
      */
-    suspend fun startCaseGeneration(payload: JSONObject): String = suspendCancellableCoroutine { continuation ->
-        val requestBody = payload.toString().toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
+    // Returns server session user_id set by GET /cases
+    suspend fun getSessionUserId(): String = suspendCancellableCoroutine { cont ->
         val request = Request.Builder()
-            .url("$BASE_URL/start_case_generation")
-            .post(requestBody)
+            .url("${BASE_URL}get_user_id")
+            .get()
             .build()
+        val call = client.newCall(request)
+        cont.invokeOnCancellation { call.cancel() }
 
-        client.newCall(request).enqueue(object : Callback {
+        call.enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-                if (continuation.isCancelled) return
-                continuation.resumeWithException(e)
+                if (!cont.isActive) return
+                cont.resumeWithException(e)
             }
 
             override fun onResponse(call: Call, response: Response) {
+                if (!cont.isActive) { response.close(); return }
                 response.use {
-                    if (!it.isSuccessful) {
-                        continuation.resumeWithException(IOException("Unexpected code ${it.code}: ${it.body?.string()}"))
-                        return
-                    }
-
                     val body = it.body?.string()
-                    if (body == null) {
-                        continuation.resumeWithException(IOException("Response body is null"))
+                    if (!it.isSuccessful) {
+                        cont.resumeWithException(IOException("HTTP ${it.code}: $body"))
                         return
                     }
-
                     try {
-                        val jobResponse = gson.fromJson(body, StartJobResponse::class.java)
-                        continuation.resume(jobResponse.job_id)
-                    } catch (e: JsonSyntaxException) {
-                        continuation.resumeWithException(e)
+                        val obj = gson.fromJson(body, Map::class.java)
+                        val userId = (obj["user_id"] as? String) ?: throw IOException("No user_id in response")
+                        cont.resume(userId)
+                    } catch (e: Exception) {
+                        cont.resumeWithException(e)
                     }
                 }
             }
         })
-        continuation.invokeOnCancellation {
-            client.newCall(request).cancel()
-        }
     }
 
-    /**
-     * Calls the /get_job_status endpoint to poll for results.
-     * @param jobId The ID of the job to check.
-     * @return A JobStatusResponse object with the current status and data.
-     * @throws Exception on network or parsing errors.
-     */
-    suspend fun getJobStatus(jobId: String): JobStatusResponse = suspendCancellableCoroutine { continuation ->
-        val request = Request.Builder()
-            .url("$BASE_URL/get_job_status/$jobId")
+    suspend fun startCaseGeneration(payload: JSONObject): List<Case> = suspendCancellableCoroutine { cont ->
+        val getReq = Request.Builder()
+            .url("${BASE_URL}cases")
             .get()
             .build()
 
-        client.newCall(request).enqueue(object : Callback {
+        val getCall = client.newCall(getReq)
+        val postCallRef = AtomicReference<Call?>(null)
+
+        // Ensure underlying calls are cancelled if coroutine cancelled
+        cont.invokeOnCancellation {
+            getCall.cancel()
+            postCallRef.get()?.cancel()
+        }
+
+        getCall.enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-                if (continuation.isCancelled) return
-                continuation.resumeWithException(e)
+                if (!cont.isActive) return
+                cont.resumeWithException(e)
             }
 
             override fun onResponse(call: Call, response: Response) {
-                response.use {
-                    if (!it.isSuccessful) {
-                        continuation.resumeWithException(IOException("Unexpected code ${it.code}: ${it.body?.string()}"))
-                        return
+                // We don't need the /cases body; it just sets the session cookie on the client.
+                response.close()
+                if (!cont.isActive) return
+
+                // Now make the POST /generate_cases with the same client (cookie jar preserves session)
+                val requestBody = payload.toString().toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
+                val postReq = Request.Builder()
+                    .url("${BASE_URL}generate_cases")
+                    .post(requestBody)
+                    .build()
+
+                val postCall = client.newCall(postReq)
+                postCallRef.set(postCall)
+
+                postCall.enqueue(object : Callback {
+                    override fun onFailure(call: Call, e: IOException) {
+                        if (!cont.isActive) return
+                        cont.resumeWithException(e)
                     }
-                    val body = it.body?.string()
-                    if (body == null) {
-                        continuation.resumeWithException(IOException("Response body is null"))
-                        return
+
+                    override fun onResponse(call: Call, response: Response) {
+                        if (!cont.isActive) {
+                            response.close()
+                            return
+                        }
+
+                        response.use {
+                            val body = it.body?.string()
+                            if (!it.isSuccessful) {
+                                cont.resumeWithException(IOException("Unexpected HTTP ${it.code}: $body"))
+                                return
+                            }
+
+                            if (body == null) {
+                                cont.resumeWithException(IOException("Response body is null"))
+                                return
+                            }
+
+                            try {
+                                val wrapper = gson.fromJson(body, GenerateCasesResponse::class.java)
+                                val cases = wrapper.data ?: emptyList()
+                                cont.resume(cases)
+                            } catch (e: JsonSyntaxException) {
+                                cont.resumeWithException(e)
+                            } catch (e: Exception) {
+                                cont.resumeWithException(e)
+                            }
+                        }
                     }
-                    try {
-                        val statusResponse = gson.fromJson(body, JobStatusResponse::class.java)
-                        continuation.resume(statusResponse)
-                    } catch (e: JsonSyntaxException) {
-                        continuation.resumeWithException(e)
-                    }
-                }
+                })
             }
         })
-        continuation.invokeOnCancellation {
-            client.newCall(request).cancel()
-        }
     }
-    suspend fun postAnalysis(analysisRequest: AnalysisRequest): AnalysisResponse = suspendCancellableCoroutine { continuation ->
-        val requestBody = gson.toJson(analysisRequest).toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
+
+    suspend fun postAnalysis(analysisRequest: AnalysisRequest): String = suspendCancellableCoroutine { cont ->
+        val requestBody = gson.toJson(analysisRequest)
+            .toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
         val request = Request.Builder()
-            .url("$BASE_URL/analysis")
+            .url("${BASE_URL}start_analysis")
             .post(requestBody)
             .build()
-        Log.d("FlaskApiClient", "listening for post")
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
 
-                Log.d("FlaksApiClient","Analysis failed with ${e.toString()}")
-                if (continuation.isCancelled) return
-                continuation.resumeWithException(e)
-                Log.d("FlaksApiClient","Analysis failed with ${e.toString()}")
+        val call = client.newCall(request)
+        cont.invokeOnCancellation { call.cancel() }
+
+        call.enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                if (!cont.isActive) return
+                cont.resumeWithException(e)
             }
 
             override fun onResponse(call: Call, response: Response) {
-                Log.d("FlaskApiClient", "listening for response ${response.code}")
+                if (!cont.isActive) { response.close(); return }
                 response.use {
                     val body = it.body?.string()
                     if (!it.isSuccessful) {
-                        val errorBody = body
-                        val message = if (errorBody != null) {
-                            try {
-                                val json = JSONObject(errorBody)
-                                json.getJSONObject("error").getString("message")
-                            } catch (e: Exception) {
-                                "Unexpected error format"
-                            }
-                        } else {
-                            "Http error ${it.code}"
-                        }
-                        Log.d("FlaksApiClient","Analysis failed with $message")
-                        continuation.resumeWithException(IOException(message))
+                        cont.resumeWithException(IOException("HTTP ${it.code}: $body"))
                         return
                     }
-
-
                     if (body == null) {
-                        continuation.resumeWithException(IOException("Response body is null"))
+                        cont.resumeWithException(IOException("Response body is null"))
                         return
                     }
-
                     try {
-                        val analysisResponse = gson.fromJson(body, AnalysisResponse::class.java)
-                        continuation.resume(analysisResponse)
-                    } catch (e: JsonSyntaxException) {
-                        continuation.resumeWithException(e)
+                        val startResp = gson.fromJson(body, StartAnalysisResponse::class.java)
+                        val jobId = startResp.job_id ?: throw IOException("No job_id in response")
+                        cont.resume(jobId)
+                    } catch (e: Exception) {
+                        cont.resumeWithException(e)
                     }
                 }
             }
         })
-        continuation.invokeOnCancellation {
-            client.newCall(request).cancel()
-        }
+    }
+
+    suspend fun getJobStatus(jobId: String): JobStatusResponse = suspendCancellableCoroutine { cont ->
+        val request = Request.Builder()
+            .url("${BASE_URL}get_analysis_status/$jobId")
+            .get()
+            .build()
+
+        val call = client.newCall(request)
+        cont.invokeOnCancellation { call.cancel() }
+
+        call.enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                if (!cont.isActive) return
+                cont.resumeWithException(e)
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                if (!cont.isActive) { response.close(); return }
+                response.use {
+                    val body = it.body?.string()
+                    if (!it.isSuccessful) {
+                        cont.resumeWithException(IOException("HTTP ${it.code}: $body"))
+                        return
+                    }
+                    if (body == null) {
+                        cont.resumeWithException(IOException("Response body is null"))
+                        return
+                    }
+                    try {
+                        // parse manually to keep 'result' flexible (JsonElement)
+                        val jsonElem = JsonParser.parseString(body).asJsonObject
+                        val status = if (jsonElem.has("status")) jsonElem.get("status").asString else "unknown"
+                        val resultElem = if (jsonElem.has("result")) jsonElem.get("result") else null
+                        val errorElem = if (jsonElem.has("error")) jsonElem.get("error").asString else null
+                        cont.resume(JobStatusResponse(status = status, result = resultElem, error = errorElem))
+                    } catch (e: Exception) {
+                        cont.resumeWithException(e)
+                    }
+                }
+            }
+        })
     }
 
 }

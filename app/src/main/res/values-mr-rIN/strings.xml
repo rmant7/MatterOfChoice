@@ -45,6 +45,7 @@
     <string name="text_scenario">परिस्थिती</string>
     <string name="button_next">पुढील</string>
     <string name="icon_desc_selected_option">निवडलेला पर्याय</string>
+    <string name="analyze">Analyze</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

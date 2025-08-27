@@ -22,6 +22,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -72,7 +73,7 @@ import androidx.core.content.edit
 
 
 @Composable
-fun MainScreen() {
+fun MainScreen(aiViewModel: AIViewModel = viewModel()) {
     val navController = rememberNavController()
 
     Scaffold(
@@ -85,12 +86,11 @@ fun MainScreen() {
             startDestination = Screens.SettingsScreen.screen,
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable(Screens.GameScreen.screen) { Game(navController) }
+            composable(Screens.GameScreen.screen) { Game(navController, aiViewModel) }
             composable(Screens.ResultScreen.screen) { Result() }
-            composable(Screens.AnalysisScreen.screen) { Analysis() }
+            composable(Screens.AnalysisScreen.screen) { Analysis(aiViewModel) }
             composable(Screens.SettingsScreen.screen) {
-                Settings(navController = navController)
-             //   SettingsScreen()
+                Settings(navController = navController, viewmodel = aiViewModel)
             }
         }
     }
@@ -98,8 +98,7 @@ fun MainScreen() {
 
 
 @Composable
-fun Game(navController: NavHostController) {
-    val viewmodel: AIViewModel = viewModel()
+fun Game(navController: NavHostController, viewmodel: AIViewModel) {
     SetUpCase(navController = navController, state = viewmodel.state.value, viewmodel = viewmodel)
 }
 
@@ -145,7 +144,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color.White),
+                .background(colorScheme.surface),
             contentAlignment = Alignment.Center
         ) {
             Loader()
@@ -168,13 +167,14 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
             )
             GameButton(
                 onClick = { navController.navigate(Screens.SettingsScreen.screen) },
-                text = stringResource(R.string.button_new_game)
+                text = stringResource(R.string.analysis_my_choices)
             )
         }
     } else if (state.casesList != null && state.casesList.isNotEmpty()) {
         // Handle the success state where we have cases
         val scrollState = rememberScrollState()
         val cases = state.casesList
+
         var selectedItem by remember { mutableStateOf<Option?>(null) }
         val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
@@ -190,7 +190,6 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
 
         Column(
             modifier = Modifier
-                .background(Color.White)
                 .fillMaxSize()
                 .verticalScroll(scrollState)
         ) {
@@ -198,8 +197,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .shadow(elevation = 8.dp)
-                    .background(Color.White),
+                    .shadow(elevation = 8.dp),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -286,7 +284,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                             }
                             Text(
                                 text = option.option,
-                                color = Color.Black,
+                                color = colorScheme.onSurface,
                                 fontFamily = titleFont,
                                 textAlign = TextAlign.Center,
                                 fontWeight = FontWeight.Bold,
@@ -310,10 +308,10 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                                             selectedItem!!.option,
                                             context
                                         )
-                                        viewmodel.onUserChoice(cases[caseNum - 1].case, selectedItem!!.option)
+                                        viewmodel.onUserChoice(cases[caseNum - 1].case_id, selectedItem!!.option)
 
                                         round.intValue++
-                                        sharedPreferences.edit().putInt("rounds", round.intValue).apply()
+                                        sharedPreferences.edit { putInt("rounds", round.intValue) }
                                         caseNum++
                                         selectedItem = null
                                         coroutineScope.launch {
@@ -325,7 +323,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                             )
                         }
                         GameButton(
-                            text = stringResource(R.string.button_new_game),
+                            text = stringResource(R.string.analyze),
                             onClick = {
                                 if (selectedItem != null) {
                                     calculateScore(
@@ -333,8 +331,8 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                                         selectedItem!!.option,
                                         context
                                     )
-                                    viewmodel.onUserChoice(cases[caseNum - 1].case, selectedItem!!.option)
-                                    viewmodel.performAnalysis()
+                                    viewmodel.onUserChoice(cases[caseNum - 1].case_id, selectedItem!!.option)
+//                                    viewmodel.performAnalysis()
                                     navController.navigate(Screens.AnalysisScreen.screen)
                                 }
                             }
