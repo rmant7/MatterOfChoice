@@ -12,17 +12,35 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import android.content.Context
+import androidx.compose.ui.platform.LocalContext
+import androidx.core.content.edit
+import com.matterofchoice.screens.PrefKeys
+
 
 @Composable
 fun GameTextField(
     text: String,
     onValueChange: (String) -> Unit,
     keyboardOptions: KeyboardOptions? = null,
-    labelTxt: String
+    labelTxt: String,
+    preferenceKey: String? = null
 ){
+    val context = LocalContext.current
+
     OutlinedTextField(
         value = text,
-        onValueChange = onValueChange ,
+        onValueChange = { newValue ->
+            onValueChange(newValue)
+
+            if (preferenceKey != null) {
+                val prefs = context.getSharedPreferences(PrefKeys.MY_PREFS, Context.MODE_PRIVATE)
+                prefs.edit {
+                    putString(preferenceKey, newValue)
+                }
+            }
+        },
+
         shape = RoundedCornerShape(16.dp),
         modifier = Modifier
             .fillMaxWidth()
@@ -32,6 +50,7 @@ fun GameTextField(
         colors = TextFieldDefaults.colors(
             unfocusedContainerColor = Color.Transparent,
             focusedContainerColor = Color.Transparent
-        )
+        ),
+
     )
 }

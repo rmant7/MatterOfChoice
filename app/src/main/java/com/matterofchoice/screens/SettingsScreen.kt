@@ -1,6 +1,7 @@
 package com.matterofchoice.screens
 
 import android.app.Activity
+import android.content.Context
 import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -31,12 +32,20 @@ import com.matterofchoice.MainActivity
 import com.matterofchoice.R
 import com.matterofchoice.utils.LanguagePreferenceHelper
 import com.matterofchoice.utils.LocaleHelper
+import java.util.Locale
+
+
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen() {
     val context = LocalContext.current
     val activity = LocalContext.current as? Activity // For recreating
+
+    val systemLanguage = remember {
+        mutableStateOf(Locale.getDefault().language)
+    }
 
     val languageDisplayNames = stringArrayResource(id = R.array.languages)
     val languageCodes = stringArrayResource(id = R.array.language_codes) // Ensure this exists
@@ -91,7 +100,7 @@ fun SettingsScreen() {
                     text = { Text("System Default") }, // Consider localizing this too
                     onClick = {
                         LocaleHelper.setLocale(context, null) // Pass null to revert
-                        currentSelectedLanguageCode.value = ""
+                        currentSelectedLanguageCode.value = systemLanguage.value
                         expanded = false
                         Log.d("SettingsScreen", "Activity instance: $activity")
                         activity?.recreate() // Recreate the activity to apply changes
@@ -119,7 +128,9 @@ fun SettingsScreen() {
             }
         }
         Spacer(modifier = Modifier.height(20.dp))
-        Button(onClick ={ activity?.recreate() }) {
+        Button(onClick ={  LocaleHelper.setLocale(context, systemLanguage.value)
+            activity?.recreate()
+            }) {
             Text("Save Settings") // Or just rely on immediate application
         }
     }

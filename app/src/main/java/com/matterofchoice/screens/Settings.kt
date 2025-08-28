@@ -42,7 +42,8 @@ import com.matterofchoice.common.GameTextField
 import com.matterofchoice.utils.LanguagePreferenceHelper
 import com.matterofchoice.utils.LocaleHelper
 import com.matterofchoice.viewmodel.AIViewModel
-
+import androidx.compose.runtime.saveable.rememberSaveable
+import android.util.Log
 object PrefKeys {
     const val MY_PREFS = "MyPrefs"
     const val FIRST_OPEN = "firstOpen"
@@ -70,8 +71,9 @@ fun UserInput(
 
     val sharedPreferences = context.getSharedPreferences(PrefKeys.MY_PREFS, Context.MODE_PRIVATE)
 
-    var userSubject by remember { mutableStateOf("") }
-    var userAge by remember { mutableStateOf("") }
+
+    var userSubject by rememberSaveable { mutableStateOf("") }
+    var userAge by rememberSaveable { mutableStateOf("") }
 
     val questionTypeStudy = stringResource(id = R.string.question_type_study)
     val questionTypeBehavioral = stringResource(id = R.string.question_type_behavioral)
@@ -92,12 +94,12 @@ fun UserInput(
 
     val difficults = stringArrayResource(id = R.array.difficulty_levels_array).toList()
     val isDifficultExposed = remember { mutableStateOf(false) }
-    val difficult = remember { mutableStateOf(difficults.firstOrNull() ?: "") }
+    val difficult = rememberSaveable { mutableStateOf(difficults.firstOrNull() ?: "") }
 
-    val userQuestionType = remember { mutableStateOf(questionTypes.firstOrNull() ?: "") }
+    val userQuestionType = rememberSaveable { mutableStateOf(questionTypes.firstOrNull() ?: "") }
 
     val availableSubtypes = subtypesMap[userQuestionType.value] ?: emptyList()
-    val subtype = remember { mutableStateOf(availableSubtypes.firstOrNull() ?: "") }
+    val subtype = rememberSaveable { mutableStateOf(availableSubtypes.firstOrNull() ?: "") }
 
     LaunchedEffect(userQuestionType.value) {
         val updatedSubtypes = subtypesMap[userQuestionType.value] ?: emptyList()
@@ -109,7 +111,7 @@ fun UserInput(
     val genderFemale = stringResource(id = R.string.gender_female)
     val displayGenders = listOf(genderSelectPrompt, genderMale, genderFemale)
     val actualGendersForStorage = listOf("", genderMale, genderFemale)
-    val userGender = remember { mutableStateOf(actualGendersForStorage[0]) }
+    val userGender = rememberSaveable { mutableStateOf(actualGendersForStorage[0]) }
     val isExposedGender = remember { mutableStateOf(false) }
 
 
@@ -148,16 +150,28 @@ fun UserInput(
             }
         }
     }
-    var languageDropdownExpanded by remember { mutableStateOf(false) }
+    var languageDropdownExpanded by rememberSaveable { mutableStateOf(false) }
     LaunchedEffect(Unit) {
         if (!sharedPreferences.contains(PrefKeys.FIRST_OPEN)) {
             sharedPreferences.edit().putBoolean(PrefKeys.FIRST_OPEN, false).apply()
         }
     }
 
-    val isFormValid by remember(userSubject, userAge) {
+    val isFormValid by rememberSaveable(userSubject, userAge) {
         mutableStateOf(userSubject.isNotBlank() && userAge.isNotBlank())
     }
+
+    LaunchedEffect(Unit) {
+        val prefs = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        userSubject = prefs.getString(PrefKeys.USER_SUBJECT, "") ?: ""
+        userAge = prefs.getString(PrefKeys.USER_AGE, "") ?: ""
+        userGender.value = prefs.getString(PrefKeys.USER_GENDER, "") ?: ""
+        userQuestionType.value = prefs.getString(PrefKeys.USER_QUESTION_TYPE, "") ?: ""
+        subtype.value = prefs.getString(PrefKeys.USER_SUBTYPE, "") ?: ""
+        difficult.value = prefs.getString(PrefKeys.USER_DIFFICULTY, "") ?: ""
+
+    }
+
 
     Box(
         modifier = Modifier
@@ -185,38 +199,44 @@ fun UserInput(
             GameTextField(
                 text = userSubject,
                 onValueChange = { userSubject = it },
-                labelTxt = stringResource(id = R.string.settings_label_subject)
+                labelTxt = stringResource(id = R.string.settings_label_subject),
+                preferenceKey = PrefKeys.USER_SUBJECT
             )
 
             DropDownMenu(
                 itemsList = questionTypes,
                 isExposed = isExposedType,
                 selectedItem = userQuestionType,
-                hint = stringResource(id = R.string.settings_hint_select_question_type)
+                hint = stringResource(id = R.string.settings_hint_select_question_type),
+                preferenceKey = PrefKeys.USER_QUESTION_TYPE,
             )
             DropDownMenu(
                 itemsList = availableSubtypes,
                 isExposed = isExposedSub,
                 selectedItem = subtype,
-                hint = stringResource(id = R.string.settings_hint_select_subtype)
+                hint = stringResource(id = R.string.settings_hint_select_subtype),
+                preferenceKey = PrefKeys.USER_SUBTYPE,
             )
             DropDownMenu(
                 itemsList = difficults,
                 isExposed = isDifficultExposed,
                 selectedItem = difficult,
-                hint = stringResource(id = R.string.settings_hint_select_difficulty)
+                hint = stringResource(id = R.string.settings_hint_select_difficulty),
+                preferenceKey = PrefKeys.USER_DIFFICULTY,
             )
             DropDownMenu(
                 itemsList = displayGenders,
                 isExposed = isExposedGender,
                 selectedItem = userGender,
-                hint = stringResource(id = R.string.settings_hint_select_gender_optional)
+                hint = stringResource(id = R.string.settings_hint_select_gender_optional),
+                preferenceKey = PrefKeys.USER_GENDER,
             )
 
             GameTextField(
                 text = userAge,
                 onValueChange = { userAge = it },
-                labelTxt = stringResource(id = R.string.settings_label_age)
+                labelTxt = stringResource(id = R.string.settings_label_age),
+                preferenceKey = PrefKeys.USER_AGE
             )
 
             Text(

@@ -14,6 +14,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.platform.LocalContext
+import androidx.core.content.edit
+import android.content.Context
+import com.matterofchoice.screens.PrefKeys
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -22,7 +26,10 @@ fun DropDownMenu(
     isExposed: MutableState<Boolean>,
     selectedItem: MutableState<String>,
     hint: String,
+    preferenceKey: String? = null
 ) {
+    val context = LocalContext.current
+
     ExposedDropdownMenuBox(
         modifier = Modifier
             .fillMaxWidth()
@@ -57,6 +64,14 @@ fun DropDownMenu(
                         onClick = {
                             selectedItem.value = itemsList[index]
                             isExposed.value = false
+
+                            if (preferenceKey != null) {
+                                val prefs = context.getSharedPreferences(PrefKeys.MY_PREFS, Context.MODE_PRIVATE)
+                                prefs.edit {
+                                    putString(preferenceKey, itemsList[index])
+                                }
+                            }
+
                         },
                         contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
                     )

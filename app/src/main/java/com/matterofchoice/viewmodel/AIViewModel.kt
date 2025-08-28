@@ -33,6 +33,7 @@ import org.json.JSONObject
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
+import com.matterofchoice.common.DropdownMapper
 
 
 class AIViewModel(application: Application) : AndroidViewModel(application) {
@@ -76,10 +77,13 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
             _state.value = _state.value.copy(isLoading = true, error = null)
             try {
                 // 1. Get user preferences from SharedPreferences
-                val userSubject = sharedPreferences.getString("userSubject", "life skills")!!
-                val userAge = sharedPreferences.getString("userAge", "25")!!
-                val userGender = sharedPreferences.getString("userGender", "any")!!
-                val userLanguage = sharedPreferences.getString("userLanguage", "English")!!
+                val userSubject = sharedPreferences.getString("userSubject", null)
+                val userAge = sharedPreferences.getString("userAge", null) !!
+                val userGender = sharedPreferences.getString("userGender", null)
+                val userLanguage = sharedPreferences.getString("userLanguage", "English")
+                val subtype =  sharedPreferences.getString("subtype", null )
+                val userQuestionType = sharedPreferences.getString("userQuestionType", null)
+                val difficult = sharedPreferences.getString("difficult", null)
 
                 // 2. Create the JSON payload for our Flask API
                 val payload = JSONObject().apply {
@@ -87,10 +91,10 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                     // Ensure age is an integer, provide a safe default if parsing fails
                     put("age", userAge.toIntOrNull() ?: 25)
                     put("subject", userSubject)
-                    put("difficulty", "medium") // TODO This can be made dynamic later
-                    put("question_type", "behavioral") // This can be made dynamic later
-                    put("sub_type", "scenario_analysis") // This can be made dynamic later
-                    put("sex", userGender)
+                    put("difficulty", DropdownMapper.getDifficultyServerValue(difficult ?: "")) // TODO This can be made dynamic later
+                    put("question_type", DropdownMapper.getQuestionTypeServerValue(userQuestionType ?: "")) // This can be made dynamic later
+                    put("sub_type", DropdownMapper.getSubtypeServerValue(subtype ?: "")) // This can be made dynamic later
+                    put("sex",  DropdownMapper.getGenderServerValue(userGender ?: ""))
                 }
 
 
