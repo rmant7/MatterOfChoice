@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Matériau de choix</string>
+    <string name="app_name_matter_of_choice">Matériau de choix</string>
+    <string name="matterofchoice_info">Matter Of Choice présente des scénarios interactifs pour vous aider à acquérir des compétences en matière de prise de décision.</string>
     <string name="optional_enter_the_role_e_g_student">Facultatif: saisir le rôle, par exemple, étudiant</string>
     <string name="analysis_my_choices">Analyser mes choix</string>
     <string name="analysis_your_selections">Analysez vos choix</string>
     <string name="rounds">Les coups</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Le score est calculé en fonction de la santé, de la richesse, des relations, du bonheur, des connaissances, du karma, de la gestion du temps, de l\'impact environnemental, de la croissance personnelle et de la responsabilité sociale.</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        "Le score est calculé en fonction de la santé, de la richesse, des relations, du bonheur, des connaissances, du karma, de la gestion du temps, de l'impact environnemental, de la croissance personnelle et de la responsabilité sociale."</string>
     <string name="settings_title">Matériau de choix</string>
     <string name="settings_subtitle">Les scénarios seront basés sur vos choix</string>
     <string name="settings_label_subject">Entrez le sujet</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Scénario</string>
     <string name="button_next">La prochaine .</string>
     <string name="icon_desc_selected_option">Option sélectionnée</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analyser</string>
+    <string name="analysis_results">"Résultats de l'analyse"</string>
+    <string name="analysis_error">"Erreur d'analyse"</string>
+    <string name="retry_analysis">"Retour à l'analyse"</string>
+    <string name="no_analysis_data_available">"Aucune donnée d'analyse disponible"</string>
+    <string name="perform_analysis">Effectuer une analyse</string>
+    <string name="your_score">Votre score</string>
+    <string name="correct">(%1$d/%2$d correcte)</string>
+    <string name="overall_assessment">Évaluation globale</string>
+    <string name="detailed_analysis">Analyse détaillée</string>
+    <string name="back_to_game">Retour au jeu</string>
+    <string name="play_again">Jouez à nouveau</string>
+    <string name="case_header">Le cas %1$d</string>
+    <string name="your_choice">Votre choix</string>
+    <string name="optimal_choice">Le choix optimal</string>
+    <string name="analysis">"L'analyse:"</string>
+    <string name="turn_of_3_case_of">Retour %1$d de 3 - Cas %2$d de %3$d</string>
+    <string name="answered">Réponse: %1$d/%2$d</string>
+    <string name="next_case">Le prochain cas</string>
+    <string name="next_turn">Le prochain tour</string>
+    <string name="congratulations_you_finished_the_game">Félicitations, vous avez terminé le jeu !</string>
+    <string name="new_game">Nouveau jeu</string>
+    <string name="analysis_result">Analyse: %1$s</string>
+    <string name="game_complete">Le jeu est terminé !</string>
+    <string name="no_analysis_results_available">"Aucun résultat d'analyse disponible"</string>
+    <string name="error">Erreur</string>
+    <string name="retry">Réessayez</string>
+    <string name="scenario">Scénario</string>
+    <string name="save_settings">Enregistrer les paramètres</string>
+    <string name="system_default">Par défaut du système</string>
+    <string name="matter_of_choice_onBoarding">La question du choix</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">"Les gens prennent d'innombrables décisions chaque jour."</string>
+    <string name="have_fun">Amusez-vous !</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Et si les enfants, en jouant, acquièrent des outils pour prendre des décisions dans la vie réelle?</string>
+    <string name="virtual_failures">Échecs virtuels</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">"Nous apprenons généralement des conséquences négatives. Ne serait-il pas mieux d'apprendre des échecs virtuels ?"</string>
+    <string name="get_started">Commencez</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -82,8 +122,8 @@
         <item>Amharique</item>
         <item>Arabe (Émirats arabes unis)</item>
         <item>Les Assamites</item>
-        <item>L\'Austurienne</item>
-        <item>L\'Azerbaïdjan</item>
+        <item>"L'Austurienne"</item>
+        <item>"L'Azerbaïdjan"</item>
         <item>Le bambara</item>
         <item>Biélorusse</item>
         <item>Bemba</item>
@@ -99,7 +139,7 @@
         <item>Le Dzongkha</item>
         <item>Le grec</item>
         <item>En anglais</item>
-        <item>L\'estonien</item>
+        <item>"L'estonien"</item>
         <item>Basque</item>
         <item>Ewe (Ghana)</item>
         <item>Éve (Togo)</item>
@@ -108,7 +148,7 @@
         <item>Français</item>
         <item>Friulien</item>
         <item>Gaélique écossais</item>
-        <item>Pays d\'Irlande</item>
+        <item>"Pays d'Irlande"</item>
         <item>Galicien</item>
         <item>Gujarati</item>
         <item>Hausse</item>
@@ -117,10 +157,10 @@
         <item>Croate</item>
         <item>La langue hongroise</item>
         <item>Arménie</item>
-        <item>L\'Igbo</item>
+        <item>"L'Igbo"</item>
         <item>Indonésien</item>
         <item>La langue islandaise</item>
-        <item>L\'italien</item>
+        <item>"L'italien"</item>
         <item>Japonais</item>
         <item>Le kabyle</item>
         <item>Le Kamba</item>
@@ -137,7 +177,7 @@
         <item>Le Limburg</item>
         <item>Lingala</item>
         <item>Lituanien</item>
-        <item>L\'espagnol</item>
+        <item>"L'espagnol"</item>
         <item>Ganda</item>
         <item>Luo</item>
         <item>Letton standard</item>

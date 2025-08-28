@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Matter of choice</string>
+    <string name="app_name_matter_of_choice">Matter of choice</string>
+    <string name="matterofchoice_info">Matter Of Choice presents interactive scenarios to help you learn decision-making skills.</string>
     <string name="optional_enter_the_role_e_g_student">Optional: Enter the role, e.g. Student</string>
     <string name="analysis_my_choices">Analysis of my choices</string>
     <string name="analysis_your_selections">Analysis of your selections</string>
     <string name="rounds">Rounds</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Score calculated based on health, wealth, relationships, happiness, knowledge, karma, time management, environmental impact, personal growth, and social responsibility</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        Score calculated based on health, wealth, relationships, happiness, knowledge, karma, time management, environmental impact, personal growth, and social responsibility</string>
     <string name="settings_title">Matter of choice</string>
     <string name="settings_subtitle">The scenarios will be based on your selections</string>
     <string name="settings_label_subject">Enter the subject</string>
@@ -46,6 +49,43 @@
     <string name="button_next">Next .</string>
     <string name="icon_desc_selected_option">Selected option</string>
     <string name="analyze">Analyze</string>
+    <string name="analysis_results">Results of the analysis</string>
+    <string name="analysis_error">Error of analysis</string>
+    <string name="retry_analysis">Re-trial analysis</string>
+    <string name="no_analysis_data_available">No analysis data are available</string>
+    <string name="perform_analysis">Performing an analysis</string>
+    <string name="your_score">Your score</string>
+    <string name="correct">(%1$d/%2$d correct)</string>
+    <string name="overall_assessment">Overall evaluation</string>
+    <string name="detailed_analysis">Detailed analysis</string>
+    <string name="back_to_game">Back to the Game</string>
+    <string name="play_again">Play again</string>
+    <string name="case_header">Case %1$d</string>
+    <string name="your_choice">Your Choice</string>
+    <string name="optimal_choice">Optimal Choice</string>
+    <string name="analysis">Analysis:</string>
+    <string name="turn_of_3_case_of">Turn %1$d of 3 - Case %2$d of %3$d</string>
+    <string name="answered">Answered: %1$d/%2$d</string>
+    <string name="next_case">Next case</string>
+    <string name="next_turn">The next turn</string>
+    <string name="congratulations_you_finished_the_game">Congratulations, you finished the game!</string>
+    <string name="new_game">New game</string>
+    <string name="analysis_result">Analysis: %1$s</string>
+    <string name="game_complete">The game is complete!</string>
+    <string name="no_analysis_results_available">No analysis results are available</string>
+    <string name="error">Error</string>
+    <string name="retry">Try again.</string>
+    <string name="scenario">Scenario</string>
+    <string name="save_settings">Save settings</string>
+    <string name="system_default">System Default</string>
+    <string name="matter_of_choice_onBoarding">The Matter of Choice</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">People make countless decisions every day.</string>
+    <string name="have_fun">Have fun .</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">What if children, while playing, gained tools for making real-life decisions?</string>
+    <string name="virtual_failures">Virtual Failures</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">"Usually we learn from negative consequences. Wouldn't it be better to learn from virtual failures?"</string>
+    <string name="get_started">Get started</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -88,111 +128,76 @@
         <item>Belarusian</item>
         <item>Bemba</item>
         <item>Bengali</item>
-
         <item>Tibetan</item>
         <item>Bosnian</item>
-
         <item>Bulgarian</item>
         <item>Catalan</item>
-
         <item>Czech</item>
-
         <item>Welsh</item>
         <item>Danish</item>
         <item>German</item>
-
-
         <item>Dzongkha</item>
         <item>Greek</item>
         <item>English</item>
-
         <item>Estonian</item>
         <item>Basque</item>
         <item>Ewe (Ghana)</item>
-
         <item>Ewe (Togo)</item>
         <item>Faroese</item>
-
         <item>Finnish</item>
-
         <item>French</item>
         <item>Friulian</item>
         <item>Scottish Gaelic</item>
         <item>Irish</item>
         <item>Galician</item>
-
         <item>Gujarati</item>
-
         <item>Hausa</item>
         <item>Hebrew</item>
         <item>Hindi</item>
-
         <item>Croatian</item>
         <item>Hungarian</item>
         <item>Armenian</item>
         <item>Igbo</item>
-
         <item>Indonesian</item>
         <item>Icelandic</item>
         <item>Italian</item>
         <item>Japanese</item>
         <item>Kabyle</item>
-
         <item>Kamba</item>
         <item>Kannada</item>
-
         <item>Georgian</item>
-
         <item>Kazakh</item>
-
         <item>Kabuverdianu (Cape Verde Creole)</item>
         <item>Khmer</item>
         <item>Kikuyu</item>
         <item>Kinyarwanda</item>
         <item>Kyrgyzstan</item>
-
-
         <item>Korean</item>
-
         <item>Lao (Laos)</item>
-
         <item>Limburgish</item>
         <item>Lingala</item>
         <item>Lithuanian</item>
-
         <item>Luxembourgish</item>
-
         <item>Ganda</item>
         <item>Luo</item>
-
         <item>Standard Latvian</item>
-
         <item>Malayalam</item>
         <item>Marathi</item>
-
         <item>Macedonian</item>
         <item>Malagasy (Madagascar)</item>
         <item>Maltese (Malta)</item>
-
         <item>Halh Mongolian</item>
-
-
         <item>Malay (Malaysia)</item>
         <item>Burmese</item>
         <item>Dutch</item>
         <item>Norwegian Nynorsk</item>
         <item>Norwegian Bokmål</item>
         <item>Nepali (Nepal)</item>
-
         <item>Nuer (South Sudan)</item>
-
-
         <item>Oromo (Ethiopia)</item>
         <item>Oromo (Kenya)</item>
         <item>Odia (India)</item>
-
         <item>Punjabi</item>
-
         <item>Polish</item>
         <item>Portuguese</item>
         <item>Persian (Afghanistan)</item>
@@ -205,43 +210,26 @@
         <item>Rundi (Burundi)</item>
         <item>Russian</item>
         <item>Sango (Central African Republic)</item>
-
-
         <item>Sinhala (Sri Lanka)</item>
         <item>Slovak (Slovakia)</item>
         <item>Slovenian</item>
-
         <item>Shona (Zimbabwe)</item>
-
         <item>Somali</item>
-
         <item>Spanish</item>
         <item>Albanian (Albania)</item>
-
         <item>Serbian</item>
-
         <item>Swedish</item>
         <item>Swahili</item>
-
         <item>Tamil</item>
-
         <item>Telugu</item>
-
         <item>Thai</item>
-
-
         <item>Turkish</item>
-
         <item>Ukrainian</item>
         <item>Urdu (Pakistan)</item>
         <item>Uyghur (China)</item>
         <item>Uzbek (Latin, Uzbekistan)</item>
-
         <item>Vietnamese</item>
-
-
         <item>Xhosa</item>
-
         <item>Yoruba</item>
         <item>Cantonese</item>
         <item>Mandarin Chinese Simplified</item>

@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">បញ្ហា នៃ ការជ្រើសរើស</string>
+    <string name="app_name_matter_of_choice">បញ្ហា នៃ ការជ្រើសរើស</string>
+    <string name="matterofchoice_info">Matter Of Choice បង្ហាញ ពី ស្ថានភាព ប្រតិកម្ម ដើម្បី ជួយ អ្នក រៀន ជំនាញ ក្នុង ការ សម្រេច ចិត្ត។</string>
     <string name="optional_enter_the_role_e_g_student">ជម្រើស: ចូលក្នុងតួនាទី, ឧទាហរណ៍, និស្សិត</string>
     <string name="analysis_my_choices">ការ វិភាគ ជម្រើស របស់ ខ្ញុំ</string>
     <string name="analysis_your_selections">វិភាគការជ្រើសរើសរបស់អ្នក</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">ប្រវត្តិ</string>
     <string name="button_next">បន្ទាប់</string>
     <string name="icon_desc_selected_option">ជម្រើសដែលត្រូវបានជ្រើសរើស</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">វិភាគ</string>
+    <string name="analysis_results">លទ្ធផល នៃ ការ វិភាគ</string>
+    <string name="analysis_error">កំហុស វិភាគ</string>
+    <string name="retry_analysis">ការវិភាគជំនាន់ក្រោយ</string>
+    <string name="no_analysis_data_available">មិន មាន ទិន្នន័យ វិភាគ</string>
+    <string name="perform_analysis">ធ្វើ ការ វិភាគ</string>
+    <string name="your_score">ចំណាត់ថ្នាក់ របស់ អ្នក</string>
+    <string name="correct">(%1$d/%2$d ត្រឹមត្រូវ)</string>
+    <string name="overall_assessment">ការ វាយតម្លៃ សរុប</string>
+    <string name="detailed_analysis">ការ វិភាគ លម្អិត</string>
+    <string name="back_to_game">វិល ត្រឡប់ ទៅ រក ការ លេង វិញ</string>
+    <string name="play_again">លេង ម្តង ទៀត</string>
+    <string name="case_header">ករណី %1$d</string>
+    <string name="your_choice">ការ ជ្រើសរើស របស់ អ្នក</string>
+    <string name="optimal_choice">ការ ជ្រើស រើស ល្អ បំផុត</string>
+    <string name="analysis">ការវិភាគ:</string>
+    <string name="turn_of_3_case_of">Turn %1$d នៃ 3 - ករណី %2$d នៃ %3$d</string>
+    <string name="answered">ឆ្លើយតប: %1$d/%2$d</string>
+    <string name="next_case">ករណីបន្ទាប់</string>
+    <string name="next_turn">ជំហាន បន្ទាប់</string>
+    <string name="congratulations_you_finished_the_game">សូមជម្រាបថា អ្នកបានបញ្ចប់ការប្រកួត!</string>
+    <string name="new_game">Game ថ្មី</string>
+    <string name="analysis_result">ការវិភាគ: %1$s</string>
+    <string name="game_complete">ល្បែង បញ្ចប់!</string>
+    <string name="no_analysis_results_available">គ្មាន លទ្ធផល នៃ ការ វិភាគ</string>
+    <string name="error">កំហុស\n</string>
+    <string name="retry">សាកល្បង ម្តងទៀត</string>
+    <string name="scenario">ប្រវត្តិ</string>
+    <string name="save_settings">រក្សាទុក Settings</string>
+    <string name="system_default">System Default</string>
+    <string name="matter_of_choice_onBoarding">ការ ជ្រើស រើស</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">តើ យើង អាច សម្រេច ចិត្ត បាន យ៉ាង ណា?</string>
+    <string name="have_fun">កម្សាន្ត</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">តើ អ្នក គួរ ធ្វើ យ៉ាង ណា ប្រសិន បើ ពេល កំពុង លេង កុមារ ទទួល បាន ឧបករណ៍ សម្រាប់ ការ សម្រេច ចិត្ត ក្នុង ជីវិត ពិត?</string>
+    <string name="virtual_failures">បរាជ័យ Virtual</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">ជាធម្មតា យើង រៀន ពី ផលវិបាក អវិជ្ជមាន តើ វា មិន ប្រសើរ ជាង ទេ ក្នុង ការ រៀន ពី ការ បរាជ័យ ជាក់លាក់?</string>
+    <string name="get_started">ចាប់ផ្តើម</string>
+    <string name="skip">ចាកចេញ</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -106,7 +145,7 @@
         <item>ប្រទេស ហារ៉េ</item>
         <item>ហ្វីលីពីន</item>
         <item>បារាំង</item>
-        <item>Fulfulde នីហ្សេរីយ៉ា</item>
+        <item>ប្រទេស ហ្វីលីពីន</item>
         <item>អង់គ្លេស អង់គ្លេស</item>
         <item>អៀរឡង់</item>
         <item>អង់គ្លេស</item>

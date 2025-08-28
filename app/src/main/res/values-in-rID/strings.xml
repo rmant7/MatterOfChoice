@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Hal pilihan</string>
+    <string name="app_name_matter_of_choice">Hal pilihan</string>
+    <string name="matterofchoice_info">Matter Of Choice menyajikan skenario interaktif untuk membantu Anda mempelajari keterampilan pengambilan keputusan.</string>
     <string name="optional_enter_the_role_e_g_student">Opsional: Masukkan peran, misalnya, Siswa</string>
     <string name="analysis_my_choices">Analisis pilihanku</string>
     <string name="analysis_your_selections">Analisis pilihan Anda</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Skenario</string>
     <string name="button_next">Selanjutnya</string>
     <string name="icon_desc_selected_option">Pilihan yang dipilih</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Menganalisis</string>
+    <string name="analysis_results">Hasil analisis</string>
+    <string name="analysis_error">Kesalahan analisis</string>
+    <string name="retry_analysis">Analisis Percobaan Lagi</string>
+    <string name="no_analysis_data_available">Tidak ada data analisis yang tersedia</string>
+    <string name="perform_analysis">Lakukan Analisis</string>
+    <string name="your_score">Skor Anda</string>
+    <string name="correct">(%1$d/%2$d benar)</string>
+    <string name="overall_assessment">Penilaian secara keseluruhan</string>
+    <string name="detailed_analysis">Analisis terperinci</string>
+    <string name="back_to_game">Kembali ke Game</string>
+    <string name="play_again">Bermain lagi</string>
+    <string name="case_header">Kasus %1$d</string>
+    <string name="your_choice">Pilihanmu</string>
+    <string name="optimal_choice">Pilihan yang optimal</string>
+    <string name="analysis">Analisis:</string>
+    <string name="turn_of_3_case_of">Ubah %1$d dari 3 - Kasus %2$d dari %3$d</string>
+    <string name="answered">Dijawab: %1$d/%2$d</string>
+    <string name="next_case">Kasus berikutnya</string>
+    <string name="next_turn">Pergeseran berikutnya</string>
+    <string name="congratulations_you_finished_the_game">Selamat, Anda selesai permainan!</string>
+    <string name="new_game">Permainan Baru</string>
+    <string name="analysis_result">Analisis: %1$s</string>
+    <string name="game_complete">Permainan selesai!</string>
+    <string name="no_analysis_results_available">Tidak ada hasil analisis yang tersedia</string>
+    <string name="error">Kesalahan</string>
+    <string name="retry">Coba lagi</string>
+    <string name="scenario">Skenario</string>
+    <string name="save_settings">Simpan Setelan</string>
+    <string name="system_default">Sistem Default</string>
+    <string name="matter_of_choice_onBoarding">Masalah Pilihan</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Orang-orang membuat keputusan yang tak terhitung jumlahnya setiap hari.</string>
+    <string name="have_fun">Bersenang-senanglah</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Bagaimana jika anak-anak, saat bermain, mendapatkan alat untuk membuat keputusan dalam kehidupan nyata?</string>
+    <string name="virtual_failures">Kegagalan Virtual</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Biasanya kita belajar dari konsekuensi negatif. Bukankah lebih baik belajar dari kegagalan virtual?</string>
+    <string name="get_started">Mulailah</string>
+    <string name="skip">Melompat</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

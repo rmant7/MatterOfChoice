@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">ရွေးချယ်မှု အကြောင်းအရာ</string>
+    <string name="app_name_matter_of_choice">ရွေးချယ်မှု အကြောင်းအရာ</string>
+    <string name="matterofchoice_info">Matter Of Choice မှာ ဆုံးဖြတ်ချက်ချရာ ကျွမ်းကျင်မှုတွေ သင်ယူဖို့ကူညီဖို့ အပြန်အလှန်သုံးသပ်နိုင်တဲ့ ဇာတ်လမ်းတွေကို တင်ပြထားပါတယ်။</string>
     <string name="optional_enter_the_role_e_g_student">ရွေးချယ်စရာ: အခန်းကိုထည့်ပါ။ ဥပမာ ကျောင်းသား။</string>
     <string name="analysis_my_choices">ကျွန်မရဲ့ ရွေးချယ်မှုတွေကို ဆန်းစစ်ပါ။</string>
     <string name="analysis_your_selections">သင့်ရွေးချယ်မှုကို ဆန်းစစ်ပါ။</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">ဇာတ်ညွှန်း</string>
     <string name="button_next">နောက်တစ်ခု</string>
     <string name="icon_desc_selected_option">ရွေးချယ်သော ရွေးချယ်မှု</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">ဆန်းစစ်ခြင်း</string>
+    <string name="analysis_results">ဆန်းစစ်မှု ရလဒ်များ</string>
+    <string name="analysis_error">ဆန်းစစ်မှုအမှား</string>
+    <string name="retry_analysis">ပြန်လည်စမ်းသပ်ခြင်း</string>
+    <string name="no_analysis_data_available">လေ့လာမှု အချက်အလက် မရှိပါ။</string>
+    <string name="perform_analysis">ဆန်းစစ်မှု ပြုလုပ်ခြင်း</string>
+    <string name="your_score">သင်ရဲ့ အမှတ်</string>
+    <string name="correct">(%1$d/%2$d ကိုက်ညီသည်)</string>
+    <string name="overall_assessment">ယေဘုယျ အကဲဖြတ်ချက်</string>
+    <string name="detailed_analysis">အသေးစိတ်လေ့လာချက်</string>
+    <string name="back_to_game">ဂိမ်းကို ပြန်သွားပါ</string>
+    <string name="play_again">ထပ်ကစားပါ</string>
+    <string name="case_header">ကိစ္စ %1$d</string>
+    <string name="your_choice">သင့်ရွေးချယ်မှု</string>
+    <string name="optimal_choice">အကောင်းဆုံး ရွေးချယ်မှု</string>
+    <string name="analysis">ဆန်းစစ်ချက်</string>
+    <string name="turn_of_3_case_of">Turn %1$d of 3 - Case %2$d of %3$d</string>
+    <string name="answered">အဖြေ: %1$d/%2$d</string>
+    <string name="next_case">နောက်အမှု</string>
+    <string name="next_turn">နောက်တစ်လှည့်</string>
+    <string name="congratulations_you_finished_the_game">မင်္ဂလာပါ၊ ကစားပွဲ ပြီးသွားပြီ။</string>
+    <string name="new_game">ဂိမ်းသစ်</string>
+    <string name="analysis_result">ဆန်းစစ်ချက်: %1$s</string>
+    <string name="game_complete">ကစားပွဲ ပြီးဆုံးသွားပြီ!</string>
+    <string name="no_analysis_results_available">လေ့လာမှု ရလဒ် မရှိပါ။</string>
+    <string name="error">အမှား</string>
+    <string name="retry">ထပ်ကြိုးစားပါ</string>
+    <string name="scenario">ဇာတ်ညွှန်း</string>
+    <string name="save_settings">Settings ကို Save လုပ်ပါ</string>
+    <string name="system_default">System Default</string>
+    <string name="matter_of_choice_onBoarding">ရွေးချယ်မှု</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">လူတွေဟာ နေ့စဉ် ဆုံးဖြတ်ချက်တွေကို မရေမတွက်နိုင်အောင် ပြင်ဆင်ထားလား။</string>
+    <string name="have_fun">ပျော်ရွှင်ကြပါ။</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">ကလေးတွေ ကစားနေတုန်း တကယ့်ဘဝမှာ ဆုံးဖြတ်ချက်ချဖို့ ကိရိယာတွေရရင်ရော။</string>
+    <string name="virtual_failures">ဗစ်တိုးရီးယား ကျရှုံးမှု</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">ပုံမှန်အားဖြင့် အပျက်သဘော အကျိုးဆက်တွေကနေ သင်ခန်းစာယူကြတာ မဟုတ်ဘူးလား။</string>
+    <string name="get_started">စလုပ်ပါ</string>
+    <string name="skip">ခုန်ပျံ</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

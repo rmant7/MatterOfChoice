@@ -1,14 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Materiale di scelta</string>
+    <string name="app_name_matter_of_choice">Materiale di scelta</string>
+    <string name="matterofchoice_info">Matter Of Choice presenta scenari interattivi che ti aiuteranno ad acquisire competenze decisionali.</string>
     <string name="optional_enter_the_role_e_g_student">Opzionale: inserire il ruolo, ad esempio, Studente</string>
     <string name="analysis_my_choices">Analisi delle mie scelte</string>
     <string name="analysis_your_selections">Analisi delle tue scelte</string>
     <string name="rounds">Rondate</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Il punteggio viene calcolato in base alla salute, alla ricchezza, alle relazioni, alla felicità, alla conoscenza, al karma, alla gestione del tempo, all\'impatto ambientale, alla crescita personale e alla responsabilità sociale.</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        "Il punteggio viene calcolato in base alla salute, alla ricchezza, alle relazioni, alla felicità, alla conoscenza, al karma, alla gestione del tempo, all'impatto ambientale, alla crescita personale e alla responsabilità sociale."</string>
     <string name="settings_title">Materiale di scelta</string>
     <string name="settings_subtitle">Gli scenari si baseranno sulle tue scelte</string>
-    <string name="settings_label_subject">Inserire l\' argomento</string>
+    <string name="settings_label_subject">"Inserire l' argomento"</string>
     <string name="settings_hint_select_question_type">Selezionare il tipo di domanda</string>
     <string name="settings_hint_select_subtype">Selezionare il sottotipo</string>
     <string name="settings_hint_select_difficulty">Selezionare il livello di difficoltà</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Scenario</string>
     <string name="button_next">Il prossimo .</string>
     <string name="icon_desc_selected_option">Opzione selezionata</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analizzare</string>
+    <string name="analysis_results">"Risultati dell'analisi"</string>
+    <string name="analysis_error">Errore di analisi</string>
+    <string name="retry_analysis">Riprova analisi</string>
+    <string name="no_analysis_data_available">Nessun dato di analisi disponibile</string>
+    <string name="perform_analysis">Eseguire analisi</string>
+    <string name="your_score">Il tuo punteggio</string>
+    <string name="correct">(%1$d/%2$d corretto)</string>
+    <string name="overall_assessment">Valutazione complessiva</string>
+    <string name="detailed_analysis">Analisi dettagliata</string>
+    <string name="back_to_game">Ritorno al gioco</string>
+    <string name="play_again">Gioca di nuovo</string>
+    <string name="case_header">Caso %1$d</string>
+    <string name="your_choice">La tua scelta</string>
+    <string name="optimal_choice">Scelta ottimale</string>
+    <string name="analysis">Analisi:</string>
+    <string name="turn_of_3_case_of">Torno %1$d di 3 - Caso %2$d di %3$d</string>
+    <string name="answered">Risposta: %1$d/%2$d</string>
+    <string name="next_case">Caso successivo</string>
+    <string name="next_turn">La prossima svolta</string>
+    <string name="congratulations_you_finished_the_game">Congratulazioni, hai finito la partita!</string>
+    <string name="new_game">Nuovo gioco</string>
+    <string name="analysis_result">Analisi: %1$s</string>
+    <string name="game_complete">Il gioco è completato!</string>
+    <string name="no_analysis_results_available">Nessun risultato di analisi disponibile</string>
+    <string name="error">Errore</string>
+    <string name="retry">Riprova</string>
+    <string name="scenario">Scenario</string>
+    <string name="save_settings">Salvare le impostazioni</string>
+    <string name="system_default">Default del sistema</string>
+    <string name="matter_of_choice_onBoarding">La questione della scelta</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Le persone prendono innumerevoli decisioni ogni giorno.</string>
+    <string name="have_fun">Divertiti .</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">E se i bambini, mentre giocano, avessero gli strumenti per prendere decisioni nella vita reale?</string>
+    <string name="virtual_failures">Fallimenti virtuali</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Di solito impariamo dalle conseguenze negative. Non sarebbe meglio imparare dai fallimenti virtuali?</string>
+    <string name="get_started">Cominciate</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -112,7 +152,7 @@
         <item>Galiziano</item>
         <item>Gujarati</item>
         <item>Hausa</item>
-        <item>L\'ebraico</item>
+        <item>"L'ebraico"</item>
         <item>Hindi</item>
         <item>Croazia</item>
         <item>Ungherese</item>

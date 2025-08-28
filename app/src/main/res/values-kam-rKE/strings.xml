@@ -1,32 +1,35 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Kĩndũ kya kwĩnyuvĩa</string>
-    <string name="optional_enter_the_role_e_g_student">Ũndũ ũtonya kwĩka: Tũmĩa kĩanda, kwa ngelekany\'o, Mwana-a-asa</string>
+    <string name="app_name_matter_of_choice">Kĩndũ kya kwĩnyuvĩa</string>
+    <string name="matterofchoice_info">Ĩkaseti ya Matter Of Choice nĩyĩeleetye maũndũ amwe matonya kũũtetheesya wĩmanyĩsye kwĩka motwi maseo.</string>
+    <string name="optional_enter_the_role_e_g_student">"Ũndũ ũtonya kwĩka: Tũmĩa kĩanda, kwa ngelekany'o, Mwana-a-asa"</string>
     <string name="analysis_my_choices">Kũvindĩĩsya motwi makwa</string>
     <string name="analysis_your_selections">Ĩka ũkunĩkĩli ĩũlũ wa ũndũ ũnyuvĩte</string>
     <string name="rounds">Mĩio ya kaũ</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Kĩsese kya ũsindi kĩeleetw\'e kwosana na maũndũ ta ũima wa mwĩĩ, ũthwii, ngwatanĩo, ũtanu, ũmanyi, karma, kũtongoesya ĩvinda, ũsũvĩo wa nthĩ, kwĩana kwa mũndũ, na kĩanda kyake maũndũnĩ ma andũ.</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+    "    Kĩsese kya ũsindi kĩeleetw'e kwosana na maũndũ ta ũima wa mwĩĩ, ũthwii, ngwatanĩo, ũtanu, ũmanyi, karma, kũtongoesya ĩvinda, ũsũvĩo wa nthĩ, kwĩana kwa mũndũ, na kĩanda kyake maũndũnĩ ma andũ."</string>
     <string name="settings_title">Kĩndũ kya kwĩnyuvĩa</string>
-    <string name="settings_subtitle">Syĩndũ ila ũnyuvĩte syosanĩte na ũndũ ũkwĩw\'a</string>
+    <string name="settings_subtitle">"Syĩndũ ila ũnyuvĩte syosanĩte na ũndũ ũkwĩw'a"</string>
     <string name="settings_label_subject">Tũmĩa ũvoo</string>
     <string name="settings_hint_select_question_type">Nyuva mũthemba wa ĩkũlyo</string>
     <string name="settings_hint_select_subtype">Nyuva mũsingi</string>
     <string name="settings_hint_select_difficulty">Nyuva kĩla kĩthĩawa kĩ vinya</string>
-    <string name="settings_hint_select_gender_optional">Ũndũ ũtonya kwĩka: Nyuva mũndũ mũka kana mũndũ mũka</string>
-    <string name="settings_label_age">Ĩkalaa wĩ Mũima</string>
+    <string name="settings_hint_select_gender_optional">"Ũndũ ũtonya kwĩka: Nyuva mũndũ mũka kana mũndũ mũka"</string>
+    <string name="settings_label_age">"Ĩkalaa wĩ Mũima"</string>
     <string name="settings_hint_select_language">Nyuva kĩthyomo kyaku</string>
     <string name="settings_button_generate_cases">Kũseũvya Syĩndũ</string>
     <string name="question_type_study">Kwĩmanyĩsya</string>
     <string name="question_type_behavioral">Kwĩthĩwa na mwĩkalĩle mũseo</string>
     <string name="question_type_hiring">Kũthũkũma</string>
-    <string name="subtype_behavioral_interpersonal">Ũmanyi wa Kũtindany\'a</string>
+    <string name="subtype_behavioral_interpersonal">"Ũmanyi wa Kũtindany'a"</string>
     <string name="subtype_behavioral_ethical">Mathĩna ma Mwĩkalĩle</string>
     <string name="subtype_behavioral_stress">Kwĩkala wĩ Mwĩanĩe</string>
     <string name="subtype_study_mastery">Ũmanyi wa Kĩsomo</string>
     <string name="subtype_study_critical_thinking">Kwĩthĩwa na Mosũanĩo Maito</string>
     <string name="subtype_study_practical_application">Ũndũ Ũtonya Kũmĩtũmĩa</string>
     <string name="subtype_hiring_technical">Ũmanyi wa Kĩsese</string>
-    <string name="subtype_hiring_behavioral_interview">Ũneenany\'a na Andũ Maĩ na Nguma</string>
+    <string name="subtype_hiring_behavioral_interview">"Ũneenany'a na Andũ Maĩ na Nguma"</string>
     <string name="subtype_hiring_situational_judgment">Ũsilĩlo Wosanĩte na Maũndũ</string>
     <string name="difficulty_normal">ũwau ũteĩsa kũvoa</string>
     <string name="difficulty_easy">nĩ laisi</string>
@@ -45,7 +48,45 @@
     <string name="text_scenario">Maũndũ ala meekĩkie</string>
     <string name="button_next">Ũndũ wa kelĩ</string>
     <string name="icon_desc_selected_option">Wĩa ũla ũnyuvĩtwe</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Kũsisya</string>
+    <string name="analysis_results">Mosũngĩo ma Ũkunĩkĩli</string>
+    <string name="analysis_error">Ĩvĩtyo ya Ũkunĩkĩli</string>
+    <string name="retry_analysis">Ĩsomo ya Ũkunĩkĩli</string>
+    <string name="no_analysis_data_available">Vai data ya ũkunĩkĩli yĩ vo</string>
+    <string name="perform_analysis">Ĩka Ũkunĩkĩli</string>
+    <string name="your_score">Kĩsese Kyaku</string>
+    <string name="correct">(% 1$d/% 2$d ĩalyũlĩtwe nesa)</string>
+    <string name="overall_assessment">"Ũkunĩkĩli w'onthe"</string>
+    <string name="detailed_analysis">Ũkunĩkĩli wĩ Vitio</string>
+    <string name="back_to_game">Kũsyoka Kĩsesenĩ</string>
+    <string name="play_again">Ĩka O Ũndũ Ũngĩ</string>
+    <string name="case_header">Ĩkũlyo %1$d</string>
+    <string name="your_choice">Ũtwi Waku</string>
+    <string name="optimal_choice">Ũtwi Ũseo</string>
+    <string name="analysis">Ũkunĩkĩli:</string>
+    <string name="turn_of_3_case_of">Ĩtambya %1$d ya 3 - Ĩtambya %2$d ya %3$d</string>
+    <string name="answered">Ũsũngĩo: %1$d/%2$d</string>
+    <string name="next_case">Ĩkũlyo Ĩngĩ</string>
+    <string name="next_turn">Ũndũ Ũngĩ Ũtonya Kwĩka</string>
+    <string name="congratulations_you_finished_the_game">Nĩnĩmũtũngĩaa mũvea nũndũ wa kũthaũka!</string>
+    <string name="new_game">Wĩa Mweũ</string>
+    <string name="analysis_result">Ũkunĩkĩli: %1$s</string>
+    <string name="game_complete">Ĩthaũ ĩminĩte!</string>
+    <string name="no_analysis_results_available">Tũi na mosyao ma ũkunĩkĩli</string>
+    <string name="error">Ĩvĩtyo</string>
+    <string name="retry">Ĩkĩa kĩthito ĩngĩ</string>
+    <string name="scenario">Maũndũ ala meekĩkie</string>
+    <string name="save_settings">Sisya Mbango</string>
+    <string name="system_default">"Kĩvathũkany'o kya Silikalĩ"</string>
+    <string name="matter_of_choice_onBoarding">"Ũndũ Ũtonya Kwĩka Ĩla Wakw'a"</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Andũ mekaa motwi maingĩ mũno kĩla mũthenya, ĩndĩ ithyĩ twĩ na ũtonyi wa kwĩka motwi maseo?</string>
+    <string name="have_fun">Ĩtanĩthasye</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Nao nata syana syambĩĩa kũthaũka ikethĩwa na ũtonyi wa kwĩka motwi?</string>
+    <string name="virtual_failures">Kwĩthĩwa na Mavĩtyo Maito</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">
+        "Mavinda maingĩ nĩtwĩmanyĩasya kumana na mathĩna ala matũkwataa. We tyo wĩw'e wĩ ũndũ wa ũĩ kwĩmanyĩsya kumana na mathĩna ala matũkwataa?"</string>
+    <string name="get_started">Ambĩĩa Kũsoma Mbivilia</string>
+    <string name="skip">Ĩka ũkunĩkĩli</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -84,9 +125,9 @@
         <item>Assamese</item>
         <item>kĩthyomo kya Asturian</item>
         <item>kĩthyomo kya Azerbaijani</item>
-        <item>Ũũ nĩw\'o ũndũ ũsu weekĩkie</item>
+        <item>"Ũũ nĩw'o ũndũ ũsu weekĩkie"</item>
         <item>Kĩsũngũ</item>
-        <item>Kĩvathũkany\'o na ũu</item>
+        <item>"Kĩvathũkany'o na ũu"</item>
         <item>Kĩsũngũ</item>
         <item>Mbivilia ya kĩthyomo kya Tibetan</item>
         <item>Kĩsũngũ</item>
@@ -129,7 +170,7 @@
         <item>Andũ ma Kazakhstan</item>
         <item>Kĩthyomo kya Kabuverdianu (Cape Verde Creole)</item>
         <item>Mbivilia ya Kĩsũngũ</item>
-        <item>Ũũ nĩw\'o ũndũ ũsu weekĩkie</item>
+        <item>"Ũũ nĩw'o ũndũ ũsu weekĩkie"</item>
         <item>kĩthyomo kya Kinyarwanda</item>
         <item>Kyrgyzstan</item>
         <item>Andũ ma Korea</item>

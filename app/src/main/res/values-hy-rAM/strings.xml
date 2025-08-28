@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Ընտրության հարց</string>
+    <string name="app_name_matter_of_choice">Ընտրության հարց</string>
+    <string name="matterofchoice_info">Matter Of Choice- ը ներկայացնում է ինտերակտիվ սցենարներ, որոնք կօգնեն ձեզ սովորել որոշումների կայացման հմտություններ:</string>
     <string name="optional_enter_the_role_e_g_student">Ընտրական. Գտեք դերը, օրինակ, ուսանող</string>
     <string name="analysis_my_choices">Վերլուծել իմ ընտրությունները</string>
     <string name="analysis_your_selections">Վերլուծել ձեր ընտրությունները</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Սցենար</string>
     <string name="button_next">Հաջորդը</string>
     <string name="icon_desc_selected_option">Ընտրված տարբերակը</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Վերլուծել</string>
+    <string name="analysis_results">Վերլուծության արդյունքները</string>
+    <string name="analysis_error">Վերլուծության սխալ</string>
+    <string name="retry_analysis">Փորձարկման վերլուծություն</string>
+    <string name="no_analysis_data_available">Առկա չէ վերլուծական տվյալներ</string>
+    <string name="perform_analysis">Վերլուծություն կատարեք</string>
+    <string name="your_score">Ձեր գնահատականը</string>
+    <string name="correct">(%1$d/%2$d ճիշտ է)</string>
+    <string name="overall_assessment">Ընդհանուր գնահատական</string>
+    <string name="detailed_analysis">մանրամասն վերլուծություն</string>
+    <string name="back_to_game">Վերադարձ դեպի Խաղը</string>
+    <string name="play_again">Կրկին խաղացեք</string>
+    <string name="case_header">Դեպք %1$d</string>
+    <string name="your_choice">Ձեր ընտրությունը</string>
+    <string name="optimal_choice">Լավագույն ընտրություն</string>
+    <string name="analysis">Վերլուծություն.</string>
+    <string name="turn_of_3_case_of">Turn %1$d of 3 - դեպքում %2$d of %3$d</string>
+    <string name="answered">Պատասխան. %1$d/%2$d</string>
+    <string name="next_case">Հաջորդ դեպքը</string>
+    <string name="next_turn">Հաջորդ շրջումը</string>
+    <string name="congratulations_you_finished_the_game">Շնորհավորում եմ, դուք ավարտել եք խաղը:</string>
+    <string name="new_game">Նոր խաղ</string>
+    <string name="analysis_result">Վերլուծություն. %1$s</string>
+    <string name="game_complete">Խաղը ավարտված է:</string>
+    <string name="no_analysis_results_available">Առկա չեն վերլուծության արդյունքները</string>
+    <string name="error">Սխալ</string>
+    <string name="retry">Կրկին փորձեք</string>
+    <string name="scenario">Սցենար</string>
+    <string name="save_settings">Կարգավորումները պահպանել</string>
+    <string name="system_default">Համակարգի անբավարարություն</string>
+    <string name="matter_of_choice_onBoarding">Ընտրության հարց</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Մարդիկ ամեն օր անսահման շատ որոշումներ են կայացնում։</string>
+    <string name="have_fun">Զվարճացեք:</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Ի՞նչ անել, եթե երեխաները, խաղալով, ձեռք բերեն գործիքներ, որոնք կօգնեն իրական կյանքում որոշումներ կայացնել:</string>
+    <string name="virtual_failures">Վիրտուալ ձախողումներ</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Սովորաբար մենք սովորում ենք բացասական հետեւանքներից: Չէ՞ որ ավելի լավ է սովորել վիրտուալ ձախողումներից:</string>
+    <string name="get_started">Սկսեք</string>
+    <string name="skip">Պահել</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

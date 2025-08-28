@@ -1,6 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
+
 <resources>
     <string name="app_name">Въпрос за избор</string>
+    <string name="app_name_matter_of_choice">Въпрос за избор</string>
+    <string name="matterofchoice_info">Matter Of Choice представя интерактивни сценарии, които да ви помогнат да научите умения за вземане на решения.</string>
     <string name="optional_enter_the_role_e_g_student">Необходимо: Въведете ролята, например Студент</string>
     <string name="analysis_my_choices">Анализ на моите избори</string>
     <string name="analysis_your_selections">Анализиране на избора ви</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Сценарий</string>
     <string name="button_next">Следващият.</string>
     <string name="icon_desc_selected_option">Избрана опция</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Анализиране</string>
+    <string name="analysis_results">Резултати от анализа</string>
+    <string name="analysis_error">Анализирана грешка</string>
+    <string name="retry_analysis">Отново опитен анализ</string>
+    <string name="no_analysis_data_available">Няма налични данни за анализ</string>
+    <string name="perform_analysis">Извърши анализ</string>
+    <string name="your_score">Вашият резултат</string>
+    <string name="correct">(%1$d/%2$d правилно)</string>
+    <string name="overall_assessment">Обща оценка</string>
+    <string name="detailed_analysis">Подробен анализ</string>
+    <string name="back_to_game">Връщаме се към играта.</string>
+    <string name="play_again">Играй пак.</string>
+    <string name="case_header">Случай %1$d</string>
+    <string name="your_choice">Вашият избор</string>
+    <string name="optimal_choice">Оптимален избор</string>
+    <string name="analysis">Анализ:</string>
+    <string name="turn_of_3_case_of">Превръщане %1$d от 3 - Случай %2$d от %3$d</string>
+    <string name="answered">Отговор: %1$d/%2$d</string>
+    <string name="next_case">Следващ случай</string>
+    <string name="next_turn">Следващият завой</string>
+    <string name="congratulations_you_finished_the_game">Поздравления, приключихте играта!</string>
+    <string name="new_game">Нова игра</string>
+    <string name="analysis_result">Анализ: %1$s</string>
+    <string name="game_complete">Играта приключи!</string>
+    <string name="no_analysis_results_available">Няма налични резултати от анализа</string>
+    <string name="error">Грешка</string>
+    <string name="retry">Опитайте отново.</string>
+    <string name="scenario">Сценарий</string>
+    <string name="save_settings">Запазване на настройки</string>
+    <string name="system_default">Несъответствие на системата</string>
+    <string name="matter_of_choice_onBoarding">Въпрос на избор</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Хората вземат безброй решения всеки ден.</string>
+    <string name="have_fun">Забавлявайте се.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Ами ако децата, докато играят, получат инструменти за вземане на решения в реалния живот?</string>
+    <string name="virtual_failures">Виртуални провали</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Не би ли било по-добре да се учим от виртуалните провали?</string>
+    <string name="get_started">Започнете</string>
+    <string name="skip">Прескочи</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -80,7 +120,7 @@
         <item>Африкански</item>
         <item>Акан</item>
         <item>Амарски</item>
-        <item>Арабски (Съединените арабски емирства)</item>
+        <item>Арабски(Съединените арабски емирства)</item>
         <item>Асамски</item>
         <item>Астурийски</item>
         <item>Азербайджански</item>

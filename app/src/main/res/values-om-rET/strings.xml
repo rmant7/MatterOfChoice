@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Dhimma filannaa</string>
+    <string name="app_name_matter_of_choice">Dhimma filannaa</string>
+    <string name="matterofchoice_info">Dhimmi Filannoo dandeettii murtoo gochuu akka barattu si gargaaruuf seenaawwan waldhabsiisan ibsa.</string>
     <string name="optional_enter_the_role_e_g_student">"Filannoo: Ga'ii galchuu, fakkeenyaaf Barataa"</string>
     <string name="analysis_my_choices">Filannoo koo qoru</string>
     <string name="analysis_your_selections">Filannoo kee qoru</string>
     <string name="rounds">Meeshaaleen</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">"Lakkoofsi fayyaa, badhaadhummaa, hariiroo, gammachuu, beekumsa, kaarma, bulchiinsa yeroo, dhiibbaa naannoo, guddina dhuunfaa fi itti gaafatamummaa hawaasummaa irratti hundaa'ee kan lakkaa'amu"</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        "Lakkoofsi fayyaa, badhaadhummaa, hariiroo, gammachuu, beekumsa, kaarma, bulchiinsa yeroo, dhiibbaa naannoo, guddina dhuunfaa fi itti gaafatamummaa hawaasummaa irratti hundaa'ee kan lakkaa'amu"</string>
     <string name="settings_title">Dhimma filannaa</string>
     <string name="settings_subtitle">"Suuraawwan kun filannaa keessan irratti kan hundaa'anidha"</string>
     <string name="settings_label_subject">Dhimma galchuu</string>
@@ -45,7 +48,45 @@
     <string name="text_scenario">Seenaa</string>
     <string name="button_next">Sana booda</string>
     <string name="icon_desc_selected_option">Furmaanni filatame</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Qorannoo</string>
+    <string name="analysis_results">"Bu'aan Qorannoo"</string>
+    <string name="analysis_error">Dogoggora Qorannoo</string>
+    <string name="retry_analysis">Qorannoo Qorannoo</string>
+    <string name="no_analysis_data_available">Odeeffannoon qorannoo hin jiru</string>
+    <string name="perform_analysis">Qorannoo Hojjachuu</string>
+    <string name="your_score">Lakkoofsa Keessan</string>
+    <string name="correct">(%1$d/%2$d sirrii)</string>
+    <string name="overall_assessment">Gabaasa Guutummaa</string>
+    <string name="detailed_analysis">Gamaaggamaa Qorannoo</string>
+    <string name="back_to_game">Taphaatti deebiʼuu</string>
+    <string name="play_again">ammas tapha</string>
+    <string name="case_header">Dhimma %1$d</string>
+    <string name="your_choice">Filannoo Keessan</string>
+    <string name="optimal_choice">Filannoo Gaarii</string>
+    <string name="analysis">Qorannoo:</string>
+    <string name="turn_of_3_case_of">%1$d of 3 - Case %2$d of %3$d</string>
+    <string name="answered">Deebii: %1$d/%2$d</string>
+    <string name="next_case">Dhimma Itti Aanaa</string>
+    <string name="next_turn">Jijjiirama Itti Aanaa</string>
+    <string name="congratulations_you_finished_the_game">Galatoomi, tapha xumureera!</string>
+    <string name="new_game">Tapha Haaraa</string>
+    <string name="analysis_result">Qorannoo: %1$s</string>
+    <string name="game_complete">Tapha Xumurame!</string>
+    <string name="no_analysis_results_available">"Bu'aan qorannoo hin jiru"</string>
+    <string name="error">Dogoggora\n</string>
+    <string name="retry">ammas yaali</string>
+    <string name="scenario">Seenaa</string>
+    <string name="save_settings">Sirreeffama Fayyadamaa</string>
+    <string name="system_default">"Sirna Walitti bu'iinsa"</string>
+    <string name="matter_of_choice_onBoarding">Dhimma Filannoo</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Namoonni guyyaa guyyaadhaan murtoo hedduu godhu.</string>
+    <string name="have_fun">Miira gaarii qabaadhaa</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">
+        "Haataʼu malee, ijoolleen yommuu taphatan, murtoo jireenya dhugaa keessatti gochuuf meeshaa yoo argatanhoo?"</string>
+    <string name="virtual_failures">"Walitti Bu'iinsi Dhugaadha"</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">"Yeroo baay'ee bu'aawwan gadhee irraa baranna."</string>
+    <string name="get_started">Jalqaba</string>
+    <string name="skip">Dorgommii</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -192,7 +233,7 @@
         <item>Xhosa</item>
         <item>Yoruba</item>
         <item>Afaan Cantonese</item>
-        <item>"Afaan Mandariin Chaayinaa salphaa taʼe"</item>
+        <item>Afaan Mandariin Chaayinaa salphaa taʼe</item>
         <item>Afaan Mandariin Chaayinaa Aadaa</item>
         <item>Zuluu</item>
     </string-array>

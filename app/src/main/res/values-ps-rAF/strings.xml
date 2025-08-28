@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">د انتخاب موضوع</string>
+    <string name="app_name_matter_of_choice">د انتخاب موضوع</string>
+    <string name="matterofchoice_info">د انتخاب مسله د تصمیم نیولو مهارتونو زده کولو کې ستاسو سره د مرستې لپاره متقابل سناریوونه وړاندې کوي.</string>
     <string name="optional_enter_the_role_e_g_student">اختیاري: رول دننه کړئ، د بیلګې په توګه، زده کونکی</string>
     <string name="analysis_my_choices">زما د انتخابونو تحلیل</string>
     <string name="analysis_your_selections">ستاسو د انتخابونو تحلیل</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">سناریو</string>
     <string name="button_next">په راتلونکې کې</string>
     <string name="icon_desc_selected_option">ټاکل شوی انتخاب</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">تحلیل کول</string>
+    <string name="analysis_results">د تحلیل پایلې</string>
+    <string name="analysis_error">د تحلیل غلطي</string>
+    <string name="retry_analysis">د بیا ازموینې تحلیل</string>
+    <string name="no_analysis_data_available">د تحلیلي معلوماتو شتون نشته</string>
+    <string name="perform_analysis">د تحلیل ترسره کول</string>
+    <string name="your_score">ستاسو نمره</string>
+    <string name="correct">(%1$d/%2$d سمه ده)</string>
+    <string name="overall_assessment">عمومي ارزونه</string>
+    <string name="detailed_analysis">تفصيلي تحلیل</string>
+    <string name="back_to_game">بیرته لوبې ته</string>
+    <string name="play_again">یو ځل بیا لوبې وکړئ</string>
+    <string name="case_header">د قضیې %1$d</string>
+    <string name="your_choice">ستاسو انتخاب</string>
+    <string name="optimal_choice">غوره انتخاب</string>
+    <string name="analysis">تحلیل:</string>
+    <string name="turn_of_3_case_of">%1$d د 3 - قضیه %2$d د %3$d</string>
+    <string name="answered">ځواب: %1$d/%2$d</string>
+    <string name="next_case">راتلونکی قضیه</string>
+    <string name="next_turn">راتلونکی پړاو</string>
+    <string name="congratulations_you_finished_the_game">مبارکي، تاسو لوبه بشپړه کړه!</string>
+    <string name="new_game">نوی لوبه</string>
+    <string name="analysis_result">تحلیل: %1$s</string>
+    <string name="game_complete">لوبه بشپړه شوه!</string>
+    <string name="no_analysis_results_available">د تحلیل پایلې شتون نلري</string>
+    <string name="error">تېروتنه</string>
+    <string name="retry">بیا هڅه وکړئ</string>
+    <string name="scenario">سناریو</string>
+    <string name="save_settings">د ترتیباتو خوندي کول</string>
+    <string name="system_default">د سیسټم ډیفالټ</string>
+    <string name="matter_of_choice_onBoarding">د انتخاب مسله</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">خلک هره ورځ بې شمیره پریکړې کوي.</string>
+    <string name="have_fun">خوند واخلئ</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">څه که ماشومان، د لوبې پرمهال، د ریښتیني ژوند د پریکړې کولو لپاره وسیلې ترلاسه کړي؟</string>
+    <string name="virtual_failures">مجازی ناکامي</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">معمولا موږ د منفي پایلو څخه زده کړه کوو. ایا دا به غوره نه وي چې د مجازی ناکامي څخه زده کړه وکړو؟</string>
+    <string name="get_started">د پیل پیل وکړئ</string>
+    <string name="skip">د کښته کیدل</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

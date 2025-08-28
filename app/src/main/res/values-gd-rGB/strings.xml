@@ -1,11 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Cùrsa roghainn</string>
+    <string name="app_name_matter_of_choice">Cùrsa roghainn</string>
+    <string name="matterofchoice_info">"Tha Matter Of Choice a' sealltainn seallaidhean eadar-ghnìomhach gus do chuideachadh le bhith a' ionnsachadh sgilean co-dhùnadh."</string>
     <string name="optional_enter_the_role_e_g_student">Roghnach: Cuir a-steach an dreuchd, e.g., Oileanach</string>
     <string name="analysis_my_choices">Anailis mo roghainnean</string>
     <string name="analysis_your_selections">Dèan anailis air na roghainnean agad</string>
     <string name="rounds">Rounds</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Bidh sgòr a \'cunntadh stèidhichte air slàinte, beairteas, dàimhean, sona, eòlas, karma, riaghladh ùine, buaidh àrainneachd, fàs pearsanta, agus uallach sòisealta</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">"Bidh sgòr a 'cunntadh stèidhichte air slàinte, beairteas, dàimhean, sona, eòlas, karma, riaghladh ùine, buaidh àrainneachd, fàs pearsanta, agus uallach sòisealta"</string>
     <string name="settings_title">Cùrsa roghainn</string>
     <string name="settings_subtitle">Bidh na seallaidhean stèidhichte air na roghainnean agad</string>
     <string name="settings_label_subject">Cuir a-steach an cuspair</string>
@@ -15,10 +17,10 @@
     <string name="settings_hint_select_gender_optional">Roghnach: Tagh do ghnè</string>
     <string name="settings_label_age">Cuir a-steach do aois</string>
     <string name="settings_hint_select_language">Tagh do chànan</string>
-    <string name="settings_button_generate_cases">A \' cruthachadh cùisean</string>
+    <string name="settings_button_generate_cases">"A ' cruthachadh cùisean"</string>
     <string name="question_type_study">Sgrùdadh</string>
     <string name="question_type_behavioral">Beachd</string>
-    <string name="question_type_hiring">A \' fastadh</string>
+    <string name="question_type_hiring">"A ' fastadh"</string>
     <string name="subtype_behavioral_interpersonal">Sgilean eadar-phearsanta</string>
     <string name="subtype_behavioral_ethical">Duilgheadasan Èifeachdach</string>
     <string name="subtype_behavioral_stress">Riaghladh cuideam</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Scenair</string>
     <string name="button_next">An ath rud</string>
     <string name="icon_desc_selected_option">Rogh a thaghadh</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Dèan anailis</string>
+    <string name="analysis_results">Toraidhean an Anailis</string>
+    <string name="analysis_error">Mearachd anailis</string>
+    <string name="retry_analysis">Anailis ath-chleachdadh</string>
+    <string name="no_analysis_data_available">Chan eil dàta anailis rim faighinn</string>
+    <string name="perform_analysis">Dèan Anailis</string>
+    <string name="your_score">An sgòr agad</string>
+    <string name="correct">(%1$d/%2$d ceart)</string>
+    <string name="overall_assessment">Co-mheas gu h-iomlan</string>
+    <string name="detailed_analysis">Anailis mionaideach</string>
+    <string name="back_to_game">Air ais gu Geama</string>
+    <string name="play_again">Cluich a-rithist</string>
+    <string name="case_header">Cùis %1$d</string>
+    <string name="your_choice">Do Rogha</string>
+    <string name="optimal_choice">Tagh as fheàrr</string>
+    <string name="analysis">Anailis:</string>
+    <string name="turn_of_3_case_of">Turn %1$d de 3 - Cùis %2$d de %3$d</string>
+    <string name="answered">Freagairt: %1$d/%2$d</string>
+    <string name="next_case">An ath chùis</string>
+    <string name="next_turn">An ath dreuchd</string>
+    <string name="congratulations_you_finished_the_game">Buidheachas, chrìochnaich thu an geama!</string>
+    <string name="new_game">Geama ùr</string>
+    <string name="analysis_result">Anailis: %1$s</string>
+    <string name="game_complete">Geama air a chrìochnachadh!</string>
+    <string name="no_analysis_results_available">Chan eil toraidhean anailis rim faighinn</string>
+    <string name="error">Mearachd</string>
+    <string name="retry">Feuch a-rithist</string>
+    <string name="scenario">Scenair</string>
+    <string name="save_settings">Sàbhail Suidheachaidhean</string>
+    <string name="system_default">Sgeulach siostam</string>
+    <string name="matter_of_choice_onBoarding">Cùrsa Roghnachaidh</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">"Tha daoine a 'dèanamh mìorbhaileach de cho-dhùnaidhean gach latha. A bheil sinn uidheamaichte gus na roghainnean as fheàrr a dhèanamh?"</string>
+    <string name="have_fun">Dèan spòrs</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">"Dè ma gheibh clann, fhad 's a bhios iad a' cluich, innealan airson co-dhùnadh a dhèanamh ann an fìor bheatha?"</string>
+    <string name="virtual_failures">Feumalachdan Virtual</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Mar as trice bidh sinn ag ionnsachadh bho cho-dhùnaidhean àicheil. Nach biodh e nas fheàrr ionnsachadh bho fàilligean virtual?</string>
+    <string name="get_started">Tòisich</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -77,175 +116,123 @@
         <item>@string/gender_female</item>
     </string-array>
     <string-array name="languages">
-        <item>Afrikaans</item>
+        <item>Africans</item>
         <item>Akan</item>
         <item>Amharic</item>
-        <item>Arabic (United Arab Emirates)</item>
+        <item>Arabach (Emirates Arabes Unis)</item>
         <item>Assamese</item>
         <item>Asturian</item>
         <item>Azerbaijani</item>
         <item>Bambara</item>
-        <item>Belarusian</item>
+        <item>Beurla</item>
         <item>Bemba</item>
         <item>Bengali</item>
-
-        <item>Tibetan</item>
+        <item>Tibet</item>
         <item>Bosnian</item>
-
         <item>Bulgarian</item>
         <item>Catalan</item>
-
-        <item>Czech</item>
-
-        <item>Welsh</item>
-        <item>Danish</item>
-        <item>German</item>
-
-
+        <item>Ceic</item>
+        <item>Beurla</item>
+        <item>Danmhairg</item>
+        <item>Gearmailtis</item>
         <item>Dzongkha</item>
-        <item>Greek</item>
-        <item>English</item>
-
-        <item>Estonian</item>
+        <item>Grèig</item>
+        <item>Beurla</item>
+        <item>Beurla</item>
         <item>Basque</item>
         <item>Ewe (Ghana)</item>
-
         <item>Ewe (Togo)</item>
         <item>Faroese</item>
-
-        <item>Finnish</item>
-
-        <item>French</item>
+        <item>Beurla</item>
+        <item>Fraingis</item>
         <item>Friulian</item>
-        <item>Scottish Gaelic</item>
-        <item>Irish</item>
-        <item>Galician</item>
-
+        <item>Gàidhlig Albannach</item>
+        <item>Èirinn</item>
+        <item>Gàidhlig</item>
         <item>Gujarati</item>
-
         <item>Hausa</item>
-        <item>Hebrew</item>
+        <item>Eabhraiche</item>
         <item>Hindi</item>
-
         <item>Croatian</item>
-        <item>Hungarian</item>
+        <item>Ùghraiche</item>
         <item>Armenian</item>
         <item>Igbo</item>
-
         <item>Indonesian</item>
-        <item>Icelandic</item>
-        <item>Italian</item>
-        <item>Japanese</item>
-        <item>Kabyle</item>
-
+        <item>Èirinn</item>
+        <item>Eadailteach</item>
+        <item>Seapanach</item>
+        <item>Caibil</item>
         <item>Kamba</item>
         <item>Kannada</item>
-
         <item>Georgian</item>
-
         <item>Kazakh</item>
-
-        <item>Kabuverdianu (Cape Verde Creole)</item>
+        <item>Kabuverdianu (Creole Cape Verde)</item>
         <item>Khmer</item>
         <item>Kikuyu</item>
         <item>Kinyarwanda</item>
         <item>Kyrgyzstan</item>
-
-
         <item>Korean</item>
-
         <item>Lao (Laos)</item>
-
         <item>Limburgish</item>
         <item>Lingala</item>
-        <item>Lithuanian</item>
-
+        <item>Beurla</item>
         <item>Luxembourgish</item>
-
         <item>Ganda</item>
         <item>Luo</item>
-
         <item>Standard Latvian</item>
-
         <item>Malayalam</item>
         <item>Marathi</item>
-
         <item>Macedonian</item>
         <item>Malagasy (Madagascar)</item>
         <item>Maltese (Malta)</item>
-
         <item>Halh Mongolian</item>
-
-
-        <item>Malay (Malaysia)</item>
-        <item>Burmese</item>
-        <item>Dutch</item>
+        <item>Malaise (Malaise)</item>
+        <item>Beurla</item>
+        <item>Na h-Alba</item>
         <item>Norwegian Nynorsk</item>
-        <item>Norwegian Bokmål</item>
+        <item>Bokmål Norwegian</item>
         <item>Nepali (Nepal)</item>
-
         <item>Nuer (South Sudan)</item>
-
-
-        <item>Oromo (Ethiopia)</item>
+        <item>Oromo (Eitiopia)</item>
         <item>Oromo (Kenya)</item>
-        <item>Odia (India)</item>
-
+        <item>Odia (Innseachan)</item>
         <item>Punjabi</item>
-
-        <item>Polish</item>
-        <item>Portuguese</item>
+        <item>Poileanach</item>
+        <item>Beurla</item>
         <item>Persian (Afghanistan)</item>
         <item>Persian (Iran)</item>
         <item>Pashto (Afghanistan)</item>
         <item>Quechua (Bolivia)</item>
         <item>Quechua (Ecuador)</item>
         <item>Quechua (Peru)</item>
-        <item>Romanian</item>
+        <item>Beurla</item>
         <item>Rundi (Burundi)</item>
-        <item>Russian</item>
-        <item>Sango (Central African Republic)</item>
-
-
+        <item>Ruis</item>
+        <item>Sango (Phoblachd Afraga Meadhanach)</item>
         <item>Sinhala (Sri Lanka)</item>
         <item>Slovak (Slovakia)</item>
-        <item>Slovenian</item>
-
+        <item>Sloinneach</item>
         <item>Shona (Zimbabwe)</item>
-
         <item>Somali</item>
-
-        <item>Spanish</item>
-        <item>Albanian (Albania)</item>
-
-        <item>Serbian</item>
-
-        <item>Swedish</item>
+        <item>Spàinnis</item>
+        <item>Albannach (Albania)</item>
+        <item>Beurla</item>
+        <item>Sualainn</item>
         <item>Swahili</item>
-
         <item>Tamil</item>
-
         <item>Telugu</item>
-
         <item>Thai</item>
-
-
-        <item>Turkish</item>
-
-        <item>Ukrainian</item>
+        <item>Turcach</item>
+        <item>Ucranian</item>
         <item>Urdu (Pakistan)</item>
-        <item>Uyghur (China)</item>
+        <item>Uighur (Na Sìona)</item>
         <item>Uzbek (Latin, Uzbekistan)</item>
-
         <item>Vietnamese</item>
-
-
         <item>Xhosa</item>
-
         <item>Yoruba</item>
         <item>Cantonese</item>
-        <item>Mandarin Chinese Simplified</item>
-        <item>Mandarin Chinese Traditional</item>
+        <item>Sìneach Mandarin Simplified</item>
+        <item>Mandarin Sìneach traidiseanta</item>
         <item>Zulu</item>
     </string-array>
 </resources>

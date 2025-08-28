@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Suala la uchaguzi</string>
+    <string name="app_name_matter_of_choice">Suala la uchaguzi</string>
+    <string name="matterofchoice_info">Matter Of Choice inatoa matukio ya kuingiliana ili kukusaidia kujifunza ustadi wa kufanya maamuzi.</string>
     <string name="optional_enter_the_role_e_g_student">Chaguo: Ingiza jukumu, kwa mfano, Mwanafunzi</string>
     <string name="analysis_my_choices">Kuchunguza Maamuzi Yangu</string>
     <string name="analysis_your_selections">Kuchambua uteuzi wako</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Scenario</string>
     <string name="button_next">Yafuatayo</string>
     <string name="icon_desc_selected_option">Chaguo lililochaguliwa</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Kuchambua</string>
+    <string name="analysis_results">Matokeo ya Uchambuzi</string>
+    <string name="analysis_error">Kosa la Uchambuzi</string>
+    <string name="retry_analysis">Uchambuzi wa Jaribio</string>
+    <string name="no_analysis_data_available">Hakuna data ya uchambuzi inapatikana</string>
+    <string name="perform_analysis">Fanya Uchambuzi</string>
+    <string name="your_score">Alama Yako</string>
+    <string name="correct">(%1$d/%2$d sahihi)</string>
+    <string name="overall_assessment">Tathmini ya Jumla</string>
+    <string name="detailed_analysis">Uchambuzi wa Kina</string>
+    <string name="back_to_game">Kurudi Kwenye Mchezo</string>
+    <string name="play_again">Cheza Tena</string>
+    <string name="case_header">Kesi %1$d</string>
+    <string name="your_choice">Uchaguzi Wako</string>
+    <string name="optimal_choice">Chaguo Bora</string>
+    <string name="analysis">Uchambuzi:</string>
+    <string name="turn_of_3_case_of">Turn %1$d ya 3 - kesi %2$d ya %3$d</string>
+    <string name="answered">Jibu: %1$d/%2$d</string>
+    <string name="next_case">Kesi Inayofuata</string>
+    <string name="next_turn">Mzunguko Ufuatao</string>
+    <string name="congratulations_you_finished_the_game">Hongera, umemaliza mchezo!</string>
+    <string name="new_game">Mchezo Mpya</string>
+    <string name="analysis_result">Uchambuzi: %1$s</string>
+    <string name="game_complete">Mchezo Umekamilika!</string>
+    <string name="no_analysis_results_available">Hakuna matokeo ya uchambuzi inapatikana</string>
+    <string name="error">Kosa</string>
+    <string name="retry">Jaribu tena</string>
+    <string name="scenario">Scenario</string>
+    <string name="save_settings">Hifadhi Mipangilio</string>
+    <string name="system_default">System Default</string>
+    <string name="matter_of_choice_onBoarding">Jambo la Kuchagua</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Watu wanafanya maamuzi mengi kila siku.</string>
+    <string name="have_fun">Furahia</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Vipi ikiwa watoto, wanapokuwa wakicheza, wangepata vifaa vya kufanya maamuzi maishani?</string>
+    <string name="virtual_failures">Makosa ya Virtual</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Kwa kawaida sisi kujifunza kutokana na matokeo hasi. Je, si bora kujifunza kutokana na kushindwa virtual?</string>
+    <string name="get_started">Anza</string>
+    <string name="skip">Punguza</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

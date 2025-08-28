@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">ମନୋନୟନ ବିଷୟ</string>
+    <string name="app_name_matter_of_choice">ମନୋନୟନ ବିଷୟ</string>
+    <string name="matterofchoice_info">ନିର୍ଣ୍ଣୟ ନେବାରେ ଦକ୍ଷତା ହାସଲ କରିବାରେ ସାହାଯ୍ୟ କରିବା ପାଇଁ Matter Of Choice ପାରସ୍ପରିକ ଦୃଷ୍ଟିକୋଣ ପ୍ରଦାନ କରେ ।</string>
     <string name="optional_enter_the_role_e_g_student">ବୈକଳ୍ପିକ: ଭୂମିକାରେ ପ୍ରବେଶ କରନ୍ତୁ, ଉଦାହରଣ ସ୍ବରୂପ, ଛାତ୍ର</string>
     <string name="analysis_my_choices">ମୋର ଚୟନଗୁଡ଼ିକର ବିଶ୍ଳେଷଣ</string>
     <string name="analysis_your_selections">ଆପଣଙ୍କର ଚୟନକୁ ବିଶ୍ଳେଷଣ କରନ୍ତୁ</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">ଦୃଶ୍ୟ</string>
     <string name="button_next">ପରବର୍ତ୍ତୀ</string>
     <string name="icon_desc_selected_option">ମନୋନୀତ ବିକଳ୍ପ</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">ବିଶ୍ଳେଷଣ କରନ୍ତୁ</string>
+    <string name="analysis_results">ବିଶ୍ଳେଷଣର ପରିଣାମ</string>
+    <string name="analysis_error">ବିଶ୍ଳେଷଣ ତ୍ରୁଟି</string>
+    <string name="retry_analysis">ପୁନଃ ପରୀକ୍ଷା ବିଶ୍ଳେଷଣ</string>
+    <string name="no_analysis_data_available">କୌଣସି ବିଶ୍ଳେଷଣ ତଥ୍ୟ ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="perform_analysis">ବିଶ୍ଳେଷଣ କରନ୍ତୁ</string>
+    <string name="your_score">ଆପଣଙ୍କ ସ୍କୋର</string>
+    <string name="correct">(%1$d/%2$d ଠିକ ଅଛି)</string>
+    <string name="overall_assessment">ସାମଗ୍ରିକ ଆକଳନ</string>
+    <string name="detailed_analysis">ବିସ୍ତୃତ ବିଶ୍ଳେଷଣ</string>
+    <string name="back_to_game">ଖେଳକୁ ଫେରିବା</string>
+    <string name="play_again">ପୁନର୍ବାର ଖେଳ</string>
+    <string name="case_header">ମାମଲା %1$d</string>
+    <string name="your_choice">ଆପଣଙ୍କ ପସନ୍ଦ</string>
+    <string name="optimal_choice">ସର୍ବୋତ୍ତମ ବିକଳ୍ପ</string>
+    <string name="analysis">ବିଶ୍ଳେଷଣଃ</string>
+    <string name="turn_of_3_case_of">୩ ରୁ %1$d ଟର୍ନ୍ - %2$d ମାମଲା %3$d</string>
+    <string name="answered">ଉତ୍ତରଃ %1$d/%2$d</string>
+    <string name="next_case">ପରବର୍ତ୍ତୀ ମାମଲା</string>
+    <string name="next_turn">ପରବର୍ତ୍ତୀ ପାଦ</string>
+    <string name="congratulations_you_finished_the_game">ଅଭିନନ୍ଦନ, ତୁମେ ଖେଳ ସମାପ୍ତ କରିଛ!</string>
+    <string name="new_game">ନୂଆ ଖେଳ</string>
+    <string name="analysis_result">ବିଶ୍ଳେଷଣଃ %1$s</string>
+    <string name="game_complete">ଖେଳ ସମାପ୍ତ!</string>
+    <string name="no_analysis_results_available">କୌଣସି ବିଶ୍ଳେଷଣ ଫଳାଫଳ ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="error">ତ୍ରୁଟି</string>
+    <string name="retry">ପୁଣି ଚେଷ୍ଟା କର</string>
+    <string name="scenario">ଦୃଶ୍ୟ</string>
+    <string name="save_settings">ସେଟିଂସମୂହ ସଂରକ୍ଷଣ କରନ୍ତୁ</string>
+    <string name="system_default">ସିଷ୍ଟମ ଡିଫଲ୍ଟ</string>
+    <string name="matter_of_choice_onBoarding">ଚୟନ ବିଷୟ</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">"ଲୋକମାନେ ପ୍ରତିଦିନ ଅଗଣିତ ନିଷ୍ପତ୍ତି ନିଅନ୍ତି। ଆମେ କ'ଣ ସର୍ବୋତ୍ତମ ନିଷ୍ପତ୍ତି ନେବାରେ ସକ୍ଷମ?"</string>
+    <string name="have_fun">ମଜା କର</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">"କ'ଣ ହେବ ଯଦି ପିଲାମାନେ ଖେଳିବା ସମୟରେ ବାସ୍ତବ ଜୀବନରେ ନିଷ୍ପତ୍ତି ନେବା ପାଇଁ ଉପକରଣ ପାଇବେ?"</string>
+    <string name="virtual_failures">ଭର୍ଚୁଆଲ ବିଫଳତା</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">"ସାଧାରଣତଃ ଆମେ ନକାରାତ୍ମକ ପରିଣାମରୁ ଶିଖିଥାଉ। କ'ଣ ଭର୍ଚୁଆଲ ବିଫଳତାରୁ ଶିଖିବା ଭଲ ହେବ ନାହିଁ?"</string>
+    <string name="get_started">ଆରମ୍ଭ କରନ୍ତୁ</string>
+    <string name="skip">ଡେଇଁବା</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

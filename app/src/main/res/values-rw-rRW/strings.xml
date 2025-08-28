@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">"Ikibazo cy'amahitamo"</string>
+    <string name="app_name_matter_of_choice">"Ikibazo cy'amahitamo"</string>
+    <string name="matterofchoice_info">Matter Of Choice igaragaza ibintu bihuza abantu kugira ngo bigufashe kumenya gufata imyanzuro.</string>
     <string name="optional_enter_the_role_e_g_student">Icyitonderwa: Andika umwanya, urugero: Umunyeshuri</string>
     <string name="analysis_my_choices">Gusuzuma amahitamo yanjye</string>
     <string name="analysis_your_selections">Suzuma amahitamo yawe</string>
     <string name="rounds">"Ibikoresho by'umuriro"</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">"Gutanga amanota hashingiwe ku buzima, ubutunzi, imishyikirano, ibyishimo, ubumenyi, Karma, uburyo bwo gucunga igihe, ingaruka ku bidukikije, ukwiyongera k'umuntu n'inshingano z'imibereho myiza"</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        "Gutanga amanota hashingiwe ku buzima, ubutunzi, imishyikirano, ibyishimo, ubumenyi, Karma, uburyo bwo gucunga igihe, ingaruka ku bidukikije, ukwiyongera k'umuntu n'inshingano z'imibereho myiza"</string>
     <string name="settings_title">"Ikibazo cy'amahitamo"</string>
     <string name="settings_subtitle">Ibivugwa muri iyo nkuru bizaba bishingiye ku byo wahisemo</string>
     <string name="settings_label_subject">Andika umutwe</string>
@@ -45,7 +48,47 @@
     <string name="text_scenario">Ingengabihe</string>
     <string name="button_next">Ikurikiraho</string>
     <string name="icon_desc_selected_option">Gahunda yatoranyijwe</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Gusuzuma</string>
+    <string name="analysis_results">Ibyavuye mu bushakashatsi</string>
+    <string name="analysis_error">Ikosa ryo gusesengura</string>
+    <string name="retry_analysis">Isesengura ryongeye gukorwa</string>
+    <string name="no_analysis_data_available">Nta makuru yo gusesengura ariho</string>
+    <string name="perform_analysis">Kora isesengura</string>
+    <string name="your_score">Imibare yawe</string>
+    <string name="correct">(%1$d/%2$d ni byo)</string>
+    <string name="overall_assessment">Gusuzuma mu buryo bwuzuye</string>
+    <string name="detailed_analysis">Isesengura ryimbitse</string>
+    <string name="back_to_game">Dusubire ku mikino</string>
+    <string name="play_again">Ongera ukine</string>
+    <string name="case_header">Urubanza %1$d</string>
+    <string name="your_choice">Icyo wahitamo</string>
+    <string name="optimal_choice">Uburyo bwiza bwo guhitamo</string>
+    <string name="analysis">Isesengura:</string>
+    <string name="turn_of_3_case_of">Guhinduranya %1$d ya 3 - Urubanza %2$d ya %3$d</string>
+    <string name="answered">Igisubizo: %1$d/%2$d</string>
+    <string name="next_case">Urubanza rukurikira</string>
+    <string name="next_turn">Icyiciro gikurikira</string>
+    <string name="congratulations_you_finished_the_game">Ndagushimiye, warangije umukino!</string>
+    <string name="new_game">Umukino mushya</string>
+    <string name="analysis_result">Isesengura: %1$s</string>
+    <string name="game_complete">Umukino warangiye!</string>
+    <string name="no_analysis_results_available">"Nta myanzuro y'ubushakashatsi iboneka"</string>
+    <string name="error">Ikosa</string>
+    <string name="retry">Ongera ugerageze</string>
+    <string name="scenario">Ingengabihe</string>
+    <string name="save_settings">Kurinda imiterere</string>
+    <string name="system_default">"Imikorere y'ikoranabuhanga"</string>
+    <string name="matter_of_choice_onBoarding">Icyo umuntu yihitiramo</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">
+        Ese dufite ibikenewe byose kugira ngo dufate imyanzuro myiza?</string>
+    <string name="have_fun">Mujye mwishima</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">
+        Byagenda bite se abana bakimara gukina, bakabona ibikoresho byo gufata imyanzuro?</string>
+    <string name="virtual_failures">"Impanuka zo mu buryo bw'umwuka"</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">
+        "Ubusanzwe twigishwa n'ingaruka mbi. Mbese, ntibyaba byiza twigishijwe n'amakosa y'ibanze?"</string>
+    <string name="get_started">Jya utangira</string>
+    <string name="skip">Kwiruka</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

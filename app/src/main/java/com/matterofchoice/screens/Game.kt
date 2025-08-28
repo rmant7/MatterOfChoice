@@ -224,7 +224,7 @@ fun SetUpCase(viewmodel: AIViewModel, navController: NavHostController, state: G
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(
-                        text = "Scenario",
+                        text = stringResource(R.string.scenario),
                         fontFamily = titleFont,
                         fontSize = 28.sp,
                         modifier = Modifier.weight(1f),

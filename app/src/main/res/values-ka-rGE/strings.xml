@@ -1,11 +1,13 @@
-<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">არჩევანის საკითხი</string>
+    <string name="app_name_matter_of_choice">არჩევანის საკითხი</string>
+    <string name="matterofchoice_info">Matter Of Choice წარმოადგენს ინტერაქტიულ სცენარებს, რომლებიც დაგეხმარებათ გადაწყვეტილების მიღების უნარების შესწავლაში.</string>
     <string name="optional_enter_the_role_e_g_student">ვარიანტი: შეიყვანეთ როლი, მაგალითად, სტუდენტი</string>
     <string name="analysis_my_choices">ჩემი არჩევნების ანალიზი</string>
     <string name="analysis_your_selections">ანალიზი თქვენი არჩევანი</string>
     <string name="rounds">რაუნდები</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">ქულების გამოთვლა ჯანმრთელობის, სიმდიდრის, ურთიერთობების, ბედნიერების, ცოდნის, კარმის, დროის მართვის, გარემოსდაცვითი ზემოქმედების, პირადი ზრდის და სოციალური პასუხისმგებლობის საფუძველზე</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        ქულების გამოთვლა ჯანმრთელობის, სიმდიდრის, ურთიერთობების, ბედნიერების, ცოდნის, კარმის, დროის მართვის, გარემოსდაცვითი ზემოქმედების, პირადი ზრდის და სოციალური პასუხისმგებლობის საფუძველზე</string>
     <string name="settings_title">არჩევანის საკითხი</string>
     <string name="settings_subtitle">სცენარები ეფუძნება თქვენს არჩევანს.</string>
     <string name="settings_label_subject">შეიყვანეთ საგანი</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">სცენარი</string>
     <string name="button_next">შემდეგი</string>
     <string name="icon_desc_selected_option">არჩეული ვარიანტი</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">ანალიზი</string>
+    <string name="analysis_results">ანალიზის შედეგები</string>
+    <string name="analysis_error">ანალიზის შეცდომა</string>
+    <string name="retry_analysis">განმეორებითი ანალიზი</string>
+    <string name="no_analysis_data_available">არ არსებობს ანალიზის მონაცემები</string>
+    <string name="perform_analysis">განახორციელეთ ანალიზი</string>
+    <string name="your_score">შენი ქულა</string>
+    <string name="correct">(%1$d/%2$d სწორი)</string>
+    <string name="overall_assessment">ზოგადი შეფასება</string>
+    <string name="detailed_analysis">დეტალური ანალიზი</string>
+    <string name="back_to_game">დაბრუნება თამაშში</string>
+    <string name="play_again">კიდევ ერთხელ ითამაშეთ</string>
+    <string name="case_header">შემთხვევა %1$d</string>
+    <string name="your_choice">თქვენი არჩევანი</string>
+    <string name="optimal_choice">ოპტიმალური არჩევანი</string>
+    <string name="analysis">ანალიზი:</string>
+    <string name="turn_of_3_case_of">გადატრიალება %1$d 3 - შემთხვევა %2$d %3$d</string>
+    <string name="answered">პასუხი: %1$d/%2$d</string>
+    <string name="next_case">შემდეგი შემთხვევა</string>
+    <string name="next_turn">მომდევნო ბრუნვა</string>
+    <string name="congratulations_you_finished_the_game">გლოცულობ, თამაშს დაასრულე!</string>
+    <string name="new_game">ახალი თამაში</string>
+    <string name="analysis_result">ანალიზი: %1$s</string>
+    <string name="game_complete">თამაშის დასრულება!</string>
+    <string name="no_analysis_results_available">არ არსებობს ანალიზის შედეგები</string>
+    <string name="error">შეცდომა</string>
+    <string name="retry">შეეცადეთ.</string>
+    <string name="scenario">სცენარი</string>
+    <string name="save_settings">შეინახეთ პარამეტრები</string>
+    <string name="system_default">სისტემის დეფოლტი</string>
+    <string name="matter_of_choice_onBoarding">არჩევანის საკითხი</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">ადამიანები ყოველდღიურად უამრავ გადაწყვეტილებას იღებენ.</string>
+    <string name="have_fun">გართობა.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">რა მოხდება, თუ ბავშვები თამაშის დროს მიიღებენ ინსტრუმენტებს რეალური ცხოვრების გადაწყვეტილების მიღებისათვის?</string>
+    <string name="virtual_failures">ვირტუალური წარუმატებლობები</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">როგორც წესი, ჩვენ ვსწავლობთ უარყოფითი შედეგებიდან. არ იქნებოდა უკეთესი ვირტუალური წარუმატებლობებიდან ვისწავლოთ?</string>
+    <string name="get_started">დაიწყეთ</string>
+    <string name="skip">გადასვლა</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

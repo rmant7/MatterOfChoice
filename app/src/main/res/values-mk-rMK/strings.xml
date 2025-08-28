@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Предлог за избор</string>
+    <string name="app_name_matter_of_choice">Предлог за избор</string>
+    <string name="matterofchoice_info">Matter Of Choice нуди интерактивни сценарии кои ќе ви помогнат да ги научите вештините за донесување одлуки.</string>
     <string name="optional_enter_the_role_e_g_student">Опционално: Влезте во улогата, на пример, Студент</string>
     <string name="analysis_my_choices">Анализа на моите избори</string>
     <string name="analysis_your_selections">Анализирајте ги вашите избори</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Сценарио</string>
     <string name="button_next">Следниот</string>
     <string name="icon_desc_selected_option">Избран избор</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Анализирајте</string>
+    <string name="analysis_results">Резултати од анализата</string>
+    <string name="analysis_error">Анализа грешка</string>
+    <string name="retry_analysis">Анализа на повторното испитување</string>
+    <string name="no_analysis_data_available">Нема достапни податоци за анализа</string>
+    <string name="perform_analysis">Изведете анализа</string>
+    <string name="your_score">Вашиот резултат</string>
+    <string name="correct">(%1$d/%2$d исправен)</string>
+    <string name="overall_assessment">Општа проценка</string>
+    <string name="detailed_analysis">Детална анализа</string>
+    <string name="back_to_game">Вратете се на играта</string>
+    <string name="play_again">Играј уште еднаш</string>
+    <string name="case_header">Случај %1$d</string>
+    <string name="your_choice">Вашиот избор</string>
+    <string name="optimal_choice">Оптимален избор</string>
+    <string name="analysis">Анализа:</string>
+    <string name="turn_of_3_case_of">Враќање %1$d од 3 - случај %2$d од %3$d</string>
+    <string name="answered">Одговорен: %1$d/%2$d</string>
+    <string name="next_case">Следен случај</string>
+    <string name="next_turn">Следниот поток</string>
+    <string name="congratulations_you_finished_the_game">Поздрав, завршивте со играта!</string>
+    <string name="new_game">Нова игра</string>
+    <string name="analysis_result">Анализа: %1$s</string>
+    <string name="game_complete">Играта завршена!</string>
+    <string name="no_analysis_results_available">Не се достапни резултати од анализата</string>
+    <string name="error">Грешка</string>
+    <string name="retry">Пробајте повторно.</string>
+    <string name="scenario">Сценарио</string>
+    <string name="save_settings">Зачувајте настройки</string>
+    <string name="system_default">Дефолт на системот</string>
+    <string name="matter_of_choice_onBoarding">Вопрос на избор</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Луѓето секој ден донесуваат безброј одлуки.</string>
+    <string name="have_fun">Весели се.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Што ако децата, додека играат, добијат алатки за правење одлуки во вистинскиот живот?</string>
+    <string name="virtual_failures">Виртуелни неуспехи</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Обично учиме од негативните последици. Зар не би било подобро да учиме од виртуелните неуспехи?</string>
+    <string name="get_started">Започнете</string>
+    <string name="skip">Прескочи</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

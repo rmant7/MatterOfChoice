@@ -88,7 +88,7 @@ fun SettingsScreen() {
             ) {
                 // Option to revert to System Default
                 DropdownMenuItem(
-                    text = { Text("System Default") }, // Consider localizing this too
+                    text = { Text(stringResource(R.string.system_default)) }, // Consider localizing this too
                     onClick = {
                         LocaleHelper.setLocale(context, null) // Pass null to revert
                         currentSelectedLanguageCode.value = ""
@@ -120,7 +120,7 @@ fun SettingsScreen() {
         }
         Spacer(modifier = Modifier.height(20.dp))
         Button(onClick ={ activity?.recreate() }) {
-            Text("Save Settings") // Or just rely on immediate application
+            Text(stringResource(R.string.save_settings)) // Or just rely on immediate application
         }
     }
 }

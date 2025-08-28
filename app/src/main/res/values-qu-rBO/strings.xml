@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Runasimi</string>
+    <string name="app_name_matter_of_choice">Runasimi</string>
+    <string name="matterofchoice_info">Kay revistaqa, interaccionwan yanapawasunmi tanteasqaykita yachachinanchikpaq.</string>
     <string name="optional_enter_the_role_e_g_student">Qhapaq kaq: Qhapaq kaqmanta Qullasuyu qhichwa kaqpi</string>
     <string name="analysis_my_choices">Imatapas akllasqaykita qhawarini</string>
     <string name="analysis_your_selections">Qhapaq kaqkunata qhawarina</string>
     <string name="rounds">Runakuna</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Yachay, karma, tiempo apaykachikunamanta, entorno-impact-manta, crecimiento personal-manta, responsabilidad social-manta.</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        Yachay, karma, tiempo apaykachikunamanta, entorno-impact-manta, crecimiento personal-manta, responsabilidad social-manta.</string>
     <string name="settings_title">Runasimi</string>
     <string name="settings_subtitle">Qawasqanchikman hinaqa, imamantachus ajllasqa kasqaykita qhawarisunchik</string>
     <string name="settings_label_subject">Ñawinchik</string>
@@ -30,7 +33,7 @@
     <string name="subtype_hiring_situational_judgment">Situacionpi juzgasqa</string>
     <string name="difficulty_normal">Normal</string>
     <string name="difficulty_easy">kʼacha</string>
-    <string name="difficulty_hard">Ch\'iñiña</string>
+    <string name="difficulty_hard">"Ch'iñiña"</string>
     <string name="gender_male">Runakuna</string>
     <string name="gender_female">Warmi</string>
     <string name="gender_select_prompt">Runasimi</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Runasimi</string>
     <string name="button_next">Qhapaq kaq</string>
     <string name="icon_desc_selected_option">Qhapaqchasqa</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Qhawariy</string>
+    <string name="analysis_results">Analiza ruwasqanku</string>
+    <string name="analysis_error">Analisaq Error</string>
+    <string name="retry_analysis">Rurana antacha Yapasqa:</string>
+    <string name="no_analysis_data_available">Mana analizasqa willakuykuna</string>
+    <string name="perform_analysis">Analizta ruwasun</string>
+    <string name="your_score">Qawasqayki</string>
+    <string name="correct">(%1$d/%2$d correcta)</string>
+    <string name="overall_assessment">Llaqtaymanta qhawarina</string>
+    <string name="detailed_analysis">Detail analisa</string>
+    <string name="back_to_game">Urinakuyman kutimuy</string>
+    <string name="play_again">Huk kutipis pukllikuy</string>
+    <string name="case_header">Rurana antacha Yapasqa:</string>
+    <string name="your_choice">Qankunaqa akllasunkichis</string>
+    <string name="optimal_choice">Allin ajllasqa</string>
+    <string name="analysis">Analiza:</string>
+    <string name="turn_of_3_case_of">%1$d kaqmanta - %2$d kaqmanta %3$d</string>
+    <string name="answered">Runa Simi: %1$d/%2$d</string>
+    <string name="next_case">Sutʼincharinapaj</string>
+    <string name="next_turn">Qhapaq kuti</string>
+    <string name="congratulations_you_finished_the_game">Congratulaciones, ñoqamanta tukurqanki!</string>
+    <string name="new_game">mosoq pukllaykuna</string>
+    <string name="analysis_result">Analís: %1$s</string>
+    <string name="game_complete">"¡Jach'aqa tukukun!"</string>
+    <string name="no_analysis_results_available">Mana yachanapaqqa</string>
+    <string name="error">Llapallan</string>
+    <string name="retry">Iskay kutimuy</string>
+    <string name="scenario">Runasimi</string>
+    <string name="save_settings">Imaykunatapas saqey</string>
+    <string name="system_default">Rurana antacha Yapasqa:</string>
+    <string name="matter_of_choice_onBoarding">Imatapas akllasunman</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Runakunaqa sapa pʼunchay ashkha ajllayta ruwanku.</string>
+    <string name="have_fun">Kusikuychis</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">¿Imatataj ruwasunman, wawasninchis pukllaykusqankuta yachaspa, cheqa kajta ruwanankupaj?</string>
+    <string name="virtual_failures">Runasimi mana allin</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">¿Manachu aswan allin kanman mana allin ruwaykunamanta yachananchis?</string>
+    <string name="get_started">Qallariypi</string>
+    <string name="skip">Qhaway</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

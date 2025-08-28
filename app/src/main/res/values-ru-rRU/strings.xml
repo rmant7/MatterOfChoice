@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Вопрос выбора</string>
+    <string name="app_name_matter_of_choice">Вопрос выбора</string>
+    <string name="matterofchoice_info">Matter Of Choice представляет интерактивные сценарии, которые помогут вам научиться принимать решения.</string>
     <string name="optional_enter_the_role_e_g_student">Факультативная: Введите роль, например, Студент</string>
     <string name="analysis_my_choices">Анализ моих выборов</string>
     <string name="analysis_your_selections">Анализ ваших выборов</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Сценарий</string>
     <string name="button_next">Следующий</string>
     <string name="icon_desc_selected_option">Выбранный вариант</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Проанализировать</string>
+    <string name="analysis_results">Результаты анализа</string>
+    <string name="analysis_error">Ошибка анализа</string>
+    <string name="retry_analysis">Анализ повторного испытания</string>
+    <string name="no_analysis_data_available">Нет данных об анализе</string>
+    <string name="perform_analysis">Проведение анализа</string>
+    <string name="your_score">Ваш балл</string>
+    <string name="correct">(%1$d/%2$d правильный)</string>
+    <string name="overall_assessment">Общая оценка</string>
+    <string name="detailed_analysis">Подробный анализ</string>
+    <string name="back_to_game">Возвращение к игре</string>
+    <string name="play_again">Играй еще раз .</string>
+    <string name="case_header">Случай %1$d</string>
+    <string name="your_choice">Ваш выбор</string>
+    <string name="optimal_choice">Оптимальный выбор</string>
+    <string name="analysis">Анализ:</string>
+    <string name="turn_of_3_case_of">Повернуть %1$d из 3 - Случай %2$d из %3$d</string>
+    <string name="answered">Ответ: %1$d/%2$d</string>
+    <string name="next_case">Следующий случай</string>
+    <string name="next_turn">Следующий поворот</string>
+    <string name="congratulations_you_finished_the_game">Поздравляю, вы закончили игру!</string>
+    <string name="new_game">Новая игра</string>
+    <string name="analysis_result">Анализ: %1$s</string>
+    <string name="game_complete">Игра завершена!</string>
+    <string name="no_analysis_results_available">Результаты анализа отсутствуют</string>
+    <string name="error">Ошибка</string>
+    <string name="retry">Попробуйте снова .</string>
+    <string name="scenario">Сценарий</string>
+    <string name="save_settings">Сохранить настройки</string>
+    <string name="system_default">По умолчанию</string>
+    <string name="matter_of_choice_onBoarding">Вопрос выбора</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Каждый день люди принимают бесчисленные решения.</string>
+    <string name="have_fun">Веселитесь .</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Что, если дети, играя, получат инструменты для принятия решений в реальной жизни?</string>
+    <string name="virtual_failures">Виртуальные неудачи</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Обычно мы учимся от негативных последствий. Разве не лучше учиться от виртуальных неудач?</string>
+    <string name="get_started">Начните</string>
+    <string name="skip">Скип .</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

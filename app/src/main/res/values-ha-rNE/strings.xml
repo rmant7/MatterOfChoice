@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Abubuwan da aka zaɓa</string>
+    <string name="app_name_matter_of_choice">Abubuwan da aka zaɓa</string>
+    <string name="matterofchoice_info">"Matter Of Choice yana gabatar da yanayi masu ma'amala da za su taimake ka ka koyi basira wajen yanke shawara."</string>
     <string name="optional_enter_the_role_e_g_student">Zaɓin zaɓi: Shigar da matsayin, misali, Dalibi</string>
     <string name="analysis_my_choices">Nazarin zaɓin da na yi</string>
     <string name="analysis_your_selections">Ka bincika zaɓinka</string>
@@ -9,26 +11,26 @@
     <string name="settings_title">Abubuwan da aka zaɓa</string>
     <string name="settings_subtitle">Yanayin zai dogara ne akan zaɓin ku</string>
     <string name="settings_label_subject">Shigar da batun</string>
-    <string name="settings_hint_select_question_type">Zaɓi nau\'in tambaya</string>
+    <string name="settings_hint_select_question_type">"Zaɓi nau'in tambaya"</string>
     <string name="settings_hint_select_subtype">Zaɓi subtype</string>
     <string name="settings_hint_select_difficulty">Zaɓi matakin wahala</string>
     <string name="settings_hint_select_gender_optional">Zaɓin zaɓi: Zaɓi jinsi</string>
     <string name="settings_label_age">Ka Shiga Shekararka</string>
     <string name="settings_hint_select_language">Zaɓi yarenku</string>
-    <string name="settings_button_generate_cases">Ƙirƙirar Al\'amura</string>
+    <string name="settings_button_generate_cases">"Ƙirƙirar Al'amura"</string>
     <string name="question_type_study">Nazarin</string>
     <string name="question_type_behavioral">Halaye</string>
     <string name="question_type_hiring">Hayar mutane</string>
     <string name="subtype_behavioral_interpersonal">Ƙwarewa a Tsakanin Mutane</string>
-    <string name="subtype_behavioral_ethical">Matsalolin Ɗabi\'a</string>
+    <string name="subtype_behavioral_ethical">"Matsalolin Ɗabi'a"</string>
     <string name="subtype_behavioral_stress">Gudanar da Matsala</string>
     <string name="subtype_study_mastery">Gudanar da Batutuwa</string>
-    <string name="subtype_study_critical_thinking">Ra\'ayin da Ya Dace</string>
+    <string name="subtype_study_critical_thinking">"Ra'ayin da Ya Dace"</string>
     <string name="subtype_study_practical_application">Yadda Za a Yi Amfani da Shi</string>
     <string name="subtype_hiring_technical">Ƙwarewar Fasaha</string>
     <string name="subtype_hiring_behavioral_interview">Tattaunawa Game da Halaye</string>
     <string name="subtype_hiring_situational_judgment">Hukuncin Yanayi</string>
-    <string name="difficulty_normal">al\'ada</string>
+    <string name="difficulty_normal">"al'ada"</string>
     <string name="difficulty_easy">mai sauƙi</string>
     <string name="difficulty_hard">mai wuya</string>
     <string name="gender_male">Maza</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Yanayin da ya faru</string>
     <string name="button_next">Na gaba</string>
     <string name="icon_desc_selected_option">Zaɓaɓɓen zaɓi</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Nazarin</string>
+    <string name="analysis_results">Sakamakon Bincike</string>
+    <string name="analysis_error">Kuskuren Bincike</string>
+    <string name="retry_analysis">Nazarin sake gwadawa</string>
+    <string name="no_analysis_data_available">Babu bayanan bincike da ake samu</string>
+    <string name="perform_analysis">Yi Nazarin</string>
+    <string name="your_score">Sakamakon Ka</string>
+    <string name="correct">(%1$d/%2$d daidai)</string>
+    <string name="overall_assessment">Ƙididdigar Gabaɗaya</string>
+    <string name="detailed_analysis">Cikakken Bincike</string>
+    <string name="back_to_game">Komawa Wasan</string>
+    <string name="play_again">Ka sake yin wasa</string>
+    <string name="case_header">Kashi %1$d</string>
+    <string name="your_choice">Zaɓin da Ka Yi</string>
+    <string name="optimal_choice">Zaɓin da Ya Dace</string>
+    <string name="analysis">Bincike:</string>
+    <string name="turn_of_3_case_of">Juyawa %1$d na 3 - Kashi %2$d na %3$d</string>
+    <string name="answered">Amsa: %1$d/%2$d</string>
+    <string name="next_case">Kashi na Gaba</string>
+    <string name="next_turn">Juyawa ta Gaba</string>
+    <string name="congratulations_you_finished_the_game">Godiya, kun gama wasan!</string>
+    <string name="new_game">Sabuwar Wasan</string>
+    <string name="analysis_result">Nazarin: %1$s</string>
+    <string name="game_complete">An kammala wasan!</string>
+    <string name="no_analysis_results_available">Babu sakamakon bincike da aka samu</string>
+    <string name="error">Kuskure</string>
+    <string name="retry">Ka sake gwadawa</string>
+    <string name="scenario">Yanayin da ya faru</string>
+    <string name="save_settings">Ajiye Saituna</string>
+    <string name="system_default">Rashin Tsarin Tsarin</string>
+    <string name="matter_of_choice_onBoarding">Batun Zaɓin</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Mutane suna tsai da shawarwari da yawa a kowace rana.</string>
+    <string name="have_fun">Yi farin ciki</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Idan yara suna wasa kuma suna samun kayan aiki da za su taimaka musu su tsai da shawara fa?</string>
+    <string name="virtual_failures">Rashin Ciki na Gaskiya</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Yawancin lokaci muna koya daga mummunan sakamako. Shin ba zai zama mafi alhẽri a koya daga rumfa gazawar?</string>
+    <string name="get_started">Ka Fara</string>
+    <string name="skip">Ka tsallake</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -80,7 +119,7 @@
         <item>Afrikaans</item>
         <item>Akan</item>
         <item>Amharic</item>
-        <item>Larabci (Al\'ummar Larabawa)</item>
+        <item>"Larabci (Al'ummar Larabawa)"</item>
         <item>Assamese</item>
         <item>Ƙasar Asturian</item>
         <item>Hausa</item>

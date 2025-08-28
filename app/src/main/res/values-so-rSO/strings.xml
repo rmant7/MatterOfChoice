@@ -1,19 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Arrimaha doorashada</string>
+    <string name="app_name_matter_of_choice">Arrimaha doorashada</string>
+    <string name="matterofchoice_info">"Matter Of Choice wuxuu soo bandhigayaa aragtiyo isdhexgal ah oo kaa caawinaya inaad barato xirfadaha go'aan qaadashada."</string>
     <string name="optional_enter_the_role_e_g_student">ikhtiyaar: Ku qor doorka, tusaale ahaan, Ardayga</string>
     <string name="analysis_my_choices">Falanqaynta doorashadayda</string>
     <string name="analysis_your_selections">Falanqaynta doorashadaada</string>
     <string name="rounds">Daawooyinka</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Xisaabinta dhibcaha waxay ku saleysan tahay caafimaadka, hodantinimada, xiriirka, farxadda, aqoonta, karma, maareynta waqtiga, saameynta deegaanka, koritaanka shaqsiyeed, iyo mas\'uuliyadda bulshada</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        "Xisaabinta dhibcaha waxay ku saleysan tahay caafimaadka, hodantinimada, xiriirka, farxadda, aqoonta, karma, maareynta waqtiga, saameynta deegaanka, koritaanka shaqsiyeed, iyo mas'uuliyadda bulshada"</string>
     <string name="settings_title">Arrimaha doorashada</string>
     <string name="settings_subtitle">Sawirada waxay ku saleysan doonaan doorashadaada</string>
     <string name="settings_label_subject">Ku qor mawduuca</string>
-    <string name="settings_hint_select_question_type">Dooro nooca su\'aasha</string>
+    <string name="settings_hint_select_question_type">"Dooro nooca su'aasha"</string>
     <string name="settings_hint_select_subtype">Dooro nooca hoose</string>
     <string name="settings_hint_select_difficulty">Xulo heerka adag</string>
     <string name="settings_hint_select_gender_optional">ikhtiyaar: Dooro jinsigaaga</string>
-    <string name="settings_label_age">Ku soo biir da\'daada</string>
+    <string name="settings_label_age">"Ku soo biir da'daada"</string>
     <string name="settings_hint_select_language">Dooro luuqadaada</string>
     <string name="settings_button_generate_cases">Abuurista kiisaska</string>
     <string name="question_type_study">Waxbarashada</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Muuqaalka</string>
     <string name="button_next">Marka xigta</string>
     <string name="icon_desc_selected_option">Xulashada la doortay</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Falanqaynta</string>
+    <string name="analysis_results">Natiijooyinka falanqaynta</string>
+    <string name="analysis_error">Khaladaadka falanqaynta</string>
+    <string name="retry_analysis">Dib-u-eegista tijaabada</string>
+    <string name="no_analysis_data_available">Ma jiro xog falanqeyn ah oo la heli karo</string>
+    <string name="perform_analysis">Samee falanqaynta</string>
+    <string name="your_score">Shahaadadaada</string>
+    <string name="correct">(%1$d/%2$d sax)</string>
+    <string name="overall_assessment">Qiimaynta guud</string>
+    <string name="detailed_analysis">Falanqaynta faahfaahsan</string>
+    <string name="back_to_game">Ku soo noqoshada ciyaarta</string>
+    <string name="play_again">Mar kale ciyaar</string>
+    <string name="case_header">Xaaladda %1$d</string>
+    <string name="your_choice">Doorashadaada</string>
+    <string name="optimal_choice">Xulashada ugu fiican</string>
+    <string name="analysis">Falanqaynta:</string>
+    <string name="turn_of_3_case_of">%1$d ee 3 - Xaaladda %2$d ee %3$d</string>
+    <string name="answered">Jawaabta: %1$d/%2$d</string>
+    <string name="next_case">Kiiska soo socda</string>
+    <string name="next_turn">Wareegga soo socda</string>
+    <string name="congratulations_you_finished_the_game">Hambalyo, ciyaarta waad dhameystirtay!</string>
+    <string name="new_game">Ciyaarta Cusub</string>
+    <string name="analysis_result">Falanqaynta: %1$s</string>
+    <string name="game_complete">Ciyaarta waa dhameystiran tahay!</string>
+    <string name="no_analysis_results_available">Ma jiraan wax natiijooyin ah oo falanqaynta la heli karo</string>
+    <string name="error">Khaladaad</string>
+    <string name="retry">Isku day dib</string>
+    <string name="scenario">Muuqaalka</string>
+    <string name="save_settings">Kaydso Goobaha</string>
+    <string name="system_default">Nidaamka Default</string>
+    <string name="matter_of_choice_onBoarding">Arrinta Doorashada</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">"Dadku maalin kasta go'aanno badan ayay sameeyaan."</string>
+    <string name="have_fun">Ku raaxayso</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">"Maxaa dhacaya haddii carruurta, iyagoo ciyaaraya, ay helaan qalab ay ku go'aan ka gaaraan nolosha dhabta ah?"</string>
+    <string name="virtual_failures">Dhibaatooyinka Virtual</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Sida caadiga ah waxaan ka baraneynaa cawaaqibka xun. Miyaanay fiicnayn in laga barto guuldarada dalwaddii?</string>
+    <string name="get_started">Bilow</string>
+    <string name="skip">Ka gudub</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

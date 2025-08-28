@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">تاللاش مەسىلىسى</string>
+    <string name="app_name_matter_of_choice">تاللاش مەسىلىسى</string>
+    <string name="matterofchoice_info">Matter Of Choice سىزنىڭ تاللاش ئىقتىدارىڭىزنى ئۆگىتىشكە ياردەم بېرىدىغان ئىجتىمائىي كۆرۈنۈشلەرنى كۆرسىتىدۇ.</string>
     <string name="optional_enter_the_role_e_g_student">ئىختىيارىي: رولنى كىرگۈزۈڭ، مەسىلەن: ئوقۇغۇچى</string>
     <string name="analysis_my_choices">مېنىڭ تاللىشىمنى ئانالىز قىلىڭ</string>
     <string name="analysis_your_selections">تاللىغىنىڭلارنى ئانالىز قىلىڭ</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">سىنارىيە</string>
     <string name="button_next">كېيىنكىسى:</string>
     <string name="icon_desc_selected_option">تاللانغان تاللاش</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">ئانالىز قىلىش</string>
+    <string name="analysis_results">ئانالىز نەتىجىسى</string>
+    <string name="analysis_error">ئانالىز خاتالىقى</string>
+    <string name="retry_analysis">قايتا سىناش ئانالىزى</string>
+    <string name="no_analysis_data_available">ئانالىز ئۇچۇرى يوق</string>
+    <string name="perform_analysis">تەھلىل ئېلىپ بېرىش</string>
+    <string name="your_score">نەتىجىڭىز</string>
+    <string name="correct">(%1$d/%2$d توغرا)</string>
+    <string name="overall_assessment">ئومۇمىي باھالاش</string>
+    <string name="detailed_analysis">تەپسىلىي تەھلىل</string>
+    <string name="back_to_game">ئويۇنغا قايتىپ بارغىن</string>
+    <string name="play_again">يەنە ئوينىغىن</string>
+    <string name="case_header">%1$d دېلوسى</string>
+    <string name="your_choice">سىزنىڭ تاللىشىڭىز</string>
+    <string name="optimal_choice">ئەڭ ياخشى تاللاش</string>
+    <string name="analysis">تەھلىل:</string>
+    <string name="turn_of_3_case_of">%1$d نى 3 دىن بۇرىڭ - %2$d نى %3$d دىن بۇرىڭ</string>
+    <string name="answered">جاۋاب: %1$d/%2$d</string>
+    <string name="next_case">كېيىنكى خەۋەر</string>
+    <string name="next_turn">كېيىنكى نۆۋەت</string>
+    <string name="congratulations_you_finished_the_game">مۇبارەك بولسۇن، ئويۇننى ئاياغلاشتىڭ!</string>
+    <string name="new_game">يېڭى ئويۇن</string>
+    <string name="analysis_result">ئانالىز: %1$s</string>
+    <string name="game_complete">ئويۇن پۈتتى!</string>
+    <string name="no_analysis_results_available">ئانالىز نەتىجىسى يوق</string>
+    <string name="error">خاتالىق</string>
+    <string name="retry">قايتا سىناپ بېقىڭ</string>
+    <string name="scenario">سىنارىيە</string>
+    <string name="save_settings">تەڭشەكلەرنى ساقلاش</string>
+    <string name="system_default">سىستېما ئۆلچەمسىز</string>
+    <string name="matter_of_choice_onBoarding">تاللاش مەسىلىسى</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">كىشىلەر كۈندىلىك تۇرمۇشتا سانسىز - سانسىز بىرەر قارارنى كەلتۈرىدۇ.</string>
+    <string name="have_fun">ھۇزۇرۇڭنى باسقىن</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">ئەگەر بالىلار ئويۇن ئويناپ تۇرۇپ، تۇرمۇشتا قانداق قارار قىلىشنى بىلسەچۇ؟</string>
+    <string name="virtual_failures">ئەمەلىي مەغلۇبىيەتلەر</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">ئادەتتە، بىز سەلبىي ئاقىۋەتتىن ئۆگىنىمىز. دېمەك، مەۋھۇم مەغلۇبىيەتلەردىن ئۆگىنىش ياخشى بولماسمۇ؟</string>
+    <string name="get_started">ئىش باشلىغىن</string>
+    <string name="skip">ئۆتۈپ كېتىش</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

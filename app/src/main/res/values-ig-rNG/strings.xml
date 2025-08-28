@@ -1,26 +1,28 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Ihe a ga-ahọrọ</string>
+    <string name="app_name_matter_of_choice">Ihe a ga-ahọrọ</string>
+    <string name="matterofchoice_info">Matter Of Choice na-enye ihe atụ na-akparịta ụka iji nyere gị aka ịmụta nkà ime mkpebi.</string>
     <string name="optional_enter_the_role_e_g_student">Nhọrọ: Tinye ọrụ ahụ, dịka ọmụmaatụ, Nwa akwụkwọ</string>
     <string name="analysis_my_choices">Nyochaa ihe ndị m kpebiri ime</string>
     <string name="analysis_your_selections">Nyochaa nhọrọ gị</string>
     <string name="rounds">Ụgbọala</string>
     <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Ọnụ ọgụgụ na-agbakọ dabere na ahụike, akụnụba, mmekọrịta, obi ụtọ, ihe ọmụma, karma, njikwa oge, mmetụta gburugburu ebe obibi, uto onwe onye, na ibu ọrụ ọha na eze</string>
     <string name="settings_title">Ihe a ga-ahọrọ</string>
-    <string name="settings_subtitle">Ihe ndị ị ga-eme ga-adabere n\'ihe ndị ị họọrọ.</string>
+    <string name="settings_subtitle">"Ihe ndị ị ga-eme ga-adabere n'ihe ndị ị họọrọ."</string>
     <string name="settings_label_subject">Tinye isiokwu ahụ</string>
     <string name="settings_hint_select_question_type">Họrọ ụdị ajụjụ</string>
     <string name="settings_hint_select_subtype">Họrọ subtype</string>
     <string name="settings_hint_select_difficulty">Họrọ ọkwa siri ike</string>
     <string name="settings_hint_select_gender_optional">Nhọrọ: Họrọ okike gị</string>
-    <string name="settings_label_age">Bịa n\'Oge Gị</string>
+    <string name="settings_label_age">"Bịa n'Oge Gị"</string>
     <string name="settings_hint_select_language">Họrọ asụsụ gị</string>
     <string name="settings_button_generate_cases">Mepụta Ọnọdụ</string>
     <string name="question_type_study">Ịmụ ihe</string>
     <string name="question_type_behavioral">Àgwà</string>
     <string name="question_type_hiring">Ịkwụ Ụgwọ</string>
-    <string name="subtype_behavioral_interpersonal">Amamihe Ndị Dị n\'Ebe Ndị Ọzọ Nọ</string>
-    <string name="subtype_behavioral_ethical">Nsogbu Ndị Dị n\'Omume</string>
+    <string name="subtype_behavioral_interpersonal">"Amamihe Ndị Dị n'Ebe Ndị Ọzọ Nọ"</string>
+    <string name="subtype_behavioral_ethical">"Nsogbu Ndị Dị n'Omume"</string>
     <string name="subtype_behavioral_stress">Otú E Si Na-edozi Nchegbu</string>
     <string name="subtype_study_mastery">Ịmụta Okwu nke Ọma</string>
     <string name="subtype_study_critical_thinking">Echiche Dị Oké Mkpa</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Ihe e dere na ya</string>
     <string name="button_next">Nke na-esote</string>
     <string name="icon_desc_selected_option">Nhọrọ a họọrọ</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Nyochaa</string>
+    <string name="analysis_results">Nsonaazụ Nnyocha</string>
+    <string name="analysis_error">Njehie Nnyocha</string>
+    <string name="retry_analysis">Nnyocha Nnyocha</string>
+    <string name="no_analysis_data_available">Enweghị data nyocha dịnụ</string>
+    <string name="perform_analysis">Mee Nyocha</string>
+    <string name="your_score">Ọnụ Ọgụgụ Gị</string>
+    <string name="correct">(%1$d/%2$d ziri ezi)</string>
+    <string name="overall_assessment">Ntụle zuru ezu</string>
+    <string name="detailed_analysis">Nnyocha zuru ezu</string>
+    <string name="back_to_game">"Laghachi n'Egwuregwu"</string>
+    <string name="play_again">Gbalịa Ọzọ</string>
+    <string name="case_header">Ọnọdụ %1$d</string>
+    <string name="your_choice">Ihe Ị Ga-ahọrọ</string>
+    <string name="optimal_choice">Nhọrọ Kachasị Mma</string>
+    <string name="analysis">Nnyocha:</string>
+    <string name="turn_of_3_case_of">Tụgharịa %1$d nke 3 - ikpe %2$d nke %3$d</string>
+    <string name="answered">Azịza: %1$d/%2$d</string>
+    <string name="next_case">Ikpe Na-esote</string>
+    <string name="next_turn">Ntụgharị Na-esote</string>
+    <string name="congratulations_you_finished_the_game">Ekele, i mechaala egwuregwu ahụ!</string>
+    <string name="new_game">Egwuregwu Ọhụrụ</string>
+    <string name="analysis_result">Nnyocha: %1$s</string>
+    <string name="game_complete">Egwuregwu ahụ agwụla!</string>
+    <string name="no_analysis_results_available">Enweghị nsonaazụ nyocha dịnụ</string>
+    <string name="error">Njehie\n</string>
+    <string name="retry">Gbalịa ọzọ</string>
+    <string name="scenario">Ihe e dere na ya</string>
+    <string name="save_settings">Chekwaa Ntọala</string>
+    <string name="system_default">System Default</string>
+    <string name="matter_of_choice_onBoarding">Ihe Ndị Mmadụ Ga-ahọrọ</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Ndị mmadụ na-ekpebi ọtụtụ ihe ha ga-eme kwa ụbọchị.</string>
+    <string name="have_fun">Nwee obi ụtọ .</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">"Gịnị ma ọ bụrụ na ụmụaka, mgbe ha na-egwu egwu, nweta ngwá ọrụ maka ime mkpebi ná ndụ n'ezie?"</string>
+    <string name="virtual_failures">Ihe Ndị Na-adabaghị na Ya</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">"Anyị na-amụta ihe site n'ihe ndị na-adịghị mma. Ọ́ gaghị adị mma ka anyị mụta ihe site n'ihe ndị na-adịghị mma?"</string>
+    <string name="get_started">Na-amalite</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -95,7 +134,7 @@
         <item>Czech</item>
         <item>Ndị Welsh</item>
         <item>Danish</item>
-        <item>N\'asụsụ German</item>
+        <item>"N'asụsụ German"</item>
         <item>Dzongkha</item>
         <item>Grik</item>
         <item>Bekee</item>
@@ -149,7 +188,7 @@
         <item>Halh Mongolian</item>
         <item>Malay (Malaysia)</item>
         <item>Ndị Burma</item>
-        <item>N\'asụsụ Dutch</item>
+        <item>"N'asụsụ Dutch"</item>
         <item>Norwegian Nynorsk</item>
         <item>Bokmål Norwegian</item>
         <item>Nepal (Nepal)</item>

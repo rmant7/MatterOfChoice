@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">مسألة الخيار</string>
+    <string name="app_name_matter_of_choice">مسألة الخيار</string>
+    <string name="matterofchoice_info">موضوع الاختيار يقدم سيناريوهات تفاعلية لمساعدتك على تعلم مهارات صنع القرار.</string>
     <string name="optional_enter_the_role_e_g_student">اختياري: إدخال الدور، على سبيل المثال، الطالب</string>
     <string name="analysis_my_choices">تحليل خياراتي</string>
     <string name="analysis_your_selections">تحليل اختياراتك</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">السيناريو</string>
     <string name="button_next">التالي</string>
     <string name="icon_desc_selected_option">الخيار المختار</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">تحليل</string>
+    <string name="analysis_results">نتائج التحليل</string>
+    <string name="analysis_error">خطأ التحليل</string>
+    <string name="retry_analysis">تحليل إعادة التجربة</string>
+    <string name="no_analysis_data_available">لا توجد بيانات تحليل متاحة</string>
+    <string name="perform_analysis">إجراء التحليل</string>
+    <string name="your_score">نتيجتك</string>
+    <string name="correct">(%1$d/%2$d صحيح)</string>
+    <string name="overall_assessment">التقييم العام</string>
+    <string name="detailed_analysis">تحليل مفصل</string>
+    <string name="back_to_game">العودة إلى اللعبة</string>
+    <string name="play_again">لعب مرة أخرى</string>
+    <string name="case_header">الحالة %1$d</string>
+    <string name="your_choice">اختيارك</string>
+    <string name="optimal_choice">الخيار الأمثل</string>
+    <string name="analysis">التحليل:</string>
+    <string name="turn_of_3_case_of">تحويل %1$d من 3 - حالة %2$d من %3$d</string>
+    <string name="answered">الإجابة: %1$d/%2$d</string>
+    <string name="next_case">القضية التالية</string>
+    <string name="next_turn">التحول التالي</string>
+    <string name="congratulations_you_finished_the_game">تهانينا، انتهيت من اللعبة!</string>
+    <string name="new_game">لعبة جديدة</string>
+    <string name="analysis_result">التحليل: %1$s</string>
+    <string name="game_complete">اللعبة اكتملت!</string>
+    <string name="no_analysis_results_available">لا توجد نتائج تحليل متاحة</string>
+    <string name="error">خطأ</string>
+    <string name="retry">حاول مرة أخرى</string>
+    <string name="scenario">السيناريو</string>
+    <string name="save_settings">حفظ الإعدادات</string>
+    <string name="system_default">افتراض النظام</string>
+    <string name="matter_of_choice_onBoarding">مسألة الخيار</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">الناس يتخذون العديد من القرارات كل يوم. هل نحن مستعدون لاتخاذ أفضل القرارات؟</string>
+    <string name="have_fun">استمتعوا</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">ماذا لو كان الأطفال، أثناء اللعب، يحصلون على أدوات لاتخاذ القرارات في الحياة الحقيقية؟</string>
+    <string name="virtual_failures">الفشل الافتراضي</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">عادةً ما نتعلم من العواقب السلبية أليس من الأفضل أن نتعلم من الفشل الافتراضي ؟</string>
+    <string name="get_started">ابدأ</string>
+    <string name="skip">القفز</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

@@ -1,6 +1,7 @@
-<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Mi̱ ci̱ rɔ̱ car</string>
+    <string name="app_name_matter_of_choice">Mi̱ ci̱ rɔ̱ car</string>
+    <string name="matterofchoice_info">Kä Matter Of Choice cuɛ ŋaknɔmni̱ la̱t kɛ ɣöö bi̱ ji̱ luäk kɛ ŋi̱i̱c mi̱ bi̱ ji̱ luäk kɛ ɣöö bi̱ ji̱ luäk kɛ ɣöö bi̱ ji̱ luäk.</string>
     <string name="optional_enter_the_role_e_g_student">Mi̱ ca go̱r: Ŋi̱i̱c gua̱a̱th, cäätdɛ, Ji̱ gɔ̱rä</string>
     <string name="analysis_my_choices">Ŋi̱i̱c ti̱ göörä</string>
     <string name="analysis_your_selections">Ŋi̱i̱c mi̱ ci̱ wä la̱t</string>
@@ -45,7 +46,44 @@
     <string name="text_scenario">Ta̱a̱ in te thi̱n</string>
     <string name="button_next">Min dɔ̱diɛn</string>
     <string name="icon_desc_selected_option">Mi̱ ca kuany</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Ŋi̱cdɛ</string>
+    <string name="analysis_results">Ri̱thääli̱ Thëmni̱</string>
+    <string name="analysis_error">Mi̱ cɔali̱ mi̱ cɔali̱</string>
+    <string name="retry_analysis">Rɛy ɣɔ̱ɔ̱ni̱ tin kɔ̱kiɛn</string>
+    <string name="no_analysis_data_available">/thiɛl mi̱ ca ŋa̱c kɛ kui̱ ŋi̱i̱cä</string>
+    <string name="perform_analysis">Lätni̱ Athli̱thith</string>
+    <string name="your_score">Ŋi̱i̱cdu</string>
+    <string name="correct">(%1$d/%2$d thuɔ̱k)</string>
+    <string name="overall_assessment">Ŋi̱i̱c kɛɛliw</string>
+    <string name="detailed_analysis">Ŋi̱i̱cni̱ ti̱ ŋuan</string>
+    <string name="back_to_game">Cuaa loc kä ŋar</string>
+    <string name="play_again">Ci̱ rɔ nyɔk kɛ ŋar</string>
+    <string name="case_header">Käth %1$d</string>
+    <string name="your_choice">Yiëëdu</string>
+    <string name="optimal_choice">Mi̱ gɔaa ɛlɔ̱ŋ</string>
+    <string name="analysis">Ŋi̱i̱c:</string>
+    <string name="turn_of_3_case_of">Rɛy %1$d kä 3 - Cäät %2$d kä %3$d</string>
+    <string name="answered">Ca̱r: %1$d/%2$d</string>
+    <string name="next_case">Kä min dɔ̱ŋ</string>
+    <string name="next_turn">Kä min dɔ̱ŋ</string>
+    <string name="congratulations_you_finished_the_game">Gɔ̱a̱r tɛ̈th lɔaac, ci ŋar thuuk!</string>
+    <string name="new_game">Luak mi̱ pay tuɔɔk</string>
+    <string name="analysis_result">Ŋi̱i̱c: %1$s</string>
+    <string name="game_complete">Ci̱ ŋar cop!</string>
+    <string name="no_analysis_results_available">Thilɛ nämbäri̱ ti̱ ca riali̱kä thi̱n</string>
+    <string name="error">Ɣɔ̱ɔ̱r</string>
+    <string name="retry">Kɛn ɣɔ̱n kɛ nyɔk</string>
+    <string name="scenario">Ta̱a̱ in te thi̱n</string>
+    <string name="save_settings">Luɔ̱ɔ̱c ŋɔaani̱</string>
+    <string name="system_default">System Default</string>
+    <string name="matter_of_choice_onBoarding">Kɛl Mi̱ Ca La̱t</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Nɛ̈nɛ jɛ ɛn ɣöö banɛ min gɔaa ni jɛn la̱t.</string>
+    <string name="have_fun">Mi̱ göörɛ mi̱ gɔaa</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Ɛŋu mi ci̱ tuɔɔk mi̱ ci̱ gaat, mi̱ ci̱kɛ ŋar, bi̱ kɛn kuak jek kɛ kui̱i̱ mi̱ de̱e̱ rɔ̱ la̱t rɛy teekä in thuɔ̱k?</string>
+    <string name="virtual_failures">Kɛn Ɣɔ̱ɔ̱ɔ̱r Ti̱ Ci̱ Rɛy</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Ni̱ ciaaŋ cakɔ ŋi̱i̱c kä min di̱i̱t. /Ciɛ gɔaa ɛn ɣöö bakɔ ŋi̱i̱c kä min di̱i̱t?</string>
+    <string name="get_started">Ji̱i̱ kɛ nhiam</string>
+    <string name="skip">Jiɛɛn</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

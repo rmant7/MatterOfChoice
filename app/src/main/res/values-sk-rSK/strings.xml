@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Vybraná vec</string>
+    <string name="app_name_matter_of_choice">Vybraná vec</string>
+    <string name="matterofchoice_info">Matter Of Choice ponúka interaktívne scenáre, ktoré vám pomôžu naučiť sa rozhodovacie zručnosti.</string>
     <string name="optional_enter_the_role_e_g_student">Voliteľné: Zapíšte úlohu, napr. študent</string>
     <string name="analysis_my_choices">Analýza mojich rozhodnutí</string>
     <string name="analysis_your_selections">Analýza Vašich výberov</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Scenár</string>
     <string name="button_next">Nasledujúce</string>
     <string name="icon_desc_selected_option">Vybraná možnosť</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analýza</string>
+    <string name="analysis_results">Výsledky analýzy</string>
+    <string name="analysis_error">Chyb analýzy</string>
+    <string name="retry_analysis">Analýza opätovného skúšania</string>
+    <string name="no_analysis_data_available">K dispozícii nie sú žiadne údaje z analýzy</string>
+    <string name="perform_analysis">Vykonajte analýzu</string>
+    <string name="your_score">Váš výsledok</string>
+    <string name="correct">(%1$d/%2$d správne)</string>
+    <string name="overall_assessment">Celkové hodnotenie</string>
+    <string name="detailed_analysis">Podrobná analýza</string>
+    <string name="back_to_game">Vráť sa do hry</string>
+    <string name="play_again">Hrať znova</string>
+    <string name="case_header">Prípad %1$d</string>
+    <string name="your_choice">Vaša voľba</string>
+    <string name="optimal_choice">Optimálna voľba</string>
+    <string name="analysis">Analýza:</string>
+    <string name="turn_of_3_case_of">Obrátka %1$d z 3 - Prípad %2$d z %3$d</string>
+    <string name="answered">Odpoveď: %1$d/%2$d</string>
+    <string name="next_case">Ďalší prípad</string>
+    <string name="next_turn">Nasledujúci obrat</string>
+    <string name="congratulations_you_finished_the_game">Gratulujem, skončil si hru!</string>
+    <string name="new_game">Nová hra</string>
+    <string name="analysis_result">Analýza: %1$s</string>
+    <string name="game_complete">Hra je hotová!</string>
+    <string name="no_analysis_results_available">Neexistujú žiadne výsledky analýzy</string>
+    <string name="error">Chyby</string>
+    <string name="retry">Skúste znova.</string>
+    <string name="scenario">Scenár</string>
+    <string name="save_settings">Uloženie nastavení</string>
+    <string name="system_default">Zvyčajný systém</string>
+    <string name="matter_of_choice_onBoarding">Otázka voľby</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Každý deň ľudia robia nespočetné množstvo rozhodnutí.</string>
+    <string name="have_fun">Bavte sa .</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Čo ak by deti pri hraní získali nástroje na rozhodovanie v reálnom živote?</string>
+    <string name="virtual_failures">Virtuálne neúspechy</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Zvyčajne sa učíme z negatívnych dôsledkov. Nebolo by lepšie sa naučiť z virtuálnych zlyhaní?</string>
+    <string name="get_started">Začnite</string>
+    <string name="skip">Preskočiť</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

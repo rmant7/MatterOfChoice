@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Сонгуулийн асуудал</string>
+    <string name="app_name_matter_of_choice">Сонгуулийн асуудал</string>
+    <string name="matterofchoice_info">Сайлалтын асуудал нь шийдвэр гаргах ур чадварыг олж авахын тулд интерактив нөхцөл байдлыг танилцуулж байна.</string>
     <string name="optional_enter_the_role_e_g_student">Сонгон шалгаруулалтаар: Тухайлбал, Оюутан</string>
     <string name="analysis_my_choices">Миний сонголтыг шинжилгээ хийх</string>
     <string name="analysis_your_selections">Таны сонголтыг шинжилгээ хийх</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Сценарий</string>
     <string name="button_next">Дараа нь</string>
     <string name="icon_desc_selected_option">Сонгосон сонголт</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Анализ хийх</string>
+    <string name="analysis_results">Шинжилгээний үр дүн</string>
+    <string name="analysis_error">Анализ алдаа</string>
+    <string name="retry_analysis">Урьдчилсан шинжилгээ</string>
+    <string name="no_analysis_data_available">Шинжилгээний мэдээлэл байхгүй</string>
+    <string name="perform_analysis">Анализ хий</string>
+    <string name="your_score">Таны оноо</string>
+    <string name="correct">(%1$d/%2$d зөв)</string>
+    <string name="overall_assessment">Бүхэл бүтэн үнэлгээ</string>
+    <string name="detailed_analysis">Нарийвчилсан шинжилгээ</string>
+    <string name="back_to_game">Боловсрол руу буцах</string>
+    <string name="play_again">Дахиад тоглох</string>
+    <string name="case_header">%1$d тохиолдол</string>
+    <string name="your_choice">Таны сонголт</string>
+    <string name="optimal_choice">Сайн сонголт</string>
+    <string name="analysis">Анализ:</string>
+    <string name="turn_of_3_case_of">Үргэлт %1$d 3 - Үргэлт %2$d</string>
+    <string name="answered">Хариулт: %1$d/%2$d</string>
+    <string name="next_case">Дараагийн хэрэг</string>
+    <string name="next_turn">Дараагийн эргэлт</string>
+    <string name="congratulations_you_finished_the_game">Дашрамдлалаа, та тоглолтыг дууссан!</string>
+    <string name="new_game">Шинэ тоглоом</string>
+    <string name="analysis_result">Анализ: %1$s</string>
+    <string name="game_complete">Тоглол дууссан!</string>
+    <string name="no_analysis_results_available">Анализын үр дүн байхгүй</string>
+    <string name="error">Хатаг</string>
+    <string name="retry">Дахин туршиж үзээрэй.</string>
+    <string name="scenario">Сценарий</string>
+    <string name="save_settings">Байгууллагыг хадгалах</string>
+    <string name="system_default">Системийн алдаа</string>
+    <string name="matter_of_choice_onBoarding">Сонгуулийн асуудал</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Хүмүүс өдөр бүр олон тооны шийдвэр гаргадаг.</string>
+    <string name="have_fun">Хайртай байх.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Хүүхдүүд тоглож байхдаа жинхэнэ амьдралд шийдвэр гаргах хэрэгсэл олж чадвал яах вэ?</string>
+    <string name="virtual_failures">Виртуал алдаа</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Бид ихэвчлэн сөрөг үр дагавруудаас суралцах нь зүйтэй биш үү?</string>
+    <string name="get_started">Анх эхлээрэй</string>
+    <string name="skip">Улаанбаатар</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

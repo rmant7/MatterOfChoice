@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Ohun tí wọ́n yàn</string>
+    <string name="app_name_matter_of_choice">Ohun tí wọ́n yàn</string>
+    <string name="matterofchoice_info">Àwọn ohun tó wà nínú Matter Of Choice máa ń ràn ẹ́ lọ́wọ́ láti kọ́ àwọn ọ̀nà tó o lè gbà ṣèpinnu.</string>
     <string name="optional_enter_the_role_e_g_student">Ohun tó yẹ kó o ṣe: Ṣiṣii ojúṣe náà, bí àpẹẹrẹ, Ọmọléèwé</string>
     <string name="analysis_my_choices">Ṣàgbéyẹ̀wò àwọn ìpinnu mi</string>
     <string name="analysis_your_selections">Ṣàgbéyẹ̀wò àwọn ohun tó o yàn</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Àpilẹ̀kọ</string>
     <string name="button_next">Ohun tó tẹ̀ lé e</string>
     <string name="icon_desc_selected_option">Aṣayan ti a yan</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Ṣàgbéyẹ̀wò</string>
+    <string name="analysis_results">Àwọn Àbájáde Ìwádìí</string>
+    <string name="analysis_error">Àṣìṣe Ìwádìí</string>
+    <string name="retry_analysis">Ìwádìí Àtúnṣe</string>
+    <string name="no_analysis_data_available">Kò sí ìwádìí kankan tó wà</string>
+    <string name="perform_analysis">Ṣe Ìwádìí</string>
+    <string name="your_score">Ojú Ìwòye Rẹ</string>
+    <string name="correct">(%1$d/%2$d tọ́)</string>
+    <string name="overall_assessment">Àpilẹ̀kọ àpapọ̀</string>
+    <string name="detailed_analysis">Àpilẹ̀kọ Ìwádìí</string>
+    <string name="back_to_game">Bá A Ṣe Lè Pa Dà sí Iṣẹ́</string>
+    <string name="play_again">Ẹ tún máa ṣeré</string>
+    <string name="case_header">Ọ̀ràn %1$d</string>
+    <string name="your_choice">Ìpinnu Rẹ</string>
+    <string name="optimal_choice">Ìpinnu Tó Tọ́</string>
+    <string name="analysis">Ìwádìí:</string>
+    <string name="turn_of_3_case_of">Gbigbe %1$d ti 3 - Ọran %2$d ti %3$d</string>
+    <string name="answered">Ìdáhùn: %1$d/%2$d</string>
+    <string name="next_case">Ìṣẹ̀lẹ̀ Tó Ń Tẹ̀ Lé E</string>
+    <string name="next_turn">Ìyípadà Tó Ń Bẹ̀rẹ̀</string>
+    <string name="congratulations_you_finished_the_game">Ìbùkún fún ọ, o ti parí eré náà!</string>
+    <string name="new_game">Ojúṣe Tuntun</string>
+    <string name="analysis_result">Ìwádìí: %1$s</string>
+    <string name="game_complete">A parí eré náà!</string>
+    <string name="no_analysis_results_available">Kò sí àbájáde ìwádìí tó wà</string>
+    <string name="error">Àṣìṣe</string>
+    <string name="retry">Gbiyanju lẹẹkansi</string>
+    <string name="scenario">Àpilẹ̀kọ</string>
+    <string name="save_settings">Fi Àwọn Ìdánilójú Pa Mọ́</string>
+    <string name="system_default">Àkọsílẹ̀ Àìmọye</string>
+    <string name="matter_of_choice_onBoarding">Ohun Tó Yẹ Ká Ṣe</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Lójoojúmọ́, ọ̀pọ̀ èèyàn ló máa ń ṣèpinnu.</string>
+    <string name="have_fun">Ẹ gbádùn ara yín</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Kí ló máa ṣẹlẹ̀ bí àwọn ọmọ bá ń ṣeré, tí wọ́n sì ń rí àwọn ohun èlò tí wọ́n lè lò láti ṣèpinnu nínú ìgbésí ayé tòótọ́?</string>
+    <string name="virtual_failures">Àwọn Àṣìṣe Tó Ń Ṣẹlẹ̀</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">A sábà máa ń kẹ́kọ̀ọ́ látinú àwọn àbájáde búburú. Ǹjẹ́ kò dára ká kẹ́kọ̀ọ́ látinú àwọn àṣìṣe tó ṣeé fojú rí?</string>
+    <string name="get_started">Máa Bẹ̀rẹ̀</string>
+    <string name="skip">Ṣiṣejade</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

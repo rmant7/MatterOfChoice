@@ -1,12 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Matèria d\'elecció</string>
+    <string name="app_name">"Matèria d'elecció"</string>
+    <string name="app_name_matter_of_choice">"Matèria d'elecció"</string>
+    <string name="matterofchoice_info">Matter Of Choice presenta escenaris interactius per ajudar a aprendre habilitats de presa de decisions.</string>
     <string name="optional_enter_the_role_e_g_student">Opcional: Introducir el paper, per exemple, Estudiant</string>
     <string name="analysis_my_choices">Anàlisi de les meves opcions</string>
     <string name="analysis_your_selections">Anàlisi de les seves seleccions</string>
     <string name="rounds">Rodes</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Calcular les puntuacions basades en la salut, la riquesa, les relacions, la felicitat, el coneixement, el karma, la gestió del temps, l\'impacte ambiental, el creixement personal i la responsabilitat social</string>
-    <string name="settings_title">Matèria d\'elecció</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        "Calcular les puntuacions basades en la salut, la riquesa, les relacions, la felicitat, el coneixement, el karma, la gestió del temps, l'impacte ambiental, el creixement personal i la responsabilitat social"</string>
+    <string name="settings_title">"Matèria d'elecció"</string>
     <string name="settings_subtitle">Els escenaris es basaran en les seves seleccions</string>
     <string name="settings_label_subject">Introducir el tema</string>
     <string name="settings_hint_select_question_type">Seleccioneu el tipus de pregunta</string>
@@ -21,8 +24,8 @@
     <string name="question_type_hiring">Contractació</string>
     <string name="subtype_behavioral_interpersonal">Competències interpersonales</string>
     <string name="subtype_behavioral_ethical">Dilemmes ètics</string>
-    <string name="subtype_behavioral_stress">Gestió de l\'estrès</string>
-    <string name="subtype_study_mastery">Mestresament de l\'object</string>
+    <string name="subtype_behavioral_stress">"Gestió de l'estrès"</string>
+    <string name="subtype_study_mastery">"Mestresament de l'object"</string>
     <string name="subtype_study_critical_thinking">Pensament crític</string>
     <string name="subtype_study_practical_application">Aplicació pràctica</string>
     <string name="subtype_hiring_technical">Competències tècniques</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Escenari</string>
     <string name="button_next">El següent</string>
     <string name="icon_desc_selected_option">Opció seleccionada</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analitzar</string>
+    <string name="analysis_results">"Resultats de l'anàlisi"</string>
+    <string name="analysis_error">"Error d'anàlisi"</string>
+    <string name="retry_analysis">Anàlisi de retest</string>
+    <string name="no_analysis_data_available">"No hi ha dades d'anàlisi disponibles"</string>
+    <string name="perform_analysis">"Realitzar l'anàlisi"</string>
+    <string name="your_score">La teva puntuació</string>
+    <string name="correct">(%1$d/%2$d correcte)</string>
+    <string name="overall_assessment">Valoració general</string>
+    <string name="detailed_analysis">Anàlisi detallada</string>
+    <string name="back_to_game">Tornar al joc</string>
+    <string name="play_again">Jugem de nou</string>
+    <string name="case_header">Cas %1$d</string>
+    <string name="your_choice">La teva elecció</string>
+    <string name="optimal_choice">Opció óptima</string>
+    <string name="analysis">Anàlisi:</string>
+    <string name="turn_of_3_case_of">Turn %1$d de 3 - Cas %2$d de %3$d</string>
+    <string name="answered">Resposta: %1$d/%2$d</string>
+    <string name="next_case">El següent cas</string>
+    <string name="next_turn">La propera curva</string>
+    <string name="congratulations_you_finished_the_game">Felicitats, has acabat el joc!</string>
+    <string name="new_game">Nou joc</string>
+    <string name="analysis_result">Anàlisi: %1$s</string>
+    <string name="game_complete">El joc complet!</string>
+    <string name="no_analysis_results_available">"No hi ha resultats d'anàlisi disponibles"</string>
+    <string name="error">Error</string>
+    <string name="retry">Tornar a intentar-ho</string>
+    <string name="scenario">Escenari</string>
+    <string name="save_settings">Escondeix la configuració</string>
+    <string name="system_default">Default del sistema</string>
+    <string name="matter_of_choice_onBoarding">La qüestió de la elecció</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">La gent fa moltes decisions cada dia. Estem equipats per prendre les millors decisions?</string>
+    <string name="have_fun">Diverti-te.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">I si els nens, mentre juguen, obtinguessin eines per prendre decisions en la vida real?</string>
+    <string name="virtual_failures">Falles virtuals</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Normalment aprenem de les conseqüències negatives. No seria millor aprendre dels fracassos virtuals?</string>
+    <string name="get_started">Comenceu</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

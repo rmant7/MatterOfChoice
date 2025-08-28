@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Weche mag yiero</string>
+    <string name="app_name_matter_of_choice">Weche mag yiero</string>
+    <string name="matterofchoice_info">"Websaitwa mar Matter Of Choice chiwo paro mopogore opogore manyalo konyi ng'eyo kaka inyalo timo yiero."</string>
     <string name="optional_enter_the_role_e_g_student">Yore mag yiero: Donjo e migawo, kuom ranyisi, Japuonjre</string>
     <string name="analysis_my_choices">Nono yiero ma ne atimo</string>
     <string name="analysis_your_selections">Non ane yiero misetimo</string>
     <string name="rounds">Yiengni</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">"Nonro ma itimo kaluwore gi weche mag thieth, mwandu, winjruok, mor, ng'eyo, tich ma ng'ato timo, tiyo gi thuolone e yo maber, rito alwora, dongo mar ng'ato owuon, kod ting' ma ng'ato nigo e ngima"</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        "Nonro ma itimo kaluwore gi weche mag thieth, mwandu, winjruok, mor, ng'eyo, tich ma ng'ato timo, tiyo gi thuolone e yo maber, rito alwora, dongo mar ng'ato owuon, kod ting' ma ng'ato nigo e ngima"</string>
     <string name="settings_title">Weche mag yiero</string>
     <string name="settings_subtitle">Weche mibiro nono biro luwore gi yiero mitimo</string>
     <string name="settings_label_subject">Ket wach</string>
@@ -25,7 +28,7 @@
     <string name="subtype_study_mastery">Puonjruok Wach</string>
     <string name="subtype_study_critical_thinking">Paro e Yo Makare</string>
     <string name="subtype_study_practical_application">Weche Minyalo Tiyogo</string>
-    <string name="subtype_hiring_technical">Ng\'eyo Weche Tekinoloji</string>
+    <string name="subtype_hiring_technical">"Ng'eyo Weche Tekinoloji"</string>
     <string name="subtype_hiring_behavioral_interview">"Wuoyo gi Ng'ato e Wi Timbe"</string>
     <string name="subtype_hiring_situational_judgment">"Ng'ado Bura Kaluwore gi Weche Manie Muma"</string>
     <string name="difficulty_normal">mapile</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Weche Minyalo Timore</string>
     <string name="button_next">"Bang'e"</string>
     <string name="icon_desc_selected_option">Yiero moyier</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Nonro</string>
+    <string name="analysis_results">Nonro ma Notim</string>
+    <string name="analysis_error">Ketho mar Nonro</string>
+    <string name="retry_analysis">Nonro Manyien</string>
+    <string name="no_analysis_data_available">Onge weche mag nonro ma yudore</string>
+    <string name="perform_analysis">Tim Nonro</string>
+    <string name="your_score">Riwruogni</string>
+    <string name="correct">(%1$d/%2$d kare)</string>
+    <string name="overall_assessment">Nonro mar Weche Duto</string>
+    <string name="detailed_analysis">Nonro Makende</string>
+    <string name="back_to_game">Duogo e Tugo</string>
+    <string name="play_again">Tugo Kendo</string>
+    <string name="case_header">Wach %1$d</string>
+    <string name="your_choice">Yiero Misetimo</string>
+    <string name="optimal_choice">Yiero Maber Moloyo</string>
+    <string name="analysis">Nonro:</string>
+    <string name="turn_of_3_case_of">Lok %1$d mar 3 - Wach %2$d mar %3$d</string>
+    <string name="answered">Dwoko: %1$d/%2$d</string>
+    <string name="next_case">Weche Machuok</string>
+    <string name="next_turn">"Ng'ado mar Dhi Nyime"</string>
+    <string name="congratulations_you_finished_the_game">Apwoyowu, usetieko tuke!</string>
+    <string name="new_game">Lweny Manyien</string>
+    <string name="analysis_result">Nonro: %1$s</string>
+    <string name="game_complete">Tugo oserumo!</string>
+    <string name="no_analysis_results_available">Onge nyak mar nonro</string>
+    <string name="error">Richo</string>
+    <string name="retry">Tem kendo</string>
+    <string name="scenario">Weche Minyalo Timore</string>
+    <string name="save_settings">Rito Lokruok</string>
+    <string name="system_default">Riwruok mar Piny</string>
+    <string name="matter_of_choice_onBoarding">Gima Dwarore ni Oyier</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">"Ji timoga yiero mang'eny pile ka pile. Be wan gi nyalo mar timo yiero mabeyo?"</string>
+    <string name="have_fun">Bed mamor</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">To nade kapo ni sama nyithindo tugo, giyudo gige timo yiero?</string>
+    <string name="virtual_failures">Gik ma Ok Nyal Nyalore</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">"Kinde mang'eny wapuonjore kuom gik maricho ma timorenwa. Donge nyalo bedo maber ka wapuonjore kuom gik maricho ma timorenwa?"</string>
+    <string name="get_started">Dhi Nyime</string>
+    <string name="skip">Wuog oko</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

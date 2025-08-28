@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Valimise küsimus</string>
+    <string name="app_name_matter_of_choice">Valimise küsimus</string>
+    <string name="matterofchoice_info">Matter Of Choice pakub interaktiivseid stsenaariume, mis aitavad teil õppida otsuste tegemise oskusi.</string>
     <string name="optional_enter_the_role_e_g_student">Võimalik: Kirjuta ülesanne, näiteks Õpilane</string>
     <string name="analysis_my_choices">Analüüs minu valikuid</string>
     <string name="analysis_your_selections">Analüüs oma valikuid</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Scenario</string>
     <string name="button_next">Järgmine</string>
     <string name="icon_desc_selected_option">Valitud valik</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analüüs</string>
+    <string name="analysis_results">Analüüsi tulemused</string>
+    <string name="analysis_error">Analüüsi viga</string>
+    <string name="retry_analysis">Uus katseanalüüs</string>
+    <string name="no_analysis_data_available">Analüüsiandmeid ei ole</string>
+    <string name="perform_analysis">Tehke analüüs</string>
+    <string name="your_score">Teie tulemused</string>
+    <string name="correct">(%1$d/%2$d õige)</string>
+    <string name="overall_assessment">Üldine hindamine</string>
+    <string name="detailed_analysis">Täpsem analüüs</string>
+    <string name="back_to_game">Tagasi mängu</string>
+    <string name="play_again">Mängi uuesti.</string>
+    <string name="case_header">Juht %1$d</string>
+    <string name="your_choice">Teie valik</string>
+    <string name="optimal_choice">Optimalne valik</string>
+    <string name="analysis">Analüüs:</string>
+    <string name="turn_of_3_case_of">Pöörake %1$d 3 - juhtum %2$d %3$d</string>
+    <string name="answered">Vastus: %1$d/%2$d</string>
+    <string name="next_case">Järgmine juhtum</string>
+    <string name="next_turn">Järgmine pöörde</string>
+    <string name="congratulations_you_finished_the_game">Õnnitust, sa lõpetasid mängu!</string>
+    <string name="new_game">Uus mäng</string>
+    <string name="analysis_result">Analüüs: %1$s</string>
+    <string name="game_complete">Mäng lõpeb!</string>
+    <string name="no_analysis_results_available">Analüüsi tulemused puudub</string>
+    <string name="error">Vead</string>
+    <string name="retry">Proovige uuesti.</string>
+    <string name="scenario">Scenario</string>
+    <string name="save_settings">Säästa seadmeid</string>
+    <string name="system_default">Süsteem Default</string>
+    <string name="matter_of_choice_onBoarding">Valimise küsimus</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Inimesed teevad iga päev lugematuid otsuseid.</string>
+    <string name="have_fun">Olge lõbusad.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Mis siis, kui lapsed mängides saaksid tööriistu reaalses elus otsuste tegemiseks?</string>
+    <string name="virtual_failures">Virtuaalsed ebaõnnestumised</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Tavaliselt õpime negatiivsetest tagajärgedest. Kas poleks parem õppida virtuaalsest ebaõnnestumisest?</string>
+    <string name="get_started">Alustage</string>
+    <string name="skip">Jälgi.</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

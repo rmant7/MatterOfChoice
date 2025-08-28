@@ -141,11 +141,10 @@ object FlaskApiClient {
 
     private val gson = Gson()
 
-
-   /*  * startCaseGeneration used to start a job; with the new server it should return the generated cases immediately.
+    /**
+     * startCaseGeneration used to start a job; with the new server it should return the generated cases immediately.
      * Now this method calls POST /generate_cases and returns the List<Case> produced by the server.
      */
-
     // Returns server session user_id set by GET /cases
     suspend fun getSessionUserId(): String = suspendCancellableCoroutine { cont ->
         val request = Request.Builder()

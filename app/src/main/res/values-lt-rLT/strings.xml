@@ -1,6 +1,7 @@
-<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Pasirinkimo klausimas</string>
+    <string name="app_name_matter_of_choice">Pasirinkimo klausimas</string>
+    <string name="matterofchoice_info">"Matter Of Choice" siūlo interaktyvius scenarijus, padedančius mokytis sprendimų priėmimo įgūdžių.</string>
     <string name="optional_enter_the_role_e_g_student">Privalomas: Įveskite vaidmenį, pvz., Studentas</string>
     <string name="analysis_my_choices">Analizė mano pasirinkimų</string>
     <string name="analysis_your_selections">Analizuokite savo pasirinkimus</string>
@@ -45,7 +46,44 @@
     <string name="text_scenario">Scenarijus</string>
     <string name="button_next">Kitas</string>
     <string name="icon_desc_selected_option">Pasirinktas pasirinkimas</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analizuoti</string>
+    <string name="analysis_results">Analizės rezultatai</string>
+    <string name="analysis_error">Analizės klaida</string>
+    <string name="retry_analysis">Paskutinė analizė</string>
+    <string name="no_analysis_data_available">Nėra analizės duomenų</string>
+    <string name="perform_analysis">Vykdykite analizę</string>
+    <string name="your_score">Jūsų rezultatas</string>
+    <string name="correct">(%1$d/%2$d teisinga)</string>
+    <string name="overall_assessment">Bendras vertinimas</string>
+    <string name="detailed_analysis">Išsami analizė</string>
+    <string name="back_to_game">Grįžkime prie žaidimo</string>
+    <string name="play_again">Žaisti dar kartą</string>
+    <string name="case_header">atvejis %1$d</string>
+    <string name="your_choice">Jūsų pasirinkimas</string>
+    <string name="optimal_choice">Geriausias pasirinkimas</string>
+    <string name="analysis">Analizė:</string>
+    <string name="turn_of_3_case_of">%1$d iš 3 - atvejis %2$d iš %3$d</string>
+    <string name="answered">Atsakymas: %1$d/%2$d</string>
+    <string name="next_case">Kitas atvejis</string>
+    <string name="next_turn">Kitas žingsnis</string>
+    <string name="congratulations_you_finished_the_game">Sveikinimai, baigėte žaidimą!</string>
+    <string name="new_game">Naujasis žaidimas</string>
+    <string name="analysis_result">Analizė: %1$s</string>
+    <string name="game_complete">Žaidimas baigtas!</string>
+    <string name="no_analysis_results_available">Nėra analizės rezultatų</string>
+    <string name="error">Klaida</string>
+    <string name="retry">Paskambinkite.</string>
+    <string name="scenario">Scenarijus</string>
+    <string name="save_settings">Skirti nustatymus</string>
+    <string name="system_default">Sistemio nenustatymas</string>
+    <string name="matter_of_choice_onBoarding">Pasirinkimas</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Žmonės kasdien priima daugybę sprendimų.</string>
+    <string name="have_fun">Pasisekite.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Ką daryti, jei vaikai, žaidžiant, gautų įrankius, kaip priimti sprendimus?</string>
+    <string name="virtual_failures">Virtualiai nesėkmės</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Paprastai mes mokomės iš neigiamų pasekmių. Ar ne geriau mokytis iš virtualių nesėkmų?</string>
+    <string name="get_started">Pradėkite</string>
+    <string name="skip">Išplaukti</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

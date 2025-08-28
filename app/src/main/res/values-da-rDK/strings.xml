@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Valgsspørgsmål</string>
+    <string name="app_name_matter_of_choice">Valgsspørgsmål</string>
+    <string name="matterofchoice_info">Matter Of Choice præsenterer interaktive scenarier, der hjælper dig med at lære at træffe beslutninger.</string>
     <string name="optional_enter_the_role_e_g_student">Valgfri: Indtast rollen, f.eks. Student</string>
     <string name="analysis_my_choices">Analyser mine valg</string>
     <string name="analysis_your_selections">Analyser dine valg</string>
     <string name="rounds">Runder</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Score beregnes baseret på sundhed, rigdom, relationer, lykke, viden, karma, tidshåndtering, miljøpåvirkning, personlig vækst og social ansvar</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        Score beregnes baseret på sundhed, rigdom, relationer, lykke, viden, karma, tidshåndtering, miljøpåvirkning, personlig vækst og social ansvar</string>
     <string name="settings_title">Valgsspørgsmål</string>
     <string name="settings_subtitle">Scenarierne er baseret på dine valg.</string>
     <string name="settings_label_subject">Indtast emnet</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Scenario</string>
     <string name="button_next">Næste</string>
     <string name="icon_desc_selected_option">Udvalgt valg</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analysere</string>
+    <string name="analysis_results">Analyseresultater</string>
+    <string name="analysis_error">Analysefejl</string>
+    <string name="retry_analysis">Genforsøgsanalyse</string>
+    <string name="no_analysis_data_available">Ingen analysedata er tilgængelige</string>
+    <string name="perform_analysis">Udfør analyse</string>
+    <string name="your_score">Din score</string>
+    <string name="correct">(% 1$d/% 2$d korrekte)</string>
+    <string name="overall_assessment">Overordnet vurdering</string>
+    <string name="detailed_analysis">Detaljeret analyse</string>
+    <string name="back_to_game">Tilbage til spillet</string>
+    <string name="play_again">Spil igen</string>
+    <string name="case_header">Sag %1$d</string>
+    <string name="your_choice">Dit valg</string>
+    <string name="optimal_choice">Det bedste valg</string>
+    <string name="analysis">Analyser:</string>
+    <string name="turn_of_3_case_of">Turn %1$d af 3 - Sag %2$d af %3$d</string>
+    <string name="answered">Svaret: %1$d/%2$d</string>
+    <string name="next_case">Næste sag</string>
+    <string name="next_turn">Næste sving</string>
+    <string name="congratulations_you_finished_the_game">Tillykke, du er færdig med spillet!</string>
+    <string name="new_game">Et nyt spil</string>
+    <string name="analysis_result">Analyser: %1$s</string>
+    <string name="game_complete">Spillet er fuldført!</string>
+    <string name="no_analysis_results_available">Ingen analyseresultater tilgængelige</string>
+    <string name="error">Fejl</string>
+    <string name="retry">Prøv igen.</string>
+    <string name="scenario">Scenario</string>
+    <string name="save_settings">Gem indstillingerne</string>
+    <string name="system_default">Systemafbrydelse</string>
+    <string name="matter_of_choice_onBoarding">Det drejer sig om valg</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Folk træffer utallige beslutninger hver dag.</string>
+    <string name="have_fun">Hav det sjovt.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Hvad nu hvis børn, mens de spiller, får værktøjer til at træffe beslutninger i virkeligheden?</string>
+    <string name="virtual_failures">Virtuelle fejl</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Normalt lærer vi af negative konsekvenser. Ville det ikke være bedre at lære af virtuelle fejl?</string>
+    <string name="get_started">Kom i gang</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

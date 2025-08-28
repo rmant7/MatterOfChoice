@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Subiect de alegere</string>
+    <string name="app_name_matter_of_choice">Subiect de alegere</string>
+    <string name="matterofchoice_info">Matter Of Choice prezintă scenarii interactive care să vă ajute să învățați abilitățile de luare a deciziilor.</string>
     <string name="optional_enter_the_role_e_g_student">Opțional: Introduceți rolul, de exemplu, Student</string>
     <string name="analysis_my_choices">Analizează alegerile mele</string>
     <string name="analysis_your_selections">Analizează alegerile tale</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Scenariul</string>
     <string name="button_next">Următorul .</string>
     <string name="icon_desc_selected_option">Opțiune selectată</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analizează</string>
+    <string name="analysis_results">Rezultatele analizei</string>
+    <string name="analysis_error">Erore de analiză</string>
+    <string name="retry_analysis">Analiza repetată</string>
+    <string name="no_analysis_data_available">Nu există date de analiză disponibile</string>
+    <string name="perform_analysis">Desfăşuraţi analiza</string>
+    <string name="your_score">Scorul tău</string>
+    <string name="correct">(%1$d/%2$d corect)</string>
+    <string name="overall_assessment">Evaluare globală</string>
+    <string name="detailed_analysis">Analiza detaliată</string>
+    <string name="back_to_game">Întoarce-te la joc</string>
+    <string name="play_again">Jucă din nou .</string>
+    <string name="case_header">Cazul %1$d</string>
+    <string name="your_choice">Alegerea ta</string>
+    <string name="optimal_choice">O alegere optimă</string>
+    <string name="analysis">Analiza:</string>
+    <string name="turn_of_3_case_of">Turn %1$d de 3 - Caz %2$d de %3$d</string>
+    <string name="answered">Răspuns: %1$d/%2$d</string>
+    <string name="next_case">Următorul caz</string>
+    <string name="next_turn">Următoarea întorsătură</string>
+    <string name="congratulations_you_finished_the_game">Felicitări, ai terminat jocul!</string>
+    <string name="new_game">Noul joc</string>
+    <string name="analysis_result">Analiza: %1$s</string>
+    <string name="game_complete">Jocul complet!</string>
+    <string name="no_analysis_results_available">Niciun rezultat de analiză disponibil</string>
+    <string name="error">Greşeală</string>
+    <string name="retry">Încearcă din nou.</string>
+    <string name="scenario">Scenariul</string>
+    <string name="save_settings">Salvarea setărilor</string>
+    <string name="system_default">Defaultul sistemului</string>
+    <string name="matter_of_choice_onBoarding">O chestiune de alegere</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Oamenii iau în fiecare zi nenumărate decizii.</string>
+    <string name="have_fun">Distracţie plăcută.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Ce se întâmplă dacă copiii, în timp ce se joacă, să obţină instrumente pentru a lua decizii în viaţa reală?</string>
+    <string name="virtual_failures">Eșecuri virtuale</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">De obicei învăţăm de la consecinţele negative. Nu ar fi mai bine să învăţăm de la eşecurile virtuale?</string>
+    <string name="get_started">Începeţi</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

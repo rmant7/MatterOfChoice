@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">തിരഞ്ഞെടുപ്പ് വിഷയം</string>
+    <string name="app_name_matter_of_choice">തിരഞ്ഞെടുപ്പ് വിഷയം</string>
+    <string name="matterofchoice_info">"തീരുമാനമെടുക്കാനുള്ള കഴിവിന് പഠിക്കാൻ സഹായിക്കുന്ന സംവേദനാത്മക സാഹചര്യങ്ങള് 'മീറ്റർ ഓഫ് ചോയ്സ്' അവതരിപ്പിക്കുന്നു."</string>
     <string name="optional_enter_the_role_e_g_student">ഓപ്ഷണൽഃ റോൾ നൽകുക, ഉദാഹരണത്തിന്, വിദ്യാർത്ഥി</string>
     <string name="analysis_my_choices">എന്റെ തീരുമാനങ്ങള് വിശകലനം ചെയ്യുക</string>
     <string name="analysis_your_selections">നിങ്ങളുടെ തെരഞ്ഞെടുപ്പ് വിശകലനം ചെയ്യുക</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">സ്ക്രിപ്റ്റ്</string>
     <string name="button_next">അടുത്തത്</string>
     <string name="icon_desc_selected_option">തിരഞ്ഞെടുത്ത ഓപ്ഷൻ</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">വിശകലനം ചെയ്യുക</string>
+    <string name="analysis_results">വിശകലന ഫലങ്ങള്</string>
+    <string name="analysis_error">വിശകലന പിശക്</string>
+    <string name="retry_analysis">പുനരവലോകനം</string>
+    <string name="no_analysis_data_available">വിശകലന വിവരങ്ങളൊന്നും ലഭ്യമല്ല</string>
+    <string name="perform_analysis">വിശകലനം നടത്തുക</string>
+    <string name="your_score">നിങ്ങളുടെ സ്കോർ</string>
+    <string name="correct">(%1$d/%2$d ശരിയായി)</string>
+    <string name="overall_assessment">മൊത്തം വിലയിരുത്തല്</string>
+    <string name="detailed_analysis">വിശദമായ വിശകലനം</string>
+    <string name="back_to_game">ഗെയിമിലേക്ക് മടങ്ങുക</string>
+    <string name="play_again">വീണ്ടും കളിക്കുക</string>
+    <string name="case_header">കേസ് %1$d</string>
+    <string name="your_choice">നിങ്ങളുടെ തീരുമാനം</string>
+    <string name="optimal_choice">അനുയോജ്യമായ തീരുമാനം</string>
+    <string name="analysis">വിശകലനംഃ</string>
+    <string name="turn_of_3_case_of">%1$d ഓൺ 3 - കേസ് %2$d ഓൺ %3$d</string>
+    <string name="answered">ഉത്തരംഃ %1$d/%2$d</string>
+    <string name="next_case">അടുത്ത കേസ്</string>
+    <string name="next_turn">അടുത്ത വരി</string>
+    <string name="congratulations_you_finished_the_game">അഭിനന്ദനങ്ങൾ, നിങ്ങൾ കളി അവസാനിപ്പിച്ചു!</string>
+    <string name="new_game">പുതിയ കളി</string>
+    <string name="analysis_result">വിശകലനംഃ %1$s</string>
+    <string name="game_complete">ഗെയിം പൂർത്തിയായി!</string>
+    <string name="no_analysis_results_available">വിശകലന ഫലങ്ങൾ ലഭ്യമല്ല</string>
+    <string name="error">പിശക്</string>
+    <string name="retry">വീണ്ടും ശ്രമിക്കുക</string>
+    <string name="scenario">സ്ക്രിപ്റ്റ്</string>
+    <string name="save_settings">ക്രമീകരണങ്ങൾ സംരക്ഷിക്കുക</string>
+    <string name="system_default">സിസ്റ്റം ഡീഫോൾട്ട്</string>
+    <string name="matter_of_choice_onBoarding">തെരഞ്ഞെടുപ്പ്</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">ജനങ്ങൾ ദിവസേന എണ്ണമറ്റ തീരുമാനങ്ങൾ എടുക്കുന്നു. ഏറ്റവും നല്ല തീരുമാനങ്ങൾ എടുക്കാൻ നമുക്ക് സാധിക്കുമോ?</string>
+    <string name="have_fun">നന്നായി ആസ്വദിക്കൂ.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">യഥാർത്ഥ ജീവിതത്തിൽ തീരുമാനമെടുക്കാനുള്ള ഉപകരണങ്ങൾ കുട്ടികൾ കളിക്കുമ്പോൾ നേടിയാലോ?</string>
+    <string name="virtual_failures">വെർച്വൽ പരാജയങ്ങൾ</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">സാധാരണയായി നാം നെഗറ്റീവ് പ്രത്യാഘാതങ്ങളിൽ നിന്നും പഠിക്കുന്നു. വെർച്വൽ പരാജയങ്ങളിൽ നിന്നും പഠിക്കുന്നതാണ് നല്ലത്.</string>
+    <string name="get_started">ആരംഭിക്കുക</string>
+    <string name="skip">സ്കിപ്പ് ചെയ്യുക</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Таңдалған мәселе</string>
+    <string name="app_name_matter_of_choice">Таңдалған мәселе</string>
+    <string name="matterofchoice_info">Matter Of Choice сізге шешім қабылдау дағдыларын меңгеруге көмектесетін интерактивті сценарийлерді ұсынады.</string>
     <string name="optional_enter_the_role_e_g_student">Міндетті: рөлді келтіріңіз, мысалы, Студент</string>
     <string name="analysis_my_choices">Менің таңдауларымды талдау</string>
     <string name="analysis_your_selections">Сіздің таңдауыңызды талдау</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Сценарий</string>
     <string name="button_next">Келесі:</string>
     <string name="icon_desc_selected_option">Таңдалған нұсқа</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Талдау</string>
+    <string name="analysis_results">Талдау нәтижелері</string>
+    <string name="analysis_error">Талдау қатесі</string>
+    <string name="retry_analysis">Қайта сынақ талдау</string>
+    <string name="no_analysis_data_available">Анализ деректері жоқ</string>
+    <string name="perform_analysis">Талдауды орындау</string>
+    <string name="your_score">Сіздің баллыңыз</string>
+    <string name="correct">(%1$d/%2$d дұрыс)</string>
+    <string name="overall_assessment">Жалпы бағалау</string>
+    <string name="detailed_analysis">Толығырақ талдау</string>
+    <string name="back_to_game">Ойынға оралу</string>
+    <string name="play_again">Қайта ойнаңыз</string>
+    <string name="case_header">%1$d жағдай</string>
+    <string name="your_choice">Сіздің таңдауыңыз</string>
+    <string name="optimal_choice">Ең жақсы таңдау</string>
+    <string name="analysis">Талдау:</string>
+    <string name="turn_of_3_case_of">%1$d 3 - %2$d %3$d жағдай</string>
+    <string name="answered">Жауап: %1$d/%2$d</string>
+    <string name="next_case">Келесі жағдай</string>
+    <string name="next_turn">Келесі кезек</string>
+    <string name="congratulations_you_finished_the_game">Құттықтаймын, ойынды аяқтадың!</string>
+    <string name="new_game">Жаңа ойын</string>
+    <string name="analysis_result">Анализ: %1$s</string>
+    <string name="game_complete">Ойын аяқталды!</string>
+    <string name="no_analysis_results_available">Анализ нәтижелері жоқ</string>
+    <string name="error">Қате\n</string>
+    <string name="retry">Қайталап көріңіз</string>
+    <string name="scenario">Сценарий</string>
+    <string name="save_settings">Параметрлерді сақтау</string>
+    <string name="system_default">Жүйе әдеттілігі</string>
+    <string name="matter_of_choice_onBoarding">Таңдау мәселесі</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Адамдар күнделікті көптеген шешімдер қабылдайды.</string>
+    <string name="have_fun">Қуана көріңдер !</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Егер балалар ойнап жүріп, нақты өмірде шешім қабылдау үшін құралдар тапса ше?</string>
+    <string name="virtual_failures">Виртуалды сәтсіздіктер</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Әдетте біз теріс үрдістерден сабақ аламыз. Виртуалды сәтсіздіктерден сабақ алу әлдеқайда жақсы емес пе?</string>
+    <string name="get_started">Бастаңыз</string>
+    <string name="skip">Кетіңіз</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

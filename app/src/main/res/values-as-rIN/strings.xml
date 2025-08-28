@@ -1,13 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">পছন্দৰ বিষয়</string>
+    <string name="app_name_matter_of_choice">পছন্দৰ বিষয়</string>
+    <string name="matterofchoice_info">Matter Of Choice-এ আপোনাক সিদ্ধান্ত গ্ৰহণৰ দক্ষতা শিকিবলৈ সহায় কৰিবলৈ ইণ্টাৰেক্টিভ কেলেংকাৰীসমূহ দাঙি ধৰে।</string>
     <string name="optional_enter_the_role_e_g_student">ঐচ্ছিকঃ ভূমিকা প্ৰবিষ্ট কৰক, উদাহৰণস্বৰূপে, ছাত্ৰ</string>
     <string name="analysis_my_choices">মোৰ পছন্দসমূহ বিশ্লেষণ কৰক</string>
     <string name="analysis_your_selections">আপোনাৰ পছন্দসমূহ বিশ্লেষণ কৰক</string>
     <string name="rounds">ৰাউণ্ড</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">স্বাস্থ্য, সম্পদ, সম্পৰ্ক, সুখ, জ্ঞান, কৰ্মা, সময়ৰ ব্যৱস্থাপনা, পৰিৱেশৰ প্ৰভাৱ, ব্যক্তিগত বিকাশ আৰু সামাজিক দায়বদ্ধতাৰ ওপৰত ভিত্তি কৰি স্ক\'ৰ গণনা কৰা হয়</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">"স্বাস্থ্য, সম্পদ, সম্পৰ্ক, সুখ, জ্ঞান, কৰ্মা, সময়ৰ ব্যৱস্থাপনা, পৰিৱেশৰ প্ৰভাৱ, ব্যক্তিগত বিকাশ আৰু সামাজিক দায়বদ্ধতাৰ ওপৰত ভিত্তি কৰি স্ক'ৰ গণনা কৰা হয়"</string>
     <string name="settings_title">পছন্দৰ বিষয়</string>
-    <string name="settings_subtitle">এই দৃশ্যসমূহ আপোনাৰ পছন্দৰ ওপৰত ভিত্তি কৰি নিৰ্ণয় কৰা হ\'ব।</string>
+    <string name="settings_subtitle">"এই দৃশ্যসমূহ আপোনাৰ পছন্দৰ ওপৰত ভিত্তি কৰি নিৰ্ণয় কৰা হ'ব।"</string>
     <string name="settings_label_subject">বিষয়টো প্ৰবিষ্ট কৰক</string>
     <string name="settings_hint_select_question_type">প্ৰশ্নৰ প্ৰকাৰ নিৰ্বাচন কৰক</string>
     <string name="settings_hint_select_subtype">উপ-প্ৰকাৰ নিৰ্বাচন কৰক</string>
@@ -39,13 +41,50 @@
     <string name="pref_key_user_score" translatable="false">userScore</string>
     <string name="pref_key_total_score" translatable="false">totalScore</string>
     <string name="pref_key_rounds" translatable="false">rounds</string>
-    <string name="error_something_went_wrong">কিছু ভুল হ\'ল</string>
+    <string name="error_something_went_wrong">"কিছু ভুল হ'ল"</string>
     <string name="button_new_game">নতুন খেল</string>
     <string name="text_round_number">ঘূৰণীয়া %1$d</string>
     <string name="text_scenario">দৃশ্যপট</string>
     <string name="button_next">পৰৱৰ্তী</string>
     <string name="icon_desc_selected_option">নিৰ্বাচিত বিকল্প</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">বিশ্লেষণ</string>
+    <string name="analysis_results">বিশ্লেষণৰ ফলাফল</string>
+    <string name="analysis_error">বিশ্লেষণৰ ভুল</string>
+    <string name="retry_analysis">পুনৰীক্ষণ বিশ্লেষণ</string>
+    <string name="no_analysis_data_available">কোনো বিশ্লেষণ তথ্য উপলব্ধ নহয়</string>
+    <string name="perform_analysis">বিশ্লেষণ কৰা</string>
+    <string name="your_score">"আপোনাৰ স্ক'ৰ"</string>
+    <string name="correct">(%1$d/%2$d সঠিক)</string>
+    <string name="overall_assessment">সামগ্ৰিক মূল্যায়ন</string>
+    <string name="detailed_analysis">বিশদ বিশ্লেষণ</string>
+    <string name="back_to_game">খেললৈ ঘূৰি যাওক</string>
+    <string name="play_again">পুনৰ খেল</string>
+    <string name="case_header">কেছ %1$d</string>
+    <string name="your_choice">তোমাৰ পছন্দ</string>
+    <string name="optimal_choice">অনুকূল পছন্দ</string>
+    <string name="analysis">বিশ্লেষণঃ</string>
+    <string name="turn_of_3_case_of">৩ ৰ %1$d ঘূৰা - %2$d কেছ %3$d</string>
+    <string name="answered">উত্তৰ: %1$d/%2$d</string>
+    <string name="next_case">পৰৱৰ্তী গোচৰ</string>
+    <string name="next_turn">পৰৱৰ্তী পালা</string>
+    <string name="congratulations_you_finished_the_game">অভিনন্দন, আপুনি খেল শেষ কৰিলে!</string>
+    <string name="new_game">নতুন খেল</string>
+    <string name="analysis_result">বিশ্লেষণঃ %1$s</string>
+    <string name="game_complete">খেল সম্পূৰ্ণ!</string>
+    <string name="no_analysis_results_available">কোনো বিশ্লেষণৰ ফলাফল উপলব্ধ নহয়</string>
+    <string name="error">ভুল</string>
+    <string name="retry">পুনৰ চেষ্টা কৰক</string>
+    <string name="scenario">দৃশ্যপট</string>
+    <string name="save_settings">ছেটিং সংৰক্ষণ কৰক</string>
+    <string name="system_default">প্ৰণালীৰ ডিফল্ট</string>
+    <string name="matter_of_choice_onBoarding">সিদ্ধান্তৰ বিষয়</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">"মানুহে প্ৰতিদিনে অসংখ্য সিদ্ধান্ত লয়। আমি কি উপযুক্ত সিদ্ধান্ত ল'ব পাৰোঁ?"</string>
+    <string name="have_fun">উপভোগ কৰক।</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">"কি হ'ব যদি খেলৰ সময়ত শিশুৱে বাস্তৱ জীৱনত সিদ্ধান্ত ল'বলৈ যন্ত্ৰপাতি লাভ কৰে?"</string>
+    <string name="virtual_failures">ভাৰ্চুৱেল বিফলতা</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">"সাধাৰণতে আমি নেতিবাচক পৰিণামৰ পৰা শিকোঁ। ভার্চুয়াল বিফলতাৰ পৰা শিকাই ভাল নহ'বনে?"</string>
+    <string name="get_started">আৰম্ভণি কৰক</string>
+    <string name="skip">স্কিপ</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -127,7 +166,7 @@
         <item>কানাডা</item>
         <item>জৰ্জিয়ান</item>
         <item>কাজাখ</item>
-        <item>কাবুৰ্দিয়ানু (কেপ ভাৰ্দে ক্ৰীঅ\'ল)</item>
+        <item>"কাবুৰ্দিয়ানু (কেপ ভাৰ্দে ক্ৰীঅ'ল)"</item>
         <item>খমেৰ</item>
         <item>কিকুয়ু</item>
         <item>কিয়ানাৰৱাণ্ডা</item>
@@ -154,7 +193,7 @@
         <item>নৰৱেজীয় বোকমেল</item>
         <item>নেপাল (নেপাল)</item>
         <item>নুৰ (দক্ষিণ ছুডান)</item>
-        <item>ওৰোমো (ইথিঅ\'পিয়া)</item>
+        <item>"ওৰোমো (ইথিঅ'পিয়া)"</item>
         <item>ওৰোমো (কেনিয়া)</item>
         <item>ওড়িয়া (ভাৰত)</item>
         <item>পঞ্জাবি</item>

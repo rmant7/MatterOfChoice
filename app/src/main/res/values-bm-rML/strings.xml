@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Fɛɛrɛ min kofɔlen don</string>
+    <string name="app_name_matter_of_choice">Fɛɛrɛ min kofɔlen don</string>
+    <string name="matterofchoice_info">Matter Of Choice bɛ fɛɛrɛ dɔw jira minnu bɛ i dɛmɛ ka desizɔnw ta.</string>
     <string name="optional_enter_the_role_e_g_student">Fanga: I bɛ jɔyɔrɔ don, misali la, kalanden</string>
     <string name="analysis_my_choices">Ka n ka sugandiliw sɛgɛsɛgɛ</string>
     <string name="analysis_your_selections">Aw bɛ aw ka fɛɛrɛw lajɛ</string>
@@ -39,13 +41,50 @@
     <string name="pref_key_user_score" translatable="false">userScore</string>
     <string name="pref_key_total_score" translatable="false">totalScore</string>
     <string name="pref_key_rounds" translatable="false">rounds</string>
-    <string name="error_something_went_wrong">Fɛn dɔ y\'i fili</string>
+    <string name="error_something_went_wrong">"Fɛn dɔ y'i fili"</string>
     <string name="button_new_game">Ɲɛnamaya kura</string>
     <string name="text_round_number">Kɛlɛlen %1$d</string>
     <string name="text_scenario">Sɛnɛri</string>
     <string name="button_next">O kɔ,</string>
     <string name="icon_desc_selected_option">Fɛɛrɛ min sugandi</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Ka sɛgɛsɛgɛli kɛ</string>
+    <string name="analysis_results">sɛgɛsɛgɛli kɛlenw</string>
+    <string name="analysis_error">Kɔrɔbɔli sɛgɛsɛgɛli</string>
+    <string name="retry_analysis">Kɔrɔbɔli sɛgɛsɛgɛli</string>
+    <string name="no_analysis_data_available">Dɔnniya tɛ sɔrɔ sɛgɛsɛgɛli la</string>
+    <string name="perform_analysis">Ka sɛgɛsɛgɛli kɛ</string>
+    <string name="your_score">I ka pikiri</string>
+    <string name="correct">(%1$d/%2$d bɛ tiɲɛ)</string>
+    <string name="overall_assessment">Jɛkulu ka jatiminɛ</string>
+    <string name="detailed_analysis">sɛgɛsɛgɛli kɛrɛnkɛrɛnnen</string>
+    <string name="back_to_game">An bɛ segin a kan</string>
+    <string name="play_again">"A' ye dɔ fara a kan"</string>
+    <string name="case_header">Kalan %1$d</string>
+    <string name="your_choice">I ka sugandili</string>
+    <string name="optimal_choice">Ɲɛnamaya ɲuman</string>
+    <string name="analysis">Kalansen:</string>
+    <string name="turn_of_3_case_of">%1$d de 3 - Ko %2$d de %3$d</string>
+    <string name="answered">A jaabi: %1$d/%2$d</string>
+    <string name="next_case">Ko nataw</string>
+    <string name="next_turn">Ko nataw</string>
+    <string name="congratulations_you_finished_the_game">N bɛ foli di aw ma, aw ye aw ka ɲɔgɔndan laban kɛ!</string>
+    <string name="new_game">Ɲɛnamaya kura</string>
+    <string name="analysis_result">sɛgɛsɛgɛli: %1$s</string>
+    <string name="game_complete">Ɲɛnamaya dafara!</string>
+    <string name="no_analysis_results_available">O sɛgɛsɛgɛli kunkanbaaraw tɛ sɔrɔ</string>
+    <string name="error">Kɔrɔbɔli</string>
+    <string name="retry">Aw bɛ a ɲini tuguni.</string>
+    <string name="scenario">Sɛnɛri</string>
+    <string name="save_settings">Aw bɛ siginidenw mara</string>
+    <string name="system_default">Sisitɛmu kɔrɔtɔlen</string>
+    <string name="matter_of_choice_onBoarding">Ɲiningali min ka kan ka latigɛ</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Mɔgɔw bɛ desizɔn caman ta don o don.</string>
+    <string name="have_fun">Aw ka ɲɛnajɛ.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Ni denmisɛnniw tun bɛ ɲɛnagwɛ la tuma min na, u tun bɛ se ka fɛɛrɛ dɔw sɔrɔ ka desizɔnw ta u yɛrɛ ka ɲɛnamaya kɔnɔ wa?</string>
+    <string name="virtual_failures">Kɔrɔbɔli kɛrɛnkɛrɛnnenw</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">A ka ca a la an bɛ kalan sɔrɔ kɔlɔlɔw fɛ. Yala a tun tɛna diya an ye ka kalan sɔrɔ cɛnni kɛlenw fɛ wa?</string>
+    <string name="get_started">A daminɛ</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
