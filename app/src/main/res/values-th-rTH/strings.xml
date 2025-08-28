@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">เรื่องการเลือก</string>
+    <string name="app_name_matter_of_choice">เรื่องการเลือก</string>
+    <string name="matterofchoice_info">Matter Of Choice นําเสนอภาพประกอบการปฏิสัมพันธ์ เพื่อช่วยให้คุณเรียนรู้ทักษะในการตัดสินใจ</string>
     <string name="optional_enter_the_role_e_g_student">เป็นทางเลือก: กําหนดบทบาท เช่น นักเรียน</string>
     <string name="analysis_my_choices">วิเคราะห์การเลือกของฉัน</string>
     <string name="analysis_your_selections">วิเคราะห์การเลือกของคุณ</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">ภาพยนตร์</string>
     <string name="button_next">ต่อไป</string>
     <string name="icon_desc_selected_option">ตัวเลือกที่เลือก</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">วิเคราะห์</string>
+    <string name="analysis_results">ผลการวิเคราะห์</string>
+    <string name="analysis_error">ความผิดพลาดในการวิเคราะห์</string>
+    <string name="retry_analysis">การวิเคราะห์ทดลองใหม่</string>
+    <string name="no_analysis_data_available">ไม่มีข้อมูลการวิเคราะห์</string>
+    <string name="perform_analysis">ทําวิเคราะห์</string>
+    <string name="your_score">คะแนนของคุณ</string>
+    <string name="correct">(%1$d/%2$d ถูกต้อง)</string>
+    <string name="overall_assessment">การประเมินรวม</string>
+    <string name="detailed_analysis">วิเคราะห์รายละเอียด</string>
+    <string name="back_to_game">กลับไปที่เกม</string>
+    <string name="play_again">เล่นอีกครั้ง</string>
+    <string name="case_header">กรณี %1$d</string>
+    <string name="your_choice">การ เลือก ของ คุณ</string>
+    <string name="optimal_choice">การ เลือก ที่ ดีที่สุด</string>
+    <string name="analysis">วิเคราะห์:</string>
+    <string name="turn_of_3_case_of">หมุน %1$d ของ 3 - กรณี %2$d ของ %3$d</string>
+    <string name="answered">ตอบ: %1$d/%2$d</string>
+    <string name="next_case">กรณีต่อไป</string>
+    <string name="next_turn">หมุนต่อไป</string>
+    <string name="congratulations_you_finished_the_game">ขอแสดงความยินดี คุณจบเกมแล้ว</string>
+    <string name="new_game">เกมใหม่</string>
+    <string name="analysis_result">วิเคราะห์: %1$s</string>
+    <string name="game_complete">เกมจบแล้ว!</string>
+    <string name="no_analysis_results_available">ไม่มีผลการวิเคราะห์</string>
+    <string name="error">ความผิดพลาด</string>
+    <string name="retry">พยายามอีกครั้ง</string>
+    <string name="scenario">ภาพยนตร์</string>
+    <string name="save_settings">เก็บการตั้งค่า</string>
+    <string name="system_default">ระบบผิดปกติ</string>
+    <string name="matter_of_choice_onBoarding">เรื่อง การ เลือก</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">คน มี การ ตัดสิน ใจ มากมาย ใน ทุก วัน เรา มี การ ตัดสิน ใจ ที่ ดี ที่ สุด ได้ อย่าง ไร?</string>
+    <string name="have_fun">สนุกไป</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">ถ้าเด็ก ๆ ขณะที่เล่น จะได้อุปกรณ์ในการตัดสินใจในชีวิตจริงล่ะ</string>
+    <string name="virtual_failures">ความล้มเหลวทางเว็บไซต์</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">ปกติเราเรียนรู้จากผลลัพธ์ที่ไม่ดี มันไม่ดีกว่าที่จะเรียนรู้จากความล้มเหลวแบบเสมือน</string>
+    <string name="get_started">เริ่มต้น</string>
+    <string name="skip">สกป์</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

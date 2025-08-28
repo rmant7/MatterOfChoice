@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Adesuadeɛ a ɛtɔ so nnum</string>
+    <string name="app_name_matter_of_choice">Adesuadeɛ a ɛtɔ so nnum</string>
+    <string name="matterofchoice_info">Matter Of Choice de nsɛm a ɛfa nsɛm ho a ɛbɛboa wo ma woahu sɛnea wobesi gyinae.</string>
     <string name="optional_enter_the_role_e_g_student">Afahyɛ: Fa dwuma no hyɛ mu, d.e., Sukuufoɔ</string>
-    <string name="analysis_my_choices">Monhwɛ m\'apɛde</string>
+    <string name="analysis_my_choices">"Monhwɛ m'apɛde"</string>
     <string name="analysis_your_selections">Hwehwɛ wo nhyehyԑeԑ mu</string>
     <string name="rounds">Nhyehyɛeɛ</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Akwankyerɛ a wɔde gyina apɔwmuden, ahonyade, abusuabɔ, anigye, nimdeɛ, karma, bere a wɔde di dwuma, asetena mu nkɛntɛnso, ankorankoro nkɔso, ne asetenam asɛyɛde so</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        Akwankyerɛ a wɔde gyina apɔwmuden, ahonyade, abusuabɔ, anigye, nimdeɛ, karma, bere a wɔde di dwuma, asetena mu nkɛntɛnso, ankorankoro nkɔso, ne asetenam asɛyɛde so</string>
     <string name="settings_title">Adesuadeɛ a ɛtɔ so nnum</string>
     <string name="settings_subtitle">Nsɛm tebea no gyina wo nhyehyԑeԑ so</string>
     <string name="settings_label_subject">Fa asɛmti no di dwuma</string>
@@ -13,7 +16,7 @@
     <string name="settings_hint_select_subtype">Paw subtype no</string>
     <string name="settings_hint_select_difficulty">Paw tebea a ɛyɛ den no</string>
     <string name="settings_hint_select_gender_optional">Fa nwa awie Fa nwa awie Fa nwa awie Fa nwa awie</string>
-    <string name="settings_label_age">Kɔ w\'Abere mu</string>
+    <string name="settings_label_age">"Kɔ w'Abere mu"</string>
     <string name="settings_hint_select_language">Paw wo kasa</string>
     <string name="settings_button_generate_cases">Twe Nsɛm Ho Nkɔmmɔ</string>
     <string name="question_type_study">Sua ade</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Scenario no</string>
     <string name="button_next">Nea edi hɔ</string>
     <string name="icon_desc_selected_option">Nhwɛso a wɔayi</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Nhwehwɛmu</string>
+    <string name="analysis_results">Nhwehwɛmu nsunsuanso</string>
+    <string name="analysis_error">Nhwehwɛmu Mfomso</string>
+    <string name="retry_analysis">Asɔduro Nhwehwɛmu</string>
+    <string name="no_analysis_data_available">Nhwehwɛmu data nni hɔ</string>
+    <string name="perform_analysis">Yɛ Nhwehwɛmu</string>
+    <string name="your_score">Wo Nhwɛso</string>
+    <string name="correct">(%1$d/%2$d correct)</string>
+    <string name="overall_assessment">Nkyekyɛm Nhyehyɛe</string>
+    <string name="detailed_analysis">Nhwehwɛmu a ɛkɔ akyiri</string>
+    <string name="back_to_game">San Bra Agodie Mu</string>
+    <string name="play_again">San di agorɔ bio</string>
+    <string name="case_header">Ɔfã %1$d</string>
+    <string name="your_choice">Wo Gyinae</string>
+    <string name="optimal_choice">Gyinae Pa</string>
+    <string name="analysis">Nhwehwɛmu:</string>
+    <string name="turn_of_3_case_of">Turn %1$d of 3 - Case %2$d of %3$d</string>
+    <string name="answered">Mmuae: %1$d/%2$d</string>
+    <string name="next_case">Asɛnnibea a Edi Akyiri</string>
+    <string name="next_turn">Nkyinkyin a Edi Akyiri</string>
+    <string name="congratulations_you_finished_the_game">Nhyira nka wo, woawie agodie no!</string>
+    <string name="new_game">Agodie Foforo</string>
+    <string name="analysis_result">Nhwehwɛmu: %1$s</string>
+    <string name="game_complete">Agodie no awie!</string>
+    <string name="no_analysis_results_available">Nhwehwɛmu ho nsunsuanso nni hɔ</string>
+    <string name="error">Mfomso</string>
+    <string name="retry">Bɔ mmɔden bio</string>
+    <string name="scenario">Scenario no</string>
+    <string name="save_settings">Kwasiesie Ahyehyɛde</string>
+    <string name="system_default">Nkyerεkyerεmu nnyεasεm</string>
+    <string name="matter_of_choice_onBoarding">Gyinae a Ɛsɛ sɛ Yɛsi</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Da biara da nnipa sisi gyinae pii. So yɛwɔ ahoɔden a yɛde besisi gyinae pa?</string>
+    <string name="have_fun">"Ma w'ani nnye"</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Na sɛ mmofra di agorɔ a, wobenya nneɛma a wɔde besi gyinae wɔ asetena ankasa mu nso ɛ?</string>
+    <string name="virtual_failures">Virtual Mfomso</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Mpɛn pii no yesua biribi fi nsunsuanso bɔne mu. So ɛnyɛ papa sɛ yesua biribi fi aguamammɔ mu?</string>
+    <string name="get_started">Di Kan Fi Ase</string>
+    <string name="skip">Fa no kɔ</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

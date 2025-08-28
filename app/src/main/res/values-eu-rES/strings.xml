@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Aukeraren arazoa</string>
+    <string name="app_name_matter_of_choice">Aukeraren arazoa</string>
+    <string name="matterofchoice_info">Matter Of Choice-k erabakiak hartzeko trebetasunak ikasten laguntzeko eszenario interaktiboak aurkezten ditu.</string>
     <string name="optional_enter_the_role_e_g_student">Aukerako: Sartu papera, adibidez, ikaslea</string>
     <string name="analysis_my_choices">Nire aukerak aztertu.</string>
     <string name="analysis_your_selections">Zure aukeraketa aztertu</string>
     <string name="rounds">Balak.</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Osasuna, aberastasuna, harremanak, zoriontasuna, ezagutza, karma, denbora kudeaketa, ingurumen-inpaktua, hazkunde pertsonala eta erantzukizun soziala.</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        Osasuna, aberastasuna, harremanak, zoriontasuna, ezagutza, karma, denbora kudeaketa, ingurumen-inpaktua, hazkunde pertsonala eta erantzukizun soziala.</string>
     <string name="settings_title">Aukeraren arazoa</string>
     <string name="settings_subtitle">Eszenarioak zure aukeraren arabera izango dira.</string>
     <string name="settings_label_subject">Sartu gaia.</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Eszenarioak</string>
     <string name="button_next">Hurrengoa.</string>
     <string name="icon_desc_selected_option">Aukera aukeratua</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Aztertu</string>
+    <string name="analysis_results">Analisiaren emaitzak</string>
+    <string name="analysis_error">Analisiaren Akatsak</string>
+    <string name="retry_analysis">Berriz saiatzeko azterketa</string>
+    <string name="no_analysis_data_available">Ez dago datu analisiarik.</string>
+    <string name="perform_analysis">Azterketa egin</string>
+    <string name="your_score">Zure puntuazioa</string>
+    <string name="correct">(%1$d/%2$d zuzena)</string>
+    <string name="overall_assessment">Ebaluazio orokorra</string>
+    <string name="detailed_analysis">Azterketa zehatza</string>
+    <string name="back_to_game">Jokatzera bueltatu.</string>
+    <string name="play_again">Berriz jolastu.</string>
+    <string name="case_header">Kasua %1$d</string>
+    <string name="your_choice">Zure aukeraketa</string>
+    <string name="optimal_choice">Aukera onena</string>
+    <string name="analysis">Azterketa:</string>
+    <string name="turn_of_3_case_of">Turn %1$d 3 - Kasu %2$d %3$d</string>
+    <string name="answered">Erantzun: %1$d/%2$d</string>
+    <string name="next_case">Hurrengo kasua</string>
+    <string name="next_turn">Hurrengo txanda.</string>
+    <string name="congratulations_you_finished_the_game">Zorionak, amaitu duzu partida!</string>
+    <string name="new_game">Joko berria</string>
+    <string name="analysis_result">Azterketa: %1$s</string>
+    <string name="game_complete">Jokoa amaitu da!</string>
+    <string name="no_analysis_results_available">Ez dago analisiaren emaitzarik.</string>
+    <string name="error">Akats bat</string>
+    <string name="retry">Berriz saiatu.</string>
+    <string name="scenario">Eszenarioak</string>
+    <string name="save_settings">Sarrerak gorde</string>
+    <string name="system_default">Sistemaren aurreikuspena</string>
+    <string name="matter_of_choice_onBoarding">Aukera bat</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Jendeak erabaki asko hartzen ditu egunero.</string>
+    <string name="have_fun">Ondo pasatu.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Eta umeek, jolasean ari diren bitartean, benetako bizitza erabakiak hartzeko tresnak lortzen badituzte?</string>
+    <string name="virtual_failures">Akats birtualak</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Gehienetan ondorio negatiboetatik ikasten dugu.</string>
+    <string name="get_started">Has gaitezen.</string>
+    <string name="skip">Salto egin.</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

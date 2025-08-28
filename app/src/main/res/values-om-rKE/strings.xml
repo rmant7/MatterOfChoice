@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">  </string>
+    <string name="app_name_matter_of_choice">  </string>
+    <string name="matterofchoice_info" />
     <string name="optional_enter_the_role_e_g_student">Optional: Enter the role, e.g., Student</string>
     <string name="analysis_my_choices">️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️</string>
     <string name="analysis_your_selections">Analize your selections</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Scenario</string>
     <string name="button_next">  </string>
     <string name="icon_desc_selected_option">    </string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">        </string>
+    <string name="analysis_results">Results of the Analysis</string>
+    <string name="analysis_error">Error de análisis</string>
+    <string name="retry_analysis">  </string>
+    <string name="no_analysis_data_available">️️️️️️️️️️</string>
+    <string name="perform_analysis">Perform Analysis</string>
+    <string name="your_score">Your Score</string>
+    <string name="correct">(%1$d/%2$d correct)</string>
+    <string name="overall_assessment">General Assessment</string>
+    <string name="detailed_analysis">Detailed Analysis</string>
+    <string name="back_to_game" />
+    <string name="play_again">Play Again</string>
+    <string name="case_header">Case %1$d</string>
+    <string name="your_choice" />
+    <string name="optimal_choice">Optimum Choice</string>
+    <string name="analysis">Analysis:</string>
+    <string name="turn_of_3_case_of">Turn %1$d of 3 - Case %2$d of %3$d</string>
+    <string name="answered">Answered: %1$d/%2$d</string>
+    <string name="next_case">️️️️️️️</string>
+    <string name="next_turn">   </string>
+    <string name="congratulations_you_finished_the_game">Congratulations, you finished the game!</string>
+    <string name="new_game">New Game</string>
+    <string name="analysis_result">Analysis: %1$s</string>
+    <string name="game_complete">Game Complete!</string>
+    <string name="no_analysis_results_available">No analysis results available</string>
+    <string name="error">Error\n</string>
+    <string name="retry"> </string>
+    <string name="scenario">Scenario</string>
+    <string name="save_settings">Save Settings</string>
+    <string name="system_default">System Default</string>
+    <string name="matter_of_choice_onBoarding" />
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️</string>
+    <string name="have_fun">Have fun</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">What if children, while playing, would acquire tools for real life decision making?</string>
+    <string name="virtual_failures">Virtual Failures</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">                                                              </string>
+    <string name="get_started">Get Started</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -103,7 +142,7 @@
         <item>Basque</item>
         <item>(Ghana)</item>
         <item>(Togo)</item>
-        <item>   </item>
+        <item> Faroese </item>
         <item>Finnish</item>
         <item>French</item>
         <item>Friulian</item>
@@ -133,14 +172,14 @@
         <item>Kinyarwanda</item>
         <item>Kyrgyzstan</item>
         <item>Korean</item>
-        <item>  </item>
+        <item> Lao (Laos) </item>
         <item>Limburgo</item>
         <item>Lingala</item>
         <item>Lithuanian</item>
         <item>Luxembourgish</item>
         <item>Ganda</item>
         <item>Luo</item>
-        <item>  </item>
+        <item> Standard Latvian </item>
         <item>Malayalam</item>
         <item>Marathi</item>
         <item>Macedonian</item>
@@ -168,7 +207,7 @@
         <item>Quechua (Peru)</item>
         <item>Romanian</item>
         <item>Rundi (Burundi)</item>
-        <item> </item>
+        <item>Russian </item>
         <item>Sango (República Centroafricana)</item>
         <item>Sinhala (Sri Lanka)</item>
         <item>Slovakia (Slovakia)</item>

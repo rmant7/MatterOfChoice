@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Umcimbi wokukhetha</string>
+    <string name="app_name_matter_of_choice">Umcimbi wokukhetha</string>
+    <string name="matterofchoice_info">I-Matter Of Choice inikezela ngeemeko ezisebenzisanayo zokukunceda ufunde izakhono zokwenza izigqibo.</string>
     <string name="optional_enter_the_role_e_g_student">Inketho: Faka inxaxheba, umzekelo, Umfundi</string>
     <string name="analysis_my_choices">Ukuhlalutya ukhetho lwam</string>
     <string name="analysis_your_selections">Ukuhlalutya ukhetho lwakho</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Isigqibo</string>
     <string name="button_next">Okulandelayo</string>
     <string name="icon_desc_selected_option">Inketho ekhethiweyo</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Ukuhlalutya</string>
+    <string name="analysis_results">Iziphumo zohlalutyo</string>
+    <string name="analysis_error">Impazamo yohlalutyo</string>
+    <string name="retry_analysis">Uhlalutyo lokuzama kwakhona</string>
+    <string name="no_analysis_data_available">Azikho iinkcukacha zovavanyo ezikhoyo</string>
+    <string name="perform_analysis">Yenza Uhlalutyo</string>
+    <string name="your_score">Amanqaku Akho</string>
+    <string name="correct">(%1$d/%2$d ilungile)</string>
+    <string name="overall_assessment">Uhlolisiso olupheleleyo</string>
+    <string name="detailed_analysis">Uhlalutyo Oluneenkcukacha</string>
+    <string name="back_to_game">Ukubuyela Kumdlalo</string>
+    <string name="play_again">Dlala Kwakhona</string>
+    <string name="case_header">Ityala %1$d</string>
+    <string name="your_choice">Ukhetho Lwakho</string>
+    <string name="optimal_choice">Ukhetho Olufanelekileyo</string>
+    <string name="analysis">Uhlalutyo:</string>
+    <string name="turn_of_3_case_of">Jikela %1$d ye 3 - Ityala %2$d ye %3$d</string>
+    <string name="answered">Impendulo: %1$d/%2$d</string>
+    <string name="next_case">Ityala Elilandelayo</string>
+    <string name="next_turn">Ukujika Okulandelayo</string>
+    <string name="congratulations_you_finished_the_game">Ndiyavuyisana nawe, ugqibile umdlalo!</string>
+    <string name="new_game">Umdlalo Omtsha</string>
+    <string name="analysis_result">Uhlalutyo: %1$s</string>
+    <string name="game_complete">Umdlalo ugqityiwe!</string>
+    <string name="no_analysis_results_available">Akukho ziphumo zophando zifumanekayo</string>
+    <string name="error">Impazamo</string>
+    <string name="retry">Zama kwakhona</string>
+    <string name="scenario">Isigqibo</string>
+    <string name="save_settings">Gcina Izilungiselelo</string>
+    <string name="system_default">Ukungagqibekanga kwenkqubo</string>
+    <string name="matter_of_choice_onBoarding">Umbandela Wokukhetha</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Abantu benza izigqibo ezininzi mihla le.</string>
+    <string name="have_fun">Yiba nemihlali</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Kuthekani ukuba abantwana, ngoxa bedlala, babeza kufumana izixhobo zokwenza izigqibo zobomi bokwenene?</string>
+    <string name="virtual_failures">Ukungaphumeleli Okubonakalayo</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Ngokuqhelekileyo sifunda kwiziphumo ezimbi. Ngaba bekungayi kuba ngcono ukufunda kwiimpazamo ezibonakalayo?</string>
+    <string name="get_started">Qalisa</string>
+    <string name="skip">Ukutsiba</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

@@ -1,13 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Kwessie van keuse</string>
+    <string name="app_name_matter_of_choice">Kwessie van keuse</string>
+    <string name="matterofchoice_info">"Matter Of Choice bied interaktiewe scenario's aan om jou te help om besluitnemingsvaardighede te leer."</string>
     <string name="optional_enter_the_role_e_g_student">Opsioneel: Gee die rol in, byvoorbeeld, Student</string>
     <string name="analysis_my_choices">Ontleed my keuses</string>
     <string name="analysis_your_selections">Ontleed jou keuses</string>
     <string name="rounds">Ronde</string>
     <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">telling bereken op grond van gesondheid, rykdom, verhoudings, geluk, kennis, karma, tydbestuur, omgewingsimpak, persoonlike groei en sosiale verantwoordelikheid</string>
     <string name="settings_title">Kwessie van keuse</string>
-    <string name="settings_subtitle">Die scenario\'s sal gebaseer wees op jou keuses</string>
+    <string name="settings_subtitle">"Die scenario's sal gebaseer wees op jou keuses"</string>
     <string name="settings_label_subject">Gee die onderwerp in</string>
     <string name="settings_hint_select_question_type">Kies die tipe vraag</string>
     <string name="settings_hint_select_subtype">Kies die subtipe</string>
@@ -20,7 +22,7 @@
     <string name="question_type_behavioral">Gedrag</string>
     <string name="question_type_hiring">Huur</string>
     <string name="subtype_behavioral_interpersonal">Interpersoonlike vaardighede</string>
-    <string name="subtype_behavioral_ethical">Etiese dilemma\'s</string>
+    <string name="subtype_behavioral_ethical">"Etiese dilemma's"</string>
     <string name="subtype_behavioral_stress">Stresbestuur</string>
     <string name="subtype_study_mastery">Onderwerpmeesterskap</string>
     <string name="subtype_study_critical_thinking">Kritiese denke</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Scenario</string>
     <string name="button_next">Volgende</string>
     <string name="icon_desc_selected_option">Geselekteerde opsie</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Ontleed</string>
+    <string name="analysis_results">Resultate van die analise</string>
+    <string name="analysis_error">Ontledingsfout</string>
+    <string name="retry_analysis">Retry-analise</string>
+    <string name="no_analysis_data_available">Geen ontledingsdata beskikbaar nie</string>
+    <string name="perform_analysis">Doen ontleding</string>
+    <string name="your_score">Jou telling</string>
+    <string name="correct">(%1$d/%2$d korrek)</string>
+    <string name="overall_assessment">Algehele beoordeling</string>
+    <string name="detailed_analysis">Gedetailleerde Ontleding</string>
+    <string name="back_to_game">Terug na die spel</string>
+    <string name="play_again">Speel weer</string>
+    <string name="case_header">Geval %1$d</string>
+    <string name="your_choice">Jou keuse</string>
+    <string name="optimal_choice">Optimale keuse</string>
+    <string name="analysis">Ontleding:</string>
+    <string name="turn_of_3_case_of">Draai %1$d van 3 - geval %2$d van %3$d</string>
+    <string name="answered">Geantwoord: %1$d/%2$d</string>
+    <string name="next_case">Volgende saak</string>
+    <string name="next_turn">Volgende draai</string>
+    <string name="congratulations_you_finished_the_game">Baie geluk, jy het die wedstryd voltooi!</string>
+    <string name="new_game">Nuwe spel</string>
+    <string name="analysis_result">Ontleding: %1$s</string>
+    <string name="game_complete">Spel voltooi!</string>
+    <string name="no_analysis_results_available">Geen analitiese resultate beskikbaar nie</string>
+    <string name="error">Fout\n</string>
+    <string name="retry">Weer probeer</string>
+    <string name="scenario">Scenario</string>
+    <string name="save_settings">Stoor instellings</string>
+    <string name="system_default">Stelsel verstek</string>
+    <string name="matter_of_choice_onBoarding">Kwessie van keuse</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Mense maak elke dag talle besluite. Is ons toegerus om die beste keuses te maak?</string>
+    <string name="have_fun">Geniet dit.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Wat as kinders, terwyl hulle speel, gereedskap kry om besluite in die werklike lewe te neem?</string>
+    <string name="virtual_failures">Virtuele mislukkings</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Sal dit nie beter wees om uit virtuele mislukkings te leer nie?</string>
+    <string name="get_started">Begin nou</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

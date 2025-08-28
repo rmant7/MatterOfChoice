@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Ábhar roghnaithe</string>
+    <string name="app_name_matter_of_choice">Ábhar roghnaithe</string>
+    <string name="matterofchoice_info">Tugann Matter Of Choice cásanna idirghníomhacha chun cabhrú leat scileanna cinnteoireachta a fhoghlaim.</string>
     <string name="optional_enter_the_role_e_g_student">Roghnach: Cuir isteach an ról, e.g., Oileanach</string>
     <string name="analysis_my_choices">Anailís a dhéanamh ar mo roghanna</string>
     <string name="analysis_your_selections">Anailís do roghanna</string>
     <string name="rounds">Rounds</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Scór a ríomh bunaithe ar shláinte, saibhreas, caidrimh, sona, eolas, karma, bainistiú ama, tionchar comhshaoil, fás pearsanta agus freagracht shóisialta</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        Scór a ríomh bunaithe ar shláinte, saibhreas, caidrimh, sona, eolas, karma, bainistiú ama, tionchar comhshaoil, fás pearsanta agus freagracht shóisialta</string>
     <string name="settings_title">Ábhar roghnaithe</string>
     <string name="settings_subtitle">Beidh na cásanna bunaithe ar do rogha</string>
     <string name="settings_label_subject">Cuir isteach an t-ábhar</string>
@@ -39,13 +42,50 @@
     <string name="pref_key_user_score" translatable="false">userScore</string>
     <string name="pref_key_total_score" translatable="false">totalScore</string>
     <string name="pref_key_rounds" translatable="false">rounds</string>
-    <string name="error_something_went_wrong">D\'éirigh rud éigin mícheart</string>
+    <string name="error_something_went_wrong">"D'éirigh rud éigin mícheart"</string>
     <string name="button_new_game">Cluichí Nua</string>
     <string name="text_round_number">Round %1$d</string>
     <string name="text_scenario">Scáileán</string>
     <string name="button_next">An chéad cheann eile</string>
     <string name="icon_desc_selected_option">Rogha roghnaithe</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Anailís</string>
+    <string name="analysis_results">Tuarascálacha Anailíse</string>
+    <string name="analysis_error">Earráid Anailíse</string>
+    <string name="retry_analysis">Anailís athchúrsála</string>
+    <string name="no_analysis_data_available">Níl aon sonraí anailíse ar fáil</string>
+    <string name="perform_analysis">Déan Anailís</string>
+    <string name="your_score">Do Scór</string>
+    <string name="correct">(%1$d/%2$d ceart)</string>
+    <string name="overall_assessment">Measúnú foriomlán</string>
+    <string name="detailed_analysis">Anailís mionsonraithe</string>
+    <string name="back_to_game">Téigh ar ais go dtí an cluiche</string>
+    <string name="play_again">Cluich arís</string>
+    <string name="case_header">Cás %1$d</string>
+    <string name="your_choice">Do Rogha</string>
+    <string name="optimal_choice">Rogha is Fearr</string>
+    <string name="analysis">Anailís:</string>
+    <string name="turn_of_3_case_of">Turn %1$d de 3 - Cás %2$d de %3$d</string>
+    <string name="answered">Freagra: %1$d/%2$d</string>
+    <string name="next_case">An chéad chás eile</string>
+    <string name="next_turn">An chéad uair eile</string>
+    <string name="congratulations_you_finished_the_game">Congratulations, tá tú críochnaithe an cluiche!</string>
+    <string name="new_game">Cluichí Nua</string>
+    <string name="analysis_result">Anailís: %1$s</string>
+    <string name="game_complete">Tá an cluiche críochnaithe!</string>
+    <string name="no_analysis_results_available">Níl aon torthaí anailíse ar fáil</string>
+    <string name="error">Earráid</string>
+    <string name="retry">Déan iarracht arís</string>
+    <string name="scenario">Scáileán</string>
+    <string name="save_settings">Coinnigh Suímh</string>
+    <string name="system_default">Default System</string>
+    <string name="matter_of_choice_onBoarding">Cúrsa Roghnaíochta</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Tá go leor cinntí ag daoine gach lá. An bhfuil muid réidh chun na cinntí is fearr a dhéanamh?</string>
+    <string name="have_fun">Bíodh spraoi agat</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Cad a tharlaíonn má fhaigheann na páistí, agus iad ag imirt, uirlisí chun cinn a dhéanamh sa saol fíor?</string>
+    <string name="virtual_failures">Failures Virtual</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Ní bheadh sé níos fearr a fhoghlaim ó fhéileanna fíorúil?</string>
+    <string name="get_started">Tosaíonn tú</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

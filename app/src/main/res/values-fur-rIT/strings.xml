@@ -1,14 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Materie di scelte</string>
+    <string name="app_name_matter_of_choice">Materie di scelte</string>
+    <string name="matterofchoice_info">Matter Of Choice al presente scenariis interattivi par judâ a imparâ lis abilitâts di cjapâ des decisions.</string>
     <string name="optional_enter_the_role_e_g_student">Opzionâl: inserî il rûl, par esempli Student</string>
     <string name="analysis_my_choices">Analisi des mieis opzions</string>
     <string name="analysis_your_selections">Analisi de tô selezion</string>
     <string name="rounds">Rondis</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Scôr calcolât su la fonde de salût, de ricjece, des relazions, de felicitât, de cognossince, dal karma, de gjestion dal timp, dal impat ambientâl, de cressite personâl e de responsabilitât sociâl</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        "Scôr calcolât su la fonde de salût, de ricjece, des relazions, de felicitât, de cognossince, dal karma, de gjestion dal timp, dal impat ambientâl, de cressite personâl e de responsabilitât sociâl"</string>
     <string name="settings_title">Materie di scelte</string>
     <string name="settings_subtitle">I scenaris a saran basâts su lis tôs selezions</string>
-    <string name="settings_label_subject">Intrâ l\' argoment</string>
+    <string name="settings_label_subject">"Intrâ l' argoment"</string>
     <string name="settings_hint_select_question_type">Selezionâ il tip di domande</string>
     <string name="settings_hint_select_subtype">Selezionâ il sottip</string>
     <string name="settings_hint_select_difficulty">Selezionâ il nivel dificil</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Scjenari</string>
     <string name="button_next">Al prossim</string>
     <string name="icon_desc_selected_option">Opzion selezionade</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analizâ</string>
+    <string name="analysis_results">Risultâts de analisi</string>
+    <string name="analysis_error">Erôr di analisi</string>
+    <string name="retry_analysis">Analisi di repetizion</string>
+    <string name="no_analysis_data_available">No si cjatin dâts di analisi</string>
+    <string name="perform_analysis">Fâ une analisi</string>
+    <string name="your_score">Il to risultât</string>
+    <string name="correct">(%1$d/%2$d coret)</string>
+    <string name="overall_assessment">Valôr gjenerâl</string>
+    <string name="detailed_analysis">Analisi detaiade</string>
+    <string name="back_to_game">Tornâ al Gjoc</string>
+    <string name="play_again">Gjoli di gnûf</string>
+    <string name="case_header">Caso %1$d</string>
+    <string name="your_choice">La tô scelte</string>
+    <string name="optimal_choice">Optimale opzion</string>
+    <string name="analysis">Analisi:</string>
+    <string name="turn_of_3_case_of">Turni %1$d di 3 - Casi %2$d di %3$d</string>
+    <string name="answered">Risposta: %1$d/%2$d</string>
+    <string name="next_case">Cul prossim câs</string>
+    <string name="next_turn">La prossime volte</string>
+    <string name="congratulations_you_finished_the_game">Compliments, tu âs finît la partide!</string>
+    <string name="new_game">Gjoc gnûf</string>
+    <string name="analysis_result">Analisi: %1$s</string>
+    <string name="game_complete">Gjoc completât!</string>
+    <string name="no_analysis_results_available">Nissun risultât di analisi disponibil</string>
+    <string name="error">Erôr</string>
+    <string name="retry">Provâ di gnûf</string>
+    <string name="scenario">Scjenari</string>
+    <string name="save_settings">Salvâ lis impostazions</string>
+    <string name="system_default">Disposizion di default dal sisteme</string>
+    <string name="matter_of_choice_onBoarding">La cuistion di sielzi</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Lis personis a cjapin une vore di decisions ogni dì.</string>
+    <string name="have_fun">Di divertîsi</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">E se i fruts, intant che a zuiin, a cjatin i struments par cjapâ des decisions in vite reâl?</string>
+    <string name="virtual_failures">Fâlis virtuâls</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Di solit o imparìn des conseguencis negativis. No sarès miôr imparâ dai falts virtuâi?</string>
+    <string name="get_started">Par scomençâ</string>
+    <string name="skip">Scjampâ</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

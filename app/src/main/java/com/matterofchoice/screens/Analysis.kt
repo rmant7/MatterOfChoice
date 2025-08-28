@@ -69,7 +69,7 @@ fun Analysis(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Analysis Results") },
+                title = { Text(stringResource(R.string.analysis_results)) },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Back")
@@ -99,7 +99,7 @@ fun Analysis(
                         verticalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "Analysis Error",
+                            text = stringResource(R.string.analysis_error),
                             fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color.Red
@@ -111,7 +111,7 @@ fun Analysis(
                         )
                         GameButton(
                             onClick = { viewModel.performAnalysis() },
-                            text = "Retry Analysis"
+                            text = stringResource(R.string.retry_analysis)
                         )
                     }
                 }
@@ -139,10 +139,10 @@ fun Analysis(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center
                     ) {
-                        Text("No analysis data available")
+                        Text(stringResource(R.string.no_analysis_data_available))
                         GameButton(
                             onClick = { viewModel.performAnalysis() },
-                            text = "Perform Analysis"
+                            text = stringResource(R.string.perform_analysis)
                         )
                     }
                 }
@@ -184,7 +184,7 @@ fun AnalysisResultsUI(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Your Score",
+                    text = stringResource(R.string.your_score),
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
                     color = colorScheme.onPrimaryContainer,
@@ -200,7 +200,7 @@ fun AnalysisResultsUI(
                 )
 
                 Text(
-                    text = "($correctCount/$totalCount correct)",
+                    text = stringResource(R.string.correct, correctCount, totalCount),
                     fontSize = 16.sp,
                     color = colorScheme.onPrimaryContainer.copy(alpha = 0.8f)
                 )
@@ -220,7 +220,7 @@ fun AnalysisResultsUI(
         }
         // Overall Assessment
         Text(
-            text = "Overall Assessment",
+            text = stringResource(R.string.overall_assessment),
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(bottom = 8.dp)
@@ -242,7 +242,7 @@ fun AnalysisResultsUI(
 
         // Detailed Case Analysis
         Text(
-            text = "Detailed Analysis",
+            text = stringResource(R.string.detailed_analysis),
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(bottom = 16.dp)
@@ -265,11 +265,11 @@ fun AnalysisResultsUI(
         ) {
             GameButton(
                 onClick = onBack,
-                text = "Back to Game",
+                text = stringResource(R.string.back_to_game),
             )
             GameButton(
                 onClick = onRestart,
-                text = "Play Again",
+                text = stringResource(R.string.play_again),
             )
         }
     }
@@ -300,7 +300,7 @@ fun CaseAnalysisItem(
         Column(modifier = Modifier.padding(16.dp)) {
             // Case Header
             Text(
-                text = "Case $caseNumber",
+                text = stringResource(R.string.case_header, caseNumber),
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 8.dp)
@@ -322,7 +322,7 @@ fun CaseAnalysisItem(
             ) {
                 Column {
                     Text(
-                        text = "Your Choice",
+                        text = stringResource(R.string.your_choice),
                         fontSize = 14.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color.Gray
@@ -336,7 +336,7 @@ fun CaseAnalysisItem(
 
                 Column(horizontalAlignment = Alignment.End) {
                     Text(
-                        text = "Optimal Choice",
+                        text = stringResource(R.string.optimal_choice),
                         fontSize = 14.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color.Gray
@@ -351,7 +351,7 @@ fun CaseAnalysisItem(
 
             // Analysis
             Text(
-                text = "Analysis:",
+                text = stringResource(R.string.analysis),
                 fontSize = 14.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.Gray,
@@ -435,7 +435,12 @@ fun CurrentCasesUI(
     ) {
         // Header with turn information
         Text(
-            text = "Turn $currentTurn of 3 - Case ${currentCaseIndex + 1} of ${cases.size}",
+            text = stringResource(
+                R.string.turn_of_3_case_of,
+                currentTurn,
+                currentCaseIndex + 1,
+                cases.size
+            ),
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier
@@ -446,7 +451,7 @@ fun CurrentCasesUI(
 
         // Progress indicator
         Text(
-            text = "Answered: ${userChoices.size}/${cases.size}",
+            text = stringResource(R.string.answered, userChoices.size, cases.size),
             fontSize = 14.sp,
             color = Color.Gray,
             modifier = Modifier
@@ -483,19 +488,19 @@ fun CurrentCasesUI(
                         // More cases in this turn - show "Next Case"
                         GameButton(
                             onClick = onNextCase,
-                            text = "Next Case",
+                            text = stringResource(R.string.next_case),
                         )
                     } else {
                         // Last case in turn - show "Next Turn" or "Finish Game"
                         if (currentTurn < 3) {
                             GameButton(
                                 onClick = onNextTurn,
-                                text = "Next Turn",
+                                text = stringResource(R.string.next_turn),
                             )
                         } else {
                             // Game completed - show completion message
                             Text(
-                                text = "Congratulations, you finished the game!",
+                                text = stringResource(R.string.congratulations_you_finished_the_game),
                                 fontSize = 18.sp,
                                 fontWeight = FontWeight.Bold,
                                 modifier = Modifier.padding(bottom = 16.dp)
@@ -507,11 +512,11 @@ fun CurrentCasesUI(
                             ) {
                                 GameButton(
                                     onClick = onRestart,
-                                    text = "Play Again",
+                                    text = stringResource(R.string.play_again),
                                 )
                                 GameButton(
                                     onClick = onAnalyze,
-                                    text = "Analyze",
+                                    text = stringResource(R.string.analysis),
                                 )
                             }
                         }
@@ -522,14 +527,14 @@ fun CurrentCasesUI(
                         Spacer(modifier = Modifier.height(8.dp))
                         GameButton(
                             onClick = onAnalyze,
-                            text = "Analyze",
+                            text = stringResource(R.string.analysis),
                         )
                     }
                 } else {
                     // No answer yet - show "New Game" button only
                     GameButton(
                         onClick = onRestart,
-                        text = "New Game",
+                        text = stringResource(R.string.new_game),
                     )
                 }
             }
@@ -585,7 +590,7 @@ fun CaseCard(case: Case, selectedChoice: String, onChoiceSelected: (String) -> U
             // Show analysis results if available
             case.analysis?.let { analysis ->
                 Text(
-                    text = "Analysis: $analysis",
+                    text = stringResource(R.string.analysis_result, analysis),
                     fontSize = 14.sp,
                     modifier = Modifier.padding(top = 12.dp)
                 )
@@ -609,7 +614,7 @@ fun AnalysisCompleteUI(analysisResult: String?) {
         )
 
         Text(
-            text = "Game Complete!",
+            text = stringResource(R.string.game_complete),
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(vertical = 16.dp)
@@ -629,12 +634,12 @@ fun AnalysisCompleteUI(analysisResult: String?) {
                 )
             }
         } ?: run {
-            Text("No analysis results available")
+            Text(stringResource(R.string.no_analysis_results_available))
         }
 
         GameButton(
             onClick = { /* Handle restart or navigation */ },
-            text = "Play Again",
+            text = stringResource(R.string.play_again),
         )
     }
 }
@@ -649,7 +654,7 @@ fun ErrorUI(errorMessage: String, onRetry: () -> Unit) {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Error",
+            text = stringResource(R.string.error),
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color.Red,
@@ -664,7 +669,7 @@ fun ErrorUI(errorMessage: String, onRetry: () -> Unit) {
 
         GameButton(
             onClick = onRetry,
-            text = "Retry",
+            text = stringResource(R.string.retry),
         )
     }
 }

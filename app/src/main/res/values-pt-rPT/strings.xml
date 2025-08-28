@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Matéria de escolha</string>
+    <string name="app_name_matter_of_choice">Matéria de escolha</string>
+    <string name="matterofchoice_info">A Matter Of Choice apresenta cenários interativos para ajudá-lo a aprender habilidades de tomada de decisão.</string>
     <string name="optional_enter_the_role_e_g_student">Opcional: Insira o papel, por exemplo, Estudante</string>
     <string name="analysis_my_choices">Análise das minhas escolhas</string>
     <string name="analysis_your_selections">Analisar as suas escolhas</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Escenário</string>
     <string name="button_next">Próximo .</string>
     <string name="icon_desc_selected_option">Opção selecionada</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analisar</string>
+    <string name="analysis_results">Resultados da análise</string>
+    <string name="analysis_error">Erro de análise</string>
+    <string name="retry_analysis">Análise de Reprovação</string>
+    <string name="no_analysis_data_available">Não existem dados de análise disponíveis</string>
+    <string name="perform_analysis">Realizar Análise</string>
+    <string name="your_score">Sua pontuação</string>
+    <string name="correct">(% 1$d/% 2$d correto)</string>
+    <string name="overall_assessment">Avaliação geral</string>
+    <string name="detailed_analysis">Análise detalhada</string>
+    <string name="back_to_game">De volta ao jogo</string>
+    <string name="play_again">Jogue de novo</string>
+    <string name="case_header">Caso %1$d</string>
+    <string name="your_choice">Sua escolha</string>
+    <string name="optimal_choice">Optima escolha</string>
+    <string name="analysis">Análise:</string>
+    <string name="turn_of_3_case_of">Turn %1$d de 3 - Caso %2$d de %3$d</string>
+    <string name="answered">Resposta: %1$d/%2$d</string>
+    <string name="next_case">Próximo caso</string>
+    <string name="next_turn">Próximo turno</string>
+    <string name="congratulations_you_finished_the_game">Parabéns, terminaste o jogo!</string>
+    <string name="new_game">Novo jogo</string>
+    <string name="analysis_result">Análise: %1$s</string>
+    <string name="game_complete">Jogo completo!</string>
+    <string name="no_analysis_results_available">Nenhum resultado de análise disponível</string>
+    <string name="error">Erro</string>
+    <string name="retry">Repetição</string>
+    <string name="scenario">Escenário</string>
+    <string name="save_settings">Salvar Configurações</string>
+    <string name="system_default">Default do sistema</string>
+    <string name="matter_of_choice_onBoarding">Questão de escolha</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">As pessoas tomam inúmeras decisões todos os dias.</string>
+    <string name="have_fun">Divirtam-se .</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">E se as crianças, enquanto brincam, ganhassem ferramentas para tomar decisões na vida real?</string>
+    <string name="virtual_failures">Falhas virtuais</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Normalmente aprendemos com consequências negativas. Não seria melhor aprender com falhas virtuais?</string>
+    <string name="get_started">Comece</string>
+    <string name="skip">Escapar</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

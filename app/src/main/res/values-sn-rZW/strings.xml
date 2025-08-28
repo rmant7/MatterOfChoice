@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Chinhu chaunosarudza</string>
+    <string name="app_name_matter_of_choice">Chinhu chaunosarudza</string>
+    <string name="matterofchoice_info">Matter Of Choice inopa mienzaniso inoshanda kuti ikubatsire kudzidza kuita zvisarudzo.</string>
     <string name="optional_enter_the_role_e_g_student">Kusarudzwa: Pinda basa, somuenzaniso, mudzidzi</string>
     <string name="analysis_my_choices">Ongorora zvisarudzo zvangu</string>
     <string name="analysis_your_selections">Ongorora zvaunosarudza</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Mamiriro ezvinhu</string>
     <string name="button_next">Zvadaro</string>
     <string name="icon_desc_selected_option">Sarudzo yakasarudzwa</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Kuongorora</string>
+    <string name="analysis_results">Mhedzisiro Yekutsvakurudza</string>
+    <string name="analysis_error">Kuongorora Kukanganisa</string>
+    <string name="retry_analysis">Kudzokorora Kuongorora</string>
+    <string name="no_analysis_data_available">Hapana mashoko ekuongorora aripo</string>
+    <string name="perform_analysis">Ita Kuongorora</string>
+    <string name="your_score">Nhamba Yako</string>
+    <string name="correct">(%1$d/%2$d yakarurama)</string>
+    <string name="overall_assessment">Kuongororwa Kwose</string>
+    <string name="detailed_analysis">Kuongorora Kwakadzama</string>
+    <string name="back_to_game">Kudzokera Kumutambo</string>
+    <string name="play_again">Tamba Zvakare</string>
+    <string name="case_header">Nyaya %1$d</string>
+    <string name="your_choice">Sarudzo Yako</string>
+    <string name="optimal_choice">Sarudzo Yakanaka</string>
+    <string name="analysis">Kuongorora:</string>
+    <string name="turn_of_3_case_of">Turn %1$d pamusoro 3 - Case %2$d pamusoro %3$d</string>
+    <string name="answered">Mhinduro: %1$d/%2$d</string>
+    <string name="next_case">Nyaya Inotevera</string>
+    <string name="next_turn">Tende Rinotevera</string>
+    <string name="congratulations_you_finished_the_game">Makorokoto, wapedza mutambo!</string>
+    <string name="new_game">Mutambo Mutsva</string>
+    <string name="analysis_result">Ongororo: %1$s</string>
+    <string name="game_complete">Mutambo Wapera!</string>
+    <string name="no_analysis_results_available">Hapana mhedzisiro yekuongorora iripo</string>
+    <string name="error">Kukanganisa</string>
+    <string name="retry">Edzazve</string>
+    <string name="scenario">Mamiriro ezvinhu</string>
+    <string name="save_settings">Chengetedza Zvirongwa</string>
+    <string name="system_default">System Default</string>
+    <string name="matter_of_choice_onBoarding">Nyaya Yokusarudza</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Vanhu vanoita zvisarudzo zvisingaverengeki zuva nezuva.</string>
+    <string name="have_fun">Nakidzwai</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Zvakadini kana vana, vachitamba, vakawana maturusi okuita zvisarudzo muupenyu chaihwo?</string>
+    <string name="virtual_failures">Kukundikana Kwechokwadi</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Kazhinji tinodzidza kubva pamigumisiro yakaipa. Hazvingavi nani kudzidza kubva kukundikana chaiko?</string>
+    <string name="get_started">Tanga</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Likambo ya kopona</string>
+    <string name="app_name_matter_of_choice">Likambo ya kopona</string>
+    <string name="matterofchoice_info">Matter Of Choice ezali kolakisa makambo oyo ekoki kosalisa yo oyeba kozwa bikateli.</string>
     <string name="optional_enter_the_role_e_g_student">Likambo ya kopona: Tyá mokumba, na ndakisa, Moyekoli</string>
     <string name="analysis_my_choices">Koyekola bikateli na ngai</string>
     <string name="analysis_your_selections">Talelá makambo oyo oponi</string>
     <string name="rounds">Masasi</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Mpo na koyeba makambo yango, esengeli kotalela makambo lokola sante, bozwi, boyokani, esengo, boyebi, karma, ndenge ya kosalela ntango, bopusi na yango likoló ya molɔ́ngɔ́, bokoli ya moto mpe mokumba na ye na makambo ya bato</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        Mpo na koyeba makambo yango, esengeli kotalela makambo lokola sante, bozwi, boyokani, esengo, boyebi, karma, ndenge ya kosalela ntango, bopusi na yango likoló ya molɔ́ngɔ́, bokoli ya moto mpe mokumba na ye na makambo ya bato</string>
     <string name="settings_title">Likambo ya kopona</string>
     <string name="settings_subtitle">Makambo oyo okosala esimbami na makambo oyo okopona</string>
     <string name="settings_label_subject">Kɔtá likambo</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Ndakisa</string>
     <string name="button_next">Na nsima</string>
     <string name="icon_desc_selected_option">Option oyo oponi</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Kokanisa</string>
+    <string name="analysis_results">Makambo oyo esalemaki</string>
+    <string name="analysis_error">Libunga ya analyse</string>
+    <string name="retry_analysis">Komeka lisusu</string>
+    <string name="no_analysis_data_available">Ezali na ba données ya analyse te</string>
+    <string name="perform_analysis">Tósala ankɛtɛ</string>
+    <string name="your_score">Motángo na yo</string>
+    <string name="correct">(%1$d/%2$d correcte)</string>
+    <string name="overall_assessment">Motángo mobimba</string>
+    <string name="detailed_analysis">Kotalela makambo na mozindo</string>
+    <string name="back_to_game">Tózongela lisano</string>
+    <string name="play_again">Kobɛta lisusu</string>
+    <string name="case_header">Likambo %1$d</string>
+    <string name="your_choice">Ekateli na yo</string>
+    <string name="optimal_choice">Ekateli oyo ebongi</string>
+    <string name="analysis">Koyekola:</string>
+    <string name="turn_of_3_case_of">Kobongwana %1$d ya 3 - Likambo %2$d ya %3$d</string>
+    <string name="answered">Eyano: %1$d/%2$d</string>
+    <string name="next_case">Likambo oyo elandi</string>
+    <string name="next_turn">Mbongwana oyo elandi</string>
+    <string name="congratulations_you_finished_the_game">Matɔndi, osilisi lisano!</string>
+    <string name="new_game">Masano ya sika</string>
+    <string name="analysis_result">Analysis: %1$s</string>
+    <string name="game_complete">Masano esili!</string>
+    <string name="no_analysis_results_available">Ba résultats ya analyse ezali te</string>
+    <string name="error">Libunga</string>
+    <string name="retry">Meká lisusu</string>
+    <string name="scenario">Ndakisa</string>
+    <string name="save_settings">Kobomba ba paramètres</string>
+    <string name="system_default">Likambo ya kozanga kokoka</string>
+    <string name="matter_of_choice_onBoarding">Likambo ya kopona</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Bato bazwaka bikateli ebele mokolo na mokolo.</string>
+    <string name="have_fun">Sepelá</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Bongo soki bana bazali kosakana mpe bazali kozwa bisaleli mpo na kozwa bikateli na bomoi ya solosolo?</string>
+    <string name="virtual_failures">Makama ya solosolo</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Mbala mingi, toyekolaka na makambo ya mabe oyo ebimaka na nsima.</string>
+    <string name="get_started">Kobanda mosala</string>
+    <string name="skip">Kolongwa</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

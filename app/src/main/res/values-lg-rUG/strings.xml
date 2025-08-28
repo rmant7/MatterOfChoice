@@ -1,12 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">"Ensonga y'okusalawo"</string>
+    <string name="app_name_matter_of_choice">Ensonga "y'okusalawo"</string>
+    <string name="matterofchoice_info">"Matter Of Choice eyogera ku bintu ebiyinza okukuyamba okuyiga engeri y'okusalawo."</string>
     <string name="optional_enter_the_role_e_g_student">"Eky'okwesalirawo: Yingira ekifo, e.g., Omuyizi"</string>
     <string name="analysis_my_choices">Okunoonyereza ku ebyo bye nnasalawo</string>
     <string name="analysis_your_selections">"Okunoonyereza ku by'osalawo"</string>
     <string name="rounds">Emizingo</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">"Obulwadde, obugagga, enkolagana, essanyu, okumanya, karma, obukulembeze bw'ekiseera, embeera y'obutonde, okukulaakulana kw'omuntu n'obuvunaanyizibwa bw'abantu"</string>
-
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        "Obulwadde, obugagga, enkolagana, essanyu, okumanya, karma, obukulembeze bw'ekiseera, embeera y'obutonde, okukulaakulana kw'omuntu n'obuvunaanyizibwa bw'abantu"</string>
     <string name="settings_title">"Ensonga y'okusalawo"</string>
     <string name="settings_subtitle">"Ebyawandiikibwa bijja kusinziira ku ebyo by'onoosalawo"</string>
     <string name="settings_label_subject">Yingira ekitundu</string>
@@ -46,7 +48,45 @@
     <string name="text_scenario">Embeera</string>
     <string name="button_next">Ekiddako</string>
     <string name="icon_desc_selected_option">Enkola eyalondeddwa</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Okunoonyereza</string>
+    <string name="analysis_results">Ebivudde mu Kukubaganya Ebirowoozo</string>
+    <string name="analysis_error">"Ensobi y'Okuzuula"</string>
+    <string name="retry_analysis">Okunoonyereza Okuddaabiriza</string>
+    <string name="no_analysis_data_available">"Tewaaliwo fayiro z'okwekenneenya eziriwo"</string>
+    <string name="perform_analysis">Okukola Okunoonyereza</string>
+    <string name="your_score">Obubonero Bwo</string>
+    <string name="correct">(%1$d/%2$d ekituufu)</string>
+    <string name="overall_assessment">"Okunoonyereza okw'Obukulu"</string>
+    <string name="detailed_analysis">"Okunoonyereza okw'Amakulu"</string>
+    <string name="back_to_game">"Dda ku Ky'Okukola"</string>
+    <string name="play_again">Yongera Okuzannya</string>
+    <string name="case_header">Embeera %1$d</string>
+    <string name="your_choice">"Engeri gy'Oyinza Okusalawo"</string>
+    <string name="optimal_choice">Okulonda Okusingayo Obulungi</string>
+    <string name="analysis">Okunoonyereza:</string>
+    <string name="turn_of_3_case_of">Turn %1$d ya 3 - Embeera %2$d ya %3$d</string>
+    <string name="answered">Eky\'okuddamu: %1$d/%2$d</string>
+    <string name="next_case">Omusango oguddako</string>
+    <string name="next_turn">Oludda Oluddako</string>
+    <string name="congratulations_you_finished_the_game">Nneebaza, omalirizza omuzannyo!</string>
+    <string name="new_game">Omuzannyo Omuggya</string>
+    <string name="analysis_result">Okwekenneenya: %1$s</string>
+    <string name="game_complete">Omuzannyo guwedde!</string>
+    <string name="no_analysis_results_available">Tewaaliwo biva mu kunoonyereza</string>
+    <string name="error">Ensobi\n</string>
+    <string name="retry">Gezaako nate</string>
+    <string name="scenario">Embeera</string>
+    <string name="save_settings">Weekuumire Ebisaanyizo</string>
+    <string name="system_default">"Enkola ey'obutabanguko"</string>
+    <string name="matter_of_choice_onBoarding">"Ensonga y'Okusalawo"</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Buli lunaku abantu basalawo ku bintu ebitali bimu.</string>
+    <string name="have_fun">Sanyuka</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">
+        "Ate kiri kitya singa abaana, nga bazannya, bafuna eby'okukozesa eby'okusalawo mu bulamu obwa nnamaddala?"</string>
+    <string name="virtual_failures">"Obunafu obw'Omwoyo"</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Emirundi mingi tuyiga okuva mu bikolwa ebibi. Tekyandibadde kirungi ne tuyiga okuva mu butali bwenkanya?</string>
+    <string name="get_started">Fuba Okutandika</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -82,35 +122,35 @@
         <item>Akan</item>
         <item>Amharic</item>
         <item>Oluwalabu (United Arab Emirates)</item>
-        <item>Ab\'omu Assam</item>
-        <item>Olulimi lw\'e Asturian</item>
+        <item>"Ab'omu Assam"</item>
+        <item>"Olulimi lw'e Asturian"</item>
         <item>Oluganda</item>
         <item>Bambara</item>
         <item>Olwebbulaniya</item>
         <item>Bemba</item>
         <item>Bengali</item>
         <item>Tibetani</item>
-        <item>Ab\'omu Bosnia</item>
+        <item>"Ab'omu Bosnia"</item>
         <item>Oluganda</item>
         <item>Olukalala</item>
         <item>Tekkesi</item>
-        <item>Ab\'omu Wales</item>
+        <item>"Ab'omu Wales"</item>
         <item>Oluganda</item>
         <item>Olugirimaani</item>
         <item>Dzongkha</item>
         <item>Oluyonaani</item>
         <item>Olungereza</item>
-        <item>Olulimi olw\'omu Estonia</item>
+        <item>"Olulimi olw'omu Estonia"</item>
         <item>Basque</item>
         <item>Ewe (Ghana)</item>
         <item>Ewe (Togo)</item>
-        <item>Abantu b\'omu Faroese</item>
+        <item>"Abantu b'omu Faroese"</item>
         <item>Olufiini</item>
         <item>Olufalansa</item>
         <item>Friulian</item>
         <item>Olugambo oluyitibwa Scottish Gaelic</item>
-        <item>Ab\'omu Ireland</item>
-        <item>Olugambo lw\'e Galicia</item>
+        <item>"Ab'omu Ireland"</item>
+        <item>"Olugambo lw'e Galicia"</item>
         <item>Gujarati</item>
         <item>Hausa</item>
         <item>Olwebbulaniya</item>
@@ -120,7 +160,7 @@
         <item>Olugambo lwa Armenia</item>
         <item>Igbo</item>
         <item>Oluganda</item>
-        <item>Olulimi olw\'omu Iceland</item>
+        <item>"Olulimi olw'omu Iceland"</item>
         <item>Olwebbulaniya</item>
         <item>Abayapani</item>
         <item>Kabylie</item>
@@ -138,10 +178,10 @@
         <item>Limburgi</item>
         <item>Lingala</item>
         <item>Olwebbulaniya</item>
-        <item>Olulimi lw\'e Luxembourg</item>
+        <item>"Olulimi lw'e Luxembourg"</item>
         <item>Ganda</item>
         <item>Luo</item>
-        <item>Olulimi olw\'ekika kya Latvia</item>
+        <item>"Olulimi olw'ekika kya Latvia"</item>
         <item>Malayalam</item>
         <item>Marathi</item>
         <item>Makedoniya</item>
@@ -149,7 +189,7 @@
         <item>Olulimi lwa Malti (Malta)</item>
         <item>Olugambo lwa Halh Mongolian</item>
         <item>Malay (Malaysia)</item>
-        <item>Abantu b\'omu Myanmar</item>
+        <item>"Abantu b'omu Myanmar"</item>
         <item>Oluganda</item>
         <item>Norwegian Nynorsk</item>
         <item>Olulimi Oluyogerwa mu Norway</item>
@@ -167,7 +207,7 @@
         <item>Quechua (Bolivia)</item>
         <item>Quechua (Ecuador)</item>
         <item>Quechua (Peru)</item>
-        <item>Olulimi olw\'e Romania</item>
+        <item>"Olulimi olw'e Romania"</item>
         <item>Rundi (Burundi)</item>
         <item>Olurusi</item>
         <item>Sango (Central African Republic)</item>
@@ -183,18 +223,18 @@
         <item>Oluswayiri</item>
         <item>Tamil</item>
         <item>Telugu</item>
-        <item>Ab\'omu Thailand</item>
+        <item>"Ab'omu Thailand"</item>
         <item>Olwebbulaniya</item>
         <item>Olukyayina</item>
         <item>Urdu (Pakistan)</item>
         <item>Uighur (China)</item>
         <item>Uzbekistan (Olulatini, Uzbekistan)</item>
-        <item>Ab\'omu Vietnam</item>
+        <item>"Ab'omu Vietnam"</item>
         <item>Xhosa</item>
         <item>Oluyoruba</item>
         <item>Olulimi lwa Cantonese</item>
-        <item>Olukyayina olw\'Olumandiri Olwanguyiddwa</item>
-        <item>Olulimi olw\'Oluchina Olwa Mandarin</item>
+        <item>"Olukyayina olw'Olumandiri Olwanguyiddwa"</item>
+        <item>"Olulimi olw'Oluchina Olwa Mandarin"</item>
         <item>Zulu</item>
     </string-array>
 </resources>

@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">선택 사항</string>
+    <string name="app_name_matter_of_choice">선택 사항</string>
+    <string name="matterofchoice_info">선택의 문제 는 의사 결정 능력 을 배울 수 있도록 상호 작용적 인 시나리오 를 제시 합니다.</string>
     <string name="optional_enter_the_role_e_g_student">선택적: 역할을 입력, 예를 들어, 학생</string>
     <string name="analysis_my_choices">내 선택에 대한 분석</string>
     <string name="analysis_your_selections">선택의 분석</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">시나리오</string>
     <string name="button_next">다음으로</string>
     <string name="icon_desc_selected_option">선택된 옵션</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">분석</string>
+    <string name="analysis_results">분석 결과</string>
+    <string name="analysis_error">분석 오류</string>
+    <string name="retry_analysis">재실험 분석</string>
+    <string name="no_analysis_data_available">분석 자료는 없습니다</string>
+    <string name="perform_analysis">분석 수행</string>
+    <string name="your_score">당신의 점수</string>
+    <string name="correct">(%1$d/%2$d 정확함)</string>
+    <string name="overall_assessment">전체 평가</string>
+    <string name="detailed_analysis">상세한 분석</string>
+    <string name="back_to_game">게임으로 돌아가</string>
+    <string name="play_again">다시 플레이</string>
+    <string name="case_header">경우 %1$d</string>
+    <string name="your_choice">당신 의 선택</string>
+    <string name="optimal_choice">최선 선택</string>
+    <string name="analysis">분석:</string>
+    <string name="turn_of_3_case_of">3의 %1$d를 돌 - %2$d의 %3$d의 경우</string>
+    <string name="answered">답: %1$d/%2$d</string>
+    <string name="next_case">다음 사건</string>
+    <string name="next_turn">다음 회전</string>
+    <string name="congratulations_you_finished_the_game">축하해요, 경기를 끝냈어요!</string>
+    <string name="new_game">새로운 게임</string>
+    <string name="analysis_result">분석: %1$s</string>
+    <string name="game_complete">게임 완료!</string>
+    <string name="no_analysis_results_available">분석 결과는 없습니다</string>
+    <string name="error">오류</string>
+    <string name="retry">다시 시도해 보세요</string>
+    <string name="scenario">시나리오</string>
+    <string name="save_settings">설정을 저장</string>
+    <string name="system_default">시스템 기본 설정</string>
+    <string name="matter_of_choice_onBoarding">선택 의 문제</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">사람 들 은 매일 셀 수 없이 많은 결정 을 내립니다. 우리 는 가장 좋은 선택 을 할 수 있는 능력 을 갖추고 있습니까?</string>
+    <string name="have_fun">즐거운 시간을 보내세요</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">아이들이 놀면서 실제 생활에서 의사결정을 할 수 있는 도구를 얻으면 어떨까요?</string>
+    <string name="virtual_failures">가상 실패</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">보통 우리는 부정적인 결과로부터 배운다. 가상 실패로부터 배우는 것이 낫지 않을까요?</string>
+    <string name="get_started">시작 해</string>
+    <string name="skip">스피프</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

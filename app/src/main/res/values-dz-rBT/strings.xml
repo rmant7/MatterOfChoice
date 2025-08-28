@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">གདམ་ཁ་གྱི་གནད་དོན་</string>
+    <string name="app_name_matter_of_choice">གདམ་ཁ་གྱི་གནད་དོན་</string>
+    <string name="matterofchoice_info">གདམ་ཁ་རྐྱབས་ཀྱི་ གནད་དོན་འདི་ ཁྱོད་ཀྱིས་ གྲོས་ཐག་བཅད་ནིའི་ རིག་རྩལ་ཚུ་ སྦྱོང་བརྡར་འབད་ཚུགས་པའི་དོན་ལུ་ ཕན་ཁྱད་ཅན་གྱི་ གནས་སྟངས་ཚུ་ གྲོས་སྟོན་འབདཝ་ཨིན།</string>
     <string name="optional_enter_the_role_e_g_student">གདམ་ཁ་རྐྱབས་: འགན་འཁྲི་བཙུགས་ནི་ དཔེར་ན་ སློབ་ཕྲུག་</string>
     <string name="analysis_my_choices">ངེའི་ གདམ་ཁ་ཚུ་ དབྱེ་ཞིབ་འབད་</string>
     <string name="analysis_your_selections">ཁྱོད་ཀྱི་ གདམ་ཁ་ཚུ་ དབྱེ་ཞིབ་འབད་</string>
     <string name="rounds">འཁོར་ལོ་ཚུ་</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">གྲུབ་འབྲས་ཚུ་ གསོ་བའི་གནས་སྟངས་, རྒྱུ་ནོར་, རྟེན་འབྲེལ་, དགའ་ཚོར་, ཤེས་ཡོན་, ཀར་མ་, དུས་ཡུན་འཛིན་སྐྱོང་, གནས་སྟངས་ལུ་ ཐོ་ཕོག་, རང་སོའི་གོང་འཕེལ་དང་ མི་སྡེའི་འགན་ཁུར་ལུ་ གཞི་བཞག་སྟེ་རྩིས་སྟོནམ་ཨིན།</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        གྲུབ་འབྲས་ཚུ་ གསོ་བའི་གནས་སྟངས་, རྒྱུ་ནོར་, རྟེན་འབྲེལ་, དགའ་ཚོར་, ཤེས་ཡོན་, ཀར་མ་, དུས་ཡུན་འཛིན་སྐྱོང་, གནས་སྟངས་ལུ་ ཐོ་ཕོག་, རང་སོའི་གོང་འཕེལ་དང་ མི་སྡེའི་འགན་ཁུར་ལུ་ གཞི་བཞག་སྟེ་རྩིས་སྟོནམ་ཨིན།</string>
     <string name="settings_title">གདམ་ཁ་གྱི་གནད་དོན་</string>
     <string name="settings_subtitle">གནས་སྟངས་འདི་ ཁྱོད་ཀྱིས་ གདམ་ཁ་རྐྱབ་མི་དང་བསྟུན་འབད་ནི་ཨིན།</string>
     <string name="settings_label_subject">གནད་དོན་འདི་བཙུགས་དགོ།</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">གནས་སྟངས་འདི་</string>
     <string name="button_next">འདི་གི་ཤུལ་ལས་</string>
     <string name="icon_desc_selected_option">གདམ་ཁ་རྐྱབས།</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">དབྱེ་ཞིབ་འབད་</string>
+    <string name="analysis_results">ཞིབ་འཇུག་གི་གྲུབ་འབྲས་</string>
+    <string name="analysis_error">བརྟག་དཔྱད་གྱི་འཛོལ་བ་</string>
+    <string name="retry_analysis">སླར་ལོག་བརྟག་དཔྱད་</string>
+    <string name="no_analysis_data_available">བརྟག་དཔྱད་ཀྱི་ གནད་དོན་ཚུ་མེད་</string>
+    <string name="perform_analysis">བརྟག་དཔྱད་འབད་</string>
+    <string name="your_score">ཁྱོད་ཀྱི་རྩིས་ཐིག་</string>
+    <string name="correct">(%1$d/%2$d འདི་བདེན་)</string>
+    <string name="overall_assessment">སྤྱིར་བཏང་བརྟག་དཔྱད་</string>
+    <string name="detailed_analysis">གྲོས་བསྡུར་ཞིབ་དཔྱད་</string>
+    <string name="back_to_game">རྩེད་འགྲན་ལུ་ལོག་</string>
+    <string name="play_again">སླར་ཡང་རྩེད་ནི་</string>
+    <string name="case_header">གནད་དོན་ %1$d</string>
+    <string name="your_choice">ཁྱོད་རའི་ གདམ་ཁ་</string>
+    <string name="optimal_choice">གདམ་ཁ་ལེགས་ཤོམ་</string>
+    <string name="analysis">ཞིབ་དཔྱད་:</string>
+    <string name="turn_of_3_case_of">%1$dལས་ 3 - གནད་དོན་ %2$dལས་ %3$d</string>
+    <string name="answered">ལན་: %1$d/%2$d</string>
+    <string name="next_case">ཤུལ་མའི་གནད་དོན་</string>
+    <string name="next_turn">ཤུལ་མའི་འགྱུར་ཐིག་</string>
+    <string name="congratulations_you_finished_the_game">རྩེད་འགྲན་འདི་ མཇུག་བསྡུ་ཚར་ཡི་ སྟབས་བདེ་ལེགས།</string>
+    <string name="new_game">རྩེད་འགྲན་གསརཔ་</string>
+    <string name="analysis_result">བརྟག་དཔྱད་: %1$s</string>
+    <string name="game_complete">རྩེད་འགྲན་མཇུག་བསྡུ་ཡོདཔ།</string>
+    <string name="no_analysis_results_available">ཞིབ་དཔྱད་ཀྱི་ གྲུབ་འབྲས་ཚུ་མེད་</string>
+    <string name="error">འཛོལ་བ་\n</string>
+    <string name="retry">སླར་ཡང་ བརྟག་དཔྱད་འབད་</string>
+    <string name="scenario">གནས་སྟངས་འདི་</string>
+    <string name="save_settings">གཞི་སྒྲིག་ཚུ་ ཐོ་བཀོད་འབད་</string>
+    <string name="system_default">གློག་ཐག་ར་བ་</string>
+    <string name="matter_of_choice_onBoarding">གདམ་ཁ་རྐྱབས་ཀྱི་ གནད་དོན་</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">མི་གིས་ ཉིནམ་རེ་འཆར་རང་ གྲོས་ཐག་བཅད་དགོཔ་ཁག་ཆེཝ་ཡོདཔ་</string>
+    <string name="have_fun">དགའ་སྟོན་ལེགས་ཤོམ་སྦེ་འབད་</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">ཨ་ལོ་ཚུ་གིས་ རྩེད་འགྲན་འབད་བའི་སྐབས་ མི་ཚེ་ངོ་མ་ནང་ གྲོས་ཐག་བཅད་ནིའི་ ལག་ཆས་ཚུ་ཐོབ་པ་ཅིན་ག་ཅི་འབྱུང་འོང་?</string>
+    <string name="virtual_failures">ཡོངས་འབྲེལ་གྱི་འཛོལ་བ་ཚུ་</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">མང་ཤོས་ར་ ང་བཅས་ཀྱིས་ སྟབས་མ་བདེཝ་ལས་སྦྱོང་བརྡར་འབདཝ་ཨིན་ དེ་སྦེ་འབད་བ་ཅིན་ སྟབས་མ་བདེཝ་ལས་སྦྱོང་བརྡར་འབད་བ་ཅིན་ ལེགས་ཤོམ་མི་འོང་ག།</string>
+    <string name="get_started">འགོ་བཙུགས་ནི་</string>
+    <string name="skip">འཕྱོག་འགྱོ་</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

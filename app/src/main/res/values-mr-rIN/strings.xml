@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">निवडक विषय</string>
+    <string name="app_name_matter_of_choice">निवडक विषय</string>
+    <string name="matterofchoice_info">मॅटर ऑफ चॉइस आपल्याला निर्णय घेण्याच्या कौशल्यांचा अभ्यास करण्यास मदत करण्यासाठी परस्पर संवादात्मक परिस्थिती सादर करते.</string>
     <string name="optional_enter_the_role_e_g_student">पर्यायी: भूमिका प्रविष्ट करा, उदा. विद्यार्थी</string>
     <string name="analysis_my_choices">माझ्या निवडींचे विश्लेषण</string>
     <string name="analysis_your_selections">तुमच्या निवडीचे विश्लेषण करा</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">परिस्थिती</string>
     <string name="button_next">पुढील</string>
     <string name="icon_desc_selected_option">निवडलेला पर्याय</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">विश्लेषण</string>
+    <string name="analysis_results">विश्लेषण परिणाम</string>
+    <string name="analysis_error">विश्लेषण त्रुटी</string>
+    <string name="retry_analysis">पुनरावृत्ती विश्लेषण</string>
+    <string name="no_analysis_data_available">कोणतीही विश्लेषणात्मक माहिती उपलब्ध नाही</string>
+    <string name="perform_analysis">विश्लेषण करा</string>
+    <string name="your_score">तुमचा स्कोअर</string>
+    <string name="correct">(%1$d/%2$d बरोबर)</string>
+    <string name="overall_assessment">एकूण मूल्यमापन</string>
+    <string name="detailed_analysis">तपशीलवार विश्लेषण</string>
+    <string name="back_to_game">खेळात परत जा</string>
+    <string name="play_again">पुन्हा खेळ</string>
+    <string name="case_header">केस %1$d</string>
+    <string name="your_choice">तुमची निवड</string>
+    <string name="optimal_choice">उत्तम पर्याय</string>
+    <string name="analysis">विश्लेषण:</string>
+    <string name="turn_of_3_case_of">टर्न %1$d ऑफ 3 - केस %2$d ऑफ %3$d</string>
+    <string name="answered">उत्तर: %1$d/%2$d</string>
+    <string name="next_case">पुढील प्रकरण</string>
+    <string name="next_turn">पुढील वळण</string>
+    <string name="congratulations_you_finished_the_game">अभिनंदन, तुम्ही खेळ संपवला!</string>
+    <string name="new_game">नवीन खेळ</string>
+    <string name="analysis_result">विश्लेषण: %1$s</string>
+    <string name="game_complete">खेळ पूर्ण!</string>
+    <string name="no_analysis_results_available">कोणतीही विश्लेषणात्मक परिणाम उपलब्ध नाहीत</string>
+    <string name="error">त्रुटी</string>
+    <string name="retry">पुन्हा प्रयत्न करा</string>
+    <string name="scenario">परिस्थिती</string>
+    <string name="save_settings">सेटिंग्ज जतन करा</string>
+    <string name="system_default">प्रणाली डीफॉल्ट</string>
+    <string name="matter_of_choice_onBoarding">निवडणूक</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">बाय द वे, बाय द वे, बाय द वे, बाय द वे</string>
+    <string name="have_fun">मजा करा.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">मुले खेळत असताना वास्तविक जीवनात निर्णय घेण्यासाठी साधने मिळतील तर काय?</string>
+    <string name="virtual_failures">आभासी अपयश</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">आपण सामान्यतः नकारात्मक परिणामांकडून शिकतो. आभासी अपयशांकडून शिकणे चांगले नसते का?</string>
+    <string name="get_started">प्रारंभ करा</string>
+    <string name="skip">उड्डाण</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

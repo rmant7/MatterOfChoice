@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">選択事項</string>
+    <string name="app_name_matter_of_choice">選択事項</string>
+    <string name="matterofchoice_info">マスター・オブ・ザ・チョイスは,意思決定のスキルを習得するのに役立つインタラクティブなシナリオを紹介しています.</string>
     <string name="optional_enter_the_role_e_g_student">オプション: 役割を入力します.例えば,学生</string>
     <string name="analysis_my_choices">選択を分析する</string>
     <string name="analysis_your_selections">選択を分析する</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">シナリオ</string>
     <string name="button_next">次は</string>
     <string name="icon_desc_selected_option">選択したオプション</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">分析する</string>
+    <string name="analysis_results">分析結果</string>
+    <string name="analysis_error">分析エラー</string>
+    <string name="retry_analysis">復試分析</string>
+    <string name="no_analysis_data_available">分析データはありません</string>
+    <string name="perform_analysis">分析を行なう</string>
+    <string name="your_score">あなたのスコア</string>
+    <string name="correct">(%1$d/%2$d は正しい)</string>
+    <string name="overall_assessment">総評価</string>
+    <string name="detailed_analysis">詳細な分析</string>
+    <string name="back_to_game">ゲームへ戻る</string>
+    <string name="play_again">再び演奏する</string>
+    <string name="case_header">ケース %1$d</string>
+    <string name="your_choice">あなた の 選択</string>
+    <string name="optimal_choice">最適 な 選択</string>
+    <string name="analysis">分析:</string>
+    <string name="turn_of_3_case_of">ターン %1$d 3 - ケース %2$d %3$d</string>
+    <string name="answered">回答: %1$d/%2$d</string>
+    <string name="next_case">次の事件</string>
+    <string name="next_turn">次のターン</string>
+    <string name="congratulations_you_finished_the_game">あけましておめでとうございます 試合を終えました!</string>
+    <string name="new_game">新しいゲーム</string>
+    <string name="analysis_result">分析: %1$s</string>
+    <string name="game_complete">ゲーム完了!</string>
+    <string name="no_analysis_results_available">分析結果はありません</string>
+    <string name="error">誤り</string>
+    <string name="retry">もう一度やってみる</string>
+    <string name="scenario">シナリオ</string>
+    <string name="save_settings">設定を保存する</string>
+    <string name="system_default">システムデフォルト</string>
+    <string name="matter_of_choice_onBoarding">選択 の 問題</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">人 は 日々 無数の 決定 を する.わたしたち は 最高 の 選択 を する ため に 備え られ て い ます か.</string>
+    <string name="have_fun">楽しんで</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">遊びながら 子供たちが リアルな生活での 決断をするための 道具を得たらどうでしょう?</string>
+    <string name="virtual_failures">仮想失敗</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">通常は 負の結果から学びます 仮想失敗から学ぶ方が良いのではないでしょうか?</string>
+    <string name="get_started">始めよう</string>
+    <string name="skip">飛び降りる</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

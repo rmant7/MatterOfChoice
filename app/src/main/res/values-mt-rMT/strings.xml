@@ -1,15 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Materja ta\' għażla</string>
+    <string name="app_name">"Materja ta' għażla"</string>
+    <string name="app_name_matter_of_choice">"Materja ta' għażla"</string>
+    <string name="matterofchoice_info">"Matter Of Choice tippreżenta xenarji interattivi biex jgħinuk titgħallem ħiliet ta' teħid ta' deċiżjonijiet."</string>
     <string name="optional_enter_the_role_e_g_student">Optattiv: Daħħal ir-rwol, eż. Student</string>
     <string name="analysis_my_choices">Analizza l-għażliet tiegħi</string>
     <string name="analysis_your_selections">Analiżi l-għażliet tiegħek</string>
     <string name="rounds">Runnings</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Il-punteġġ jiġi kkalkulat abbażi tas-saħħa, il-ġid, ir-relazzjonijiet, il-ferħ, il-għarfien, il-karma, il-ġestjoni tal-ħin, l-impatt ambjentali, it-tkabbir personali, u r-responsabbiltà soċjali</string>
-    <string name="settings_title">Materja ta\' għażla</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        "Il-punteġġ jiġi kkalkulat abbażi tas-saħħa, il-ġid, ir-relazzjonijiet, il-ferħ, il-għarfien, il-karma, il-ġestjoni tal-ħin, l-impatt ambjentali, it-tkabbir personali, u r-responsabbiltà soċjali"</string>
+    <string name="settings_title">"Materja ta' għażla"</string>
     <string name="settings_subtitle">Is-senariji se jkunu bbażati fuq l-għażla tiegħek</string>
     <string name="settings_label_subject">Daħħal is-suġġett</string>
-    <string name="settings_hint_select_question_type">Agħżel it-tip ta \' mistoqsija</string>
+    <string name="settings_hint_select_question_type">"Agħżel it-tip ta ' mistoqsija"</string>
     <string name="settings_hint_select_subtype">Agħżel is-sottotip</string>
     <string name="settings_hint_select_difficulty">Agħżel il-livell diffiċli</string>
     <string name="settings_hint_select_gender_optional">Optattiv: Agħżel is-sess tiegħek</string>
@@ -45,7 +48,45 @@
     <string name="text_scenario">Scenarju</string>
     <string name="button_next">Iktar tard</string>
     <string name="icon_desc_selected_option">Opzjoni magħżula</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analiżi</string>
+    <string name="analysis_results">Ir-riżultati tal-analiżi</string>
+    <string name="analysis_error">Ħtija tal-analiżi</string>
+    <string name="retry_analysis">Analiżi tar-Retry</string>
+    <string name="no_analysis_data_available">"L-ebda dejta ta' analiżi disponibbli"</string>
+    <string name="perform_analysis">Agħmel Analiżi</string>
+    <string name="your_score">Il- Punteġġ tiegħek</string>
+    <string name="correct">(%1$d/%2$d korrett)</string>
+    <string name="overall_assessment">Valutazzjoni ġenerali</string>
+    <string name="detailed_analysis">Analiżi dettaljata</string>
+    <string name="back_to_game">"Terġa' lura għall-logħba"</string>
+    <string name="play_again">Jgħin mill-ġdid</string>
+    <string name="case_header">Il-każ %1$d</string>
+    <string name="your_choice">Għażla Tiegħek</string>
+    <string name="optimal_choice">Għażla Optimali</string>
+    <string name="analysis">Analiżi:</string>
+    <string name="turn_of_3_case_of">Tvert %1$d ta\' 3 - Każ %2$d ta\' %3$d</string>
+    <string name="answered">Mistoqsija: %1$d/%2$d</string>
+    <string name="next_case">Il-każ li jmiss</string>
+    <string name="next_turn">It-Torn li Jmiss</string>
+    <string name="congratulations_you_finished_the_game">Felicitazzjonijiet, int spiċċa l-logħba!</string>
+    <string name="new_game">Logħba ġdida</string>
+    <string name="analysis_result">Analiżi: %1$s</string>
+    <string name="game_complete">Il-logħba kompluta!</string>
+    <string name="no_analysis_results_available">"L- ebda riżultati ta ' analiżi disponibbli"</string>
+    <string name="error">Żball</string>
+    <string name="retry">Ipprova mill-ġdid</string>
+    <string name="scenario">Scenarju</string>
+    <string name="save_settings">Żomm is- Setting</string>
+    <string name="system_default">Default tas-sistema</string>
+    <string name="matter_of_choice_onBoarding">Materja taʼ għażla</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">In- nies jieħdu għadd kbir taʼ deċiżjonijiet kuljum.</string>
+    <string name="have_fun">Agħmel gost</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">
+        "X'jiġri jekk it- tfal, waqt li qed jilagħbu, jiksbu għodod biex jieħdu deċiżjonijiet fil- ħajja reali?"</string>
+    <string name="virtual_failures">Fallimenti Virtuali</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Normalment nitgħallmu mill-konsegwenzi negattivi. Mhux aħjar nitgħallmu mill-fallimenti virtwali?</string>
+    <string name="get_started">Ibda tibda</string>
+    <string name="skip">Is-Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -153,7 +194,7 @@
         <item>Nynorsk Norveġiża</item>
         <item>Bokmål Norveġiż</item>
         <item>Nepali (Nepal)</item>
-        <item>Nuer (Is-Sudan t\'Isfel)</item>
+        <item>"Nuer (Is-Sudan t'Isfel)"</item>
         <item>Oromo (l-Etiopja)</item>
         <item>Oromo (Kenya)</item>
         <item>Odia (l-Indja)</item>

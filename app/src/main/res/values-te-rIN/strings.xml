@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">ఎంపిక అంశం</string>
+    <string name="app_name_matter_of_choice">ఎంపిక అంశం</string>
+    <string name="matterofchoice_info">నిర్ణయాత్మక నైపుణ్యాలను నేర్చుకోవడంలో మీకు సహాయపడే ఇంటరాక్టివ్ దృష్టాంతాలను మాటర్ ఆఫ్ ఛాయిస్ అందిస్తుంది.</string>
     <string name="optional_enter_the_role_e_g_student">ఐచ్ఛికంః పాత్రను నమోదు చేయండి, ఉదాహరణకు, విద్యార్థి</string>
     <string name="analysis_my_choices">నా ఎంపికలను విశ్లేషించండి</string>
     <string name="analysis_your_selections">మీ ఎంపికలను విశ్లేషించండి</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">దృశ్యం</string>
     <string name="button_next">తదుపరి</string>
     <string name="icon_desc_selected_option">ఎంచుకున్న ఎంపిక</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">విశ్లేషణ</string>
+    <string name="analysis_results">విశ్లేషణ ఫలితాలు</string>
+    <string name="analysis_error">విశ్లేషణ లోపం</string>
+    <string name="retry_analysis">పునరావృత విశ్లేషణ</string>
+    <string name="no_analysis_data_available">ఏ విశ్లేషణ డేటా అందుబాటులో లేదు</string>
+    <string name="perform_analysis">విశ్లేషణను నిర్వహించండి</string>
+    <string name="your_score">మీ స్కోరు</string>
+    <string name="correct">(%1$d/%2$d సరైనది)</string>
+    <string name="overall_assessment">మొత్తం అంచనా</string>
+    <string name="detailed_analysis">సమగ్ర విశ్లేషణ</string>
+    <string name="back_to_game">గేమ్ కు తిరిగి</string>
+    <string name="play_again">మరోసారి ఆడండి</string>
+    <string name="case_header">కేసు %1$d</string>
+    <string name="your_choice">మీ ఎంపిక</string>
+    <string name="optimal_choice">సరైన ఎంపిక</string>
+    <string name="analysis">విశ్లేషణః</string>
+    <string name="turn_of_3_case_of">టర్న్ %1$d ఆఫ్ 3 - కేసు %2$d ఆఫ్ %3$d</string>
+    <string name="answered">సమాధానంః %1$d/%2$d</string>
+    <string name="next_case">తదుపరి కేసు</string>
+    <string name="next_turn">తదుపరి మలుపు</string>
+    <string name="congratulations_you_finished_the_game">అభినందనలు, మీరు ఆట పూర్తి!</string>
+    <string name="new_game">క్రొత్త ఆట</string>
+    <string name="analysis_result">విశ్లేషణః %1$s</string>
+    <string name="game_complete">గేమ్ పూర్తి!</string>
+    <string name="no_analysis_results_available">విశ్లేషణ ఫలితాలు అందుబాటులో లేవు</string>
+    <string name="error">దోషం</string>
+    <string name="retry">మళ్లీ ప్రయత్నించండి</string>
+    <string name="scenario">దృశ్యం</string>
+    <string name="save_settings">సెట్టింగులను సేవ్ చేయండి</string>
+    <string name="system_default">వ్యవస్థ డిఫాల్ట్</string>
+    <string name="matter_of_choice_onBoarding">ఎంపిక చేయవలసిన అంశం</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">ప్రజలు ప్రతిరోజూ లెక్కలేనన్ని నిర్ణయాలు తీసుకుంటారు. ఉత్తమమైన నిర్ణయాలు తీసుకోవడానికి మనం సిద్ధంగా ఉన్నామా?</string>
+    <string name="have_fun">ఆనందించండి</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">పిల్లలు ఆడుతున్నప్పుడు, నిజ జీవితంలో నిర్ణయాలు తీసుకోవడానికి సాధనాలను పొందగలిగితే?</string>
+    <string name="virtual_failures">వర్చువల్ వైఫల్యాలు</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">సాధారణంగా మనం ప్రతికూల పరిణామాల నుండి నేర్చుకుంటాం. వర్చువల్ వైఫల్యాల నుండి నేర్చుకోవడం మంచిది కాదా?</string>
+    <string name="get_started">ప్రారంభించండి</string>
+    <string name="skip">స్కిప్</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

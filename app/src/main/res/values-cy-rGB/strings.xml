@@ -1,19 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Pwnc dewis</string>
+    <string name="app_name_matter_of_choice">Pwnc dewis</string>
+    <string name="matterofchoice_info">"Mae Mater Of Choice yn cyflwyno sefyllfaoedd rhyngweithiol i'ch helpu i ddysgu sgiliau gwneud penderfyniadau."</string>
     <string name="optional_enter_the_role_e_g_student">Yn ddewisol: Rhowch y rôl, er enghraifft, Myfyriwr</string>
     <string name="analysis_my_choices">Adolygu fy opsiynau</string>
     <string name="analysis_your_selections">Adolygu eich dewisiadau</string>
     <string name="rounds">Cerdynnau</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Cyfrifo sgôr yn seiliedig ar iechyd, cyfoeth, perthnasoedd, hapusrwydd, gwybodaeth, karma, rheoli amser, effaith amgylcheddol, twf personol, a chyfrifoldeb cymdeithasol</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+       " Cyfrifo sgôr yn seiliedig ar iechyd, cyfoeth, perthnasoedd, hapusrwydd, gwybodaeth, karma, rheoli amser, effaith amgylcheddol, twf personol, a chyfrifoldeb cymdeithasol"</string>
     <string name="settings_title">Pwnc dewis</string>
-    <string name="settings_subtitle">Bydd y senario\'n seiliedig ar eich dewis</string>
+    <string name="settings_subtitle">"Bydd y senario'n seiliedig ar eich dewis"</string>
     <string name="settings_label_subject">Rhowch y pwnc</string>
     <string name="settings_hint_select_question_type">Dewiswch math cwestiwn</string>
     <string name="settings_hint_select_subtype">Dewiswch y is-gen</string>
     <string name="settings_hint_select_difficulty">Dewiswch y lefel anodd</string>
     <string name="settings_hint_select_gender_optional">Yn ddewisol: Dewiswch eich rhyw</string>
-    <string name="settings_label_age">Dewch i mewn i\'ch oedran</string>
+    <string name="settings_label_age">"Dewch i mewn i'ch oedran"</string>
     <string name="settings_hint_select_language">Dewiswch eich iaith</string>
     <string name="settings_button_generate_cases">Generwch Achosion</string>
     <string name="question_type_study">Astudiaeth</string>
@@ -22,7 +25,7 @@
     <string name="subtype_behavioral_interpersonal">Meddrau Rhywunol</string>
     <string name="subtype_behavioral_ethical">Dilemmau Ethol</string>
     <string name="subtype_behavioral_stress">Rheoli Strys</string>
-    <string name="subtype_study_mastery">Maestru\'r Pwnc</string>
+    <string name="subtype_study_mastery">"Maestru'r Pwnc"</string>
     <string name="subtype_study_critical_thinking">Meddyliadau Critigol</string>
     <string name="subtype_study_practical_application">Gweithredu Gweithredol</string>
     <string name="subtype_hiring_technical">sgiliau technegol</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Scenario</string>
     <string name="button_next">Y nesaf</string>
     <string name="icon_desc_selected_option">opsiwn a ddewiswyd</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Adolygu</string>
+    <string name="analysis_results">"canlyniadau'r dadansoddiad"</string>
+    <string name="analysis_error">Achlysur dadansoddi</string>
+    <string name="retry_analysis">Adolygiad Adolygiad</string>
+    <string name="no_analysis_data_available">Nid oes unrhyw ddata dadansoddi ar gael</string>
+    <string name="perform_analysis">Gwneud Adolygiad</string>
+    <string name="your_score">eich sgôr</string>
+    <string name="correct">(%1$d/%2$d yn gywir)</string>
+    <string name="overall_assessment">Adolygiad Cyffredinol</string>
+    <string name="detailed_analysis">Adolygiad Cyfyngedig</string>
+    <string name="back_to_game">"Yn ôl i'r Gêm"</string>
+    <string name="play_again">Chwarae unwaith eto</string>
+    <string name="case_header">Casiwn %1$d</string>
+    <string name="your_choice">eich dewis</string>
+    <string name="optimal_choice">Y dewis gorau posibl</string>
+    <string name="analysis">Adolygiad:</string>
+    <string name="turn_of_3_case_of">troi %1$d o 3 - achos %2$d o %3$d</string>
+    <string name="answered">Atebodd: %1$d/%2$d</string>
+    <string name="next_case">Arhosedd nesaf</string>
+    <string name="next_turn">Y Cyfeiriad nesaf</string>
+    <string name="congratulations_you_finished_the_game">Congratulations, ti wedi gorffen y gêm!</string>
+    <string name="new_game">Gêm newydd</string>
+    <string name="analysis_result">Adolygiad: %1$s</string>
+    <string name="game_complete">"Gêm wedi'i gwblhau!"</string>
+    <string name="no_analysis_results_available">Nid oes canlyniadau dadansoddi ar gael</string>
+    <string name="error">Mae camgymeriad\n</string>
+    <string name="retry">Ceisiwch unwaith eto</string>
+    <string name="scenario">Scenario</string>
+    <string name="save_settings">Sefydlu Safonau</string>
+    <string name="system_default">"Mae'r system wedi'i ddiffodd"</string>
+    <string name="matter_of_choice_onBoarding">Pwnc o ddewis</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">"Mae pobl yn gwneud penderfyniadau niferus bob dydd. A ydym ni'n barod i wneud y dewisiadau gorau?"</string>
+    <string name="have_fun">Byddwch yn hwyl</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Beth os bydd plant, wrth chwarae, yn cael offer i wneud penderfyniadau mewn bywyd go iawn?</string>
+    <string name="virtual_failures">Ffyngiadau Virtual</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">"Fel arfer rydyn ni'n dysgu o ganlyniadau negyddol. Onid fyddai'n well dysgu o anawsterau rhithwir?"</string>
+    <string name="get_started">Dechreuwch</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -140,7 +180,7 @@
         <item>Y Gymraeg</item>
         <item>Ganda</item>
         <item>Luo</item>
-        <item>Mae\'r iaith safonol Llatwy</item>
+        <item>"Mae'r iaith safonol Llatwy"</item>
         <item>Malayalam</item>
         <item>Marathi</item>
         <item>Cymreig</item>
@@ -192,7 +232,7 @@
         <item>Xhosa</item>
         <item>Y Yoruba</item>
         <item>Cantonese</item>
-        <item>Mae\'r Tsieineaidd Mandarin wedi ei symlhau</item>
+        <item>"Mae'r Tsieineaidd Mandarin wedi ei symlhau"</item>
         <item>Mandarin Traddodiadol Tsieineaidd</item>
         <item>Zulu</item>
     </string-array>

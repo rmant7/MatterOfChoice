@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">A választási kérdés</string>
+    <string name="app_name_matter_of_choice">A választási kérdés</string>
+    <string name="matterofchoice_info">A Matter Of Choice interaktív forgatókönyveket mutat be, amelyek segítenek a döntéshozatali készségek megtanulásában.</string>
     <string name="optional_enter_the_role_e_g_student">Választható: Adja be a szerepet, pl.</string>
     <string name="analysis_my_choices">Az én döntéseim elemzése</string>
     <string name="analysis_your_selections">Az Ön választásainak elemzése</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Forgatókönyv</string>
     <string name="button_next">Következő</string>
     <string name="icon_desc_selected_option">Kiválasztott lehetőség</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Az elemzés</string>
+    <string name="analysis_results">Az elemzés eredményei</string>
+    <string name="analysis_error">Az elemzés hibája</string>
+    <string name="retry_analysis">Megpróbált elemzés</string>
+    <string name="no_analysis_data_available">Nincs rendelkezésre álló elemzési adat</string>
+    <string name="perform_analysis">Csináljon elemzést</string>
+    <string name="your_score">A pontszámod</string>
+    <string name="correct">(%1$d/%2$d helyes)</string>
+    <string name="overall_assessment">Összességes értékelés</string>
+    <string name="detailed_analysis">Részletes elemzés</string>
+    <string name="back_to_game">Vissza a játékba</string>
+    <string name="play_again">Játssz újra!</string>
+    <string name="case_header">Esetleg %1$d</string>
+    <string name="your_choice">A te választásod</string>
+    <string name="optimal_choice">A legjobb választás</string>
+    <string name="analysis">Az elemzés:</string>
+    <string name="turn_of_3_case_of">Változás %1$d 3 - Esetleg %2$d %3$d</string>
+    <string name="answered">Válasz: %1$d/%2$d</string>
+    <string name="next_case">Következő eset</string>
+    <string name="next_turn">Következő fordulat</string>
+    <string name="congratulations_you_finished_the_game">Gratulálok, befejezted a játékot!</string>
+    <string name="new_game">Új játék</string>
+    <string name="analysis_result">Az elemzés: %1$s</string>
+    <string name="game_complete">A játék befejeződött!</string>
+    <string name="no_analysis_results_available">A vizsgálat eredményei nem állnak rendelkezésre</string>
+    <string name="error">Tévedés</string>
+    <string name="retry">Próbáld meg újra!</string>
+    <string name="scenario">Forgatókönyv</string>
+    <string name="save_settings">A beállítások mentése</string>
+    <string name="system_default">Rendszer alapértelmezett</string>
+    <string name="matter_of_choice_onBoarding">A döntés kérdése</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Az emberek naponta számtalan döntést hoznak.</string>
+    <string name="have_fun">Szórakozzatok!</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Mi van, ha a gyerekek, miközben játszanak, eszközöket kapnak a valós életben való döntéshozatalhoz?</string>
+    <string name="virtual_failures">Virtuális hibák</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Általában a negatív következményekből tanulunk. Nem lenne jobb tanulni a virtuális kudarcokból?</string>
+    <string name="get_started">Kezdje el!</string>
+    <string name="skip">Állj le!</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

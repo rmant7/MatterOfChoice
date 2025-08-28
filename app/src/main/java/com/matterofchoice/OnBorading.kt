@@ -35,6 +35,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -57,16 +58,16 @@ fun WelcomeFunction(navController: NavHostController) {
     items.add(
         OnBoardData(
             R.drawable.w1,
-            "Matter of Choice",
-            "People make countless decisions daily. Are we equipped to make the best choices?"
+            stringResource(R.string.matter_of_choice_onBoarding),
+            stringResource(R.string.people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices)
         )
     )
 
     items.add(
         OnBoardData(
             R.drawable.w2,
-            "Have fun",
-            "What if children, while playing, would gain tools for real life decision making?"
+            stringResource(R.string.have_fun),
+            stringResource(R.string.what_if_children_while_playing_would_gain_tools_for_real_life_decision_making)
         )
     )
 
@@ -74,8 +75,8 @@ fun WelcomeFunction(navController: NavHostController) {
     items.add(
         OnBoardData(
             R.drawable.w3,
-            "Virtual Failures",
-            "Usually we learn from negative consequences. Wouldn't it be better to learn from virtual failures?"
+            stringResource(R.string.virtual_failures),
+            stringResource(R.string.usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures)
         )
     )
 
@@ -247,7 +248,7 @@ fun BottomSection(
                 colors = buttonColors(MyColor)
             ) {
                 Text(
-                    text = "Get Started",
+                    text = stringResource(R.string.get_started),
                     fontSize = 20.sp,
                     modifier = Modifier
                         .padding(end = 50.dp, bottom = 10.dp, top = 10.dp, start = 56.dp),
@@ -271,7 +272,7 @@ fun BottomSection(
                 border = BorderStroke(width = 2.dp, color = MyColor),
                 shape = RoundedCornerShape(5.dp)
             ) {
-                Text(text = "Skip", color = MyColor)
+                Text(text = stringResource(R.string.skip), color = MyColor)
             }
             NextButton(onClick = { onNextClick() })
         }

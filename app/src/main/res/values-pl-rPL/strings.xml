@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Sprawa wyboru</string>
+    <string name="app_name_matter_of_choice">Sprawa wyboru</string>
+    <string name="matterofchoice_info">Matter Of Choice przedstawia interaktywne scenariusze, które pomogą Ci nauczyć się umiejętności podejmowania decyzji.</string>
     <string name="optional_enter_the_role_e_g_student">Wybór: Wprowadź rolę, np. Student</string>
     <string name="analysis_my_choices">Analiza moich wyborów</string>
     <string name="analysis_your_selections">Analiza wyborów</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Scenariusz</string>
     <string name="button_next">Następny</string>
     <string name="icon_desc_selected_option">Wybrana opcja</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analiza</string>
+    <string name="analysis_results">Wyniki analizy</string>
+    <string name="analysis_error">Błąd analizy</string>
+    <string name="retry_analysis">Analiza na nowo</string>
+    <string name="no_analysis_data_available">Nie ma dostępnych danych analitycznych</string>
+    <string name="perform_analysis">Przeprowadzenie analizy</string>
+    <string name="your_score">Twoje wyniki</string>
+    <string name="correct">(%1$d/%2$d poprawna)</string>
+    <string name="overall_assessment">Ogólna ocena</string>
+    <string name="detailed_analysis">Szczegółowa analiza</string>
+    <string name="back_to_game">Wracamy do gry</string>
+    <string name="play_again">Zagraj ponownie</string>
+    <string name="case_header">Sprawa %1$d</string>
+    <string name="your_choice">Twój wybór</string>
+    <string name="optimal_choice">Optymalny wybór</string>
+    <string name="analysis">Analiza:</string>
+    <string name="turn_of_3_case_of">Zwrot %1$d z 3 - Sprawa %2$d z %3$d</string>
+    <string name="answered">Odpowiedź: %1$d/%2$d</string>
+    <string name="next_case">Następny przypadek</string>
+    <string name="next_turn">Następny zwrot</string>
+    <string name="congratulations_you_finished_the_game">Gratuluję, skończyłeś grę!</string>
+    <string name="new_game">Nowa gra</string>
+    <string name="analysis_result">Analiza: %1$s</string>
+    <string name="game_complete">Gra zakończona!</string>
+    <string name="no_analysis_results_available">Wyniki analizy nie są dostępne</string>
+    <string name="error">Błąd</string>
+    <string name="retry">Spróbuj ponownie.</string>
+    <string name="scenario">Scenariusz</string>
+    <string name="save_settings">Zapisywanie ustawień</string>
+    <string name="system_default">Wypłaty systemu</string>
+    <string name="matter_of_choice_onBoarding">Wybór</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Codziennie ludzie podejmują niezliczone decyzje.</string>
+    <string name="have_fun">Bawcie się dobrze.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Co, gdyby dzieci podczas zabawy zdobywały narzędzia do podejmowania decyzji w życiu rzeczywistym?</string>
+    <string name="virtual_failures">Wirtualne niepowodzenia</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Zwykle uczymy się od negatywnych konsekwencji. Czy nie byłoby lepiej nauczyć się od wirtualnych porażek?</string>
+    <string name="get_started">Zacznij</string>
+    <string name="skip">Przeskocz</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

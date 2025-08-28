@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">موضوع انتخاب</string>
+    <string name="app_name_matter_of_choice">موضوع انتخاب</string>
+    <string name="matterofchoice_info">موضوع انتخاب سناریوهای تعاملی را ارائه می دهد تا به شما در یادگیری مهارت های تصمیم گیری کمک کند.</string>
     <string name="optional_enter_the_role_e_g_student">اختیاری: نقش را وارد کنید، به عنوان مثال، دانش آموز</string>
     <string name="analysis_my_choices">تجزیه و تحلیل انتخاب های من</string>
     <string name="analysis_your_selections">تجزیه و تحلیل انتخابات</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">سناریو</string>
     <string name="button_next">بعدش</string>
     <string name="icon_desc_selected_option">گزینه انتخاب شده</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">تحلیل</string>
+    <string name="analysis_results">نتایج تحلیل</string>
+    <string name="analysis_error">خطا تجزیه و تحلیل</string>
+    <string name="retry_analysis">تجزیه و تحلیل مجدد</string>
+    <string name="no_analysis_data_available">هیچ داده ای از تحلیل در دسترس نیست</string>
+    <string name="perform_analysis">انجام تجزیه و تحلیل</string>
+    <string name="your_score">نمره شما</string>
+    <string name="correct">(%1$d/%2$d درست است)</string>
+    <string name="overall_assessment">ارزیابی کلی</string>
+    <string name="detailed_analysis">تجزیه و تحلیل دقیق</string>
+    <string name="back_to_game">برگردیم به بازی</string>
+    <string name="play_again">دوباره بازی کن</string>
+    <string name="case_header">پرونده %1$d</string>
+    <string name="your_choice">انتخاب شما</string>
+    <string name="optimal_choice">بهترین انتخاب</string>
+    <string name="analysis">تحلیل:</string>
+    <string name="turn_of_3_case_of">%1$d از 3 - پرونده %2$d از %3$d</string>
+    <string name="answered">پاسخ: %1$d/%2$d</string>
+    <string name="next_case">پرونده بعدی</string>
+    <string name="next_turn">نوبت بعدی</string>
+    <string name="congratulations_you_finished_the_game">تبریک، بازی رو تموم کردی!</string>
+    <string name="new_game">بازی جدید</string>
+    <string name="analysis_result">تجزیه و تحلیل: %1$s</string>
+    <string name="game_complete">بازی تمام شد!</string>
+    <string name="no_analysis_results_available">هیچ نتیجه ای از تجزیه و تحلیل وجود ندارد</string>
+    <string name="error">خطا</string>
+    <string name="retry">دوباره امتحان کن</string>
+    <string name="scenario">سناریو</string>
+    <string name="save_settings">حفظ تنظیمات</string>
+    <string name="system_default">پیش فرض سیستم</string>
+    <string name="matter_of_choice_onBoarding">موضوع انتخاب</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">آیا ما آماده ایم که بهترین تصمیمات را بگیریم؟</string>
+    <string name="have_fun">خوش بگذره</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">چه اتفاقی می افتد اگر کودکان در حالی که بازی می کنند، ابزارهایی برای تصمیم گیری در زندگی واقعی کسب کنند؟</string>
+    <string name="virtual_failures">شکست های مجازی</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">معمولا از عواقب منفی یاد می گیریم، بهتر نیست از شکست های مجازی یاد بگیریم؟</string>
+    <string name="get_started">شروع کن</string>
+    <string name="skip">فرار کن</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

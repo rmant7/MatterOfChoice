@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Seçim məsələsi</string>
+    <string name="app_name_matter_of_choice">Seçim məsələsi</string>
+    <string name="matterofchoice_info">Matter Of Choice qərar qəbul etmək bacarıqlarını öyrənməyə kömək edəcək interaktiv ssenarilər təqdim edir.</string>
     <string name="optional_enter_the_role_e_g_student">Seçilmiş: Rol daxil edin, məsələn, Tələbə</string>
     <string name="analysis_my_choices">Seçimlərimi təhlil edin</string>
     <string name="analysis_your_selections">Seçimlərinizi təhlil edin</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Ssenari</string>
     <string name="button_next">Növbəti</string>
     <string name="icon_desc_selected_option">Seçilmiş variant</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Təhlillər</string>
+    <string name="analysis_results">Təhlilin nəticələri</string>
+    <string name="analysis_error">Təhlili səhv</string>
+    <string name="retry_analysis">Yenidən təcrübə təhlili</string>
+    <string name="no_analysis_data_available">Heç bir analiz məlumatı yoxdur</string>
+    <string name="perform_analysis">Təhlili yerinə yetirin</string>
+    <string name="your_score">Rəqəminiz</string>
+    <string name="correct">(%1$d/%2$d doğrudur)</string>
+    <string name="overall_assessment">Ümumi qiymətləndirmə</string>
+    <string name="detailed_analysis">Təfərrüatlı analiz</string>
+    <string name="back_to_game">Oyunlara qayıdın</string>
+    <string name="play_again">Yenə oynayın.</string>
+    <string name="case_header">%1$d məsələsi</string>
+    <string name="your_choice">Sizin seçiminiz</string>
+    <string name="optimal_choice">Ən yaxşı seçim</string>
+    <string name="analysis">Təhlili:</string>
+    <string name="turn_of_3_case_of">%1$d 3-dən dön - %2$d %3$d</string>
+    <string name="answered">Cavab: %1$d/%2$d</string>
+    <string name="next_case">Növbəti iş</string>
+    <string name="next_turn">Növbəti dönüş</string>
+    <string name="congratulations_you_finished_the_game">Təbriklər, oyunu bitirdin!</string>
+    <string name="new_game">Yeni oyun</string>
+    <string name="analysis_result">Təhlili: %1$s</string>
+    <string name="game_complete">Oyun tamamlandı!</string>
+    <string name="no_analysis_results_available">Təhlilin nəticələri yoxdur</string>
+    <string name="error">Səhv</string>
+    <string name="retry">Yenidən cəhd edin.</string>
+    <string name="scenario">Ssenari</string>
+    <string name="save_settings">Ayarları saxlayın</string>
+    <string name="system_default">Sistem Default</string>
+    <string name="matter_of_choice_onBoarding">Seçim məsələsi</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">İnsanlar hər gün çoxsaylı qərarlar qəbul edirlər.</string>
+    <string name="have_fun">Əylən.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Bəs uşaqlar oyun oynayarkən real həyatda qərar qəbul etmək üçün vasitələr əldə etsələr?</string>
+    <string name="virtual_failures">Virtual uğursuzluqlar</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Ümumiyyətlə mənfi nəticələrdən öyrənirik. Virtual uğursuzluqlardan öyrənmək daha yaxşı olmazmı?</string>
+    <string name="get_started">Başlayın</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Nyametsotso si wowɔ</string>
+    <string name="app_name_matter_of_choice">Nyametsotso si wowɔ</string>
+    <string name="matterofchoice_info">Matter Of Choice ɖo kpɔɖeŋu siwo ate ŋu akpe ɖe ŋuwò nàsrɔ̃ ale si nàtso nya me.</string>
     <string name="optional_enter_the_role_e_g_student">Ɖoe Ɖe Amewo Ɖoe Ɖe Amewo Ɖoe Ɖe Amewo Ɖoe Ɖe Amewo Nusrɔ̃vi</string>
     <string name="analysis_my_choices">De ŋugble le nye tiatiawo ŋu</string>
     <string name="analysis_your_selections">De ŋugble le wò tiatiawo ŋu</string>
     <string name="rounds">Nuƒolawo</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Dzidzenu si wotu ɖe lãmesẽ, kesinɔnuwo, ƒomedodowo, dzidzɔkpɔkpɔ, sidzedze, karma, ɣeyiɣi dzi kpɔkpɔ, nu siwo gblẽa nu le xexea me, ame ŋutɔ ƒe tsitsi kple hadomegbanɔamedziwo dzi</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        Dzidzenu si wotu ɖe lãmesẽ, kesinɔnuwo, ƒomedodowo, dzidzɔkpɔkpɔ, sidzedze, karma, ɣeyiɣi dzi kpɔkpɔ, nu siwo gblẽa nu le xexea me, ame ŋutɔ ƒe tsitsi kple hadomegbanɔamedziwo dzi</string>
     <string name="settings_title">Nyametsotso si wowɔ</string>
     <string name="settings_subtitle">Nu siwo nàdi be yeawɔ la anɔ te ɖe wò nyametsotsowo dzi</string>
     <string name="settings_label_subject">Ŋlɔ nyabiasea</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Nɔnɔmetata</string>
     <string name="button_next">Emegbe</string>
     <string name="icon_desc_selected_option">Tiatia si wotia</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">De ŋugble le eŋu</string>
+    <string name="analysis_results">Ŋutinyaŋutinyawo</string>
+    <string name="analysis_error">Nuxexlẽ Ƒe Vodada</string>
+    <string name="retry_analysis">Tetekpɔ Ƒe Ŋutinya</string>
+    <string name="no_analysis_data_available">Womewɔ numekuku aɖeke le afi ma o</string>
+    <string name="perform_analysis">Wɔ Ŋkuɖodzia</string>
+    <string name="your_score">Wò Dzesi</string>
+    <string name="correct">(%1$d/%2$d le eteƒe)</string>
+    <string name="overall_assessment">Ŋugbledede Katã</string>
+    <string name="detailed_analysis">Ŋutinya Nyui</string>
+    <string name="back_to_game">Míagbugbɔ Agbe Aɖewo Adze</string>
+    <string name="play_again">Wɔe Ake</string>
+    <string name="case_header">Kesia %1$d</string>
+    <string name="your_choice">Wò Tiatia</string>
+    <string name="optimal_choice">Tiatia Nyuitɔ Kekeake</string>
+    <string name="analysis">Ŋutinya:</string>
+    <string name="turn_of_3_case_of">Trɔ %1$d tso 3 me - Nu %2$d tso %3$d me</string>
+    <string name="answered">Ŋuɖoɖo: %1$d/%2$d</string>
+    <string name="next_case">Afɔɖeɖe Si kplɔe ɖo</string>
+    <string name="next_turn">Afɔɖeɖe Si kplɔe ɖo</string>
+    <string name="congratulations_you_finished_the_game">Dzi nedzɔ mi, miewu fefe la nu!</string>
+    <string name="new_game">Fefe Yeye</string>
+    <string name="analysis_result">Ŋutinya: %1$s</string>
+    <string name="game_complete">Nuwuwua wu enu!</string>
+    <string name="no_analysis_results_available">Womewɔ numekuku aɖeke le afi ma o</string>
+    <string name="error">Vodada</string>
+    <string name="retry">Dze agbagba ake</string>
+    <string name="scenario">Nɔnɔmetata</string>
+    <string name="save_settings">Ŋlɔ Ðoɖowo</string>
+    <string name="system_default">Ðoɖo Gbegblẽ</string>
+    <string name="matter_of_choice_onBoarding">Nyametsotso</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Amegbetɔwo wɔa nyametsotso geɖe gbe sia gbe. Ðe míate ŋu awɔ tiatia nyuitɔ kekeakea?</string>
+    <string name="have_fun">Minɔ dzidzɔ kpɔm.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Ke ne ɖevi siwo le fefe wɔm la kpɔ dɔwɔnu siwo akpe ɖe wo ŋu woatso nya me le agbe me ya ɖe?</string>
+    <string name="virtual_failures">Nuteƒeɖoɖo Vavãtɔwo</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Ðe manyo be míasrɔ̃ nu tso gbɔdzɔgbɔdzɔwo gbɔ oa?</string>
+    <string name="get_started">Dze egɔme</string>
+    <string name="skip">Ʋuʋu</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

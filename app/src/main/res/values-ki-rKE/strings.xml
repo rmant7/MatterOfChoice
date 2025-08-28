@@ -1,6 +1,7 @@
-<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Ũndũ wa gũthuura</string>
+    <string name="app_name_matter_of_choice">Ũndũ wa gũthuura</string>
+    <string name="matterofchoice_info">Matter Of Choice nĩ ĩrutanaga maũndũ marĩa mangĩgũteithia kwĩruta ũhoti wa gũtua matua.</string>
     <string name="optional_enter_the_role_e_g_student">Ũrĩa ũngĩenda: Ũtoonye wĩra-inĩ ta Mũrutwo</string>
     <string name="analysis_my_choices">Gũthuthuria matua makwa</string>
     <string name="analysis_your_selections">Thuthuria maũndũ marĩa ũthuurĩte</string>
@@ -45,7 +46,44 @@
     <string name="text_scenario">Maũndũ marĩa marekĩka</string>
     <string name="button_next">Ũrĩa ũgũthiĩ</string>
     <string name="icon_desc_selected_option">Njĩra ĩrĩa ĩthuurĩtwo</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Gũthuthuria</string>
+    <string name="analysis_results">Macũngĩrĩro ma Ũthuthuria</string>
+    <string name="analysis_error">Mathĩna ma Ũthuthuria</string>
+    <string name="retry_analysis">Gũthiĩ na Mbere Gũthiĩ na Mbere</string>
+    <string name="no_analysis_data_available">Gũtirĩ ũhoro wa gũthuthuria ũrĩho</string>
+    <string name="perform_analysis">Ĩka Ũthuthuria</string>
+    <string name="your_score">Mũtaratara Waku</string>
+    <string name="correct">(%1$d/%2$d kĩhooto)</string>
+    <string name="overall_assessment">Ũthuthuria Ũrĩa Mũno</string>
+    <string name="detailed_analysis">Ũthuthuria Mũiganu</string>
+    <string name="back_to_game">Gũcokerera Gĩcunjĩ-inĩ</string>
+    <string name="play_again">Hũũra Ũngĩ</string>
+    <string name="case_header">Ũndũ wa %1$d</string>
+    <string name="your_choice">Ũrĩa Ũthuurĩte</string>
+    <string name="optimal_choice">Gũthuura Ũrĩa Wagĩrĩire</string>
+    <string name="analysis">Ũthuthuria:</string>
+    <string name="turn_of_3_case_of">Rora %1$d ya 3 - Cĩtĩ %2$d ya %3$d</string>
+    <string name="answered">Macokio: %1$d/%2$d</string>
+    <string name="next_case">Ũndũ Ũrĩa Ũngĩ</string>
+    <string name="next_turn">Kũgarũrũka Kũrĩa Kũngĩ</string>
+    <string name="congratulations_you_finished_the_game">Congratulations, warĩkia gũkinya mũbira-inĩ!</string>
+    <string name="new_game">Gĩcunjĩ Kĩerũ</string>
+    <string name="analysis_result">Ũthuthuria: %1$s</string>
+    <string name="game_complete">Gĩthingithia Gĩkinyu!</string>
+    <string name="no_analysis_results_available">Gũtirĩ moimĩrĩro ma ũthuthuria ũrĩ ho</string>
+    <string name="error">Ihĩtia</string>
+    <string name="retry">Geria rĩngĩ</string>
+    <string name="scenario">Maũndũ marĩa marekĩka</string>
+    <string name="save_settings">Kũiga Mĩbango</string>
+    <string name="system_default">Mũtaratara wa Gũthondeka</string>
+    <string name="matter_of_choice_onBoarding">Ũndũ wa Gũthuura</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Andũ mathiaga na mbere gũtua matua maingĩ o mũthenya.</string>
+    <string name="have_fun">Ikara ũkenete</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Ĩ angĩkorũo ciana nĩ ikoragwo na indo cia kũhũthĩra gũtua matua ũtũũro-inĩ?</string>
+    <string name="virtual_failures">Mathĩna Maingĩ</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Kaingĩ tũreruta kuumana na moimĩrĩro moru. Githĩ ti wega kwĩruta kuumana na kwaga kũhingia maũndũ wega?</string>
+    <string name="get_started">Ambĩrĩria</string>
+    <string name="skip">Gũthiĩ</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

@@ -1,20 +1,23 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">La cuestión de la elección</string>
-    <string name="optional_enter_the_role_e_g_student">Opcional: Introduza\'l papel, por casu, Estudiante</string>
+    <string name="app_name_matter_of_choice">La cuestión de la elección</string>
+    <string name="matterofchoice_info">La cuestión de la elección presenta escenarios interactivos pa ayudarte a aprender les habilidades de toma de decisiones.</string>
+    <string name="optional_enter_the_role_e_g_student">"Opcional: Introduza'l papel, por casu, Estudiante"</string>
     <string name="analysis_my_choices">Analizando les mies opciones</string>
     <string name="analysis_your_selections">Analizar les sos selecciones</string>
     <string name="rounds">Les rondes</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">La puntuación calcular en función de la salú, la riqueza, les relaciones, la felicidá, el conocimientu, el karma, la xestión del tiempu, l\'impactu ambiental, el crecimientu personal y la responsabilidad social</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+       "La puntuación calcular en función de la salú, la riqueza, les relaciones, la felicidá, el conocimientu, el karma, la xestión del tiempu, l'impactu ambiental, el crecimientu personal y la responsabilidad social"</string>
     <string name="settings_title">La cuestión de la elección</string>
     <string name="settings_subtitle">Los escenarios se basarán en les sos selecciones</string>
     <string name="settings_label_subject">Introducir el tema</string>
-    <string name="settings_hint_select_question_type">Seleccione\'l tipu de pregunta</string>
-    <string name="settings_hint_select_subtype">Seleccione\'l subtipu</string>
-    <string name="settings_hint_select_difficulty">Seleccione\'l nivel difícil</string>
-    <string name="settings_hint_select_gender_optional">Opcional: Seleccione\'l so xéneru</string>
+    <string name="settings_hint_select_question_type">"Seleccione'l tipu de pregunta"</string>
+    <string name="settings_hint_select_subtype">"Seleccione'l subtipu"</string>
+    <string name="settings_hint_select_difficulty">"Seleccione'l nivel difícil"</string>
+    <string name="settings_hint_select_gender_optional">"Opcional: Seleccione'l so xéneru"</string>
     <string name="settings_label_age">Entra na so Edá</string>
-    <string name="settings_hint_select_language">Seleccione\'l so idioma</string>
+    <string name="settings_hint_select_language">"Seleccione'l so idioma"</string>
     <string name="settings_button_generate_cases">Xenerar casos</string>
     <string name="question_type_study">Estudiu</string>
     <string name="question_type_behavioral">El comportamientu</string>
@@ -33,7 +36,7 @@
     <string name="difficulty_hard">Difícil</string>
     <string name="gender_male">Los machos</string>
     <string name="gender_female">Femenina</string>
-    <string name="gender_select_prompt">Seleccione\'l xéneru</string>
+    <string name="gender_select_prompt">"Seleccione'l xéneru"</string>
     <string name="prefs_file_key" translatable="false">MyPrefs</string>
     <string name="pref_key_is_first" translatable="false">isFirst</string>
     <string name="pref_key_user_score" translatable="false">userScore</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Escénariu</string>
     <string name="button_next">El siguiente.</string>
     <string name="icon_desc_selected_option">Opción seleccionada</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analizáu</string>
+    <string name="analysis_results">"Resultados d'análisis"</string>
+    <string name="analysis_error">"Error d'análisis"</string>
+    <string name="retry_analysis">Análisis de retruche</string>
+    <string name="no_analysis_data_available">"Nun tán disponibles datos d'análisis"</string>
+    <string name="perform_analysis">Realizar Análisis</string>
+    <string name="your_score">La so puntuación</string>
+    <string name="correct">(%1$d/%2$d correctu)</string>
+    <string name="overall_assessment">Avaluación global</string>
+    <string name="detailed_analysis">Análisis detallado</string>
+    <string name="back_to_game">De vuelta al xuegu</string>
+    <string name="play_again">Ye un xuegu de nuevu.</string>
+    <string name="case_header">Case %1$d</string>
+    <string name="your_choice">La so elección</string>
+    <string name="optimal_choice">La opción óptima</string>
+    <string name="analysis">Análisis:</string>
+    <string name="turn_of_3_case_of">La división del llagu Michigan de les Islles Michigan National Wildlife Refuge ta tamién dientro del llagu Michigan.</string>
+    <string name="answered">Respuesta: %1$d/%2$d</string>
+    <string name="next_case">El próximu casu</string>
+    <string name="next_turn">La siguiente curva</string>
+    <string name="congratulations_you_finished_the_game">"¡Felicitaciones, acabaste'l partíu!"</string>
+    <string name="new_game">El nuevu xuegu</string>
+    <string name="analysis_result">Análisis: %1$s</string>
+    <string name="game_complete">El xuegu completáu!</string>
+    <string name="no_analysis_results_available">"Nun tán disponibles los resultaos d'análisis"</string>
+    <string name="error">Error \n</string>
+    <string name="retry">Tratar nuevamente.</string>
+    <string name="scenario">Escénariu</string>
+    <string name="save_settings">"Archiváu dende l' oxetivu"</string>
+    <string name="system_default">Default del sistema</string>
+    <string name="matter_of_choice_onBoarding">La cuestión de la elección</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Les persones tomen innumerables decisiones cada día.</string>
+    <string name="have_fun">Divertíense.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">¿Qué pasa si los neños, mientres xogan, adquieren instrumentos pa tomar decisiones na vida real?</string>
+    <string name="virtual_failures">Los fracasos virtuales</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Normalmente aprendemos de les consecuencias negatives. ¿Nun sería meyor aprender de los fracasos virtuales?</string>
+    <string name="get_started">Comienzase</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -77,7 +117,7 @@
         <item>@string/gender_female</item>
     </string-array>
     <string-array name="languages">
-        <item>L\'afrikaans</item>
+        <item>"L'afrikaans"</item>
         <item>Akan</item>
         <item>Amharicu</item>
         <item>Arabe (Emirates Árabes Uníos)</item>
@@ -98,7 +138,7 @@
         <item>Alemán</item>
         <item>Dzongkha</item>
         <item>Griego</item>
-        <item>L\'inglés</item>
+        <item>"L'inglés"</item>
         <item>Estianu</item>
         <item>El vascu</item>
         <item>Ewe (Ghana)</item>
@@ -112,15 +152,15 @@
         <item>Galician</item>
         <item>Gujarati</item>
         <item>Hausa</item>
-        <item>L\'hébreu</item>
+        <item>"L'hébreu"</item>
         <item>Indiu</item>
         <item>Croacia</item>
-        <item>L\'húngaru</item>
+        <item>"L'húngaru"</item>
         <item>Armenia</item>
-        <item>L\'idioma Igbo</item>
+        <item>"L'idioma Igbo"</item>
         <item>Indonesiu</item>
         <item>Islandés</item>
-        <item>L\'italianu</item>
+        <item>"L'italianu"</item>
         <item>Japonés</item>
         <item>El cabaylu</item>
         <item>Kamba</item>
@@ -142,7 +182,7 @@
         <item>Luo</item>
         <item>La llingua letona estándar</item>
         <item>Malayalam</item>
-        <item>L\'asturianu ye llingua asturiana</item>
+        <item>"L'asturianu ye llingua asturiana"</item>
         <item>Macedonianu</item>
         <item>Madagascar (Madagascar)</item>
         <item>Malteses (Malta)</item>
@@ -154,7 +194,7 @@
         <item>Noruegu Bokmål</item>
         <item>Nepali (Nepal)</item>
         <item>Nuer (Sudán del Sur)</item>
-        <item>L\'Oro (Etiopía)</item>
+        <item>"L'Oro (Etiopía)"</item>
         <item>Orómu (Kenya)</item>
         <item>Odia (India)</item>
         <item>Punjabi</item>
@@ -166,7 +206,7 @@
         <item>Quechua (Bolivia)</item>
         <item>Quechua (Ecuador)</item>
         <item>Quechua (Perú)</item>
-        <item>L\'español</item>
+        <item>"L'español"</item>
         <item>Rundi (Burundi)</item>
         <item>Rusia</item>
         <item>Sango (República Centroafricana)</item>
@@ -177,7 +217,7 @@
         <item>Somalí</item>
         <item>Español</item>
         <item>Albanés (Albania)</item>
-        <item>L\'idioma serbiu</item>
+        <item>"L'idioma serbiu"</item>
         <item>Suecu</item>
         <item>El swahili</item>
         <item>Tamil</item>

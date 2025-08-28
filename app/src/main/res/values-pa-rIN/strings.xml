@@ -1,13 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">ਚੋਣ ਦਾ ਮਾਮਲਾ</string>
+    <string name="app_name_matter_of_choice">ਚੋਣ ਦਾ ਮਾਮਲਾ</string>
+    <string name="matterofchoice_info">Matter Of Choice ਤੁਹਾਨੂੰ ਫੈਸਲੇ ਲੈਣ ਦੇ ਹੁਨਰ ਸਿੱਖਣ ਵਿੱਚ ਮਦਦ ਕਰਨ ਲਈ ਇੰਟਰਐਕਟਿਵ ਦ੍ਰਿਸ਼ ਪੇਸ਼ ਕਰਦਾ ਹੈ।</string>
     <string name="optional_enter_the_role_e_g_student">ਵਿਕਲਪਿਕਃ ਭੂਮਿਕਾ ਦਰਜ ਕਰੋ, ਉਦਾਹਰਨ ਲਈ, ਵਿਦਿਆਰਥੀ</string>
     <string name="analysis_my_choices">ਮੇਰੀਆਂ ਚੋਣਾਂ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ</string>
     <string name="analysis_your_selections">ਆਪਣੀਆਂ ਚੋਣਾਂ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ</string>
     <string name="rounds">ਰਾਊਂਡ</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">ਸਿਹਤ, ਦੌਲਤ, ਰਿਸ਼ਤੇ, ਖ਼ੁਸ਼ੀ, ਗਿਆਨ, ਕਰਮ, ਸਮਾਂ ਪ੍ਰਬੰਧਨ, ਵਾਤਾਵਰਣ ਪ੍ਰਭਾਵ, ਨਿੱਜੀ ਵਿਕਾਸ ਅਤੇ ਸਮਾਜਿਕ ਜ਼ਿੰਮੇਵਾਰੀ ਦੇ ਆਧਾਰ \'ਤੇ ਸਕੋਰ ਦੀ ਗਣਨਾ</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        "ਸਿਹਤ, ਦੌਲਤ, ਰਿਸ਼ਤੇ, ਖ਼ੁਸ਼ੀ, ਗਿਆਨ, ਕਰਮ, ਸਮਾਂ ਪ੍ਰਬੰਧਨ, ਵਾਤਾਵਰਣ ਪ੍ਰਭਾਵ, ਨਿੱਜੀ ਵਿਕਾਸ ਅਤੇ ਸਮਾਜਿਕ ਜ਼ਿੰਮੇਵਾਰੀ ਦੇ ਆਧਾਰ 'ਤੇ ਸਕੋਰ ਦੀ ਗਣਨਾ"</string>
     <string name="settings_title">ਚੋਣ ਦਾ ਮਾਮਲਾ</string>
-    <string name="settings_subtitle">ਸਕੈਨਰੀਓ ਤੁਹਾਡੀਆਂ ਚੋਣਾਂ \'ਤੇ ਆਧਾਰਿਤ ਹੋਣਗੇ</string>
+    <string name="settings_subtitle">"ਸਕੈਨਰੀਓ ਤੁਹਾਡੀਆਂ ਚੋਣਾਂ 'ਤੇ ਆਧਾਰਿਤ ਹੋਣਗੇ"</string>
     <string name="settings_label_subject">ਵਿਸ਼ਾ ਦਰਜ ਕਰੋ</string>
     <string name="settings_hint_select_question_type">ਪ੍ਰਸ਼ਨ ਦੀ ਕਿਸਮ ਚੁਣੋ</string>
     <string name="settings_hint_select_subtype">ਸਬਟਾਈਪ ਚੁਣੋ</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">ਦ੍ਰਿਸ਼</string>
     <string name="button_next">ਅਗਲਾ</string>
     <string name="icon_desc_selected_option">ਚੁਣਿਆ ਵਿਕਲਪ</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">ਵਿਸ਼ਲੇਸ਼ਣ</string>
+    <string name="analysis_results">ਵਿਸ਼ਲੇਸ਼ਣ ਦੇ ਨਤੀਜੇ</string>
+    <string name="analysis_error">ਵਿਸ਼ਲੇਸ਼ਣ ਗਲਤੀ</string>
+    <string name="retry_analysis">ਰੀਟ੍ਰਾਈ ਵਿਸ਼ਲੇਸ਼ਣ</string>
+    <string name="no_analysis_data_available">ਕੋਈ ਵਿਸ਼ਲੇਸ਼ਣ ਡਾਟਾ ਉਪਲਬਧ ਨਹੀਂ</string>
+    <string name="perform_analysis">ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ</string>
+    <string name="your_score">ਤੁਹਾਡਾ ਸਕੋਰ</string>
+    <string name="correct">(%1$d/%2$d ਠੀਕ ਹੈ)</string>
+    <string name="overall_assessment">ਸਮੁੱਚਾ ਮੁਲਾਂਕਣ</string>
+    <string name="detailed_analysis">ਵਿਸਤ੍ਰਿਤ ਵਿਸ਼ਲੇਸ਼ਣ</string>
+    <string name="back_to_game">"ਖੇਡ ' ਤੇ ਵਾਪਸ"</string>
+    <string name="play_again">ਦੁਬਾਰਾ ਖੇਡੋ</string>
+    <string name="case_header">ਕੇਸ %1$d</string>
+    <string name="your_choice">ਤੁਹਾਡੀ ਚੋਣ</string>
+    <string name="optimal_choice">ਅਨੁਕੂਲ ਚੋਣ</string>
+    <string name="analysis">ਵਿਸ਼ਲੇਸ਼ਣਃ</string>
+    <string name="turn_of_3_case_of">%1$d ਦੇ 3 - ਕੇਸ %2$d ਦੇ %3$d</string>
+    <string name="answered">ਜਵਾਬਃ %1$d/%2$d</string>
+    <string name="next_case">ਅਗਲਾ ਕੇਸ</string>
+    <string name="next_turn">ਅਗਲਾ ਮੋੜ</string>
+    <string name="congratulations_you_finished_the_game">ਵਧਾਈਆਂ, ਤੁਸੀਂ ਖੇਡ ਨੂੰ ਪੂਰਾ ਕਰ ਲਿਆ ਹੈ!</string>
+    <string name="new_game">ਨਵੀਂ ਖੇਡ</string>
+    <string name="analysis_result">ਵਿਸ਼ਲੇਸ਼ਣਃ %1$s</string>
+    <string name="game_complete">ਖੇਡ ਮੁਕੰਮਲ!</string>
+    <string name="no_analysis_results_available">ਕੋਈ ਵਿਸ਼ਲੇਸ਼ਣ ਨਤੀਜੇ ਉਪਲਬਧ ਨਹੀਂ</string>
+    <string name="error">ਗਲਤੀ</string>
+    <string name="retry">ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="scenario">ਦ੍ਰਿਸ਼</string>
+    <string name="save_settings">ਸੈਟਿੰਗਾਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰੋ</string>
+    <string name="system_default">ਸਿਸਟਮ ਡਿਫਾਲਟ</string>
+    <string name="matter_of_choice_onBoarding">ਚੋਣ ਦਾ ਮਾਮਲਾ</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">ਕੀ ਅਸੀਂ ਸਭ ਤੋਂ ਵਧੀਆ ਫ਼ੈਸਲੇ ਕਰਨ ਲਈ ਤਿਆਰ ਹਾਂ?</string>
+    <string name="have_fun">ਅਨੰਦ ਮਾਣੋ</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">ਕੀ ਹੋਵੇਗਾ ਜੇ ਬੱਚੇ ਖੇਡਦੇ ਹੋਏ ਫ਼ੈਸਲੇ ਲੈਣ ਲਈ ਸਾਧਨ ਹਾਸਲ ਕਰ ਲੈਣ?</string>
+    <string name="virtual_failures">ਵਰਚੁਅਲ ਅਸਫਲਤਾਵਾਂ</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">"ਆਮ ਤੌਰ 'ਤੇ ਅਸੀਂ ਨਕਾਰਾਤਮਕ ਨਤੀਜਿਆਂ ਤੋਂ ਸਿੱਖਦੇ ਹਾਂ. ਕੀ ਵਰਚੁਅਲ ਅਸਫਲਤਾਵਾਂ ਤੋਂ ਸਿੱਖਣਾ ਬਿਹਤਰ ਨਹੀਂ ਹੋਵੇਗਾ?"</string>
+    <string name="get_started">ਸ਼ੁਰੂ ਕਰੋ</string>
+    <string name="skip">ਸਕਿੱਪ</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

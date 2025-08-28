@@ -1,16 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-   <!-- <string name="app_name">Ikibazo c\'ihitamwo</string>
-    <string name="optional_enter_the_role_e_g_student">Guhitamwo: Nushire mu kibanza, nk\'akarorero, Umunyeshure</string>
+    <string name="app_name">"Ikibazo c'ihitamwo"</string>
+    <string name="app_name_matter_of_choice">"Ikibazo c'ihitamwo"</string>
+    <string name="matterofchoice_info">Urukurikirane rwa Matter Of Choice rurerekana uburyo bwo guhanahana amakuru bushobora kugufasha kumenya ingene wofata ingingo.</string>
+    <string name="optional_enter_the_role_e_g_student">"Guhitamwo: Nushire mu kibanza, nk'akarorero, Umunyeshure"</string>
     <string name="analysis_my_choices">Gusuzuma amahitamwo ngira</string>
     <string name="analysis_your_selections">Nusuzume amahitamwo yawe</string>
     <string name="rounds">Ibirwanisho</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Ibiharuro bigereranywa n\'amagara, ubutunzi, imigenderanire, agahimbare, ubumenyi, karma, uburyo bwo gucungera umwanya, ingaruka ku bidukikije, iterambere ry\'umuntu ku giti ciwe be n'umwidegemvyo mu kibano</string>
-    <string name="settings_title">Ikibazo c\'ihitamwo</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        "Ibiharuro bigereranywa n'amagara, ubutunzi, imigenderanire, agahimbare, ubumenyi, karma, uburyo bwo gucungera umwanya, ingaruka ku bidukikije, iterambere ry'umuntu ku giti ciwe be n'umwidegemvyo mu kibano"</string>
+    <string name="settings_title">"Ikibazo c'ihitamwo"</string>
     <string name="settings_subtitle">Ingene ibintu bizogenda bizoba bishingiye ku vyo wohitamwo</string>
     <string name="settings_label_subject">Niwandike iciyumviro</string>
-    <string name="settings_hint_select_question_type">Nuhitemwo ubwoko bw\'ikibazo</string>
-    <string name="settings_hint_select_subtype">Hitamwo ubwoko bw\'ibikoresho</string>
+    <string name="settings_hint_select_question_type">"Nuhitemwo ubwoko bw'ikibazo"</string>
+    <string name="settings_hint_select_subtype">"Hitamwo ubwoko bw'ibikoresho"</string>
     <string name="settings_hint_select_difficulty">Nuhitemwo ikiringo kigoye</string>
     <string name="settings_hint_select_gender_optional">Guhitamwo: Nuhitemwo igitsina</string>
     <string name="settings_label_age">Nushike mu myaka yawe</string>
@@ -20,13 +23,13 @@
     <string name="question_type_behavioral">Ingeso</string>
     <string name="question_type_hiring">Gushinga akazi</string>
     <string name="subtype_behavioral_interpersonal">Ubumenyi bwo guhanahana amakuru</string>
-    <string name="subtype_behavioral_ethical">Ingorane zijanye n\'inyifato runtu</string>
+    <string name="subtype_behavioral_ethical">"Ingorane zijanye n'inyifato runtu"</string>
     <string name="subtype_behavioral_stress">Ingorane zo mu mutwe</string>
-    <string name="subtype_study_mastery">Ubumenyi bw\'ibikoresho</string>
+    <string name="subtype_study_mastery">"Ubumenyi bw'ibikoresho"</string>
     <string name="subtype_study_critical_thinking">Ivyiyumviro bihambaye</string>
     <string name="subtype_study_practical_application">Ivyogufasha</string>
-    <string name="subtype_hiring_technical">Ubumenyi mu vy\'ubuhinga</string>
-    <string name="subtype_hiring_behavioral_interview">Ikiganiro kijanye n\'inyifato</string>
+    <string name="subtype_hiring_technical">"Ubumenyi mu vy'ubuhinga"</string>
+    <string name="subtype_hiring_behavioral_interview">"Ikiganiro kijanye n'inyifato"</string>
     <string name="subtype_hiring_situational_judgment">Ingingo ngenderwako</string>
     <string name="difficulty_normal">ibisanzwe</string>
     <string name="difficulty_easy">vyoroshe</string>
@@ -45,6 +48,47 @@
     <string name="text_scenario">Ingene ibintu vyifashe</string>
     <string name="button_next">Ubukurikira</string>
     <string name="icon_desc_selected_option">Uburyo bwo guhitamwo</string>
+    <string name="analyze">Gusuzuma</string>
+    <string name="analysis_results">Ivyavuye mu Gusuzuma</string>
+    <string name="analysis_error">Ikosa ryo gusesengura</string>
+    <string name="retry_analysis">Iserukiramuco ryo gusubiramwo</string>
+    <string name="no_analysis_data_available">"Nta makuru y'ibiharuro ariho"</string>
+    <string name="perform_analysis">Kora isuzuma</string>
+    <string name="your_score">Igitigiri cawe</string>
+    <string name="correct">(%1$d/%2$d ni ukuri)</string>
+    <string name="overall_assessment">Icigwa muri rusangi</string>
+    <string name="detailed_analysis">Isuzuma ryimbitse</string>
+    <string name="back_to_game">Dusubire ku Nkino</string>
+    <string name="play_again">Nusubire gukina</string>
+    <string name="case_header">Urubanza %1$d</string>
+    <string name="your_choice">Ingene wohitamwo</string>
+    <string name="optimal_choice">Uburyo bwiza bwo guhitamwo</string>
+    <string name="analysis">Isanamu:</string>
+    <string name="turn_of_3_case_of">Turn %1$d of 3 - Case %2$d of %3$d</string>
+    <string name="answered">Inyishu: %1$d/%2$d</string>
+    <string name="next_case">Urubanza rukurikira</string>
+    <string name="next_turn">Ikiringo gikurikira</string>
+    <string name="congratulations_you_finished_the_game">Ndabaramukije, wararangije urukino!</string>
+    <string name="new_game">Urukino rushasha</string>
+    <string name="analysis_result">Isesengura: %1$s</string>
+    <string name="game_complete">Urukino rwarangiye!</string>
+    <string name="no_analysis_results_available">Nta vyavuye mu bushakashatsi biriho</string>
+    <string name="error">Ikosa</string>
+    <string name="retry">Subira ugerageze</string>
+    <string name="scenario">Ingene ibintu vyifashe</string>
+    <string name="save_settings">Gucungura amahitamwo</string>
+    <string name="system_default">"Ikosa ry'ubuhinga"</string>
+    <string name="matter_of_choice_onBoarding">"Ikibazo c'uguhitamwo"</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">
+        Abantu barafata ingingo zitari nke ku musi ku musi.</string>
+    <string name="have_fun">Nimunezererwe</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">
+        Bite ho mu gihe abana bariko barakina, bakaronka ibikoresho vyo gufata ingingo mu buzima busanzwe?</string>
+    <string name="virtual_failures">Ingorane zisanzwe</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">
+        Akenshi twigira ku ngaruka mbi. Ntivyoba vyiza twigiye ku vyo tudashoboye gukora?</string>
+    <string name="get_started">Nutangure</string>
+    <string name="skip">Kwiruka</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -86,7 +130,7 @@
         <item>Bambara</item>
         <item>Ikirundi</item>
         <item>Bemba</item>
-        <item>Ururimi rw\'ikibengali</item>
+        <item>"Ururimi rw'ikibengali"</item>
         <item>Tibetani</item>
         <item>Ururimi rwo muri Bosiniya</item>
         <item>Ururimi rwo muri Bulugariya</item>
@@ -131,17 +175,17 @@
         <item>Kikuyu</item>
         <item>Ikinyarwanda</item>
         <item>Kirgistani</item>
-        <item>Koreya y\'epfo</item>
+        <item>"Koreya y'epfo"</item>
         <item>Laos (Laos)</item>
         <item>Ururimi rwa Limburga</item>
         <item>Ururimi rwa Lingala</item>
-        <item>Ururimi rw\'ikirundi</item>
+        <item>"Ururimi rw'ikirundi"</item>
         <item>Ururimi rwo muri Luxembourg</item>
         <item>Ganda</item>
         <item>Luo</item>
         <item>Ururimi rwo muri Leta Zunze Ubumwe za Amerika</item>
         <item>Igihugu ca Malayalam</item>
-        <item>Ururimi rw\'ikirundi</item>
+        <item>"Ururimi rw'ikirundi"</item>
         <item>Abanyamakedoniya</item>
         <item>Igihugu ca Madagaskari (Madagascar)</item>
         <item>Igihugu ca Malte (Malta)</item>
@@ -152,13 +196,13 @@
         <item>Nynorsk yo muri Norveje</item>
         <item>Bokmål yo muri Norveje</item>
         <item>Nepali (Nepal)</item>
-        <item>Nuer (Sudan y\'Epfo)</item>
+        <item>"Nuer (Sudan y'Epfo)"</item>
         <item>Abarundi (Etiyopiya)</item>
         <item>Abarundi (Kenya)</item>
         <item>Ururimi (Ubuhindi)</item>
         <item>Igipunjabi</item>
         <item>Igipolonye</item>
-        <item>Ururimi rw\'igiportigale</item>
+        <item>"Ururimi rw'igiportigale"</item>
         <item>Igiperesi (Afghanistan)</item>
         <item>Igiperesi (Iran)</item>
         <item>Pashto (Afghanistan)</item>
@@ -169,7 +213,7 @@
         <item>Rundi (Burundi)</item>
         <item>Uburusiya</item>
         <item>Sango (République Centrafricaine)</item>
-        <item>Ururimi rw\'igisingali (Sri Lanka)</item>
+        <item>"Ururimi rw'igisingali (Sri Lanka)"</item>
         <item>Igislovakiya (Slovakia)</item>
         <item>Igisloveniya</item>
         <item>Shona (Zimbabwe)</item>
@@ -179,21 +223,20 @@
         <item>Igisiribiya</item>
         <item>Igiswedish</item>
         <item>Igiswayire</item>
-        <item>Ururimi rw\'ikirundi</item>
+        <item>"Ururimi rw'ikirundi"</item>
         <item>Ururimi rwa Telugu</item>
-        <item>Igihugu c\'Ubutaliyano</item>
+        <item>"Igihugu c'Ubutaliyano"</item>
         <item>Ururimi</item>
         <item>Ururimi rwo muri Ukraine</item>
         <item>Urdu (Pakistani)</item>
         <item>Uigur (Ubushinwa)</item>
         <item>Uzbekistan (mu kilatini, Uzbekistan)</item>
         <item>Abanyavietnam</item>
-        <item>Ururimi rw\'ikirundi</item>
+        <item>"Ururimi rw'ikirundi"</item>
         <item>Ururimi rwa Yoruba</item>
-        <item>Ururimi rw\'igikantonese</item>
-        <item>Ururimi rw\'igishinwa rw\'ikimandarini rworoshe</item>
-        <item>Ururimi rw\'igishinwa rw\'ikiremwamuntu</item>
+        <item>"Ururimi rw'igikantonese"</item>
+        <item>"Ururimi rw'igishinwa rw'ikimandarini rworoshe"</item>
+        <item>"Ururimi rw'igishinwa rw'ikiremwamuntu"</item>
         <item>Abazungu</item>
-    </string-array>-->
-    <string name="analyze">Analyze</string>
+    </string-array>
 </resources>

@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Тема вибору</string>
+    <string name="app_name_matter_of_choice">Тема вибору</string>
+    <string name="matterofchoice_info">Matter Of Choice пропонує інтерактивні сценарії, які допоможуть вам вивчити навички прийняття рішень.</string>
     <string name="optional_enter_the_role_e_g_student">Факультативне: Введіть роль, наприклад, Студент</string>
     <string name="analysis_my_choices">Аналіз моїх виборів</string>
     <string name="analysis_your_selections">Аналіз Ваших виборів</string>
     <string name="rounds">Рунди</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Рівень розраховується на основі здоров\'я, багатства, відносин, щастя, знання, карми, управління часом, впливу на навколишнє середовище, особистого зростання та соціальної відповідальності</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        "Рівень розраховується на основі здоров'я, багатства, відносин, щастя, знання, карми, управління часом, впливу на навколишнє середовище, особистого зростання та соціальної відповідальності"</string>
     <string name="settings_title">Тема вибору</string>
     <string name="settings_subtitle">Сценарії будуть ґрунтуватися на ваших виборах</string>
     <string name="settings_label_subject">Введіть тему</string>
@@ -22,11 +25,11 @@
     <string name="subtype_behavioral_interpersonal">Межчодні навички</string>
     <string name="subtype_behavioral_ethical">Етичні дилемми</string>
     <string name="subtype_behavioral_stress">Управління стресом</string>
-    <string name="subtype_study_mastery">Майстерство суб\'єкта</string>
+    <string name="subtype_study_mastery">"Майстерство суб'єкта"</string>
     <string name="subtype_study_critical_thinking">Критичне мислення</string>
     <string name="subtype_study_practical_application">Практичне застосування</string>
     <string name="subtype_hiring_technical">Технічні навички</string>
-    <string name="subtype_hiring_behavioral_interview">Поведений інтерв\'ю</string>
+    <string name="subtype_hiring_behavioral_interview">"Поведений інтерв'ю"</string>
     <string name="subtype_hiring_situational_judgment">Судячи про ситуацію</string>
     <string name="difficulty_normal">нормальний</string>
     <string name="difficulty_easy">легко</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Сценарій</string>
     <string name="button_next">Наступний</string>
     <string name="icon_desc_selected_option">Вибраний варіант</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Аналіз</string>
+    <string name="analysis_results">Результати аналізу</string>
+    <string name="analysis_error">Помилка аналізу</string>
+    <string name="retry_analysis">Аналіз повторного спробу</string>
+    <string name="no_analysis_data_available">Немає даних про аналіз</string>
+    <string name="perform_analysis">Виконайте аналіз</string>
+    <string name="your_score">Ваш бал</string>
+    <string name="correct">(%1$d/%2$d правильний)</string>
+    <string name="overall_assessment">Загальна оцінка</string>
+    <string name="detailed_analysis">Детальний аналіз</string>
+    <string name="back_to_game">Повернімося до гри</string>
+    <string name="play_again">Знову зіграй</string>
+    <string name="case_header">Случай %1$d</string>
+    <string name="your_choice">Ваш вибір</string>
+    <string name="optimal_choice">Оптимальний вибір</string>
+    <string name="analysis">Аналіз:</string>
+    <string name="turn_of_3_case_of">Повернення %1$d від 3 - Случай %2$d від %3$d</string>
+    <string name="answered">Відповідь: %1$d/%2$d</string>
+    <string name="next_case">Наступна справа</string>
+    <string name="next_turn">Наступний поворот</string>
+    <string name="congratulations_you_finished_the_game">Поздравляю, ви закінчили гру!</string>
+    <string name="new_game">Нова гра</string>
+    <string name="analysis_result">Аналіз: %1$s</string>
+    <string name="game_complete">Ігра завершена!</string>
+    <string name="no_analysis_results_available">Результатів аналізу немає.</string>
+    <string name="error">Помилка</string>
+    <string name="retry">Попробуйте знову</string>
+    <string name="scenario">Сценарій</string>
+    <string name="save_settings">Зберігайте налаштування</string>
+    <string name="system_default">Система дефолтом</string>
+    <string name="matter_of_choice_onBoarding">Тема вибору</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Люди щодня приймають безліч рішень.</string>
+    <string name="have_fun">Забавлюйтеся.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Що, якщо діти, гуляючи, отримають інструменти для прийняття рішень у реальному житті?</string>
+    <string name="virtual_failures">Віртуальні невдачі</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Як правило, ми вчимося від негативних наслідків. Чи не краще вчитися від віртуальних невдач?</string>
+    <string name="get_started">Почніть</string>
+    <string name="skip">Перейдіть</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -80,7 +120,7 @@
         <item>Африканська</item>
         <item>Акан</item>
         <item>Амарська</item>
-        <item>Арабська (Об\'єднані Арабські Емірати)</item>
+        <item>"Арабська (Об'єднані Арабські Емірати)"</item>
         <item>Асамські</item>
         <item>Астурійська</item>
         <item>Азербайджанська</item>
@@ -188,7 +228,7 @@
         <item>Урду (Пакистан)</item>
         <item>Уйгурський (Китай)</item>
         <item>Узбекська (латинська, узбекська)</item>
-        <item>В\'єтнаміць</item>
+        <item>"В'єтнаміць"</item>
         <item>Ксоса</item>
         <item>Яруба</item>
         <item>Кантонська</item>

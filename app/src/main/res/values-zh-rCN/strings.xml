@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">选择问题</string>
+    <string name="app_name_matter_of_choice">选择问题</string>
+    <string name="matterofchoice_info">选择问题提供了互动的场景,以帮助您学习决策技能.</string>
     <string name="optional_enter_the_role_e_g_student">选择性:输入角色,例如,学生</string>
     <string name="analysis_my_choices">分析我的选择</string>
     <string name="analysis_your_selections">分析您的选择</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">场景</string>
     <string name="button_next">接下来</string>
     <string name="icon_desc_selected_option">选择选项</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">分析</string>
+    <string name="analysis_results">分析结果</string>
+    <string name="analysis_error">分析错误</string>
+    <string name="retry_analysis">复试分析</string>
+    <string name="no_analysis_data_available">没有分析数据</string>
+    <string name="perform_analysis">执行分析</string>
+    <string name="your_score">你的成绩</string>
+    <string name="correct">(%1$d/%2$d正确)</string>
+    <string name="overall_assessment">总体评估</string>
+    <string name="detailed_analysis">详细分析</string>
+    <string name="back_to_game">回到游戏</string>
+    <string name="play_again">再一次玩</string>
+    <string name="case_header">案例 %1$d</string>
+    <string name="your_choice">你的选择</string>
+    <string name="optimal_choice">最好的选择</string>
+    <string name="analysis">分析:</string>
+    <string name="turn_of_3_case_of">转 %1$d的3 - 案例 %2$d的%3$d</string>
+    <string name="answered">答案: %1$d/%2$d</string>
+    <string name="next_case">下一个案例</string>
+    <string name="next_turn">下一个转折</string>
+    <string name="congratulations_you_finished_the_game">祝,你完成了比赛!</string>
+    <string name="new_game">新的游戏</string>
+    <string name="analysis_result">分析: %1$s</string>
+    <string name="game_complete">游戏完成!</string>
+    <string name="no_analysis_results_available">没有分析结果</string>
+    <string name="error">错误</string>
+    <string name="retry">再试一次</string>
+    <string name="scenario">场景</string>
+    <string name="save_settings">保存设置</string>
+    <string name="system_default">系统默认</string>
+    <string name="matter_of_choice_onBoarding">选择的问题</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">人们每天都做出无数的决定.我们是否有能力做出最好的选择?</string>
+    <string name="have_fun">快乐吧.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">如果孩子们在玩的时候得到了真实生活决策的工具呢?</string>
+    <string name="virtual_failures">虚拟失败</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">我们通常从负面后果中学习. 不会更好地从虚拟失败中学习吗?</string>
+    <string name="get_started">开始</string>
+    <string name="skip">跳过</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

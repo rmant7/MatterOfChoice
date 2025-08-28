@@ -52,7 +52,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
     /**
      * Initialize the session before starting the game
      */
-    fun initializeSession() {
+  /*  fun initializeSession() {
         viewModelScope.launch {
             try {
                 val success = ModalApiClient.initializeSession()
@@ -67,7 +67,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                 _state.value = _state.value.copy(error = "Session init failed: ${e.message}")
             }
         }
-    }
+    }*/
 
     /**
      * This is the main entry point to start the game.
@@ -101,18 +101,6 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                     put("sex", userGender)
                 }
 
-                Log.d("AIViewModel", "Generating cases for turn ${_state.value.currentTurn}...")
-                val cases = ModalApiClient.generateCasesWithRetry(
-                    language = userLanguage,
-                    subject = userSubject,
-                    difficulty = "medium",
-                    questionType = "behavioral",
-                    subType = "scenario_analysis",
-                    age = userAge.toIntOrNull() ?: 25,
-                    sex = userGender,
-                    role = "Parent",
-                    answers = if (_state.value.currentTurn > 1) _state.value.userChoices else null
-                )
 
 
 
@@ -123,13 +111,7 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                             casesList = response, // assuming API returns List<Case>
                             error = null
                 )
-                // 3. Update state with new cases
-                _state.value = _state.value.copy(
-                    isLoading = false,
-                    casesList = cases,
-                    error = null
-                )
-                Log.i("AIViewModel", "Turn ${_state.value.currentTurn} complete! Received ${cases.size} cases.")
+
 
             } catch (e: Exception) {
                 Log.e("AIViewModel", "Failed to generate cases for turn ${_state.value.currentTurn}", e)

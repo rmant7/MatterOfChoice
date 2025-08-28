@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">තෝරාගැනීමේ කාරණය</string>
+    <string name="app_name_matter_of_choice">තෝරාගැනීමේ කාරණය</string>
+    <string name="matterofchoice_info">තීරණ ගැනීමේ කුසලතා ඉගෙන ගැනීමට උපකාරී වන අන්තර්ක් රියාකාරී අවස්ථා මාතෘකාවන් ඉදිරිපත් කරයි.</string>
     <string name="optional_enter_the_role_e_g_student">විකල්ප: කාර්යභාරය ඇතුලත් කරන්න, උදාහරණයක් ලෙස ශිෂ් යයා</string>
     <string name="analysis_my_choices">මගේ තේරීම් විශ්ලේෂණය කරන්න</string>
     <string name="analysis_your_selections">ඔබේ තේරීම් විශ්ලේෂණය කරන්න</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">දර්ශනය</string>
     <string name="button_next">ඊලඟට</string>
     <string name="icon_desc_selected_option">තෝරාගත් විකල්පය</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">විශ්ලේෂණය කරන්න</string>
+    <string name="analysis_results">විශ්ලේෂණ ප් රතිඵල</string>
+    <string name="analysis_error">විශ්ලේෂණ වැරැද්ද</string>
+    <string name="retry_analysis">නැවත උත්සාහ කිරීමේ විශ්ලේෂණය</string>
+    <string name="no_analysis_data_available">විශ්ලේෂණ දත්ත නොමැත</string>
+    <string name="perform_analysis">විශ්ලේෂණය කරන්න</string>
+    <string name="your_score">ඔබේ ලකුණු</string>
+    <string name="correct">(%1$d/%2$d නිවැරදි)</string>
+    <string name="overall_assessment">සමස්ත ඇගයීම</string>
+    <string name="detailed_analysis">සවිස්තරාත්මක විශ්ලේෂණය</string>
+    <string name="back_to_game">නැවත ක් රීඩාවට</string>
+    <string name="play_again">ආයෙත් සෙල්ලම් කරන්න</string>
+    <string name="case_header">නඩුව %1$d</string>
+    <string name="your_choice">ඔබේ තේරීම</string>
+    <string name="optimal_choice">ප් රශස්ත තේරීම</string>
+    <string name="analysis">විශ්ලේෂණය:</string>
+    <string name="turn_of_3_case_of">%1$d of 3 - සිද්ධිය %2$d of %3$d</string>
+    <string name="answered">පිළිතුර: %1$d/%2$d</string>
+    <string name="next_case">ඊළඟ නඩුව</string>
+    <string name="next_turn">ඊලඟ වාරය</string>
+    <string name="congratulations_you_finished_the_game">සුභ පැතුම්, ඔයා ගේම් එක ඉවර කරා!</string>
+    <string name="new_game">නව ක් රීඩාව</string>
+    <string name="analysis_result">විශ්ලේෂණය: %1$s</string>
+    <string name="game_complete">ක් රීඩාව සම්පූර්ණයි!</string>
+    <string name="no_analysis_results_available">විශ්ලේෂණ ප් රතිඵල නෑ</string>
+    <string name="error">වැරැද්ද</string>
+    <string name="retry">නැවත උත්සාහ කරන්න.</string>
+    <string name="scenario">දර්ශනය</string>
+    <string name="save_settings">සැකසුම් සුරකින්න</string>
+    <string name="system_default">පද්ධති පෙරනිමි</string>
+    <string name="matter_of_choice_onBoarding">තෝරාගැනීම</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">මිනිසුන් දිනපතා තීරණ ගණනාවකට එළඹෙනවා.</string>
+    <string name="have_fun">විනෝද වෙන්න.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">දරුවන් සෙල්ලම් කරන අතරතුර සැබෑ ජීවිතයේ තීරණ ගැනීම සඳහා උපකරණ ලබා ගන්නේ නම්?</string>
+    <string name="virtual_failures">අතථ් ය අසාර්ථකත්වය</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">සාමාන් යයෙන් අපි ඉගෙන ගන්නේ ණාත්මක ප් රතිවිපාක වලින්.</string>
+    <string name="get_started">පටන් ගන්න</string>
+    <string name="skip">පනින්න</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Vấn đề lựa chọn</string>
+    <string name="app_name_matter_of_choice">Vấn đề lựa chọn</string>
+    <string name="matterofchoice_info">Matter Of Choice trình bày các kịch bản tương tác để giúp bạn học các kỹ năng ra quyết định.</string>
     <string name="optional_enter_the_role_e_g_student">Tùy chọn: Nhập vai trò, ví dụ: Học sinh</string>
     <string name="analysis_my_choices">Phân tích lựa chọn của tôi</string>
     <string name="analysis_your_selections">Phân tích lựa chọn của bạn</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Kịch bản</string>
     <string name="button_next">Tiếp theo</string>
     <string name="icon_desc_selected_option">Tùy chọn được chọn</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Phân tích</string>
+    <string name="analysis_results">Kết quả phân tích</string>
+    <string name="analysis_error">Sai lầm phân tích</string>
+    <string name="retry_analysis">Phân tích thử lại</string>
+    <string name="no_analysis_data_available">Không có dữ liệu phân tích có sẵn</string>
+    <string name="perform_analysis">Thực hiện phân tích</string>
+    <string name="your_score">Điểm số của bạn</string>
+    <string name="correct">(%1$d/%2$d chính xác)</string>
+    <string name="overall_assessment">Đánh giá tổng thể</string>
+    <string name="detailed_analysis">Phân tích chi tiết</string>
+    <string name="back_to_game">Trở lại trò chơi</string>
+    <string name="play_again">Chơi lại</string>
+    <string name="case_header">Trường hợp %1$d</string>
+    <string name="your_choice">Sự lựa chọn của bạn</string>
+    <string name="optimal_choice">Sự lựa chọn tối ưu</string>
+    <string name="analysis">Phân tích:</string>
+    <string name="turn_of_3_case_of">Chuyển %1$d của 3 - Trường hợp %2$d của %3$d</string>
+    <string name="answered">Câu trả lời: %1$d/%2$d</string>
+    <string name="next_case">Trường hợp tiếp theo</string>
+    <string name="next_turn">Chuyển tiếp theo</string>
+    <string name="congratulations_you_finished_the_game">Chúc mừng, cậu đã kết thúc trận đấu!</string>
+    <string name="new_game">Trò chơi mới</string>
+    <string name="analysis_result">Phân tích: %1$s</string>
+    <string name="game_complete">Trò chơi hoàn thành!</string>
+    <string name="no_analysis_results_available">Không có kết quả phân tích có sẵn</string>
+    <string name="error">Lỗi</string>
+    <string name="retry">Thử lại</string>
+    <string name="scenario">Kịch bản</string>
+    <string name="save_settings">Save Settings</string>
+    <string name="system_default">Hệ thống mặc định</string>
+    <string name="matter_of_choice_onBoarding">Vấn đề lựa chọn</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Mọi người có thể đưa ra vô số quyết định mỗi ngày.</string>
+    <string name="have_fun">Hãy vui vẻ.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Điều gì sẽ xảy ra nếu trẻ em, trong khi chơi, có được các công cụ để đưa ra quyết định trong cuộc sống thực sự?</string>
+    <string name="virtual_failures">Sự thất bại ảo</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Thông thường chúng ta học hỏi từ những hậu quả tiêu cực. Sẽ không tốt hơn nếu học hỏi từ những thất bại ảo sao?</string>
+    <string name="get_started">Hãy bắt đầu</string>
+    <string name="skip">Trượt qua</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

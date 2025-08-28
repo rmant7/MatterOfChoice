@@ -1,13 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Thema vun der Wiel</string>
-    <string name="optional_enter_the_role_e_g_student">Optional: Gitt d\'Roll, zum Beispill Student</string>
+    <string name="app_name_matter_of_choice">Thema vun der Wiel</string>
+    <string name="matterofchoice_info">Matter Of Choice presentéiert interaktiv Szenarien fir Iech ze hëllefen Entscheedungsfäegkeeten ze léieren.</string>
+    <string name="optional_enter_the_role_e_g_student">"Optional: Gitt d'Roll, zum Beispill Student"</string>
     <string name="analysis_my_choices">Analyse meng Entscheedungen</string>
     <string name="analysis_your_selections">Analyse Är Auswielunge</string>
     <string name="rounds">Rondes</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Score berechnen op Basis vun Gesondheet, Räichtum, Bezéiungen, Gléck, Wëssen, Karma, Zäitmanagement, Ëmweltbelastung, perséinleche Wuesstem an sozialer Verantwortung</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        Score berechnen op Basis vun Gesondheet, Räichtum, Bezéiungen, Gléck, Wëssen, Karma, Zäitmanagement, Ëmweltbelastung, perséinleche Wuesstem an sozialer Verantwortung</string>
     <string name="settings_title">Thema vun der Wiel</string>
-    <string name="settings_subtitle">D\'Szenarien baséieren op Äre Choix</string>
+    <string name="settings_subtitle">"D'Szenarien baséieren op Äre Choix"</string>
     <string name="settings_label_subject">Gitt de Sujet an</string>
     <string name="settings_hint_select_question_type">Wielt den Typ vun der Fro</string>
     <string name="settings_hint_select_subtype">Wielt den Ënnertyp</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Szenario</string>
     <string name="button_next">Déi nächst</string>
     <string name="icon_desc_selected_option">Ausgewielt Optioun</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analyse</string>
+    <string name="analysis_results">Resultater vun der Analyse</string>
+    <string name="analysis_error">Analysefehler</string>
+    <string name="retry_analysis">Retour Analyse</string>
+    <string name="no_analysis_data_available">Keng Analysendaten verfügbar</string>
+    <string name="perform_analysis">Analyse maachen</string>
+    <string name="your_score">Äre Score</string>
+    <string name="correct">(%1$d/%2$d korrekt)</string>
+    <string name="overall_assessment">Allgemeng Bewäertung</string>
+    <string name="detailed_analysis">Detailléiert Analyse</string>
+    <string name="back_to_game">Zurück zum Spill</string>
+    <string name="play_again">Spillt nach eng Kéier</string>
+    <string name="case_header">Fall %1$d</string>
+    <string name="your_choice">Är Entscheedung</string>
+    <string name="optimal_choice">Optimale Wiel</string>
+    <string name="analysis">Analyse:</string>
+    <string name="turn_of_3_case_of">Turn %1$d vun 3 - Fall %2$d vun %3$d</string>
+    <string name="answered">Äntwert: %1$d/%2$d</string>
+    <string name="next_case">Nächst Fall</string>
+    <string name="next_turn">Déi nächst Schrëtt</string>
+    <string name="congratulations_you_finished_the_game">"Gratulatioun, Dir hutt d'Spill fäerdeg bruecht!"</string>
+    <string name="new_game">Neit Spill</string>
+    <string name="analysis_result">Analyse: %1$s</string>
+    <string name="game_complete">"D'Spill ass komplett!"</string>
+    <string name="no_analysis_results_available">Kee Resultater vun der Analyse verfügbar</string>
+    <string name="error">Feeler</string>
+    <string name="retry">Versuch nach eng Kéier</string>
+    <string name="scenario">Szenario</string>
+    <string name="save_settings">"D'Einstellunge späicheren"</string>
+    <string name="system_default">System Default</string>
+    <string name="matter_of_choice_onBoarding">"D'Thema vun der Wiel"</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">"D'Leit treffen all Dag vill Entscheedungen."</string>
+    <string name="have_fun">Hutt Spaass</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">"Wat wann d'Kanner, während se spillen, Tools kréien fir richteg Entscheedungen ze treffen?"</string>
+    <string name="virtual_failures">Virtuell Feeler</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Normalerweis léieren mir aus negativen Konsequenzen. Wäert et net besser aus virtuellen Scheitern ze léieren?</string>
+    <string name="get_started">Fänkt un</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

@@ -1,13 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Voorwerp van keuze</string>
+    <string name="app_name_matter_of_choice">Voorwerp van keuze</string>
+    <string name="matterofchoice_info">"Matter Of Choice presenteert interactieve scenario's om u te helpen besluitvorming vaardigheden te leren."</string>
     <string name="optional_enter_the_role_e_g_student">Facultatief: Voer de rol in, bijvoorbeeld Student</string>
     <string name="analysis_my_choices">Analyse van mijn keuzes</string>
     <string name="analysis_your_selections">Analyseer uw keuzes</string>
     <string name="rounds">Rondes</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Score berekenen op basis van gezondheid, rijkdom, relaties, geluk, kennis, karma, tijdbeheer, milieu-impact, persoonlijke groei en sociale verantwoordelijkheid</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        Score berekenen op basis van gezondheid, rijkdom, relaties, geluk, kennis, karma, tijdbeheer, milieu-impact, persoonlijke groei en sociale verantwoordelijkheid</string>
     <string name="settings_title">Voorwerp van keuze</string>
-    <string name="settings_subtitle">De scenario\'s zijn gebaseerd op uw keuzes.</string>
+    <string name="settings_subtitle">"De scenario's zijn gebaseerd op uw keuzes."</string>
     <string name="settings_label_subject">Voer het onderwerp in</string>
     <string name="settings_hint_select_question_type">Selecteer vraagtype</string>
     <string name="settings_hint_select_subtype">Selecteer het subtype</string>
@@ -20,7 +23,7 @@
     <string name="question_type_behavioral">Gedrag</string>
     <string name="question_type_hiring">Huur</string>
     <string name="subtype_behavioral_interpersonal">Interpersoonlijke vaardigheden</string>
-    <string name="subtype_behavioral_ethical">Ethische dilemma\'s</string>
+    <string name="subtype_behavioral_ethical">"Ethische dilemma's"</string>
     <string name="subtype_behavioral_stress">Stressbeheersing</string>
     <string name="subtype_study_mastery">Onderwerpbeheersing</string>
     <string name="subtype_study_critical_thinking">Critisch denken</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Scenario</string>
     <string name="button_next">Volgende .</string>
     <string name="icon_desc_selected_option">Geselecteerde optie</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analyseer</string>
+    <string name="analysis_results">Resultaten van de analyse</string>
+    <string name="analysis_error">Analysefout</string>
+    <string name="retry_analysis">Retry-analyse</string>
+    <string name="no_analysis_data_available">Geen analysegevens beschikbaar</string>
+    <string name="perform_analysis">Analyse uitvoeren</string>
+    <string name="your_score">Uw score</string>
+    <string name="correct">(%1$d/%2$d correct)</string>
+    <string name="overall_assessment">Algemene beoordeling</string>
+    <string name="detailed_analysis">Gedetailleerde analyse</string>
+    <string name="back_to_game">Terug naar het spel</string>
+    <string name="play_again">Speel opnieuw.</string>
+    <string name="case_header">Geval %1$d</string>
+    <string name="your_choice">Uw keuze</string>
+    <string name="optimal_choice">Optimale keuze</string>
+    <string name="analysis">Analyse:</string>
+    <string name="turn_of_3_case_of">Draai %1$d van 3 - Geval %2$d van %3$d</string>
+    <string name="answered">Geantwoord: %1$d/%2$d</string>
+    <string name="next_case">Volgende zaak</string>
+    <string name="next_turn">Volgende beurt</string>
+    <string name="congratulations_you_finished_the_game">Gefeliciteerd, je hebt het spel afgemaakt!</string>
+    <string name="new_game">Nieuw spel</string>
+    <string name="analysis_result">Analyse: %1$s</string>
+    <string name="game_complete">Spel voltooid!</string>
+    <string name="no_analysis_results_available">Geen analyseresultaten beschikbaar</string>
+    <string name="error">Fout</string>
+    <string name="retry">Nogmaals proberen.</string>
+    <string name="scenario">Scenario</string>
+    <string name="save_settings">Instellingen opslaan</string>
+    <string name="system_default">Stelselfout</string>
+    <string name="matter_of_choice_onBoarding">De keuze</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Mensen maken elke dag talloze beslissingen.</string>
+    <string name="have_fun">Veel plezier.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Wat als kinderen, terwijl ze spelen, hulpmiddelen zouden krijgen voor het nemen van beslissingen in het echte leven?</string>
+    <string name="virtual_failures">Virtuele mislukkingen</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Gewoonlijk leren we van negatieve gevolgen. Zou het niet beter zijn om te leren van virtuele mislukkingen?</string>
+    <string name="get_started">Begin te beginnen</string>
+    <string name="skip">Skip</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
@@ -117,7 +157,7 @@
         <item>Kroatisch</item>
         <item>Hongaars</item>
         <item>Armeens</item>
-        <item>Igbo\'s</item>
+        <item>"Igbo's"</item>
         <item>Indonesisch</item>
         <item>IJslandse taal</item>
         <item>Italiaans</item>
@@ -194,6 +234,6 @@
         <item>Cantonese</item>
         <item>Mandarijns-Chinese vereenvoudigd</item>
         <item>Traditioneel Chinees Mandarijn</item>
-        <item>Zulu\'s</item>
+        <item>"Zulu's"</item>
     </string-array>
 </resources>

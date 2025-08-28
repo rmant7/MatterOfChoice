@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">ບັນຫາການເລືອກ</string>
+    <string name="app_name_matter_of_choice">ບັນຫາການເລືອກ</string>
+    <string name="matterofchoice_info">Matter Of Choice ສະ ເຫນີ ຮູບພາບການໂຕ້ຕອບເພື່ອຊ່ວຍໃຫ້ທ່ານຮຽນຮູ້ຄວາມສາມາດໃນການຕັດສິນໃຈ.</string>
     <string name="optional_enter_the_role_e_g_student">ທາງເລືອກ: ໃສ່ບົດບາດ, ຕົວຢ່າງ, ນັກສຶກສາ</string>
     <string name="analysis_my_choices">ການວິເຄາະການເລືອກຂອງຂ້ອຍ</string>
     <string name="analysis_your_selections">ວິເຄາະການເລືອກຂອງທ່ານ</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">ຮູບເງົາ</string>
     <string name="button_next">ຕໍ່ໄປ</string>
     <string name="icon_desc_selected_option">ທາງເລືອກທີ່ເລືອກ</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">ການວິເຄາະ</string>
+    <string name="analysis_results">ຜົນການວິເຄາະ</string>
+    <string name="analysis_error">ຄວາມຜິດພາດໃນການວິເຄາະ</string>
+    <string name="retry_analysis">ການວິເຄາະທົດລອງ ໃຫມ່</string>
+    <string name="no_analysis_data_available">ບໍ່ມີຂໍ້ມູນການວິເຄາະທີ່ມີຢູ່</string>
+    <string name="perform_analysis">ປະຕິບັດການວິເຄາະ</string>
+    <string name="your_score">ຄະແນນຂອງທ່ານ</string>
+    <string name="correct">(%1$d/%2$d ຖືກຕ້ອງ)</string>
+    <string name="overall_assessment">ການປະເມີນໂດຍລວມ</string>
+    <string name="detailed_analysis">ການວິເຄາະລະອຽດ</string>
+    <string name="back_to_game">ກັບຄືນສູ່ເກມ</string>
+    <string name="play_again">ຫຼິ້ນອີກຄັ້ງ</string>
+    <string name="case_header">ກໍລະນີ %1$d</string>
+    <string name="your_choice">ການ ເລືອກ ຂອງ ທ່ານ</string>
+    <string name="optimal_choice">ການ ເລືອກ ທີ່ ດີ ທີ່ ສຸດ</string>
+    <string name="analysis">ການວິເຄາະ:</string>
+    <string name="turn_of_3_case_of">Turn %1$d ຂອງ 3 - ກໍລະນີ %2$d ຂອງ %3$d</string>
+    <string name="answered">ຕອບ: %1$d/%2$d</string>
+    <string name="next_case">ກໍລະນີຕໍ່ໄປ</string>
+    <string name="next_turn">ການຫັນຕໍ່ໄປ</string>
+    <string name="congratulations_you_finished_the_game">ຊົມເຊີຍ, ທ່ານໄດ້ສໍາເລັດເກມ!</string>
+    <string name="new_game">ເກມໃຫມ່</string>
+    <string name="analysis_result">ການວິເຄາະ: %1$s</string>
+    <string name="game_complete">ເກມ ສໍາ ເລັດແລ້ວ!</string>
+    <string name="no_analysis_results_available">ບໍ່ມີຜົນການວິເຄາະທີ່ມີຢູ່</string>
+    <string name="error">ຄວາມຜິດພາດ\n</string>
+    <string name="retry">ພະຍາຍາມອີກຄັ້ງ</string>
+    <string name="scenario">ຮູບເງົາ</string>
+    <string name="save_settings">ບັນທຶກການຕັ້ງຄ່າ</string>
+    <string name="system_default">ລະບົບ Default</string>
+    <string name="matter_of_choice_onBoarding">ເລື່ອງ ການ ເລືອກ</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">ພວກ ເຮົາ ມີ ຄວາມ ສາມາດ ທີ່ ຈະ ຕັດສິນ ໃຈ ທີ່ ດີ ທີ່ ສຸດ ບໍ?</string>
+    <string name="have_fun">ມ່ວນຊື່ນ</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">ຖ້າ ຫາກ ວ່າ ເດັກ ນ້ອຍ, ໃນ ຂະ ນະ ທີ່ ຫຼິ້ນ, ຈະ ໄດ້ ຮັບ ເຄື່ອງ ມື ສໍາ ລັບ ການ ຕັດ ສິນ ໃຈ ໃນ ຊີ ວິດ ທີ່ ແທ້ ຈິງ?</string>
+    <string name="virtual_failures">ຄວາມລົ້ມເຫຼວ Virtual</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">ພວກ ເຮົາ ມັກ ຮຽນ ຈາກ ຜົນ ກະ ທົບ ທີ່ ບໍ່ ດີ ທີ່ ຈະ ຮຽນ ຈາກ ການ ປະ ຕິ ບັດ ຜິດ ພາດ</string>
+    <string name="get_started">ເລີ່ມຕົ້ນ</string>
+    <string name="skip">ຍົກເວັ້ນ</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

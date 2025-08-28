@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">የምርጫ ጉዳይ</string>
+    <string name="app_name_matter_of_choice">የምርጫ ጉዳይ</string>
+    <string name="matterofchoice_info">Matter Of Choice የውሳኔ አሰጣጥ ክህሎቶችን ለመማር የሚረዱ ተለዋዋጭ ሁኔታዎችን ያቀርባል.</string>
     <string name="optional_enter_the_role_e_g_student">አማራጭ: ሚና ያስገቡ, ለምሳሌ, ተማሪ</string>
     <string name="analysis_my_choices">ምርጫዎቼን መመርመር</string>
     <string name="analysis_your_selections">የእርስዎን ምርጫዎች መተንተን</string>
     <string name="rounds">ዙሮች</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">ውጤት በጤና፣ በሀብት፣ በግንኙነቶች፣ በደስታ፣ በእውቀት፣ በካርማ፣ በጊዜ አስተዳደር፣ በአካባቢ ተፅዕኖ፣ በግል እድገት እና በማህበራዊ ኃላፊነት ላይ የተመሠረተ ነው</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        ውጤት በጤና፣ በሀብት፣ በግንኙነቶች፣ በደስታ፣ በእውቀት፣ በካርማ፣ በጊዜ አስተዳደር፣ በአካባቢ ተፅዕኖ፣ በግል እድገት እና በማህበራዊ ኃላፊነት ላይ የተመሠረተ ነው</string>
     <string name="settings_title">የምርጫ ጉዳይ</string>
     <string name="settings_subtitle">ሁኔታዎቹ በምርጫዎ ላይ የተመሠረቱ ናቸው</string>
     <string name="settings_label_subject">ርዕሰ ጉዳዩን ያስገቡ</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">ትዕይንት</string>
     <string name="button_next">ቀጣዩ</string>
     <string name="icon_desc_selected_option">የተመረጠው አማራጭ</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">መተንተን</string>
+    <string name="analysis_results">ትንታኔ ውጤቶች</string>
+    <string name="analysis_error">ትንተና ስህተት</string>
+    <string name="retry_analysis">ዳግም ሙከራ ትንታኔ</string>
+    <string name="no_analysis_data_available">ምንም የመተንተን መረጃ የለም</string>
+    <string name="perform_analysis">ትንታኔን ያካሂዱ</string>
+    <string name="your_score">የእርስዎ ውጤት</string>
+    <string name="correct">(%1$d/%2$d ትክክል ነው)</string>
+    <string name="overall_assessment">አጠቃላይ ግምገማ</string>
+    <string name="detailed_analysis">ዝርዝር ትንተና</string>
+    <string name="back_to_game">ወደ ጨዋታ ተመለስ</string>
+    <string name="play_again">እንደገና አጫውት</string>
+    <string name="case_header">ጉዳይ %1$d</string>
+    <string name="your_choice">ምርጫህ</string>
+    <string name="optimal_choice">ጥሩ ምርጫ</string>
+    <string name="analysis">ትንታኔ:</string>
+    <string name="turn_of_3_case_of">%1$d ከ 3 - ጉዳይ %2$d ከ %3$d</string>
+    <string name="answered">መልስ: %1$d/%2$d</string>
+    <string name="next_case">ቀጣዩ ጉዳይ</string>
+    <string name="next_turn">ቀጣዩ ዙር</string>
+    <string name="congratulations_you_finished_the_game">እንኳን ደስ አለዎት, ጨዋታውን ጨርሰዋል!</string>
+    <string name="new_game">አዲስ ጨዋታ</string>
+    <string name="analysis_result">ትንተና: %1$s</string>
+    <string name="game_complete">ጨዋታው ተጠናቀቀ!</string>
+    <string name="no_analysis_results_available">ምንም የትንታኔ ውጤቶች አይገኙም</string>
+    <string name="error">ስህተት</string>
+    <string name="retry">እንደገና ይሞክሩ</string>
+    <string name="scenario">ትዕይንት</string>
+    <string name="save_settings">ቅንብሮችን አስቀምጥ</string>
+    <string name="system_default">የስርዓት ነባሪ</string>
+    <string name="matter_of_choice_onBoarding">የመምረጥ ጉዳይ</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">ሰዎች በየዕለቱ ስፍር ቁጥር የሌላቸውን ውሳኔዎች ያደርጋሉ።</string>
+    <string name="have_fun">ይዝናኑ</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">ልጆቹ በመጫወት ላይ ሳሉ በእውነተኛው ሕይወት ውስጥ ውሳኔዎችን ለማድረግ የሚያስችሉ መሳሪያዎችን ቢያገኙስ?</string>
+    <string name="virtual_failures">ምናባዊ ውድቀቶች</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">አብዛኛውን ጊዜ ከ አሉታዊ መዘዞች እንማራለን። ከምናባዊ ውድቀቶች መማር የተሻለ አይሆንም?</string>
+    <string name="get_started">ሥራህን ጀምር</string>
+    <string name="skip">ማለፍ</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Materia de elección</string>
+    <string name="app_name_matter_of_choice">Materia de elección</string>
+    <string name="matterofchoice_info">Matter Of Choice presenta escenarios interactivos que le ayudarán a aprender habilidades para tomar decisiones.</string>
     <string name="optional_enter_the_role_e_g_student">Opcional: Ingrese el papel, por ejemplo, Estudiante</string>
     <string name="analysis_my_choices">Análisis de mis opciones</string>
     <string name="analysis_your_selections">Análisis de sus selecciones</string>
     <string name="rounds">Las rondas</string>
-    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">Las puntuaciones se calculan en función de la salud, la riqueza, las relaciones, la felicidad, el conocimiento, el karma, la gestión del tiempo, el impacto ambiental, el crecimiento personal y la responsabilidad social</string>
+    <string name="score_calculate_based_on_health_wealth_relationships_happiness_knowledge_karma_time_management_environmental_impact_personal_growth_and_social_responsibility">
+        Las puntuaciones se calculan en función de la salud, la riqueza, las relaciones, la felicidad, el conocimiento, el karma, la gestión del tiempo, el impacto ambiental, el crecimiento personal y la responsabilidad social</string>
     <string name="settings_title">Materia de elección</string>
     <string name="settings_subtitle">Los escenarios se basarán en sus selecciones</string>
     <string name="settings_label_subject">Introduzca el tema</string>
@@ -45,7 +48,44 @@
     <string name="text_scenario">Escenario</string>
     <string name="button_next">Lo siguiente</string>
     <string name="icon_desc_selected_option">Opción seleccionada</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analizar</string>
+    <string name="analysis_results">Resultados del análisis</string>
+    <string name="analysis_error">Error de análisis</string>
+    <string name="retry_analysis">Análisis de retraso</string>
+    <string name="no_analysis_data_available">No hay datos de análisis disponibles</string>
+    <string name="perform_analysis">Realizar el análisis</string>
+    <string name="your_score">Su puntuación</string>
+    <string name="correct">(%1$d/%2$d correcto)</string>
+    <string name="overall_assessment">Evaluación general</string>
+    <string name="detailed_analysis">Análisis detallado</string>
+    <string name="back_to_game">De vuelta al juego</string>
+    <string name="play_again">Juega de nuevo</string>
+    <string name="case_header">Caso %1$d</string>
+    <string name="your_choice">Su elección</string>
+    <string name="optimal_choice">Opción óptima</string>
+    <string name="analysis">Análisis:</string>
+    <string name="turn_of_3_case_of">Cambio %1$d de 3 - Caso %2$d de %3$d</string>
+    <string name="answered">Respuesta: %1$d/%2$d</string>
+    <string name="next_case">El siguiente caso</string>
+    <string name="next_turn">El siguiente giro</string>
+    <string name="congratulations_you_finished_the_game">¡Felicitaciones, has terminado el juego!</string>
+    <string name="new_game">Nuevo juego</string>
+    <string name="analysis_result">Análisis: %1$s</string>
+    <string name="game_complete">¡El juego está completo!</string>
+    <string name="no_analysis_results_available">No hay resultados de análisis disponibles</string>
+    <string name="error">Erro</string>
+    <string name="retry">Intentar de nuevo</string>
+    <string name="scenario">Escenario</string>
+    <string name="save_settings">Guardar la configuración</string>
+    <string name="system_default">Por defecto del sistema</string>
+    <string name="matter_of_choice_onBoarding">La cuestión de la elección</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">La gente toma innumerables decisiones cada día. ¿Estamos preparados para tomar las mejores decisiones?</string>
+    <string name="have_fun">Diviértete .</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">¿Qué pasa si los niños, mientras juegan, obtengan herramientas para tomar decisiones en la vida real?</string>
+    <string name="virtual_failures">Fallas virtuales</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Por lo general aprendemos de las consecuencias negativas. ¿No sería mejor aprender de los fracasos virtuales?</string>
+    <string name="get_started">Comience</string>
+    <string name="skip">Salta</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">選擇的問題</string>
+    <string name="app_name_matter_of_choice">選擇的問題</string>
+    <string name="matterofchoice_info">提供互動的情景,</string>
     <string name="optional_enter_the_role_e_g_student">選擇性:輸入角色,例如,學生</string>
     <string name="analysis_my_choices">分析我的選擇</string>
     <string name="analysis_your_selections">分析您的選擇</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">情景</string>
     <string name="button_next">接下來</string>
     <string name="icon_desc_selected_option">選擇的選擇</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">分析</string>
+    <string name="analysis_results">分析結果</string>
+    <string name="analysis_error">分析錯誤</string>
+    <string name="retry_analysis">復試分析</string>
+    <string name="no_analysis_data_available">沒有分析資料</string>
+    <string name="perform_analysis">進行分析</string>
+    <string name="your_score">你的成績</string>
+    <string name="correct">(%1$d/%2$d是正確的)</string>
+    <string name="overall_assessment">整體評估</string>
+    <string name="detailed_analysis">詳細分析</string>
+    <string name="back_to_game">返回遊戲</string>
+    <string name="play_again">再一次玩</string>
+    <string name="case_header">案例 %1$d</string>
+    <string name="your_choice">你的選擇</string>
+    <string name="optimal_choice">最好的選擇</string>
+    <string name="analysis">分析:</string>
+    <string name="turn_of_3_case_of">轉%1$d的3 - 案例%2$d的%3$d</string>
+    <string name="answered">答案: %1$d/%2$d</string>
+    <string name="next_case">下一個案例</string>
+    <string name="next_turn">接下來的回頭</string>
+    <string name="congratulations_you_finished_the_game">恭喜你,你完成了這個遊戲!</string>
+    <string name="new_game">新的遊戲</string>
+    <string name="analysis_result">分析: %1$s</string>
+    <string name="game_complete">這個遊戲完成了!</string>
+    <string name="no_analysis_results_available">沒有分析結果</string>
+    <string name="error">錯誤</string>
+    <string name="retry">請再試一次</string>
+    <string name="scenario">情景</string>
+    <string name="save_settings">保存設定</string>
+    <string name="system_default">系統預設</string>
+    <string name="matter_of_choice_onBoarding">選擇的問題</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">人們每天都做出無數的決定.</string>
+    <string name="have_fun">快樂吧!</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">如果孩子在玩的時候獲得現實生活決策工具呢?</string>
+    <string name="virtual_failures">虛擬失敗</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">我們通常從負面後果中學習.</string>
+    <string name="get_started">開始學習</string>
+    <string name="skip">跳船</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>

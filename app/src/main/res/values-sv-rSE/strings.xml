@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Väljfråga</string>
+    <string name="app_name_matter_of_choice">Väljfråga</string>
+    <string name="matterofchoice_info">Matter Of Choice presenterar interaktiva scenarier som hjälper dig att lära dig beslutsfattande färdigheter.</string>
     <string name="optional_enter_the_role_e_g_student">Optionell: Ange rollen, t.ex. Student</string>
     <string name="analysis_my_choices">Analysera mina val</string>
     <string name="analysis_your_selections">Analysera dina val</string>
@@ -45,7 +47,44 @@
     <string name="text_scenario">Scenario</string>
     <string name="button_next">Nästa</string>
     <string name="icon_desc_selected_option">Utvalda alternativ</string>
-    <string name="analyze">Analyze</string>
+    <string name="analyze">Analysera</string>
+    <string name="analysis_results">Analysresultat</string>
+    <string name="analysis_error">Analysfel</string>
+    <string name="retry_analysis">Återförsöksanalys</string>
+    <string name="no_analysis_data_available">Inga analysuppgifter tillgängliga</string>
+    <string name="perform_analysis">Utföra analys</string>
+    <string name="your_score">Din poäng</string>
+    <string name="correct">(%1$d/%2$d korrekt)</string>
+    <string name="overall_assessment">Övergripande bedömning</string>
+    <string name="detailed_analysis">Detaljerad analys</string>
+    <string name="back_to_game">Tillbaka till spelet</string>
+    <string name="play_again">Spela igen</string>
+    <string name="case_header">Fall %1$d</string>
+    <string name="your_choice">Ditt val</string>
+    <string name="optimal_choice">Det bästa valet</string>
+    <string name="analysis">Analys:</string>
+    <string name="turn_of_3_case_of">Turn %1$d av 3 - Fall %2$d av %3$d</string>
+    <string name="answered">Svar: %1$d/%2$d</string>
+    <string name="next_case">Nästa fall</string>
+    <string name="next_turn">Nästa sväng</string>
+    <string name="congratulations_you_finished_the_game">Grattis, du avslutade spelet!</string>
+    <string name="new_game">Nya spel</string>
+    <string name="analysis_result">Analys: %1$s</string>
+    <string name="game_complete">Spelet är färdigt!</string>
+    <string name="no_analysis_results_available">Inga analysresultat tillgängliga</string>
+    <string name="error">Felet</string>
+    <string name="retry">Försök igen.</string>
+    <string name="scenario">Scenario</string>
+    <string name="save_settings">Spara inställningar</string>
+    <string name="system_default">Systeminställning</string>
+    <string name="matter_of_choice_onBoarding">Fråga om val</string>
+    <string name="people_make_countless_decisions_daily_are_we_equipped_to_make_the_best_choices">Människor fattar otaliga beslut varje dag.</string>
+    <string name="have_fun">Ha roligt.</string>
+    <string name="what_if_children_while_playing_would_gain_tools_for_real_life_decision_making">Tänk om barnen, medan de spelar, skulle få verktyg för att fatta beslut i verkligheten?</string>
+    <string name="virtual_failures">Virtuella misslyckanden</string>
+    <string name="usually_we_learn_from_negative_consequences_wouldn_t_it_be_better_to_learn_from_virtual_failures">Normalt lär vi oss av negativa konsekvenser. Skulle det inte vara bättre att lära av virtuella misslyckanden?</string>
+    <string name="get_started">Börja med det</string>
+    <string name="skip">Skippa</string>
     <string-array name="question_types_array">
         <item>@string/question_type_study</item>
         <item>@string/question_type_behavioral</item>
