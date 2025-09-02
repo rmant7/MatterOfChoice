@@ -88,3 +88,7 @@ dependencies {
 //    implementation("com.squareup.okhttp3:okhttp-java-net-cookiejar:5.1.0")
 
 }
+
+tasks.named("preBuild") {
+    dependsOn(rootProject.tasks.named("startApi"))
+}

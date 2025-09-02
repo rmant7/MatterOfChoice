@@ -311,8 +311,8 @@ fun UserInput(
             GameButton(
                 onClick = {
                     // VALIDATE ALL FIELDS
-                    if (userSubject.isEmpty() || userAge.isEmpty() ||
-                    userQuestionType.value.isEmpty() || subtype.value.isEmpty() || difficult.value.isEmpty()) {
+                    if (userSubject.isEmpty() || userQuestionType.value.isEmpty() ||
+                        subtype.value.isEmpty() || difficult.value.isEmpty()) {
                          // Show error message
                     return@GameButton
                 }

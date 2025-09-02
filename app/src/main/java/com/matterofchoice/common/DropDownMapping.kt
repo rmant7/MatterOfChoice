@@ -25,15 +25,15 @@ object DropdownMapper {
     // Converts Subtype
     fun getSubtypeServerValue(displayText: String): String {
         return when (displayText.lowercase()) {
-            "technical skills" -> "technical skills"
-            "behavioral interview" -> "behavioral interview"
-            "situational judgement" -> "situational judgement"
-            "interpersonal skills" -> "interpersonal skills"
-            "ethical dilemmas" -> "ethical dilemmas"
-            "stress management" -> "stress management"
-            "mastery of subjects" -> "mastery of subjects"
-            "critical thinking" -> "critical thinking"
-            "practical application" -> "practical application"
+            "technical_skills" -> "technical_skills"
+            "behavioral_interview" -> "behavioral_interview"
+            "situational_judgement" -> "situational_judgement"
+            "interpersonal_skills" -> "interpersonal_skills"
+            "ethical_dilemmas" -> "ethical_dilemmas"
+            "stress_management" -> "stress_management"
+            "mastery_of_subjects" -> "mastery_of_subjects"
+            "critical_thinking" -> "critical_thinking"
+            "practical_application" -> "practical_application"
             else -> displayText.lowercase()
         }
     }
