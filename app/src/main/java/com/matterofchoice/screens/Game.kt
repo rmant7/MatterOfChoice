@@ -88,7 +88,7 @@ fun MainScreen(aiViewModel: AIViewModel = viewModel()) {
         ) {
             composable(Screens.GameScreen.screen) { Game(navController, aiViewModel) }
             composable(Screens.ResultScreen.screen) { Result() }
-            composable(Screens.AnalysisScreen.screen) { Analysis(aiViewModel) }
+            composable(Screens.AnalysisScreen.screen) { Analysis(aiViewModel,navController) }
             composable(Screens.SettingsScreen.screen) {
                 Settings(navController = navController, viewmodel = aiViewModel)
             }

@@ -34,6 +34,7 @@ import java.io.File
 import java.io.FileWriter
 import java.io.IOException
 import com.matterofchoice.common.DropdownMapper
+import com.matterofchoice.screens.PrefKeys
 
 
 class AIViewModel(application: Application) : AndroidViewModel(application) {
@@ -85,11 +86,19 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
                 val userQuestionType = sharedPreferences.getString("userQuestionType", null)
                 val difficult = sharedPreferences.getString("difficult", null)
 
+                if (userSubject == null || subtype == null || userLanguage == null || userQuestionType == null || difficult == null) {
+                    _state.value = _state.value.copy(
+                        error = "Please complete required fields",
+                        isLoading = false
+                    )
+                    return@launch
+                }
+
                 // 2. Create the JSON payload for our Flask API
                 val payload = JSONObject().apply {
                     put("language", userLanguage)
                     // Ensure age is an integer, provide a safe default if parsing fails
-                    put("age", userAge.toIntOrNull() ?: 25)
+                    put("age", userAge?.toIntOrNull())
                     put("subject", userSubject)
                     put("difficulty", DropdownMapper.getDifficultyServerValue(difficult ?: "")) // TODO This can be made dynamic later
                     put("question_type", DropdownMapper.getQuestionTypeServerValue(userQuestionType ?: "")) // This can be made dynamic later
@@ -148,14 +157,17 @@ class AIViewModel(application: Application) : AndroidViewModel(application) {
 //                    _state.value = _state.value.copy(isLoading = false, error = "Failed to obtain userId: ${e.message}")
 //                    return@launch
 //                }
+               // val sharedPreferences = context.getSharedPreferences(PrefKeys.MY_PREFS, Context.MODE_PRIVATE)
+                val userQuestionType = sharedPreferences.getString("userQuestionType", null)
+                val userLanguage = sharedPreferences.getString("userLanguage", null)
 
                 val request = AnalysisRequest(
 //                    user_id = userId,
                     cases = cases,
                     user_choices = _state.value.userChoices,
                     role = role,
-                    question_type = "behavioral",
-                    language = "English"
+                    question_type = DropdownMapper.getQuestionTypeServerValue(userQuestionType ?: "behavioral"),
+                    language = userLanguage ?: "English"
                 )
                 Log.d("AIViewModel154", "${request.cases.toString().substring(0..4)} ${request.user_choices.toString().substring(0..5) }")
 

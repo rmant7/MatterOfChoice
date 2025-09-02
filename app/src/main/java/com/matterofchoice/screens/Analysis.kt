@@ -29,10 +29,11 @@ import com.matterofchoice.common.GameButton
 import com.matterofchoice.common.GameTextField
 import com.matterofchoice.ui.theme.myFont
 import com.matterofchoice.viewmodel.AIViewModel
+import androidx.navigation.NavHostController
 
 
 @Composable
-fun Analysis(viewModel: AIViewModel) {
+fun Analysis(viewModel: AIViewModel, navController: NavHostController) {
 
 
 
@@ -100,7 +101,8 @@ fun Analysis(viewModel: AIViewModel) {
             )
         }
     } else {
-        AnalysisUI(analysisResult = state.analysisResult!!)
+        AnalysisUI(analysisResult = state.analysisResult!!,
+            navController = navController )
     }
 
 
