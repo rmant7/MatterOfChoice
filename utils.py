@@ -40,7 +40,7 @@ with open(PROMPTS_FILE, 'r', encoding='utf-8') as f:
     prompts = json.load(f)
 
 timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-logger = lambda msg: print(f"{datetime.now()} - {msg}")  # Simple logger
+utils_logger = logging.getLogger('my_app')
 
 # Directory to save generated cases and images
 output_path = BASE_DIR / 'output/game'
@@ -48,21 +48,47 @@ output_path.mkdir(parents=True, exist_ok=True)
 
 # Function to get a response from Gemini
 def get_response_gemini(prompt: str) -> str:
-    try:
-        # logger(f"Generating response for prompt: {prompt[:50]}...")
-        model = genai.GenerativeModel('gemini-2.5-flash-preview-04-17')  # Update the model name
-        response = model.generate_content(prompt)
+    model_names = [
+        'gemini-2.5-flash',
+        'gemini-2.5-flash-preview-04-17',
+        'gemini-1.5-flash',
+    ]
 
-        if response and response._result.candidates:
-            content = response._result.candidates[0].content.parts[0].text.strip()
-            # logger(f"Received response: {content[:5000]}...")
-            return content
-        else:
-            logger("Empty or invalid response from Gemini.")
-            return ""
-    except Exception as err:
-        logger(f"Error generating response: {err}")
-        return ""
+    for model_name in model_names:
+        try:
+            model = genai.GenerativeModel(model_name)
+            response = model.generate_content(prompt)
+
+            # Prefer the stable SDK accessor when available.
+            content = (getattr(response, "text", None) or "").strip()
+            if content:
+                return content
+
+            # Fallback: safely inspect candidate parts when response.text is empty.
+            candidates = getattr(response, "candidates", None) or []
+            for candidate in candidates:
+                candidate_content = getattr(candidate, "content", None)
+                parts = getattr(candidate_content, "parts", None) or []
+                for part in parts:
+                    part_text = (getattr(part, "text", None) or "").strip()
+                    if part_text:
+                        return part_text
+
+            prompt_feedback = getattr(response, "prompt_feedback", None)
+            block_reason = getattr(prompt_feedback, "block_reason", None) if prompt_feedback else None
+            finish_reasons = [str(getattr(c, "finish_reason", "unknown")) for c in candidates]
+            utils_logger.warning(
+                "Gemini returned empty content. "
+                f"model={model_name}, block_reason={block_reason}, finish_reasons={finish_reasons}, "
+                f"prompt_preview={prompt[:180]!r}"
+            )
+        except Exception as err:
+            utils_logger.exception(
+                "Error generating response from Gemini. "
+                f"model={model_name}, error={err}, prompt_preview={prompt[:180]!r}"
+            )
+
+    return ""
 
 # Function to clean the response from code block formatting
 def clean_response(response: str) -> str:
@@ -82,14 +108,14 @@ def extract_list(code: str) -> str:
                     return json.dumps(extracted_list)  # Convert to JSON
         return None
     except (SyntaxError, ValueError, TypeError) as e:
-        logger(f"Error parsing or evaluating Python code: {e}")
-        logger(f"Problematic code snippet: {code}")
+        utils_logger.error(f"Error parsing or evaluating Python code: {e}")
+        utils_logger.error(f"Problematic code snippet: {code}")
         return None
 
 
 def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subject: str, question_type: str, subtype: str, conversation_data=None, sex: str = 'unspecified'):
     logger = logging.getLogger('my_app')
-    # logger.debug(f"gen_cases function called with parameters: language={language}, age={age}, subject={subject}, difficulty={difficulty}, question_type={question_type}, subtype={subtype}, sex={sex}, conversation_data={conversation_data}")
+    logger.debug(f"gen_cases function called with parameters: language={language}, age={age}, subject={subject}, difficulty={difficulty}, question_type={question_type}, subtype={subtype}, sex={sex}, conversation_data={conversation_data}")
 
     try:
         if conversation_data is None:
@@ -99,7 +125,7 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                 prompt = f"""{prompts['study']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
             elif question_type == 'hiring':
                 prompt = f"""{prompts['hiring']} Respond in {language}. The content should be appropriate for a person aged {age} and the subject/theme used should be {subject}. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}."""
-            # logger.debug(f"Initial prompt generated: {prompt}")
+            logger.debug(f"Initial prompt generated: {prompt}")
         else:
             # conversation_data now has the structure: { "data": { "cases": [ ... ] } }
             previous_cases = conversation_data.get('data', {}).get('cases', [])
@@ -127,7 +153,7 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
             logger.debug(f"Follow-up prompt generated: {prompt}")
 
         response = get_response_gemini(prompt)
-        # logger.debug(f"Gemini response: {response[:200]}...")
+        logger.debug(f"Gemini response: {response[:200]}...")
 
         if not response:
             logger.error("Gemini API returned an empty response.")
@@ -135,7 +161,7 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
 
         cleaned_response = clean_response(response)
         list_content = extract_list(cleaned_response)
-        # logger.debug(f"Extracted list content: {list_content}")
+        logger.debug(f"Extracted list content: {list_content}")
 
         if list_content:
             try:
@@ -163,7 +189,7 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                         case_data['options'].append(option_item)
                     new_cases.append(case_data)
 
-                # print(f"new cases lenth: ", len(new_cases))
+                print(f"new cases length: {len(new_cases)}")
                 max = 3
                 attempts = 0
 
@@ -171,7 +197,7 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                     response = get_response_gemini(prompt)
                     cleaned_response = clean_response(response)
                     list_content = extract_list(cleaned_response)
-                    # logger.debug(f"Extracted list content: {list_content}")
+                    logger.debug(f"Extracted list content: {list_content}")
                     attempts += 1
                     if list_content:
                             parsed = json.loads(list_content)
@@ -206,10 +232,16 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
 
                 return new_cases, conversation_data
             except json.JSONDecodeError as e:
-                logger.error(f"Failed to parse JSON response: {e}")
+                logger.error(
+                    "Failed to parse JSON response: "
+                    f"{e}. list_content_preview={list_content[:300]!r}"
+                )
                 return None, conversation_data
         else:
-            logger.error("No valid list content found in response.")
+            logger.error(
+                "No valid list content found in response. "
+                f"cleaned_response_preview={cleaned_response[:300]!r}"
+            )
             return None, conversation_data
 
     except Exception as e:
