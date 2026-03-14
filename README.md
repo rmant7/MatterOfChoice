@@ -32,12 +32,17 @@ Install all required packages by running:
 pip install -r requirements.txt
 ```
 
-### 4. **Set Up the GOOGLE API KEY(Gemini API KEY)**  
+### 4. **Set Up API Keys**  
 - Create a `.env` file in the root of the project.  
-- Add your GOOGLE API key(Gemini API KEY) to the file as follows:  
+- Add your API keys to the file as follows:  
   ```
   GOOGLE_API_KEY=<YOUR_GOOGLE_API_KEY>
+  MISTRAL_API_KEY=<YOUR_MISTRAL_API_KEY>
+  XAI_API_KEY=<YOUR_XAI_API_KEY>
+  GROQ_API_KEY=<YOUR_GROQ_API_KEY>
   ```
+
+Use the keys based on the model/provider you select in the app (Gemini, Mistral, or Grok/xAI).
 
 > **Note:** The `.env` file is included in `.gitignore` and will not be committed to version control.
 
