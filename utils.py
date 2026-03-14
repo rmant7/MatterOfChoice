@@ -4,9 +4,12 @@ import json
 from pathlib import Path
 from datetime import datetime
 import ast
+import re
 import google.generativeai as genai  # Import Gemini module
 from dotenv import load_dotenv  # Import dotenv for loading .env file
 import os
+from openai import OpenAI
+from mistralai.client import Mistral
 
 # Load environment variables
 
@@ -27,6 +30,9 @@ GENAI_API_KEY = os.getenv('GOOGLE_API_KEY')
 if not GENAI_API_KEY:
     raise ValueError("GOOGLE_API_KEY is not set in the .env file.")
 genai.configure(api_key=GENAI_API_KEY)
+
+MISTRAL_API_KEY = os.getenv('MISTRAL_API_KEY')
+XAI_API_KEY = os.getenv('XAI_API_KEY')
 
 # Define the base directory for the Flask app
 BASE_DIR = Path(__file__).resolve().parent
@@ -57,7 +63,10 @@ def get_response_gemini(prompt: str) -> str:
     for model_name in model_names:
         try:
             model = genai.GenerativeModel(model_name)
-            response = model.generate_content(prompt)
+            response = model.generate_content(
+                prompt,
+                request_options={"timeout": 30}
+            )
 
             # Prefer the stable SDK accessor when available.
             content = (getattr(response, "text", None) or "").strip()
@@ -90,30 +99,126 @@ def get_response_gemini(prompt: str) -> str:
 
     return ""
 
+
+# Function to get a response from Mistral
+def get_response_mistral(prompt: str) -> str:
+    if not MISTRAL_API_KEY:
+        utils_logger.error("MISTRAL_API_KEY is not set.")
+        return ""
+    client = Mistral(api_key=MISTRAL_API_KEY)
+    model_names = ['mistral-small-latest', 'mistral-medium-latest', 'mistral-large-latest']
+    for model_name in model_names:
+        try:
+            response = client.chat.complete(
+                model=model_name,
+                messages=[{"role": "user", "content": prompt}],
+                timeout_ms=30000
+            )
+            content = (response.choices[0].message.content or "").strip()
+            if content:
+                return content
+            utils_logger.warning(f"Mistral returned empty content. model={model_name}")
+        except Exception as err:
+            utils_logger.exception(
+                f"Error generating response from Mistral. model={model_name}, error={err}"
+            )
+    return ""
+
+
+# Function to get a response from Grok (xAI)
+def get_response_grok(prompt: str) -> str:
+    if not XAI_API_KEY:
+        utils_logger.error("XAI_API_KEY is not set.")
+        return ""
+    client = OpenAI(
+        api_key=XAI_API_KEY,
+        base_url="https://api.x.ai/v1",
+        timeout=30
+    )
+    model_names = ['grok-3', 'grok-3-mini', 'grok-2-1212']
+    for model_name in model_names:
+        try:
+            response = client.chat.completions.create(
+                model=model_name,
+                messages=[{"role": "user", "content": prompt}]
+            )
+            content = (response.choices[0].message.content or "").strip()
+            if content:
+                return content
+            utils_logger.warning(f"Grok returned empty content. model={model_name}")
+        except Exception as err:
+            utils_logger.exception(
+                f"Error generating response from Grok. model={model_name}, error={err}"
+            )
+    return ""
+
+
+# Dispatcher: route to the correct provider based on the model parameter
+def get_response(prompt: str, model: str = 'gemini') -> str:
+    if model == 'mistral':
+        return get_response_mistral(prompt)
+    elif model == 'grok':
+        return get_response_grok(prompt)
+    return get_response_gemini(prompt)
+
+
 # Function to clean the response from code block formatting
 def clean_response(response: str) -> str:
-    if response.startswith("```python") and response.endswith("```"):
-        return response[len("```python"): -len("```")].strip()
-    return response
+    if not response:
+        return ""
+
+    # If the model wraps output in fenced code blocks, prefer the first fenced block.
+    fence_match = re.search(r"```(?:python|json)?\s*(.*?)\s*```", response, flags=re.DOTALL | re.IGNORECASE)
+    if fence_match:
+        return fence_match.group(1).strip()
+    return response.strip()
 
 # Function to extract the list from the cleaned response
 def extract_list(code: str) -> str:
-    try:
-        code = code.replace("\'", "\\'")  # Replacing every \' with \\'
-        tree = ast.parse(code)
-        for node in ast.walk(tree):
-            if isinstance(node, (ast.Assign, ast.Expr)):  # Handle both named and unnamed lists
-                if isinstance(node.value, ast.List):
-                    extracted_list = ast.literal_eval(node.value)  # safely convert the list
-                    return json.dumps(extracted_list)  # Convert to JSON
-        return None
-    except (SyntaxError, ValueError, TypeError) as e:
-        utils_logger.error(f"Error parsing or evaluating Python code: {e}")
-        utils_logger.error(f"Problematic code snippet: {code}")
+    if not code:
         return None
 
+    candidates = []
+    raw = code.strip()
+    candidates.append(raw)
 
-def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subject: str, question_type: str, subtype: str, conversation_data=None, sex: str = 'unspecified'):
+    # Try parsing the fenced code body if present.
+    fence_match = re.search(r"```(?:python|json)?\s*(.*?)\s*```", raw, flags=re.DOTALL | re.IGNORECASE)
+    if fence_match:
+        candidates.append(fence_match.group(1).strip())
+
+    # Try parsing the first bracketed list section when prose surrounds it.
+    first_bracket = raw.find("[")
+    last_bracket = raw.rfind("]")
+    if first_bracket != -1 and last_bracket != -1 and last_bracket > first_bracket:
+        candidates.append(raw[first_bracket:last_bracket + 1].strip())
+
+    for candidate in candidates:
+        if not candidate:
+            continue
+
+        # First try strict JSON.
+        try:
+            parsed = json.loads(candidate)
+            if isinstance(parsed, list):
+                return json.dumps(parsed)
+        except (json.JSONDecodeError, TypeError):
+            pass
+
+        # Then try Python literal list syntax.
+        try:
+            parsed = ast.literal_eval(candidate)
+            if isinstance(parsed, list):
+                return json.dumps(parsed)
+        except (SyntaxError, ValueError, TypeError):
+            pass
+
+    utils_logger.error("Could not parse list from model response.")
+    utils_logger.error(f"Problematic code snippet: {raw[:1200]}")
+    return None
+
+
+def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subject: str, question_type: str, subtype: str, conversation_data=None, sex: str = 'unspecified', model: str = 'gemini'):
     logger = logging.getLogger('my_app')
     logger.debug(f"gen_cases function called with parameters: language={language}, age={age}, subject={subject}, difficulty={difficulty}, question_type={question_type}, subtype={subtype}, sex={sex}, conversation_data={conversation_data}")
 
@@ -152,11 +257,11 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                 prompt = f"""{prompts['hiring']} The person's previous responses were as follows:\n{previous_turn_summary}For the case, ask another question with the SAME STRUCTURE based on their previous responses in {language} appropriate for the age {age} with the theme '{subject}'. Set the difficulty of the content to {difficulty}. The person is {sex}. The subtype is {subtype}.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. PLACE THE OPTIMAL OPTION AT ANY RANDOM POINT BETWEEN OPTTIONS 1 TO 8 MAKE SURE TO RANDOMIZE"""
             logger.debug(f"Follow-up prompt generated: {prompt}")
 
-        response = get_response_gemini(prompt)
-        logger.debug(f"Gemini response: {response[:200]}...")
+        response = get_response(prompt, model)
+        logger.debug(f"Model response: {response[:200]}...")
 
         if not response:
-            logger.error("Gemini API returned an empty response.")
+            logger.error(f"{model} API returned an empty response.")
             return None, conversation_data
 
         cleaned_response = clean_response(response)
@@ -194,7 +299,7 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                 attempts = 0
 
                 while attempts < 1 and len(new_cases) < max:
-                    response = get_response_gemini(prompt)
+                    response = get_response(prompt, model)
                     cleaned_response = clean_response(response)
                     list_content = extract_list(cleaned_response)
                     logger.debug(f"Extracted list content: {list_content}")

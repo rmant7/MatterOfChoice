@@ -245,6 +245,7 @@ async function sendAnswersToBackend(userAnswers) { // Changed parameter name
   const sexEl = document.getElementById('sex') || { value: localStorage.getItem('sex') || "" };
   const imageEl = document.getElementById('allow_image'); // Always retrieve directly from the DOM
   const allowImageValue = imageEl && imageEl.checked ? 'on' : ''; // Use the checkbox's checked state
+  const modelEl = document.getElementById('model') || { value: localStorage.getItem('model') || 'gemini' };
 
   if (!subTypeEl) {
     displayError({ error: window.i18n.getTranslation("error") });
@@ -262,7 +263,8 @@ async function sendAnswersToBackend(userAnswers) { // Changed parameter name
     role: 'default_role',
     sex: sexEl.value,
     answers: userAnswers, // Send userAnswers object
-    allow_image: allowImageValue // Use the updated value
+    allow_image: allowImageValue, // Use the updated value
+    model: modelEl.value
   };
 
   try {
@@ -388,12 +390,13 @@ async function analyzeResults() {
   const language = document.getElementById('language').value;
   const role = document.getElementById('role').value;
   const question_type = document.getElementById('question_type').value;
+  const model = (document.getElementById('model') || { value: 'gemini' }).value;
 
   console.log("analyzeResults: Sending request with", { role, question_type, language });
   try {
     const response = await fetch('/analysis', {
       method: 'POST',
-      body: JSON.stringify({ role: role, question_type: question_type, language: language }),
+      body: JSON.stringify({ role: role, question_type: question_type, language: language, model: model }),
       headers: { 'Content-Type': 'application/json' }
     });
     console.log("analyzeResults: Response status", response.status);
@@ -565,6 +568,7 @@ async function submitResponses(userAnswers) {
   const sexEl = document.getElementById('sex') || { value: localStorage.getItem('sex') || "" };
   const imageEl = document.getElementById('allow_image'); // Always retrieve directly from the DOM
   const allowImageValue = imageEl && imageEl.checked ? 'on' : ''; // Use the checkbox's checked state
+  const modelEl = document.getElementById('model') || { value: localStorage.getItem('model') || 'gemini' };
 
   if (!subTypeEl) {
     displayError({ error: window.i18n.getTranslation('error') });
@@ -582,7 +586,8 @@ async function submitResponses(userAnswers) {
     role: 'default_role',
     sex: sexEl.value,
     answers: userAnswers,
-    allow_image: allowImageValue // Use the updated value
+    allow_image: allowImageValue, // Use the updated value
+    model: modelEl.value
   };
 
   try {
@@ -666,7 +671,8 @@ async function fetchCasesInBackground(userAnswers = null) {
       sub_type: document.getElementById('sub_type')?.value || "",
       role: 'default_role',
       sex: document.getElementById('sex')?.value || localStorage.getItem('sex') || "",
-      allow_image: document.getElementById('allow_image')?.checked ? 'on' : '' // Always retrieve directly from the DOM
+      allow_image: document.getElementById('allow_image')?.checked ? 'on' : '', // Always retrieve directly from the DOM
+      model: document.getElementById('model')?.value || localStorage.getItem('model') || 'gemini'
   };
 
   // Include answersArr in the payload if provided

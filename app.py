@@ -9,7 +9,7 @@ from pathlib import Path
 from io import BytesIO
 import base64
 from PIL import Image
-from utils import gen_cases, get_response_gemini  # keep these for other endpoints
+from utils import gen_cases, get_response_gemini, get_response  # keep these for other endpoints
 from image import get_info_from_image  # for image analysis
 import time
 from dotenv import load_dotenv
@@ -178,6 +178,7 @@ def generate_cases():
     allow_image = data.get('allow_image', False)
     print(f"allow_image: {allow_image}")    
     user_answers = data.get('answers', {})  # Changed to expect a dictionary
+    model = data.get('model', 'gemini')
 
     if not all([language, subject, difficulty, question_type, sub_type]):
         return jsonify({"error": "language, subject, difficulty, question_type, and sub_type are required."}), 400
@@ -213,7 +214,7 @@ def generate_cases():
             case_data = None
             while attempts < max and case_data is None:
                 attempts += 1
-                case_data, _ = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex)
+                case_data, _ = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex, model=model)
             if case_data is None:
                 return jsonify({"error": "Failed to generate initial case."}), 500
 
@@ -252,7 +253,7 @@ def generate_cases():
             case_data = None
             while attempts < max and case_data is None:
                 attempts += 1
-                case_data, _ = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex)
+                case_data, _ = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex, model=model)
             if case_data is None:
                 return jsonify({"error": "Failed to generate new cases."}), 500
 
@@ -310,8 +311,9 @@ def converse():
     data = request.get_json()
     try:
         input_text = data.get('text')
+        model = data.get('model', 'gemini')
         # print(f"Input text: {input_text}")
-        response = get_response_gemini(input_text)
+        response = get_response(input_text, model)
         return jsonify({'response': response}), 200
     except Exception as e:
         logger.exception(f"An error occurred while conversing with Gemini: {e}")
@@ -357,6 +359,7 @@ def analysis():
     role = data.get('role', None)
     question_type = data.get('question_type')
     language = data.get('language')
+    model = data.get('model', 'gemini')
     if question_type is None:
         return jsonify({"error": "Question type data is missing in the request."}), 400
 
@@ -403,7 +406,7 @@ Data: {analysis_data_str}"""
     attempt = 0
     while attempt < max_attempts:
         try:
-            response_analysis = get_response_gemini(prompt)
+            response_analysis = get_response(prompt, model)
             parsed_analysis = parse_json_response(response_analysis)
 
             if not isinstance(parsed_analysis, dict):
@@ -442,6 +445,7 @@ def submit_responses():
     question_type = data.get('question_type')
     sub_type = data.get('sub_type')
     language = data.get('language')
+    model = data.get('model', 'gemini')
 
     if not role or not question_type or not sub_type:
         return jsonify({"error": "role, question_type, and sub_type are required."}), 400
@@ -501,7 +505,7 @@ Data: {analysis_data_str}"""
         attempt = 0
         while attempt < max_attempts:
             try:
-                response_analysis = get_response_gemini(prompt)
+                response_analysis = get_response(prompt, model)
                 parsed_analysis = parse_json_response(response_analysis)
 
                 if not isinstance(parsed_analysis, dict):
