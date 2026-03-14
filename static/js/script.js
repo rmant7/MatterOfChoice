@@ -5,6 +5,7 @@ const caseForm = document.getElementById('caseForm');
 const resetButton = document.getElementById('resetButton');
 let bufferedCases = null;
 let isBackgroundFetching = false;
+let backgroundFetchSeq = 0;
 
 // Define subtypes for each question type
 const subtypes = {
@@ -161,6 +162,10 @@ async function handleGenerateCasesResponse(response) {
   }
 
   batchCounter++;
+  // New foreground batch invalidates any older prefetched state.
+  backgroundFetchSeq++;
+  bufferedCases = null;
+  isBackgroundFetching = false;
   casesBatch = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data];
 
   try {
@@ -210,6 +215,8 @@ function submitCurrentAnswer() {
           console.log("Using buffered cases instead of calling backend");
           casesBatch = bufferedCases;
           bufferedCases = null;
+          // Prefetch requests already carry prior answers; clear stale IDs before next batch.
+          userAnswers = {};
           currentCaseIndex = 0;
           displayCurrentCase();
       } else {
@@ -380,6 +387,10 @@ function attachAnalyzeButtonListener() {
 
 async function analyzeResults() {
   console.log("analyzeResults: Function started.");
+  // Stop using any stale prefetched state when moving to analysis.
+  backgroundFetchSeq++;
+  bufferedCases = null;
+  isBackgroundFetching = false;
   loadingSpinner.classList.remove('hidden');
   loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
@@ -660,6 +671,7 @@ async function fetchCasesInBackground(userAnswers = null) {
   }
 
   isBackgroundFetching = true;
+  const seq = ++backgroundFetchSeq;
   console.log("Starting background case fetch");
 
   const payload = {
@@ -675,8 +687,8 @@ async function fetchCasesInBackground(userAnswers = null) {
       model: document.getElementById('model')?.value || localStorage.getItem('model') || 'gemini'
   };
 
-  // Include answersArr in the payload if provided
-  if (userAnswers) {
+  // Include answers only when non-empty.
+  if (userAnswers && Object.keys(userAnswers).length > 0) {
       payload.answers = userAnswers;
   }
 
@@ -693,6 +705,10 @@ async function fetchCasesInBackground(userAnswers = null) {
       }
 
       const jsonData = await response.json();
+        if (seq !== backgroundFetchSeq) {
+          console.log('Ignoring stale background fetch response');
+          return;
+        }
       if (jsonData.data) {
           bufferedCases = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data];
           console.log('Successfully buffered new cases:', bufferedCases.length);

@@ -56,7 +56,6 @@ output_path.mkdir(parents=True, exist_ok=True)
 def get_response_gemini(prompt: str) -> str:
     model_names = [
         'gemini-2.5-flash',
-        'gemini-2.5-flash-preview-04-17',
         'gemini-1.5-flash',
     ]
 
@@ -65,7 +64,7 @@ def get_response_gemini(prompt: str) -> str:
             model = genai.GenerativeModel(model_name)
             response = model.generate_content(
                 prompt,
-                request_options={"timeout": 30}
+                request_options={"timeout": 15}
             )
 
             # Prefer the stable SDK accessor when available.
@@ -106,13 +105,13 @@ def get_response_mistral(prompt: str) -> str:
         utils_logger.error("MISTRAL_API_KEY is not set.")
         return ""
     client = Mistral(api_key=MISTRAL_API_KEY)
-    model_names = ['mistral-small-latest', 'mistral-medium-latest', 'mistral-large-latest']
+    model_names = ['mistral-small-latest', 'mistral-medium-latest']
     for model_name in model_names:
         try:
             response = client.chat.complete(
                 model=model_name,
                 messages=[{"role": "user", "content": prompt}],
-                timeout_ms=30000
+                timeout_ms=15000
             )
             content = (response.choices[0].message.content or "").strip()
             if content:
@@ -133,7 +132,7 @@ def get_response_grok(prompt: str) -> str:
     client = OpenAI(
         api_key=XAI_API_KEY,
         base_url="https://api.x.ai/v1",
-        timeout=30
+        timeout=15
     )
     model_names = ['grok-3', 'grok-3-mini', 'grok-2-1212']
     for model_name in model_names:

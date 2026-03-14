@@ -209,10 +209,10 @@ def generate_cases():
 
     try:
         if turn == 1:
-            max = 5
-            attempts = 1
+            max_attempts = 2
+            attempts = 0
             case_data = None
-            while attempts < max and case_data is None:
+            while attempts < max_attempts and case_data is None:
                 attempts += 1
                 case_data, _ = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex, model=model)
             if case_data is None:
@@ -248,10 +248,10 @@ def generate_cases():
                 with open(analysis_filepath, 'w') as f:
                     json.dump(analysis_data, f, indent=4)
 
-            max = 5
-            attempts = 1
+            max_attempts = 2
+            attempts = 0
             case_data = None
-            while attempts < max and case_data is None:
+            while attempts < max_attempts and case_data is None:
                 attempts += 1
                 case_data, _ = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex, model=model)
             if case_data is None:
