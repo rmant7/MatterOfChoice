@@ -56,7 +56,7 @@ output_path.mkdir(parents=True, exist_ok=True)
 def get_response_gemini(prompt: str) -> str:
     model_names = [
         'gemini-2.5-flash',
-        'gemini-1.5-flash',
+        'gemini-flash-latest',
     ]
 
     for model_name in model_names:
@@ -64,7 +64,7 @@ def get_response_gemini(prompt: str) -> str:
             model = genai.GenerativeModel(model_name)
             response = model.generate_content(
                 prompt,
-                request_options={"timeout": 15}
+                request_options={"timeout": 12}
             )
 
             # Prefer the stable SDK accessor when available.
@@ -93,7 +93,7 @@ def get_response_gemini(prompt: str) -> str:
         except Exception as err:
             utils_logger.exception(
                 "Error generating response from Gemini. "
-                f"model={model_name}, error={err}, prompt_preview={prompt[:180]!r}"
+                f"model={model_name}, error={err}, timeout=12s, prompt_preview={prompt[:180]!r}"
             )
 
     return ""
@@ -157,8 +157,19 @@ def get_response(prompt: str, model: str = 'gemini') -> str:
     if model == 'mistral':
         return get_response_mistral(prompt)
     elif model == 'grok':
-        return get_response_grok(prompt)
-    return get_response_gemini(prompt)
+        response = get_response_grok(prompt)
+        if response:
+            return response
+        # If Grok fails (e.g., no credits/quota), gracefully fail over to Mistral.
+        utils_logger.warning("Grok failed or returned empty response. Falling back to Mistral.")
+        return get_response_mistral(prompt)
+
+    # Default Gemini path with automatic provider fallback for quota/timeouts.
+    response = get_response_gemini(prompt)
+    if response:
+        return response
+    utils_logger.warning("Gemini failed or returned empty response. Falling back to Mistral.")
+    return get_response_mistral(prompt)
 
 
 # Function to clean the response from code block formatting

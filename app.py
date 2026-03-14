@@ -216,7 +216,7 @@ def generate_cases():
                 attempts += 1
                 case_data, _ = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex, model=model)
             if case_data is None:
-                return jsonify({"error": "Failed to generate initial case."}), 500
+                return jsonify({"error": f"Failed to generate initial case using {model}."}), 500
 
             for case in case_data:
                 case['case_id'] = str(uuid.uuid4())
@@ -255,7 +255,7 @@ def generate_cases():
                 attempts += 1
                 case_data, _ = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex, model=model)
             if case_data is None:
-                return jsonify({"error": "Failed to generate new cases."}), 500
+                return jsonify({"error": f"Failed to generate new cases using {model}."}), 500
 
             for case in case_data:
                 case['case_id'] = str(uuid.uuid4())

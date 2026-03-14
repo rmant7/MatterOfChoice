@@ -20866,3 +20866,864 @@ This list includes 6 questions about dogs, each with 8 answer options. The optim
 2026-03-15 03:17:59,700 - my_app - DEBUG - Model response: Here’s a Python list of dictionaries with 6 study-based questions about cats, each with 8 answer options. The optimal option is randomized for each case, and all content is appropriate for a 12-year-o...
 2026-03-15 03:17:59,705 - my_app - DEBUG - Extracted list content: [{"case": "What is the scientific name for domestic cats?", "options": [{"number": 1, "option": "Canis lupus", "knowledge": -5, "time_management": -1, "personal_growth": 1}, {"number": 2, "option": "Felis catus", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 3, "option": "Panthera leo", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 4, "option": "Lynx lynx", "knowledge": -3, "time_management": -2, "personal_growth": 2}, {"number": 5, "option": "Felis silvestris", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 6, "option": "Ailurus fulgens", "knowledge": -2, "time_management": -1, "personal_growth": 1}, {"number": 7, "option": "Puma concolor", "knowledge": -1, "time_management": -1, "personal_growth": 1}, {"number": 8, "option": "Felis margarita", "knowledge": 1, "time_management": 1, "personal_growth": 1}], "optimal": "2"}, {"case": "How many toes do most domestic cats have on their front paws?", "options": [{"number": 1, "option": "3", "knowledge": -5, "time_management": -1, "personal_growth": 1}, {"number": 2, "option": "4", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 3, "option": "5", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 4, "option": "6", "knowledge": -3, "time_management": -2, "personal_growth": 2}, {"number": 5, "option": "7", "knowledge": -1, "time_management": -1, "personal_growth": 1}, {"number": 6, "option": "8", "knowledge": -2, "time_management": -1, "personal_growth": 1}, {"number": 7, "option": "9", "knowledge": -4, "time_management": -3, "personal_growth": 1}, {"number": 8, "option": "10", "knowledge": -2, "time_management": -1, "personal_growth": 1}], "optimal": "3"}, {"case": "Which of these is NOT a common cat breed?", "options": [{"number": 1, "option": "Siamese", "knowledge": -5, "time_management": -1, "personal_growth": 1}, {"number": 2, "option": "Maine Coon", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 3, "option": "Persian", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 4, "option": "Bengal", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 5, "option": "Sphynx", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 6, "option": "Labrador", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 7, "option": "Scottish Fold", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 8, "option": "Ragdoll", "knowledge": 1, "time_management": 1, "personal_growth": 1}], "optimal": "6"}, {"case": "What sound do cats typically make when they are happy?", "options": [{"number": 1, "option": "Hiss", "knowledge": -5, "time_management": -1, "personal_growth": 1}, {"number": 2, "option": "Growl", "knowledge": -3, "time_management": -2, "personal_growth": 2}, {"number": 3, "option": "Purr", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 4, "option": "Meow", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 5, "option": "Chirp", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 6, "option": "Scream", "knowledge": -4, "time_management": -3, "personal_growth": 1}, {"number": 7, "option": "Whine", "knowledge": -2, "time_management": -1, "personal_growth": 1}, {"number": 8, "option": "Bark", "knowledge": -1, "time_management": -1, "personal_growth": 1}], "optimal": "3"}, {"case": "What is the average lifespan of an indoor cat?", "options": [{"number": 1, "option": "5 years", "knowledge": -5, "time_management": -1, "personal_growth": 1}, {"number": 2, "option": "10 years", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 3, "option": "15 years", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 4, "option": "20 years", "knowledge": -3, "time_management": -2, "personal_growth": 2}, {"number": 5, "option": "25 years", "knowledge": -1, "time_management": -1, "personal_growth": 1}, {"number": 6, "option": "30 years", "knowledge": -2, "time_management": -1, "personal_growth": 1}, {"number": 7, "option": "35 years", "knowledge": -4, "time_management": -3, "personal_growth": 1}, {"number": 8, "option": "40 years", "knowledge": -2, "time_management": -1, "personal_growth": 1}], "optimal": "3"}, {"case": "Which of these is a common cat behavior when they are playful?", "options": [{"number": 1, "option": "Hiding", "knowledge": -5, "time_management": -1, "personal_growth": 1}, {"number": 2, "option": "Sleeping", "knowledge": -3, "time_management": -2, "personal_growth": 2}, {"number": 3, "option": "Chasing toys", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 4, "option": "Grooming", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 5, "option": "Scratching furniture", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 6, "option": "Ignoring humans", "knowledge": -4, "time_management": -3, "personal_growth": 1}, {"number": 7, "option": "Eating", "knowledge": -2, "time_management": -1, "personal_growth": 1}, {"number": 8, "option": "Staring at walls", "knowledge": -1, "time_management": -1, "personal_growth": 1}], "optimal": "3"}]
 2026-03-15 03:17:59,714 - my_app - DEBUG - Conversation data saved to /home/ilyan/Documents/internship/task_1/MatterOfChoice/output/345fe059-57e0-4144-bff5-23de36052ce1/game/conversation.json
+2026-03-15 03:49:33,386 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-15 03:49:37,745 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-15 03:49:53,775 - my_app - DEBUG - generate_cases route entered
+2026-03-15 03:49:53,776 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=13, subject=cats, difficulty=normal, question_type=study, subtype=subject_mastery, sex=male, conversation_data=None
+2026-03-15 03:49:53,776 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 13 and the subject/theme used should be cats. Set the difficulty of the content to normal. The person is male. The subtype is subject_mastery.
+2026-03-15 03:50:08,314 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.5-flash, error=504 The request timed out. Please try again., prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 15}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 The request timed out. Please try again.
+2026-03-15 03:50:08,618 - my_app - ERROR - Error generating response from Gemini. model=gemini-1.5-flash, error=404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods., prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 15}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-15 03:50:08,623 - my_app - DEBUG - Model response: ...
+2026-03-15 03:50:08,624 - my_app - ERROR - gemini API returned an empty response.
+2026-03-15 03:50:08,624 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=13, subject=cats, difficulty=normal, question_type=study, subtype=subject_mastery, sex=male, conversation_data=None
+2026-03-15 03:50:08,624 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 13 and the subject/theme used should be cats. Set the difficulty of the content to normal. The person is male. The subtype is subject_mastery.
+2026-03-15 03:50:23,114 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.5-flash, error=504 The request timed out. Please try again., prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 15}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 The request timed out. Please try again.
+2026-03-15 03:50:23,307 - my_app - ERROR - Error generating response from Gemini. model=gemini-1.5-flash, error=404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods., prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 15}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-15 03:50:23,330 - my_app - DEBUG - Model response: ...
+2026-03-15 03:50:23,333 - my_app - ERROR - gemini API returned an empty response.
+2026-03-15 03:53:19,261 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-15 03:53:20,969 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-15 03:53:36,568 - my_app - DEBUG - generate_cases route entered
+2026-03-15 03:53:36,569 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=17, subject=cats, difficulty=normal, question_type=study, subtype=subject_mastery, sex=male, conversation_data=None
+2026-03-15 03:53:36,569 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 17 and the subject/theme used should be cats. Set the difficulty of the content to normal. The person is male. The subtype is subject_mastery.
+2026-03-15 03:53:51,041 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.5-flash, error=504 The request timed out. Please try again., prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 15}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 The request timed out. Please try again.
+2026-03-15 03:53:51,350 - my_app - ERROR - Error generating response from Gemini. model=gemini-1.5-flash, error=404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods., prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 15}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-15 03:53:51,357 - my_app - DEBUG - Model response: ...
+2026-03-15 03:53:51,358 - my_app - ERROR - gemini API returned an empty response.
+2026-03-15 03:53:51,358 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=17, subject=cats, difficulty=normal, question_type=study, subtype=subject_mastery, sex=male, conversation_data=None
+2026-03-15 03:53:51,359 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 17 and the subject/theme used should be cats. Set the difficulty of the content to normal. The person is male. The subtype is subject_mastery.
+2026-03-15 03:54:05,322 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.5-flash, error=504 The request timed out. Please try again., prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 15}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 The request timed out. Please try again.
+2026-03-15 03:54:05,532 - my_app - ERROR - Error generating response from Gemini. model=gemini-1.5-flash, error=404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods., prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 15}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-15 03:54:05,555 - my_app - DEBUG - Model response: ...
+2026-03-15 03:54:05,560 - my_app - ERROR - gemini API returned an empty response.
+2026-03-15 03:54:53,007 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-15 03:54:54,562 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-15 03:55:22,935 - my_app - DEBUG - generate_cases route entered
+2026-03-15 03:55:22,936 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=16, subject=cats, difficulty=normal, question_type=study, subtype=subject_mastery, sex=male, conversation_data=None
+2026-03-15 03:55:22,937 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 16 and the subject/theme used should be cats. Set the difficulty of the content to normal. The person is male. The subtype is subject_mastery.
+2026-03-15 03:55:32,825 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.5-flash, error=504 The request timed out. Please try again., timeout=10s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 66, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 10}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 The request timed out. Please try again.
+2026-03-15 03:55:33,132 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.0-flash-lite, error=429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite
+Please retry in 27.038536876s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 27
+}
+], timeout=10s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 66, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 10}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite
+Please retry in 27.038536876s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 27
+}
+]
+2026-03-15 03:55:42,673 - my_app - ERROR - Error generating response from Gemini. model=gemini-flash-latest, error=504 Deadline expired before operation could complete., timeout=10s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 66, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 10}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 Deadline expired before operation could complete.
+2026-03-15 03:55:42,690 - my_app - DEBUG - Model response: ...
+2026-03-15 03:55:42,690 - my_app - ERROR - gemini API returned an empty response.
+2026-03-15 03:55:42,691 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=16, subject=cats, difficulty=normal, question_type=study, subtype=subject_mastery, sex=male, conversation_data=None
+2026-03-15 03:55:42,691 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 16 and the subject/theme used should be cats. Set the difficulty of the content to normal. The person is male. The subtype is subject_mastery.
+2026-03-15 03:55:52,182 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.5-flash, error=504 The request timed out. Please try again., timeout=10s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 66, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 10}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 The request timed out. Please try again.
+2026-03-15 03:55:52,489 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.0-flash-lite, error=429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite
+Please retry in 7.715261174s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 7
+}
+], timeout=10s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 66, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 10}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite
+Please retry in 7.715261174s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 7
+}
+]
+2026-03-15 03:56:01,938 - my_app - ERROR - Error generating response from Gemini. model=gemini-flash-latest, error=504 Deadline expired before operation could complete., timeout=10s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 66, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 10}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 Deadline expired before operation could complete.
+2026-03-15 03:56:01,958 - my_app - DEBUG - Model response: ...
+2026-03-15 03:56:01,967 - my_app - ERROR - gemini API returned an empty response.
+2026-03-15 03:57:24,066 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-15 03:57:37,934 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-15 03:57:49,857 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-15 03:58:29,732 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-15 03:58:31,290 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-15 03:58:56,013 - my_app - DEBUG - generate_cases route entered
+2026-03-15 03:58:56,015 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=16, subject=dogs, difficulty=normal, question_type=study, subtype=subject_mastery, sex=male, conversation_data=None
+2026-03-15 03:58:56,015 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 16 and the subject/theme used should be dogs. Set the difficulty of the content to normal. The person is male. The subtype is subject_mastery.
+2026-03-15 03:58:57,220 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.5-flash, error=429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 3.272062165s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+, retry_delay {
+  seconds: 3
+}
+], timeout=12s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 12}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 3.272062165s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2026-03-15 03:59:08,376 - my_app - ERROR - Error generating response from Gemini. model=gemini-flash-latest, error=504 Deadline expired before operation could complete., timeout=12s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your tas'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 12}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 Deadline expired before operation could complete.
+2026-03-15 03:59:08,379 - my_app - WARNING - Gemini failed or returned empty response. Falling back to Mistral.
+2026-03-15 03:59:17,619 - my_app - DEBUG - Model response: Here’s a Python list of dictionaries with 6 study-based questions about dogs, each with 8 answer options. The optimal option is randomized for each case, and all options are evaluated based on Knowled...
+2026-03-15 03:59:17,621 - my_app - DEBUG - Extracted list content: [{"case": "Which breed of dog is known for its loyalty and is often called the 'Hokkaido Dog'?", "options": [{"number": 1, "option": "Shiba Inu", "knowledge": 5, "time_management": 3, "personal_growth": 4}, {"number": 2, "option": "Akita", "knowledge": 5, "time_management": 4, "personal_growth": 5}, {"number": 3, "option": "Chihuahua", "knowledge": -2, "time_management": 1, "personal_growth": 1}, {"number": 4, "option": "Dachshund", "knowledge": 1, "time_management": 2, "personal_growth": 2}, {"number": 5, "option": "Poodle", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 6, "option": "Beagle", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 7, "option": "Labrador Retriever", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 8, "option": "German Shepherd", "knowledge": 4, "time_management": 4, "personal_growth": 4}], "optimal": "2"}, {"case": "What is the primary purpose of a Border Collie?", "options": [{"number": 1, "option": "Hunting", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 2, "option": "Herding sheep", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 3, "option": "Guard duty", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 4, "option": "Racing", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 5, "option": "Companionship", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 6, "option": "Search and rescue", "knowledge": 4, "time_management": 4, "personal_growth": 4}, {"number": 7, "option": "Therapy work", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 8, "option": "Pulling sleds", "knowledge": 1, "time_management": 1, "personal_growth": 1}], "optimal": "2"}, {"case": "Which of these is a common health issue in Bulldogs?", "options": [{"number": 1, "option": "Hip dysplasia", "knowledge": 4, "time_management": 4, "personal_growth": 4}, {"number": 2, "option": "Breathing problems", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 3, "option": "Deafness", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 4, "option": "Obesity", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 5, "option": "Heart disease", "knowledge": 4, "time_management": 4, "personal_growth": 4}, {"number": 6, "option": "Skin allergies", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 7, "option": "Dental issues", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 8, "option": "Epilepsy", "knowledge": 1, "time_management": 1, "personal_growth": 1}], "optimal": "2"}, {"case": "What is the average lifespan of a Golden Retriever?", "options": [{"number": 1, "option": "5-7 years", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 2, "option": "8-10 years", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 3, "option": "10-12 years", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 4, "option": "12-14 years", "knowledge": 4, "time_management": 4, "personal_growth": 4}, {"number": 5, "option": "15-17 years", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 6, "option": "18-20 years", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "20+ years", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 8, "option": "Unknown", "knowledge": -1, "time_management": -1, "personal_growth": -1}], "optimal": "3"}, {"case": "Which dog breed is known for its ability to track scents over long distances?", "options": [{"number": 1, "option": "Beagle", "knowledge": 4, "time_management": 4, "personal_growth": 4}, {"number": 2, "option": "Bloodhound", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 3, "option": "Doberman Pinscher", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 4, "option": "Rottweiler", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 5, "option": "Siberian Husky", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 6, "option": "Great Dane", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "Pug", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 8, "option": "Shih Tzu", "knowledge": 1, "time_management": 1, "personal_growth": 1}], "optimal": "2"}, {"case": "What is the best way to train a puppy to stop biting?", "options": [{"number": 1, "option": "Yell at them", "knowledge": -2, "time_management": -1, "personal_growth": -1}, {"number": 2, "option": "Ignore the behavior", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 3, "option": "Use a chew toy", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 4, "option": "Hit them", "knowledge": -3, "time_management": -2, "personal_growth": -2}, {"number": 5, "option": "Give them treats", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 6, "option": "Lock them in a crate", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "Let them chew on your hand", "knowledge": -1, "time_management": -1, "personal_growth": -1}, {"number": 8, "option": "Use a spray bottle", "knowledge": 2, "time_management": 2, "personal_growth": 2}], "optimal": "3"}]
+2026-03-15 03:59:17,623 - my_app - DEBUG - Conversation data saved to /home/ilyan/Documents/internship/task_1/MatterOfChoice/output/4aa85253-21bc-49c7-a9eb-6242d99c8615/game/conversation.json
+2026-03-15 03:59:29,117 - my_app - DEBUG - generate_cases route entered
+2026-03-15 03:59:29,119 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=16, subject=dogs, difficulty=normal, question_type=study, subtype=subject_mastery, sex=male, conversation_data=None
+2026-03-15 03:59:29,121 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational game for people. This game teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 16 and the subject/theme used should be dogs. Set the difficulty of the content to normal. The person is male. The subtype is subject_mastery.
+2026-03-15 03:59:38,096 - my_app - DEBUG - Model response: Here’s a Python list of dictionaries with 6 study-based questions about dogs, each with 8 answer options, randomized optimal positions, and evaluations for Knowledge, Time Management, and Personal Gro...
+2026-03-15 03:59:38,101 - my_app - DEBUG - Extracted list content: [{"case": "Which breed is known for its loyalty and is often called the 'gentle giant'?", "options": [{"number": 1, "option": "Chihuahua", "knowledge": -3, "time_management": -1, "personal_growth": 0}, {"number": 2, "option": "Great Dane", "knowledge": 5, "time_management": 3, "personal_growth": 4}, {"number": 3, "option": "Poodle", "knowledge": 1, "time_management": 1, "personal_growth": 2}, {"number": 4, "option": "Beagle", "knowledge": 2, "time_management": 2, "personal_growth": 1}, {"number": 5, "option": "Bulldog", "knowledge": 3, "time_management": 2, "personal_growth": 3}, {"number": 6, "option": "Labrador Retriever", "knowledge": 4, "time_management": 4, "personal_growth": 4}, {"number": 7, "option": "Shiba Inu", "knowledge": 2, "time_management": 1, "personal_growth": 2}, {"number": 8, "option": "Dachshund", "knowledge": 1, "time_management": 0, "personal_growth": 1}], "optimal": "2"}, {"case": "What is the primary purpose of a dog's whiskers?", "options": [{"number": 1, "option": "To make them look cute", "knowledge": -2, "time_management": -1, "personal_growth": 0}, {"number": 2, "option": "To help them see better", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 3, "option": "To sense vibrations and navigate", "knowledge": 5, "time_management": 4, "personal_growth": 5}, {"number": 4, "option": "To attract mates", "knowledge": 0, "time_management": 0, "personal_growth": 0}, {"number": 5, "option": "To protect their eyes", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 6, "option": "To help them hear better", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "To regulate body temperature", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 8, "option": "To taste food", "knowledge": -1, "time_management": -1, "personal_growth": 0}], "optimal": "3"}, {"case": "Which of these is NOT a common training command for dogs?", "options": [{"number": 1, "option": "Sit", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 2, "option": "Stay", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 3, "option": "Bark", "knowledge": 5, "time_management": 3, "personal_growth": 4}, {"number": 4, "option": "Come", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 5, "option": "Down", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 6, "option": "Fetch", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "Roll over", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 8, "option": "Jump", "knowledge": 2, "time_management": 2, "personal_growth": 2}], "optimal": "3"}, {"case": "What is the average lifespan of a medium-sized dog?", "options": [{"number": 1, "option": "5-7 years", "knowledge": 0, "time_management": 0, "personal_growth": 0}, {"number": 2, "option": "10-13 years", "knowledge": 5, "time_management": 4, "personal_growth": 5}, {"number": 3, "option": "15-20 years", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 4, "option": "20-25 years", "knowledge": 0, "time_management": 0, "personal_growth": 0}, {"number": 5, "option": "7-10 years", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 6, "option": "13-15 years", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 7, "option": "3-5 years", "knowledge": -1, "time_management": -1, "personal_growth": -1}, {"number": 8, "option": "17-19 years", "knowledge": 1, "time_management": 1, "personal_growth": 1}], "optimal": "2"}, {"case": "Which of these is a sign that a dog is stressed?", "options": [{"number": 1, "option": "Wagging tail", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 2, "option": "Yawning excessively", "knowledge": 5, "time_management": 4, "personal_growth": 5}, {"number": 3, "option": "Panting", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 4, "option": "Playing fetch", "knowledge": 0, "time_management": 0, "personal_growth": 0}, {"number": 5, "option": "Licking lips", "knowledge": 4, "time_management": 3, "personal_growth": 4}, {"number": 6, "option": "Barking loudly", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "Ears perked up", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 8, "option": "Sleeping", "knowledge": 0, "time_management": 0, "personal_growth": 0}], "optimal": "2"}, {"case": "What should you do if a dog approaches you aggressively?", "options": [{"number": 1, "option": "Run away", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 2, "option": "Stand still and avoid eye contact", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 3, "option": "Yell at the dog", "knowledge": 0, "time_management": 0, "personal_growth": 0}, {"number": 4, "option": "Throw a stick to distract it", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 5, "option": "Punch the dog", "knowledge": -2, "time_management": -2, "personal_growth": -2}, {"number": 6, "option": "Offer it food", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "Ignore it completely", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 8, "option": "Back away slowly", "knowledge": 4, "time_management": 4, "personal_growth": 4}], "optimal": "2"}]
+2026-03-15 03:59:38,128 - my_app - DEBUG - Conversation data saved to /home/ilyan/Documents/internship/task_1/MatterOfChoice/output/ca4e7d95-0d06-4688-a997-adc01988f196/game/conversation.json
