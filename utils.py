@@ -9,7 +9,16 @@ import google.generativeai as genai  # Import Gemini module
 from dotenv import load_dotenv  # Import dotenv for loading .env file
 import os
 from openai import OpenAI
-from mistralai.client import Mistral
+
+try:
+    # Newer mistralai SDK
+    from mistralai import Mistral as MistralClient
+except Exception:
+    try:
+        # Older mistralai SDK
+        from mistralai.client import MistralClient  # type: ignore
+    except Exception:
+        MistralClient = None
 
 # Load environment variables
 
@@ -55,8 +64,8 @@ output_path.mkdir(parents=True, exist_ok=True)
 # Function to get a response from Gemini
 def get_response_gemini(prompt: str) -> str:
     model_names = [
-        'gemini-2.0-flash',
-        'gemini-1.5-flash',
+        'gemini-2.5-flash',
+        'gemini-flash-latest',
     ]
 
     for model_name in model_names:
@@ -104,15 +113,28 @@ def get_response_mistral(prompt: str) -> str:
     if not MISTRAL_API_KEY:
         utils_logger.error("MISTRAL_API_KEY is not set.")
         return ""
-    client = Mistral(api_key=MISTRAL_API_KEY)
+    if MistralClient is None:
+        utils_logger.error("Mistral SDK is not installed or import path is incompatible.")
+        return ""
+
+    client = MistralClient(api_key=MISTRAL_API_KEY)
     model_names = ['mistral-small-latest', 'mistral-medium-latest']
     for model_name in model_names:
         try:
-            response = client.chat.complete(
-                model=model_name,
-                messages=[{"role": "user", "content": prompt}],
-                timeout_ms=60000
-            )
+            # Support both SDK styles:
+            # - New: client.chat.complete(...)
+            # - Old: client.chat(...)
+            if hasattr(client, "chat") and hasattr(client.chat, "complete"):
+                response = client.chat.complete(
+                    model=model_name,
+                    messages=[{"role": "user", "content": prompt}],
+                    timeout_ms=60000
+                )
+            else:
+                response = client.chat(
+                    model=model_name,
+                    messages=[{"role": "user", "content": prompt}]
+                )
             content = (response.choices[0].message.content or "").strip()
             if content:
                 return content
@@ -155,7 +177,11 @@ def get_response_grok(prompt: str) -> str:
 # Dispatcher: route to the correct provider based on the model parameter
 def get_response(prompt: str, model: str = 'gemini') -> str:
     if model == 'mistral':
-        return get_response_mistral(prompt)
+        response = get_response_mistral(prompt)
+        if response:
+            return response
+        utils_logger.warning("Mistral failed or returned empty response. Falling back to Grok.")
+        return get_response_grok(prompt)
     elif model == 'grok':
         response = get_response_grok(prompt)
         if response:
@@ -168,7 +194,13 @@ def get_response(prompt: str, model: str = 'gemini') -> str:
     response = get_response_gemini(prompt)
     if response:
         return response
-    utils_logger.warning("Gemini failed or returned empty response. Falling back to Mistral.")
+    utils_logger.warning("Gemini failed or returned empty response. Falling back to Grok.")
+
+    response = get_response_grok(prompt)
+    if response:
+        return response
+
+    utils_logger.warning("Grok failed or returned empty response. Falling back to Mistral.")
     return get_response_mistral(prompt)
 
 
