@@ -55,8 +55,8 @@ output_path.mkdir(parents=True, exist_ok=True)
 # Function to get a response from Gemini
 def get_response_gemini(prompt: str) -> str:
     model_names = [
-        'gemini-2.5-flash',
-        'gemini-flash-latest',
+        'gemini-2.0-flash',
+        'gemini-1.5-flash',
     ]
 
     for model_name in model_names:
@@ -64,7 +64,7 @@ def get_response_gemini(prompt: str) -> str:
             model = genai.GenerativeModel(model_name)
             response = model.generate_content(
                 prompt,
-                request_options={"timeout": 12}
+                request_options={"timeout": 60}
             )
 
             # Prefer the stable SDK accessor when available.
@@ -93,7 +93,7 @@ def get_response_gemini(prompt: str) -> str:
         except Exception as err:
             utils_logger.exception(
                 "Error generating response from Gemini. "
-                f"model={model_name}, error={err}, timeout=12s, prompt_preview={prompt[:180]!r}"
+                f"model={model_name}, error={err}, timeout=60s, prompt_preview={prompt[:180]!r}"
             )
 
     return ""
@@ -111,7 +111,7 @@ def get_response_mistral(prompt: str) -> str:
             response = client.chat.complete(
                 model=model_name,
                 messages=[{"role": "user", "content": prompt}],
-                timeout_ms=15000
+                timeout_ms=60000
             )
             content = (response.choices[0].message.content or "").strip()
             if content:

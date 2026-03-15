@@ -21931,3 +21931,1646 @@ google.api_core.exceptions.DeadlineExceeded: 504 Deadline expired before operati
 2026-03-15 20:08:05,290 - my_app - DEBUG - Model response: Here’s a Python list of dictionaries with 6 study-based questions about cats, each with 8 answer options. The optimal option is randomized for each case, and the content is appropriate for a 16-year-o...
 2026-03-15 20:08:05,292 - my_app - DEBUG - Extracted list content: [{"case": "Which of the following is a primary reason why cats purr?", "options": [{"number": 1, "option": "To scare away predators", "knowledge": 1, "time_management": 2, "personal_growth": 1}, {"number": 2, "option": "To communicate comfort or distress", "knowledge": 5, "time_management": 4, "personal_growth": 4}, {"number": 3, "option": "To mimic the sound of a mother cat", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 4, "option": "To attract prey", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 5, "option": "To regulate their own body temperature", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 6, "option": "To signal hunger to their owners", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 7, "option": "To practice their vocal cords", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 8, "option": "To mark their territory", "knowledge": 2, "time_management": 2, "personal_growth": 2}], "optimal": "2"}, {"case": "What is the average lifespan of an indoor cat?", "options": [{"number": 1, "option": "5-7 years", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 2, "option": "10-12 years", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 3, "option": "15-20 years", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 4, "option": "25-30 years", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 5, "option": "3-5 years", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 6, "option": "8-10 years", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 7, "option": "12-15 years", "knowledge": 4, "time_management": 4, "personal_growth": 4}, {"number": 8, "option": "20-25 years", "knowledge": 1, "time_management": 1, "personal_growth": 1}], "optimal": "3"}, {"case": "Which of the following is NOT a breed of domestic cat?", "options": [{"number": 1, "option": "Maine Coon", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 2, "option": "Siamese", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 3, "option": "Bengal", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 4, "option": "Lion", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 5, "option": "Persian", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 6, "option": "Sphynx", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "Ragdoll", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 8, "option": "Tabby", "knowledge": 1, "time_management": 1, "personal_growth": 1}], "optimal": "4"}, {"case": "What is the primary purpose of a cat's whiskers?", "options": [{"number": 1, "option": "To make them look more attractive", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 2, "option": "To help them balance while walking", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 3, "option": "To sense vibrations in the air", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 4, "option": "To attract mates", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 5, "option": "To protect their eyes from dust", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 6, "option": "To help them dig", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "To communicate with other cats", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 8, "option": "To measure narrow spaces", "knowledge": 4, "time_management": 4, "personal_growth": 4}], "optimal": "3"}, {"case": "Which of the following is a common health issue in cats?", "options": [{"number": 1, "option": "Obesity", "knowledge": 4, "time_management": 4, "personal_growth": 4}, {"number": 2, "option": "Broken bones", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 3, "option": "Dental disease", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 4, "option": "Sunburn", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 5, "option": "Dehydration", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 6, "option": "Allergies", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 7, "option": "Flea infestations", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 8, "option": "Asthma", "knowledge": 2, "time_management": 2, "personal_growth": 2}], "optimal": "3"}, {"case": "What is the best way to introduce a new cat to an existing pet?", "options": [{"number": 1, "option": "Let them meet immediately", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 2, "option": "Keep them separated for a few days", "knowledge": 5, "time_management": 5, "personal_growth": 5}, {"number": 3, "option": "Ignore the new cat completely", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 4, "option": "Feed them together right away", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 5, "option": "Let the new cat explore first", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 6, "option": "Use a carrier to introduce them", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 7, "option": "Scent swap before meeting", "knowledge": 4, "time_management": 4, "personal_growth": 4}, {"number": 8, "option": "Force them to play together", "knowledge": 1, "time_management": 1, "personal_growth": 1}], "optimal": "2"}]
 2026-03-15 20:08:05,294 - my_app - DEBUG - Conversation data saved to /home/ilyan/Documents/internship/task_1/MatterOfChoice/output/4b830ca6-05bc-45ad-9275-dbc3dfb9b580/game/conversation.json
+2026-03-15 22:35:13,483 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-15 22:36:51,800 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-15 22:38:34,775 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-15 22:52:29,419 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-16 01:38:28,759 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-16 01:41:52,583 - my_app - DEBUG - generate_cases route entered
+2026-03-16 01:41:52,584 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=13, subject=cats, difficulty=normal, question_type=study, subtype=subject_mastery, sex=female, conversation_data=None
+2026-03-16 01:41:52,584 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 13 and the subject/theme used should be cats. Set the difficulty of the content to normal. The person is female. The subtype is subject_mastery.
+2026-03-16 01:42:03,562 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.5-flash, error=504 The request timed out. Please try again., timeout=12s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 12}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 The request timed out. Please try again.
+2026-03-16 01:42:14,480 - my_app - ERROR - Error generating response from Gemini. model=gemini-flash-latest, error=504 Deadline expired before operation could complete., timeout=12s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 12}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 Deadline expired before operation could complete.
+2026-03-16 01:42:14,488 - my_app - WARNING - Gemini failed or returned empty response. Falling back to Mistral.
+2026-03-16 01:42:30,255 - my_app - ERROR - Error generating response from Mistral. model=mistral-small-latest, error=The read operation timed out
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+        self.READ_NUM_BYTES, timeout=timeout
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 111, in get_response_mistral
+    response = client.chat.complete(
+        model=model_name,
+        messages=[{"role": "user", "content": prompt}],
+        timeout_ms=15000
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/chat.py", line 241, in complete
+    http_res = self.do_request(
+        hook_ctx=HookContext(
+    ...<10 lines>...
+        retry_config=retry_config,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 297, in do_request
+    http_res = do()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 265, in do
+    raise e
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 260, in do
+    http_res = client.send(req, stream=stream)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+2026-03-16 01:42:45,692 - my_app - ERROR - Error generating response from Mistral. model=mistral-medium-latest, error=The read operation timed out
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+        self.READ_NUM_BYTES, timeout=timeout
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 111, in get_response_mistral
+    response = client.chat.complete(
+        model=model_name,
+        messages=[{"role": "user", "content": prompt}],
+        timeout_ms=15000
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/chat.py", line 241, in complete
+    http_res = self.do_request(
+        hook_ctx=HookContext(
+    ...<10 lines>...
+        retry_config=retry_config,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 297, in do_request
+    http_res = do()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 265, in do
+    raise e
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 260, in do
+    http_res = client.send(req, stream=stream)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+2026-03-16 01:42:45,703 - my_app - DEBUG - Model response: ...
+2026-03-16 01:42:45,704 - my_app - ERROR - gemini API returned an empty response.
+2026-03-16 01:42:45,704 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=13, subject=cats, difficulty=normal, question_type=study, subtype=subject_mastery, sex=female, conversation_data=None
+2026-03-16 01:42:45,704 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 13 and the subject/theme used should be cats. Set the difficulty of the content to normal. The person is female. The subtype is subject_mastery.
+2026-03-16 01:42:57,062 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.5-flash, error=504 The request timed out. Please try again., timeout=12s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 12}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 The request timed out. Please try again.
+2026-03-16 01:43:07,500 - my_app - ERROR - Error generating response from Gemini. model=gemini-flash-latest, error=504 Deadline expired before operation could complete., timeout=12s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 12}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 Deadline expired before operation could complete.
+2026-03-16 01:43:07,517 - my_app - WARNING - Gemini failed or returned empty response. Falling back to Mistral.
+2026-03-16 01:43:22,703 - my_app - ERROR - Error generating response from Mistral. model=mistral-small-latest, error=The read operation timed out
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+        self.READ_NUM_BYTES, timeout=timeout
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 111, in get_response_mistral
+    response = client.chat.complete(
+        model=model_name,
+        messages=[{"role": "user", "content": prompt}],
+        timeout_ms=15000
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/chat.py", line 241, in complete
+    http_res = self.do_request(
+        hook_ctx=HookContext(
+    ...<10 lines>...
+        retry_config=retry_config,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 297, in do_request
+    http_res = do()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 265, in do
+    raise e
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 260, in do
+    http_res = client.send(req, stream=stream)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+2026-03-16 01:43:37,859 - my_app - ERROR - Error generating response from Mistral. model=mistral-medium-latest, error=The read operation timed out
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+        self.READ_NUM_BYTES, timeout=timeout
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 111, in get_response_mistral
+    response = client.chat.complete(
+        model=model_name,
+        messages=[{"role": "user", "content": prompt}],
+        timeout_ms=15000
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/chat.py", line 241, in complete
+    http_res = self.do_request(
+        hook_ctx=HookContext(
+    ...<10 lines>...
+        retry_config=retry_config,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 297, in do_request
+    http_res = do()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 265, in do
+    raise e
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 260, in do
+    http_res = client.send(req, stream=stream)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+2026-03-16 01:43:37,880 - my_app - DEBUG - Model response: ...
+2026-03-16 01:43:37,881 - my_app - ERROR - gemini API returned an empty response.
+2026-03-16 01:45:27,715 - my_app - DEBUG - generate_cases route entered
+2026-03-16 01:45:27,719 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=13, subject=cats, difficulty=normal, question_type=study, subtype=subject_mastery, sex=female, conversation_data=None
+2026-03-16 01:45:27,720 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 13 and the subject/theme used should be cats. Set the difficulty of the content to normal. The person is female. The subtype is subject_mastery.
+2026-03-16 01:45:39,046 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.5-flash, error=504 The request timed out. Please try again., timeout=12s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 12}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 The request timed out. Please try again.
+2026-03-16 01:45:50,218 - my_app - ERROR - Error generating response from Gemini. model=gemini-flash-latest, error=504 Deadline expired before operation could complete., timeout=12s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 60}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.DeadlineExceeded: 504 Deadline expired before operation could complete.
+2026-03-16 01:45:50,229 - my_app - WARNING - Gemini failed or returned empty response. Falling back to Mistral.
+2026-03-16 01:46:05,468 - my_app - ERROR - Error generating response from Mistral. model=mistral-small-latest, error=The read operation timed out
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+        self.READ_NUM_BYTES, timeout=timeout
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 111, in get_response_mistral
+    response = client.chat.complete(
+        model=model_name,
+        messages=[{"role": "user", "content": prompt}],
+        timeout_ms=60000
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/chat.py", line 241, in complete
+    http_res = self.do_request(
+        hook_ctx=HookContext(
+    ...<10 lines>...
+        retry_config=retry_config,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 297, in do_request
+    http_res = do()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 265, in do
+    raise e
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 260, in do
+    http_res = client.send(req, stream=stream)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+2026-03-16 01:46:20,716 - my_app - ERROR - Error generating response from Mistral. model=mistral-medium-latest, error=The read operation timed out
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+        self.READ_NUM_BYTES, timeout=timeout
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 111, in get_response_mistral
+    response = client.chat.complete(
+        model=model_name,
+        messages=[{"role": "user", "content": prompt}],
+        timeout_ms=60000
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/chat.py", line 241, in complete
+    http_res = self.do_request(
+        hook_ctx=HookContext(
+    ...<10 lines>...
+        retry_config=retry_config,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 297, in do_request
+    http_res = do()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 265, in do
+    raise e
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 260, in do
+    http_res = client.send(req, stream=stream)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+2026-03-16 01:46:20,732 - my_app - DEBUG - Model response: ...
+2026-03-16 01:46:20,732 - my_app - ERROR - gemini API returned an empty response.
+2026-03-16 01:46:20,732 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=13, subject=cats, difficulty=normal, question_type=study, subtype=subject_mastery, sex=female, conversation_data=None
+2026-03-16 01:46:20,733 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 13 and the subject/theme used should be cats. Set the difficulty of the content to normal. The person is female. The subtype is subject_mastery.
+2026-03-16 01:46:43,346 - my_app - DEBUG - Logger configured. Starting app...
+2026-03-16 01:47:04,293 - my_app - DEBUG - generate_cases route entered
+2026-03-16 01:47:04,294 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=18, subject=monkeys, difficulty=normal, question_type=study, subtype=subject_mastery, sex=male, conversation_data=None
+2026-03-16 01:47:04,295 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 18 and the subject/theme used should be monkeys. Set the difficulty of the content to normal. The person is male. The subtype is subject_mastery.
+2026-03-16 01:47:05,169 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.0-flash, error=429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 54.283404155s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 54
+}
+], timeout=60s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 60}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 54.283404155s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 54
+}
+]
+2026-03-16 01:47:05,681 - my_app - ERROR - Error generating response from Gemini. model=gemini-1.5-flash, error=404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods., timeout=60s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 60}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-16 01:47:05,693 - my_app - WARNING - Gemini failed or returned empty response. Falling back to Mistral.
+2026-03-16 01:48:06,267 - my_app - ERROR - Error generating response from Mistral. model=mistral-small-latest, error=The read operation timed out
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+        self.READ_NUM_BYTES, timeout=timeout
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 111, in get_response_mistral
+    response = client.chat.complete(
+        model=model_name,
+        messages=[{"role": "user", "content": prompt}],
+        timeout_ms=60000
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/chat.py", line 241, in complete
+    http_res = self.do_request(
+        hook_ctx=HookContext(
+    ...<10 lines>...
+        retry_config=retry_config,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 297, in do_request
+    http_res = do()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 265, in do
+    raise e
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/mistralai/client/basesdk.py", line 260, in do
+    http_res = client.send(req, stream=stream)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+2026-03-16 01:48:29,359 - my_app - DEBUG - Model response: Here’s a Python list of 6 study-based questions about **monkeys**, tailored for an 18-year-old male focusing on **subject mastery**. Each question has 8 options with randomized optimal positions and e...
+2026-03-16 01:48:29,361 - my_app - DEBUG - Extracted list content: [{"case": "Which of the following monkey species is known for its highly developed social hierarchy, often compared to human political structures?", "options": [{"number": 1, "option": "Spider monkey", "knowledge": 2, "time_management": 3, "personal_growth": 2}, {"number": 2, "option": "Howler monkey", "knowledge": 1, "time_management": 2, "personal_growth": 1}, {"number": 3, "option": "Baboon", "knowledge": 5, "time_management": 4, "personal_growth": 5}, {"number": 4, "option": "Marmoset", "knowledge": -1, "time_management": 1, "personal_growth": -2}, {"number": 5, "option": "Capuchin monkey", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 6, "option": "Mandrill", "knowledge": 4, "time_management": 2, "personal_growth": 4}, {"number": 7, "option": "Tarsier", "knowledge": -3, "time_management": -1, "personal_growth": -1}, {"number": 8, "option": "Gibbon", "knowledge": 1, "time_management": 2, "personal_growth": 2}], "optimal": "3"}, {"case": "What is the primary diet of a **proboscis monkey**, and how does it adapt to its swampy habitat in Borneo?", "options": [{"number": 1, "option": "Insects and small vertebrates; it has webbed feet for swimming", "knowledge": -2, "time_management": 1, "personal_growth": -1}, {"number": 2, "option": "Leaves, seeds, and unripe fruits; it has a specialized stomach to digest toxic plants", "knowledge": 5, "time_management": 4, "personal_growth": 5}, {"number": 3, "option": "Fish and crustaceans; it uses its long nose to probe underwater", "knowledge": -4, "time_management": -2, "personal_growth": -3}, {"number": 4, "option": "Bamboo shoots; it has strong jaws to crack tough stems", "knowledge": 1, "time_management": 2, "personal_growth": 1}, {"number": 5, "option": "Fruits and flowers; it relies on its keen sense of smell to find food", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 6, "option": "Tree bark; it has sharp teeth to strip bark efficiently", "knowledge": -1, "time_management": 1, "personal_growth": 0}, {"number": 7, "option": "Mangrove leaves; it stores food in cheek pouches for later", "knowledge": 2, "time_management": 3, "personal_growth": 3}, {"number": 8, "option": "Nectar; it has a long tongue to reach deep into flowers", "knowledge": -3, "time_management": -1, "personal_growth": -2}], "optimal": "2"}, {"case": "Which monkey is famous for its **tool-using behavior**, such as cracking nuts with stones, and is often studied for its intelligence?", "options": [{"number": 1, "option": "Squirrel monkey", "knowledge": 1, "time_management": 2, "personal_growth": 1}, {"number": 2, "option": "Japanese macaque", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 3, "option": "Chimpanzee (though not a monkey, often confused)", "knowledge": -5, "time_management": -2, "personal_growth": -1}, {"number": 4, "option": "Capuchin monkey", "knowledge": 5, "time_management": 4, "personal_growth": 5}, {"number": 5, "option": "Golden lion tamarin", "knowledge": -1, "time_management": 1, "personal_growth": 0}, {"number": 6, "option": "Colobus monkey", "knowledge": -2, "time_management": -1, "personal_growth": -2}, {"number": 7, "option": "Rhesus macaque", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 8, "option": "Patas monkey", "knowledge": 0, "time_management": 1, "personal_growth": 1}], "optimal": "4"}, {"case": "What is the main reason **howler monkeys** are considered the loudest land animals, and how does this benefit their survival?", "options": [{"number": 1, "option": "Their vocal cords are reinforced with bone; it scares off predators", "knowledge": 1, "time_management": 2, "personal_growth": 2}, {"number": 2, "option": "They have an enlarged hyoid bone in their throat; it helps them communicate over long distances in dense forests", "knowledge": 5, "time_management": 4, "personal_growth": 5}, {"number": 3, "option": "They scream in unison; it confuses prey into revealing their location", "knowledge": -3, "time_management": -1, "personal_growth": -2}, {"number": 4, "option": "Their lungs are twice the size of other monkeys; it allows them to hold notes longer", "knowledge": 2, "time_management": 3, "personal_growth": 3}, {"number": 5, "option": "They eat a diet rich in resonant fruits; it amplifies their vocalizations", "knowledge": -2, "time_management": 1, "personal_growth": 0}, {"number": 6, "option": "Their calls are ultrasonic; only other howlers can hear them", "knowledge": -4, "time_management": -2, "personal_growth": -3}, {"number": 7, "option": "They use hollow trees as amplifiers; it conserves energy", "knowledge": 3, "time_management": 3, "personal_growth": 4}, {"number": 8, "option": "Their fur vibrates to produce sound; it attracts mates", "knowledge": -1, "time_management": 0, "personal_growth": 1}], "optimal": "2"}, {"case": "Which monkey species is known for its **prehensile tail**, which acts like a fifth limb, and is primarily found in Central and South America?", "options": [{"number": 1, "option": "Mandrill", "knowledge": -5, "time_management": -2, "personal_growth": -3}, {"number": 2, "option": "Spider monkey", "knowledge": 5, "time_management": 4, "personal_growth": 5}, {"number": 3, "option": "Baboon", "knowledge": -3, "time_management": -1, "personal_growth": -2}, {"number": 4, "option": "Lemur (not a monkey, but often confused)", "knowledge": -4, "time_management": -2, "personal_growth": -1}, {"number": 5, "option": "Vervet monkey", "knowledge": 1, "time_management": 2, "personal_growth": 1}, {"number": 6, "option": "Golden snub-nosed monkey", "knowledge": -1, "time_management": 1, "personal_growth": 0}, {"number": 7, "option": "Saki monkey", "knowledge": 2, "time_management": 3, "personal_growth": 2}, {"number": 8, "option": "Tamarind monkey", "knowledge": 3, "time_management": 3, "personal_growth": 3}], "optimal": "2"}, {"case": "What is the **social grooming** behavior in monkeys, and how does it contribute to their group cohesion?", "options": [{"number": 1, "option": "A dominance display where higher-ranking monkeys assert control; it reduces conflict", "knowledge": 2, "time_management": 2, "personal_growth": 3}, {"number": 2, "option": "The act of cleaning each other\u2019s fur to remove parasites; it strengthens social bonds and reduces stress", "knowledge": 5, "time_management": 4, "personal_growth": 5}, {"number": 3, "option": "A mating ritual where monkeys exchange food; it ensures pair-bonding", "knowledge": -1, "time_management": 1, "personal_growth": 0}, {"number": 4, "option": "A form of play-fighting to establish hierarchy; it prepares young monkeys for adulthood", "knowledge": 3, "time_management": 3, "personal_growth": 4}, {"number": 5, "option": "A way to mark territory with scent glands; it deters rival groups", "knowledge": -3, "time_management": -1, "personal_growth": -2}, {"number": 6, "option": "A vocalization technique to synchronize group movements; it improves hunting efficiency", "knowledge": -2, "time_management": 0, "personal_growth": 1}, {"number": 7, "option": "A method of sharing food resources; it promotes altruism", "knowledge": 1, "time_management": 2, "personal_growth": 2}, {"number": 8, "option": "A defensive mechanism where monkeys huddle together; it protects against predators", "knowledge": -4, "time_management": -2, "personal_growth": -1}], "optimal": "2"}]
+2026-03-16 01:48:29,371 - my_app - DEBUG - Conversation data saved to /home/ilyan/Documents/internship/task_1/MatterOfChoice/output/77edffc5-777d-489b-96e5-c724dca7c8e6/game/conversation.json
+2026-03-16 01:48:49,376 - my_app - DEBUG - generate_cases route entered
+2026-03-16 01:48:49,377 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=18, subject=monkeys, difficulty=normal, question_type=study, subtype=subject_mastery, sex=male, conversation_data=None
+2026-03-16 01:48:49,377 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 18 and the subject/theme used should be monkeys. Set the difficulty of the content to normal. The person is male. The subtype is subject_mastery.
+2026-03-16 01:48:49,622 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.0-flash, error=429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 9.795359933s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 9
+}
+], timeout=60s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 60}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 9.795359933s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 9
+}
+]
+2026-03-16 01:48:50,144 - my_app - ERROR - Error generating response from Gemini. model=gemini-1.5-flash, error=404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods., timeout=60s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 60}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-16 01:48:50,155 - my_app - WARNING - Gemini failed or returned empty response. Falling back to Mistral.
+2026-03-16 01:49:07,453 - my_app - DEBUG - Model response: Here’s a Python list of dictionaries with 6 study-based questions about monkeys, each with 8 answer options. The optimal option is randomized for each case, and the content is appropriate for an 18-ye...
+2026-03-16 01:49:07,457 - my_app - DEBUG - Extracted list content: [{"case": "Which of the following is a characteristic of Old World monkeys?", "options": [{"number": 1, "option": "Prehensile tails", "knowledge": -3, "time_management": -2, "personal_growth": 1}, {"number": 2, "option": "Narrow noses", "knowledge": 5, "time_management": 4, "personal_growth": 3}, {"number": 3, "option": "Flat faces", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 4, "option": "Large canines", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 5, "option": "No opposable thumbs", "knowledge": -4, "time_management": -3, "personal_growth": 1}, {"number": 6, "option": "Prehensile feet", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "Long limbs", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 8, "option": "No tails", "knowledge": -2, "time_management": -1, "personal_growth": 1}], "optimal": "2"}, {"case": "What is the primary diet of most New World monkeys?", "options": [{"number": 1, "option": "Carnivorous", "knowledge": -4, "time_management": -3, "personal_growth": 1}, {"number": 2, "option": "Herbivorous", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 3, "option": "Omnivorous", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 4, "option": "Frugivorous", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 5, "option": "Insectivorous", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 6, "option": "Granivorous", "knowledge": -2, "time_management": -1, "personal_growth": 1}, {"number": 7, "option": "Nectarivorous", "knowledge": -1, "time_management": -1, "personal_growth": 1}, {"number": 8, "option": "Detritivorous", "knowledge": -3, "time_management": -2, "personal_growth": 1}], "optimal": "3"}, {"case": "Which of the following monkeys is known for its loud vocalizations?", "options": [{"number": 1, "option": "Capuchin", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 2, "option": "Howler monkey", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 3, "option": "Macaque", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 4, "option": "Tamarin", "knowledge": -1, "time_management": -1, "personal_growth": 1}, {"number": 5, "option": "Gibbon", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 6, "option": "Marmoset", "knowledge": -2, "time_management": -2, "personal_growth": 1}, {"number": 7, "option": "Baboon", "knowledge": 4, "time_management": 4, "personal_growth": 3}, {"number": 8, "option": "Squirrel monkey", "knowledge": 1, "time_management": 1, "personal_growth": 1}], "optimal": "2"}, {"case": "What is the primary social structure of most monkey species?", "options": [{"number": 1, "option": "Solitary", "knowledge": -3, "time_management": -2, "personal_growth": 1}, {"number": 2, "option": "Monogamous pairs", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 3, "option": "Small family groups", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 4, "option": "Large troops", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 5, "option": "Harems", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 6, "option": "Solitary with occasional mating", "knowledge": -2, "time_management": -1, "personal_growth": 1}, {"number": 7, "option": "Nomadic bands", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 8, "option": "Colonies", "knowledge": -1, "time_management": -1, "personal_growth": 1}], "optimal": "4"}, {"case": "Which of the following is a key adaptation of monkeys to arboreal life?", "options": [{"number": 1, "option": "Strong hind limbs", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 2, "option": "Prehensile tails", "knowledge": 4, "time_management": 4, "personal_growth": 3}, {"number": 3, "option": "Large incisors", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 4, "option": "Long claws", "knowledge": -2, "time_management": -1, "personal_growth": 1}, {"number": 5, "option": "Short limbs", "knowledge": -3, "time_management": -2, "personal_growth": 1}, {"number": 6, "option": "No opposable thumbs", "knowledge": -4, "time_management": -3, "personal_growth": 1}, {"number": 7, "option": "Flat feet", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 8, "option": "Large ears", "knowledge": -1, "time_management": -1, "personal_growth": 1}], "optimal": "1"}, {"case": "Which monkey species is known for using tools in the wild?", "options": [{"number": 1, "option": "Chimpanzee", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 2, "option": "Gorilla", "knowledge": 3, "time_management": 3, "personal_growth": 3}, {"number": 3, "option": "Orangutan", "knowledge": 4, "time_management": 4, "personal_growth": 3}, {"number": 4, "option": "Capuchin", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 5, "option": "Macaque", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 6, "option": "Howler monkey", "knowledge": -2, "time_management": -1, "personal_growth": 1}, {"number": 7, "option": "Tamarin", "knowledge": -3, "time_management": -2, "personal_growth": 1}, {"number": 8, "option": "Squirrel monkey", "knowledge": -1, "time_management": -1, "personal_growth": 1}], "optimal": "1"}]
+2026-03-16 01:49:07,472 - my_app - DEBUG - Conversation data saved to /home/ilyan/Documents/internship/task_1/MatterOfChoice/output/42a323ac-c3a7-4ed1-b69e-4a54eaf43ab7/game/conversation.json
+2026-03-16 01:49:39,966 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.0-flash, error=429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 19.439455645s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 19
+}
+], timeout=60s, prompt_preview="Analyze the following data. You are a 'default_role'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'user_an"
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 60}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 19.439455645s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 19
+}
+]
+2026-03-16 01:49:40,618 - my_app - ERROR - Error generating response from Gemini. model=gemini-1.5-flash, error=404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods., timeout=60s, prompt_preview="Analyze the following data. You are a 'default_role'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'user_an"
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 60}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-16 01:49:40,637 - my_app - WARNING - Gemini failed or returned empty response. Falling back to Mistral.
+2026-03-16 01:49:45,422 - my_app - DEBUG - generate_cases route entered
+2026-03-16 01:49:45,428 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=18, subject=monkeys, difficulty=normal, question_type=study, subtype=subject_mastery, sex=male, conversation_data=None
+2026-03-16 01:49:45,428 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 18 and the subject/theme used should be monkeys. Set the difficulty of the content to normal. The person is male. The subtype is subject_mastery.
+2026-03-16 01:49:45,743 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.0-flash, error=429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 13.744721225s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 13
+}
+], timeout=60s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 60}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 13.744721225s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 13
+}
+]
+2026-03-16 01:49:46,246 - my_app - ERROR - Error generating response from Gemini. model=gemini-1.5-flash, error=404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods., timeout=60s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 60}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-16 01:49:46,259 - my_app - WARNING - Gemini failed or returned empty response. Falling back to Mistral.
+2026-03-16 01:50:32,328 - my_app - DEBUG - Model response: Here’s a Python list of dictionaries with 6 study-based questions about monkeys, each with 8 answer options. The optimal option is randomized for each case, and the content is appropriate for an 18-ye...
+2026-03-16 01:50:32,336 - my_app - DEBUG - Extracted list content: [{"case": "Which of the following is a primary characteristic of Old World monkeys?", "options": [{"number": 1, "option": "Prehensile tails", "knowledge": -3, "time_management": -2, "personal_growth": 1}, {"number": 2, "option": "Flat noses", "knowledge": 5, "time_management": 4, "personal_growth": 3}, {"number": 3, "option": "Large canines", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 4, "option": "Opposable thumbs", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 5, "option": "No tails", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 6, "option": "Striped fur", "knowledge": -1, "time_management": -1, "personal_growth": 0}, {"number": 7, "option": "Long limbs", "knowledge": 2, "time_management": 2, "personal_growth": 1}, {"number": 8, "option": "Hoolock gibbons", "knowledge": 4, "time_management": 3, "personal_growth": 2}], "optimal": "2"}, {"case": "What is the primary diet of most New World monkeys?", "options": [{"number": 1, "option": "Insects", "knowledge": 2, "time_management": 2, "personal_growth": 1}, {"number": 2, "option": "Leaves and fruits", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 3, "option": "Meat", "knowledge": -2, "time_management": -1, "personal_growth": 0}, {"number": 4, "option": "Fish", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 5, "option": "Nuts and seeds", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 6, "option": "Bark", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "Flowers", "knowledge": 2, "time_management": 2, "personal_growth": 1}, {"number": 8, "option": "Roots", "knowledge": 2, "time_management": 2, "personal_growth": 1}], "optimal": "2"}, {"case": "Which of the following monkeys is known for its loud vocalizations?", "options": [{"number": 1, "option": "Capuchin monkey", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 2, "option": "Howler monkey", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 3, "option": "Spider monkey", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 4, "option": "Macaque", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 5, "option": "Tamarin", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 6, "option": "Marmoset", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "Baboon", "knowledge": 4, "time_management": 4, "personal_growth": 3}, {"number": 8, "option": "Squirrel monkey", "knowledge": 2, "time_management": 2, "personal_growth": 2}], "optimal": "7"}, {"case": "What is the primary social structure of most monkey species?", "options": [{"number": 1, "option": "Solitary", "knowledge": -3, "time_management": -2, "personal_growth": 0}, {"number": 2, "option": "Pairs", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 3, "option": "Small family groups", "knowledge": 4, "time_management": 4, "personal_growth": 3}, {"number": 4, "option": "Large troops", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 5, "option": "Harems", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 6, "option": "Colonies", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 7, "option": "Clans", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 8, "option": "None of the above", "knowledge": -1, "time_management": -1, "personal_growth": 0}], "optimal": "4"}, {"case": "Which of the following is a key adaptation of monkeys to arboreal life?", "options": [{"number": 1, "option": "Strong jaws", "knowledge": 2, "time_management": 2, "personal_growth": 1}, {"number": 2, "option": "Prehensile tails", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 3, "option": "Long legs", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 4, "option": "Sharp claws", "knowledge": 2, "time_management": 2, "personal_growth": 1}, {"number": 5, "option": "Large ears", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 6, "option": "Thick fur", "knowledge": 2, "time_management": 2, "personal_growth": 1}, {"number": 7, "option": "Opposable toes", "knowledge": 4, "time_management": 4, "personal_growth": 3}, {"number": 8, "option": "Short arms", "knowledge": -1, "time_management": -1, "personal_growth": 0}], "optimal": "2"}, {"case": "Which monkey species is known for using tools in the wild?", "options": [{"number": 1, "option": "Chimpanzee", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 2, "option": "Gorilla", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 3, "option": "Orangutan", "knowledge": 4, "time_management": 4, "personal_growth": 3}, {"number": 4, "option": "Capuchin monkey", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 5, "option": "Macaque", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 6, "option": "Howler monkey", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "Tamarin", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 8, "option": "Squirrel monkey", "knowledge": 2, "time_management": 2, "personal_growth": 2}], "optimal": "4"}]
+2026-03-16 01:50:32,351 - my_app - DEBUG - Conversation data saved to /home/ilyan/Documents/internship/task_1/MatterOfChoice/output/42a323ac-c3a7-4ed1-b69e-4a54eaf43ab7/game/conversation.json
+2026-03-16 01:52:12,806 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.0-flash, error=429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 46.690673945s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 46
+}
+], timeout=60s, prompt_preview="Analyze the following data. You are a 'default_role'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'user_an"
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 60}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 46.690673945s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 46
+}
+]
+2026-03-16 01:52:13,262 - my_app - ERROR - Error generating response from Gemini. model=gemini-1.5-flash, error=404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods., timeout=60s, prompt_preview="Analyze the following data. You are a 'default_role'.  The data contains a series of cases, each with a question, options, and the player's chosen answer (indicated by the 'user_an"
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 60}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-16 01:52:13,271 - my_app - WARNING - Gemini failed or returned empty response. Falling back to Mistral.
+2026-03-16 01:52:18,188 - my_app - DEBUG - generate_cases route entered
+2026-03-16 01:52:18,198 - my_app - DEBUG - gen_cases function called with parameters: language=English, age=18, subject=monkeys, difficulty=normal, question_type=study, subtype=subject_mastery, sex=male, conversation_data=None
+2026-03-16 01:52:18,199 - my_app - DEBUG - Initial prompt generated: Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects. Your task is to compile a list of STRICLY EXACTLY 6 study-based questions that can occur in the context of the subject {subject}. For each question, provide a few different answer options, evaluate each option based on Knowledge (learning and education), Time Management (effective use of time), and Personal Growth (self-improvement) (on a 5-point scale), and indicate the optimal option. Format the answer as a Python list of dictionaries, where each dictionary represents a question and has the following keys: 'case' for the question description, 'options' which is a list of option dictionaries, and 'optimal' for the number of the optimal option.And Make sure to randomize the position of the optimal option on each case cases should not be having the optimal option at the same number. Each option dictionary should have the keys 'number', 'option', 'knowledge', 'time_management', and 'personal_growth'. Do not repeat questions. Here's an example: [{'case': 'What is the capital of France?', 'options': [{'number': 1, 'option': 'Berlin', 'knowledge': -5, 'time_management': -1, 'personal_growth': 1}, {'number': 2, 'option': 'Madrid', 'knowledge': 1, 'time_management': 1, 'personal_growth': 1}, {'number': 3, 'option': 'Paris', 'knowledge': 5, 'time_management': 5, 'personal_growth': 5}], 'optimal': '3'}].I need exactly 8 options for a case .Use double quotes (") for all string literals in the Python code. Respond in English. The content should be appropriate for a person aged 18 and the subject/theme used should be monkeys. Set the difficulty of the content to normal. The person is male. The subtype is subject_mastery.
+2026-03-16 01:52:18,422 - my_app - ERROR - Error generating response from Gemini. model=gemini-2.0-flash, error=429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 40.995629992s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 40
+}
+], timeout=60s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 60}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 40.995629992s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 40
+}
+]
+2026-03-16 01:52:19,038 - my_app - ERROR - Error generating response from Gemini. model=gemini-1.5-flash, error=404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods., timeout=60s, prompt_preview='Reset your memory of the previous request.You are developing study-based questions for an educational simulator for people. This simulator teaches the person about various subjects'
+Traceback (most recent call last):
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/utils.py", line 65, in get_response_gemini
+    response = model.generate_content(
+        prompt,
+        request_options={"timeout": 60}
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 830, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/ilyan/Documents/internship/task_1/MatterOfChoice/venv/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-16 01:52:19,063 - my_app - WARNING - Gemini failed or returned empty response. Falling back to Mistral.
+2026-03-16 01:52:34,085 - my_app - DEBUG - Model response: Here’s a Python list of dictionaries with 6 study-based questions about monkeys, each with 8 answer options, randomized optimal positions, and evaluations for Knowledge, Time Management, and Personal ...
+2026-03-16 01:52:34,096 - my_app - DEBUG - Extracted list content: [{"case": "Which of the following is a characteristic of Old World monkeys?", "options": [{"number": 1, "option": "Prehensile tails", "knowledge": -3, "time_management": -1, "personal_growth": 1}, {"number": 2, "option": "Flat noses", "knowledge": 5, "time_management": 4, "personal_growth": 3}, {"number": 3, "option": "No opposable thumbs", "knowledge": -2, "time_management": 1, "personal_growth": 1}, {"number": 4, "option": "Strepsirrhine suborder", "knowledge": 1, "time_management": 2, "personal_growth": 2}, {"number": 5, "option": "Narrow nostrils", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 6, "option": "Dental formula 2.1.2.3", "knowledge": 4, "time_management": 4, "personal_growth": 3}, {"number": 7, "option": "Lack of ischial callosities", "knowledge": -1, "time_management": 1, "personal_growth": 1}, {"number": 8, "option": "Haplorhine suborder", "knowledge": 2, "time_management": 2, "personal_growth": 2}], "optimal": "2"}, {"case": "What is the primary diet of most New World monkeys?", "options": [{"number": 1, "option": "Carnivorous", "knowledge": -4, "time_management": -2, "personal_growth": 1}, {"number": 2, "option": "Herbivorous", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 3, "option": "Omnivorous", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 4, "option": "Frugivorous", "knowledge": 4, "time_management": 4, "personal_growth": 3}, {"number": 5, "option": "Insectivorous", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 6, "option": "Nectarivorous", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "Folivorous", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 8, "option": "Granivorous", "knowledge": -1, "time_management": 1, "personal_growth": 1}], "optimal": "3"}, {"case": "Which monkey species is known for its complex social hierarchy?", "options": [{"number": 1, "option": "Capuchin monkey", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 2, "option": "Macaque", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 3, "option": "Howler monkey", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 4, "option": "Tamarin", "knowledge": -2, "time_management": -1, "personal_growth": 1}, {"number": 5, "option": "Marmoset", "knowledge": -1, "time_management": 1, "personal_growth": 1}, {"number": 6, "option": "Gibbon", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 7, "option": "Lemur", "knowledge": -3, "time_management": -2, "personal_growth": 1}, {"number": 8, "option": "Baboon", "knowledge": 4, "time_management": 4, "personal_growth": 3}], "optimal": "2"}, {"case": "What is the primary function of a monkey's prehensile tail?", "options": [{"number": 1, "option": "Defense against predators", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 2, "option": "Grooming", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 3, "option": "Grasping branches", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 4, "option": "Communication", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 5, "option": "Balancing", "knowledge": 4, "time_management": 4, "personal_growth": 3}, {"number": 6, "option": "Mating display", "knowledge": -1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "Feeding", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 8, "option": "Camouflage", "knowledge": -2, "time_management": -1, "personal_growth": 1}], "optimal": "3"}, {"case": "Which of the following is a key adaptation of monkeys to arboreal life?", "options": [{"number": 1, "option": "Strong hind limbs", "knowledge": 4, "time_management": 4, "personal_growth": 3}, {"number": 2, "option": "Large canines", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 3, "option": "Prehensile feet", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 4, "option": "Nocturnal behavior", "knowledge": -1, "time_management": 1, "personal_growth": 1}, {"number": 5, "option": "Territorial marking", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 6, "option": "Social bonding", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 7, "option": "Color vision", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 8, "option": "Loud vocalizations", "knowledge": 1, "time_management": 1, "personal_growth": 1}], "optimal": "3"}, {"case": "How do monkeys typically communicate with each other?", "options": [{"number": 1, "option": "Through body language", "knowledge": 4, "time_management": 4, "personal_growth": 3}, {"number": 2, "option": "Using scent marking", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 3, "option": "Via complex vocalizations", "knowledge": 5, "time_management": 5, "personal_growth": 4}, {"number": 4, "option": "Through facial expressions", "knowledge": 4, "time_management": 4, "personal_growth": 3}, {"number": 5, "option": "By drumming on trees", "knowledge": 2, "time_management": 2, "personal_growth": 2}, {"number": 6, "option": "Using pheromones", "knowledge": 1, "time_management": 1, "personal_growth": 1}, {"number": 7, "option": "Through touch", "knowledge": 3, "time_management": 3, "personal_growth": 2}, {"number": 8, "option": "By building nests", "knowledge": -2, "time_management": -1, "personal_growth": 1}], "optimal": "3"}]
+2026-03-16 01:52:34,122 - my_app - DEBUG - Conversation data saved to /home/ilyan/Documents/internship/task_1/MatterOfChoice/output/42a323ac-c3a7-4ed1-b69e-4a54eaf43ab7/game/conversation.json

@@ -575,4 +575,7 @@ def parse_json_response(response):
 
 if __name__ == '__main__':
     os.makedirs('data', exist_ok=True)
-    app.run(debug=True)
+    app.run(
+        debug=os.getenv('FLASK_DEBUG', 'false').lower() == 'true',
+        threaded=True  # allow background prefetch and foreground requests to run concurrently
+    )

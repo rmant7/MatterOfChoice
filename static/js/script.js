@@ -3,10 +3,142 @@ const responseContainer = document.getElementById('response-container');
 const loadingSpinner = document.getElementById('loading-spinner');
 const caseForm = document.getElementById('caseForm');
 const resetButton = document.getElementById('resetButton');
+const PREFETCH_CACHE_KEY = 'prefetchedCasesBatch';
+const PREFETCH_CASE_LIMIT = 3;
+const YANDEX_METRIKA_ID = 104677901;
+
+/**
+ * Wrapper around fetch() that retries on network-level errors (TypeError: Failed to fetch)
+ * up to maxRetries times with exponential back-off.  Does NOT retry on HTTP error responses
+ * (4xx / 5xx) since those are intentional server responses.
+ */
+async function fetchWithRetry(url, options, maxRetries = 2) {
+  let lastError;
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      return await fetch(url, options);
+    } catch (error) {
+      // AbortError means the caller intentionally cancelled — do not retry.
+      if (error.name === 'AbortError') throw error;
+      lastError = error;
+      if (attempt < maxRetries) {
+        await new Promise(resolve => setTimeout(resolve, 800 * (attempt + 1)));
+      }
+    }
+  }
+  throw lastError;
+}
+
 let bufferedCases = null;
+let bufferedCasesSignature = null;
 let isBackgroundFetching = false;
 let backgroundFetchSeq = 0;
 let backgroundFetchPromise = null; // tracks the in-flight prefetch so proceedCases can await it
+let backgroundFetchController = null;
+let currentPrefetchSignature = null;
+let lastTrackedMetrikaPath = null;
+
+function trackMetrikaHit(path, title) {
+  if (typeof window.ym !== 'function' || !path) {
+    return;
+  }
+
+  if (lastTrackedMetrikaPath === path) {
+    return;
+  }
+
+  lastTrackedMetrikaPath = path;
+  window.ym(YANDEX_METRIKA_ID, 'hit', path, {
+    title,
+    referer: window.location.href
+  });
+}
+
+function trackCaseView(caseData) {
+  if (!caseData?.case_id) {
+    return;
+  }
+
+  const caseNumber = currentCaseIndex + 1;
+  const batchNumber = batchCounter || 1;
+  trackMetrikaHit(
+    `/cases?view=case&batch=${batchNumber}&case=${caseNumber}&case_id=${encodeURIComponent(caseData.case_id)}`,
+    `Simulator Case ${caseNumber}`
+  );
+}
+
+function trackAnalysisView() {
+  trackMetrikaHit('/cases?view=analysis', 'Simulator Analysis');
+}
+
+function buildAnswersSignature(answers = {}) {
+  return JSON.stringify(
+    Object.entries(answers)
+      .sort(([leftKey], [rightKey]) => leftKey.localeCompare(rightKey))
+  );
+}
+
+function clearPrefetchedCases() {
+  bufferedCases = null;
+  bufferedCasesSignature = null;
+  currentPrefetchSignature = null;
+  localStorage.removeItem(PREFETCH_CACHE_KEY);
+}
+
+function setPrefetchedCases(cases, signature) {
+  bufferedCases = Array.isArray(cases) ? cases.slice(0, PREFETCH_CASE_LIMIT) : [];
+  bufferedCasesSignature = signature;
+  localStorage.setItem(PREFETCH_CACHE_KEY, JSON.stringify({
+    signature,
+    cases: bufferedCases
+  }));
+}
+
+function loadPrefetchedCases(signature) {
+  if (bufferedCases?.length && bufferedCasesSignature === signature) {
+    return bufferedCases;
+  }
+
+  try {
+    const cachedValue = localStorage.getItem(PREFETCH_CACHE_KEY);
+    if (!cachedValue) {
+      return null;
+    }
+
+    const parsedCache = JSON.parse(cachedValue);
+    if (parsedCache?.signature === signature && Array.isArray(parsedCache.cases) && parsedCache.cases.length > 0) {
+      bufferedCases = parsedCache.cases;
+      bufferedCasesSignature = parsedCache.signature;
+      return bufferedCases;
+    }
+  } catch (error) {
+    console.error('Failed to read prefetched cases cache:', error);
+  }
+
+  return null;
+}
+
+function consumePrefetchedCases(signature) {
+  const prefetchedCases = loadPrefetchedCases(signature);
+  if (!prefetchedCases?.length) {
+    return null;
+  }
+
+  clearPrefetchedCases();
+  return prefetchedCases;
+}
+
+function isLastVisibleCase() {
+  return currentCaseIndex === casesBatch.length - 1;
+}
+
+function maybePrefetchNextBatch(predictedAnswers) {
+  if (!isLastVisibleCase()) {
+    return;
+  }
+
+  fetchCasesInBackground(predictedAnswers);
+}
 
 // Define subtypes for each question type
 const subtypes = {
@@ -67,12 +199,12 @@ form.addEventListener('submit', async (event) => {
   formData.forEach((value, key) => data[key] = value);
 
   try {
-    const response = await fetch('/generate_cases', {
+    const response = await fetchWithRetry('/generate_cases', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
-    handleGenerateCasesResponse(response);
+    await handleGenerateCasesResponse(response);
   } catch (error) {
     displayError({ error: error.message });
   } finally {
@@ -102,6 +234,7 @@ resetButton.addEventListener('click', async () => {
 
     const jsonData = await response.json();
     alert(jsonData.message);
+  clearPrefetchedCases();
     userAnswers = {}; // Reset userAnswers
     casesBatch = []; // Clear the current batch of cases
   
@@ -116,6 +249,8 @@ resetButton.addEventListener('click', async () => {
 
 function startNewGame() {
   // Reset simulator state if necessary
+  clearPrefetchedCases();
+  lastTrackedMetrikaPath = null;
   userAnswers = {}; // Reset userAnswers
   casesBatch = []; // Clear the current batch of cases
 
@@ -165,7 +300,7 @@ async function handleGenerateCasesResponse(response) {
   batchCounter++;
   // New foreground batch invalidates any older prefetched state.
   backgroundFetchSeq++;
-  bufferedCases = null;
+  clearPrefetchedCases();
   isBackgroundFetching = false;
   casesBatch = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data];
 
@@ -211,23 +346,9 @@ function submitCurrentAnswer() {
   if (currentCaseIndex < casesBatch.length) {
       displayCurrentCase();
   } else {
-      // Check if we have buffered cases before calling backend
-      if (bufferedCases && bufferedCases.length > 0) {
-          console.log("Using buffered cases instead of calling backend");
-          casesBatch = bufferedCases;
-          bufferedCases = null;
-          // Prefetch requests already carry prior answers; clear stale IDs before next batch.
-          userAnswers = {};
-          currentCaseIndex = 0;
-          displayCurrentCase();
-      } else {
-          console.log("No buffered cases available, calling backend");
-          const submitBtn = document.querySelector('.submit-button');
-          if (submitBtn) {
-              submitBtn.disabled = true;
-          }
-          sendAnswersToBackend(userAnswers); // Pass userAnswers object
-      }
+      // Delegate to proceedCases so the prefetch system handles all three scenarios:
+      // 1) prefetch already done (instant), 2) prefetch in-flight (await it), 3) no prefetch (round-trip).
+      proceedCases();
   }
 }
 
@@ -276,7 +397,7 @@ async function sendAnswersToBackend(userAnswers) { // Changed parameter name
   };
 
   try {
-    const response = await fetch('/generate_cases', {
+    const response = await fetchWithRetry('/generate_cases', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
@@ -390,7 +511,7 @@ async function analyzeResults() {
   console.log("analyzeResults: Function started.");
   // Stop using any stale prefetched state when moving to analysis.
   backgroundFetchSeq++;
-  bufferedCases = null;
+  clearPrefetchedCases();
   isBackgroundFetching = false;
   loadingSpinner.classList.remove('hidden');
   loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -643,29 +764,30 @@ function checkUnansweredCases() {
 }
 
 async function proceedCases() {
-    console.log("proceedCases: Starting with buffered cases:", bufferedCases?.length);
+  const expectedSignature = buildAnswersSignature(userAnswers);
+  const prefetchedCases = consumePrefetchedCases(expectedSignature);
+  console.log("proceedCases: Starting with prefetched cases:", prefetchedCases?.length || 0);
 
-    if (bufferedCases && bufferedCases.length > 0) {
+  if (prefetchedCases && prefetchedCases.length > 0) {
         // Best case: prefetch already finished — show cases immediately
-        casesBatch = bufferedCases;
-        bufferedCases = null;
+    casesBatch = prefetchedCases;
         currentCaseIndex = 0;
         userAnswers = {};
-        displayCurrentCase();
-        console.log("proceedCases: Using buffered cases (instant)");
-    } else if (isBackgroundFetching && backgroundFetchPromise) {
+    displayCurrentCase(false);
+    console.log("proceedCases: Using prefetched cases (instant)");
+  } else if (isBackgroundFetching && backgroundFetchPromise && currentPrefetchSignature === expectedSignature) {
         // Prefetch is still in flight — wait for it rather than firing a duplicate request
         console.log("proceedCases: Prefetch in flight, awaiting it instead of re-fetching");
         loadingSpinner.classList.remove('hidden');
         loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
         await backgroundFetchPromise;
         loadingSpinner.classList.add('hidden');
-        if (bufferedCases && bufferedCases.length > 0) {
-            casesBatch = bufferedCases;
-            bufferedCases = null;
+    const completedPrefetchedCases = consumePrefetchedCases(expectedSignature);
+    if (completedPrefetchedCases && completedPrefetchedCases.length > 0) {
+      casesBatch = completedPrefetchedCases;
             currentCaseIndex = 0;
             userAnswers = {};
-            displayCurrentCase();
+      displayCurrentCase(false);
             console.log("proceedCases: Using cases from completed prefetch");
         } else {
             console.log("proceedCases: Prefetch finished but no cases buffered, falling back");
@@ -679,18 +801,32 @@ async function proceedCases() {
 }
 
 function fetchCasesInBackground(userAnswers = null) {
-  // If a fetch is already in flight, return its promise so callers can await it
-  if (isBackgroundFetching) return backgroundFetchPromise;
+  const answersForPrefetch = userAnswers && Object.keys(userAnswers).length > 0 ? userAnswers : null;
+  if (!answersForPrefetch) {
+    return Promise.resolve();
+  }
 
-  // Check if we actually need new cases
-  const unansweredCases = checkUnansweredCases();
-  if (unansweredCases > 4 || bufferedCases) {
-      console.log("No need to fetch cases: sufficient cases available");
-      return Promise.resolve();
+  const expectedSignature = buildAnswersSignature(answersForPrefetch);
+  const cachedCases = loadPrefetchedCases(expectedSignature);
+  if (cachedCases?.length) {
+    console.log('Prefetch cache hit for next batch');
+    return Promise.resolve(cachedCases);
+  }
+
+  // If the same fetch is already in flight, return its promise.
+  if (isBackgroundFetching && currentPrefetchSignature === expectedSignature) {
+    return backgroundFetchPromise;
+  }
+
+  // Abort stale prefetch work when the final answer selection changes.
+  if (backgroundFetchController) {
+    backgroundFetchController.abort();
   }
 
   isBackgroundFetching = true;
   const seq = ++backgroundFetchSeq;
+  currentPrefetchSignature = expectedSignature;
+  backgroundFetchController = new AbortController();
   console.log("Starting background case fetch");
 
   const payload = {
@@ -714,6 +850,7 @@ function fetchCasesInBackground(userAnswers = null) {
   // Store the promise so proceedCases can await it instead of firing a duplicate request
   backgroundFetchPromise = fetch('/generate_cases', {
       method: 'POST',
+      signal: backgroundFetchController.signal,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
   }).then(async response => {
@@ -727,14 +864,20 @@ function fetchCasesInBackground(userAnswers = null) {
           return;
       }
       if (jsonData.data) {
-          bufferedCases = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data];
+          const nextCases = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data];
+          setPrefetchedCases(nextCases, expectedSignature);
           console.log('Successfully buffered new cases:', bufferedCases.length);
       }
   }).catch(error => {
+        if (error.name === 'AbortError') {
+          console.log('Aborted stale background prefetch');
+          return;
+        }
       console.error('Error in background case fetching:', error);
   }).finally(() => {
       isBackgroundFetching = false;
       backgroundFetchPromise = null;
+        backgroundFetchController = null;
   });
 
   return backgroundFetchPromise;
@@ -749,20 +892,26 @@ function displayCurrentCase(checkBufferedCases = true) {
       return;
   }
 
-  // Check remaining unanswered cases and trigger background fetch if needed.
-  // Threshold is 4 (not 3) to give the backend more lead time on a 6-case batch.
-  if (checkBufferedCases) {
-      const unansweredCases = checkUnansweredCases();
-      if (unansweredCases <= 4 && !isBackgroundFetching && !bufferedCases) {
-          console.log("4 or fewer unanswered cases remaining, triggering background prefetch");
-          fetchCasesInBackground(userAnswers);
-      }
-  }
-
   const caseData = casesBatch[currentCaseIndex];
   const caseElement = createCaseElement(caseData);
   caseForm.appendChild(caseElement);
   responseContainer.appendChild(caseElement);
+  trackCaseView(caseData);
+
+    // The current batch is already local; transitions within it are instant.
+    // Safe server-side prefetch can only happen once the final visible case has a selected answer.
+    if (checkBufferedCases && isLastVisibleCase()) {
+      const radioInputs = caseElement.querySelectorAll(`input[name="${caseData.case_id}"]`);
+      radioInputs.forEach((radioInput) => {
+        radioInput.addEventListener('change', () => {
+          const predictedAnswers = {
+            ...userAnswers,
+            [caseData.case_id]: parseInt(radioInput.value, 10)
+          };
+          maybePrefetchNextBatch(predictedAnswers);
+        });
+      });
+    }
 
   // Hide the generate button when cases are displayed
   toggleGenerateButton(false);
@@ -831,6 +980,7 @@ function displayAnalysis(analysis) {
   }
 
   console.log("displayAnalysis: Data validated successfully. Proceeding to render UI.");
+  trackAnalysisView();
   const overallJudgement = analysisData.overall_judgement || window.i18n.getTranslation('no_analysis');
   const cases = analysisData.cases;
 

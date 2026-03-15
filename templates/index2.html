@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="title">Matter Of Choice</title>
+    <title data-translate="title">Matter Of Choice Simulator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -137,7 +137,7 @@
                 </script>
 
                 <label for="subject" data-translate="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required data-translate-placeholder="enter_subject">
+                <textarea id="subject" name="subject" required rows="3" placeholder="Enter subject: eg: cats,dogs" data-translate-placeholder="enter_subject"></textarea>
 
                 <label for="difficulty" data-translate="difficulty">Difficulty Level:</label>
                 <select id="difficulty" name="difficulty" required>

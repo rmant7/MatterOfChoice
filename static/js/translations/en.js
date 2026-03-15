@@ -1,5 +1,5 @@
 export default {
-    title: "Matter Of Choice",
+    title: "Matter Of Choice Simulator",
     select_language: "Language:",
     gender: "Gender",
     male: "male",

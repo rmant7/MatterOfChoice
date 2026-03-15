@@ -89,12 +89,15 @@ label {
 }
 
 select, 
-input[type="text"] {
+input[type="text"],
+textarea {
   width: 100%;
   padding: 0.75rem 1rem;
   border: 2px solid var(--input-border, rgba(255, 255, 255, 0.2));
   border-radius: 8px;
   font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
   transition: all 0.3s ease;
   background: var(--input-bg, rgba(255, 255, 255, 0.1));
   color: var(--input-text, #ffffff);
@@ -102,7 +105,8 @@ input[type="text"] {
 }
 
 select:focus, 
-input[type="text"]:focus {
+input[type="text"]:focus,
+textarea:focus {
   border-color: #4299e1;
   outline: none;
   box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.25);
@@ -115,6 +119,7 @@ input[type="text"]:focus {
   color: var(--subject-text) !important;
   border: 2px solid var(--subject-border) !important;
   font-size: 1.05rem;
+  resize: vertical;
 }
 
 #subject:focus {
@@ -533,7 +538,7 @@ form {
   align-items: center;
 }
 
-select, input[type="text"] {
+select, input[type="text"], textarea {
   padding: 10px;
   margin-bottom: 20px;
   width: 100%;
@@ -759,11 +764,9 @@ label {
   }
 
   #subject {
-    min-height: 64px;
-    padding: 1rem 1.1rem;
-    font-size: 1.2rem;
-    line-height: 1.35;
-    font-weight: 600;
+    height: calc(3 * 1.5em + 2 * 10px);
+    min-height: unset;
+    line-height: 1.5;
     color: var(--subject-text) !important;
     -webkit-text-fill-color: var(--subject-text) !important;
     caret-color: var(--subject-text) !important;
@@ -774,10 +777,14 @@ label {
     -webkit-text-fill-color: var(--subject-text) !important;
   }
 
+  input[type="text"]:-webkit-autofill,
+  input[type="text"]:-webkit-autofill:hover,
+  input[type="text"]:-webkit-autofill:focus,
   #subject:-webkit-autofill,
   #subject:-webkit-autofill:hover,
   #subject:-webkit-autofill:focus {
-    -webkit-text-fill-color: var(--subject-text) !important;
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(40, 44, 52, 0.9) inset !important;
     transition: background-color 5000s ease-in-out 0s;
   }
 
@@ -788,7 +795,6 @@ label {
 
   @media (max-width: 768px) {
     #subject {
-      min-height: 60px;
-      font-size: 1.1rem;
+      height: calc(3 * 1.5em + 2 * 10px);
     }
   }
