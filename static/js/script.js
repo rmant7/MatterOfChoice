@@ -6,6 +6,7 @@ const resetButton = document.getElementById('resetButton');
 let bufferedCases = null;
 let isBackgroundFetching = false;
 let backgroundFetchSeq = 0;
+let backgroundFetchPromise = null; // tracks the in-flight prefetch so proceedCases can await it
 
 // Define subtypes for each question type
 const subtypes = {
@@ -114,7 +115,7 @@ resetButton.addEventListener('click', async () => {
 });
 
 function startNewGame() {
-  // Reset game state if necessary
+  // Reset simulator state if necessary
   userAnswers = {}; // Reset userAnswers
   casesBatch = []; // Clear the current batch of cases
 
@@ -148,7 +149,7 @@ async function handleGenerateCasesResponse(response) {
   //   return;
   // }
 
-  if (jsonData.message && jsonData.message === "CONGRATULATIONS YOU FINISHED THE GAME") {
+  if (jsonData.message && jsonData.message === "SIMULATION COMPLETE") {
     const message = window.i18n.getTranslation("congratulations");
     displayCongratulations(message);
     userAnswers = {}; // Reset userAnswers to an empty object
@@ -641,33 +642,51 @@ function checkUnansweredCases() {
   return unansweredCount;
 }
 
-function proceedCases() {
+async function proceedCases() {
     console.log("proceedCases: Starting with buffered cases:", bufferedCases?.length);
 
     if (bufferedCases && bufferedCases.length > 0) {
-        // Use the buffered cases
+        // Best case: prefetch already finished — show cases immediately
         casesBatch = bufferedCases;
         bufferedCases = null;
         currentCaseIndex = 0;
-        userAnswers = {}; // Reset userAnswers
+        userAnswers = {};
         displayCurrentCase();
-        console.log("proceedCases: Using buffered cases");
+        console.log("proceedCases: Using buffered cases (instant)");
+    } else if (isBackgroundFetching && backgroundFetchPromise) {
+        // Prefetch is still in flight — wait for it rather than firing a duplicate request
+        console.log("proceedCases: Prefetch in flight, awaiting it instead of re-fetching");
+        loadingSpinner.classList.remove('hidden');
+        loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        await backgroundFetchPromise;
+        loadingSpinner.classList.add('hidden');
+        if (bufferedCases && bufferedCases.length > 0) {
+            casesBatch = bufferedCases;
+            bufferedCases = null;
+            currentCaseIndex = 0;
+            userAnswers = {};
+            displayCurrentCase();
+            console.log("proceedCases: Using cases from completed prefetch");
+        } else {
+            console.log("proceedCases: Prefetch finished but no cases buffered, falling back");
+            sendAnswersToBackend(userAnswers);
+        }
     } else {
-        // Fallback to original behavior
-        console.log("proceedCases: No buffered cases available, falling back to sendAnswersToBackend");
+        // No prefetch was running — full round-trip as before
+        console.log("proceedCases: No prefetch available, falling back to sendAnswersToBackend");
         sendAnswersToBackend(userAnswers);
     }
 }
 
-async function fetchCasesInBackground(userAnswers = null) {
-  // Prevent multiple simultaneous fetches
-  if (isBackgroundFetching) return;
+function fetchCasesInBackground(userAnswers = null) {
+  // If a fetch is already in flight, return its promise so callers can await it
+  if (isBackgroundFetching) return backgroundFetchPromise;
 
   // Check if we actually need new cases
   const unansweredCases = checkUnansweredCases();
   if (unansweredCases > 4 || bufferedCases) {
       console.log("No need to fetch cases: sufficient cases available");
-      return;
+      return Promise.resolve();
   }
 
   isBackgroundFetching = true;
@@ -683,41 +702,42 @@ async function fetchCasesInBackground(userAnswers = null) {
       sub_type: document.getElementById('sub_type')?.value || "",
       role: 'default_role',
       sex: document.getElementById('sex')?.value || localStorage.getItem('sex') || "",
-      allow_image: document.getElementById('allow_image')?.checked ? 'on' : '', // Always retrieve directly from the DOM
+      allow_image: document.getElementById('allow_image')?.checked ? 'on' : '',
       model: document.getElementById('model')?.value || localStorage.getItem('model') || 'gemini'
   };
 
-  // Include answers only when non-empty.
+  // Include answers only when non-empty
   if (userAnswers && Object.keys(userAnswers).length > 0) {
       payload.answers = userAnswers;
   }
 
-  try {
-      const response = await fetch('/generate_cases', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-      });
-
+  // Store the promise so proceedCases can await it instead of firing a duplicate request
+  backgroundFetchPromise = fetch('/generate_cases', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+  }).then(async response => {
       if (!response.ok) {
           console.error('Background case fetching failed:', response.status);
           return;
       }
-
       const jsonData = await response.json();
-        if (seq !== backgroundFetchSeq) {
+      if (seq !== backgroundFetchSeq) {
           console.log('Ignoring stale background fetch response');
           return;
-        }
+      }
       if (jsonData.data) {
           bufferedCases = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data];
           console.log('Successfully buffered new cases:', bufferedCases.length);
       }
-  } catch (error) {
+  }).catch(error => {
       console.error('Error in background case fetching:', error);
-  } finally {
+  }).finally(() => {
       isBackgroundFetching = false;
-  }
+      backgroundFetchPromise = null;
+  });
+
+  return backgroundFetchPromise;
 }
 
 function displayCurrentCase(checkBufferedCases = true) {
@@ -729,11 +749,12 @@ function displayCurrentCase(checkBufferedCases = true) {
       return;
   }
 
-  // Check remaining unanswered cases and trigger background fetch if needed
+  // Check remaining unanswered cases and trigger background fetch if needed.
+  // Threshold is 4 (not 3) to give the backend more lead time on a 6-case batch.
   if (checkBufferedCases) {
       const unansweredCases = checkUnansweredCases();
-      if (unansweredCases <= 3 && !isBackgroundFetching && !bufferedCases) {
-          console.log("Only 4 or fewer unanswered cases remaining, triggering background fetch");
+      if (unansweredCases <= 4 && !isBackgroundFetching && !bufferedCases) {
+          console.log("4 or fewer unanswered cases remaining, triggering background prefetch");
           fetchCasesInBackground(userAnswers);
       }
   }
@@ -772,8 +793,9 @@ function displayAnalysis(analysis) {
   // Hide the generate button when cases are displayed
   toggleGenerateButton(false);
 
-  // Start background fetch immediately without answersArr
-  fetchCasesInBackground();
+  // Start prefetch immediately so cases are ready when the user clicks Proceed.
+  // Pass userAnswers so the backend can provide continuity with the current session.
+  fetchCasesInBackground(userAnswers);
 
   // If analysis is a string, try to parse it.
   if (typeof analysis === "string") {

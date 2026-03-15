@@ -205,7 +205,7 @@ def generate_cases():
 
             with open(analysis_filepath, 'w') as f:
                 json.dump(analysis_data, f, indent=4)
-        return jsonify({"message": "CONGRATULATIONS YOU FINISHED THE GAME"}), 200
+        return jsonify({"message": "SIMULATION COMPLETE"}), 200
 
     try:
         if turn == 1:

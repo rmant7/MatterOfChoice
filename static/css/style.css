@@ -92,12 +92,12 @@ select,
 input[type="text"] {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--input-border, rgba(255, 255, 255, 0.2));
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  background: var(--input-bg, rgba(255, 255, 255, 0.1));
+  color: var(--input-text, #ffffff);
   backdrop-filter: blur(5px);
 }
 
@@ -105,8 +105,27 @@ select:focus,
 input[type="text"]:focus {
   border-color: #4299e1;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
-  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.25);
+  background: var(--input-bg-focus, var(--input-bg, rgba(255, 255, 255, 0.15)));
+}
+
+/* High-contrast Subject field — readable on every theme */
+#subject {
+  background: var(--subject-bg) !important;
+  color: var(--subject-text) !important;
+  border: 2px solid var(--subject-border) !important;
+  font-size: 1.05rem;
+}
+
+#subject:focus {
+  border-color: var(--subject-focus-border) !important;
+  box-shadow: 0 0 0 3px var(--subject-focus-ring) !important;
+  background: var(--subject-bg-focus) !important;
+}
+
+#subject::placeholder {
+  color: var(--subject-placeholder) !important;
+  opacity: 1;
 }
 
 /* Button Styles */
@@ -719,3 +738,57 @@ label {
         text-indent: 1px; /* Prevents text cutoff in Safari */
     }
 }
+
+  /* Final layout overrides: prioritize top settings and enlarge Subject input */
+  .settings-priority {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .settings-priority label {
+    margin-top: 0.25rem;
+  }
+
+  .settings-priority label:first-of-type {
+    margin-top: 0;
+  }
+
+  #subject {
+    min-height: 64px;
+    padding: 1rem 1.1rem;
+    font-size: 1.2rem;
+    line-height: 1.35;
+    font-weight: 600;
+    color: var(--subject-text) !important;
+    -webkit-text-fill-color: var(--subject-text) !important;
+    caret-color: var(--subject-text) !important;
+  }
+
+  #subject:focus {
+    color: var(--subject-text) !important;
+    -webkit-text-fill-color: var(--subject-text) !important;
+  }
+
+  #subject:-webkit-autofill,
+  #subject:-webkit-autofill:hover,
+  #subject:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--subject-text) !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  #subject::placeholder {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    #subject {
+      min-height: 60px;
+      font-size: 1.1rem;
+    }
+  }

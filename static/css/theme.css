@@ -5,28 +5,48 @@
     --text-color: #333333;
     --container-bg: #f8f9fa;
     --input-bg: #ffffff;
+    --input-bg-focus: #f0f4ff;
     --input-border: #ced4da;
-    --input-text: #333333;
+    --input-text: #1a1a2e;
     --button-bg: #007bff;
     --button-text: #ffffff;
     --hover-bg: #0056b3;
     --home-text: #333333;
     --label-color: #333333;
+
+    /* High-contrast Subject field — light theme */
+    --subject-bg: #ffffff;
+    --subject-bg-focus: #eef2ff;
+    --subject-text: #0d1117;
+    --subject-border: #6c757d;
+    --subject-placeholder: #6c757d;
+    --subject-focus-border: #2563eb;
+    --subject-focus-ring: rgba(37, 99, 235, 0.25);
 }
 
 /* Dark theme */
 [data-theme="dark"] {
     --bg-color: #1a1a1a;
-    --text-color: #ffffff;
+    --text-color: #f0f4f8;
     --container-bg: #2d2d2d;
-    --input-bg: #3d3d3d;
-    --input-border: #4d4d4d;
-    --input-text: #ffffff;
+    --input-bg: #2a2f3a;
+    --input-bg-focus: #313748;
+    --input-border: #4a5568;
+    --input-text: #f0f4f8;
     --button-bg: #0d6efd;
     --button-text: #ffffff;
     --hover-bg: #0b5ed7;
-    --home-text: #ffffff;
-    --label-color: #ffffff;
+    --home-text: #f0f4f8;
+    --label-color: #e2e8f0;
+
+    /* High-contrast Subject field — dark theme */
+    --subject-bg: #1e2433;
+    --subject-bg-focus: #252b3b;
+    --subject-text: #f0f4f8;
+    --subject-border: #718096;
+    --subject-placeholder: #8a9ab5;
+    --subject-focus-border: #63b3ed;
+    --subject-focus-ring: rgba(99, 179, 237, 0.3);
 }
 
 /* Apply theme variables */
