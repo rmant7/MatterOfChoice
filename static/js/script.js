@@ -38,6 +38,14 @@ let backgroundFetchController = null;
 let currentPrefetchSignature = null;
 let lastTrackedMetrikaPath = null;
 
+// Early-prefetch state: cases generated speculatively while the user reads the current batch.
+// Uses prefetch_only=true so no server state is changed until /commit_answers fires later.
+const BATCH_LIMIT = 3;            // matches backend turn > 3 simulation-complete threshold
+let earlyPrefetchCases = null;    // raw cases returned by the prefetch call
+let earlyPrefetchPromise = null;  // in-flight fetch promise
+let earlyPrefetchForBatch = -1;  // batchCounter value that triggered this prefetch
+let earlyPrefetchActive = false; // true while the request is in flight
+
 function trackMetrikaHit(path, title) {
   if (typeof window.ym !== 'function' || !path) {
     return;
@@ -86,7 +94,7 @@ function clearPrefetchedCases() {
 }
 
 function setPrefetchedCases(cases, signature) {
-  bufferedCases = Array.isArray(cases) ? cases.slice(0, PREFETCH_CASE_LIMIT) : [];
+  bufferedCases = normalizeCasesPayload(cases).slice(0, PREFETCH_CASE_LIMIT);
   bufferedCasesSignature = signature;
   localStorage.setItem(PREFETCH_CACHE_KEY, JSON.stringify({
     signature,
@@ -106,8 +114,9 @@ function loadPrefetchedCases(signature) {
     }
 
     const parsedCache = JSON.parse(cachedValue);
-    if (parsedCache?.signature === signature && Array.isArray(parsedCache.cases) && parsedCache.cases.length > 0) {
-      bufferedCases = parsedCache.cases;
+    const normalizedCases = normalizeCasesPayload(parsedCache?.cases || []);
+    if (parsedCache?.signature === signature && normalizedCases.length > 0) {
+      bufferedCases = normalizedCases;
       bufferedCasesSignature = parsedCache.signature;
       return bufferedCases;
     }
@@ -136,7 +145,11 @@ function maybePrefetchNextBatch(predictedAnswers) {
   if (!isLastVisibleCase()) {
     return;
   }
-
+  // Don't fire the signature-based (state-committing) prefetch when the early prefetch
+  // is already managing this batch, or when no more batches will be generated.
+  if (earlyPrefetchCases || earlyPrefetchActive || batchCounter >= BATCH_LIMIT) {
+    return;
+  }
   fetchCasesInBackground(predictedAnswers);
 }
 
@@ -253,6 +266,10 @@ function startNewGame() {
   lastTrackedMetrikaPath = null;
   userAnswers = {}; // Reset userAnswers
   casesBatch = []; // Clear the current batch of cases
+  earlyPrefetchCases = null;
+  earlyPrefetchPromise = null;
+  earlyPrefetchForBatch = -1;
+  earlyPrefetchActive = false;
 
   window.location.reload();
 }
@@ -262,6 +279,136 @@ let currentCaseIndex = 0;
 let casesBatch = [];
 let userAnswers = {}; // Changed to an object
 let batchCounter = 0;
+
+function normalizeText(value, fallback = '') {
+  if (value === null || typeof value === 'undefined') {
+    return fallback;
+  }
+
+  if (typeof value === 'string') {
+    const trimmed = value.trim();
+    return trimmed || fallback;
+  }
+
+  if (typeof value === 'number' || typeof value === 'boolean') {
+    return String(value);
+  }
+
+  if (Array.isArray(value)) {
+    const joined = value
+      .map(item => normalizeText(item, ''))
+      .filter(Boolean)
+      .join(' ')
+      .trim();
+    return joined || fallback;
+  }
+
+  if (typeof value === 'object') {
+    if (typeof value.text === 'string') {
+      return normalizeText(value.text, fallback);
+    }
+
+    if (typeof value.content !== 'undefined') {
+      return normalizeText(value.content, fallback);
+    }
+  }
+
+  return fallback;
+}
+
+function normalizeOption(option, index) {
+  if (!option || typeof option !== 'object') {
+    return null;
+  }
+
+  const optionText = normalizeText(option.option);
+  if (!optionText) {
+    return null;
+  }
+
+  const rawNumber = option.number;
+  const parsedNumber = typeof rawNumber === 'number'
+    ? rawNumber
+    : Number.parseInt(normalizeText(rawNumber, ''), 10);
+
+  return {
+    ...option,
+    number: Number.isFinite(parsedNumber) ? parsedNumber : index + 1,
+    option: optionText,
+    option_id: normalizeText(option.option_id, `option_${index + 1}`)
+  };
+}
+
+function normalizeCase(caseData, index = 0) {
+  if (!caseData || typeof caseData !== 'object') {
+    return null;
+  }
+
+  const caseText = normalizeText(caseData.case);
+  const options = Array.isArray(caseData.options)
+    ? caseData.options.map(normalizeOption).filter(Boolean)
+    : [];
+
+  if (!caseText || options.length === 0) {
+    return null;
+  }
+
+  return {
+    ...caseData,
+    case_id: normalizeText(caseData.case_id, `case_${index + 1}`),
+    case: caseText,
+    options,
+    generated_image_data: normalizeText(caseData.generated_image_data, ''),
+    optimal: typeof caseData.optimal === 'undefined' || caseData.optimal === null
+      ? null
+      : caseData.optimal
+  };
+}
+
+function normalizeCasesPayload(payload) {
+  const rawCases = Array.isArray(payload) ? payload : [payload];
+  return rawCases
+    .map((caseData, index) => normalizeCase(caseData, index))
+    .filter(Boolean);
+}
+
+function normalizeAnalysisCase(caseItem) {
+  if (!caseItem || typeof caseItem !== 'object') {
+    return null;
+  }
+
+  return {
+    case_description: normalizeText(caseItem.case_description, window.i18n.getTranslation('no_case')),
+    player_choice: normalizeText(caseItem.player_choice, 'N/A'),
+    optimal_choice: normalizeText(caseItem.optimal_choice, 'N/A'),
+    analysis: normalizeText(caseItem.analysis, window.i18n.getTranslation('no_analysis'))
+  };
+}
+
+function normalizeAnalysisPayload(payload) {
+  if (!payload || typeof payload !== 'object') {
+    return null;
+  }
+
+  const cases = Array.isArray(payload.cases)
+    ? payload.cases.map(normalizeAnalysisCase).filter(Boolean)
+    : [];
+
+  return {
+    ...payload,
+    overall_judgement: normalizeText(payload.overall_judgement, window.i18n.getTranslation('no_analysis')),
+    cases
+  };
+}
+
+function escapeHtml(value) {
+  return normalizeText(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
 
 async function handleGenerateCasesResponse(response) {
   if (!response.ok) {
@@ -302,7 +449,17 @@ async function handleGenerateCasesResponse(response) {
   backgroundFetchSeq++;
   clearPrefetchedCases();
   isBackgroundFetching = false;
-  casesBatch = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data];
+  // Also reset early prefetch so it re-triggers on the new batch.
+  earlyPrefetchCases = null;
+  earlyPrefetchPromise = null;
+  earlyPrefetchForBatch = -1;
+  earlyPrefetchActive = false;
+  casesBatch = normalizeCasesPayload(jsonData.data);
+
+  if (casesBatch.length === 0) {
+    displayError({ error: window.i18n.getTranslation("no_case") });
+    return;
+  }
 
   try {
     // Clear storage before setting new data
@@ -420,39 +577,18 @@ function createCaseElement(caseData) {
   const caseElement = document.createElement('div');
   caseElement.classList.add('case-container');
 
+  if (!caseData || typeof caseData !== 'object') {
+    const invalidCaseText = document.createElement('p');
+    invalidCaseText.innerText = window.i18n.getTranslation('no_case');
+    caseElement.appendChild(invalidCaseText);
+    return caseElement;
+  }
+
   const caseTitle = document.createElement('div');
   const caseTitleLabel = document.createElement('label');
-  caseTitleLabel.innerText = caseData.case;
+  caseTitleLabel.innerText = normalizeText(caseData.case, window.i18n.getTranslation('no_case'));
   caseTitle.appendChild(caseTitleLabel);
   caseElement.appendChild(caseTitle);
-
-  // Display generated image if available
-  if (caseData.generated_image_data) {
-    const img = document.createElement('img');
-    img.src = caseData.generated_image_data;
-    img.alt = window.i18n.getTranslation('generated_image_alt');
-    img.classList.add('case-image');
-
-    // Add placeholder text while the image is loading
-    const placeholderText = document.createElement('p');
-    placeholderText.innerText = 'Waiting for image...';
-    placeholderText.classList.add('image-placeholder');
-    caseElement.appendChild(placeholderText);
-
-    img.addEventListener('load', () => {
-      placeholderText.remove(); // Remove placeholder when image loads
-    });
-
-    img.addEventListener('error', () => {
-      placeholderText.innerText = 'Failed to load image'; // Update placeholder on error
-    });
-
-    caseElement.appendChild(img);
-  } else {
-    const noImageText = document.createElement('p');
-    noImageText.innerText = '';
-    caseElement.appendChild(noImageText);
-  }
 
   const hiddenInput = document.createElement('input');
   hiddenInput.type = 'hidden';
@@ -460,7 +596,8 @@ function createCaseElement(caseData) {
   hiddenInput.value = caseData.case_id || '';
   caseElement.appendChild(hiddenInput);
 
-  caseData.options.forEach(option => {
+  const options = Array.isArray(caseData.options) ? caseData.options : [];
+  options.forEach(option => {
     const optionElement = document.createElement('div');
     optionElement.classList.add('option');
 
@@ -513,6 +650,10 @@ async function analyzeResults() {
   backgroundFetchSeq++;
   clearPrefetchedCases();
   isBackgroundFetching = false;
+  earlyPrefetchCases = null;
+  earlyPrefetchPromise = null;
+  earlyPrefetchForBatch = -1;
+  earlyPrefetchActive = false;
   loadingSpinner.classList.remove('hidden');
   loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
@@ -578,6 +719,8 @@ function displayError(errorData) {
     modal.style.zIndex = '1000';
     modal.style.textAlign = 'center';
     modal.style.width = '300px';
+    modal.style.color = '#111827';
+    modal.style.border = '1px solid rgba(17, 24, 39, 0.12)';
 
     // Close button (X)
     const closeButton = document.createElement('span');
@@ -764,6 +907,56 @@ function checkUnansweredCases() {
 }
 
 async function proceedCases() {
+  // ── Priority 1: early speculative prefetch (prefetch_only=true, no backend side-effects yet) ──
+  // Only active for non-final batches; final batch falls through to sendAnswersToBackend which
+  // returns SIMULATION COMPLETE and saves answers in one shot.
+  if (batchCounter < BATCH_LIMIT) {
+    let usableCases = null;
+
+    if (earlyPrefetchCases && earlyPrefetchForBatch === batchCounter) {
+      // Best case: prefetch already finished before the user submitted.
+      usableCases = normalizeCasesPayload(earlyPrefetchCases);
+      console.log('proceedCases: early prefetch ready —', usableCases.length, 'cases');
+    } else if (earlyPrefetchActive && earlyPrefetchPromise && earlyPrefetchForBatch === batchCounter) {
+      // Prefetch is still in-flight — wait for it (much faster than a new round-trip).
+      console.log('proceedCases: early prefetch in-flight, awaiting…');
+      loadingSpinner.classList.remove('hidden');
+      loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      await earlyPrefetchPromise;
+      loadingSpinner.classList.add('hidden');
+      if (earlyPrefetchCases && earlyPrefetchForBatch === batchCounter) {
+        usableCases = normalizeCasesPayload(earlyPrefetchCases);
+        console.log('proceedCases: early prefetch completed —', usableCases.length, 'cases');
+      }
+    }
+
+    if (usableCases && usableCases.length > 0) {
+      const answersSnapshot = { ...userAnswers };
+      const casesSnapshot   = [...usableCases];
+      // Clear early prefetch state before mutating shared vars.
+      earlyPrefetchCases    = null;
+      earlyPrefetchPromise  = null;
+      earlyPrefetchForBatch = -1;
+      earlyPrefetchActive   = false;
+      // Invalidate any stale signature-based prefetch work.
+      backgroundFetchSeq++;
+      clearPrefetchedCases();
+      isBackgroundFetching = false;
+      // Install the new batch and show it immediately.
+      batchCounter++;
+      casesBatch = usableCases;
+      currentCaseIndex = 0;
+      userAnswers = {};
+      displayCurrentCase(false);
+      // Persist answers + new cases to the backend asynchronously (fast file write, no LLM).
+      commitAnswersInBackground(answersSnapshot, casesSnapshot);
+      return;
+    }
+    // Early prefetch was absent or failed — fall through to the existing paths.
+    console.log('proceedCases: early prefetch unavailable, falling back');
+  }
+
+  // ── Priority 2 & 3: existing signature-based prefetch / full round-trip ──
   const expectedSignature = buildAnswersSignature(userAnswers);
   const prefetchedCases = consumePrefetchedCases(expectedSignature);
   console.log("proceedCases: Starting with prefetched cases:", prefetchedCases?.length || 0);
@@ -799,6 +992,80 @@ async function proceedCases() {
         sendAnswersToBackend(userAnswers);
     }
 }
+
+// ---------------------------------------------------------------------------
+// Early-prefetch helpers
+// ---------------------------------------------------------------------------
+
+/**
+ * Fires a speculative /generate_cases request (prefetch_only=true) so the next
+ * batch of cases is ready before the user finishes the current one.
+ * No server state is modified — answers and turn advancement are committed
+ * later via commitAnswersInBackground().
+ */
+function triggerEarlyPrefetch() {
+  // Already triggered for this batch, or no further batches are needed.
+  if (earlyPrefetchForBatch === batchCounter || batchCounter >= BATCH_LIMIT) {
+    return;
+  }
+  const thisBatch = batchCounter;
+  earlyPrefetchForBatch = thisBatch;
+  earlyPrefetchActive = true;
+  console.log(`triggerEarlyPrefetch: firing for batch ${thisBatch}`);
+
+  const payload = {
+    language: document.getElementById('language')?.value || '',
+    age:      document.getElementById('age')?.value      || '',
+    subject:  document.getElementById('subject')?.value  || '',
+    difficulty:    document.getElementById('difficulty')?.value    || '',
+    question_type: document.getElementById('question_type')?.value || '',
+    sub_type:      document.getElementById('sub_type')?.value      || '',
+    role:  'default_role',
+    sex:   document.getElementById('sex')?.value   || '',
+    model: document.getElementById('model')?.value || 'gemini',
+    prefetch_only: true
+  };
+
+  earlyPrefetchPromise = fetch('/generate_cases', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).then(async response => {
+    if (!response.ok) {
+      console.warn('triggerEarlyPrefetch: non-ok response', response.status);
+      return;
+    }
+    const json = await response.json();
+    if (json.data && earlyPrefetchForBatch === thisBatch) {
+      earlyPrefetchCases = json.data;
+      console.log(`triggerEarlyPrefetch: buffered ${Array.isArray(json.data) ? json.data.length : 1} cases for batch ${thisBatch}`);
+    }
+  }).catch(err => {
+    console.warn('triggerEarlyPrefetch: request error', err);
+  }).finally(() => {
+    if (earlyPrefetchForBatch === thisBatch) {
+      earlyPrefetchActive = false;
+    }
+  });
+}
+
+/**
+ * Fire-and-forget call to /commit_answers.
+ * Saves the completed batch's answers and the next batch's case objects
+ * to analysis.json, then advances the session turn counter.
+ */
+function commitAnswersInBackground(answersSnapshot, casesSnapshot) {
+  fetch('/commit_answers', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ answers: answersSnapshot, next_cases: casesSnapshot })
+  }).then(r => {
+    if (!r.ok) console.error('commitAnswersInBackground: server error', r.status);
+    else        console.log('commitAnswersInBackground: committed successfully');
+  }).catch(err => console.error('commitAnswersInBackground: network error', err));
+}
+
+// ---------------------------------------------------------------------------
 
 function fetchCasesInBackground(userAnswers = null) {
   const answersForPrefetch = userAnswers && Object.keys(userAnswers).length > 0 ? userAnswers : null;
@@ -864,9 +1131,11 @@ function fetchCasesInBackground(userAnswers = null) {
           return;
       }
       if (jsonData.data) {
-          const nextCases = Array.isArray(jsonData.data) ? jsonData.data : [jsonData.data];
+          const nextCases = normalizeCasesPayload(jsonData.data);
+          if (nextCases.length > 0) {
           setPrefetchedCases(nextCases, expectedSignature);
           console.log('Successfully buffered new cases:', bufferedCases.length);
+          }
       }
   }).catch(error => {
         if (error.name === 'AbortError') {
@@ -898,9 +1167,15 @@ function displayCurrentCase(checkBufferedCases = true) {
   responseContainer.appendChild(caseElement);
   trackCaseView(caseData);
 
-    // The current batch is already local; transitions within it are instant.
-    // Safe server-side prefetch can only happen once the final visible case has a selected answer.
-    if (checkBufferedCases && isLastVisibleCase()) {
+  // Fire early prefetch when the user reaches the second case so the next batch
+  // is already generating while they read the remaining cases.
+  if (checkBufferedCases && currentCaseIndex === 1) {
+    triggerEarlyPrefetch();
+  }
+
+  // The current batch is already local; transitions within it are instant.
+  // Safe server-side prefetch can only happen once the final visible case has a selected answer.
+  if (checkBufferedCases && isLastVisibleCase()) {
       const radioInputs = caseElement.querySelectorAll(`input[name="${caseData.case_id}"]`);
       radioInputs.forEach((radioInput) => {
         radioInput.addEventListener('change', () => {
@@ -979,6 +1254,13 @@ function displayAnalysis(analysis) {
       return;
   }
 
+    analysisData = normalizeAnalysisPayload(analysisData);
+    if (!analysisData || analysisData.cases.length === 0) {
+      console.error("displayAnalysis: Analysis payload contained no valid cases:", analysisData);
+      displayError({ error: window.i18n.getTranslation('no_analysis') });
+      return;
+    }
+
   console.log("displayAnalysis: Data validated successfully. Proceeding to render UI.");
   trackAnalysisView();
   const overallJudgement = analysisData.overall_judgement || window.i18n.getTranslation('no_analysis');
@@ -987,7 +1269,7 @@ function displayAnalysis(analysis) {
   // Calculate percentage score
   const correctCases = cases.filter(caseItem => caseItem.player_choice === caseItem.optimal_choice).length;
   const totalCases = cases.length;
-  const percentageScore = ((correctCases / totalCases) * 100).toFixed(1);
+    const percentageScore = totalCases > 0 ? ((correctCases / totalCases) * 100).toFixed(1) : '0.0';
 
   responseContainer.innerHTML = `
       <div class="analysis-container">
@@ -1011,7 +1293,7 @@ function displayAnalysis(analysis) {
               <h3>${window.i18n.getTranslation('overall_assessment')}</h3>
               <div class="judgment-content">
                   <i class="fas fa-chart-line judgment-icon"></i>
-                  <p>${overallJudgement}</p>
+                <p>${escapeHtml(overallJudgement)}</p>
               </div>
           </div>
 
@@ -1024,21 +1306,21 @@ function displayAnalysis(analysis) {
                       <div class="case-content">
                           <div class="case-question">
                               <i class="fas fa-question-circle"></i>
-                              <p>${caseItem.case_description || window.i18n.getTranslation('no_case')}</p>
+                              <p>${escapeHtml(caseItem.case_description)}</p>
                           </div>
                           <div class="choices-comparison">
                               <div class="choice player-choice">
                                   <span class="choice-label">${window.i18n.getTranslation('your_answer')}</span>
-                                  <span class="choice-value">${caseItem.player_choice || "N/A"}</span>
+                                <span class="choice-value">${escapeHtml(caseItem.player_choice)}</span>
                               </div>
                               <div class="choice correct-choice">
                                   <span class="choice-label">${window.i18n.getTranslation('correct_answer')}</span>
-                                  <span class="choice-value">${caseItem.optimal_choice || "N/A"}</span>
+                                <span class="choice-value">${escapeHtml(caseItem.optimal_choice)}</span>
                               </div>
                           </div>
                           <div class="case-feedback">
                               <i class="fas fa-lightbulb"></i>
-                              <p>${caseItem.analysis || window.i18n.getTranslation('no_analysis')}</p>
+                              <p>${escapeHtml(caseItem.analysis)}</p>
                           </div>
                       </div>
                   </div>
@@ -1088,73 +1370,3 @@ loadingSpinner.addEventListener('transitionend', () => {
     loadingSpinner.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 });
-
-// --- ADDITIVE IMAGE POLLING FEATURE ---
-(function() {
-  // Only run after DOM is fully loaded
-  window.addEventListener('DOMContentLoaded', function() {
-    // Helper: check if images are enabled for this session
-    function imagesEnabled() {
-      const el = document.getElementById('allow_image');
-      return el && (el.checked || el.value === 'on' || el.value === 'true');
-    }
-
-    // Helper: poll for image for a given case_id and update placeholder
-    function pollForImage(caseId, placeholder) {
-      let attempts = 0;
-      const interval = setInterval(async function() {
-        attempts++;
-        try {
-          const resp = await fetch(`/get_image/${caseId}`);
-          if (!resp.ok) return;
-          const data = await resp.json();
-          if (data.generated_image_data === null) {
-            placeholder.innerText = window.i18n?.getTranslation('image_failed') || 'Image generation failed.';
-            clearInterval(interval);
-          } else if (data.generated_image_data) {
-            const img = document.createElement('img');
-            img.src = data.generated_image_data;
-            img.alt = window.i18n?.getTranslation('generated_image_alt') || 'Generated image';
-            img.className = 'case-image';
-            placeholder.replaceWith(img);
-            clearInterval(interval);
-          } else if (attempts > 60) {
-            placeholder.innerText = window.i18n?.getTranslation('image_timeout') || 'Image not available.';
-            clearInterval(interval);
-          }
-        } catch (e) {
-          // Ignore errors, keep polling
-        }
-      }, 2000);
-    }
-
-    // Hook: after each case is rendered, add placeholder and polling if needed
-    const origCreateCaseElement = window.createCaseElement;
-    if (typeof origCreateCaseElement === 'function') {
-      window.createCaseElement = function(caseData) {
-        const el = origCreateCaseElement(caseData);
-        // Only add if images are enabled and generated_image_data is null
-        if (imagesEnabled() && !caseData.generated_image_data) {
-          // Only add if not already present
-          if (!el.querySelector('.image-placeholder')) {
-            const placeholder = document.createElement('p');
-            placeholder.className = 'image-placeholder';
-            placeholder.innerText = window.i18n?.getTranslation('waiting_for_image') || 'Waiting for image...';
-            el.appendChild(placeholder);
-            pollForImage(caseData.case_id, placeholder);
-          }
-        } else if (!imagesEnabled()) {
-          // If images are disabled, show a message
-          if (!el.querySelector('.image-disabled-msg')) {
-            const msg = document.createElement('p');
-            msg.className = 'image-disabled-msg';
-            msg.innerText = window.i18n?.getTranslation('images_disabled') || 'Images are disabled for this session.';
-            el.appendChild(msg);
-          }
-        }
-        return el;
-      };
-    }
-  });
-})();
-// --- END ADDITIVE IMAGE POLLING FEATURE ---

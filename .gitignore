@@ -2,7 +2,6 @@ output/
 env/
 venv/
 __pycache__/
-.env
 flask/output/
 flask/__pycache__/
 flask/.env
@@ -11,3 +10,5 @@ flask/output/game/
 flask_app.log
 list_gemini_models.py
 generate_image.py
+config.bat
+node_modules
