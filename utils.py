@@ -15,10 +15,14 @@ try:
     from mistralai import Mistral as MistralClient
 except Exception:
     try:
-        # Older mistralai SDK
-        from mistralai.client import MistralClient  # type: ignore
+        # mistralai 2.x exposes the client class from mistralai.client
+        from mistralai.client import Mistral as MistralClient  # type: ignore
     except Exception:
-        MistralClient = None
+        try:
+        # Older mistralai SDK
+            from mistralai.client import MistralClient  # type: ignore
+        except Exception:
+            MistralClient = None
 
 # Load environment variables
 
@@ -60,6 +64,116 @@ utils_logger = logging.getLogger('my_app')
 # Directory to save generated cases and images
 output_path = BASE_DIR / 'output/game'
 output_path.mkdir(parents=True, exist_ok=True)
+
+
+def _extract_text_content(content) -> str:
+    if content is None:
+        return ""
+
+    if isinstance(content, str):
+        return content.strip()
+
+    if isinstance(content, (int, float, bool)):
+        return str(content).strip()
+
+    if isinstance(content, list):
+        text_parts = []
+        for item in content:
+            extracted = _extract_text_content(item)
+            if extracted:
+                text_parts.append(extracted)
+        return "\n".join(text_parts).strip()
+
+    if isinstance(content, dict):
+        for key in ('text', 'content', 'value'):
+            extracted = _extract_text_content(content.get(key))
+            if extracted:
+                return extracted
+        return ""
+
+    for attr in ('text', 'content'):
+        if hasattr(content, attr):
+            extracted = _extract_text_content(getattr(content, attr, None))
+            if extracted:
+                return extracted
+
+    return ""
+
+
+def _extract_chat_response_text(response) -> str:
+    if response is None:
+        return ""
+
+    output_text = _extract_text_content(getattr(response, 'output_text', None))
+    if output_text:
+        return output_text
+
+    choices = getattr(response, 'choices', None) or []
+    for choice in choices:
+        message = getattr(choice, 'message', None)
+        content = getattr(message, 'content', None)
+        extracted = _extract_text_content(content)
+        if extracted:
+            return extracted
+
+        delta = getattr(choice, 'delta', None)
+        extracted = _extract_text_content(delta)
+        if extracted:
+            return extracted
+
+    return ""
+
+
+def _normalize_option_number(value, fallback: int):
+    if isinstance(value, bool):
+        return fallback
+    if isinstance(value, int):
+        return value
+    if isinstance(value, str):
+        stripped = value.strip()
+        if stripped.isdigit():
+            return int(stripped)
+    return fallback
+
+
+def _build_case_payload(case) -> dict | None:
+    if not isinstance(case, dict):
+        return None
+
+    case_text = _extract_text_content(case.get('case'))
+    optimal = case.get('optimal')
+    if isinstance(optimal, str) and optimal.strip().isdigit():
+        optimal = int(optimal.strip())
+
+    raw_options = case.get('options')
+    if not case_text or optimal in (None, "") or not isinstance(raw_options, list):
+        return None
+
+    normalized_options = []
+    for index, option_data in enumerate(raw_options, start=1):
+        if not isinstance(option_data, dict):
+            continue
+
+        option_text = _extract_text_content(option_data.get('option'))
+        if not option_text:
+            continue
+
+        normalized_options.append({
+            **option_data,
+            'number': _normalize_option_number(option_data.get('number'), index),
+            'option': option_text,
+            'option_id': str(uuid.uuid4())
+        })
+
+    if not normalized_options:
+        return None
+
+    return {
+        'case_id': str(uuid.uuid4()),
+        'case': case_text,
+        'optimal': optimal,
+        'options': normalized_options
+    }
 
 # Function to get a response from Gemini
 def get_response_gemini(prompt: str) -> str:
@@ -135,7 +249,7 @@ def get_response_mistral(prompt: str) -> str:
                     model=model_name,
                     messages=[{"role": "user", "content": prompt}]
                 )
-            content = (response.choices[0].message.content or "").strip()
+            content = _extract_chat_response_text(response)
             if content:
                 return content
             utils_logger.warning(f"Mistral returned empty content. model={model_name}")
@@ -163,7 +277,7 @@ def get_response_grok(prompt: str) -> str:
                 model=model_name,
                 messages=[{"role": "user", "content": prompt}]
             )
-            content = (response.choices[0].message.content or "").strip()
+            content = _extract_chat_response_text(response)
             if content:
                 return content
             utils_logger.warning(f"Grok returned empty content. model={model_name}")
@@ -316,25 +430,17 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                 # Do not force a single case—keep all cases returned.
                 if not isinstance(parsed, list):
                     parsed = [parsed]
-                required_keys = ['case', 'options', 'optimal']
                 new_cases = []
                 for case in parsed:
-                    if not all(key in case for key in required_keys):
-                        logger.error(f"Missing required keys in parsed response: {required_keys}")
-                        return None, conversation_data
-                    # Generate a unique case ID
-                    case_id = str(uuid.uuid4())
-                    case_data = {
-                        'case_id': case_id,
-                        'case': case['case'], 
-                        'optimal': case['optimal'], 
-                        'options': []
-                    }
-                    for option_data in case['options']:
-                        option_id = str(uuid.uuid4())
-                        option_item = {**option_data, 'option_id': option_id}
-                        case_data['options'].append(option_item)
+                    case_data = _build_case_payload(case)
+                    if case_data is None:
+                        logger.warning(f"Skipping invalid case payload from {model}: {case}")
+                        continue
                     new_cases.append(case_data)
+
+                if not new_cases:
+                    logger.error(f"No valid cases could be built from {model} response.")
+                    return None, conversation_data
 
                 print(f"new cases length: {len(new_cases)}")
                 max = 3
@@ -351,23 +457,11 @@ def gen_cases(language: str, difficulty: str, age: int, output_dir: Path, subjec
                             # Do not force a single case—keep all cases returned.
                             if not isinstance(parsed, list):
                                 parsed = [parsed]
-                            required_keys = ['case', 'options', 'optimal']
                             for case in parsed:
-                                if not all(key in case for key in required_keys):
-                                    logger.error(f"Missing required keys in parsed response: {required_keys}")
-                                    return None, conversation_data
-                                # Generate a unique case ID
-                                case_id = str(uuid.uuid4())
-                                case_data = {
-                                    'case_id': case_id,
-                                    'case': case['case'], 
-                                    'optimal': case['optimal'], 
-                                    'options': []
-                                }
-                                for option_data in case['options']:
-                                    option_id = str(uuid.uuid4())
-                                    option_item = {**option_data, 'option_id': option_id}
-                                    case_data['options'].append(option_item)
+                                case_data = _build_case_payload(case)
+                                if case_data is None:
+                                    logger.warning(f"Skipping invalid supplemental case payload from {model}: {case}")
+                                    continue
                                 new_cases.append(case_data)
 
                 # Save conversation data to JSON file with the structure: { "data": { "cases": [ ... ] } }

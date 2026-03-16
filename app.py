@@ -167,7 +167,7 @@ def generate_cases():
 
     logger.debug("generate_cases route entered")
     data = request.get_json()
-    language = data.get('language')
+    language = data.get('language') or 'English'
     age = data.get('age', None)
     subject = data.get('subject')
     difficulty = data.get('difficulty')
@@ -180,8 +180,34 @@ def generate_cases():
     user_answers = data.get('answers', {})  # Changed to expect a dictionary
     model = data.get('model', 'gemini')
 
-    if not all([language, subject, difficulty, question_type, sub_type]):
-        return jsonify({"error": "language, subject, difficulty, question_type, and sub_type are required."}), 400
+    if not all([subject, difficulty, question_type, sub_type]):
+        return jsonify({"error": "subject, difficulty, question_type, and sub_type are required."}), 400
+
+    prefetch_only = data.get('prefetch_only', False)
+    if prefetch_only:
+        # Speculative generation: generate next-batch cases without committing any state.
+        # The caller is responsible for committing answers via POST /commit_answers.
+        if turn > 3:
+            return jsonify({"message": "SIMULATION COMPLETE"}), 200
+        try:
+            max_attempts = 2
+            attempts = 0
+            case_data = None
+            while attempts < max_attempts and case_data is None:
+                attempts += 1
+                case_data, _ = gen_cases(language, difficulty, age, output_dir, subject, question_type, sub_type, sex=sex, model=model)
+            if case_data is None:
+                return jsonify({"error": f"Failed to prefetch cases using {model}."}), 500
+            for case in case_data:
+                case['case_id'] = str(uuid.uuid4())
+                case['turn'] = turn
+                case['user_answer'] = None
+                case['answer'] = None
+                case['generated_image_data'] = None
+            return jsonify({'data': case_data}), 200
+        except Exception as e:
+            logger.exception(f"Prefetch error: {e}")
+            return jsonify({"error": "Prefetch failed."}), 500
 
     try:
         with open(analysis_filepath, 'r') as f:
@@ -358,7 +384,7 @@ def analysis():
 
     role = data.get('role', None)
     question_type = data.get('question_type')
-    language = data.get('language')
+    language = data.get('language') or 'English'
     model = data.get('model', 'gemini')
     if question_type is None:
         return jsonify({"error": "Question type data is missing in the request."}), 400
@@ -444,7 +470,7 @@ def submit_responses():
     role = data.get('role')
     question_type = data.get('question_type')
     sub_type = data.get('sub_type')
-    language = data.get('language')
+    language = data.get('language') or 'English'
     model = data.get('model', 'gemini')
 
     if not role or not question_type or not sub_type:
@@ -540,6 +566,51 @@ Data: {analysis_data_str}"""
 
 
 
+
+
+@app.route('/commit_answers', methods=['POST'])
+def commit_answers():
+    """Lightweight endpoint: save user answers + prefetched cases, then advance the turn.
+
+    Called by the frontend after it has already displayed prefetched cases so that
+    the server state stays in sync without blocking the UI.
+    """
+    user_id = session.get('user_id')
+    if not user_id:
+        return jsonify({"error": "User ID is required."}), 400
+
+    data = request.get_json() or {}
+    user_answers = data.get('answers', {})
+    next_cases = data.get('next_cases', [])
+
+    analysis_filepath = BASE_DIR / f'output/{user_id}/game/analysis.json'
+    output_dir = analysis_filepath.parent
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    try:
+        with open(analysis_filepath, 'r') as f:
+            analysis_data = json.load(f)
+    except FileNotFoundError:
+        analysis_data = {'cases': []}
+
+    if user_answers:
+        cases = analysis_data.get('cases', [])
+        for case_id, user_answer in user_answers.items():
+            for case in cases:
+                if case['case_id'] == case_id:
+                    case['user_answer'] = user_answer
+                    break
+
+    if next_cases:
+        analysis_data['cases'].extend(next_cases)
+
+    with open(analysis_filepath, 'w') as f:
+        json.dump(analysis_data, f, indent=4)
+
+    turn = session.get(f'{user_id}_turn', 1)
+    session[f'{user_id}_turn'] = turn + 1
+
+    return jsonify({"success": True}), 200
 
 
 def parse_json_response(response):
